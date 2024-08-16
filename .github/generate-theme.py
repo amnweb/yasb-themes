@@ -48,19 +48,26 @@ try:
         readme.write(f"# {name}\n\n")
         readme.write("## Image\n")
         readme.write(f"![Image](image.png)\n\n")
-        readme.write("## Config\n")
         if config_url:
+            readme.write("## Config\n")
+            readme.write("<details>\n")
+            readme.write("<summary>Config content (click to expand)</summary>\n")
             with open(f"{name}/config.yaml", 'r') as config_file:
                 config_content = config_file.read()
             readme.write("```yaml\n")
             readme.write(config_content)
             readme.write("\n```\n\n")
-        readme.write("## Styles\n")
-        with open(f"{name}/styles.css", 'r') as style_file:
-            style_content = style_file.read()
-        readme.write("```css\n")
-        readme.write(style_content)
-        readme.write("\n```\n")
+            readme.write("</details>\n")
+        if style_url:    
+            readme.write("## Style\n")
+            readme.write("<details>\n")
+            readme.write("<summary>Styles content (click to expand)</summary>\n")
+            with open(f"{name}/styles.css", 'r') as style_file:
+                style_content = style_file.read()
+            readme.write("```css\n")
+            readme.write(style_content)
+            readme.write("\n```\n")
+            readme.write("</details>\n")
         if repository:
             readme.write("## Repository URL\n")
             readme.write(f"{repository}\n\n")
