@@ -3,6 +3,12 @@ import re
 import requests
 import json
 import sys
+import argparse
+
+# Set up argument parser
+parser = argparse.ArgumentParser(description='Process issue data and generate theme.')
+parser.add_argument('--update', type=str, default='false', help='Update argument (default: false)')
+args = parser.parse_args()
 
 with open('issue_body_raw.json', 'r') as file:
     issue_body = file.read()
@@ -25,12 +31,14 @@ try:
         
     # Check if the folder already exists
     if os.path.exists(name):
-        print(f"Folder '{name}' already exists. Stopping job.")
-        sys.exit(1)
- 
-
-    # Create directory
-    os.makedirs(name, exist_ok=True)
+        if args.update.lower() == 'true':
+            print(f"Folder '{name}' already exists. Updating files.")
+        else:
+            print(f"Folder '{name}' already exists. Stopping job.")
+            sys.exit(1)
+    else:
+        # Create directory
+        os.makedirs(name, exist_ok=True)
 
     # Download files
     def download_file(url, path):
@@ -51,23 +59,23 @@ try:
         if config_url:
             readme.write("## Config\n")
             readme.write("<details>\n")
-            readme.write("<summary>Config content (click to expand)</summary>\n")
+            readme.write("<summary>Config content (click to expand)</summary>\n\n")
             with open(f"{name}/config.yaml", 'r') as config_file:
                 config_content = config_file.read()
             readme.write("```yaml\n")
             readme.write(config_content)
             readme.write("\n```\n\n")
-            readme.write("</details>\n")
+            readme.write("</details>\n\n")
         if style_url:    
             readme.write("## Style\n")
             readme.write("<details>\n")
-            readme.write("<summary>Styles content (click to expand)</summary>\n")
+            readme.write("<summary>Styles content (click to expand)</summary>\n\n")
             with open(f"{name}/styles.css", 'r') as style_file:
                 style_content = style_file.read()
             readme.write("```css\n")
             readme.write(style_content)
             readme.write("\n```\n")
-            readme.write("</details>\n")
+            readme.write("</details>\n\n")
         if repository:
             readme.write("## Repository URL\n")
             readme.write(f"{repository}\n\n")
