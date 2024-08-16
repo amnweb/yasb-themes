@@ -6,22 +6,22 @@ on:
     types:
         - completed
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *' # Runs every 1 hours
   workflow_dispatch: # Allows manual triggering
 
 jobs:
   generate-readme:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_dispatch' && github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4.1.7
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v5.1.1
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: '3.x'
 
     - name: Install dependencies
       run: pip install requests

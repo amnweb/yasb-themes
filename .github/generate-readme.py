@@ -35,7 +35,20 @@ def sort_folders_by_commit_date(folder_images):
 
 def generate_readme(folder_images, sorted_folders):
     with open('README.md', 'w') as readme:
-        readme.write('# A collection of themes for YASB\n\n')
+        readme.write('<div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="180"></a><ul style="list-style:none"><summary><h1><a href="https://github.com/amnweb/yasb">YASB</a></h1></summary><summary><h2>A collection of themes for YASB</h2></summary></ul></div>\n\n')
+        readme.write('## Add your theme\n\n')
+        readme.write('### Create PR\n')
+        readme.write('1. Fork this repository\n')
+        readme.write('1. Upload folder with `styles.css`, `config.yaml`, `image.png` and `README.md`\n')
+        readme.write('2. Folder name must be lowercase\n')
+        readme.write('3. Create a pull request\n\n')
+        readme.write('### Create an Issue\n\n')
+        readme.write('1. When creating an issue, you will find a template for submitting a theme.\n')
+        readme.write('2. Description and repository url is optional.\n')
+        readme.write('3. Use direct link for style,config and image.\n')
+        readme.write('3. Submit issue and wait few seconds.\n\n')
+        readme.write('## Update theme\n\n')
+        readme.write('1. Create a pull request or edit issue where your theme is submited (do not reopend issue).\n\n')
         for folder in sorted_folders:
             images = folder_images[folder]
             readme.write(f'## [{folder}]({folder})\n\n')
