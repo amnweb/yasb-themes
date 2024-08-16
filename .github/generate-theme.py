@@ -11,7 +11,7 @@ cleaned_issue_body = re.sub(r'^```|```$', '', issue_body.strip())
 try:
     data = json.loads(cleaned_issue_body)
   
-    name = data['name'].replace(' ', '-')
+    name = data['name'].replace(' ', '-').lower()
     image_url = data['image']
     style_url = data['style']
     config_url = data['config']
