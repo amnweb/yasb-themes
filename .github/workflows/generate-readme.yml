@@ -1,12 +1,17 @@
 name: Generate README
 
 on:
+  workflow_run:
+    workflows: ["Update Theme", "Generate Theme"]
+    types:
+        - completed
   schedule:
-    - cron: '0 */12 * * *' # Runs every 1 hours
+    - cron: '0 0 * * *'
   workflow_dispatch: # Allows manual triggering
 
 jobs:
   generate-readme:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +34,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add README.md
-        git commit -m "Auto-generate README"
+        git commit --allow-empty  -m "Auto-generate README"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
