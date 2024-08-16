@@ -2,7 +2,7 @@ name: Generate Theme
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened]
 
 jobs:
   process_issue:
