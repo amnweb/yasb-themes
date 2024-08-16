@@ -35,7 +35,7 @@ def sort_folders_by_commit_date(folder_images):
 
 def generate_readme(folder_images, sorted_folders):
     with open('README.md', 'w') as readme:
-        readme.write('YASB Theme\n\n')
+        readme.write('# A collection of themes for YASB\n\n')
         for folder in sorted_folders:
             images = folder_images[folder]
             readme.write(f'## [{folder}]({folder})\n\n')
