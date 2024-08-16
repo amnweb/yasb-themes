@@ -1,5 +1,5 @@
 ---
-name: "❤ Send Your Theme"
+name: "❤Send Your Theme"
 about: An easy way to submit your theme.
 title: "[THEME] Name of your theme"
 labels: new theme
