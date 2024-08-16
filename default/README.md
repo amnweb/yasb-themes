@@ -4,7 +4,6 @@
 ![Image](image.png)
 
 ## Config
-
 <details>
 <summary>Config content (click to expand)</summary>
 
@@ -79,7 +78,6 @@ widgets:
     options:
       label: "{title} - {artist}"
       label_alt: "{title}"
-      update_interval: 1000
       max_field_size:
         label: 20
         label_alt: 30
@@ -195,12 +193,6 @@ widgets:
       label: "<span>{wifi_icon}</span>"
       label_alt: "{wifi_name} {wifi_strength}%"
       update_interval: 5000
-      wifi_icons:
-        - "\udb82\udd2e" # 0% strength (no wifi)
-        - "\udb82\udd1f" # 1-25% strength
-        - "\udb82\udd22" # 26-50% strength
-        - "\udb82\udd25" # 51-75% strength
-        - "\udb82\udd28" # 76-100% strength. Alternate theming: \uf1eb
       callbacks:
         on_left: "exec cmd.exe /c start ms-settings:network"
         on_middle: "do_nothing"
@@ -362,13 +354,13 @@ widgets:
       label_alt: "\ue62a"
       class_name: "system-widget"
 ```
-</details>
-	
-## Styles
 
+</details>
+
+## Style
 <details>
 <summary>Styles content (click to expand)</summary>
-	
+
 ```css
 /*
 .widget .label {} -> Global label for all
@@ -577,7 +569,7 @@ widgets:
 }
 .wifi-widget .icon {
 	color: #43d8d8;
-	padding: 0 6px;
+	padding: 0 7px;
 	margin: 0;
 }
 
@@ -692,7 +684,7 @@ widgets:
 
 ```
 </details>
-	
+
 ## Repository URL
 https://github.com/amnweb/yasb
 
