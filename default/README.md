@@ -4,6 +4,10 @@
 ![Image](image.png)
 
 ## Config
+
+<details>
+<summary>Config content (click to expand)</summary>
+
 ```yaml
 watch_stylesheet: true
 watch_config: true
@@ -358,8 +362,13 @@ widgets:
       label_alt: "\ue62a"
       class_name: "system-widget"
 ```
-
+</details>
+	
 ## Styles
+
+<details>
+<summary>Styles content (click to expand)</summary>
+	
 ```css
 /*
 .widget .label {} -> Global label for all
@@ -682,6 +691,8 @@ widgets:
 }
 
 ```
+</details>
+	
 ## Repository URL
 https://github.com/amnweb/yasb
 
