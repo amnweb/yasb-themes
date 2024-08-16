@@ -1,4 +1,4 @@
-name: Issue Trigger
+name: Generate Theme
 
 on:
   issues:
