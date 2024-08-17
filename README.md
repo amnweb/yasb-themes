@@ -19,6 +19,11 @@
 
 1. Create a pull request or edit issue where your theme is submited (do not reopend issue).
 
+## [acrylic](acrylic)
+
+<a title="acrylic YASB Theme" href="acrylic"><img src="acrylic/image.png" width="830px"></a>
+
+
 ## [default](default)
 
 <a title="default YASB Theme" href="default"><img src="default/image.png" width="830px"></a>
