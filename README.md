@@ -1,4 +1,4 @@
-<div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="180"></a><ul style="list-style:none"><summary><h1><a href="https://github.com/amnweb/yasb">YASB</a></h1></summary><summary><h2>A collection of themes for YASB</h2></summary></ul></div>
+<div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="180"></a><ul style="list-style:none"><summary><h2>A collection of themes for YASB</h2></summary></ul></div>
 
 ## Add your theme
 
