@@ -35,7 +35,7 @@ def sort_folders_by_commit_date(folder_images):
 
 def generate_readme(folder_images, sorted_folders):
     with open('README.md', 'w') as readme:
-        readme.write('<div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="180"></a><ul style="list-style:none"><summary><h1><a href="https://github.com/amnweb/yasb">YASB</a></h1></summary><summary><h2>A collection of themes for YASB</h2></summary></ul></div>\n\n')
+        readme.write('<div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="180"></a><ul style="list-style:none"><summary><h2>A collection of themes for YASB</h2></summary></ul></div>\n\n')
         readme.write('## Add your theme\n\n')
         readme.write('### Create PR\n')
         readme.write('1. Fork this repository\n')
