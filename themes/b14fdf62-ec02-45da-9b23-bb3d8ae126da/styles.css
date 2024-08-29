@@ -1,0 +1,144 @@
+* {
+	font-size: 12px;
+	color: #cdd6f4;
+	font-weight: 500;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0 8px;
+	margin: 0;
+    background-color: #1e1e2e;
+    border-radius: 12px;
+}
+.widget {
+	padding: 0 10px;
+	margin: 0;
+}
+.widget .label {
+	padding: 2px 2px 1px 2px;
+ 
+}
+.widget .label.alt {
+	padding: 1px 8px 1px 8px;
+}
+ .clock-widget .label {
+    padding-left:8px;
+}
+.komorebi-workspaces .ws-btn {
+	font-size: 18px;
+    background-color: transparent;
+	padding: 0 2px 0 2px;
+	color: #95a0ad;
+}
+
+.komorebi-workspaces .ws-btn.populated {
+	color: #74c7ec;
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover,
+.komorebi-workspaces .ws-btn.active {
+	color: #89b4fa;
+}
+/*POWER MENU WIDGET*/
+/* Uptime text */
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: rgba(191, 202, 219, 0.726);
+	font-weight: 600;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.power-menu-widget .label {
+	color: #eba0ac;
+	font-size: 16px;
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 160px;
+	height: 240px;
+	border-radius: 4px;
+	background-color: rgba(41, 42, 58, 0.75);
+	font-family: "SegoeUI";
+	color: white;
+	border: 4px solid rgba(255, 255, 255, 0);
+ 
+}
+.power-menu-popup .button.hover {
+	background-color: rgb(55, 56, 75);
+	border: 4px solid rgb(55, 56, 75);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.6);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.power-menu-popup .button .icon {
+	font-size: 64px;
+	padding-top: 54px;
+	color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+}
+
+/* ICONS */
+.icon {
+	font-size: 16px;
+}
+.volume-widget .icon {
+	color: #89b4fa;
+	margin: 1px 2px 0 0;
+} 
+.start-menu .icon {
+    font-size: 18px;
+	color: #89b4fa
+}
+.clock-widget .icon {
+	color: #cba6f7;
+    font-size: 14px;
+}
+/* WEATHER WIDGET */
+.weather-widget .icon {
+	font-size: 16px;
+	margin: 0 2px 0px 0;
+}
+.weather-widget .icon.sunnyDay {
+	color: rgb(221, 210, 107);
+}
+.weather-widget .icon.clearNight {
+	color: rgb(107, 189, 221);
+	font-size: 18px;
+	margin: -1px 2px 0px 0;
+}
+.weather-widget .icon.rainyNight {
+    font-size: 16px;
+}
+.weather-widget .icon.cloudyDay {
+    font-size: 18px;
+    color: rgb(221, 210, 107);
+}
+.weather-widget .icon.rainyDay {
+    color: rgb(245, 224, 220)
+} 
+.media-widget {
+	padding: 0;
+	margin: 0;
+}
+.media-widget .label {
+	color: #b4befe;
+    padding: 0px;
+	padding-right: 4px;
+}
+ /* Hide media widget buttons */
+.media-widget .btn {
+	padding: 0;
+	margin: 0 -6px;
+    padding-left: 4px;
+}
