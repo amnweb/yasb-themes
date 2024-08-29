@@ -1,0 +1,62 @@
+name: Sumbit a theme
+description: Submit a theme to be added to the theme library.
+title: "[create-theme]: "
+labels: ["new-theme"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: The name of the theme. With a maximum of 25 characters (only letters, numbers and spacesa allowed).
+      placeholder: Theme Name
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of the theme. With a maximum of 100 characters.
+      placeholder: Theme Description
+    validations:
+      required: true
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage
+      description: The URL of the theme's homepage or repository.
+      placeholder: https://github.com/...
+  - type: input
+    id: image
+    attributes:
+      label: Image
+      description: "A URL to an image representing the theme. It can be a temporary image, it will be cloned to the theme library. Note: The image must be a PNG file. E.g. an imgur link. This image should contain a preview of the bar only."
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: styles
+    attributes:
+      label: Theme Styles
+      render: css
+      description: The CSS styles for the theme.
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Theme Config
+      render: yaml
+      description: The config file for the theme.
+    validations:
+      required: true
+  - type: textarea
+    id: readme
+    attributes:
+      render: markdown
+      label: Readme
+      description: The markdown README file for the theme. You can create a nice readme with a preview of the theme.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Please review the information before submitting your theme."

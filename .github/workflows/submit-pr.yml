@@ -1,0 +1,70 @@
+name: Submit PR
+on:
+  pull_request:
+    types: [closed]
+  workflow_dispatch:
+  
+jobs:
+  submitPR:
+    permissions: write-all
+    name: Rebuild themes after theme submission
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Rebuild all themes
+        run: |
+          python .github/scripts/rebuild-themes.py
+        
+      - name: Commit and push changes
+        run: |
+          git add themes.json
+          git add themes/*
+          git commit -m "Rebuild themes.json after theme submission" --allow-empty
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push
+
+  generateReadme:
+    needs: submitPR
+    permissions: write-all
+    name: Generate README after themes are rebuilt
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Generate README
+        run: |
+          python .github/scripts/generate-readme.py
+        
+      - name: Commit and push changes
+        run: |
+          git add README.md
+          git commit -m "Update README after themes are rebuilt" --allow-empty
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push

@@ -1,0 +1,125 @@
+name: Create Theme
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  createPR:
+    permissions: write-all
+    name: Submit a theme
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, '[create-theme]:')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+        
+      - name: Setup python modules
+        run: |
+          pip3 install requests
+
+      - name: Parse issue
+        id: issue-parser
+        uses: stefanbuck/github-issue-parser@v3
+        with:
+          template-path: .github/ISSUE_TEMPLATE/create-theme.yml
+
+      - name: Export parsed payload into variables
+        id: export
+        run: |
+          echo "THEME_NAME=${{ fromJson(steps.issue-parser.outputs.jsonString)['name'] }}" >> $GITHUB_ENV
+          echo "THEME_DESCRIPTION=${{ fromJson(steps.issue-parser.outputs.jsonString)['description'] }}" >> $GITHUB_ENV
+          echo "THEME_HOMEPAGE=${{ fromJson(steps.issue-parser.outputs.jsonString)['homepage'] }}" >> $GITHUB_ENV
+          echo "THEME_IMAGE=${{ fromJson(steps.issue-parser.outputs.jsonString)['image'] }}" >> $GITHUB_ENV
+          echo "THEME_AUTHOR=${{ github.event.issue.user.login }}" >> $GITHUB_ENV
+
+      - name: Write styles to file
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          contents: ${{ fromJson(steps.issue-parser.outputs.jsonString)['styles'] }}
+          path: styles.css
+
+      - name: Write config to file
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          contents: ${{ fromJson(steps.issue-parser.outputs.jsonString)['config'] }}
+          path: config.yml
+
+      - name: Write readme to file
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          contents: ${{ fromJson(steps.issue-parser.outputs.jsonString)['readme'] }}
+          path: README.md
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create theme content
+        run: |
+          python3 .github/scripts/submit-theme.py \
+              --name "${{ env.THEME_NAME }}" \
+              --description "${{ env.THEME_DESCRIPTION }}" \
+              --author "${{ env.THEME_AUTHOR }}" \
+              --image "${{ env.THEME_IMAGE }}" \
+              --homepage "${{ env.THEME_HOMEPAGE }}" 2> error.log
+
+      - name: Export creation output
+        if: failure()
+        run: |
+          cat error.log
+          echo "CREATION_OUTPUT=$(cat error.log)" >> $GITHUB_ENV
+      
+      - name: Show error message
+        if: failure()
+        uses: peter-evans/close-issue@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          comment: |
+            # Error creating theme
+
+            Sorry about that! There was an error creating the theme. Please try again or contact the maintainers for help.
+
+            > ${{ env.CREATION_OUTPUT }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        if: success()
+        with:
+          add-paths: themes/
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          commit-message: "Add theme: ${{ env.THEME_NAME }}"
+          delete-branch: true
+          title: "Add theme: ${{ env.THEME_NAME }}"
+          body: |
+            # Add theme: ${{ env.THEME_NAME }}
+
+            This PR adds a new theme to the theme library.
+
+            ## Theme Details
+            * **Name**: ${{ env.THEME_NAME }}
+            * **Description**: ${{ env.THEME_DESCRIPTION }}
+            * **Homepage**: ${{ env.THEME_HOMEPAGE }}
+            * **Author**: @${{ env.THEME_AUTHOR }}
+          base: main
+          branch: create-theme-${{ github.event.issue.number }}
+        
+      - name: Close Issue
+        uses: peter-evans/close-issue@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          comment: |
+            # Thank you for your contribution! :tada:
+
+            Your theme has been successfully submitted. The maintainers will review it and get back to you soon.
+
+            Here are some details about your submission:
+            * Your theme has been requested into [this PR](https://github.com/amnweb/yasb-themes/pull/${{ env.PULL_REQUEST_NUMBER }}).
+            * It has been created into the [create-theme-${{ github.event.issue.number }} branch](https://github.com/amnweb/yasb-themes/tree/create-theme-${{ github.event.issue.number }}).
+
+            > If you have any questions or need help, feel free to ask in the comments below or in the PR.
