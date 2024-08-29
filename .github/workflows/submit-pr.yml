@@ -58,6 +58,10 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Pull latest changes
+        run: |
+          git pull origin $(git rev-parse --abbrev-ref HEAD)
+
       - name: Generate README
         run: |
           python .github/scripts/generate-readme.py
