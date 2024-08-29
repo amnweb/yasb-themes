@@ -1,0 +1,13 @@
+{
+    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
+        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
+        "name": "Default",
+        "description": "Default YASB theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
+        "author": "amnweb"
+    }
+}
