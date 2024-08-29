@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Acrylic](themes/a93f1976-0c89-4593-b333-eaa374164c73)
+
+<a title="Acrylic YASB Theme" href="themes/a93f1976-0c89-4593-b333-eaa374164c73"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png" width="830px"></a>
+
+
 ## [Default](themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491)
 
 <a title="Default YASB Theme" href="themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png" width="830px"></a>
