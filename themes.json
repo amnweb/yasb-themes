@@ -1,4 +1,15 @@
 {
+    "56d372d9-3806-499f-9caf-03782b11413b": {
+        "id": "56d372d9-3806-499f-9caf-03782b11413b",
+        "name": "Catppuccin Mocha",
+        "description": "The Catppuccino Mocha Theme is a soothing pastel theme created for YASB",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/config.yml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/image.png",
+        "author": "amnweb"
+    },
     "a93f1976-0c89-4593-b333-eaa374164c73": {
         "id": "a93f1976-0c89-4593-b333-eaa374164c73",
         "name": "Acrylic",
