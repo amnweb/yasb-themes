@@ -53,7 +53,7 @@ jobs:
         uses: "DamianReeves/write-file-action@master"
         with:
           contents: ${{ fromJson(steps.issue-parser.outputs.jsonString)['readme'] }}
-          path: README.md
+          path: readme.md
 
       - name: Setup Git
         run: |

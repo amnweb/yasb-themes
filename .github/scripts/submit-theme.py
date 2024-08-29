@@ -7,13 +7,13 @@ import requests
 import urllib.parse
 
 STYLES_FILE = "styles.css"
-README_FILE = "README.md"
+README_FILE = "readme.md"
 IMAGE_FILE = "image.png"
 CONFIG_FILE = "config.yml"
 
 TEMPLATE_STYLES_FILE = "./styles.css"
 TEMPLATE_CONFIG_FILE = "./config.yml"
-TEMPLATE_README_FILE = "./README.md"
+TEMPLATE_README_FILE = "./readme.md"
 
 def create_theme_id():
     return str(uuid.uuid4())
