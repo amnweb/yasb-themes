@@ -9,10 +9,10 @@ import urllib.parse
 STYLES_FILE = "styles.css"
 README_FILE = "readme.md"
 IMAGE_FILE = "image.png"
-CONFIG_FILE = "config.yml"
+CONFIG_FILE = "config.yaml"
 
 TEMPLATE_STYLES_FILE = "./styles.css"
-TEMPLATE_CONFIG_FILE = "./config.yml"
+TEMPLATE_CONFIG_FILE = "./config.yaml"
 TEMPLATE_README_FILE = "./readme.md"
 
 def create_theme_id():
