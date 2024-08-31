@@ -61,273 +61,273 @@ widgets:
       max_length_ellipsis: ".."
       monitor_exclusive: false
 
-battery:
-    type: "yasb.battery.BatteryWidget"
-    options:
-      label: "<span>{icon}</span>{percent}%"
-      label_alt: "<span>{icon}</span> {percent}% | time: {time_remaining}"
-      charging_options:
-        icon_format: "{charging_icon}"
-      status_icons:
-        icon_charging: "\ue83e"
-        icon_critical: "\ue851"
-        icon_low: "\ue852"
-        icon_medium: "\ue855"
-        icon_high: "\ue858"
-        icon_full: "\ue83f"
-
-clock:
-    type: "yasb.clock.ClockWidget"
-    options:
-      label: "{%a %I:%M %p}"
-      label_alt: "{%A %d %B %Y %I:%M %p}"
-      #timezones: ["Europe/London", "America/New_York"]
-      timezones: []
-      callbacks:
-        on_middle: "exec explorer.exe shell:Appsfolder\\Microsoft.WindowsAlarms_8wekyb3d8bbwe!App"
-        on_right: "next_timezone"
-
-cpu:
-    type: "yasb.cpu.CpuWidget"
-    options:
-      label: "<span>\uf4bc</span> {info[percent][total]}%"
-      label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
-      update_interval: 500
-      histogram_icons:
-        - "\u2581" # 0%
-        - "\u2581" # 10%
-        - "\u2582" # 20%
-        - "\u2583" # 30%
-        - "\u2584" # 40%
-        - "\u2585" # 50%
-        - "\u2586" # 60%
-        - "\u2587" # 70%
-        - "\u2588" # 80%+
-      histogram_num_columns: 10
-      callbacks:
-        on_right: "exec cmd /c Taskmgr"
-
-memory:
-    type: "yasb.memory.MemoryWidget"
-    options:
-      label: "<span>\uf200</span> {virtual_mem_free}"
-      label_alt: "<span>\uf4bc</span> {virtual_mem_percent}%"
-      update_interval: 5000
-      callbacks:
-        on_right: "exec cmd /c Taskmgr"
-
-komorebi_workspaces:
-    type: "komorebi.workspaces.WorkspaceWidget"
-    options:
-      label_offline: "Komorebi Offline"
-      label_workspace_btn: "\uf4c3"
-      label_default_name: "{index}"
-      label_zero_index: false
-      hide_empty_workspaces: false
-      # callbacks:
-      #   on_left: "activate"
-      #   on_middle: "rename_temporary"
-      #   on_right: "rename_permanent"
-
-komorebi_active_layout:
-    type: "komorebi.active_layout.ActiveLayoutWidget"
-    options:
-      hide_if_offline: false
-      label: "{icon}"
-      layouts: ['bsp', 'columns', 'rows', 'grid', 'vertical_stack', 'horizontal_stack', 'ultrawide_vertical_stack']
-      layout_icons:
-        bsp: "[\\\\]"
-        columns: "[||]"
-        rows: "[==]"
-        grid: "[G]"
-        vertical_stack: "[V]="
-        horizontal_stack: "[H]="
-        ultrawide_vertical_stack: "||="
-        monocle: "[M]"
-        maximised: "[X]"
-        floating: "><>"
-        paused: "[P]"
-      callbacks:
-        on_left: "next_layout"
-        on_middle: "toggle_monocle"
-        on_right: "prev_layout"
-
-wifi:
-    type: "yasb.wifi.WifiWidget"
-    options:
-      label: "<span>{wifi_icon}</span>"
-      label_alt: "<span>{wifi_icon}</span> {wifi_name}"
-      update_interval: 5000
-      wifi_icons:
-        - "\udb82\udd2e" # 0% strength (no wifi)
-        - "\udb82\udd1f" # 1-25% strength
-        - "\udb82\udd22" # 26-50% strength
-        - "\udb82\udd25" # 51-75% strength
-        - "\udb82\udd28" # 76-100% strength. Alternate theming: \uf1eb
-      callbacks:
-        on_left: "exec quick_settings"
-        on_middle: "do_nothing"
-        on_right: "exec cmd.exe /c start ms-settings:network"
-
-disk:
-    type: "yasb.disk.DiskWidget"
-    options:
-        label: "<span>\udb80\udeca</span>{volume_label} {space[used][percent]}"
-        label_alt: "<span>\udb80\udeca</span>{volume_label} {space[used][gb]} / {space[total][gb]}"
-        volume_label: "C"
-        update_interval: 60 # Update interval in seconds
-        callbacks:
-          on_middle: "do_nothing"
-          on_right: "exec explorer C:\\" # Open disk C in file explorer
-
-volume:
-    type: "yasb.volume.VolumeWidget"
-    options:
-      label: "<span>{icon}</span> {level}"
-      label_alt: "{volume}"
-      volume_icons:
-        - "\uea85"  # Icon for muted
-        - "\ue992"  # Icon for 0-10% volume
-        - "\ue993"  # Icon for 11-30% volume
-        - "\ue994"  # Icon for 31-60% volume
-        - "\ue995"  # Icon for 61-100% volume
-      callbacks:
-        # on_left: "exec quick_settings"
-        on_middle: "do_nothing"
-        on_right: "exec cmd.exe /c start ms-settings:sound"
-
-media_player:
-      type: "yasb.media.MediaWidget"
+  battery:
+      type: "yasb.battery.BatteryWidget"
       options:
-        label: "{title} - {artist}"
-        label_alt: "{title}"
-        max_field_size:
-          label: 20
-          label_alt: 30
-        show_thumbnail: true
-        controls_only: false
-        controls_left: true
-        hide_empty: true
-        thumbnail_alpha: 80
-        thumbnail_padding: 8
-        thumbnail_corner_radius: 7 # Set to 0 for square corners
-        icons:
-          prev_track: "\ue622"
-          next_track: "\ue623"
-          play: "\uf5b0"
-          pause: "\ue62e"
+        label: "<span>{icon}</span>{percent}%"
+        label_alt: "<span>{icon}</span> {percent}% | time: {time_remaining}"
+        charging_options:
+          icon_format: "{charging_icon}"
+        status_icons:
+          icon_charging: "\ue83e"
+          icon_critical: "\ue851"
+          icon_low: "\ue852"
+          icon_medium: "\ue855"
+          icon_high: "\ue858"
+          icon_full: "\ue83f"
 
-traffic:
-    type: "yasb.traffic.TrafficWidget"
-    options:
-      # can be: download_speed, download_justified, download_category, and same for upload
-      label: "\ueb01 \ueab4 {download_justified} | \ueab7 {upload_justified}"
-      label_alt: "\ueb01 \ueab4 {download_category} | \ueab7 {upload_category}"
-      update_interval: 1000 # Update interval should be a multiple of 1000
-      callbacks:
-        on_right: "exec cmd /c Taskmgr"
+  clock:
+      type: "yasb.clock.ClockWidget"
+      options:
+        label: "{%a %I:%M %p}"
+        label_alt: "{%A %d %B %Y %I:%M %p}"
+        #timezones: ["Europe/London", "America/New_York"]
+        timezones: []
+        callbacks:
+          on_middle: "exec explorer.exe shell:Appsfolder\\Microsoft.WindowsAlarms_8wekyb3d8bbwe!App"
+          on_right: "next_timezone"
 
-power_menu:
-    type: "yasb.power_menu.PowerMenuWidget"
-    options:
-      label: "<span>\ue62a</span>"
-      blur_background: true
-      animation_duration: 200 # Milisecond 
-      button_row: 3 # Number of buttons in row, min 1 max 5
-      buttons:
-        lock: ["\ue72e","Lock"]
-        # signout: ["\udb80\udf43","Sign out"]
-        sleep: ["\uf1db","Sleep"]
-        shutdown: ["\ue7e8","Shut Down"]
-        restart: ["\ue777","Restart"]
-        hibernate: ["\ue823","Hibernate"]
-        cancel: ["\ue711","Cancel"]
-        #force_shutdown: ["\uf011","Force Shut Down"]
-        #force_restart: ["\uead2","Force Restart"]
+  cpu:
+      type: "yasb.cpu.CpuWidget"
+      options:
+        label: "<span>\uf4bc</span> {info[percent][total]}%"
+        label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
+        update_interval: 500
+        histogram_icons:
+          - "\u2581" # 0%
+          - "\u2581" # 10%
+          - "\u2582" # 20%
+          - "\u2583" # 30%
+          - "\u2584" # 40%
+          - "\u2585" # 50%
+          - "\u2586" # 60%
+          - "\u2587" # 70%
+          - "\u2588" # 80%+
+        histogram_num_columns: 10
+        callbacks:
+          on_right: "exec cmd /c Taskmgr"
 
-weather:
-    type: "yasb.weather.WeatherWidget"
-    options:
-      label: "<span>{icon}</span> {temp_c}"
-      label_alt: "Min {min_temp_c}, Max {max_temp_c}, Humidity {humidity}"
-      api_key: '3bf4cf9a7c3f40d6b31174128242807'
-      update_interval: 600 #Update interval in seconds, Min 600
-      hide_decimal: true
-      location: 'London UK' # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
-      callbacks:
-        on_left: "toggle_label"
-      icons: 
-        sunnyDay: "\ue30d"
-        clearNight: "\ue32b"
-        cloudyDay: "\udb81\udd99"
-        cloudyNight: "\ue311"
-        rainyDay: "\udb81\ude7e"
-        rainyNight: "\udb81\ude7e"
-        snowyIcyDay: "\udb81\udd98"
-        snowyIcyNight: "\udb81\udd98"
-        blizzard: "\uebaa"
-        default: "\uebaa"
-        # https://www.weatherapi.com/docs/
-        # Usage {temp_c}, {min_temp_c}, {max_temp_c}, {temp_f}, {min_temp_f}, {max_temp_f}, {location}, {humidity}, {icon}, {conditions}
+  memory:
+      type: "yasb.memory.MemoryWidget"
+      options:
+        label: "<span>\uf200</span> {virtual_mem_free}"
+        label_alt: "<span>\uf4bc</span> {virtual_mem_percent}%"
+        update_interval: 5000
+        callbacks:
+          on_right: "exec cmd /c Taskmgr"
 
-# Some custom widgets
+  komorebi_workspaces:
+      type: "komorebi.workspaces.WorkspaceWidget"
+      options:
+        label_offline: "Komorebi Offline"
+        label_workspace_btn: "\uf4c3"
+        label_default_name: "{index}"
+        label_zero_index: false
+        hide_empty_workspaces: false
+        # callbacks:
+        #   on_left: "activate"
+        #   on_middle: "rename_temporary"
+        #   on_right: "rename_permanent"
+
+  komorebi_active_layout:
+      type: "komorebi.active_layout.ActiveLayoutWidget"
+      options:
+        hide_if_offline: false
+        label: "{icon}"
+        layouts: ['bsp', 'columns', 'rows', 'grid', 'vertical_stack', 'horizontal_stack', 'ultrawide_vertical_stack']
+        layout_icons:
+          bsp: "[\\\\]"
+          columns: "[||]"
+          rows: "[==]"
+          grid: "[G]"
+          vertical_stack: "[V]="
+          horizontal_stack: "[H]="
+          ultrawide_vertical_stack: "||="
+          monocle: "[M]"
+          maximised: "[X]"
+          floating: "><>"
+          paused: "[P]"
+        callbacks:
+          on_left: "next_layout"
+          on_middle: "toggle_monocle"
+          on_right: "prev_layout"
+
+  wifi:
+      type: "yasb.wifi.WifiWidget"
+      options:
+        label: "<span>{wifi_icon}</span>"
+        label_alt: "<span>{wifi_icon}</span> {wifi_name}"
+        update_interval: 5000
+        wifi_icons:
+          - "\udb82\udd2e" # 0% strength (no wifi)
+          - "\udb82\udd1f" # 1-25% strength
+          - "\udb82\udd22" # 26-50% strength
+          - "\udb82\udd25" # 51-75% strength
+          - "\udb82\udd28" # 76-100% strength. Alternate theming: \uf1eb
+        callbacks:
+          on_left: "exec quick_settings"
+          on_middle: "do_nothing"
+          on_right: "exec cmd.exe /c start ms-settings:network"
+
+  disk:
+      type: "yasb.disk.DiskWidget"
+      options:
+          label: "<span>\udb80\udeca</span>{volume_label} {space[used][percent]}"
+          label_alt: "<span>\udb80\udeca</span>{volume_label} {space[used][gb]} / {space[total][gb]}"
+          volume_label: "C"
+          update_interval: 60 # Update interval in seconds
+          callbacks:
+            on_middle: "do_nothing"
+            on_right: "exec explorer C:\\" # Open disk C in file explorer
+
+  volume:
+      type: "yasb.volume.VolumeWidget"
+      options:
+        label: "<span>{icon}</span> {level}"
+        label_alt: "{volume}"
+        volume_icons:
+          - "\uea85"  # Icon for muted
+          - "\ue992"  # Icon for 0-10% volume
+          - "\ue993"  # Icon for 11-30% volume
+          - "\ue994"  # Icon for 31-60% volume
+          - "\ue995"  # Icon for 61-100% volume
+        callbacks:
+          # on_left: "exec quick_settings"
+          on_middle: "do_nothing"
+          on_right: "exec cmd.exe /c start ms-settings:sound"
+
+  media_player:
+        type: "yasb.media.MediaWidget"
+        options:
+          label: "{title} - {artist}"
+          label_alt: "{title}"
+          max_field_size:
+            label: 20
+            label_alt: 30
+          show_thumbnail: true
+          controls_only: false
+          controls_left: true
+          hide_empty: true
+          thumbnail_alpha: 80
+          thumbnail_padding: 8
+          thumbnail_corner_radius: 7 # Set to 0 for square corners
+          icons:
+            prev_track: "\ue622"
+            next_track: "\ue623"
+            play: "\uf5b0"
+            pause: "\ue62e"
+
+  traffic:
+      type: "yasb.traffic.TrafficWidget"
+      options:
+        # can be: download_speed, download_justified, download_category, and same for upload
+        label: "\ueb01 \ueab4 {download_justified} | \ueab7 {upload_justified}"
+        label_alt: "\ueb01 \ueab4 {download_category} | \ueab7 {upload_category}"
+        update_interval: 1000 # Update interval should be a multiple of 1000
+        callbacks:
+          on_right: "exec cmd /c Taskmgr"
+
+  power_menu:
+      type: "yasb.power_menu.PowerMenuWidget"
+      options:
+        label: "<span>\ue62a</span>"
+        blur_background: true
+        animation_duration: 200 # Milisecond 
+        button_row: 3 # Number of buttons in row, min 1 max 5
+        buttons:
+          lock: ["\ue72e","Lock"]
+          # signout: ["\udb80\udf43","Sign out"]
+          sleep: ["\uf1db","Sleep"]
+          shutdown: ["\ue7e8","Shut Down"]
+          restart: ["\ue777","Restart"]
+          hibernate: ["\ue823","Hibernate"]
+          cancel: ["\ue711","Cancel"]
+          #force_shutdown: ["\uf011","Force Shut Down"]
+          #force_restart: ["\uead2","Force Restart"]
+
+  weather:
+      type: "yasb.weather.WeatherWidget"
+      options:
+        label: "<span>{icon}</span> {temp_c}"
+        label_alt: "Min {min_temp_c}, Max {max_temp_c}, Humidity {humidity}"
+        api_key: '3bf4cf9a7c3f40d6b31174128242807'
+        update_interval: 600 #Update interval in seconds, Min 600
+        hide_decimal: true
+        location: 'London UK' # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+        callbacks:
+          on_left: "toggle_label"
+        icons: 
+          sunnyDay: "\ue30d"
+          clearNight: "\ue32b"
+          cloudyDay: "\udb81\udd99"
+          cloudyNight: "\ue311"
+          rainyDay: "\udb81\ude7e"
+          rainyNight: "\udb81\ude7e"
+          snowyIcyDay: "\udb81\udd98"
+          snowyIcyNight: "\udb81\udd98"
+          blizzard: "\uebaa"
+          default: "\uebaa"
+          # https://www.weatherapi.com/docs/
+          # Usage {temp_c}, {min_temp_c}, {max_temp_c}, {temp_f}, {min_temp_f}, {max_temp_f}, {location}, {humidity}, {icon}, {conditions}
+
+  # Some custom widgets
   explorer_button:
-    type: "yasb.custom.CustomWidget"
-    options:
-      label: "\uf07c"
-      label_alt: "Explorer"
-      class_name: "explorer-widget"
-      exec_options:
-        run_once: true
-      callbacks:
-        on_left: "exec explorer.exe"
-        on_right: "toggle_label"
+      type: "yasb.custom.CustomWidget"
+      options:
+        label: "\uf07c"
+        label_alt: "Explorer"
+        class_name: "explorer-widget"
+        exec_options:
+          run_once: true
+        callbacks:
+          on_left: "exec explorer.exe"
+          on_right: "toggle_label"
 
-ip_info:
-    type: "yasb.custom.CustomWidget"
-    options:
-      label: "\uf3c5 {data[city]}, {data[region]}"
-      label_alt: "\uf3c5 {data[ip]} [{data[country]}]"
-      class_name: "ip-info-widget"
-      exec_options:
-        run_cmd: "curl.exe https://ipinfo.io"
-        run_interval: 120000                                        # every 5 minutes
-        return_format: "json"
-      callbacks:
-        on_left: "toggle_label"
-        on_middle: "exec cmd /c ncpa.cpl"                           # open network settings
-        on_right: "exec cmd /c start https://ipinfo.io/{data[ip]} " # open ipinfo in browser
-  
+  ip_info:
+      type: "yasb.custom.CustomWidget"
+      options:
+        label: "\uf3c5 {data[city]}, {data[region]}"
+        label_alt: "\uf3c5 {data[ip]} [{data[country]}]"
+        class_name: "ip-info-widget"
+        exec_options:
+          run_cmd: "curl.exe https://ipinfo.io"
+          run_interval: 120000                                        # every 5 minutes
+          return_format: "json"
+        callbacks:
+          on_left: "toggle_label"
+          on_middle: "exec cmd /c ncpa.cpl"                           # open network settings
+          on_right: "exec cmd /c start https://ipinfo.io/{data[ip]} " # open ipinfo in browser
+
   lang:
-    type: "yasb.custom.CustomWidget"
-    options:
-      label: "\udb80\udf0c {data}"
-      label_alt: "\udb81\udfd3 {data}"
-      class_name: "lang-widget"
-      exec_options:
-        run_cmd: "powershell add-type -assemblyname system.windows.forms;([system.windows.forms.inputlanguage]::currentinputlanguage).Culture.Name"
-        # run every 3 sec
-        run_interval: 3000
-        return_format: "string"
+      type: "yasb.custom.CustomWidget"
+      options:
+        label: "\udb80\udf0c {data}"
+        label_alt: "\udb81\udfd3 {data}"
+        class_name: "lang-widget"
+        exec_options:
+          run_cmd: "powershell add-type -assemblyname system.windows.forms;([system.windows.forms.inputlanguage]::currentinputlanguage).Culture.Name"
+          # run every 3 sec
+          run_interval: 3000
+          return_format: "string"
 
-notification_button:
-    type: "yasb.custom.CustomWidget"
-    options:
-      label: "<span>\uf0f3</span>"
-      label_alt: "<span>\uf49a</span>"
-      class_name: "notification-widget"
-      callbacks:
-        on_left: "exec notification_center"
-        on_right: "toggle_label"
+  notification_button:
+      type: "yasb.custom.CustomWidget"
+      options:
+        label: "<span>\uf0f3</span>"
+        label_alt: "<span>\uf49a</span>"
+        class_name: "notification-widget"
+        callbacks:
+          on_left: "exec notification_center"
+          on_right: "toggle_label"
 
-search_button:
-    type: "yasb.custom.CustomWidget"
-    options:
-      label: "<span>\uf422</span>"
-      label_alt: "<span>\uf422</span> Search"
-      class_name: "search-widget"
-      exec_options:
-        run_once: true
-      callbacks:
-        on_left: "exec search"
-        on_right: "toggle_label"
+  search_button:
+      type: "yasb.custom.CustomWidget"
+      options:
+        label: "<span>\uf422</span>"
+        label_alt: "<span>\uf422</span> Search"
+        class_name: "search-widget"
+        exec_options:
+          run_once: true
+        callbacks:
+          on_left: "exec search"
+          on_right: "toggle_label"
