@@ -46,7 +46,7 @@ body:
     attributes:
       label: Theme Config
       render: yaml
-      description: The config file for the theme.
+      description: The config file for the theme. Please format your yaml file correctly, remove blank lines. Here is an example of a [config file](https://github.com/amnweb/yasb-themes/blob/main/themes/56d372d9-3806-499f-9caf-03782b11413b/config.yaml)
     validations:
       required: true
   - type: textarea

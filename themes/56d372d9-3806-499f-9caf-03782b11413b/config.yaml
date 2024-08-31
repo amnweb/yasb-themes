@@ -1,7 +1,7 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
-# This komorebi setting will be used for tray context menu.
+
 komorebi:
   start_command: "komorebic start --whkd"
   stop_command: "komorebic stop --whkd"
@@ -67,14 +67,12 @@ widgets:
           next_track: ""
           play: ""
           pause: ""
-
   clock:
       type: "yasb.clock.ClockWidget"
       options:
         label: "<span>\uf4ab</span> {%H:%M}"
         label_alt: "<span>\uf4ab</span> {%A, %d %B %Y %H:%M}"
         timezones: [] #Looking up time zone info from registry
-
   komorebi_workspaces:
       type: "komorebi.workspaces.WorkspaceWidget"
       options:
@@ -85,7 +83,6 @@ widgets:
           label_zero_index: false
           hide_empty_workspaces: false
           hide_if_offline: true
-
   komorebi_active_layout:
       type: "komorebi.active_layout.ActiveLayoutWidget"
       options:
@@ -109,7 +106,6 @@ widgets:
           on_left: 'next_layout'
           on_middle: 'toggle_monocle'
           on_right: 'prev_layout'
-
   weather:
       type: "yasb.weather.WeatherWidget"
       options:
@@ -134,7 +130,6 @@ widgets:
           default: "\uebaa"
           # https://www.weatherapi.com/docs/
           # Usage {temp_c}, {min_temp_c}, {max_temp_c}, {temp_f}, {min_temp_f}, {max_temp_f}, {location}, {humidity}, {icon}, {conditions}
-
   volume:
       type: "yasb.volume.VolumeWidget"
       options:
@@ -148,7 +143,6 @@ widgets:
           - "\uf028"  # Icon for 61-100% volume
         callbacks:
           on_right: "exec cmd.exe /c start ms-settings:sound"
-
   power_menu:
       type: "yasb.power_menu.PowerMenuWidget"
       options:
@@ -164,7 +158,6 @@ widgets:
           restart: ["\uead2","Restart"]
           hibernate: ["\uf28e","Hibernate"]
           cancel: ["\udb81\udf3a","Cancel"]
-
   custom_button:
       type: "yasb.custom.CustomWidget"
       options:
