@@ -26,7 +26,7 @@ jobs:
         id: issue-parser
         uses: stefanbuck/github-issue-parser@v3
         with:
-          template-path: .github/ISSUE_TEMPLATE/create-theme.yaml
+          template-path: .github/ISSUE_TEMPLATE/create-theme.yml
 
       - name: Export parsed payload into variables
         id: export
