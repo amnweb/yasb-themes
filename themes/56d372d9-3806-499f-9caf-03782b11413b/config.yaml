@@ -16,9 +16,11 @@ bars:
       position: "top"
       center: false
     blur_effect:
-      enabled: false
-      acrylic: false
-      dark: false
+      enabled: false 
+      acrylic: false 
+      dark_mode: false
+      round_corners: false
+      border_color: None
     window_flags:
       always_on_top: false
       windows_app_bar: true
