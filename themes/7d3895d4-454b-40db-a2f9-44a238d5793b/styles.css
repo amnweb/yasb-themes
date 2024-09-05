@@ -1,0 +1,185 @@
+* {
+	font-size: 13px;
+	color: #cdd6f4;
+	font-weight: 600;
+	font-family: "Segoe UI","JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0 8px;
+	margin: 0;
+    background-color: rgba(30, 30, 46, 0.25);
+}
+.widget {
+	padding: 0 8px;
+	margin: 0;
+}
+.widget .label {
+	padding: 0px 2px 2px 2px;
+}
+.widget .label.alt {
+	padding: 1px 8px 1px 8px;
+}
+.komorebi-workspaces,
+.komorebi-active-layout  {
+    margin: 0;
+    padding: 0;
+}
+.komorebi-workspaces .ws-btn {
+	font-size: 16px;
+    background-color: transparent;
+	margin: 0 4px 0 4px;
+	color: #95a0ad;
+}
+.komorebi-workspaces .ws-btn.populated {
+	color: #a0c3ee;
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover,
+.komorebi-workspaces .ws-btn.active {
+	color: #c2daf7;
+}
+.apps-widget {
+    padding: 0 4px;
+}
+.apps-widget .widget-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 0 4px 0;
+    border-radius: 13px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.apps-widget .label {
+	font-size: 14px;
+	padding:0px 2px 1px 2px;
+}
+.apps-widget .label:hover {
+	color: #fff;
+}
+.active-window-widget .icon {
+    padding: 0 0 0 0;
+}
+/*POWER MENU WIDGET*/
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: #ffffff;
+	font-weight: 600;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.power-menu-widget .label {
+	color: #f38ba8;
+	font-size: 13px;
+}
+.power-menu-popup {
+	background-color: rgba(24, 24, 37, 0.9);
+	border-radius: 12px;
+	border: 4px solid rgb(41, 42, 58);
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 240px;
+	height: 120px;
+	border-radius: 8px;
+	background-color: rgb(41, 42, 58);
+	font-family: "SegoeUI";
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	margin: 8px;
+}
+.power-menu-popup .button.hover {
+	background-color: rgb(55, 56, 75);
+	border: 1px solid rgb(55, 56, 75);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.95);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.power-menu-popup .button .icon {
+	font-size: 48px;
+	padding-top: 8px;
+	color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+}
+.power-menu-popup .button.shutdown .icon {
+	color: rgba(137, 180, 250, 0.55);
+}
+.power-menu-popup .button.shutdown .label {
+	color: rgba(137, 180, 250, 0.95);
+}
+
+/* ICONS */
+.icon {
+	font-size: 16px;
+}
+.volume-widget .icon {
+	color: #89b4fa;
+	margin: 1px 2px 0 0;
+}
+ 
+/* WEATHER WIDGET */
+.weather-widget .icon {
+	font-size: 16px;
+	margin: 0 2px 1px 0;
+}
+.weather-widget .icon.sunnyDay {
+	color: rgb(221, 210, 107);
+}
+.weather-widget .icon.clearNight {
+	color: rgb(107, 189, 221);
+	font-size: 22px;
+	margin: 1px 2px 0px 0;
+}
+
+/* MEDIA WIDGET */
+.media-widget {
+	padding: 0;
+	padding-left: 2px;
+	margin: 0;
+	border-radius: 16px;
+	margin-right: 8px;
+}
+.media-widget .label {
+	background-color: rgba(0, 0, 0, 0.0);
+}
+.media-widget .btn {
+	color: #acb2c9;
+	padding: 0 3px;
+	margin: 4px 0;
+    font-weight: 500;
+	font-family: Segoe Fluent Icons;
+}
+.media-widget .btn:hover {
+	color: #ffffff;
+}
+.media-widget .btn.play {
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 14px;
+	font-size: 16px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+	color: #7d8297;
+	font-size: 12px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/* TASBAR WIDGET */
+.taskbar-widget {
+    padding: 0;
+    margin: 0;
+}
+.taskbar-widget .app-icon {
+    padding:0 6px;
+}
+.win-button-widget .label {
+    font-size: 18px;
+}
