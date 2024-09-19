@@ -1,14 +1,36 @@
 {
-    "7d3895d4-454b-40db-a2f9-44a238d5793b": {
-        "id": "7d3895d4-454b-40db-a2f9-44a238d5793b",
-        "name": "Windows 11 Theme",
-        "description": "Windows 11 Theme",
+    "61e6a045-e090-4f33-a41b-6938702eb446": {
+        "id": "61e6a045-e090-4f33-a41b-6938702eb446",
+        "name": "Yasb 001",
+        "description": "Simple yasb theme",
         "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png",
         "author": "amnweb"
+    },
+    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
+        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
+        "name": "Default",
+        "description": "Default YASB theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
+        "author": "amnweb"
+    },
+    "c353fb20-a4dc-40dd-baaa-71561dc0308d": {
+        "id": "c353fb20-a4dc-40dd-baaa-71561dc0308d",
+        "name": "Aura",
+        "description": "A minimal theme with Acrylic background.",
+        "homepage": "https://github.com/ashwinjadhav818/dotfiles",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/config.yml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/image.png",
+        "author": "ashwinjadhav818"
     },
     "56d372d9-3806-499f-9caf-03782b11413b": {
         "id": "56d372d9-3806-499f-9caf-03782b11413b",
@@ -32,26 +54,15 @@
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png",
         "author": "amnweb"
     },
-    "c353fb20-a4dc-40dd-baaa-71561dc0308d": {
-        "id": "c353fb20-a4dc-40dd-baaa-71561dc0308d",
-        "name": "Aura",
-        "description": "A minimal theme with Acrylic background.",
-        "homepage": "https://github.com/ashwinjadhav818/dotfiles",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/config.yml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/image.png",
-        "author": "ashwinjadhav818"
-    },
-    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
-        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
-        "name": "Default",
-        "description": "Default YASB theme",
+    "7d3895d4-454b-40db-a2f9-44a238d5793b": {
+        "id": "7d3895d4-454b-40db-a2f9-44a238d5793b",
+        "name": "Windows 11 Theme",
+        "description": "Windows 11 Theme",
         "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png",
         "author": "amnweb"
     }
 }
