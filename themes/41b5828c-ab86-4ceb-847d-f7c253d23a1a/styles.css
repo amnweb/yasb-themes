@@ -1,0 +1,259 @@
+/*
+A version of Nord's arctic, north-bluish color palette, 
+with a Nord4 based colour pallete for light mode, 
+and a Nord0 based colour pallete for dark mode.
+
+:root {
+	--nord0: rgb(46, 52, 64); // Darkest Night
+	--nord1: rgb(59, 66, 82);
+	--nord2: rgb(67, 76, 94);
+	--nord3: rgb(76, 86, 106); // Lightest Night
+  
+	--nord4: rgb(216, 222, 233); // Darkest Snow
+	--nord5: rgb(229, 233, 240);
+	--nord6: rgb(236, 239, 244); // Lighest Snow
+	
+	--nord7: rgb(143, 188, 187); // Light Frost
+	--nord8: rgb(136, 192, 208); // Lightest Frost
+	--nord9: rgb(129, 161, 193); // Dark Frost
+	--nord10: rgb(94, 129, 172); // Darkest Frost
+
+--nord11: rgb(191, 97, 106);  // Red
+	--nord12: rgb(208, 135, 112); // Orange
+	--nord13: rgb(235, 203, 139); // Yellow
+	--nord14: rgb(163, 190, 140); // Green
+	--nord15: rgb(180, 142, 173); // Magenta
+}
+*/
+
+* {
+	font-size: 12px;
+	color: rgb(76, 86, 106);
+	font-weight: 500;
+	font-family: "JetBrainsMono Nerd Font";
+	margin: 0;
+	padding: 0;
+}
+
+.yasb-bar {
+	padding: 0;
+	margin: 0;
+    background-color: rgb(216, 222, 233);
+	border-radius: 5px;
+}
+
+.widget {
+	padding: 0 8px;
+	margin: 0 4px;
+}
+.widget .label {
+	padding: 0px 2px; 
+}
+.widget .label.alt {
+	padding: 0px 8px;
+}
+
+.active-window-widget {
+	border-radius: 4px;
+	margin-left: 8px;
+}
+
+.komorebi-workspaces {
+	margin: 4px 4px;
+	border-radius: 4px;
+    padding: 4px 0;
+}
+.komorebi-workspaces .ws-btn {
+	font-size: 12px;
+    border: none;
+    color: rgb(76, 86, 106);
+    padding: 0 8px 0 8px;
+}
+.komorebi-workspaces .ws-btn:hover {
+    color: rgb(46, 52, 64);
+}
+.komorebi-workspaces .ws-btn.populated {
+	color: rgb(76, 86, 106);
+}
+.komorebi-workspaces .ws-btn.active {
+    color: rgb(129, 161, 193);
+}
+
+/* Blue Power Button: rgb(94, 129, 172); */
+.power-menu-widget .label {
+	color: rgb(191, 97, 106);
+	font-size: 16px;
+	padding-right: 4px;
+}
+
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: rgb(216, 222, 233);
+	font-weight: 600;
+}
+.power-menu-popup {
+	background-color: rgb(46, 52, 64);
+	border-radius: 6px;
+}
+.power-menu-popup .button {
+	width: 240px;
+	height: 120px;
+	border-radius: 8px;
+	background-color: rgb(59, 66, 82);
+	color: rgb(229, 233, 240);
+	margin: 8px;
+}
+.power-menu-popup .button.hover {
+	background-color: rgb(76, 86, 106);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	color: rgb(216, 222, 233);
+}
+
+.power-menu-popup .button .icon {
+	font-size: 48px;
+	padding-top: 12px;
+	padding-right: 8px;
+	color: rgb(229, 233, 240);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgb(94, 129, 172);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgb(94, 129, 172);
+}
+
+/* Blue Power Button: rgb(143, 188, 187); */
+.power-menu-popup .button.shutdown .icon {
+	color: rgb(191, 97, 106);
+}
+.power-menu-popup .button.shutdown .label {
+	color: rgb(191, 97, 106);
+}
+
+/* ICONS */
+.icon {
+	font-size: 16px;
+    margin-right:4px;
+}
+.cpu-widget .icon {
+	font-size: 14px;
+	color: rgb(163, 190, 140);
+}
+
+.memory-widget .icon {
+	font-size: 14px;
+	color: rgb(208, 135, 112);
+}
+
+.weather-widget .label,
+.weather-widget .icon {
+    color: rgb(235, 203, 139);
+}
+.weather-widget .icon {
+	font-size: 16px;
+}
+.weather-widget .icon.clearNight {
+	font-size: 16px;
+}
+.weather-widget .icon.cloudyNight {
+    font-size: 18px;
+}
+
+.volume-widget .icon {
+	color: rgb(129, 161, 193);
+}
+
+.taskbar-widget .app-icon{
+    padding:0 6px;
+    border: none;
+    margin: 0;
+}
+
+/* NEW MEDIA WIDGET */
+.media-widget {
+	padding: 0;
+	margin: 0;
+    border-radius: 0;
+}
+.media-widget .label {
+	color: rgb(46, 52, 64);
+	padding: 0 4px;
+	font-size: 11px;
+}
+.media-widget .btn {
+	color: rgb(76, 86, 106);
+	padding: 0 3px;
+	margin: 4px 0;
+}
+.media-widget .btn:hover {
+	color: rgb(46, 52, 64);
+}
+.media-widget .btn.play {
+	font-size: 16px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+	color: rgb(76, 86, 106);
+	font-size: 12px;
+}
+
+/* SYSTEM WIDGET */
+/* Grey Sys Widget: Remove colour attribute */
+.system-widget .label {
+	font-size: 24px;
+	color: rgb(94, 129, 172);
+}
+
+/* DARK THEME BELOW */
+
+*.dark .label {
+	color: rgb(236, 239, 244);
+}
+
+.yasb-bar.dark {
+    background-color: rgb(46, 52, 64);
+}
+
+*.dark .komorebi-workspaces .ws-btn {
+    color: rgb(76, 86, 106);
+}
+*.dark .komorebi-workspaces .ws-btn:hover {
+    color: rgb(129, 161, 193);
+}
+*.dark .komorebi-workspaces .ws-btn.populated {
+	color: rgb(76, 86, 106);
+}
+*.dark .komorebi-workspaces .ws-btn.active {
+    color: rgb(129, 161, 193);
+}
+
+/* Blue Power Button: rgb(94, 129, 172); */
+*.dark .power-menu-widget .label {
+	color: rgb(191, 97, 106);
+}
+
+/* NEW MEDIA WIDGET */
+*.dark .media-widget .label {
+	color: rgb(216, 222, 233);
+}
+*.dark .media-widget .btn {
+	color: rgb(216, 222, 233);
+}
+*.dark .media-widget .btn:hover {
+	color: rgb(236, 239, 244);
+}
+*.dark .media-widget .btn.disabled:hover,
+*.dark .media-widget .btn.disabled {
+	color: rgb(216, 222, 233);
+}
+
+/* SYSTEM WIDGET */
+/* Grey Sys Widget: Remove colour attribute */
+*.dark .system-widget .label {
+	font-size: 24px;
+	color: rgb(94, 129, 172);
+}
