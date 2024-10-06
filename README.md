@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Nord Dynamic](themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a)
+
+<a title="Nord Dynamic YASB Theme" href="themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png" width="830px"></a>
+
+
 ## [Yasb 001](themes/61e6a045-e090-4f33-a41b-6938702eb446)
 
 <a title="Yasb 001 YASB Theme" href="themes/61e6a045-e090-4f33-a41b-6938702eb446"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png" width="830px"></a>
