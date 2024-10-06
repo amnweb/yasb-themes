@@ -1,4 +1,15 @@
 {
+    "41b5828c-ab86-4ceb-847d-f7c253d23a1a": {
+        "id": "41b5828c-ab86-4ceb-847d-f7c253d23a1a",
+        "name": "Nord Dynamic",
+        "description": "A Nord based theme, with light and dark variants.",
+        "homepage": "https://github.com/S-N00B-1/Nord-Dynamic-Yasb-Theme",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png",
+        "author": "S-N00B-1"
+    },
     "61e6a045-e090-4f33-a41b-6938702eb446": {
         "id": "61e6a045-e090-4f33-a41b-6938702eb446",
         "name": "Yasb 001",
