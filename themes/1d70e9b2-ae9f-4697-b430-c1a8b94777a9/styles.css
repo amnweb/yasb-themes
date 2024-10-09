@@ -1,0 +1,195 @@
+* {
+	font-size: 12px;
+	font-weight: 600;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+    color: #a6abcc;
+}
+.yasb-bar {
+	padding: 0;
+	margin: 0;
+} 
+.widget {
+	background-color: #24273a;
+	padding: 0 4px;
+	margin: 0 4px;
+    border-radius: 12px;
+}
+.dark .widget {
+	background-color: #cad3f5;
+}
+.widget .label {
+	padding: 0px 2px; 
+}
+.widget .label.alt {
+	padding: 0px 8px;
+}
+.icon {
+	font-size: 16px;
+}
+.komorebi-workspaces {
+    margin: 0;
+    padding: 0;
+}
+.komorebi-workspaces .offline-status {
+    color: #627199;
+    font-size: 12px;
+    padding: 0 4px;
+    font-weight:600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: #b8c0e0;
+	margin:0 2px;
+    font-size: 12px;
+	color:  #3a3e4d;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+.komorebi-workspaces .ws-btn:hover {
+    background-color: #a5adcb;
+}
+.komorebi-workspaces .ws-btn.populated {
+    background-color: #a5adcb;
+}
+.komorebi-workspaces .ws-btn.active {
+	color: #181926;
+    background-color:#8087a2;
+    width:48px;
+}
+.apps-widget,
+.dark .apps-widget {
+	padding: 0;
+    background-color: transparent;
+}
+.apps-widget .label {
+	font-size: 15px;
+	padding: 0 2px;
+    color: #cad3f5;
+}
+.apps-widget .label:hover {
+	color: #a5b8e9;
+}
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: rgba(191, 202, 219, 0.726);
+	font-weight: 600;
+}
+.power-menu-widget,
+.dark .power-menu-widget {
+    background-color: transparent;
+}
+.power-menu-widget .label {
+	font-size: 13px;
+}
+.power-menu-popup {
+	background-color: rgba(24, 24, 37, 0);
+	border-radius: 12px; 
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 180px;
+	height: 230px;
+	border-radius: 8px;
+	background-color: rgba(41, 42, 58, 0.5);
+	color: white;
+	border-left: 4px solid rgba(58, 59, 83, 0);
+    border-right: 4px solid rgba(58, 59, 83, 0);
+    border-top: 8px solid rgba(58, 59, 83, 0);
+    border-bottom: 8px solid rgba(58, 59, 83, 0);
+	margin: 0px;
+}
+.power-menu-popup .button.hover {
+	background-color: rgb(41, 42, 58);
+	border-left: 4px solid rgb(41, 42, 58);
+    border-right: 4px solid rgb(41, 42, 58);
+    border-top: 8px solid rgb(41, 42, 58);
+    border-bottom: 8px solid rgb(41, 42, 58);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.5);
+ 
+}
+.power-menu-popup .button .icon {
+	font-size: 64px;
+	padding-top: 32px;
+	color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+    padding: 0;
+    margin: 0;
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+    margin: 0;
+}
+.power-menu-popup .button.cancel {
+    height: 32px;
+    border-radius: 4px;
+}
+.volume-widget .icon {
+	margin: 1px 2px 0 0;
+}
+.wifi-widget .icon {
+	padding: 0 6px;
+	margin: 0;
+}
+.weather-widget,
+.volume-widget {
+    padding:0 6px;
+}
+.weather-widget .icon {
+	font-size: 16px;
+	margin: 0 2px 0px 0;
+}
+.custom-menu-widget {
+	padding: 0 8px 0 8px;
+	border-radius: 12px;
+}
+.custom-menu-widget .label {
+    font-weight: bold;
+}
+.taskbar-widget,
+.dark .taskbar-widget {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+.taskbar-widget .app-icon{
+    padding:0 6px;
+    border: none;
+    margin: 0;
+}
+.whkd-widget,
+*.dark .whkd-widget {
+    background-color: transparent;
+    padding: 0 6px 0 6px;
+}
+.whkd-widget .icon {
+    font-size: 15px;
+}
+.label,
+.icon {
+	color: #cad3f5
+}
+*.dark .label,
+*.dark .icon {
+	color: #292c3c
+}
+.apps-widget .label,
+.power-menu-widget .label,
+.whkd-widget .icon {
+    color: #292c3c;
+}
+*.dark .apps-widget .label,
+*.dark .power-menu-widget .label,
+*.dark .whkd-widget .icon {
+    color: #cad3f5;
+}
