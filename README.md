@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Yasb 002 Dynamic](themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9)
+
+<a title="Yasb 002 Dynamic YASB Theme" href="themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png" width="830px"></a>
+
+
 ## [Nord Dynamic](themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a)
 
 <a title="Nord Dynamic YASB Theme" href="themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png" width="830px"></a>
@@ -27,16 +32,6 @@ To update a theme, please follow these steps:
 <a title="Yasb 001 YASB Theme" href="themes/61e6a045-e090-4f33-a41b-6938702eb446"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png" width="830px"></a>
 
 
-## [Default](themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491)
-
-<a title="Default YASB Theme" href="themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png" width="830px"></a>
-
-
-## [Aura](themes/c353fb20-a4dc-40dd-baaa-71561dc0308d)
-
-<a title="Aura YASB Theme" href="themes/c353fb20-a4dc-40dd-baaa-71561dc0308d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/image.png" width="830px"></a>
-
-
 ## [Catppuccin Mocha](themes/56d372d9-3806-499f-9caf-03782b11413b)
 
 <a title="Catppuccin Mocha YASB Theme" href="themes/56d372d9-3806-499f-9caf-03782b11413b"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/image.png" width="830px"></a>
@@ -45,6 +40,16 @@ To update a theme, please follow these steps:
 ## [Acrylic](themes/a93f1976-0c89-4593-b333-eaa374164c73)
 
 <a title="Acrylic YASB Theme" href="themes/a93f1976-0c89-4593-b333-eaa374164c73"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png" width="830px"></a>
+
+
+## [Aura](themes/c353fb20-a4dc-40dd-baaa-71561dc0308d)
+
+<a title="Aura YASB Theme" href="themes/c353fb20-a4dc-40dd-baaa-71561dc0308d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/image.png" width="830px"></a>
+
+
+## [Default](themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491)
+
+<a title="Default YASB Theme" href="themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png" width="830px"></a>
 
 
 ## [Windows 11 Theme](themes/7d3895d4-454b-40db-a2f9-44a238d5793b)
