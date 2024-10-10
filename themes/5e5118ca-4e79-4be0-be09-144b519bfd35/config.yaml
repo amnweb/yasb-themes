@@ -1,0 +1,130 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+bars:
+  primary-bar:
+    enabled: true
+    screens: ['*'] 
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: false
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 28
+    padding:
+      top: 3
+      left: 6
+      bottom: 0
+      right: 6
+    widgets:
+      left:
+        [ 
+          "app_button",
+          "apps",
+          "komorebi_workspaces"
+        ]
+      center: []
+      right:
+        [
+          "traffic",
+          "weather",
+          "clock",
+          "power_menu"
+        ]
+widgets:
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%H:%M}"
+      label_alt: "{%A, %d %B %Y %H:%M}"
+      timezones: []
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+        label_offline: "\u26a1 Offline"
+        label_workspace_btn: "\udb81\udc3d"
+        label_workspace_active_btn: ""
+        label_workspace_populated_btn: "\udb81\udc3e"
+        label_default_name: "{index}"
+        label_zero_index: false
+        hide_empty_workspaces: false
+        hide_if_offline: false
+        animation: true
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp_c}"
+      label_alt: "{location}: Min {min_temp_c}, Max {max_temp_c}, Humidity {humidity}"
+      api_key: '3bf4cf9a7c3f40d6b31174128242807'
+      update_interval: 600
+      hide_decimal: true
+      location: 'London'
+      callbacks:
+        on_left: "toggle_label"
+      icons: 
+        sunnyDay: "\udb81\udd99"
+        clearNight: "\udb81\udd94"
+        cloudyDay: "\uebaa"
+        cloudyNight: "\uebaa"
+        rainyDay: "\udb81\udd96"
+        rainyNight: "\udb81\udd96"
+        snowyIcyDay: "\udb81\udd92"
+        snowyIcyNight: "\udb81\udd92"
+        blizzard: "\udb81\udd93"
+        default: "\uebaa"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 200 # Milisecond 
+      button_row: 3 # Number of buttons in row, min 1 max 5
+      buttons:
+        shutdown: ["\uf011","Shut Down"]
+        restart: ["\uead2","Restart"]
+        signout: ["\udb80\udf43","Sign out"]
+        hibernate: ["\uf28e","Hibernate"]
+        sleep: ["\u23fe","Sleep"]
+        cancel: ["\udb81\udf3a","Cancel"]
+  traffic:
+      type: "yasb.traffic.TrafficWidget"
+      options:
+        label: "<span>\udb86\uddb3</span>{download_speed}<span class=\"tr_sep\">\ue621</span><span>\udb86\uddb2</span>{upload_speed}"
+        label_alt: "Download {download_speed} \ue621 Upload {upload_speed}"
+        update_interval: 1000 # Update interval should be a multiple of 1000
+        callbacks:
+          on_left: "toggle_label"
+          on_right: "exec cmd /c Taskmgr"
+  apps:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - {icon: "File", launch: "explorer"}
+        - {icon: "Code", launch: "code"}
+        - {icon: "Terminal", launch: "wt"}
+        - {icon: "Notepad", launch: "notepad"}
+  app_button:
+      type: "yasb.custom.CustomWidget"
+      options:
+        label: "<span>\uf40e</span>"
+        label_alt: "<span>\uf40e</span>"
+        class_name: "app-button"
+        callbacks:
+          on_left: "exec start_menu"
