@@ -1,0 +1,172 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+bars:
+  primary-bar:
+    enabled: true
+    screens: ['*'] 
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: false
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 28
+    padding:
+      top: 4
+      left: 4
+      bottom: 0
+      right: 4
+    widgets:
+      left:
+        [
+          "win_button",
+          "komorebi_workspaces",
+          "traffic"
+        ]
+      center: [
+         "active_window"
+        ]
+      right:
+        [
+          "taskbar",
+          "language",
+          "weather",
+          "volume",
+          "clock",
+          "power_menu",
+        ]
+widgets:
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "<span>\uf11c</span>{lang[country_code]}"
+      update_interval: 5
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 14
+      max_length: 56
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "<span>\udb83\ude17</span>{%a %b %d %H:%M}"
+      label_alt: "<span>\udb83\ude17</span>{%A, %d %B %Y %H:%M}"
+      timezones: []
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+        label_offline: "\u26a1 Offline"
+        label_workspace_btn: ""
+        label_workspace_active_btn: ""
+        label_workspace_populated_btn: ""
+        label_default_name: "{index}"
+        label_zero_index: false
+        hide_empty_workspaces: false
+        hide_if_offline: false
+        animation: true
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp_c}"
+      label_alt: "<span>{icon}</span> {location}: Min {min_temp_c}, Max {max_temp_c}, Humidity {humidity}"
+      api_key: '24b6c2cda6d84066b0304531241908'
+      update_interval: 600 #Update interval in seconds, Min 600
+      hide_decimal: true
+      location: 'USA Los Angeles 90006'
+      callbacks:
+        on_left: "toggle_label"
+      icons: 
+        sunnyDay: "\udb81\udd99"
+        clearNight: "\udb81\udd99"
+        cloudyDay: "\udb81\udd99"
+        cloudyNight: "\udb81\udd99"
+        rainyDay: "\udb81\udd99"
+        rainyNight: "\udb81\udd99"
+        snowyIcyDay: "\udb81\udd99"
+        snowyIcyNight: "\udb81\udd99"
+        blizzard: "\udb81\udd99"
+        default: "\udb81\udd99"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8"  # Icon for muted
+        - "\uf026"  # Icon for 0-10% volume
+        - "\uf027"  # Icon for 11-30% volume
+        - "\uf027"  # Icon for 31-60% volume
+        - "\uf028"  # Icon for 61-100% volume
+      callbacks:
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "<span>\uf011</span>"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 200 # Milisecond 
+      button_row: 5 # Number of buttons in row, min 1 max 5
+      buttons:
+        shutdown: ["\uf011","Shut Down"]
+        restart: ["\uead2","Restart"]
+        signout: ["\udb80\udf43","Sign out"]
+        hibernate: ["\uf28e","Hibernate"]
+        sleep: ["\u23fe","Sleep"]
+        cancel: ["","Cancel"]
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      animation: true
+      icon_size: 14
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  win_button:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "<span>\udb80\udf5c</span>"
+      label_alt: "<span>\udb80\udf5c</span>"
+      class_name: "win-btn"
+      callbacks:
+        on_left: "exec start_menu"
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "<span>\udb82\udcfa</span> \uea9a{download_speed} \ueaa1{upload_speed}"
+      label_alt: "<span>\udb82\udcfa</span> Download {download_speed} | Upload {upload_speed}"
+      update_interval: 1000
+      callbacks:
+        on_left: 'toggle_label'
+        on_right: 'exec cmd /c Taskmgr'
