@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Spectrum Symphony](themes/edb987a6-0df1-43c6-b274-0393bf469bf1)
+
+<a title="Spectrum Symphony YASB Theme" href="themes/edb987a6-0df1-43c6-b274-0393bf469bf1"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/image.png" width="830px"></a>
+
+
 ## [Yasb 003](themes/5e5118ca-4e79-4be0-be09-144b519bfd35)
 
 <a title="Yasb 003 YASB Theme" href="themes/5e5118ca-4e79-4be0-be09-144b519bfd35"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/image.png" width="830px"></a>
