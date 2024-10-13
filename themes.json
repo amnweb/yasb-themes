@@ -1,4 +1,15 @@
 {
+    "edb987a6-0df1-43c6-b274-0393bf469bf1": {
+        "id": "edb987a6-0df1-43c6-b274-0393bf469bf1",
+        "name": "Spectrum Symphony",
+        "description": "A vibrant theme with a harmonious blend of colors for a visually stunning experience.",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/image.png",
+        "author": "amnweb"
+    },
     "5e5118ca-4e79-4be0-be09-144b519bfd35": {
         "id": "5e5118ca-4e79-4be0-be09-144b519bfd35",
         "name": "Yasb 003",
