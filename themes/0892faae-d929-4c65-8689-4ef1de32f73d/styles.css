@@ -1,0 +1,300 @@
+:root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface0: #282936;
+    --base: #1e1e2e;
+    --mantle: rgba(24, 24, 37, 0.5);
+    --crust: rgba(17, 17, 27, 0.5);
+}
+*{
+	font-size: 12px;
+	color: var(--subtext0);
+	font-weight: 600;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0;
+	margin: 0; 
+    background-color: var(--crust)
+}
+.widget {
+	padding: 0 12px;
+	margin: 0;
+}
+.icon {
+	font-size: 16px;
+}
+.widget .label {
+	padding: 0px 2px; 
+}
+
+.apps-widget {
+	padding: 0 4px 0 2px;
+}
+.komorebi-active-layout {
+	padding: 0 4px 0 0;
+}
+.komorebi-active-layout .label {
+	font-weight: 600;
+	padding: 2px 0 0 0;
+}
+.apps-widget .widget-container,
+.komorebi-workspaces .widget-container,
+.komorebi-active-layout .widget-container{
+	background-color: var(--crust);
+	margin: 4px 0 4px 0;
+	border-radius: 12px;
+    border: 0px solid var(--surface1);
+}
+.komorebi-workspaces .widget-container {
+    border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+    margin-left: 4px;
+}
+.komorebi-workspaces {
+	border-top-right-radius: 14px;
+	border-bottom-right-radius: 14px;
+	padding: 0 4px 0 0;
+}
+.komorebi-workspaces .offline-status {
+    color: var(--surface2);
+    font-size: 12px;
+    padding: 0 0 0 4px;
+    font-weight:600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color:transparent;
+	margin:0;
+    font-size: 12px;
+	color:  var(--overlay1);
+    height: 28px;
+    width: 18px;
+}
+.komorebi-workspaces .ws-btn:hover {
+    color: var(--subtext1);
+}
+.komorebi-workspaces .ws-btn.populated {
+    color:transparent;
+    width: 10px;
+    height: 10px;
+    background-color: var(--lavender);
+    border-radius: 5px;
+    margin: 0 4px;
+    font-size: 1px;
+}
+.komorebi-workspaces .ws-btn.active {
+	color: transparent;
+    background-color: var(--blue);
+    width: 36px;
+    height: 10px;
+    margin: 0 4px;
+    border-radius: 5px; 
+}
+.apps-widget .label {
+	font-size: 14px;
+	padding: 0 2px;
+    color: var(--subtext0);
+}
+.apps-widget .label:hover {
+	color: var(--text);
+}
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: var(--surface2);
+	font-weight: 600;
+ 
+}
+.power-menu-widget .label {
+	color: #f38ba8;
+	font-size: 13px;
+}
+.power-menu-popup {
+	background-color: transparent	 
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 180px;
+	height: 230px;
+	border-radius: 8px;
+	background-color: var(--base);
+	color:var(--text);
+	border-left: 4px solid rgba(58, 59, 83, 0);
+    border-right: 4px solid rgba(58, 59, 83, 0);
+    border-top: 8px solid rgba(58, 59, 83, 0);
+    border-bottom: 8px solid rgba(58, 59, 83, 0);
+	margin: 0px;
+}
+.power-menu-popup .button.hover {
+	background-color:var(--surface0);
+	border-left: 4px solid var(--surface0);
+    border-right: 4px solid var(--surface0);
+    border-top: 8px solid var(--surface0);
+    border-bottom: 8px solid var(--surface0);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--surface2)
+ 
+}
+.power-menu-popup .button .icon {
+	font-size: 64px;
+	padding-top: 32px;
+	color: var(--surface2)
+}
+.power-menu-popup .button.cancel .icon {
+    padding: 0;
+    margin: 0;
+}
+.power-menu-popup .button.cancel .label {
+	color: var(--red);
+    margin: 0;
+}
+.power-menu-popup .button.cancel {
+    height: 32px;
+    border-radius: 4px;
+}
+.volume-widget .icon {
+	color: var(--blue);
+	margin: 1px 2px 0 0;
+}
+.github-widget .icon {
+    font-size: 14px;
+	color: var(--text)
+}
+.github-widget .icon.new-notification {
+    color: var(--red);
+}
+.weather-widget,
+.github-widget,
+.volume-widget {
+    padding:0 6px;
+}
+.weather-widget .icon {
+	font-size: 18px;
+	margin: 0 2px 1px 0;
+    color: var(--yellow);
+}
+.ai-widget {
+	padding: 0 4px 0 4px;
+    margin: 0;
+}
+.ai-widget .widget-container
+ {
+ 	margin: 4px 0 4px 0;
+	border-radius: 12px;
+}
+.ai-widget .icon {
+	color: var(--sky);
+	padding: 0 5px;
+    font-size: 16px;
+	margin: 0;
+}
+.ai-widget .icon:hover {
+	color: #fff;
+}
+.taskbar-widget{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+.taskbar-widget .app-icon{
+    padding:0 6px;
+    border: none;
+    margin: 0;
+}
+.whkd-widget {
+    padding: 0 6px 0 6px;
+}
+.whkd-widget .icon {
+    font-size: 14px;
+}
+.wallpapers-widget {
+    padding: 0 6px 0 6px;
+}
+.wallpapers-gallery-window {
+    background-color: rgba(85, 42, 240, 0.01);
+    border: 0;
+    margin: 0;
+}
+.wallpapers-gallery-buttons {
+    background-color:rgba(255, 255, 255, 0);
+    color:var(--text);
+    border: none;
+    font-size: 14px;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin:0 8px 8px 8px;
+    width: 600px;
+}
+.wallpapers-gallery-buttons:hover {
+    background-color:rgba(255, 255, 255, 0.1)
+}
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 10px;
+ 
+}
+.wallpapers-gallery-image:hover {
+    border: 4px solid var(--sapphire);
+}
+.wallpapers-gallery-image.focused {
+    border: 4px solid var(--sapphire);
+}
+
+.update-check-widget {
+    padding: 0 0px 0 0px;
+}
+.update-check-widget .icon {
+    font-size: 14px;
+}
+.update-check-widget .widget-container.winget,
+.update-check-widget .widget-container.windows {
+    background: var(--maroon);
+    margin: 7px 2px 7px 2px;
+    border-radius: 9px;
+    border: 2px solid var(--red);
+}
+.update-check-widget .widget-container.windows {
+    background: var(--lavender);
+    margin: 7px 2px 7px 2px;
+    border-radius: 9px;
+    border: 2px solid var(--blue);
+}
+.update-check-widget .widget-container.winget .icon,
+.update-check-widget .widget-container.windows .icon {
+    color: var(--base);
+    margin: 0 1px 0 6px;
+}
+.update-check-widget .widget-container.winget .label,
+.update-check-widget .widget-container.windows .label {
+    margin: 0 6px 0 1px;
+    color: var(--base);
+    font-weight: 900;
+    font-size: 14px;
+}
