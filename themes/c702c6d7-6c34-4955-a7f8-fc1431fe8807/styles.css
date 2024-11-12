@@ -1,0 +1,152 @@
+* {
+    font-size: 12px;
+    color: #e0e3ee;
+    font-weight: 600;
+    font-family: "Segoe UI", "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+.yasb-bar {
+    padding: 0 8px;
+    margin: 0;
+    background-color: rgba(14, 18, 26, 0.712);
+    border-radius: 8px;
+    border: 1px solid rgb(45, 54, 68);
+}
+.widget {
+    padding: 0 8px;
+    margin: 0;
+}
+.widget .label {
+    padding: 0px 2px 1px 0;
+}
+.widget .label.alt {
+    padding: 0px 8px;
+}
+.komorebi-workspaces .widget-container {
+    margin-left: 0px;
+}
+.komorebi-workspaces .widget-container {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none
+}
+.komorebi-workspaces .offline-status {
+    color: #627199;
+    font-size: 12px;
+    padding: 0 4px;
+    font-weight: 600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: rgb(83, 86, 99);
+    margin: 0 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0);
+}
+.komorebi-workspaces .ws-btn:hover {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgb(139, 143, 156);
+}
+.komorebi-workspaces .ws-btn.populated {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgb(139, 143, 156);
+}
+
+.komorebi-workspaces .ws-btn.active {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgb(191, 195, 209);
+    width: 36px;
+    height: 10px;
+}
+.apps-widget .label {
+    font-size: 12px;
+    font-weight: 700;
+}
+.apps-widget .label:hover {
+    color: #ffffff;
+    background-color: rgba(191, 202, 219, 0.07);
+}
+.uptime {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: rgba(191, 202, 219, 0.726);
+    font-weight: 600;
+}
+.power-menu-widget .label {
+    font-size: 13px;
+}
+.power-menu-popup {
+    background-color: rgba(24, 24, 37, 0);
+    border-radius: 12px;
+
+}
+.power-menu-popup .button {
+    padding: 0;
+    width: 180px;
+    height: 230px;
+    border-radius: 8px;
+    background-color: rgba(41, 42, 58, 0.5);
+    color: white;
+    border-left: 4px solid rgba(58, 59, 83, 0);
+    border-right: 4px solid rgba(58, 59, 83, 0);
+    border-top: 8px solid rgba(58, 59, 83, 0);
+    border-bottom: 8px solid rgba(58, 59, 83, 0);
+    margin: 0px;
+}
+.power-menu-popup .button.hover {
+    background-color: rgb(41, 42, 58);
+    border-left: 4px solid rgb(41, 42, 58);
+    border-right: 4px solid rgb(41, 42, 58);
+    border-top: 8px solid rgb(41, 42, 58);
+    border-bottom: 8px solid rgb(41, 42, 58);
+}
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+
+}
+.power-menu-popup .button .icon {
+    font-size: 64px;
+    padding-top: 32px;
+    color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+    color: rgba(243, 139, 168, 0.3);
+}
+.power-menu-popup .button.cancel .label {
+    color: rgba(243, 139, 168, 0.95);
+}
+.icon {
+    font-size: 16px;
+}
+.weather-widget {
+    padding: 0 6px;
+}
+.weather-widget .icon {
+    font-size: 16px;
+    margin: 0 2px 0px 0;
+}
+.weather-widget .icon.sunnyDay {
+    color: rgb(221, 210, 107);
+}
+.weather-widget .icon.clearNight {
+    color: rgb(107, 189, 221);
+    font-size: 16px;
+    margin: 0px 2px 1px 0;
+}
+.weather-widget .icon.cloudyNight {
+    color: rgb(107, 189, 221);
+    font-size: 18px;
+    margin: 0px 2px 1px 0;
+}
+.weather-widget .icon.cloudyDay {
+    color: rgb(129, 173, 248);
+}
+.traffic-widget .tr_sep {
+    margin: 0 6px;
+}
