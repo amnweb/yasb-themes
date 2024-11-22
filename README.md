@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Mauveyos Mocha](themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e)
+
+<a title="Mauveyos Mocha YASB Theme" href="themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/image.png" width="830px"></a>
+
+
 ## [Yasb 004](themes/0892faae-d929-4c65-8689-4ef1de32f73d)
 
 <a title="Yasb 004 YASB Theme" href="themes/0892faae-d929-4c65-8689-4ef1de32f73d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/image.png" width="830px"></a>
