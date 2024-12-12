@@ -1,24 +1,3 @@
-/*
-.widget .label {} -> Global label for all
-.active-window-widget {} -> Styles specific to the active window widget
-.clock-widget {} -> Styles specific to the clock widget
-.cpu-widget {} -> Styles specific to the CPU widget
-.memory-widget {} -> Styles specific to the memory widget
-.weather-widget {} -> Styles specific to the weather widget
-.komorebi-workspaces {} -> Styles specific to komorebi workspaces
-.komorebi-active-layout {} -> Styles specific to komorebi active layout
-.volume-widget {} -> Styles specific to the volume widget 
-.apps-widget {} -> Styles specific to the apps widget
-.power-menu-widget {} -> Styles for the power menu button widget
-.power-menu-popup {} -> Styles for the power menu popup widget
-.power-menu-popup > .button {} -> Styles for power buttons inside the popup 
-.power-menu-popup > .button > .icon,
-.power-menu-popup > .button > .label {} -> Styles for power buttons icons and labels inside the popup 
-.media-widget {} -> Styles specific to the media widget
-.github-widget {} -> Styles specific to the github widget
-.language-widget {} -> Styles specific to the language widget
-.disk-widget {} -> Styles specific to the disk widget
-*/
 * {
 	font-size: 12px;
 	color: #cdd6f4;
@@ -95,36 +74,22 @@
     background-color: transparent;
 	margin: 0 4px 0 4px;
 	color: #95a0ad;
+    border: none;
 }
 .komorebi-workspaces .ws-btn.populated {
-	color: #a0c3ee;
+	color: #fc7aa5;
 }
 .komorebi-workspaces .ws-btn:hover,
 .komorebi-workspaces .ws-btn.populated:hover,
 .komorebi-workspaces .ws-btn.active {
-	color: #c2daf7;
+	color: #98bbe9;
+    background-color: transparent;
 }
-/* .komorebi-workspaces .ws-btn {
-	border-radius: 5px;
-	font-size: 10px;
-	width: 10px;
-	height: 10px;
-	margin: 0 4px 0 4px;
-	color: rgba(255, 255, 255, 0);
-	background-color: #9399b2;
+.komorebi-workspaces .float-override {
+    color: #0eb986;
+    font-size: 14px;
+    padding: 0 0 0 8px;
 }
-.komorebi-workspaces .ws-btn:hover,
-.komorebi-workspaces .ws-btn.populated:hover {
-	background-color: #fff;
-}
-.komorebi-workspaces .ws-btn.populated {
-	background-color: #89b4fa;
-}
-.komorebi-workspaces .ws-btn.active {
-	background-color: #89b4fa;
-	color: rgba(0, 0, 0, 0);
-	width: 26px;
-} */
 .apps-widget .label {
 	font-size: 14px;
 	padding: 0 2px;
@@ -132,7 +97,6 @@
 .apps-widget .label:hover {
 	color: #fff;
 }
-
 /*POWER MENU WIDGET*/
 /* Uptime text */
 .uptime {
