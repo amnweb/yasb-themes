@@ -250,8 +250,8 @@ widgets:
   weather:
       type: "yasb.weather.WeatherWidget"
       options:
-        label: "<span>{icon}</span> {temp_c}"
-        label_alt: "Min {min_temp_c}, Max {max_temp_c}, Humidity {humidity}"
+        label: "<span>{icon}</span> {temp}"
+        label_alt: "Min {min_temp}, Max {max_temp}, Humidity {humidity}"
         api_key: '3bf4cf9a7c3f40d6b31174128242807'
         update_interval: 600 #Update interval in seconds, Min 600
         hide_decimal: true
@@ -270,7 +270,7 @@ widgets:
           blizzard: "\uebaa"
           default: "\uebaa"
           # https://www.weatherapi.com/docs/
-          # Usage {temp_c}, {min_temp_c}, {max_temp_c}, {temp_f}, {min_temp_f}, {max_temp_f}, {location}, {humidity}, {icon}, {conditions}
+          # Usage {temp}, {min_temp}, {max_temp}, {temp_f}, {min_temp_f}, {max_temp_f}, {location}, {humidity}, {icon}, {conditions}
 
   # Some custom widgets
   explorer_button:
