@@ -201,9 +201,6 @@ widgets:
       max_notification: 30
       only_unread: false
       max_field_size: 54
-      menu_width: 400
-      menu_height: 400
-      menu_offset: 240
       update_interval: 60
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
