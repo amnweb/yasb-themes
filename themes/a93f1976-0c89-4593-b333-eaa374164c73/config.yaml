@@ -305,9 +305,6 @@ widgets:
         max_notification: 20 # Max number of notification displaying in menu max: 50
         only_unread: false # Show only unread or all notifications; 
         max_field_size: 54 # Max characters in title before truncation.
-        menu_width: 400 
-        menu_height: 400 
-        menu_offset: 240 
         update_interval: 300 # Check for new notification in seconds
 
   wallapers:
