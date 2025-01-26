@@ -1,0 +1,214 @@
+# This is default and very simple configuration file for Yasb. 
+# For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
+watch_stylesheet: true
+watch_config: true
+debug: false
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    animation:
+      enabled: true
+      duration: 1000
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: false
+      round_corners: false
+      round_corners_type: "normal"
+      border_color: "System"
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 25
+    padding:
+      top: 0
+      left: 6
+      bottom: 0
+      right: 6
+    widgets:
+      left: [
+        "home",
+        "glazewm_workspaces",
+        "clock",
+        "apps"
+      ]
+      center: [
+        "media"
+      ]
+      right: [
+        "traffic",
+        "battery",
+        "volume",
+        "brightness",
+        "weather",
+        "power_menu"
+      ]
+widgets:
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\udb81\udf17</span>"
+      menu_list:
+      - { title: "User Home", path: "~" }
+      - { title: "Download", path: "~\\Downloads" }
+      - { title: "Documents", path: "~\\Documents" }
+      - { title: "Pictures", path: "~\\Pictures" }
+      system_menu: true
+      power_menu: true
+      blur: false
+  glazewm_workspaces:
+      type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+      options:
+        offline_label: "GlazeWM Offline"
+        hide_empty_workspaces: true
+        hide_if_offline: false
+
+  media:
+      type: "yasb.media.MediaWidget"
+      options:
+        label: "{title}"
+        label_alt: "{artist}"
+        max_field_size:
+          label: 64
+          label_alt: 24
+        show_thumbnail: true
+        controls_only: false
+        controls_left: true
+        hide_empty: true
+        thumbnail_alpha: 150
+        thumbnail_padding: 8
+        thumbnail_corner_radius: 0
+        icons:
+          prev_track: "\ue892"
+          next_track: "\ue893"
+          play: "\ue768"
+          pause: "\ue769"
+
+  clock:
+      type: "yasb.clock.ClockWidget"
+      options:
+        label: "{%a, %d %b %H:%M}"
+        label_alt: "{%A, %d %B %Y %H:%M}"
+        timezones: []
+
+  weather:
+      type: "yasb.weather.WeatherWidget"
+      options:
+        label: "<span>{icon}</span> {temp}"
+        label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+        api_key: "3bf4cf9a7c3f40d6b31174128242807"
+        update_interval: 600
+        hide_decimal: true
+        location: "Sweden Gothenburg 411 06"
+        callbacks:
+          on_left: "toggle_label"
+
+  wifi:
+      type: "yasb.wifi.WifiWidget"
+      options:
+        label: "<span>{wifi_icon}</span>"
+        label_alt: "{wifi_name} {wifi_strength}%"
+        update_interval: 5000
+        callbacks:
+          on_left: "exec cmd.exe /c start ms-settings:network"
+          on_middle: "do_nothing"
+          on_right: "toggle_label"
+        wifi_icons: [
+          "\udb82\udd2e",  # 0% strength icon
+          "\udb82\udd1f",  # 1-20% strength
+          "\udb82\udd22",  # 21-40% strength
+          "\udb82\udd25",  # 41-80% strength
+          "\udb82\udd28"   # 81-100% strength
+        ]
+
+  traffic:
+      type: "yasb.traffic.TrafficWidget"
+      options:
+        label: " \ueab4 {download_speed} | \ueab7 {upload_speed}"
+        label_alt: "Download {download_speed} | Upload {upload_speed}"
+        update_interval: 1000
+        callbacks:
+          on_left: "toggle_label"
+          on_right: "exec cmd /c Taskmgr"
+        animation:
+          enabled: true
+          type: "fadeInOut"
+          duration: 200
+
+  volume:
+      type: "yasb.volume.VolumeWidget"
+      options:
+        label: "<span>{icon}</span> {level}"
+        label_alt: "{volume}"
+        tooltip: false
+
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+        label: "<span>{icon}</span>{percent}%"
+        label_alt: "{icon} {percent}% | time: {time_remaining}"
+        charging_options:
+          icon_format: "{charging_icon}"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 200
+      button_row: 5
+      buttons:
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        signout: ["\udb80\udf43", "Sign out"]
+        hibernate: ["\uf28e", "Hibernate"]
+        sleep: ["\u23fe", "Sleep"]
+        cancel: ["", "Cancel"]
+  
+  brightness:
+    type: "yasb.brightness.BrightnessWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "Brightness {percent}%"
+      tooltip: true
+      auto_light: false
+      auto_light_icon: "\udb80\udce1"
+      auto_light_night_level: 35
+      auto_light_night_start_time: "19:00"
+      auto_light_night_end_time: "06:45"
+      auto_light_day_level: 75
+      brightness_icons: [
+        "\udb80\udcde",  # Icon for 0-25% brightness
+        "\udb80\udcdd",  # Icon for 26-50% brightness
+        "\udb80\udcdf",  # Icon for 51-75% brightness
+        "\udb80\udce0"   # Icon for 76-100% brightness
+      ]
+      callbacks:
+          on_left: "toggle_label"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+
+  apps:
+      type: "yasb.applications.ApplicationsWidget"
+      options:
+        container_padding:
+          top: 0
+          left: 8
+          bottom: 0
+          right: 8
+        label: "{data}"
+        app_list:
+          - { icon: "\uf422", launch: "search" }
+          - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
+          - { icon: "\udb80\ude39", launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" }
