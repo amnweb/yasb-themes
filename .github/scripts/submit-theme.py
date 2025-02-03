@@ -59,8 +59,8 @@ def validate_name(name):
     if len(name) == 0:
         print("Name is required.", file=sys.stderr)
         exit(1)
-    if len(name) > 25:
-        print("Name must be less than 25 characters.", file=sys.stderr)
+    if len(name) > 50:
+        print("Name must be less than 50 characters.", file=sys.stderr)
         exit(1)
     for char in name:
         if not char.isalnum() and char != ' ':
@@ -71,8 +71,8 @@ def validate_description(description):
     if len(description) == 0:
         print("Description is required.", file=sys.stderr)
         exit(1)
-    if len(description) > 120:
-        print("Description must be less than 100 characters.", file=sys.stderr)
+    if len(description) > 200:
+        print("Description must be less than 200 characters.", file=sys.stderr)
         exit(1)
 
 def download_image(image_url, image_path):
