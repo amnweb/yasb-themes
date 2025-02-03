@@ -1,0 +1,266 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+hide_taskbar: false
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    animation:
+      enabled: true
+      duration: 800
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 36
+    padding:
+      top: 4
+      left: 4
+      bottom: 0
+      right: 4
+    widgets:
+      left: [
+        "home",
+        "komorebi_workspaces",
+        "clock",
+        "apps"
+      ]
+      center: []
+      right: [
+        "disk",
+        "cpu",
+        "memory",
+        "traffic",
+        "wifi",
+        "weather",
+        "volume",
+        "notifications",
+        "power_menu"      
+        ]
+widgets:
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
+      update_interval: 2000
+      histogram_icons:
+        - '\u2581' # 0%
+        - '\u2581' # 10%
+        - '\u2582' # 20%
+        - '\u2583' # 30%
+        - '\u2584' # 40%
+        - '\u2585' # 50%
+        - '\u2586' # 60%
+        - '\u2587' # 70%
+        - '\u2588' # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+        label: "<span>\uf473</span>"
+        label_alt: "<span>\uf473</span>"
+        group_label:
+          volume_labels: ["C", "D", "E", "F"]
+          show_label_name: true 
+          blur: true
+          round_corners: true
+          border_color: None
+          alignment: "center"
+          distance: 4
+        callbacks:
+          on_left: "toggle_group"
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\udb81\udf17</span>"
+      menu_list:
+      - { title: "User Home", path: "~" }
+      - { title: "Download", path: "D:\\Downloads" }
+      - { title: "Documents", path: "C:\\Users\\amn\\Documents" }
+      - { title: "Pictures", path: "C:\\Users\\amn\\Pictures" }
+      system_menu: true
+      power_menu: true
+      blur: true
+      round_corners: true
+      border_color: None
+      distance: 4
+      menu_labels:
+        shutdown: "Shutdown"
+        restart: "Restart"
+        logout: "Logout"
+        lock: "Lock"
+        sleep: "Sleep"
+        system: "System Settings"
+        about: "About This PC"
+        task_manager: "Task Manager"
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "{wifi_name} {wifi_strength}%"
+      update_interval: 5000
+      callbacks:
+          on_left: "toggle_label"
+      wifi_icons: [
+          "\udb82\udd2e",  # Icon for 0% strength
+          "\udb82\udd1f",  # Icon for 1-20% strength
+          "\udb82\udd22",  # Icon for 21-40% strength
+          "\udb82\udd25",  # Icon for 41-80% strength
+          "\udb82\udd28"   # Icon for 81-100% strength
+      ] 
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%b %d, %H:%M}"
+      label_alt: "{%A, %d %B %Y %H:%M}"
+      tooltip: false
+      timezones: []
+      callbacks:
+        on_left: "toggle_calendar"
+      calendar: 
+        blur: true
+        round_corners: true
+        border_color: None
+        distance: 4
+        alignment: "left"
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Komorebi Offline"
+      label_workspace_btn: ""
+      label_workspace_active_btn: ""
+      label_workspace_populated_btn: ""
+      label_default_name: "{index}"
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: false
+      animation: true
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: env
+      update_interval: 120 #Update interval in seconds
+      hide_decimal: true
+      units: "metric" # "metric" or "imperial"
+      location: env # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      show_alerts: true
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "toggle_label"
+      weather_card: 
+        blur: true
+        round_corners: true
+        border_color: None
+        alignment: "right"
+        distance: 4
+        icon_size: 32
+      icons:
+        sunnyDay: "\udb81\udd99"
+        clearNight: "\udb81\udd99"
+        cloudyDay: "\udb81\udd99"
+        cloudyNight: "\udb81\udd99"
+        rainyDay: "\udb81\udd99"
+        rainyNight: "\udb81\udd99"
+        snowyIcyDay: "\udb81\udd99"
+        snowyIcyNight: "\udb81\udd99"
+        blizzard: "\udb81\udd99"
+        default: "\udb81\udd99"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      tooltip: false
+      volume_icons:
+        - "\ueee8" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+      audio_menu:
+        blur: True
+        round_corners: True
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        distance: 4
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "<span>\uf011</span>"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 200 # Milisecond
+      button_row: 5 # Number of buttons in row, min 1 max 5
+      buttons:
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        signout: ["\udb80\udf43", "Sign out"]
+        hibernate: ["\uf28e", "Hibernate"]
+        sleep: ["\u23fe", "Sleep"]
+        cancel: ["", "Cancel"]
+  apps:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - { icon: "Pictures", launch: "explorer C:\\Users\\amn\\Pictures" }
+        - { icon: "Music", launch: "explorer C:\\Users\\amn\\Music" }
+        - { icon: "Terminal", launch: "wt" }
+        - { icon: "Mail", launch: "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE" }
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "<div style=\"text-align:right\">{upload_speed} \u25b2</div><div style=\"text-align:right;\">{download_speed} \u25bc</div>"
+      update_interval: 1000
+      hide_if_offline: false
+      callbacks:
+        on_left: 'do_nothing'
+        on_middle: 'do_nothing'
+        on_right: 'do_nothing'
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\uf476</span> {count}"
+      label_alt: "{count} notifications"
+      hide_empty: true
+      tooltip: true
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "toggle_label"
+        on_middle: "do_nothing" 
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+        label: "<span>\uefc5</span> {virtual_mem_used} / {virtual_mem_total}"
+        label_alt: "<span>\uf4bc</span> VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
+        update_interval: 5000
+        callbacks:
+            on_left: "toggle_label"
+            on_middle: "do_nothing"
+            on_right: "do_nothing"
+        memory_thresholds:
+            low: 25
+            medium: 50
+            high: 90
