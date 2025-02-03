@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Soft Segment](themes/f60c809d-1378-4042-9f11-46d0e9c37cf5)
+
+<a title="Soft Segment YASB Theme" href="themes/f60c809d-1378-4042-9f11-46d0e9c37cf5"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png" width="830px"></a>
+
+
 ## [Minimal Glaze](themes/1f279c28-38a1-4067-90ed-614b87dd7290)
 
 <a title="Minimal Glaze YASB Theme" href="themes/1f279c28-38a1-4067-90ed-614b87dd7290"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png" width="830px"></a>
