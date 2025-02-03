@@ -1,4 +1,15 @@
 {
+    "f60c809d-1378-4042-9f11-46d0e9c37cf5": {
+        "id": "f60c809d-1378-4042-9f11-46d0e9c37cf5",
+        "name": "Soft Segment",
+        "description": "Theme where each widget is segmented with a 1px margin. If you want to use this theme, please enter your Weather API key and set the weather location.",
+        "homepage": "https://github.com/amnweb/yasb-themes",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png",
+        "author": "amnweb"
+    },
     "1f279c28-38a1-4067-90ed-614b87dd7290": {
         "id": "1f279c28-38a1-4067-90ed-614b87dd7290",
         "name": "Minimal Glaze",
