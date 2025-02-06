@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Everforest](themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba)
+
+<a title="Everforest YASB Theme" href="themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png" width="830px"></a>
+
+
 ## [Soft Segment](themes/f60c809d-1378-4042-9f11-46d0e9c37cf5)
 
 <a title="Soft Segment YASB Theme" href="themes/f60c809d-1378-4042-9f11-46d0e9c37cf5"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png" width="830px"></a>
