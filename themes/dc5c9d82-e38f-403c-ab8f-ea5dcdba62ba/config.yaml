@@ -79,7 +79,7 @@ widgets:
         play: "\ue768"
         pause: "\ue769"
 
-active_window:
+  active_window:
       type: "yasb.active_window.ActiveWindowWidget"
       options:
         label: "{win[title]}"
@@ -91,7 +91,7 @@ active_window:
         max_length_ellipsis: "..."
         monitor_exclusive: true
 
-battery:
+  battery:
       type: "yasb.battery.BatteryWidget"
       options:
         label: "<span>{icon}</span>{percent}%"
@@ -99,7 +99,7 @@ battery:
         charging_options:
           icon_format: "{charging_icon}"
 
-clock:
+  clock:
       type: "yasb.clock.ClockWidget"
       options:
         label: "{%a %d, %b %H:%M}"
@@ -116,7 +116,7 @@ clock:
           direction: 'down'
           distance: 12
 
-cpu:
+  cpu:
       type: "yasb.cpu.CpuWidget"
       options:
         label: "<span>\uf4bc</span> {info[percent][total]}%"
@@ -136,7 +136,7 @@ cpu:
         callbacks:
           on_right: "exec cmd /c Taskmgr"
 
-memory:
+  memory:
       type: "yasb.memory.MemoryWidget"
       options:
         label: "<span>\uefc5</span> {virtual_mem_free}"
@@ -145,7 +145,7 @@ memory:
         callbacks:
           on_right: "exec cmd /c Taskmgr"
 
-komorebi_workspaces:
+  komorebi_workspaces:
       type: "komorebi.workspaces.WorkspaceWidget"
       options:
           label_offline: "\u26a1 Offline"
@@ -163,7 +163,7 @@ komorebi_workspaces:
             bottom: 0
             right: 0
 
-komorebi_active_layout:
+  komorebi_active_layout:
       type: "komorebi.active_layout.ActiveLayoutWidget"
       options:
         hide_if_offline: true
@@ -187,7 +187,7 @@ komorebi_active_layout:
           on_middle: 'toggle_monocle'
           on_right: 'prev_layout'
 
-wifi:
+  wifi:
       type: "yasb.wifi.WifiWidget"
       options:
         label: "<span>{wifi_icon}</span>"
@@ -198,7 +198,7 @@ wifi:
           on_middle: "do_nothing"
           on_right: "toggle_label"
 
-traffic:
+  traffic:
       type: "yasb.traffic.TrafficWidget"
       options:
         label: "<span>\udb86\uddb3</span>{download_speed} | <span>\udb86\uddb2</span>{upload_speed}"
@@ -208,7 +208,7 @@ traffic:
           on_left: "toggle_label"
           on_right: "exec cmd /c Taskmgr"
 
-ip_info:
+  ip_info:
       type: "yasb.custom.CustomWidget"
       options:
         label: "<span>\udb81\udd9f</span> {data[ip]}"
@@ -223,7 +223,7 @@ ip_info:
           on_middle: "exec cmd /c ncpa.cpl" # open network settings
           on_right: "exec cmd /c start https://ipinfo.io/{data[ip]} " # open ipinfo in browser
 
-weather:
+  weather:
       type: "yasb.weather.WeatherWidget"
       options:
         label: "<span>{icon}</span> {temp}"
@@ -248,7 +248,7 @@ weather:
           # https://www.weatherapi.com/docs/
           # Usage {temp}, {min_temp}, {max_temp}, {temp_f}, {min_temp_f}, {max_temp_f}, {location}, {humidity}, {icon}, {conditions}
 
-volume:
+  volume:
       type: "yasb.volume.VolumeWidget"
       options:
         label: "<span>{icon}</span> {level}"
@@ -270,7 +270,7 @@ volume:
           direction: 'down'
           distance: 6
 
-power_menu:
+  power_menu:
       type: "yasb.power_menu.PowerMenuWidget"
       options:
         label: "\uf011"
@@ -290,7 +290,7 @@ power_menu:
           #force_shutdown: ["\uf011","Force Shut Down"]
           #force_restart: ["\uead2","Force Restart"]
 
-apps:
+  apps:
       type: "yasb.applications.ApplicationsWidget"
       options:
         label: "{data}"
@@ -308,7 +308,7 @@ apps:
           #- {icon: "\udb84\udf55", launch: "widget"}
           # Currently available to use quick_settings, notification_center, search, widget, launcher (launcher will trigger ALT+A)
 
-github:
+  github:
       type: "yasb.github.GithubWidget"
       options:
         label: "<span>\ueba1</span>"
@@ -322,7 +322,7 @@ github:
         menu_offset: 240 
         update_interval: 300 # Check for new notification in seconds
 
-wallapers:
+  wallapers:
       type: "yasb.wallpapers.WallpapersWidget"
       options:
         label: "<span>\udb83\ude09</span>"
@@ -330,7 +330,7 @@ wallapers:
         change_automatically: false # Automatically change wallpaper
         update_interval: 60 # If change_automatically is true, update interval in seconds
 
-nvidia_temp:
+  nvidia_temp:
       type: "yasb.custom.CustomWidget"
       options:
         label: "{data}<span>\udb81\udd04</span>"
@@ -341,7 +341,7 @@ nvidia_temp:
           run_interval: 10000 # run every 10 sec
           return_format: "string"
 
-win_button:
+  win_button:
       type: "yasb.custom.CustomWidget"
       options:
         label: "^_^"
