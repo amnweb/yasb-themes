@@ -1,0 +1,418 @@
+/*
+.widget .label {} -> Global label for all
+.active-window-widget {} -> Styles specific to the active window widget
+.clock-widget {} -> Styles specific to the clock widget
+.cpu-widget {} -> Styles specific to the CPU widget
+.memory-widget {} -> Styles specific to the memory widget
+.weather-widget {} -> Styles specific to the weather widget
+.komorebi-workspaces {} -> Styles specific to komorebi workspaces
+.komorebi-active-layout {} -> Styles specific to komorebi active layout
+.volume-widget {} -> Styles specific to the volume widget 
+.apps-widget {} -> Styles specific to the apps widget
+.power-menu-widget {} -> Styles for the power menu button widget
+.power-menu-popup {} -> Styles for the power menu popup widget
+.power-menu-popup > .button {} -> Styles for power buttons inside the popup 
+.power-menu-popup > .button > .icon,
+.power-menu-popup > .button > .label {} -> Styles for power buttons icons and labels inside the popup 
+.media-widget {} -> Styles specific to the media widget
+.github-widget {} -> Styles specific to the github widget
+*/
+* {
+  font-size: 12px;
+  color: #cdd6f4;
+  font-weight: 500;
+  font-family: "JetBrainsMono NFP";
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+.yasb-bar {
+  padding: 0 12px;
+  margin: 0;
+  background-color: rgba(30, 30, 46, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.widget {
+  padding: 0 12px;
+  margin: 3px 2px;
+  border-radius: 6px;
+}
+.widget:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container-left,
+.container-center,
+.container-right {
+  margin: 0;
+  padding: 0;
+}
+.active-window-widget .icon {
+  margin-right: 8px;
+}
+
+.komorebi-active-layout .label {
+  font-weight: 600;
+  padding: 2px 0 0 0;
+}
+.komorebi-workspaces .widget-container {
+  background-color: rgba(188, 195, 207, 0.1);
+  margin: 4px 0;
+  border-radius: 16px;
+  padding: 4px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.komorebi-workspaces .ws-btn {
+  font-size: 12px;
+  background-color: transparent;
+  margin: 0 4px;
+  color: #6c7086;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+.komorebi-workspaces .ws-btn.populated {
+  color: #89b4fa;
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover,
+.komorebi-workspaces .ws-btn.active {
+  background-color: rgba(137, 180, 250, 0.2);
+  color: #cdd6f4;
+}
+
+/*POWER MENU WIDGET*/
+/* Uptime text */
+.uptime {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #cdd6f4;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.power-menu-widget .label {
+  color: #f38ba8;
+  font-size: 14px;
+  text-shadow: 0 0 8px rgba(243, 139, 168, 0.4);
+  transition: text-shadow 0.3s ease;
+}
+.power-menu-widget .label:hover {
+  text-shadow: 0 0 12px rgba(243, 139, 168, 0.6);
+}
+.power-menu-popup {
+  background-color: rgba(24, 24, 37, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 24px rgba(0, 0, 0, 0.2) inset;
+  padding: 16px;
+  animation: powerMenuSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.power-menu-popup .button {
+  padding: 0;
+  width: 220px;
+  height: 110px;
+  border-radius: 16px;
+  background: rgba(41, 42, 58, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+.power-menu-popup .button:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: rgba(55, 56, 75, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.power-menu-popup .button .label {
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.power-menu-popup .button .icon {
+  font-size: 42px;
+  padding-top: 12px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+.power-menu-popup .button:hover .icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.power-menu-popup .button.cancel .icon {
+  color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+  color: rgba(243, 139, 168, 0.95);
+}
+.power-menu-popup .button.shutdown .icon {
+  color: rgba(137, 180, 250, 0.55);
+}
+.power-menu-popup .button.shutdown .label {
+  color: rgba(137, 180, 250, 0.95);
+}
+/* Button variants */
+.power-menu-popup .button.shutdown {
+  background: linear-gradient(
+    135deg,
+    rgba(137, 180, 250, 0.2),
+    rgba(137, 180, 250, 0.05)
+  );
+}
+.power-menu-popup .button.restart {
+  background: linear-gradient(
+    135deg,
+    rgba(166, 227, 161, 0.2),
+    rgba(166, 227, 161, 0.05)
+  );
+}
+.power-menu-popup .button.hibernate {
+  background: linear-gradient(
+    135deg,
+    rgba(203, 166, 247, 0.2),
+    rgba(203, 166, 247, 0.05)
+  );
+}
+.power-menu-popup .button.cancel {
+  background: linear-gradient(
+    135deg,
+    rgba(243, 139, 168, 0.2),
+    rgba(243, 139, 168, 0.05)
+  );
+}
+@keyframes powerMenuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ICONS */
+.icon {
+  font-size: 16px;
+  opacity: 0.9;
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.volume-widget .icon {
+  color: #89b4fa;
+}
+
+.cpu-widget .icon,
+.memory-widget .icon,
+.volume-widget .icon,
+.weather-widget .icon,
+.wifi-widget .icon {
+  margin: 0 6px 1px 0;
+}
+.cpu-widget .icon,
+.memory-widget .icon {
+  font-size: 14px;
+  background: linear-gradient(45deg, #cba6f7, #89b4fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.memory-widget .icon {
+  color: #a6c9f7;
+}
+.wifi-widget .icon {
+  font-size: 14px;
+  color: #43d8d8;
+}
+.weather-widget .icon {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+.weather-widget .icon.sunnyDay {
+  color: rgb(221, 210, 107);
+}
+.weather-widget .icon.clearNight {
+  color: rgb(107, 189, 221);
+  font-size: 22px;
+  margin: 1px 2px 0px 0;
+}
+
+/* MEDIA WIDGET */
+.media-widget {
+  background-color: rgba(137, 180, 250, 0.08);
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-right: 10px;
+  border: 1px solid rgba(137, 180, 250, 0.1);
+}
+.media-widget .label {
+  background-color: rgba(0, 0, 0, 0);
+}
+.media-widget .btn {
+  font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+  color: #89b4fa;
+  padding: 0px 7px;
+  margin: 0px 8px;
+  border-radius: 2px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+  opacity: 0.85;
+  text-shadow: 0 0 8px rgba(137, 180, 250, 0.2);
+}
+.media-widget .btn:hover {
+  color: #89b4fa;
+  background-color: rgba(137, 180, 250, 0.15);
+  transform: scale(1.2);
+  opacity: 1;
+  text-shadow: 0 0 12px rgba(137, 180, 250, 0.4);
+}
+.media-widget .btn.play {
+  background-color: rgba(137, 180, 250, 0.15);
+  padding: 0px 0px;
+  margin: 0px 0px;
+  font-size: 14px;
+  opacity: 1;
+}
+.media-widget .btn.play:hover {
+  background-color: rgba(137, 180, 250, 0.25);
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+  color: rgba(137, 180, 250, 0.3);
+  font-size: 14px;
+  background-color: transparent;
+  transform: none;
+  text-shadow: none;
+}
+
+/* APPS MENU WIDGET */
+.apps-widget {
+  display: flex;
+  gap: 8px;
+  background-color: rgba(137, 180, 250, 0.08);
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin: 0 8px;
+}
+
+.apps-widget .btn {
+  color: #89b4fa;
+  padding: 2px 8px;
+  margin: 0 4px;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.9;
+}
+
+.apps-widget .btn:hover {
+  background-color: rgba(137, 180, 250, 0.15);
+  transform: translateY(-1px);
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(137, 180, 250, 0.3);
+}
+
+/* NVIDIA TEMPERATURE WIDGET */
+.system-widget {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(166, 227, 161, 0.1);
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin: 0 8px;
+  color: #a6e3a1;
+}
+
+.system-widget .icon {
+  color: #a6e3a1;
+  margin-left: 4px;
+  text-shadow: 0 0 8px rgba(166, 227, 161, 0.3);
+}
+
+.system-widget .label {
+  color: #a6e3a1;
+  font-weight: 500;
+}
+
+.system-widget:hover {
+  background-color: rgba(166, 227, 161, 0.15);
+  transform: translateY(-1px);
+}
+
+/* NVIDIA TEMPERATURE WIDGET */
+.nvidia-widget {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: px 10px;
+  border-radius: 8px;
+  margin: 3px 4px;
+}
+
+.nvidia-widget .label {
+  color: #76ba1b;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.nvidia-widget span {
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.nvidia-widget:hover {
+  background-color: rgba(118, 186, 27, 0.15);
+  transform: translateY(-1px);
+}
+
+.nvidia-widget:hover .label,
+.nvidia-widget:hover span {
+  text-shadow: 0 0 8px rgba(118, 186, 27, 0.4);
+}
+
+/* WINDOWS BUTTON */
+.win-button {
+  /* background-color: rgba(137, 180, 250, 0.1); */
+  padding: 6px 10px;
+  margin: 1px 2px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.win-button .label {
+  color: #89b4fa;
+  font-size: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 0 10px rgba(137, 180, 250, 0.2);
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
+}
+
+.win-button:hover {
+  background-color: rgba(137, 180, 250, 0.15);
+  transform: translateY(-1px);
+}
+
+.win-button:hover .label {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px rgba(137, 180, 250, 0.4);
+  color: #b4befe;
+}
+
+.win-button:active {
+  transform: translateY(1px);
+}
