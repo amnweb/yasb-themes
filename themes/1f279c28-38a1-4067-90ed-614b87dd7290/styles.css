@@ -44,7 +44,7 @@ QToolTip {
     font-size: 12px;
     color: var(--subtext0);
     font-weight: 600;
-    font-family: "JetBrainsMono NFP";
+    font-family: "JetBrainsMono Nerd Font Propo";
     margin: 0;
     padding: 0;
 }
@@ -233,8 +233,6 @@ QToolTip {
     align-items: center;  /* Centers content vertically */
     justify-content: center;  /* Centers content horizontally */
 }
-
-}
 .uptime {
     font-size: 14px;
     margin-bottom: 10px;
@@ -303,11 +301,6 @@ QToolTip {
     margin: 0;
     border: none;
 }
-.wifi-widget {}
-.wifi-widget .widget-container {}
-.wifi-widget .widget-container .label {}
-.wifi-widget .widget-container .label.alt {}
-.wifi-widget .widget-container .icon {}
 .taskbar-widget .app-icon {
     padding: 0 6px;
     border: none;
