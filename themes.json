@@ -1,14 +1,36 @@
 {
-    "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba": {
-        "id": "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba",
-        "name": "Everforest",
-        "description": "An everforest theme, comfortable for the eyes. Both light and dark mode colours are available.",
+    "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042": {
+        "id": "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042",
+        "name": "Simple Floating Widgets",
+        "description": "Easily customizable, compatible with komorebi.",
+        "homepage": "https://github.com/amnweb/yasb-themes",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png",
+        "author": "elrondforwin"
+    },
+    "61e6a045-e090-4f33-a41b-6938702eb446": {
+        "id": "61e6a045-e090-4f33-a41b-6938702eb446",
+        "name": "Yasb 001",
+        "description": "Simple yasb theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png",
+        "author": "amnweb"
+    },
+    "eb3be3fa-3424-4dcb-8c83-1a143526c91e": {
+        "id": "eb3be3fa-3424-4dcb-8c83-1a143526c91e",
+        "name": "Mauveyos Mocha",
+        "description": "Catppuccin Mocha inspired theme",
         "homepage": "",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png",
-        "author": "IONODO"
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/image.png",
+        "author": "mauveyo1"
     },
     "f60c809d-1378-4042-9f11-46d0e9c37cf5": {
         "id": "f60c809d-1378-4042-9f11-46d0e9c37cf5",
@@ -19,61 +41,6 @@
         "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/config.yaml",
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png",
-        "author": "amnweb"
-    },
-    "1f279c28-38a1-4067-90ed-614b87dd7290": {
-        "id": "1f279c28-38a1-4067-90ed-614b87dd7290",
-        "name": "Minimal Glaze",
-        "description": "Practical, no bells or whistles",
-        "homepage": "",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png",
-        "author": "hax2"
-    },
-    "a93f1976-0c89-4593-b333-eaa374164c73": {
-        "id": "a93f1976-0c89-4593-b333-eaa374164c73",
-        "name": "Acrylic",
-        "description": "Acrylic YASB theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/config.yml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/README.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png",
-        "author": "amnweb"
-    },
-    "41b5828c-ab86-4ceb-847d-f7c253d23a1a": {
-        "id": "41b5828c-ab86-4ceb-847d-f7c253d23a1a",
-        "name": "Nord Dynamic",
-        "description": "A Nord based theme, with light and dark variants.",
-        "homepage": "https://github.com/S-N00B-1/Nord-Dynamic-Yasb-Theme",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png",
-        "author": "S-N00B-1"
-    },
-    "0892faae-d929-4c65-8689-4ef1de32f73d": {
-        "id": "0892faae-d929-4c65-8689-4ef1de32f73d",
-        "name": "Yasb 004",
-        "description": "My personal and favorite theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/image.png",
-        "author": "amnweb"
-    },
-    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
-        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
-        "name": "Default",
-        "description": "Default YASB theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
         "author": "amnweb"
     },
     "5e5118ca-4e79-4be0-be09-144b519bfd35": {
@@ -87,15 +54,15 @@
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/image.png",
         "author": "amnweb"
     },
-    "7d3895d4-454b-40db-a2f9-44a238d5793b": {
-        "id": "7d3895d4-454b-40db-a2f9-44a238d5793b",
-        "name": "Windows 11 Theme",
-        "description": "Windows 11 Theme",
+    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
+        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
+        "name": "Default",
+        "description": "Default YASB theme",
         "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
         "author": "amnweb"
     },
     "c353fb20-a4dc-40dd-baaa-71561dc0308d": {
@@ -109,16 +76,60 @@
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/image.png",
         "author": "ashwinjadhav818"
     },
-    "eb3be3fa-3424-4dcb-8c83-1a143526c91e": {
-        "id": "eb3be3fa-3424-4dcb-8c83-1a143526c91e",
-        "name": "Mauveyos Mocha",
-        "description": "Catppuccin Mocha inspired theme",
+    "0892faae-d929-4c65-8689-4ef1de32f73d": {
+        "id": "0892faae-d929-4c65-8689-4ef1de32f73d",
+        "name": "Yasb 004",
+        "description": "My personal and favorite theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/image.png",
+        "author": "amnweb"
+    },
+    "56d372d9-3806-499f-9caf-03782b11413b": {
+        "id": "56d372d9-3806-499f-9caf-03782b11413b",
+        "name": "Catppuccin Mocha",
+        "description": "The Catppuccino Mocha Theme is a soothing pastel theme created for YASB",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/config.yml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/image.png",
+        "author": "amnweb"
+    },
+    "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba": {
+        "id": "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba",
+        "name": "Everforest",
+        "description": "An everforest theme, comfortable for the eyes. Both light and dark mode colours are available.",
         "homepage": "",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/image.png",
-        "author": "mauveyo1"
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png",
+        "author": "IONODO"
+    },
+    "41b5828c-ab86-4ceb-847d-f7c253d23a1a": {
+        "id": "41b5828c-ab86-4ceb-847d-f7c253d23a1a",
+        "name": "Nord Dynamic",
+        "description": "A Nord based theme, with light and dark variants.",
+        "homepage": "https://github.com/S-N00B-1/Nord-Dynamic-Yasb-Theme",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png",
+        "author": "S-N00B-1"
+    },
+    "1f279c28-38a1-4067-90ed-614b87dd7290": {
+        "id": "1f279c28-38a1-4067-90ed-614b87dd7290",
+        "name": "Minimal Glaze",
+        "description": "Practical, no bells or whistles",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png",
+        "author": "hax2"
     },
     "1d70e9b2-ae9f-4697-b430-c1a8b94777a9": {
         "id": "1d70e9b2-ae9f-4697-b430-c1a8b94777a9",
@@ -131,15 +142,15 @@
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png",
         "author": "amnweb"
     },
-    "61e6a045-e090-4f33-a41b-6938702eb446": {
-        "id": "61e6a045-e090-4f33-a41b-6938702eb446",
-        "name": "Yasb 001",
-        "description": "Simple yasb theme",
+    "7d3895d4-454b-40db-a2f9-44a238d5793b": {
+        "id": "7d3895d4-454b-40db-a2f9-44a238d5793b",
+        "name": "Windows 11 Theme",
+        "description": "Windows 11 Theme",
         "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png",
         "author": "amnweb"
     },
     "edb987a6-0df1-43c6-b274-0393bf469bf1": {
@@ -153,15 +164,15 @@
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/image.png",
         "author": "amnweb"
     },
-    "56d372d9-3806-499f-9caf-03782b11413b": {
-        "id": "56d372d9-3806-499f-9caf-03782b11413b",
-        "name": "Catppuccin Mocha",
-        "description": "The Catppuccino Mocha Theme is a soothing pastel theme created for YASB",
+    "a93f1976-0c89-4593-b333-eaa374164c73": {
+        "id": "a93f1976-0c89-4593-b333-eaa374164c73",
+        "name": "Acrylic",
+        "description": "Acrylic YASB theme",
         "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/config.yml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/image.png",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/config.yml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/README.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png",
         "author": "amnweb"
     }
 }
