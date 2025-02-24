@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Simple Widgets](themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9)
+
+<a title="Simple Widgets YASB Theme" href="themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/image.png" width="830px"></a>
+
+
 ## [Simple Floating Widgets](themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042)
 
 <a title="Simple Floating Widgets YASB Theme" href="themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png" width="830px"></a>
