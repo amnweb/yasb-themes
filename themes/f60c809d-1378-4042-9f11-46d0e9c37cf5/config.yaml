@@ -1,7 +1,6 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
-hide_taskbar: false
 komorebi:
   start_command: "komorebic start --whkd"
   stop_command: "komorebic stop --whkd"
