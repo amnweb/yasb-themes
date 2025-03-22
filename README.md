@@ -17,6 +17,16 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Aero Glass](themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3)
+
+<a title="Aero Glass YASB Theme" href="themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/image.png" width="830px"></a>
+
+
+## [Soft Segment](themes/f60c809d-1378-4042-9f11-46d0e9c37cf5)
+
+<a title="Soft Segment YASB Theme" href="themes/f60c809d-1378-4042-9f11-46d0e9c37cf5"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png" width="830px"></a>
+
+
 ## [Yasb 005](themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8)
 
 <a title="Yasb 005 YASB Theme" href="themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/image.png" width="830px"></a>
@@ -45,11 +55,6 @@ To update a theme, please follow these steps:
 ## [Everforest](themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba)
 
 <a title="Everforest YASB Theme" href="themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png" width="830px"></a>
-
-
-## [Soft Segment](themes/f60c809d-1378-4042-9f11-46d0e9c37cf5)
-
-<a title="Soft Segment YASB Theme" href="themes/f60c809d-1378-4042-9f11-46d0e9c37cf5"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png" width="830px"></a>
 
 
 ## [Yasb 001](themes/61e6a045-e090-4f33-a41b-6938702eb446)
