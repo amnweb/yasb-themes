@@ -1,0 +1,246 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic reload-configuration"
+bars:
+  status-bar:
+    enabled: true
+    screens: ['*'] 
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: true 
+      acrylic: false 
+      dark_mode: true
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 30
+    widgets:
+      left:
+        [
+          "home",
+          "active_window"
+        ] 
+      center: [
+         "clock","weather"
+        ]
+      right:
+        [
+          "systray",
+          "media",
+          "volume",
+          "vpn",
+          "wifi",
+          "battery",
+          "settings",
+          "notifications",
+          "power_menu"
+        ]
+widgets:
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title} - {artist}"
+      label_alt: "{title}"
+      max_field_size:
+        label: 20
+        label_alt: 30
+      show_thumbnail: false
+      controls_only: true
+      controls_left: true
+      hide_empty: true
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\uf01d"
+        pause: "\uf28c"
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 14
+      max_length: 56
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a %d, %b %H:%M}"
+      label_alt: "{%A %d %B %Y, %H:%M}"
+      #locale: 'en_EN' # Langugae for date, you can set your own, example fr_FR
+      timezones: [] #Looking up time zone info from registry
+      #timezones: ["America/Montreal"]
+      callbacks:
+        on_right: "exec cmd.exe /c start ms-clock:"
+      calendar: 
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: '3bf4cf9a7c3f40d6b31174128242807' # Get your free API key from https://www.weatherapi.com/
+      update_interval: 600 # Update interval in seconds, Min 600 seconds
+      hide_decimal: true
+      location: 'Havana, Cuba' # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      icons: 
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\udb81\udd99"
+        cloudyNight: "\ue311"
+        rainyDay: "\udb81\ude7e"
+        rainyNight: "\udb81\ude7e"
+        snowyIcyDay: "\udb81\udd98"
+        snowyIcyNight: "\udb81\udd98"
+        blizzard: "\uebaa"
+        default: "\uebaa"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "{icon}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8"  # Icon for muted
+        - "\uf026"  # Icon for 0-10% volume
+        - "\uf027"  # Icon for 11-30% volume
+        - "\uf027"  # Icon for 31-60% volume
+        - "\uf028"  # Icon for 61-100% volume
+      callbacks:
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: 'normal'
+        border_color: 'System'
+        alignment: 'center'
+        direction: 'down'
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 300 # Milisecond 
+      button_row: 3 # Number of buttons in row, min 1 max 5
+      buttons:
+        lock: ["\uea75","Lock"]
+        signout: ["\udb80\udf43","Sign out"]
+        shutdown: ["\uf011","Shut Down"]
+        restart: ["\uead2","Restart"]
+        hibernate: ["\uf28e","Hibernate"]
+        cancel: ["\udb81\udf3a","Cancel"]
+  settings:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - {icon: "\ue690", launch: "quick_settings"}
+      container_padding: 
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  vpn:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - {icon: "\udb81\udd82", launch: "wireguard.exe"}
+      container_padding: 
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  win_button:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "\ue62a"
+      label_alt: "\ue62a"
+      class_name: "win-button-widget"
+      callbacks:
+        on_left: "exec start_menu"
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "\udb82\udea5"
+      menu_list:
+      - { title: "User Home", path: "~" }
+      - { title: "Download", path: "~\\Downloads" }
+      - { title: "Documents", path: "~\\Documents" }
+      - { title: "Pictures", path: "~\\Pictures" }
+      system_menu: true
+      power_menu: true
+      blur: true
+      border_color: "System"
+      round_corners_type: "normal"
+      container_padding:
+        top: 0
+        left: 6
+        bottom: 0
+        right: 12
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "{icon}"
+      label_alt: "{icon} {percent}%"
+      charging_options:
+        icon_format: "{charging_icon}"
+      callbacks:
+        on_left: "exec quick_settings"
+        on_right: "exec cmd.exe /c start ms-settings:powersleep"
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "{wifi_name} {wifi_strength}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "exec quick_settings"
+        on_middle: "do_nothing"
+        on_right: "exec cmd.exe /c start ms-settings:network"
+      wifi_icons: [
+        "\udb82\udd2e",  # Icon for 0% strength
+        "\udb82\udd1f",  # Icon for 1-20% strength
+        "\udb82\udd22",  # Icon for 21-40% strength
+        "\udb82\udd25",  # Icon for 41-80% strength
+        "\udb82\udd28"   # Icon for 81-100% strength
+      ]
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\udb81\udeb6"
+      label_expanded: "\udb82\ude03"
+      label_position: "left" # Can be "left" or "right"
+      icon_size: 15 # Can be any integer between 8 and 64
+      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: false
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\udb80\udd78</span>"
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "do_nothing"
+        on_middle: "do_nothing"
