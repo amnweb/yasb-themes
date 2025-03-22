@@ -1,4 +1,26 @@
 {
+    "bb877af1-8b7c-4a8f-a421-724d03ce7bb3": {
+        "id": "bb877af1-8b7c-4a8f-a421-724d03ce7bb3",
+        "name": "Aero Glass",
+        "description": "Windows 11 macOS like theme",
+        "homepage": "https://github.com/manuelernestog/aero-glass",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/image.png",
+        "author": "manuelernestog"
+    },
+    "f60c809d-1378-4042-9f11-46d0e9c37cf5": {
+        "id": "f60c809d-1378-4042-9f11-46d0e9c37cf5",
+        "name": "Soft Segment",
+        "description": "Theme where each widget is segmented with a 1px margin. If you want to use this theme, please enter your Weather API key and set the weather location.",
+        "homepage": "https://github.com/amnweb/yasb-themes",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png",
+        "author": "amnweb"
+    },
     "8d6f092c-8a42-4c59-8bcf-9ff1e46208e8": {
         "id": "8d6f092c-8a42-4c59-8bcf-9ff1e46208e8",
         "name": "Yasb 005",
@@ -64,17 +86,6 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png",
         "author": "IONODO"
-    },
-    "f60c809d-1378-4042-9f11-46d0e9c37cf5": {
-        "id": "f60c809d-1378-4042-9f11-46d0e9c37cf5",
-        "name": "Soft Segment",
-        "description": "Theme where each widget is segmented with a 1px margin. If you want to use this theme, please enter your Weather API key and set the weather location.",
-        "homepage": "https://github.com/amnweb/yasb-themes",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png",
-        "author": "amnweb"
     },
     "61e6a045-e090-4f33-a41b-6938702eb446": {
         "id": "61e6a045-e090-4f33-a41b-6938702eb446",
