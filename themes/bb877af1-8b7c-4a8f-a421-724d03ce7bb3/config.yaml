@@ -39,7 +39,6 @@ bars:
           "systray",
           "media",
           "volume",
-          "vpn",
           "wifi",
           "battery",
           "settings",
@@ -154,17 +153,6 @@ widgets:
       label: "{data}"
       app_list:
         - {icon: "\ue690", launch: "quick_settings"}
-      container_padding: 
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-  vpn:
-    type: "yasb.applications.ApplicationsWidget"
-    options:
-      label: "{data}"
-      app_list:
-        - {icon: "\udb81\udd82", launch: "wireguard.exe"}
       container_padding: 
         top: 0
         left: 0
