@@ -35,6 +35,12 @@ jobs:
           git add themes/*
           git commit -m "Rebuild themes.json after theme submission" --allow-empty
           git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          
+          # Set authentication only if this is a PR from a fork
+          if [[ "${{ github.event_name }}" == "pull_request" && "${{ github.event.pull_request.head.repo.fork }}" == "true" ]]; then
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          fi
+          
           git push
 
   generateReadme:
@@ -60,6 +66,11 @@ jobs:
 
       - name: Pull latest changes
         run: |
+          # Set authentication only if this is a PR from a fork
+          if [[ "${{ github.event_name }}" == "pull_request" && "${{ github.event.pull_request.head.repo.fork }}" == "true" ]]; then
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          fi
+          
           git pull origin $(git rev-parse --abbrev-ref HEAD)
 
       - name: Generate README
@@ -71,4 +82,10 @@ jobs:
           git add README.md
           git commit -m "Update README after themes are rebuilt" --allow-empty
           git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          
+          # Set authentication only if this is a PR from a fork
+          if [[ "${{ github.event_name }}" == "pull_request" && "${{ github.event.pull_request.head.repo.fork }}" == "true" ]]; then
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          fi
+          
           git push
