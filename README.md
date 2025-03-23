@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Sky Theme](themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc)
+
+<a title="Sky Theme YASB Theme" href="themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/image.png" width="830px"></a>
+
+
 ## [Aero Glass](themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3)
 
 <a title="Aero Glass YASB Theme" href="themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/image.png" width="830px"></a>
