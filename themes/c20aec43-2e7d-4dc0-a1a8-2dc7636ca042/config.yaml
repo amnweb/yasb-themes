@@ -58,10 +58,10 @@ widgets:
       label: "<span>\udb80\udf5c</span>"
       menu_list:
       - { title: "Home", path: "~" }
-      - { title: "Downloads", path: "C:\\Users\\elrond\\Downloads"}
-      - { title: "Documents", path: "C:\\Users\\elrond\\Documents"}
-      - { title: "Pictures", path: "C:\\Users\\elrond\\Pictures"}
-      - { title: "Videos", path: "C:\\Users\\elrond\\Videos"}
+      - { title: "Downloads", path: "~\\Downloads"}
+      - { title: "Documents", path: "~\\Documents"}
+      - { title: "Pictures", path: "~\\Pictures"}
+      - { title: "Videos", path: "~\\Videos"}
       system_menu: true
       power_menu: false
       blur: true
@@ -195,7 +195,7 @@ widgets:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\udb83\ude09</span>"
-      image_path: "C:\\Users\\elrond\\.config\\Wallpapers"
+      image_path: "~\\.config\\Wallpapers"
       change_automatically: false
       update_interval: 60
       gallery:
