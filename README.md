@@ -11,9 +11,12 @@ To submit a theme, please follow these steps:
 
 To update a theme, please follow these steps:
 1. Create a new pull request with the updated theme.
-2. Make sure to include the theme name in the title.
-3. Submit the pull request.
-4. Let us take care of the rest!.
+2. Do not change the names of the files inside the theme folder.
+3. Make sure to include the theme name in the title.
+4. Submit the pull request.
+5. Let us take care of the rest!.
+
+> [!NOTE]  
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
