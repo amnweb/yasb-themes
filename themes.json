@@ -1,4 +1,26 @@
 {
+    "83e8a5f3-45d4-4ba1-8b2c-b97871cde018": {
+        "id": "83e8a5f3-45d4-4ba1-8b2c-b97871cde018",
+        "name": "HexDock",
+        "description": "A sleek GlazeWM theme with six docks, including workspace, window titles, clock, media, systray, and a custom dock for notifications and system controls.",
+        "homepage": "https://github.com/TwinkleByte/hexdock",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/image.png",
+        "author": "TwinkleByte"
+    },
+    "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042": {
+        "id": "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042",
+        "name": "Simple Floating Widgets",
+        "description": "Easily customizable, compatible with komorebi.",
+        "homepage": "https://github.com/amnweb/yasb-themes",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png",
+        "author": "elrondforwin"
+    },
     "c3bac03c-85a3-4f2f-94de-46899d1bb6dc": {
         "id": "c3bac03c-85a3-4f2f-94de-46899d1bb6dc",
         "name": "Sky Theme",
@@ -52,17 +74,6 @@
         "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/config.yaml",
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/image.png",
-        "author": "elrondforwin"
-    },
-    "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042": {
-        "id": "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042",
-        "name": "Simple Floating Widgets",
-        "description": "Easily customizable, compatible with komorebi.",
-        "homepage": "https://github.com/amnweb/yasb-themes",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png",
         "author": "elrondforwin"
     },
     "56d372d9-3806-499f-9caf-03782b11413b": {
