@@ -11,15 +11,22 @@ To submit a theme, please follow these steps:
 
 To update a theme, please follow these steps:
 1. Create a new pull request with the updated theme.
-2. Do not change the names of the files inside the theme folder.
-3. Make sure to include the theme name in the title.
-4. Submit the pull request.
-5. Let us take care of the rest!.
-
-> [!NOTE]  
+2. Make sure to include the theme name in the title.
+3. Submit the pull request.
+4. Let us take care of the rest!.
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [HexDock](themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018)
+
+<a title="HexDock YASB Theme" href="themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/image.png" width="830px"></a>
+
+
+## [Simple Floating Widgets](themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042)
+
+<a title="Simple Floating Widgets YASB Theme" href="themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png" width="830px"></a>
+
+
 ## [Sky Theme](themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc)
 
 <a title="Sky Theme YASB Theme" href="themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/image.png" width="830px"></a>
@@ -43,11 +50,6 @@ To update a theme, please follow these steps:
 ## [Simple Widgets](themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9)
 
 <a title="Simple Widgets YASB Theme" href="themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/image.png" width="830px"></a>
-
-
-## [Simple Floating Widgets](themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042)
-
-<a title="Simple Floating Widgets YASB Theme" href="themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png" width="830px"></a>
 
 
 ## [Catppuccin Mocha](themes/56d372d9-3806-499f-9caf-03782b11413b)
