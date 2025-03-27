@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Comfyppuccin](themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d)
+
+<a title="Comfyppuccin YASB Theme" href="themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/image.png" width="830px"></a>
+
+
 ## [HexDock](themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018)
 
 <a title="HexDock YASB Theme" href="themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/image.png" width="830px"></a>
