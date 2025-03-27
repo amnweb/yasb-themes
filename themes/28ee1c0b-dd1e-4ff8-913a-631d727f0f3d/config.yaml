@@ -1,0 +1,296 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+
+komorebi:
+  start_command: "komorebic start"
+  stop_command: "komorebic stop"
+  reload_command: "komorebic stop && komorebic start"
+
+bars:
+  status-bar:
+    enabled: true
+    screens: ['*']
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    animation:
+      enabled: true
+      duration: 800
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: false
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 35
+    padding:
+      top: 9
+      left: 9
+      bottom: 9
+      right: 9
+    widgets:
+      left:
+        [
+          "home",
+          "wallpaper",
+          "media",
+          "notifications",
+        ]
+      center:
+        [
+          "glazewm_workspaces",
+          "active_window",
+        ]
+      right:
+        [
+          "weather",
+          "volume",
+          "clock",
+          "battery",
+          "power_menu"
+        ]
+widgets:
+  glazewm_workspaces:
+    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+    options:
+      offline_label: "GlazeWM Offline"
+      hide_empty_workspaces: true
+      hide_if_offline: false
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\uf476</span> {count}"
+      label_alt: "{count} notifications"
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "do_nothing"
+        on_middle: "toggle_label"
+      container_padding:
+        top: 0
+        left: 6
+        bottom: 0
+        right: 6
+  wallpaper:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\uf03e</span>"
+      image_path: "C:\\Users\\tundr\\Downloads\\Wallpapers\\Catppuccin"
+      change_automatically: false # Automatically change wallpaper
+      update_interval: 60
+      gallery:
+        enabled: true
+        blur: true
+        image_width: 250
+        image_per_page: 4
+        show_buttons: true
+        orientation: "portrait"
+        image_spacing: 15
+        lazy_load: true
+        lazy_load_delay: 80
+        lazy_load_fadein: 400
+        image_corner_radius: 8
+        enable_cache: true
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 12
+      gradient: 1
+      reverse: 0
+      foreground: "#cba6f7"
+      gradient_color_1: '#cba6f7'
+      gradient_color_2: '#B4BEFE'
+      bars_number: 8
+      bar_spacing: 2
+      bar_width: 5
+      noise_reduction: 0.25
+      sleep_timer: 2
+      hide_empty: true
+      container_padding:
+        top: 0
+        left: 4
+        bottom: 0
+        right: 4
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\udb80\udf5c</span>"
+      menu_list:
+        - { title: "Home", path: "~" }
+        - { title: "Downloads", path: "C:\\Users\\elrond\\Downloads"}
+        - { title: "Documents", path: "C:\\Users\\elrond\\Documents"}
+        - { title: "Pictures", path: "C:\\Users\\elrond\\Pictures"}
+        - { title: "Videos", path: "C:\\Users\\elrond\\Videos"}
+      system_menu: true
+      power_menu: false
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: ""
+      distance: 10
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "<span>\udb80\udf87</span> {title}"
+      label_alt: "<span>\udb80\udf87</span> {artist}"
+      hide_empty: false
+      max_field_size:
+        label: 20
+        label_alt: 20
+      show_thumbnail: false
+      controls_only: false
+      controls_left: true
+      thumbnail_alpha: 50
+      thumbnail_padding: 0
+      thumbnail_corner_radius: 8
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "<span>\ue769</span>{%I:%M %p}"
+      label_alt: "{%a, %d %b %H:%M:%S}"
+      timezones: [] #Looking up time zone info from registry
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: {conditions}, Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: '3bf4cf9a7c3f40d6b31174128242807'
+      update_interval: 600 #Update interval in seconds, Min 600
+      hide_decimal: true
+      location: "Hillsboro, Oregon"
+      units: "imperial"
+      callbacks:
+        on_left: "toggle_card"
+      icons:
+        sunnyDay: "\udb81\udd99"
+        clearNight: "\ue3c2"
+        cloudyDay: "\ue21d"
+        cloudyNight: "\ue226"
+        rainyDay: "\ue371"
+        rainyNight: "\ue371"
+        snowyIcyDay: "\udb81\udf17"
+        snowyIcyNight: "\udb81\udf17"
+        blizzard: "\udb81\udd99"
+        default: "\udb81\udd99"
+      weather_card:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "#45475a"
+        alignment: "right"
+        direction: "down"
+        distance: 6
+        icon_size: 48
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8" 
+        - "\uf026"
+        - "\uf027" 
+        - "\uf027"  
+        - "\uf028"
+      audio_menu:
+        blur: True
+        round_corners: True
+        round_corners_type: 'normal'
+        border_color: '#45475a'
+        alignment: 'right'
+        direction: 'down'
+        distance: 6
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 250
+      button_row: 3
+      buttons:
+        signout: ["\udb80\udf43","Sign out"]
+        shutdown: ["\uf011","Shut Down"]
+        restart: ["\uead2","Restart"]
+        sleep: ["\udb82\udd04","Sleep"]
+        lock: ["\uf023","Lock"]
+        cancel: ["\udb81\udf3a","Cancel"]
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: ""
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 12
+      max_length: 20
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "{icon} {percent}%"
+      label_alt: "{icon} {percent}% | time: {time_remaining}"
+      charging_options:
+        icon_format: "{charging_icon}"
+      status_icons:
+        icon_charging: "\udb80\udc84"
+        icon_critical: "\udb80\udc7a"
+        icon_low: "\udb80\udc7b"
+        icon_medium: "\udb80\udc7e"
+        icon_high: "\udb80\udc80"
+        icon_full: "\udb80\udc79"
+      status_thresholds:
+        critical: 10
+        low: 45
+        medium: 75
+        high: 85
+        full: 100
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\uf03e</span>"
+      image_path: "C:\\Users\\tundr\\Downloads\\Wallpapers\\Catppuccin" # Example path to folder with images
+      change_automatically: false # Automatically change wallpaper
+      update_interval: 60 # If change_automatically is true, update interval in seconds
+      gallery:
+        enabled: true
+        blur: false
+        image_width: 200
+        image_per_page: 8
+        show_buttons: true
+        orientation: "portrait"
+        image_spacing: 8
+        lazy_load: true
+        lazy_load_delay: 80
+        lazy_load_fadein: 400
+        image_corner_radius: 20
+        enable_cache: true
+      icons:
+        recording: "\ueba7"
+        stopped: "\ueba5"
+        paused: "\ueba7"
+      hide_when_not_recording: true
+      blinking_icon: true
