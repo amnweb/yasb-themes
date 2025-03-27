@@ -1,0 +1,487 @@
+/* -------------------------------------------------------------------------------------------------- */
+/* Variables                                                                                         */
+/* -------------------------------------------------------------------------------------------------- */
+
+:root {
+	--rosewater: rgb(245, 224, 220);
+	--flamingo: rgb(242, 205, 205);
+	--pink: rgb(245, 194, 231);
+	--mauve: rgb(203, 166, 247);
+	--red: rgb(243, 139, 168);
+	--maroon: rgb(235, 160, 172);
+	--peach: rgb(250, 179, 135);
+	--yellow: rgb(249, 226, 175);
+	--green: rgb(166, 227, 161);
+	--teal: rgb(148, 226, 213);
+	--sky: rgb(137, 220, 235);
+	--sapphire: rgb(116, 199, 236);
+	--blue: rgb(137, 180, 250);
+	--lavender: rgb(180, 190, 254);
+	--text: rgb(205, 214, 244);
+	--subtext1: rgb(186, 194, 222);
+	--subtext0: rgb(166, 173, 200);
+	--overlay2: rgb(147, 153, 178);
+	--overlay1: rgb(127, 132, 156);
+	--overlay0: rgb(108, 112, 134);
+	--surface2: rgb(88, 91, 112);
+	--surface1: rgb(69, 71, 90);
+	--surface0: rgb(40, 41, 54);
+	--base: rgb(30, 30, 46);
+	--mantle: rgb(24, 24, 37);
+	--crust: rgb(17, 17, 27);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* 1. Layout and Containers                                                                           */
+/* -------------------------------------------------------------------------------------------------- */
+
+* {
+	font-size: 12px;
+	color: #cdd6f4;
+	font-weight: 500;
+	font-family: "SF Pro Rounded", "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0 8px;
+	margin: 0;
+	background-color: #1e1e2e;
+	border-radius: 8px;
+}
+
+.widget {
+	padding: 0 10px;
+	margin: 0;
+}
+
+.widget .label {
+	padding: 2px 2px 1px 2px;
+
+}
+
+.widget .label.alt {
+	padding: 1px 8px 1px 8px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* 2. Widget Containers                                                                               */
+/* -------------------------------------------------------------------------------------------------- */
+
+.glazewm-workspaces .widget-container {
+	background-color: var(--mantle);
+	margin: 4px 0px 4px 0px;
+	border-radius: 8px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* 3. Widgets                                                                                         */
+/* -------------------------------------------------------------------------------------------------- */
+
+/***-------------------------------      • Windows Desktops •      --------------------------------***/
+
+.glazewm-workspaces {
+	margin: 0;
+}
+
+.glazewm-workspaces .ws-btn {
+	background-color: var(--surface1);
+	width: 10px;
+	height: 10px;
+	border-radius: 4px;
+	color: rgba(0, 0, 0, 0);
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.glazewm-workspaces .ws-btn.active {
+	color: rgba(0, 0, 0, 0);
+	background-color: var(--mauve);
+	margin-right: 5px;
+	margin-left: 5px;
+	width: 28px;
+	height: 10px;
+}
+
+.glazewm-workspaces .ws-btn.populated {
+	color: var(--surface1);
+}
+
+.glazewm-workspaces .ws-btn.empty {
+	color: #7D8B9D;
+}
+
+.glazewm-workspaces .ws-btn:hover,
+.glazewm-workspaces .ws-btn.populated:hover,
+.glazewm-workspaces .ws-btn.empty:hover {
+	background-color: var(--surface2);
+}
+
+/***---------------------------------      • Audio Widget •      ----------------------------------***/
+
+.audio-menu {
+	background-color: var(--mantle);
+}
+.audio-container .device {
+	background-color: var(--base);
+	border: none;
+	padding: 6px 8px 6px 4px;
+	margin: 2px 0;
+	font-size: 12px;
+	border-radius: 4px;
+	font-family: "SF Pro Text";
+}
+.audio-container .device.selected {
+	background-color: var(--crust);
+} 
+.audio-container .device:hover {
+	background-color: var(--base);
+}
+
+.volume-slider::groove {
+	color: transparent;
+}
+.volume-slider::handle {
+	background-color: transparent;
+}
+.audio-menu {
+	background-color: rgba(17, 17, 27, 0.4);
+}
+
+/***------------------------------      • Notification Widget •      -------------------------------***/
+
+.notification-widget {
+	padding: 0 4px 0 4px;
+}
+
+.notification-widget .icon {
+	font-size: 12px;
+	padding-right: 5px;
+	padding-left: 2px;
+}
+.notification-widget .icon.new-notification {
+	color: var(--mauve);
+}
+.notification-widget .label.new-notification {
+	color: var(--mauve);
+}
+
+/***-------------------------------      • Power Menu Widget •      --------------------------------***/
+
+.power-menu-popup {
+	background: var(--crust);
+	border-radius: 8px;
+}
+
+.power-menu-widget .label {
+	color: #eba0ac;
+	font-size: 16px;
+	font-family: "JetBrainsMono NF";
+}
+.power-menu-popup .button {
+	padding: 0px;
+	margin: 5px;
+	width: 250px;
+	height: 175px;
+	border-radius: 8px;
+	background-color: var(--base);
+	font-family: "SF Pro Rounded";
+	color: white;
+
+}
+.power-menu-popup .button.hover {
+	background-color: var(--base);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 0px;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text);
+	font-family: "SF Pro Rounded";
+}
+.power-menu-popup .button .icon {
+	font-size: 55px;
+	padding-top: 25px;
+	padding-right: 10px;
+	color: var(--text);
+}
+.power-menu-popup .button.cancel .icon {
+	color: var(--red);
+}
+.power-menu-popup .button.cancel .label {
+	color: var(--red);
+}
+
+.clock-widget {
+	padding: 0 4px 0 4px;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* 6. Icons & Typography                                                                               */
+/* --------------------------------------------------------------------------------------------------- */
+
+.icon {
+	font-size: 16px;
+}
+.volume-widget .icon {
+	color: var(--mauve);
+	margin: 1px 2px 0 0;
+}
+.start-menu .icon {
+	font-size: 18px;
+	color: #89b4fa
+}
+.clock-widget .icon {
+	color: #cba6f7;
+	font-size: 14px;
+	margin-right: 7px;
+}
+
+/***---------------------------------      • Weather Icons •      ----------------------------------***/
+
+.weather-widget .icon.cloudyDay {
+	color: var(--mauve);
+}
+.weather-widget .icon.cloudyNight {
+	color: var(--mauve);
+}
+.weather-widget .icon.rainyDay {
+	color: var(--mauve);
+}
+.weather-widget .icon.rainyNight {
+	color: var(--mauve);
+}
+.weather-widget .icon.snowyIcyDay {
+	color: var(--mauve);
+}
+.weather-widget .icon.snowyIcyNight {
+	color: var(--mauve);
+}
+.weather-widget .icon.blizzard {
+	color: var(--mauve);
+}
+.weather-widget .icon.default {
+	color: var(--mauve);
+}
+
+/***----------------------------------      • Weather Card •      -----------------------------------***/
+
+.weather-card {
+	background-color: var(--mantle);
+}
+.weather-card-today {
+	border-radius: 8px;
+	background-color: var(--base);
+	color: var(--text);
+}
+.weather-card-today .label {
+	font-size: 12px;
+	font-family: "SF Pro Rounded";
+}
+.weather-card-today .label.location {
+	font-size: 24px;
+	font-weight: 800;
+	font-family: "SF Pro Rounded";
+}
+.weather-card-today .label.alert {
+	font-size: 12px;
+	font-weight: 700;
+	background-color: rgba(247, 199, 42, 0.05);
+	border: 1px solid rgba(247, 209, 42, 0.1);
+	color: rgba(196, 181, 162, 0.85);
+	border-radius: 6px;
+	padding: 5px 0;
+}
+.weather-card-day {
+	border-radius: 8px;
+	background-color: var(--base);
+}
+.weather-card-day .label {
+	font-size: 12px;
+	font-family: "SF Pro Rounded";
+}
+
+/* Media Widget */
+
+.media-widget {
+	padding: 0;
+	margin-left: 0;
+}
+.media-widget .label {
+	color: var(--lavender);
+    padding-left: 5px;
+}
+
+/* Hide media widget buttons */
+
+.media-widget .btn {
+	max-width: 0;
+}
+
+.calendar {
+	background-color: var(--mantle);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+	background-color: rgba(17, 17, 27, 0);
+	color: var(--overlay1);
+	font-family: "SF Pro Rounded";
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+.calendar .calendar-table::item:selected {
+	color: #4c4f69;
+	background: var(--mauve);
+	border-radius: 8px;
+}
+.calendar .day-label {
+	margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+	font-family: "SF Pro Rounded";
+	font-size: 16px;
+	color: var(--text);
+	font-weight: 700;
+	min-width: 180px;
+	max-width: 180px;
+}
+.calendar .month-label {
+	font-weight: normal;
+	padding-bottom: 12px;
+}
+.calendar .date-label {
+	font-size: 88px;
+	font-weight: 900;
+	color: var(--text);
+	margin-top: -20px;
+}
+
+.home-menu {
+	background-color: var(--mantle);
+	border-radius: 8px;
+	padding: 0;
+	margin-left: 0px;
+}
+.home-menu .menu-item {
+	padding: 8px 48px 8px 12px;
+	font-size: 13px;
+	font-family: "SF Pro Rounded";
+	font-weight: 600;
+}
+.home-menu .menu-item:hover {
+	background-color: #cba6f4;
+	color: #181825;
+	margin: 4px 6px;
+	border-radius: 4px;
+}
+.home-menu .separator {
+	max-height: 1px;
+	background-color: #45475a;
+	margin: 0 8px;
+}
+
+.wallpapers-gallery-window {
+	background-color: var(--mantle);
+	border: 2px;
+	margin: 0;
+}
+
+.battery-widget .widget-container .label.status-low {
+	color: var(--red);
+	background: rgba(243, 139, 168, 0.245);
+	margin: 4px 0px 4px 0px;
+	padding: 0 6px 0 6px;
+	border-radius: 8px;
+}
+.battery-widget .widget-container .label.status-medium {
+	color: var(--yellow);
+	background: rgba(249, 226, 175, 0.25);
+	margin: 4px 0px 4px 0px;
+	padding: 0 6px 0 6px;
+	border-radius: 8px;
+}
+.battery-widget .widget-container .label.status-high {
+	color: var(--teal);
+	background: rgba(148, 226, 213, 0.25);
+	margin: 4px 0px 4px 0px;
+	padding: 0 6px 0 6px;
+	border-radius: 8px;
+}
+.battery-widget .widget-container .label.status-full {
+	color: var(--green);
+	background: rgba(166, 227, 161, 0.25);
+	margin: 4px 0px 4px 0px;
+	padding: 0 6px 0 6px;
+	border-radius: 8px;
+}
+.battery-widget .widget-container .label.status-charging {
+	color: var(--blue);
+	background: rgba(137, 180, 250, 0.25);
+	margin: 4px 0px 4px 0px;
+	padding: 0 6px 0 6px;
+	border-radius: 8px;
+}
+
+.battery-widget .widget-container .icon.status-low {
+	color: var(--red);
+}
+.battery-widget .widget-container .icon.status-medium {
+	color: var(--yellow);
+}
+.battery-widget .widget-container .icon.status-high {
+	color: var(--teal);
+	padding-right: 4px;
+}
+.battery-widget .widget-container .icon.status-full {
+	color: var(--green);
+	padding-right: 4px;
+}
+.battery-widget .widget-container .icon.status-charging {
+	color: var(--blue);
+}
+
+.volume-slider {
+	border: none;
+}
+.volume-slider::groove {
+}
+.volume-slider::handle {
+}
+.audio-menu {
+	background-color: rgba(17, 17, 27, 0.4);
+}
+.audio-container .device {
+	background-color: transparent;
+	border: none;
+	padding: 6px 8px 6px 4px;
+	margin: 2px 0;
+	font-size: 12px;
+	border-radius: 4px;
+}
+.audio-container .device.selected {
+	background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+	background-color: rgba(255, 255, 255, 0.06);
+}
+
+.wallpapers-gallery-buttons {
+	background-color: var(--base);
+	color: var(--text);
+	border: none;
+	font-size: 16px;
+	padding: 8px 0px;
+	border-radius: 8px;
+	margin: 8px 8px 8px 8px;
+	width: 600px;
+	font-family: "SF Pro Rounded";
+}
+
+.wallpapers-widget {
+    padding: 0 6px 0 6px;
+}
