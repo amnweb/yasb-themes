@@ -1,1 +1,12 @@
-{"id": "1f279c28-38a1-4067-90ed-614b87dd7290", "name": "Minimal Glaze", "description": "Practical, no bells or whistles", "homepage": "", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png", "author": "hax2"}
+{
+    "id": "1f279c28-38a1-4067-90ed-614b87dd7290",
+    "name": "Minimal Glaze",
+    "description": "Practical, no bells or whistles",
+    "homepage": "",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png",
+    "author": "hax2",
+    "publish_date": "2025-02-20T13:52:07"
+}

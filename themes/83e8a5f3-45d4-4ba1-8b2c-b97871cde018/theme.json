@@ -1,1 +1,12 @@
-{"id": "83e8a5f3-45d4-4ba1-8b2c-b97871cde018", "name": "HexDock", "description": "A sleek GlazeWM theme with six docks, including workspace, window titles, clock, media, systray, and a custom dock for notifications and system controls.", "homepage": "https://github.com/TwinkleByte/hexdock", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/image.png", "author": "TwinkleByte"}
+{
+    "id": "83e8a5f3-45d4-4ba1-8b2c-b97871cde018",
+    "name": "HexDock",
+    "description": "A sleek GlazeWM theme with six docks, including workspace, window titles, clock, media, systray, and a custom dock for notifications and system controls.",
+    "homepage": "https://github.com/TwinkleByte/hexdock",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/image.png",
+    "author": "TwinkleByte",
+    "publish_date": "2025-03-26T19:10:17"
+}

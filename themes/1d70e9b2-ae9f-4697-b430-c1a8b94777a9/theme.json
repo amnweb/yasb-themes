@@ -1,1 +1,12 @@
-{"id": "1d70e9b2-ae9f-4697-b430-c1a8b94777a9", "name": "Yasb 002 Dynamic", "description": "Yasb 002 Dynamic is a theme which follows your OS style.", "homepage": "https://github.com/amnweb/yasb", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png", "author": "amnweb"}
+{
+    "id": "1d70e9b2-ae9f-4697-b430-c1a8b94777a9",
+    "name": "Yasb 002 Dynamic",
+    "description": "Yasb 002 Dynamic is a theme which follows your OS style.",
+    "homepage": "https://github.com/amnweb/yasb",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png",
+    "author": "amnweb",
+    "publish_date": "2025-02-20T13:52:07"
+}

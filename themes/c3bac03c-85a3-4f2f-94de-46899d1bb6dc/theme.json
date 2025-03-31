@@ -1,1 +1,12 @@
-{"id": "c3bac03c-85a3-4f2f-94de-46899d1bb6dc", "name": "Sky Theme", "description": "Thema with blue and yellow pastel colors", "homepage": "", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/image.png", "author": "sete22stey"}
+{
+    "id": "c3bac03c-85a3-4f2f-94de-46899d1bb6dc",
+    "name": "Sky Theme",
+    "description": "Thema with blue and yellow pastel colors",
+    "homepage": "",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/image.png",
+    "author": "sete22stey",
+    "publish_date": "2025-03-23T22:31:17"
+}

@@ -1,1 +1,12 @@
-{"id": "8d6f092c-8a42-4c59-8bcf-9ff1e46208e8", "name": "Yasb 005", "description": "Theme based on catppuccin color scheme", "homepage": "https://github.com/amnweb", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/image.png", "author": "amnweb"}
+{
+    "id": "8d6f092c-8a42-4c59-8bcf-9ff1e46208e8",
+    "name": "Yasb 005",
+    "description": "Theme based on catppuccin color scheme",
+    "homepage": "https://github.com/amnweb",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/image.png",
+    "author": "amnweb",
+    "publish_date": "2025-03-06T23:37:40"
+}

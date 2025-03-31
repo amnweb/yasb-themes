@@ -1,1 +1,12 @@
-{"id": "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba", "name": "Everforest", "description": "An everforest theme, comfortable for the eyes. Both light and dark mode colours are available.", "homepage": "", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png", "author": "IONODO"}
+{
+    "id": "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba",
+    "name": "Everforest",
+    "description": "An everforest theme, comfortable for the eyes. Both light and dark mode colours are available.",
+    "homepage": "",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png",
+    "author": "IONODO",
+    "publish_date": "2025-02-20T13:52:07"
+}

@@ -1,1 +1,12 @@
-{"id": "ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9", "name": "Simple Widgets", "description": "Simple", "homepage": "https://github.com/amnweb/yasb-themes", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/image.png", "author": "elrondforwin"}
+{
+    "id": "ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9",
+    "name": "Simple Widgets",
+    "description": "Simple",
+    "homepage": "https://github.com/amnweb/yasb-themes",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/image.png",
+    "author": "elrondforwin",
+    "publish_date": "2025-02-24T14:07:58"
+}

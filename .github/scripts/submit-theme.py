@@ -5,6 +5,7 @@ import uuid
 import sys
 import requests
 import urllib.parse
+import datetime
 
 STYLES_FILE = "styles.css"
 README_FILE = "readme.md"
@@ -109,7 +110,8 @@ def main():
     validate_url(homepage, allow_empty=True)
 
     theme_id = create_theme_id()
- 
+    current_time = datetime.datetime.now().isoformat()
+
     theme = {
         'id': theme_id,
         'name': name,
@@ -119,7 +121,8 @@ def main():
         'config': get_static_asset(theme_id, CONFIG_FILE),
         'readme': get_static_asset(theme_id, README_FILE),
         'image': get_static_asset(theme_id, IMAGE_FILE),
-        'author': author
+        'author': author,
+        'publish_date': current_time
     }
     os.makedirs(f"themes/{theme_id}")
 

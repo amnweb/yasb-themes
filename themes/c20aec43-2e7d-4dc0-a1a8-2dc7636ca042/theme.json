@@ -1,1 +1,12 @@
-{"id": "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042", "name": "Simple Floating Widgets", "description": "Easily customizable, compatible with komorebi.", "homepage": "https://github.com/amnweb/yasb-themes", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png", "author": "elrondforwin"}
+{
+    "id": "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042",
+    "name": "Simple Floating Widgets",
+    "description": "Easily customizable, compatible with komorebi.",
+    "homepage": "https://github.com/amnweb/yasb-themes",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png",
+    "author": "elrondforwin",
+    "publish_date": "2025-03-25T23:20:29"
+}

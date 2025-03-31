@@ -1,1 +1,12 @@
-{"id": "28ee1c0b-dd1e-4ff8-913a-631d727f0f3d", "name": "Comfyppuccin", "description": "A catppuccin theme that feels comfy!", "homepage": "", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/image.png", "author": "CosmicCatOS"}
+{
+    "id": "28ee1c0b-dd1e-4ff8-913a-631d727f0f3d",
+    "name": "Comfyppuccin",
+    "description": "A catppuccin theme that feels comfy!",
+    "homepage": "",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/image.png",
+    "author": "CosmicCatOS",
+    "publish_date": "2025-03-27T21:39:21"
+}

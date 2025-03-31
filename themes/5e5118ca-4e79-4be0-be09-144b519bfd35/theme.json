@@ -1,1 +1,12 @@
-{"id": "5e5118ca-4e79-4be0-be09-144b519bfd35", "name": "Yasb 003", "description": "Yasb 003 is the theme posted on the Komorebi repository README page.", "homepage": "https://github.com/amnweb/yasb", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/image.png", "author": "amnweb"}
+{
+    "id": "5e5118ca-4e79-4be0-be09-144b519bfd35",
+    "name": "Yasb 003",
+    "description": "Yasb 003 is the theme posted on the Komorebi repository README page.",
+    "homepage": "https://github.com/amnweb/yasb",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/image.png",
+    "author": "amnweb",
+    "publish_date": "2025-02-20T13:52:07"
+}
