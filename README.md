@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Fluent Design](themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3)
+
+<a title="Fluent Design YASB Theme" href="themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3/image.png" width="830px"></a>
+
+
 ## [Comfyppuccin](themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d)
 
 <a title="Comfyppuccin YASB Theme" href="themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/image.png" width="830px"></a>
