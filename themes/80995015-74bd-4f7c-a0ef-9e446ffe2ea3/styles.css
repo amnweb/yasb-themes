@@ -17,7 +17,7 @@
     font-size: 12px;
     color: var(--foreground-color);
     font-weight: 600;
-    font-family: "SegoeUI Nerd Font";
+    font-family: "Segoe UI", "JetBrainsMono NFP";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -352,7 +352,7 @@
 /* --- Systray --- */
 .systray {
     border: none;
-    margin-right: -15px;
+    margin-right: -12px;
     display: flex;
     align-items: center;
 }
