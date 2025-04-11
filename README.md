@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Moonlit Harmony](themes/c44e2f37-df78-46db-a87b-4f97b5ff58da)
+
+<a title="Moonlit Harmony YASB Theme" href="themes/c44e2f37-df78-46db-a87b-4f97b5ff58da"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c44e2f37-df78-46db-a87b-4f97b5ff58da/image.png" width="830px"></a>
+
+
 ## [Fluent Design](themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3)
 
 <a title="Fluent Design YASB Theme" href="themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3/image.png" width="830px"></a>
