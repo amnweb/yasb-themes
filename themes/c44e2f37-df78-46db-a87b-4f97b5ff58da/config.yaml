@@ -73,8 +73,7 @@ widgets:
         - { title: "Pictures", path: "~/Pictures" }
       system_menu: true
       power_menu: true
-      offset_top: 6
-      alignment: "center"
+      offset_left: -6
       blur: true
       round_corners: true
       border_color: None
@@ -161,7 +160,7 @@ widgets:
         round_corners: True
         round_corners_type: "normal"
         border_color: None
-        alignment: "center"
+        alignment: "right"
         direction: "down"
         icon_size: 32
   volume:
