@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Gruvbox Material Dark](themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4)
+
+<a title="Gruvbox Material Dark YASB Theme" href="themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4/image.png" width="830px"></a>
+
+
 ## [Moonlit Harmony](themes/c44e2f37-df78-46db-a87b-4f97b5ff58da)
 
 <a title="Moonlit Harmony YASB Theme" href="themes/c44e2f37-df78-46db-a87b-4f97b5ff58da"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c44e2f37-df78-46db-a87b-4f97b5ff58da/image.png" width="830px"></a>
