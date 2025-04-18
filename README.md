@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Comfyppuccin Reimagined](themes/0992d77b-662a-4f6b-ad41-551279d4f716)
+
+<a title="Comfyppuccin Reimagined YASB Theme" href="themes/0992d77b-662a-4f6b-ad41-551279d4f716"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0992d77b-662a-4f6b-ad41-551279d4f716/image.png" width="830px"></a>
+
+
 ## [Gruvbox Material Dark](themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4)
 
 <a title="Gruvbox Material Dark YASB Theme" href="themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4/image.png" width="830px"></a>
