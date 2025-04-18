@@ -1,0 +1,530 @@
+/* -------------------------------------------------------------------------------------------------- */
+/* Variables                                                                                         */
+/* -------------------------------------------------------------------------------------------------- */
+
+:root {
+	--rosewater: rgb(245, 224, 220);
+	--flamingo: rgb(242, 205, 205);
+	--pink: rgb(245, 194, 231);
+	--mauve: rgb(203, 166, 247);
+	--red: rgb(243, 139, 168);
+	--maroon: rgb(235, 160, 172);
+	--peach: rgb(250, 179, 135);
+	--yellow: rgb(249, 226, 175);
+	--green: rgb(166, 227, 161);
+	--teal: rgb(148, 226, 213);
+	--sky: rgb(137, 220, 235);
+	--sapphire: rgb(116, 199, 236);
+	--blue: rgb(137, 180, 250);
+	--lavender: rgb(180, 190, 254);
+	--text: rgb(205, 214, 244);
+	--subtext1: rgb(186, 194, 222);
+	--subtext0: rgb(166, 173, 200);
+	--overlay2: rgb(147, 153, 178);
+	--overlay1: rgb(127, 132, 156);
+	--overlay0: rgb(108, 112, 134);
+	--surface2: rgb(88, 91, 112);
+	--surface1: rgb(69, 71, 90);
+	--surface0: rgb(40, 41, 54);
+	--base: rgb(30, 30, 46);
+	--mantle: rgb(24, 24, 37);
+	--crust: rgb(17, 17, 27);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* 1. Layout and Containers                                                                           */
+/* -------------------------------------------------------------------------------------------------- */
+
+* {
+	font-size: 12px;
+	color: #cdd6f4;
+	font-weight: 900;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0 8px;
+	margin: 0;
+	background-color: #1e1e2e;
+	border-radius: 8px;
+}
+
+.widget {
+	padding: 0 10px;
+	margin: 0;
+}
+
+.widget .label {
+	padding: 2px 2px 1px 2px;
+
+}
+
+.widget .label.alt {
+	padding: 1px 8px 1px 8px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* 2. Widget Containers                                                                               */
+/* -------------------------------------------------------------------------------------------------- */
+
+.glazewm-workspaces .widget-container {
+	background-color: var(--mantle);
+	margin: 3px 0px 3px 0px;
+	border-radius: 8px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* 3. Widgets                                                                                         */
+/* -------------------------------------------------------------------------------------------------- */
+
+/***-------------------------------      • Windows Desktops •      --------------------------------***/
+
+.glazewm-workspaces {
+	margin: 0;
+}
+.glazewm-workspaces .offline-status {
+    color: rgb(205, 214, 244);
+    font-size: 12px;
+    padding: 0 4px;
+    font-weight: 900;
+}
+.glazewm-workspaces .ws-btn {
+    border: none;
+    background-color: var(--surface2);
+    margin: 0px 4px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    height: 10px;
+    width: 10px;
+}
+.glazewm-workspaces .ws-btn.populated {
+    background-color:var(--surface2);
+}
+.glazewm-workspaces .ws-btn.active {
+    color: rgba(0, 68, 255, 0);
+    background-color:var(--mauve);
+    width: 28px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+/***---------------------------------      • Audio Widget •      ----------------------------------***/
+
+.audio-menu {
+	background-color: var(--mantle);
+}
+.audio-container .device {
+	background-color: var(--base);
+	border: none;
+	padding: 6px 8px 6px 4px;
+	margin: 2px 0;
+	font-size: 12px;
+	border-radius: 4px;
+	font-family: "SF Pro Text";
+}
+.audio-container .device.selected {
+	background-color: var(--crust);
+}
+.audio-container .device:hover {
+	background-color: var(--base);
+}
+
+.volume-slider::groove {
+	color: transparent;
+}
+.volume-slider::handle {
+	background-color: transparent;
+}
+.audio-menu {
+	background-color: rgba(17, 17, 27, 0.4);
+}
+
+/***-------------------------------      • Power Menu Widget •      --------------------------------***/
+
+.power-menu-popup {
+	background: var(--crust);
+	border-radius: 8px;
+}
+
+.power-menu-widget .label {
+	color: #eba0ac;
+	font-size: 16px;
+	font-family: "JetBrainsMono NF";
+}
+.power-menu-popup .button {
+	padding: 0px;
+	margin: 5px;
+	width: 250px;
+	height: 175px;
+	border-radius: 8px;
+	background-color: var(--base);
+	font-family: "SF Pro Rounded";
+	color: white;
+
+}
+.power-menu-popup .button.hover {
+	background-color: var(--base);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 0px;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text);
+	font-family: "SF Pro Rounded";
+}
+.power-menu-popup .button .icon {
+	font-size: 55px;
+	padding-top: 25px;
+	padding-right: 10px;
+	color: var(--text);
+}
+.power-menu-popup .button.cancel .icon {
+	color: var(--red);
+}
+.power-menu-popup .button.cancel .label {
+	color: var(--red);
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* 6. Icons & Typography                                                                               */
+/* --------------------------------------------------------------------------------------------------- */
+
+.icon {
+	font-size: 16px;
+}
+.volume-widget .icon {
+	color: var(--mauve);
+	margin: 1px 2px 0 0;
+}
+.start-menu .icon {
+	font-size: 18px;
+	color: #89b4fa
+}
+.clock-widget .icon {
+	color: #cba6f7;
+	font-size: 14px;
+	margin-right: 7px;
+}
+
+/***---------------------------------      • Weather Icons •      ----------------------------------***/
+
+.weather-widget .icon.cloudyDay {
+	color: var(--mauve);
+}
+.weather-widget .icon.cloudyNight {
+	color: var(--mauve);
+}
+.weather-widget .icon.rainyDay {
+	color: var(--mauve);
+}
+.weather-widget .icon.rainyNight {
+	color: var(--mauve);
+}
+.weather-widget .icon.snowyIcyDay {
+	color: var(--mauve);
+}
+.weather-widget .icon.snowyIcyNight {
+	color: var(--mauve);
+}
+.weather-widget .icon.blizzard {
+	color: var(--mauve);
+}
+.weather-widget .icon.default {
+	color: var(--mauve);
+}
+
+/***----------------------------------      • Weather Card •      -----------------------------------***/
+
+.weather-card {
+	background-color: var(--mantle);
+}
+.weather-card-today {
+	border-radius: 8px;
+	background-color: var(--base);
+	color: var(--text);
+}
+.weather-card-today .label {
+	font-size: 12px;
+	font-family: "SF Pro Rounded";
+}
+.weather-card-today .label.location {
+	font-size: 24px;
+	font-weight: 800;
+	font-family: "SF Pro Rounded";
+}
+.weather-card-today .label.alert {
+	font-size: 12px;
+	font-weight: 700;
+	background-color: rgba(247, 199, 42, 0.05);
+	border: 1px solid rgba(247, 209, 42, 0.1);
+	color: rgba(196, 181, 162, 0.85);
+	border-radius: 6px;
+	padding: 5px 0;
+}
+.weather-card-day {
+	border-radius: 8px;
+	background-color: var(--base);
+}
+.weather-card-day .label {
+	font-size: 12px;
+	font-family: "SF Pro Rounded";
+}
+
+/* Media Widget */
+
+.media-widget {
+	padding: 0;
+	margin-left: 0;
+}
+.media-widget .label {
+	color: var(--lavender);
+    padding-left: 5px;
+}
+
+/* Hide media widget buttons */
+
+.media-widget .btn {
+	max-width: 0;
+}
+
+.calendar {
+	background-color: var(--mantle);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+	background-color: rgba(17, 17, 27, 0);
+	color: var(--overlay1);
+	font-family: "SF Pro Rounded";
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+.calendar .calendar-table::item:selected {
+	color: #4c4f69;
+	background: var(--mauve);
+	border-radius: 8px;
+}
+.calendar .day-label {
+	margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+	font-family: "SF Pro Rounded";
+	font-size: 16px;
+	color: var(--text);
+	font-weight: 700;
+	min-width: 180px;
+	max-width: 180px;
+}
+.calendar .month-label {
+	font-weight: normal;
+	padding-bottom: 12px;
+}
+.calendar .date-label {
+	font-size: 88px;
+	font-weight: 900;
+	color: var(--text);
+	margin-top: -20px;
+}
+
+.home-menu {
+	background-color: var(--mantle);
+	border-radius: 8px;
+	padding: 0;
+	margin-left: 0px;
+}
+.home-menu .menu-item {
+	padding: 8px 48px 8px 12px;
+	font-size: 13px;
+	font-family: "SF Pro Rounded";
+	font-weight: 600;
+}
+.home-menu .menu-item:hover {
+	background-color: #cba6f4;
+	color: #181825;
+	margin: 4px 6px;
+	border-radius: 4px;
+}
+.home-menu .separator {
+	max-height: 1px;
+	background-color: #45475a;
+	margin: 0 8px;
+}
+
+.wallpapers-gallery-window {
+	background-color: var(--mantle);
+	border: 2px;
+	margin: 0;
+}
+
+.volume-slider {
+	border: none;
+}
+.volume-slider::groove {
+}
+.volume-slider::handle {
+}
+.audio-menu {
+	background-color: rgba(17, 17, 27, 0.4);
+}
+.audio-container .device {
+	background-color: transparent;
+	border: none;
+	padding: 6px 8px 6px 4px;
+	margin: 2px 0;
+	font-size: 12px;
+	border-radius: 4px;
+}
+.audio-container .device.selected {
+	background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+	background-color: rgba(255, 255, 255, 0.06);
+}
+
+.wallpapers-gallery-buttons {
+	background-color: var(--base);
+	color: var(--text);
+	border: none;
+	font-size: 16px;
+	padding: 8px 0px;
+	border-radius: 8px;
+	margin: 8px 8px 8px 8px;
+	width: 600px;
+	font-family: "SF Pro Rounded";
+}
+
+.wallpapers-widget {
+    padding: 0 6px 0 6px;
+}
+
+/***----------------------------------      • Disk •      -----------------------------------***/
+
+.disk-widget {
+    padding: 0 6px 0 6px;
+}
+.disk-group {
+    background-color:rgba(17, 17, 27, 0.4);
+}
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+.disk-group-row:hover {
+    background-color:rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.disk-group-label-bar{
+    max-height:8px;
+    border:0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(137, 180, 250, 0.1);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk{
+    background-color: rgb(203, 166, 247);
+    border-radius: 4px;
+}
+.disk-group-label {
+    font-size: 10px;
+}
+.disk-group-label-size {
+    font-size: 10px;
+    color: rgb(203, 166, 247);
+}
+.disk-widget .icon {
+  color: var(--mauve);
+}
+
+.cava-widget {
+    padding: 0;
+    margin: 0;
+}
+.cava-widget .widget-container {}
+
+/* CPU MEMORY Setting */
+.cpu-widget {
+    padding-right: 0;
+}
+.memory-widget {
+    padding-left: 0;
+}
+.cpu-widget .widget-container {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.memory-widget .widget-container {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.memory-widget .label {
+    min-width: 34px;
+    max-width: 34px;
+}
+.cpu-widget .label {
+    min-width: 34px;
+    max-width: 34px;
+}
+.cpu-widget .icon {
+    color: var(--mauve);
+    margin-right: 4px;
+}
+.memory-widget .icon {
+    color: var(--mauve);
+    margin-right: 4px;
+}
+
+/* WIFI Setting */
+.wifi-widget .icon{
+    color: var(--mauve) !important;
+}
+
+.update-check-widget {
+    padding: 0 0px 0 0px;
+}
+.update-check-widget .icon {
+    font-size: 16px;
+}
+.update-check-widget .widget-container.winget,
+.update-check-widget .widget-container.windows {
+    background: var(--mauve);
+    margin: 0px 0px 0px 0px;
+    border-radius: 10px;
+    border: 0px solid var(--sapphire);
+}
+.update-check-widget .widget-container.winget .icon,
+.update-check-widget .widget-container.windows .icon {
+    color: var(--base);
+    margin: 0 2px 0 6px;
+}
+.update-check-widget .widget-container.winget .label,
+.update-check-widget .widget-container.windows .label {
+    margin: 0 6px 0 1px;
+    color: var(--base);
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.traffic-widget .icon {
+    color: rgb(203, 166, 247);
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.traffic-widget .label {
+color: rgb(203, 166, 247);
+}
+
+.widget {
+   border-radius: 8px;
+    margin: 8px 4px;
+    background-color: var(--surface0);
+}
