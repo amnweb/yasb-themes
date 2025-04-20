@@ -47,7 +47,7 @@
 	padding: 0 8px;
 	margin: 0;
 	background-color: #1e1e2e;
-	border-radius: 8px;
+	border-radius: 15px;
 }
 
 .widget {
@@ -150,8 +150,7 @@
 
 .power-menu-widget .label {
 	color: #eba0ac;
-	font-size: 16px;
-	font-family: "JetBrainsMono NF";
+	font-size: 16px
 }
 .power-menu-popup .button {
 	padding: 0px;
@@ -160,7 +159,6 @@
 	height: 175px;
 	border-radius: 8px;
 	background-color: var(--base);
-	font-family: "SF Pro Rounded";
 	color: white;
 
 }
@@ -172,7 +170,6 @@
 	font-size: 16px;
 	font-weight: 600;
 	color: var(--text);
-	font-family: "SF Pro Rounded";
 }
 .power-menu-popup .button .icon {
 	font-size: 55px;
@@ -247,12 +244,10 @@
 }
 .weather-card-today .label {
 	font-size: 12px;
-	font-family: "SF Pro Rounded";
 }
 .weather-card-today .label.location {
 	font-size: 24px;
 	font-weight: 800;
-	font-family: "SF Pro Rounded";
 }
 .weather-card-today .label.alert {
 	font-size: 12px;
@@ -269,7 +264,6 @@
 }
 .weather-card-day .label {
 	font-size: 12px;
-	font-family: "SF Pro Rounded";
 }
 
 /* Media Widget */
@@ -296,7 +290,6 @@
 .calendar .calendar-table::item {
 	background-color: rgba(17, 17, 27, 0);
 	color: var(--overlay1);
-	font-family: "SF Pro Rounded";
 	margin: 0;
 	padding: 0;
 	border: none;
@@ -314,7 +307,6 @@
 .calendar .day-label,
 .calendar .month-label,
 .calendar .date-label {
-	font-family: "SF Pro Rounded";
 	font-size: 16px;
 	color: var(--text);
 	font-weight: 700;
@@ -341,7 +333,6 @@
 .home-menu .menu-item {
 	padding: 8px 48px 8px 12px;
 	font-size: 13px;
-	font-family: "SF Pro Rounded";
 	font-weight: 600;
 }
 .home-menu .menu-item:hover {
@@ -395,8 +386,7 @@
 	padding: 8px 0px;
 	border-radius: 8px;
 	margin: 8px 8px 8px 8px;
-	width: 600px;
-	font-family: "SF Pro Rounded";
+	width: 600px
 }
 
 .wallpapers-widget {
