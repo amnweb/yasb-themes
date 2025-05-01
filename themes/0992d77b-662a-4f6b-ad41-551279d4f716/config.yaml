@@ -133,15 +133,15 @@ widgets:
     type: "yasb.media.MediaWidget"
     options:
       label: "<span>\udb80\udf87</span> {title}"
-      label_alt: "<span>\udb80\udf87</span> {artist}"
-      hide_empty: false
+      label_alt: "<span>\udb80\udf87</span> {title}"
+      hide_empty: true
       callbacks:
        on_left: "toggle_media_menu"
        on_middle: "do_nothing"
-       on_right: "do_nothing"
+       on_right: "toggle_label"
       max_field_size:
-        label: 20
-        label_alt: 20
+        label: 50
+        label_alt: 50
       show_thumbnail: false
       controls_only: false
       controls_left: true
@@ -154,10 +154,10 @@ widgets:
         play: "\ue768"
         pause: "\ue769"
       media_menu:
-       blur: false
+       blur: true
        round_corners: true
        round_corners_type: "normal"
-       border_color: "system"
+       border_color: "#cba6f7"
        alignment: "right"
        direction: "down"
        offset_top: 6
@@ -418,3 +418,8 @@ widgets:
       on_left: "toggle_menu"
       on_middle: "do_nothing"
       on_right: "toggle_label"
+    label_shadow:
+      enabled: true
+      color: "black"
+      radius: 3
+      offset: [ 1, 4 ]

@@ -1,3 +1,4 @@
+
 /* -------------------------------------------------------------------------------------------------- */
 /* Variables                                                                                         */
 /* -------------------------------------------------------------------------------------------------- */
@@ -163,7 +164,7 @@
 
 }
 .power-menu-popup .button.hover {
-	background-color: var(--base);
+	background-color: var(--surface1);
 }
 .power-menu-popup .button .label {
 	margin-bottom: 0px;
@@ -208,29 +209,8 @@
 
 /***---------------------------------      • Weather Icons •      ----------------------------------***/
 
-.weather-widget .icon.cloudyDay {
-	color: var(--mauve);
-}
-.weather-widget .icon.cloudyNight {
-	color: var(--mauve);
-}
-.weather-widget .icon.rainyDay {
-	color: var(--mauve);
-}
-.weather-widget .icon.rainyNight {
-	color: var(--mauve);
-}
-.weather-widget .icon.snowyIcyDay {
-	color: var(--mauve);
-}
-.weather-widget .icon.snowyIcyNight {
-	color: var(--mauve);
-}
-.weather-widget .icon.blizzard {
-	color: var(--mauve);
-}
-.weather-widget .icon.default {
-	color: var(--mauve);
+.weather-widget .icon {
+    color: var(--mauve);
 }
 
 /***----------------------------------      • Weather Card •      -----------------------------------***/
@@ -390,6 +370,10 @@
     padding: 0 6px 0 6px;
 }
 
+.wallpapers-widget .icon {
+	color: #cba6f7;
+}
+
 
 /***----------------------------------      • Disk •      -----------------------------------***/
 
@@ -432,10 +416,13 @@
 .disk-widget .icon {
   color: var(--mauve);
 }
+
+
 .cava-widget {
     padding: 0;
     margin: 0;
 }
+
 /* CPU MEMORY Setting */
 .cpu-widget {
     padding-right: 0;
@@ -660,7 +647,7 @@ Example: "Windows Media" becomes "windows-media" */
 
 .media-menu .btn {
     font-family: "Segoe Fluent Icons";
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     margin: 10px 2px 0px 2px;
     min-width: 40px;
@@ -668,18 +655,16 @@ Example: "Windows Media" becomes "windows-media" */
     min-height: 40px;
     max-height: 40px;
     border-radius: 20px;
-	color: black ;
+	color: var(--overlay0) ;
 }
 .media-menu .btn.prev {
     margin-left: 10px;
 }
 .media-menu .btn:hover {
-    color: white;
-    background-color:var(--mauve);
+    color: var(--overlay2);
 }
 .media-menu .btn.play {
-    background-color:var(--mauve);
-    font-size: 20px
+    font-size: 24px
 }
 .media-menu .btn.disabled:hover,
 .media-menu .btn.disabled {
