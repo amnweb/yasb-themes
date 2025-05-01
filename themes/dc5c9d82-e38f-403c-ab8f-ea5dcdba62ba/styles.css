@@ -87,7 +87,7 @@
 	margin-bottom: 10px;
 	color: #83C092;
 	font-weight: 600;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI";
 }
 .power-menu-widget .label {
 	color: #E67E80;
@@ -104,7 +104,7 @@
 	height: 120px;
 	border-radius: 8px;
 	background-color: #232A2E;
-	font-family: "SegoeUI";
+	font-family: "Segoe UI";
 	color: #83C092;
 	border: 1px solid #232A2E;
 	margin: 8px;
@@ -118,7 +118,7 @@
 	font-size: 16px;
 	font-weight: 600;
 	color: #83C092;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI";
 }
 .power-menu-popup .button .icon {
 	font-size: 48px;
@@ -233,7 +233,7 @@
 .calendar .calendar-table::item {
     background-color: rgba(17, 17, 27, 0);
     color: #7FBBB3;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     margin: 0;
     padding: 0;
     border: none;
@@ -251,7 +251,7 @@
 .calendar .day-label,
 .calendar .month-label,
 .calendar .date-label {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     font-size: 16px;
     color: #A7C080;
     font-weight: 700;

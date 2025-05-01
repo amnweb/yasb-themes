@@ -40,7 +40,7 @@ QToolTip {
     font-size: 12px;
     color: var(--subtext0);
     font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica;
     margin: 0;
     padding: 0;
 }
@@ -195,7 +195,7 @@ QToolTip {
 .home-menu .menu-item {
     padding: 8px 38px 9px 16px;
     font-size: 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     color: var(--text);
     font-weight: 600;
 }
@@ -237,11 +237,11 @@ QToolTip {
     border-radius: 14px;
 }
 .disk-group-label {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
 }
 .disk-group-label-size {
     font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     font-size: 11px;
     color: #666879;
 }
@@ -299,7 +299,7 @@ QToolTip {
 .weather-card-today .label {
     font-size: 13px;
     font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
 }
 .weather-card-today .label.location {
     font-size: 24px;
@@ -312,7 +312,7 @@ QToolTip {
 }
 .weather-card-day .label {
     font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
 }
 .weather-card-today .label.arert {
     font-size: 12px;

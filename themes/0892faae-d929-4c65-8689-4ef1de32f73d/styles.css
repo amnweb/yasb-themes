@@ -308,7 +308,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 15px;
     font-weight: 400;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     padding: 8px;
     color: white;
     background-color: rgba(17, 17, 27, 0.75);
@@ -317,7 +317,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 12px;
     padding: 4px 8px 6px 8px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     color: #9399b2;
     background-color: rgba(17, 17, 27, 0.75);
 }

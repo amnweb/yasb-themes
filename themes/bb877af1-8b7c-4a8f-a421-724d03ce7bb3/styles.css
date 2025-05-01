@@ -44,7 +44,7 @@
 	margin-bottom: 10px;
 	color: #ffffff;
 	font-weight: 600;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI";
 }
 .power-menu-widget .label {
 	font-size: 13px;
@@ -59,7 +59,7 @@
 	height: 120px;
 	border-radius: 8px;
 	background-color: rgba(41, 42, 58, 0.497);
-	font-family: "SegoeUI";
+	font-family: "Segoe UI";
 	color: white;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	margin: 8px;
@@ -73,7 +73,7 @@
 	font-size: 16px;
 	font-weight: 600;
 	color: rgb(255, 255, 255);
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI";
 }
 .power-menu-popup .button .icon {
 	font-size: 48px;
@@ -219,7 +219,7 @@
 .home-menu .menu-item {
     padding: 8px 48px 9px 16px;
     font-size: 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     color:white;
     font-weight: 600;
 }
@@ -254,7 +254,7 @@
 }
 .audio-container .device {
 	font-size: 13px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     background-color: transparent;
     border: none;
     padding: 7px 4px 7px 4px;
@@ -280,7 +280,7 @@
 .calendar .calendar-table::item {
     background-color: transparent;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     margin: 0;
     padding: 0;
     border: none;
@@ -298,7 +298,7 @@
 .calendar .day-label,
 .calendar .month-label,
 .calendar .date-label {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     font-size: 16px;
     color: #fff;
     font-weight: 700;

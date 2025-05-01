@@ -408,7 +408,7 @@ QToolTip {
 .calendar .calendar-table::item {
     background-color: rgba(33, 33, 33, 0.736);
     color: rgba(197, 197, 197, 0.85);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     margin: 0;
     padding: 0;
     border: none;
@@ -423,7 +423,7 @@ QToolTip {
 .calendar .day-label,
 .calendar .month-label,
 .calendar .date-label {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     font-size: 16px;
     color: #fff;
     font-weight: 700;
@@ -497,7 +497,7 @@ QToolTip {
 .home-menu .menu-item {
     padding: 6px 48px 7px 16px;
     font-size: 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     color: rgb(208, 208, 208);
     font-weight: 600;
 }
@@ -551,15 +551,15 @@ QToolTip {
 }
 .notes-menu .note-item .title {
     font-size: 13px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
 }
 .notes-menu .note-item .date {
     font-size: 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     color: rgba(255, 255, 255, 0.4);
 }
 .notes-menu .empty-list {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     color: rgba(255, 255, 255, 0.2);
     font-size: 24px;
     font-weight: 600;
@@ -572,7 +572,7 @@ QToolTip {
     border: none;
     border-radius: 4px;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
 }
 .notes-menu .cancel-button {
     margin-left: 4px;
@@ -589,7 +589,7 @@ QToolTip {
 .notes-menu .note-input {
     background-color:rgba(17, 17, 27, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     font-size: 14px;
     max-height: 30px;
     padding: 4px;

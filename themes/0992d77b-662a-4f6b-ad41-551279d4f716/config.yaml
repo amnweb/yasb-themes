@@ -1,12 +1,10 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
-
 komorebi:
   start_command: "komorebic start"
   stop_command: "komorebic stop"
   reload_command: "komorebic stop && komorebic start"
-
 bars:
   status-bar:
     enabled: true
@@ -40,9 +38,11 @@ bars:
         [
           "home",
           "wallpaper",
-          "media",
           "update_check",
-          "traffic"
+          "cpu",
+          "memory",
+          "traffic",
+          "media",
         ]
       center:
         [
@@ -51,12 +51,11 @@ bars:
         ]
       right:
         [
+          "notes",
           "weather",
           "clock",
           "cava",
           "volume",
-          "cpu",
-          "memory",
           "wifi",
           "disk",
           "power_menu"
@@ -136,6 +135,10 @@ widgets:
       label: "<span>\udb80\udf87</span> {title}"
       label_alt: "<span>\udb80\udf87</span> {artist}"
       hide_empty: false
+      callbacks:
+       on_left: "toggle_media_menu"
+       on_middle: "do_nothing"
+       on_right: "do_nothing"
       max_field_size:
         label: 20
         label_alt: 20
@@ -150,6 +153,30 @@ widgets:
         next_track: "\ue893"
         play: "\ue768"
         pause: "\ue769"
+      media_menu:
+       blur: false
+       round_corners: true
+       round_corners_type: "normal"
+       border_color: "system"
+       alignment: "right"
+       direction: "down"
+       offset_top: 6
+       offset_left: 0
+       thumbnail_corner_radius: 8
+       thumbnail_size: 120
+       max_title_size: 80
+       max_artist_size: 20
+       show_source: true
+      media_menu_icons:
+       play: "\ue768"
+       pause: "\ue769"
+       prev_track: "\ue892"
+       next_track: "\ue893"
+      label_shadow:
+       enabled: true
+       color: "black"
+       radius: 3
+       offset: [ 1, 1 ]
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -161,7 +188,7 @@ widgets:
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: {conditions}, Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: '3bf4cf9a7c3f40d6b31174128242807'
+      api_key: '24b6c2cda6d84066b0304531241908'
       update_interval: 600 #Update interval in seconds, Min 600
       hide_decimal: true
       location: "Dhaka"
@@ -363,3 +390,31 @@ widgets:
       callbacks:
         on_left: 'toggle_label'
         on_right: 'exec cmd /c Taskmgr'
+  notes:
+    type: "yasb.notes.NotesWidget"
+    options:
+      label: "<span>\udb82\udd0c</span> {count}"
+      label_alt: "{count} notes"
+    container_padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    menu:
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "System"
+      alignment: "right"
+      direction: "down"
+      offset_top: 6
+      offset_left: 0
+      max_title_size: 150
+      show_date_time: true
+    icons:
+      note: "\udb82\udd0c"
+      delete: "\ue20d"
+    callbacks:
+      on_left: "toggle_menu"
+      on_middle: "do_nothing"
+      on_right: "toggle_label"

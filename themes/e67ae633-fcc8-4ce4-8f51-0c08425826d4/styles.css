@@ -74,7 +74,7 @@
 .calendar .calendar-table::item {
     background-color: var(--bg_dim);
     color: var(--fg0);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     margin: 0;
     padding: 0;
 }
@@ -92,7 +92,7 @@
 .calendar .day-label,
 .calendar .month-label,
 .calendar .date-label {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     font-size: 16px;
     color: var(--fg0);
     font-weight: 700;
@@ -170,7 +170,7 @@
     height: 240px;
     border-radius: 6px;
     background-color: var(--bg3);
-    font-family: "SegoeUI";
+    font-family: "Segoe UI";
     color: white;
     border: 4px solid rgba(255, 255, 255, 0);
 
@@ -187,7 +187,7 @@
     font-size: 16px;
     font-weight: 600;
     color: var(--fg0);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI";
     display: inline-block;
     text-align: center;
 }

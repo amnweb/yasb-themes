@@ -52,7 +52,7 @@ QToolTip { margin:6px; color: #cdd6f4;font-size:12px; background-color: #12151b;
 .calendar .calendar-table::item {
     background-color: rgba(17, 17, 27, 0);
     color: rgba(162, 177, 196, 0.85);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     margin: 0;
     padding: 0;
     border: none;
@@ -69,7 +69,7 @@ QToolTip { margin:6px; color: #cdd6f4;font-size:12px; background-color: #12151b;
 .calendar .day-label,
 .calendar .month-label,
 .calendar .date-label {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     font-size: 16px;
     color: var(--foreground-color);
     font-weight: 600;
@@ -99,7 +99,7 @@ QToolTip { margin:6px; color: #cdd6f4;font-size:12px; background-color: #12151b;
 .home-menu .menu-item {
     padding: 8px 48px 9px 16px;
     font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI';
     color: var(--foreground-color); 
     font-weight: 600;
 }

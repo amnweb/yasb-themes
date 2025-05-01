@@ -198,7 +198,7 @@ QToolTip {
 .calendar .calendar-table::item {
     background-color: rgba(17, 17, 27, 0);
     color: rgba(162, 177, 196, 0.85);
-    font-family: 'JetBrainsMono NFP', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'JetBrainsMono NFP';
     margin: 0;
     padding: 0;
     border: none;
@@ -215,7 +215,7 @@ QToolTip {
 .calendar .day-label,
 .calendar .month-label,
 .calendar .date-label {
-    font-family: 'JetBrainsMono NFP', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'JetBrainsMono NFP';
     font-size: 16px;
     color: var(--mauve);
     font-weight: 700;
@@ -306,7 +306,7 @@ QToolTip {
     font-size: 14px;
     font-weight: 600;
     border-radius: 4px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI';
 }
 .whkd-popup .keybind-buttons-container {
     min-width: 240px;
@@ -339,7 +339,7 @@ QToolTip {
 .whkd-popup .filter-input {
     padding: 0 8px 2px 8px;
     font-size: 14px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI';
     border: 1px solid #2e2e2e;
     border-radius: 4px;
     outline: none;
@@ -514,7 +514,7 @@ QToolTip {
 .home-menu .menu-item {
     padding: 8px 48px 9px 16px;
     font-size: 12px;
-    font-family: 'JetBrainsMono NFP', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'JetBrainsMono NFP';
     color: var(--text);
     font-weight: 600;
 }

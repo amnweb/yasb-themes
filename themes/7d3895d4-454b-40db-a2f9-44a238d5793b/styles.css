@@ -65,7 +65,7 @@
 	margin-bottom: 10px;
 	color: #ffffff;
 	font-weight: 600;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI";
 }
 .power-menu-widget .label {
 	color: #f38ba8;
@@ -82,7 +82,7 @@
 	height: 120px;
 	border-radius: 8px;
 	background-color: rgb(41, 42, 58);
-	font-family: "SegoeUI";
+	font-family: "Segoe UI";
 	color: white;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	margin: 8px;
@@ -96,7 +96,7 @@
 	font-size: 16px;
 	font-weight: 600;
 	color: rgba(255, 255, 255, 0.95);
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI";
 }
 .power-menu-popup .button .icon {
 	font-size: 48px;

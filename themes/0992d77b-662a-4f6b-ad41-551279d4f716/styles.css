@@ -122,7 +122,6 @@
 	margin: 2px 0;
 	font-size: 12px;
 	border-radius: 4px;
-	font-family: "SF Pro Text";
 }
 .audio-container .device.selected {
 	background-color: var(--crust);
@@ -150,7 +149,8 @@
 
 .power-menu-widget .label {
 	color: #eba0ac;
-	font-size: 16px
+	font-size: 16px;
+        padding: 0
 }
 .power-menu-popup .button {
 	padding: 0px;
@@ -183,6 +183,7 @@
 .power-menu-popup .button.cancel .label {
 	color: var(--red);
 }
+
 
 /* --------------------------------------------------------------------------------------------------- */
 /* 6. Icons & Typography                                                                               */
@@ -356,10 +357,6 @@
 .volume-slider {
 	border: none;
 }
-.volume-slider::groove {
-}
-.volume-slider::handle {
-}
 .audio-menu {
 	background-color: rgba(17, 17, 27, 0.4);
 }
@@ -386,12 +383,13 @@
 	padding: 8px 0px;
 	border-radius: 8px;
 	margin: 8px 8px 8px 8px;
-	width: 600px
+	width: 600px;
 }
 
 .wallpapers-widget {
     padding: 0 6px 0 6px;
 }
+
 
 /***----------------------------------      • Disk •      -----------------------------------***/
 
@@ -434,13 +432,10 @@
 .disk-widget .icon {
   color: var(--mauve);
 }
-
 .cava-widget {
     padding: 0;
     margin: 0;
 }
-.cava-widget .widget-container {}
-
 /* CPU MEMORY Setting */
 .cpu-widget {
     padding-right: 0;
@@ -473,10 +468,12 @@
     margin-right: 4px;
 }
 
+
 /* WIFI Setting */
 .wifi-widget .icon{
     color: var(--mauve) !important;
 }
+
 
 .update-check-widget {
     padding: 0 0px 0 0px;
@@ -504,6 +501,8 @@
     font-size: 14px;
 }
 
+
+
 .traffic-widget .icon {
     color: rgb(203, 166, 247);
     padding-right: 6px;
@@ -513,8 +512,208 @@
 color: rgb(203, 166, 247);
 }
 
+
 .widget {
    border-radius: 8px;
     margin: 8px 4px;
     background-color: var(--surface0);
+}
+
+
+.notes-widget {
+    padding: 4;
+}
+.notes-widget .label {
+   font-size: 14px;
+   color: rgb(203, 166, 247);
+}
+.notes-widget .icon {
+    font-size: 16px;
+    color: rgb(203, 166, 247);
+}
+/* Notes Widget Menu */
+.notes-menu {
+    min-width: 400px;
+    max-width: 400px;
+    background-color: #1e1e2e;
+}
+.notes-menu .note-item {
+    background-color:transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.notes-menu .note-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.notes-menu .note-item .icon {
+    font-size: 16px;
+    padding: 0 4px;
+    color: rgb(203, 166, 247);
+}
+.notes-menu .delete-button {
+    color: #ff6b6b;
+    background: transparent;
+    border: none;
+    font-size: 8px;
+    padding: 7px 8px;
+    border-radius: 3px;
+}
+.notes-menu .delete-button:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.notes-menu .note-item .title {
+    font-size: 13px;
+    font-family: 'Segoe UI';
+}
+.notes-menu .note-item .date {
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    color: rgba(255, 255, 255, 0.4);
+}
+.notes-menu .empty-list {
+    font-family: 'Segoe UI';
+    color: rgb(203, 166, 247);
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0 20px 0;     
+}
+.notes-menu .add-button,  
+.notes-menu .cancel-button {
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Segoe UI';
+}
+.notes-menu .cancel-button {
+    margin-left: 4px;
+}
+.notes-menu .add-button:hover,
+.notes-menu .cancel-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.notes-menu .scroll-area {
+    background: transparent; 
+    border: none; 
+    border-radius:0;
+}
+.notes-menu .note-input {
+    background-color:rgba(17, 17, 27, 0.2);
+    border: 1px solid rgb(203, 166, 247);
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    max-height: 30px;
+    padding: 4px;
+    border-radius: 6px;
+}
+.note-input:focus {
+    border: 1px solid rgb(203, 166, 247);
+}
+
+.media-menu {
+    min-width: 420px;
+    max-width: 420px;
+    background-color: #1e1e2e;
+	border-radius: 8px;
+}
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-family: 'Segoe UI';
+}
+.media-menu .artist {
+    font-size: 13px;
+    color: var(--mauve);
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+.media-menu .source {
+    font-size: 11px;
+    color: #000;
+    font-weight: normal;
+    border-radius: 3px;
+    background-color: #bac2de;
+    padding: 2px 4px;
+
+}
+/* The source class name is the same as what you see in the media widget; just replace spaces with dashes and convert it to lowercase.
+Example: "Windows Media" becomes "windows-media" */
+.media-menu .source.firefox {
+    background-color: #ff583b;
+    color: #ffffff;
+}
+.media-menu .source.spotify {
+    background-color: #199143;
+    color: #ffffff;
+}
+.media-menu .source.edge {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+.media-menu .source.windows-media {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+
+.media-menu .btn {
+    font-family: "Segoe Fluent Icons";
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+	color: black ;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    color: white;
+    background-color:var(--mauve);
+}
+.media-menu .btn.play {
+    background-color:var(--mauve);
+    font-size: 20px
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: #4e525c;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    color: var(--mauve);
+    margin-top: 20px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 5px 4px;
+    border-radius: 3px;
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 2px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+
+}
+.media-menu .progress-slider::groove:hover {
+    background: transparent;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--mauve);
+    border-radius: 3px;
+    height: 4px;
 }
