@@ -1,6 +1,7 @@
 import os
 import argparse
 import json
+import re
 import uuid
 import sys
 import requests
@@ -88,6 +89,9 @@ def download_image(image_url, image_path):
     with open(image_path, 'wb') as f:
         f.write(response.content)
 
+def sanitize_description(description):
+    return re.sub(r"[^a-zA-Z0-9 .,!?'\-()]", '', description)
+
 def main():
     parser = argparse.ArgumentParser(description='Submit a theme to the theme repo.')
     parser.add_argument('--name', type=str, help='The theme to submit.')
@@ -98,7 +102,7 @@ def main():
     args = parser.parse_args()
 
     name = args.name
-    description = args.description
+    description = sanitize_description(args.description)
     homepage = args.homepage
     author = args.author
     image = args.image
