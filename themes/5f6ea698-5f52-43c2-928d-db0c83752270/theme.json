@@ -1,1 +1,12 @@
-{"id": "5f6ea698-5f52-43c2-928d-db0c83752270", "name": "tokyonight", "description": "A theme inspired by the Yasb 004 theme.", "homepage": "", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5f6ea698-5f52-43c2-928d-db0c83752270/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5f6ea698-5f52-43c2-928d-db0c83752270/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5f6ea698-5f52-43c2-928d-db0c83752270/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5f6ea698-5f52-43c2-928d-db0c83752270/image.png", "author": "szbmrk", "publish_date": "2025-05-02T13:17:11.217868"}
+{
+    "id": "5f6ea698-5f52-43c2-928d-db0c83752270",
+    "name": "Catppuccin Mocha",
+    "description": "A theme inspired by the Yasb 004 theme.",
+    "homepage": "",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5f6ea698-5f52-43c2-928d-db0c83752270/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5f6ea698-5f52-43c2-928d-db0c83752270/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5f6ea698-5f52-43c2-928d-db0c83752270/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5f6ea698-5f52-43c2-928d-db0c83752270/image.png",
+    "author": "szbmrk",
+    "publish_date": "2025-05-02T13:17:11.217868"
+}
