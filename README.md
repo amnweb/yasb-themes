@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Catppuccin Mocha Reimagined](themes/68dd7099-3fea-45a7-9882-6d59bb05431c)
+
+<a title="Catppuccin Mocha Reimagined YASB Theme" href="themes/68dd7099-3fea-45a7-9882-6d59bb05431c"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/68dd7099-3fea-45a7-9882-6d59bb05431c/image.png" width="830px"></a>
+
+
 ## [Fluency](themes/38332072-b910-46e4-8315-f0094369ae52)
 
 <a title="Fluency YASB Theme" href="themes/38332072-b910-46e4-8315-f0094369ae52"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/38332072-b910-46e4-8315-f0094369ae52/image.png" width="830px"></a>
