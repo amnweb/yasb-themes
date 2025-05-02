@@ -63,7 +63,6 @@ widgets:
       power_menu: false
       blur: true
       round_corners: true
-      round_corners_type: "normal"
       round_corners_type: "small"
       border_color: "#7aa2f7"
       alignment: "left"
