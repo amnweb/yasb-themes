@@ -29,8 +29,8 @@ body:
     id: image
     attributes:
       label: Image
-      description: "A URL to an image representing the theme. It can be a temporary image, it will be cloned to the theme library. Note: The image must be a PNG file. E.g. an imgur link. This image should contain a preview of the bar only."
-      placeholder: https://...
+      description: "A URL to an image representing the theme. It can be a temporary image, it will be cloned to the theme library. Note: The image must be direct link to the PNG file. E.g. an (https://i.imgur.com/cWzvOqq.png) This image should contain a preview of the bar only."
+      placeholder: https://example/image.png
     validations:
       required: true
   - type: textarea
