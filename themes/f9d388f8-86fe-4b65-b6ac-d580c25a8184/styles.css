@@ -1,0 +1,193 @@
+:root {
+    --primary-bg: rgb(0, 0, 0);
+    --primary-border: 2px solid white;
+    --light-green: #a6e3a1;
+    --black: black;
+    --gray: rgb(95, 91, 91);
+    --font-size-small: 11px;
+    --font-size-normal: 13px;
+    --standard-margin: 5px 0 5px 0;
+}
+* {
+    font-weight: 700;
+    font-family: "Consolas", "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+.yasb-bar {
+    background-color: var(--primary-bg);
+}
+.title-bar {
+    background-color: transparent;
+}
+.container-left {
+    padding-left: 5px;
+}
+.container-right {
+    padding-right: 5px;
+}
+.container-center {
+    min-width: 0;
+    max-width: 0;
+}
+.widget .label {
+    padding: 0 5px;
+    font-size: var(--font-size-normal);
+}
+.clock-widget,
+.komorebi-workspaces,
+.active-window-widget,
+.volume-widget,
+.brightness-widget,
+.battery-widget,
+.wifi-widget {
+    margin: var(--standard-margin);
+    background-color: transparent;
+    border-radius: 0;
+    border: var(--primary-border);
+}
+.clock-widget .label,
+.active-window-widget .label,
+.volume-widget .label,
+.brightness-widget .label,
+.battery-widget .label,
+.wifi-widget .label {
+    font-size: var(--font-size-normal);
+    color: var(--text-color);
+}
+.clock-title,
+.komorebi-workspaces-title,
+.active-window-title,
+.system-title {
+    background-color: var(--primary-bg);
+    max-height: 10px;
+}
+.clock-title .label,
+.komorebi-workspaces-title .label,
+.active-window-title .label,
+.system-title .label {
+    font-size: var(--font-size-small);
+    color: var(--text-color);
+}
+.clock-title {
+    margin: 0 90px 0 0;
+}
+.komorebi-workspaces-title {
+    margin: 0 10px;
+}
+.active-window-title {
+    margin: 0 0 0 169px;
+}
+.system-title {
+    margin: 0 221px 0 0;
+}
+.komorebi-workspaces {
+    margin-right: 5px;
+}
+.komorebi-workspaces .ws-btn {
+    background-color: rgb(32, 32, 32);
+    margin: 5px 5px;
+    font-size: var(--font-size-normal);
+    color: var(--text-color);
+    width: 20px;
+    border-radius: 0;
+}
+.komorebi-workspaces .ws-btn.populated {
+    background-color: var(--gray);
+}
+.komorebi-workspaces .ws-btn.active {
+    background-color: var(--light-green);
+    color: var(--black);
+}
+.active-window-widget {
+    min-width: 1245px;
+}
+.active-window-widget:hover,
+.clock-widget:hover, 
+.komorebi-workspaces:hover {
+    border: 2px solid #a6e3a1;
+}
+.volume-widget {
+    border-right: 0;
+}
+.brightness-widget,
+.battery-widget {
+    border-left: 0;
+    border-right: 0;
+}
+.wifi-widget {
+    border-left: 0;
+    margin-left: -4px;
+    margin-right: 5px;
+}
+.volume-widget .label:hover,
+.brightness-widget .label:hover {
+    color: var(--light-green);
+}
+.battery-widget,
+.wifi-widget {
+    min-width: 64px;
+}
+.volume-slider {
+    margin: 5px 4px;
+    height: 10px;
+}
+.volume-slider::groove {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+
+}
+.volume-slider::groove:hover {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.volume-slider::sub-page {
+    background: white;
+    height: 4px;
+} 
+.audio-menu {
+    background-color: var(--primary-bg);
+    border: var(--primary-border);
+}
+.audio-container .device {
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+    color: var(--gray);
+}
+.audio-container .device.selected {
+    color: var(--light-green);
+}
+.audio-container .device:hover {
+    color: white;
+}
+.calendar {
+    background-color: var(--primary-bg);
+    border: var(--primary-border);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:selected {
+    color: var(--light-green);
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-size: 16px;
+    min-width: 120px;
+    max-width: 120px;
+}
+.calendar .date-label {
+    font-size: 68px;
+    color: rgb(255, 255, 255);
+    margin-top: -10px;
+}
