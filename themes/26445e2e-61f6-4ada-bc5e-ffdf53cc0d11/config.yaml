@@ -242,7 +242,7 @@ widgets:
         rainyNight: "\udb81\udd99"
         snowyIcyDay: "\udb81\udd99"
         snowyIcyNight: "\udb81\udd99"
-        blizzard: "\udb81\udd99"
+        blizzardDay: "\udb81\udd99"
         default: "\udb81\udd99"
       container_padding:
         top: 0

@@ -312,7 +312,8 @@
     cursor: pointer;
 }
 
-.glazewm-workspaces .ws-btn.active {
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
     color: var(--red);
     font-weight: 900;
 }

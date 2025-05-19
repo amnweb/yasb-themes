@@ -94,7 +94,8 @@
 	margin-left: 5px;
 }
 
-.glazewm-workspaces .ws-btn.active {
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
 	color: rgba(0, 0, 0, 0);
 	background-color: var(--mauve);
 	margin-right: 5px;
@@ -257,7 +258,7 @@
 .weather-widget .icon.snowyIcyNight {
 	color: var(--mauve);
 }
-.weather-widget .icon.blizzard {
+.weather-widget .icon.blizzardDay {
 	color: var(--mauve);
 }
 .weather-widget .icon.default {

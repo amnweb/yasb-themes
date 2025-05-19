@@ -227,7 +227,7 @@ widgets:
           rainyNight: "\udb81\ude7e"
           snowyIcyDay: "\udb81\udd98"
           snowyIcyNight: "\udb81\udd98"
-          blizzard: "\uebaa"
+          blizzardDay: "\uebaa"
           default: "\uebaa"
           # https://www.weatherapi.com/docs/
           # Usage {temp}, {min_temp}, {max_temp}, {temp_f}, {min_temp_f}, {max_temp_f}, {location}, {humidity}, {icon}, {conditions}

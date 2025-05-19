@@ -103,7 +103,8 @@
 .glazewm-workspaces .ws-btn.populated {
     background-color:var(--surface2);
 }
-.glazewm-workspaces .ws-btn.active {
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
     color: rgba(0, 68, 255, 0);
     background-color:var(--mauve);
     width: 28px;
