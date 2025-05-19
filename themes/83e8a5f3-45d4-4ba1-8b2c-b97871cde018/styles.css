@@ -77,7 +77,8 @@
 .glazewm-workspaces .ws-btn.populated {
     background-color: var(--sky);
 }
-.glazewm-workspaces .ws-btn.active {
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
     color: rgba(149, 177, 255, 0);
     background-color: var(--teal);
     width: 36px;

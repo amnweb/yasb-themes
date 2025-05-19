@@ -124,7 +124,8 @@
 }
 
 .komorebi-workspaces .ws-btn.active,
-.glazewm-workspaces .ws-btn.active {
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
     color: transparent;
     background-color: var(--icon-color);
     width: 36px;

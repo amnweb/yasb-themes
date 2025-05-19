@@ -84,7 +84,7 @@ widgets:
         rainyNight: "\udb81\udd96"
         snowyIcyDay: "\udb81\udd92"
         snowyIcyNight: "\udb81\udd92"
-        blizzard: "\udb81\udd93"
+        blizzardDay: "\udb81\udd93"
         default: "\uebaa"
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"

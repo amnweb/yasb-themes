@@ -207,7 +207,8 @@ QToolTip {
     justify-content: center;
 }
 
-.glazewm-workspaces .ws-btn.active,
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty,
 .glazewm-workspaces .ws-btn:hover {
     background-color: #727272;
     border-radius: 4px; /* Optional: Add slight rounding */

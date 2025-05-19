@@ -335,7 +335,7 @@ widgets:
         rainyNight: "\U0001F327\U0001F311"
         snowyIcyDay: "\U00002744"
         snowyIcyNight: "\U0001F328"
-        blizzard: "\U0001F32C"
+        blizzardDay: "\U0001F32C"
         # default: "\udb81\udd99"
       container_padding:
         top: 0
