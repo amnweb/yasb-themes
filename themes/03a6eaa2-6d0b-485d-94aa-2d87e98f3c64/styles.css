@@ -1,0 +1,499 @@
+:root {
+    --background:#2e3440;
+    --red:#bf616a;
+    --green:#a3be8c;
+    --yellow:#ebcb8b;
+    --blue:#88c0d0;
+    --pink:#b48ead;
+    --text:#88c0d0;
+    --base1: #4c566a;
+    --base2:#232831;
+    --base3:#3b4252;
+}
+* {
+    font-size: 14px;
+    color: #bec8e7;
+    font-weight: 500;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+.yasb-bar {
+    padding: 0;
+    margin: 0;
+}
+.widget {
+    padding: 0px 8px;
+    margin: 0 4px;
+    border-radius: 0px;
+}
+.widget .icon {
+    font-size: 18px;
+}
+.clock-widget {
+    background-color: var(--base2);
+    padding: 0;
+}
+.clock-widget .icon {
+    color: var(--text);
+    padding: 0 6px;
+}
+.clock-widget .label {
+    background-color: var(--base2);
+    color: var(--text);
+    padding: 0 6px;
+    margin: 1px;
+    border-radius: 0px;
+}
+.calendar {
+    background-color: var(--base2);
+
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--text);
+    border: none;
+    outline: none;
+}
+.calendar .calendar-table::item:selected {
+    color: var(--background);
+    background-color: var(--text)
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-size: 16px;
+    min-width: 120px;
+    max-width: 120px;
+    color: var(--text);
+}
+.calendar .date-label {
+    font-size: 68px;
+    color: var(--text);
+    margin-top: -10px;
+}
+.volume-widget {
+    background-color: var(--base2);
+    padding: 0;
+}
+.volume-widget .icon {
+    color: var(--text);
+    padding: 0 1 0 4;
+}
+.volume-widget .label {
+    background-color: var(--base2);
+    color: var(--text);
+    padding: 0 4px;
+}
+.audio-menu{
+    background-color: var(--base2);
+    border-radius: 2px;
+}
+.volume-slider {
+    border: none;
+}
+.audio-container .device {
+    font-family: Bahnschrift;
+    background-color: var(--base3);
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 14px;
+    border-radius: 0px;
+}
+.audio-container .device.selected {
+
+color: var(--red);
+}
+.audio-container .device:hover {
+    background-color: var(--base1);
+}
+.weather-widget {
+    background-color: var(--base2);
+    padding: 0;
+}
+.weather-widget .icon {
+    color: var(--text);
+    padding: 0 6px;
+}
+.weather-widget .label {
+    background-color: var(--base2);
+    color: var(--text);
+    padding: 0 6px;
+    margin: 1px;
+    border-radius: 0px;
+}
+.power-menu-widget {
+    background-color: var(--base2);
+    padding: 0;
+}
+.power-menu-widget .label {
+    color: var(--text);
+    padding: 0 8px;
+
+font-size: 14px;
+}
+.taskbar-widget {
+    background-color: var(--base2);
+    padding: 0 2 0 2;
+}
+.taskbar-widget .app-icon {
+    padding: 0 4 0;
+    border: none;
+}
+.active-window-widget {
+    background-color: var(--base2);
+    padding: 0;
+}
+.active-window-widget .label {
+    color: var(--text);
+    background-color: var(--base2);
+    padding: 0 8px;
+    margin:  0 px;
+    border-radius: 0px;
+}
+.active-window-widget .icon {
+    padding: 0 8px;
+    border: none;
+    margin: 0;
+    background-color: var(--base2);
+}
+/*POWER WIDGET*/
+.power-menu-widget {
+    padding-left: 0;
+}
+.power-menu-widget .label {
+	color: var(--text);
+    font-size: 15px;
+    background-color: var(--base2);
+}
+/*POWER MENU POPUP*/
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: rgba(191, 202, 219, 0.726);
+	font-weight: 600;
+	font-family: "Bahnschrift", Tahoma, Geneva, Verdana, sans-serif;
+}
+.power-menu-popup .button {
+	padding: 0px;
+	width: 280px;
+	height: 250px;
+	border-radius: 0px;
+	background-color: var(--base3);
+	font-family: "Bahnscrift", Tahoma, Geneva, Verdana, sans-serif;
+	color: white;
+	border: 4px solid rgba(255, 255, 255, 0);
+
+}
+.power-menu-popup .button.hover {
+	background-color: var(--base2);
+	border: 0px solid rgb(55, 56, 75);
+
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 20px;
+	font-weight: 600;
+	color: rgb(176, 176, 176);
+	font-family: "Bahnschrift", Tahoma, Geneva, Verdana, sans-serif;
+}
+.power-menu-popup .button .icon {
+	font-size: 100px;
+	padding-top: 52px;
+	color: var(--text);
+    align-content: center;
+
+}
+.power-menu-popup .button.cancel .icon {
+	color: var(--red);
+
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+
+}
+.wallpapers-widget {
+    padding: 0 6px 0 6px;
+    background-color: var(--base2);
+
+}
+.wallpapers-widget .icon{
+    color: var(--text);
+}
+.wallpapers-gallery-window {
+    background-color: var(--base2);
+    border: 0;
+    margin: 0;
+    border-radius: 0px;
+}
+.wallpapers-gallery-buttons {
+    background-color:rgba(255, 255, 255, 0);
+    color: var(--text);
+    border: none;
+    font-size: 15px;
+    padding: 8px 0;
+    border-radius: 0px;
+    margin:0 8px 8px 8px;
+    width: 600px;
+}
+.wallpapers-gallery-buttons:hover {
+    background-color:rgba(255, 255, 255, 0.1)
+}
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 0px;
+}
+.wallpapers-gallery-image:hover {
+    border: 4px solid rgb(66, 68, 83);
+}
+.wallpapers-gallery-image.focused {
+    border: 4px solid var(--text);
+}
+.media-widget {
+    background-color: var(--base2);    
+}
+.media-widget .label {
+    color: var(--text);
+    border: none;
+    padding-top: 2px;
+}
+
+.media-widget .label.maintext {
+    padding-top: 3px;
+}
+.media-menu {
+    min-width: 220px;
+    max-width: 250px;
+    background-color: var(--base2);
+    border-radius: 0px;
+}
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.media-menu .artist {
+    font-size: 13px;
+    color: var(--text);
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+.media-menu .btn {
+    font-family: "Segoe Fluent Icons";
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    color: var(--base1);
+    background-color: var(--text);
+}
+.media-menu .btn.play {
+    font-size: 20px;
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: #4e525c;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:var(--text);
+    margin-top: 20px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 5px 4px;
+    border-radius: 3px;
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 2px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+
+}
+.media-menu .progress-slider::groove:hover {
+    background: transparent;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--text);
+    border-radius: 3px;
+    height: 4px;
+}
+.wifi-widget {
+    background-color: var(--base2);
+    padding: 0 6px 0 6px;
+}
+.wifi-widget .widget-container .icon {
+    color: 		var(--text);
+}
+.wifi-widget .widget-container .label {
+    color: var(--text);
+}
+.notes-widget {
+    background-color: var(--base2);
+    padding: 0 4px 0 4px;
+}
+.notes-widget .label {
+    color: var(--text);
+}
+.notes-widget .widget-container{
+    margin: 0;
+}
+.notes-widget .icon {
+    font-size: 22px;
+    color: var(--text);
+}
+/* Notes Widget Menu */
+.notes-menu {
+    min-width: 400px;
+    max-width: 400px;
+    background-color: var(--base2);
+}
+.notes-menu .note-item {
+    background-color:transparent;
+    border-bottom: 1px solid #88c0d0;
+}
+.notes-menu .note-item:hover {
+    background-color: var(--base1);
+}
+.notes-menu .note-item .icon {
+    font-size: 16px;
+    padding: 0 4px;
+}
+.notes-menu .delete-button {
+    color: #ff6b6b;
+    background: transparent;
+    border: none;
+    font-size: 8px;
+    padding: 7px 8px;
+    border-radius: 0px;
+}
+.notes-menu .delete-button:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.notes-menu .note-item .title {
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.notes-menu .note-item .date {
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+}
+.notes-menu .empty-list {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0 20px 0;
+}
+.notes-menu .add-button,
+.notes-menu .cancel-button {
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 0px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.notes-menu .cancel-button {
+    margin-left: 4px;
+}
+.notes-menu .add-button:hover,
+.notes-menu .cancel-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.notes-menu .scroll-area {
+    background: transparent;
+    border: none;
+    border-radius:0;
+}
+.notes-menu .note-input {
+    background-color:var(--base2);
+    border: 0px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    max-height: 30px;
+    padding: 4px;
+    border-radius: 0dvb;
+}
+.note-input:focus {
+    border: 1px solid #636363;
+}
+.glazewm-workspaces {
+    background-color: var(--base2);
+
+}
+.glazewm-workspaces .ws-btn {
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    padding: 0px 4px 0px 4px;
+    margin: 0 2px 0 2px;
+
+}
+.glazewm-workspaces .ws-btn.active_populated {
+    color: var(--text);
+
+border-bottom: 2px solid #88c0d0;
+    padding-top: 2px;
+
+}
+.glazewm-workspaces .ws-btn.active_empty {
+    color: #7D8B9D;
+
+border-bottom: 2px solid #88c0d0;
+    padding-top: 2px;
+}
+
+.glazewm-workspaces .ws-btn.populated {
+    color: var(--text);
+}
+.glazewm-workspaces .ws-btn.empty {
+    color: #7D8B9D;
+}
+.glazewm-workspaces .ws-btn:hover,
+.glazewm-workspaces .ws-btn.populated:hover,
+.glazewm-workspaces .ws-btn.empty:hover {
+    background-color: #727272;
+}
+.bluetooth-widget {
+    background-color: var(--base2);
+}
+.bluetooth-widget .label {
+    color: var(--text);
+}
+.bluetooth-widget .icon {
+    color: var(--text);
+}
+.cava-widget {
+    padding: 0 4 0 4;
+    margin: 0;
+}
+.cava-widget .widget-container {
+    background-color: var(--base2);
+}
