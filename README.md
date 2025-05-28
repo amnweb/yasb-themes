@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Dark Nord](themes/03a6eaa2-6d0b-485d-94aa-2d87e98f3c64)
+
+<a title="Dark Nord YASB Theme" href="themes/03a6eaa2-6d0b-485d-94aa-2d87e98f3c64"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/03a6eaa2-6d0b-485d-94aa-2d87e98f3c64/image.png" width="830px"></a>
+
+
 ## [WinVista](themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09)
 
 <a title="WinVista YASB Theme" href="themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/image.png" width="830px"></a>
