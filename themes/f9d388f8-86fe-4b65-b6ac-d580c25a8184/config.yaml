@@ -1,0 +1,246 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+env_file: ".env"
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic reload-configuration"
+bars:
+  status-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: false
+      round_corners: false
+      border_color: System
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+      hide_on_fullscreen: false
+    dimensions:
+      width: "100%"
+      height: 45
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    animation:
+      enabled: false
+      duration: 500
+    widgets:
+      left: ["komorebi_workspaces","active_window"]
+      right: ["volume","brightness","battery","wifi","clock"]
+    layouts:
+      left:
+        alignment: "left"
+        stretch: true
+      center:
+        alignment: "left"
+        stretch: true
+      right:
+        alignment: "right"
+        stretch: true
+  title-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "title-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: false
+      round_corners: false
+      border_color: System
+    window_flags:
+      always_on_top: true
+      windows_app_bar: false
+      hide_on_fullscreen: true
+    dimensions:
+      width: "100%"
+      height: 12
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    animation:
+      enabled: false
+      duration: 500
+    widgets:
+      left: ["komorebi_workspaces_title","active_window_title"]
+      right: ["system_title","clock_title"]
+    layouts:
+      left:
+        alignment: "left"
+        stretch: true
+      center:
+        alignment: "left"
+        stretch: true
+      right:
+        alignment: "right"
+        stretch: true
+widgets:
+  komorebi_workspaces_title:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "workspaces"
+      label_alt: "workspaces"
+      class_name: "komorebi-workspaces-title"
+      callbacks:
+        on_left: "do_nothing"
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Tiling Off"
+      label_workspace_btn: "{index}"
+      label_workspace_active_btn: "{index}"
+      label_workspace_populated_btn: "{index}"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: false
+      animation: false
+      toggle_workspace_layer:
+        enabled: false
+        tiling_label: "Tiling"
+        floating_label: "Floating"
+  clock_title:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "clock-title"
+      label: "clock"
+      label_alt: "clock"
+      callbacks:
+        on_left: "do_nothing"
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a %d. %b  %H:%M}"
+      label_alt: "{%a %d. %b  %H:%M}"
+      locale: 'en_EN'
+      timezones: []
+      calendar: 
+        blur: false
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+      callbacks:
+        on_left: 'toggle_calendar'
+        on_middle: 'toggle_label'
+  active_window_title:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "active-window-title"
+      label: "window"
+      label_alt: "window"
+      callbacks:
+        on_left: "do_nothing"
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: "No active window"
+      label_icon: false
+      label_icon_size: 16
+      max_length: 125
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+  system_title:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "system-title"
+      label: "system"
+      label_alt: "system"
+      callbacks:
+        on_left: "do_nothing"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "VOL. {level}"
+      label_alt: "VOL. {level}"
+      volume_icons:
+        - "\ueee8"  # Icon for muted
+        - "\uf026"  # Icon for 0-10% volume
+        - "\uf027"  # Icon for 11-30% volume
+        - "\uf027"  # Icon for 31-60% volume
+        - "\uf028"  # Icon for 61-100% volume
+      audio_menu:
+        blur: false
+        round_corners: false
+        round_corners_type: 'normal'
+        border_color: 'System'
+        alignment: 'right'
+        direction: 'down'
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+  brightness:
+    type: "yasb.brightness.BrightnessWidget"
+    options:
+      label: "BRI. {percent}%"
+      label_alt: "BRI. {percent}%"
+      tooltip: false
+      hide_unsupported: false
+      brightness_toggle_level: [0, 25, 50, 75, 100]
+      auto_light: false
+      auto_light_icon: "\udb80\udce1"
+      auto_light_night_level: 35
+      auto_light_night_start_time: "19:00"
+      auto_light_night_end_time: "06:45"
+      auto_light_day_level: 75
+      brightness_icons: [
+        "\udb80\udcde",  # Icon for 0-25% brightness
+        "\udb80\udcdd",  # Icon for 26-50% brightness
+        "\udb80\udcdf",  # Icon for 51-75% brightness
+        "\udb80\udce0"   # Icon for 76-100% brightness
+      ]
+      brightness_menu:
+        blur: false
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+          on_left: "toggle_level_next"
+          on_right: "toggle_level_prev"
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "BAT. {percent}%"
+      label_alt: "BAT. {percent}%"
+      charging_options:
+        icon_format: "{charging_icon}"
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span> {wifi_strength}%"
+      label_alt: "<span>{wifi_icon}</span> {wifi_strength}%"
+      update_interval: 5000
+      ethernet_label: "<span>{wifi_icon}</span>"
+      ethernet_label_alt: "<span>{wifi_icon}</span>"
+      ethernet_icon: "\ueba9"
+      wifi_icons: [
+        "\udb82\udd2e",  # Icon for 0% strength
+        "\udb82\udd1f",  # Icon for 1-24% strength
+        "\udb82\udd22",  # Icon for 25-49% strength
+        "\udb82\udd25",  # Icon for 50-74% strength
+        "\udb82\udd28"   # Icon for 75-100% strength
+      ]
+      callbacks:
+        on_left: "exec cmd.exe /c start ms-settings:network"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
