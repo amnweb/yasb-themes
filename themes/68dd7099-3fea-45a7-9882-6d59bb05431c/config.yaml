@@ -74,6 +74,12 @@ widgets:
       offline_label: "GlazeWM Offline"
       hide_empty_workspaces: true
       hide_if_offline: false
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "\u23fc Offline"
+      hide_empty_workspaces: true
+      hide_if_offline: false 
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
