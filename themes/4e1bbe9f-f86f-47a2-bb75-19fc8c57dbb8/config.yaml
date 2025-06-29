@@ -1,0 +1,193 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+bars:
+  primary-bar:
+    enabled: true
+    screens: ['*'] 
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: true
+    blur_effect:
+      enabled: false
+      acrylic: true
+      dark_mode: true
+      round_corners: true
+      border_color: None
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "97%"
+      height: 24
+    padding:
+      top: 12
+      left: 8
+      bottom: -2
+      right: 8
+    widgets:
+      left:
+        [
+#         "home",
+          "language",
+          "active_window",
+          "clock",
+        ]
+      center:
+        [
+#       "glazewm_workspaces",
+        "komorebi_workspaces"]
+      right:
+        [
+          "media",
+          "cava",
+          "volume",
+          "systray",
+#         "weather",
+#         "power_menu"
+        ]
+widgets:
+    language:
+      type: "yasb.language.LanguageWidget"
+      options:
+        label: "<span>\uf11c</span>{lang[country_code]}"
+        update_interval: 5
+        callbacks:
+          on_left: "do_nothing"
+          on_middle: "do_nothing"
+          on_right: "do_nothing"
+    komorebi_workspaces:
+      type: "komorebi.workspaces.WorkspaceWidget"
+      options:
+        label_offline: ""
+        label_workspace_btn: "\udb81\udc3d"
+      label_workspace_active_btn: "\udb81\udc3e"
+      label_workspace_populated_btn: "\udb81\udc3e"
+      label_default_name: ""
+      label_zero_index: true
+      hide_empty_workspaces: true
+      hide_if_offline: true
+      animation: true
+    toggle_workspace_layer:
+      enabled: false
+      tiling_label: "Tiling"
+      floating_label: "Floating"
+    container_padding: 
+      top: 0
+      left: 8
+      bottom: 0
+      right: 8
+    glazewm_workspaces:
+      type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+      options:
+        offline_label: "Offline"
+        hide_empty_workspaces: true
+        hide_if_offline: true
+    media:
+      type: "yasb.media.MediaWidget"
+      options:
+        label: "{artist} - {title}"
+        label_alt: "{title}"
+        max_field_size:
+          label: 48
+          label_alt: 64
+        show_thumbnail: false
+        controls_only: false
+        controls_left: true
+        hide_empty: true
+        thumbnail_alpha: 150
+        thumbnail_padding: 8
+        thumbnail_corner_radius: 0
+        icons:
+          prev_track: "\uf048"
+          next_track: "\uf051"
+          play: "\uf04b"
+          pause: "\uf04c"
+      container_padding:
+        top: 0
+        left: 12
+        bottom: 0
+        right: 12
+    active_window:
+      type: "yasb.active_window.ActiveWindowWidget"
+      options:
+        label: "{win[title]}"
+        label_alt: "{win[process][name]}"
+        label_no_window: ""
+        label_icon: true
+        label_icon_size: 14
+        max_length: 36
+        max_length_ellipsis: "..."
+        monitor_exclusive: true
+    volume:
+      type: "yasb.volume.VolumeWidget"
+      options:
+        label: "<span>{icon}</span> {level}"
+        label_alt: "exec cmd.exe /c start ms-settings:sound"
+        volume_icons:
+          - "\ueee8"  # Icon for muted
+          - "\uf026"  # Icon for 0-10% volume
+          - "\uf027"  # Icon for 11-30% volume
+          - "\uf027"  # Icon for 31-60% volume
+          - "\uf028"  # Icon for 61-100% volume
+        callbacks:
+          on_right: "exec cmd.exe /c start ms-settings:sound"
+    clock:
+      type: "yasb.clock.ClockWidget"
+      options:
+        label: "{%a %b %d %H:%M}"
+        label_alt: "{%A, %d %B %Y %H:%M}"
+        timezones: []
+        calendar:
+          alignment: "center"
+    power_menu:
+      type: "yasb.power_menu.PowerMenuWidget"
+      options:
+        label: "\uf011"
+        uptime: True
+        blur: False
+        blur_background: True
+        animation_duration: 250 # Milisecond 
+        button_row: 5 # Number of buttons in row, min 1 max 5
+        buttons:
+          signout: ["\udb80\udf43","Sign out"]
+          shutdown: ["\uf011","Shut Down"]
+          restart: ["\uead2","Restart"]
+          hibernate: ["\uf28e","Hibernate"]
+          cancel: ["\udb81\udf3a","Cancel"]
+    cava:
+      type: "yasb.cava.CavaWidget"
+      options:
+        bar_height: 12
+        gradient: 1
+        reverse: 0
+        sensitivity: 100
+        foreground: "#89b4fa"
+        gradient_color_1: '#119756'
+        gradient_color_2: '#969711'
+        gradient_color_3: '#971211'
+        bars_number: 8
+        bar_spacing: 2
+        bar_width: 6
+        sleep_timer: 0
+        hide_empty: true
+        container_padding:
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+    systray:
+      type: "yasb.systray.SystrayWidget"
+      options:
+        class_name: "systray"
+        show_unpinned: true
+        show_unpinned_button: false
+        show_battery: false
+        show_volume: false
+        show_network: false
