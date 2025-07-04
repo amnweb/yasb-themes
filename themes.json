@@ -1,4 +1,16 @@
 {
+    "0d077c3f-e206-4425-8077-c64819cea1d1": {
+        "id": "0d077c3f-e206-4425-8077-c64819cea1d1",
+        "name": "Kosmo",
+        "description": "A YASB  GlazeWM theme",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0d077c3f-e206-4425-8077-c64819cea1d1/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0d077c3f-e206-4425-8077-c64819cea1d1/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0d077c3f-e206-4425-8077-c64819cea1d1/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0d077c3f-e206-4425-8077-c64819cea1d1/image.png",
+        "author": "kbuckleys",
+        "publish_date": "2025-07-03T10:46:41.942961"
+    },
     "4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8": {
         "id": "4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8",
         "name": "minty green",
@@ -39,12 +51,12 @@
         "id": "26445e2e-61f6-4ada-bc5e-ffdf53cc0d11",
         "name": "blue yasb",
         "description": "Yasb 005 based theme,compatible with komorebi",
-        "homepage": "",
+        "homepage": "https://github.com/Regling/glowing-octo-parakeet",
         "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11/styles.css",
         "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11/config.yaml",
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11/image.png",
-        "author": "YuraBrattsev",
+        "author": "Regling",
         "publish_date": "2025-05-09T05:04:01.095978"
     },
     "68dd7099-3fea-45a7-9882-6d59bb05431c": {
