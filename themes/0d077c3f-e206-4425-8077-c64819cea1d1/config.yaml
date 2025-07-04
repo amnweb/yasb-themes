@@ -8,7 +8,7 @@ komorebi:
 bars:
   primary-bar:
     enabled: true
-    screens: ['*'] 
+    screens: ["*"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -31,15 +31,19 @@ bars:
       left: 6
       bottom: 2
       right: 6
-      
     widgets:
-      left:
-        ["glazewm_workspaces","active_window"]
-      center:
-        []
+      left: ["glazewm_workspaces", "active_window"]
+      center: []
       right:
-        ["systray","traffic","cpu","volume","clock","media","notifications"]
-
+        [
+          "systray",
+          "traffic",
+          "cpu",
+          "volume",
+          "clock",
+          "media",
+          "notifications",
+        ]
 widgets:
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
@@ -47,37 +51,34 @@ widgets:
       offline_label: "GlazeWM OFFLINE"
       hide_empty_workspaces: true
       hide_if_offline: true
-
-traffic:
+  traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
       label: "<span>\udb82\udcfa</span>"
       label_alt: "<span>\udb82\udcfa</span> \uea9a {download_speed} | \ueaa1 {upload_speed}"
       update_interval: 1000
       callbacks:
-        on_left: 'toggle_label'
-
-media:
-      type: "yasb.media.MediaWidget"
-      options:
-        label: "{title}"
-        label_alt: "{artist}"
-        max_field_size:
-          label: 40
-          label_alt: 40
-        show_thumbnail: false
-        controls_hide: false
-        hide_empty: true
-        thumbnail_alpha: 80
-        thumbnail_padding: 0
-        thumbnail_corner_radius: 0
-        icons:
-          prev_track: "\ue892"
-          next_track: "\ue893"
-          play: "\ue768"
-          pause: "\ue769"
-
-active_window:
+        on_left: "toggle_label"
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title}"
+      label_alt: "{artist}"
+      max_field_size:
+        label: 40
+        label_alt: 40
+      show_thumbnail: false
+      controls_hide: false
+      hide_empty: true
+      thumbnail_alpha: 80
+      thumbnail_padding: 0
+      thumbnail_corner_radius: 0
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+  active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
       label: "{win[title]}"
@@ -88,18 +89,16 @@ active_window:
       max_length: 50
       max_length_ellipsis: "..."
       monitor_exclusive: false
-  
   volume:
-      type: "yasb.volume.VolumeWidget"
-      options:
-        label: "<span>{icon}</span> {level}"
-        volume_icons:
-          - "\ueee8"  # Icon for muted
-          - "\uf026"  # Icon for 0-10% volume
-          - "\uf027"  # Icon for 11-30% volume
-          - "\uf027"  # Icon for 31-60% volume
-          - "\uf028"  # Icon for 61-100% volume
-          
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      volume_icons:
+        - "\ueee8" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -119,8 +118,7 @@ active_window:
         enabled: true
         color: "black"
         radius: 3
-        offset: [ 1, 1 ]
-          
+        offset: [1, 1]
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -145,8 +143,7 @@ active_window:
         left: 12
         bottom: 0
         right: 0
-
-systray:
+  systray:
     type: "yasb.systray.SystrayWidget"
     options:
       class_name: "systray"
@@ -155,8 +152,7 @@ systray:
       show_battery: false
       show_volume: false
       show_network: false
-
-clock:
+  clock:
     type: "yasb.clock.ClockWidget"
     options:
       label: "{%I:%M %p}"
