@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Kosmo](themes/0d077c3f-e206-4425-8077-c64819cea1d1)
+
+<a title="Kosmo YASB Theme" href="themes/0d077c3f-e206-4425-8077-c64819cea1d1"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0d077c3f-e206-4425-8077-c64819cea1d1/image.png" width="830px"></a>
+
+
 ## [minty green](themes/4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8)
 
 <a title="minty green YASB Theme" href="themes/4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8/image.png" width="830px"></a>
