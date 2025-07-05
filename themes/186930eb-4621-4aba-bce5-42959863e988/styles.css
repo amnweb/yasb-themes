@@ -258,6 +258,7 @@
     font-weight: bold;
   }
 .media-widget .btn {
+    font-family: "Segoe Fluent Icons";
     color: #18181b;
     font-weight: bold;
     font-size: 16px;
@@ -267,6 +268,7 @@
     color: #18181b;
   }
 .media-widget .btn.play {
+    font-family: "Segoe Fluent Icons";
     background-color: #e5e7eb;
     border-radius: 6px;
     font-size: 16px;
