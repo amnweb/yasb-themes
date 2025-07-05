@@ -139,36 +139,36 @@ widgets:
         thumbnail_alpha: 80
         thumbnail_padding: 0
         thumbnail_corner_radius: 0
-      scrolling_label:
-        enabled: true
-        update_interval_ms: 33
-        ease_slope: 20
-        ease_pos: 0.8
-        ease_min: 0.5
-      icons:
-        prev_track: "\ue892"
-        next_track: "\ue893"
-        play: "\ue768"
-        pause: "\ue769"
-      media_menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "right"
-        direction: "down"
-        offset_top: 0
-        offset_left: 0
-        thumbnail_corner_radius: 6
-        thumbnail_size: 400
-        max_title_size: 80
-        max_artist_size: 20
-        show_source: true
-      media_menu_icons:
-        play: "\ue768"
-        pause: "\ue769"
-        prev_track: "\ue892"
-        next_track: "\ue893"
+        scrolling_label:
+          enabled: true
+          update_interval_ms: 33
+          ease_slope: 20
+          ease_pos: 0.8
+          ease_min: 0.5
+       icons:
+          prev_track: "\ue892"
+          next_track: "\ue893"
+          play: "\ue768"
+          pause: "\ue769"
+       media_menu:
+          blur: true
+          round_corners: true
+          round_corners_type: "normal"
+          border_color: "system"
+          alignment: "right"
+          direction: "down"
+          offset_top: 0
+          offset_left: 0
+          thumbnail_corner_radius: 6
+          thumbnail_size: 400
+          max_title_size: 80
+          max_artist_size: 20
+          show_source: true
+       media_menu_icons:
+          play: "\ue768"
+          pause: "\ue769"
+          prev_track: "\ue892"
+          next_track: "\ue893"
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
