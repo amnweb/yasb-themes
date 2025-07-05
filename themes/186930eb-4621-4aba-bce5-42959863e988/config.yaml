@@ -13,7 +13,7 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: true
+      center: false
     blur_effect:
       enabled: false
       acrylic: false
