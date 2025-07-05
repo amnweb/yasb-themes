@@ -41,13 +41,13 @@ bars:
         ["systray","traffic","cpu","volume","clock","media","notifications"]
 widgets:
   komorebi_workspaces:
-      type: "komorebi.workspaces.WorkspaceWidget"
-      options:
-        label_offline: "Komorebi OFFLINE"
-        label_default_name: ""
-        label_zero_index: false
-        hide_empty_workspaces: true
-        hide_if_offline: true
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Komorebi OFFLINE"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: true
+      hide_if_offline: true
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -104,15 +104,15 @@ widgets:
         bottom: 0
         right: 0
   volume:
-      type: "yasb.volume.VolumeWidget"
-      options:
-        label: "<span>{icon}</span> {level}"
-        volume_icons:
-          - "\ue74f"  # Icon for muted
-          - "\ue992"  # Icon for 0-10% volume
-          - "\ue993"  # Icon for 11-30% volume
-          - "\ue994"  # Icon for 31-60% volume
-          - "\ue995"  # Icon for 61-100% volume
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      volume_icons:
+        - "\ue74f"  # Icon for muted
+        - "\ue992"  # Icon for 0-10% volume
+        - "\ue993"  # Icon for 11-30% volume
+        - "\ue994"  # Icon for 31-60% volume
+        - "\ue995"  # Icon for 61-100% volume
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -122,53 +122,53 @@ widgets:
         on_left: "toggle_calendar"
         on_right: "toggle_label"
   media:
-      type: "yasb.media.MediaWidget"
-      options:
-        label: "{title}"
-        label_alt: "{artist}"
-        callbacks:
-          on_left: "toggle_media_menu"
-          on_middle: "do_nothing"
-          on_right: "toggle_label"
-        max_field_size:
-          label: 25
-          label_alt: 25
-        show_thumbnail: false
-        controls_hide: false
-        hide_empty: true
-        thumbnail_alpha: 80
-        thumbnail_padding: 0
-        thumbnail_corner_radius: 0
-        scrolling_label:
-          enabled: true
-          update_interval_ms: 33
-          ease_slope: 20
-          ease_pos: 0.8
-          ease_min: 0.5
-       icons:
-          prev_track: "\ue892"
-          next_track: "\ue893"
-          play: "\ue768"
-          pause: "\ue769"
-       media_menu:
-          blur: true
-          round_corners: true
-          round_corners_type: "normal"
-          border_color: "system"
-          alignment: "right"
-          direction: "down"
-          offset_top: 0
-          offset_left: 0
-          thumbnail_corner_radius: 6
-          thumbnail_size: 400
-          max_title_size: 80
-          max_artist_size: 20
-          show_source: true
-       media_menu_icons:
-          play: "\ue768"
-          pause: "\ue769"
-          prev_track: "\ue892"
-          next_track: "\ue893"
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title}"
+      label_alt: "{artist}"
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      max_field_size:
+        label: 25
+        label_alt: 25
+      show_thumbnail: false
+      controls_hide: false
+      hide_empty: true
+      thumbnail_alpha: 80
+      thumbnail_padding: 0
+      thumbnail_corner_radius: 0
+      scrolling_label:
+        enabled: true
+        update_interval_ms: 33
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+  media_menu:
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "system"
+      alignment: "right"
+      direction: "down"
+      offset_top: 0
+      offset_left: 0
+      thumbnail_corner_radius: 6
+      thumbnail_size: 400
+      max_title_size: 80
+      max_artist_size: 20
+      show_source: true
+      media_menu_icons:
+        play: "\ue768"
+        pause: "\ue769"
+        prev_track: "\ue892"
+        next_track: "\ue893"
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
