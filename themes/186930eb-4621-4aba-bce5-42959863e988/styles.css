@@ -3,6 +3,49 @@
   font-size: 16px;
 }
 
+/*KOMOREBI LAYOUT*/
+.komorebi-active-layout .label {
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
+  color: #18181b;
+  font-family: "Segoe UI Fluent";
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 10px;
+  padding-left: 8px;
+  border-radius: 6px;
+  margin-left: 4px;
+}
+.komorebi-layout-menu {
+  border : 1px solid #58585A;
+  background-color: #18181b;
+  color: #e5e7eb;
+  border-radius: 6px;
+}
+.komorebi-layout-menu .menu-item {
+  padding: 4px 16px;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+.komorebi-layout-menu .menu-item-icon {
+  color: #e5e7eb;
+  font-size: 16px;
+}
+.komorebi-layout-menu .menu-item-text {
+  font-family: 'Arial';
+  padding-left: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.komorebi-layout-menu .menu-item:hover {
+  background-color: #58585A;
+  color: #18181b;
+}
+.komorebi-layout-menu .separator {
+  max-height: 1px;
+  background-color: #58585A;
+}
+
 /*KOMOREBI-WORKSPACES*/
 .komorebi-workspaces {
   background-color: transparent;
@@ -10,7 +53,7 @@
   margin-bottom: 0px;
   padding-right: 0px;
   padding-bottom: -2px;
-  padding-left: 4px;
+  padding-left: 0px;
   border-radius: 6px;
   margin-right: 2px;
 }
