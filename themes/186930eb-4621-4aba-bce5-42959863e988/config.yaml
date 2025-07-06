@@ -34,12 +34,69 @@ bars:
       right: 4
     widgets:
       left:
-        ["komorebi_workspaces","active_window"]
+        - "komorebi_active_layout"
+        - "komorebi_workspaces"
+        - "active_window"
       center:
         []
       right:
-        ["systray","traffic","cpu","volume","clock","media","notifications"]
+        - "systray"
+        - "traffic"
+        - "cpu"
+        - "volume"
+        - "clock"
+        - "media"
+        - "notifications"
 widgets:
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{icon}"
+      layouts:
+        - 'bsp'
+        - 'columns'
+        - 'rows'
+        - 'grid'
+        - 'scrolling'
+        - 'vertical_stack'
+        - 'horizontal_stack'
+        - 'ultrawide_vertical_stack'
+        - 'right_main_vertical_stack'
+      layout_icons:
+        bsp: "\uebeb"
+        columns: "\uebf7"
+        rows: "\uec01"
+        grid: "\udb81\udf58"
+        scrolling: "\uebf7"
+        vertical_stack: "\uebee"
+        horizontal_stack: "\uebf0"
+        ultrawide_vertical_stack: "\uebee"
+        right_main_vertical_stack: "\uebf1"
+        monocle: "\uf06f"
+        maximized: "\uf06f"
+        floating: "\uf2d2"
+        paused: "\udb83\udf89"
+        tiling: "\udb81\ude40"
+      callbacks:
+        on_left: 'toggle_layout_menu'
+        on_middle: 'next_layout'
+        on_right: 'prev_layout'
+      layout_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "left"
+        direction: "down"
+        offset_top: 0
+        offset_left: 0
+        show_layout_icons: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -131,8 +188,8 @@ widgets:
         on_middle: "do_nothing"
         on_right: "toggle_label"
       max_field_size:
-        label: 25
-        label_alt: 25
+        label: 30
+        label_alt: 30
       show_thumbnail: false
       controls_hide: false
       hide_empty: true
@@ -140,7 +197,7 @@ widgets:
       thumbnail_padding: 0
       thumbnail_corner_radius: 0
       scrolling_label:
-        enabled: true
+        enabled: false
         update_interval_ms: 33
         ease_slope: 20
         ease_pos: 0.8

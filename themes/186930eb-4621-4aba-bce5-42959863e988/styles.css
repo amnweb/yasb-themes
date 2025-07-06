@@ -1,410 +1,457 @@
 /*GENERAL CONFIGRATIONS*/
 .widget .icon {
-    font-size: 16px;
-  }
+  font-size: 16px;
+}
+
+/*KOMOREBI LAYOUT*/
+.komorebi-active-layout .label {
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
+  color: #18181b;
+  font-family: "Segoe UI Fluent";
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 10px;
+  padding-left: 8px;
+  border-radius: 6px;
+  margin-left: 4px;
+}
+.komorebi-layout-menu {
+  border : 1px solid #58585A;
+  background-color: #18181b;
+  color: #e5e7eb;
+  border-radius: 6px;
+}
+.komorebi-layout-menu .menu-item {
+  padding: 4px 16px;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+.komorebi-layout-menu .menu-item-icon {
+  color: #e5e7eb;
+  font-size: 16px;
+}
+.komorebi-layout-menu .menu-item-text {
+  font-family: 'Arial';
+  padding-left: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.komorebi-layout-menu .menu-item:hover {
+  background-color: #58585A;
+  color: #18181b;
+}
+.komorebi-layout-menu .separator {
+  max-height: 1px;
+  background-color: #58585A;
+}
 
 /*KOMOREBI-WORKSPACES*/
 .komorebi-workspaces {
-    background-color: transparent;
-    margin-top: -2px;
-    margin-bottom: 0px;
-    padding-right: 0px;
-    padding-bottom: -2px;
-    padding-left: 4px;
-    border-radius: 6px;
-    margin-right: 2px;
-  }
+  background-color: transparent;
+  margin-top: -2px;
+  margin-bottom: 0px;
+  padding-right: 0px;
+  padding-bottom: -2px;
+  padding-left: 0px;
+  border-radius: 6px;
+  margin-right: 2px;
+}
 .komorebi-workspaces .offline-status {
-    border: 1px solid #58585A;
-    color: #1C1B22;
-    font-size: 14px;
-    padding: 0 4px;
-    font-weight: bold;
-  }
+  border: 1px solid #58585A;
+  color: #1C1B22;
+  font-size: 14px;
+  padding: 0 4px;
+  font-weight: bold;
+}
 .komorebi-workspaces .ws-btn {
-    border: none;
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: transparent;
-    margin: 0px 0px 2px 2px;;
-    padding: 10px;
-    border-radius: 6px;
-    height: 20px;
-    width: 10px;
-  }
+  border: none;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: transparent;
+  margin: 0px 0px 2px 2px;
+  padding: 10px;
+  border-radius: 6px;
+  height: 20px;
+  width: 10px;
+}
 .komorebi-workspaces .ws-btn.populated {
-    border: 1px solid #58585A;
-    background-color: #18181b;
-    color: #e5e7eb;
-  }
+  border: 1px solid #58585A;
+  background-color: #18181b;
+  color: #e5e7eb;
+}
 .komorebi-workspaces .ws-btn.active {
-    border: 1px solid #18181b;
-    background-color: #e5e7eb;
-    color: #18181b;
-    width: 10px;
-    height: 20px;
-    border-radius: 6px;
-  }
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
+  color: #18181b;
+  width: 10px;
+  height: 20px;
+  border-radius: 6px;
+}
 
 /*ACTIVE WINDOW*/
 .active-window-widget {
-    background-color: #e5e7eb;
-    border: 1px solid #18181b;
-    padding-right: 10px;
-    padding-left: 10px;
-    border-radius: 6px;
-  }
+  background-color: #e5e7eb;
+  border: 1px solid #18181b;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 6px;
+}
 .active-window-widget .label {
-    color: black;
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
-  }
+  color: black;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-/* SYSTEM TRAY */
-.systray{
-    padding: 5;
-    margin: 0;
-    border: none;
-    background-color: #18181b;
-    margin-right: 2px;
-    border-radius: 6px;
-    border: 1px solid #58585A;
-  }
+/*SYSTEM TRAY*/
+.systray {
+  padding: 5;
+  margin: 0;
+  border: none;
+  background-color: #18181b;
+  margin-right: 2px;
+  border-radius: 6px;
+  border: 1px solid #58585A;
+}
 .systray .button {
-    background: transparent;
-    padding: 2px 2px;
-  }
+  background: transparent;
+  padding: 2px 2px;
+}
 .systray .unpinned-visibility-btn {
-    border-radius: 6px;
-    height: 20px;
-    width: 20px;
-    padding-right: 2px;
-    padding-left: 2px;
-    color: #e5e7eb;
-    font-family: "Segoe Fluent Icons";
-    font-weight: bold;
-    font-size: 16px;
-  }
+  border-radius: 6px;
+  height: 20px;
+  width: 20px;
+  padding-right: 2px;
+  padding-left: 2px;
+  color: #e5e7eb;
+  font-family: "Segoe Fluent Icons";
+  font-weight: bold;
+  font-size: 16px;
+}
 .systray .unpinned-visibility-btn:hover {
-    border: 1px solid #58585A;
-    border-radius: 1px;
-  }
+  border: 1px solid #58585A;
+  border-radius: 1px;
+}
 
-/* TRAFFIC */
+/*TRAFFIC*/
 .traffic-widget .icon {
-    font-family: "Segoe Fluent Icons";
-    background-color: #18181b;
-    border: 1px solid #58585A;
-    color: #e5e7eb;
-    font-weight: bold;
-    font-size: 16px;
-    padding-right: 10px;
-    padding-left: 10px;
-    border-radius: 6px;
-    margin-right: 2px
-  }
+  font-family: "Segoe Fluent Icons";
+  background-color: #18181b;
+  border: 1px solid #58585A;
+  color: #e5e7eb;
+  font-weight: bold;
+  font-size: 16px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 6px;
+  margin-right: 2px;
+}
 .traffic-widget .label {
-    border: 1px solid #18181b;
-    background-color: #e5e7eb;
-    color: #18181b;
-    margin-right: 4px;
-    border-radius: 6px;
-    padding-right: 10px;
-    padding-left: 10px;
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
-  }
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
+  color: #18181b;
+  margin-right: 4px;
+  border-radius: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-/* CPU */
+/*CPU*/
 .cpu-widget {
-    border: 1px solid #58585A;
-    background-color: #18181b;
-    border-radius: 6px;
-    margin-right: 2px;
-  }
+  border: 1px solid #58585A;
+  background-color: #18181b;
+  border-radius: 6px;
+  margin-right: 2px;
+}
 .cpu-widget .label {
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
-    color: #e5e7eb;
-    margin-right: 15px;
-    padding-left: 6px;
-  }
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e5e7eb;
+  margin-right: 15px;
+  padding-left: 6px;
+}
 .cpu-widget .icon {
-    font-family: "Segoe Fluent Icons";
-    font-weight: bold;
-    font-size: 16px;
-    color: #e5e7eb;
-    margin-right: 6px;
-  }
+  font-family: "Segoe Fluent Icons";
+  font-weight: bold;
+  font-size: 16px;
+  color: #e5e7eb;
+  margin-right: 6px;
+}
 
 /*AUDIO WIDGET*/
 .volume-widget {
-    border: 1px solid #58585A;
-    padding-right: 10px;
-    padding-left: 10px;
-    background-color: #18181b;
-    border-radius: 6px;
-  }
+  border: 1px solid #58585A;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #18181b;
+  border-radius: 6px;
+}
 .volume-widget .icon {
-    font-family: "Segoe Fluent Icons";
-    color: #e5e7eb;
-    font-size: 22px;
-    font-weight: bold;
-  }
+  font-family: "Segoe Fluent Icons";
+  color: #e5e7eb;
+  font-size: 22px;
+  font-weight: bold;
+}
 .volume-widget .label {
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
-    padding-left: 5px;
-    color: #e5e7eb;
-  }
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 5px;
+  color: #e5e7eb;
+}
 
 /*AUDIO DROPDOWN*/
 .audio-menu {
-    background-color: #18181b;
-  }
+  background-color: #18181b;
+}
 .audio-container .device {
-    font-family: Arial;
-    color: #e5e7eb;
-    font-weight: bold;
-    background-color: #18181b;
-    border: none;
-    padding:6px 8px 6px 4px;
-    margin: 2px 0;
-    font-size: 14px;
-    border-radius: 6px;
-  }
+  font-family: Arial;
+  color: #e5e7eb;
+  font-weight: bold;
+  background-color: #18181b;
+  border: none;
+  padding: 6px 8px 6px 4px;
+  margin: 2px 0;
+  font-size: 14px;
+  border-radius: 6px;
+}
 .audio-container .device.selected {
-    background-color:#e5e7eb;
-    color: #18181b;
-  }
+  background-color: #e5e7eb;
+  color: #18181b;
+}
 
-/*CLOCK - CALENDAR WIDGET*/
+/*CLOCK / CALENDAR WIDGET*/
 .clock-widget {
-    border: 1px solid #58585A;
-    background-color: #18181b;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-right: 2px;
-    margin-left: 2px;
-    border-radius: 6px;
-  }
+  border: 1px solid #58585A;
+  background-color: #18181b;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 6px;
+}
 .clock-widget .label {
-    background-color: #18181b;
-    color: #e5e7eb;
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
-  }
+  background-color: #18181b;
+  color: #e5e7eb;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+}
 .calendar {
-    border: 1px solid #18181b;
-    background-color: #e5e7eb;
-  }
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
+}
 .calendar .calendar-table, .calendar .calendar-table::item {
-    background-color: #e5e7eb;
-    color: #18181b;
-    font-family: Arial;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    outline: none;
-    font-size: 14px;
-  }
+  background-color: #e5e7eb;
+  color: #18181b;
+  font-family: Arial;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 14px;
+}
 .calendar .calendar-table::item:selected {
-    color: #e5e7eb;
-    background-color: #18181b;
-    border-radius: 6px;
-  }
+  color: #e5e7eb;
+  background-color: #18181b;
+  border-radius: 6px;
+}
 .calendar .day-label {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
+}
 .calendar .day-label, .calendar .month-label, .calendar .date-label {
-    font-family: Arial;
-    font-size: 18px;
-    color: #18181b;
-    font-weight: bold;
-    min-width: 160px;
-    max-width: 160px;
-  }
+  font-family: Arial;
+  font-size: 18px;
+  color: #18181b;
+  font-weight: bold;
+  min-width: 160px;
+  max-width: 160px;
+}
 .calendar .month-label {
-    font-weight: bold;
-    font-size: 16px;
-  }
+  font-weight: bold;
+  font-size: 16px;
+}
 .calendar .date-label {
-    font-size: 88px;
-    font-weight: 900;
-    color: #18181b;
-    margin-top: -20px;
-  }
+  font-size: 88px;
+  font-weight: 900;
+  color: #18181b;
+  margin-top: -20px;
+}
 
 /*MEDIA WIDGET*/
 .media-widget {
-    border: 1px solid #18181b;
-    background-color: #e5e7eb;
-    border-radius: 6px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
 .media-widget .label {
-    color: #18181b;
-    background-color: #e5e7eb;
-    padding: 0 0 0 10px;
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
-  }
+  color: #18181b;
+  background-color: #e5e7eb;
+  padding: 0 0 0 10px;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+}
 .media-widget .btn {
-    font-family: "Segoe Fluent Icons";
-    color: #18181b;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 0 4 0 4px;
-  }
+  font-family: "Segoe Fluent Icons";
+  color: #18181b;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 0 3 0 3px;
+}
 .media-widget .btn:hover {
-    color: #18181b;
-  }
+  color: #18181b;
+}
 .media-widget .btn.play {
-    font-family: "Segoe Fluent Icons";
-    background-color: #e5e7eb;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #18181b;
-  }
+  font-family: "Segoe Fluent Icons";
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #18181b;
+}
 .media-widget .btn.disabled:hover, .media-widget .btn.disabled {
-    color: #18181b;
-    font-size: 14px;
-    background-color: #e5e7eb;
-  }
+  color: #18181b;
+  font-size: 14px;
+  background-color: #e5e7eb;
+}
 
-/* MEDIA POPUP */
+/*MEDIA POPUP*/
 .media-menu {
-    min-width: 400px;
-    max-width: 400px;
-    background-color: #e5e7eb;
-    border-radius: 6px;
-  }
+  min-width: 400px;
+  max-width: 400px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+}
+.media-menu .thumbnail {
+  border: 1px solid #18181b;
+  border-radius: 6px;
+}
 .media-menu .title,
 .media-menu .artist,
 .media-menu .source {
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Arial;
-    color: #18181b;
-    margin-left: 10px;
-  }
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial;
+  color: #18181b;
+  margin-left: 10px;
+}
 .media-menu .artist {
-    font-size: 14px;
-    color: #18181b;
-    margin-top: 4px;
-    margin-bottom: 12px;
-  }
+  font-size: 14px;
+  color: #18181b;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
 .media-menu .source {
-    font-size: 14px;
-    color: #18181b;
-    font-weight: bold;
-    font-family: Arial;
-    border-radius: 6px;
-    background-color: #bac2de;
-    padding: 2px 4px;
-  }
+  font-size: 14px;
+  color: #18181b;
+  font-weight: bold;
+  font-family: Arial;
+  border-radius: 6px;
+  background-color: #bac2de;
+  padding: 2px 4px;
+}
 .media-menu .source.firefox {
-    background-color: #ff583b;
-    color: #e5e7eb;
-  }
+  background-color: #ff583b;
+  color: #e5e7eb;
+}
 .media-menu .source.spotify {
-    background-color: #199143;
-    color: #e5e7eb;
-  }
+  background-color: #199143;
+  color: #e5e7eb;
+}
 .media-menu .source.edge {
-    background-color: #0078d4;
-    color: #e5e7eb;
-  }
+  background-color: #0078d4;
+  color: #e5e7eb;
+}
 .media-menu .source.windows-media {
-    background-color: #0078d4;
-    color: #e5e7eb;
-  }
+  background-color: #0078d4;
+  color: #e5e7eb;
+}
 .media-menu .btn {
-    font-family: "Segoe Fluent Icons";
-    font-size: 14px;
-    font-weight: bold;
-    min-width: 40px;
-    max-width: 40px;
-    min-height: 40px;
-    max-height: 40px;
-    color: #18181b;
-  }
+  font-family: "Segoe Fluent Icons";
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  color: #18181b;
+}
 .media-menu .btn.prev {
-    margin-left: 10px;
-  }
+  margin-left: 10px;
+}
 .media-menu .btn:hover {
-    color: #18181b;
-    background-color: transparent;
-  }
+  color: #18181b;
+  background-color: transparent;
+}
 .media-menu .btn.play {
-    background-color: transparent;
-    font-size: 20px
-  }
+  background-color: transparent;
+  font-size: 20px;
+}
 .media-menu .btn.disabled:hover,
 .media-menu .btn.disabled {
-    color: #4e525c;
-    background-color: rgba(0, 0, 0, 0);
-  }
+  color: #4e525c;
+  background-color: rgba(0, 0, 0, 0);
+}
 .media-menu .playback-time {
-    font-size: 14px;
-    font-family: Arial;
-    font-weight: bold;
-    color: #18181b;
-    margin-top: 12px;
-    min-width: 100px;
-  }
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #18181b;
+  margin-top: 12px;
+  min-width: 100px;
+}
 .media-menu .progress-slider {
-    height: 10px;
-    border-radius: 3px;
-  }
+  height: 10px;
+  border-radius: 3px;
+}
 .media-menu .progress-slider::groove {
-    background: transparent;
-    height: 4px;
-    border-radius: 3px;
-  }
+  background: transparent;
+  height: 4px;
+  border-radius: 3px;
+}
 .media-menu .progress-slider::groove:hover {
-    background: transparent;
-    height: 6px;
-    border-radius: 3px;
-    background: #a3a3a3;
-  }
+  background: transparent;
+  height: 6px;
+  border-radius: 3px;
+  background: #a3a3a3;
+}
 .media-menu .progress-slider::sub-page {
-    background: #18181b;
-    border-radius: 6px;
-    height: 4px;
-  }
+  background: #18181b;
+  border-radius: 6px;
+  height: 4px;
+}
 
 /*NOTIFICATIONS*/
 .notification-widget {
-    border: 1px solid #18181b;
-    background-color: #e5e7eb;
-    margin-left: 2px;
-    border-radius: 6px;
-  }
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
+  margin-left: 2px;
+  border-radius: 6px;
+}
 .notification-widget .icon {
-    font-family: "Segoe Fluent Icons";
-    font-size: 16px;
-    padding-right: 8px;
-    color: #e5e7eb;
-  }
+  font-family: "Segoe Fluent Icons";
+  font-size: 16px;
+  padding-right: 8px;
+  color: #e5e7eb;
+}
 .notification-widget .icon.new-notification {
-    font-family: "Segoe Fluent Icons";
-    font-weight: bold;
-    font-size: 16px;
-    color: #18181b;
-  }
+  font-family: "Segoe Fluent Icons";
+  font-weight: bold;
+  font-size: 16px;
+  color: #18181b;
+}
 .notification-widget .label.new-notification {
-    color: #18181b;
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
-  }
+  color: #18181b;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+}
