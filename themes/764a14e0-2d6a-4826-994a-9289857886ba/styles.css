@@ -1,0 +1,1005 @@
+:root {
+    --transparent: rgba(9, 35, 54, 0.62);
+    --main: #70C4BD;
+    --mainLight: #A0F4ED;
+    --overlay2: #9399b2;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --mantle: rgba(24, 24, 37, 0.5);
+    --crust: rgba(17, 17, 27, 0.2);
+    --widget-background: #bc8bf7;
+}
+
+.menu-checkbox
+{
+	color: var(--main);
+    background-color: rgba(17, 17, 27, 0.6);
+}
+
+.menu-checkbox:hover
+{
+	background-color: rgba(17, 17, 27, 0.3);
+	color: var(--mainLight);
+}
+
+QMenu QCheckBox{
+	padding-top:5px;
+	/*padding-left:-17px;*/
+	color: var(--main);
+}
+QMenu QCheckBox:hover{
+	color: var(--mainLight);
+}
+
+QMenu {
+    background-color: rgba(17, 17, 27, 0.6);
+    border-radius: 9px;
+}
+
+QMenu::icon:checked { /* appearance of a 'checked' icon */
+	width:0px;
+	height:0px;
+}
+
+QMenu::item {
+	color: var(--main);
+    background-color: rgba(17, 17, 27, 0.6);
+	
+}
+
+QMenu::item:selected {
+    background-color: rgba(17, 17, 27, 0.3);
+	color: var(--mainLight);
+}
+
+QToolTip {
+    padding: 6px;
+    color: var(--main);
+    font-size: 12px;
+    background-color: rgba(17, 17, 27, 0.2);
+    border: 0px solid #313244;
+    border-radius: 9px;
+}
+* {
+    font-size: 12px;
+    color: var(--main);
+    font-weight: 400;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+.yasb-bar {
+    padding: 0 -2px;
+    margin: 0;
+    border-radius: 8px;
+    margin-left: 9px;
+    margin-right: 9px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.widget {
+    padding: 0 2px;
+    margin: 0;
+}
+.icon {
+    font-size: 14px;
+}
+.widget .label {
+    padding: 0px 2px;
+}
+.clock-widget .widget-container,
+.volume-widget .widget-container,
+.weather-widget .widget-container,
+.notification-widget .widget-container,
+.power-menu-widget .widget-container,
+.memory-widget .widget-container,
+.cpu-widget .widget-container,
+.active-window-widget .widget-container,
+.language-widget .widget-container,
+.taskbar-widget .widget-container,
+.wifi-widget .widget-container,
+.systray-widget .widget-container 
+.komorebi-workspaces .widget-container {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px 0 0px 0;
+    border-radius: 6px;
+
+}
+
+.media-widget .widget-container
+{
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px 0 0px 0;
+    border-radius: 6px;
+
+}
+
+/* WIFI Setting */
+.wifi-widget .icon{
+    color: var(--main) !important;
+}
+.wifi-widget {
+	background: rgba(0, 0, 0, 0.01);
+}
+.wifi-widget .widget-container {}
+.wifi-widget .widget-container .label {}
+.wifi-widget .widget-container .label.alt {}
+.wifi-widget .widget-container .icon {}
+
+.wifi-menu {
+    background-color: rgba(17, 17, 27, 0.4);
+    max-height: 350px;
+    min-height: 375px;
+    min-width: 375px;
+}
+
+.wifi-menu .progress-bar {
+    max-height: 2px;
+}
+
+.wifi-menu .progress-bar::chunk {
+    background-color: var(--main);
+}
+
+.wifi-menu .header {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: rgba(17, 17, 27, 0.4);
+    color: var(--mainLight);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .error-message {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .wifi-list {
+    background-color: rgba(17, 17, 27, 0.2);
+    margin-right: 3px;
+}
+
+.wifi-menu .wifi-item {
+    min-height: 35px;
+    padding: 2px 12px;
+    margin: 2px 4px;
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.wifi-menu .wifi-item[active=true] {
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: 14px;
+    border-radius: 6px;
+    min-height: 80px;
+}
+
+.wifi-menu .wifi-item .icon {
+    font-family: 'Segoe Fluent Icons';
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .name {
+    font-weight: bold;
+    color: var(--mainLight);
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .password {
+	font-family: 'Segoe UI';
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .status {
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .strength {
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 30px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    color: var(--mainLight);
+}
+
+.wifi-menu .wifi-item .connect:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.wifi-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+	background-color: rgba(17, 17, 27, 0.4);
+    color: #B3B9D2;
+}
+
+.wifi-menu .footer .settings-button {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    padding: 0 2px;
+    min-width: 26px;
+    min-height: 26px;
+    color: #B3B9D2;
+}
+
+.wifi-menu .footer .refresh-icon {
+    font-family: 'Segoe Fluent Icons';
+    background-color: transparent;
+    border: none;
+    min-width: 26px;
+    min-height: 26px;
+    color: #B3B9D2;
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* CPU MEMORY Setting */
+.cpu-widget {
+    padding-right: 0;
+}
+.memory-widget {
+    padding-left: 0;
+}
+.cpu-widget .widget-container {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.memory-widget .widget-container {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.memory-widget .label {
+    min-width: 34px;
+    max-width: 34px;
+}
+.cpu-widget .label {
+    min-width: 34px;
+    max-width: 34px;
+}
+.cpu-widget .icon {
+    color: var(--main);
+    margin-right: 4px;
+}
+.memory-widget .icon {
+    color: var(--main);
+    margin-right: 4px;
+}
+
+/* WORKSPACE Setting */
+.komorebi-workspaces .offline-status {
+    color: var(--overlay2);
+    padding: 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: #9cd1dd;
+    margin: 0px 4px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    height: 10px;
+    width: 10px;
+}
+.komorebi-workspaces .ws-btn:hover {
+    background-color: #91b2e7;
+}
+.komorebi-workspaces .ws-btn.populated {
+    background-color: var(--red);
+}
+.komorebi-workspaces .ws-btn.active {
+    background-color: var(--main); 
+    width: 36px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.systray{
+	padding-right: 8px;
+    border: none;
+    background-color: transparent;
+    border-radius: 12px;
+}
+.systray .pinned-container {
+    background: transparent;
+}
+.systray .pinned-container[forceshow=true] {
+    background: var(--surface2);
+}
+.systray .button {
+    border-radius: 4px;
+	background: rgba(0, 0, 0, 0.01);
+    padding: 6px 3px;
+}
+.systray .button:hover {
+    background-color: rgba(168, 168, 168, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+}
+.systray .button[dragging=true] {
+    background: var(--main);
+    border-color: var(--main);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+}
+
+.systray .unpinned-visibility-btn:hover {
+    color: #babfd3;
+}
+
+.systray .unpinned-visibility-btn:checked {
+	margin-left: 8px;
+}
+
+/*DISK WIDGET*/
+.disk-widget {
+    padding-right: 0px;
+    padding-left: 12px;
+}
+/*DISK DROPDOWN*/
+.disk-group {
+    background-color: var(--mantle);    
+}
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+.disk-group-row:hover {
+    background-color:rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.disk-group-label-bar{
+    max-height: 8px;
+    border:0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(148, 226, 213, 0.3);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk{
+    background-color: rgba(148, 226, 213, 1);
+    border-radius: 4px;
+}
+.disk-group-label {
+    font-size: 13px;
+}
+.disk-group-label-size {
+    font-size: 12px;
+    color: rgba(205, 214, 244, 0.5);
+}
+
+/* APP Settings */
+.apps-widget .label {
+	background: rgba(0, 0, 0, 0.01);
+    font-size: 16px;
+    padding: 0 1px;
+}
+.apps-widget .label:hover {
+    color: var(--main);
+}
+
+/* CLOCK and CALENDAR Settings */
+.clock-widget .icon {
+	background: rgba(0, 0, 0, 0.01);
+    color: var(--main);
+    margin-right: 4px;
+}
+
+.clock-widget .label {
+	background: rgba(0, 0, 0, 0.01);
+	color: var(--mainLight);
+    font-weight: bold;
+}
+
+.calendar {
+	background-color: rgba(17, 17, 27, 0.5);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: var(--mainLight);
+    font-family: 'JetBrainsMono NFP';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:selected {
+    color: var(--surface1);
+    border-radius: 8px;
+    background-color: var(--main);
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-family: 'JetBrainsMono NFP';
+    font-size: 16px;
+    color: var(--mainLight);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .month-label {
+    font-weight: normal;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: var(--mainLight);
+    margin-top: -20px;
+}
+
+/* POWER Settings */
+.power-menu-widget .label {
+	background: rgba(0, 0, 0, 0.01);
+    font-size: 14px;
+}
+.power-menu-popup {
+    background-color: transparent;
+}
+.power-menu-popup .button {
+    padding: 0;
+    width: 360px;
+    height: 460px;
+    border-radius: 8px;
+    background-color: rgba(17, 17, 27, 0.3);
+    color: rgba(17, 17, 27, 0.3);
+    border-left: 3px solid rgba(58, 59, 83, 0);
+    border-right: 3px solid rgba(58, 59, 83, 0);
+    border-top: 3px solid rgba(58, 59, 83, 0);
+    border-bottom: 3px solid rgba(58, 59, 83, 0);
+    margin: 0px;
+}
+.power-menu-popup .button.hover {
+    background-color: rgba(17, 17, 27, 0.2);
+	color:  rgba(17, 17, 27, 0.2);
+}
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--main)
+}
+
+.power-menu-popup .button .icon {
+    font-size: 160px;
+    padding-top: 32px;
+    color: var(--main)
+}
+.power-menu-popup .button.cancel .icon {
+    padding: 0;
+    margin: 0;
+}
+.power-menu-popup .button.cancel .label {
+    margin: 0;
+}
+.power-menu-popup .button.cancel {
+    height: 64px;
+    border-radius: 8px;
+}
+.power-menu-popup .button.hover .label,
+.power-menu-popup .button.hover .icon {
+    color: var(--mainLight);
+}
+.uptime {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--mainLight);
+    font-weight: 600;
+}
+
+/* WHKD Settings */
+.whkd-widget {
+    padding: 0 6px 0 6px;
+}
+.whkd-widget .icon {
+    font-size: 18px;
+}
+.whkd-popup .edit-config-button {
+    background-color:#1743a1;
+    color: #ffffff;
+    padding: 4px 8px 6px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    font-family: 'Segoe UI';
+}
+.whkd-popup .keybind-buttons-container {
+    min-width: 240px;
+}
+.whkd-popup .keybind-button {
+    background-color: #343538;
+    color: white;
+    padding: 4px 8px 6px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px inset #4f5055;
+    border-bottom: 2px inset #4f5055;
+    border-radius: 4px;
+    font-family: 'JetBrainsMono NFP';
+}
+.whkd-popup .keybind-button.special {
+    background-color: #343538;
+}
+.whkd-popup .keybind-row:hover{
+    background-color: rgba(136, 138, 155, 0.2);
+    border-radius: 8px;
+}
+.whkd-popup .plus-separator {
+    padding: 0 0px;
+    border:none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color:transparent
+}
+.whkd-popup .filter-input {
+    padding: 0 8px 2px 8px;
+    font-size: 14px;
+    font-family: 'Segoe UI';
+    border: 1px solid #2e2e2e;
+    border-radius: 4px;
+    outline: none;
+    color: white;
+    background-color: #2e2e2e;
+    min-height: 32px;
+}
+.whkd-popup .filter-input:focus {
+    border: 1px solid #0078D4;
+}
+.whkd-popup .keybind-command {
+    font-size: 14px;
+}
+.whkd-popup .keybind-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding: 8px 0;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* VOLUMEN Settings */
+.volume-widget .icon {
+	background: rgba(0, 0, 0, 0.01);
+    color: var(--main);
+    margin-right: 4px;
+	min-width: 18px;
+}
+
+.volume-widget .label {
+	color: var(--mainLight);
+	background: rgba(0, 0, 0, 0.01);
+    font-weight: bold;
+	min-width: 30px;
+}
+
+.volume-slider {
+    border-radius: 2px;
+	border: none;
+	color: var(--main);
+	height: 5px;
+}
+.volume-slider::groove {
+    height: 5px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.volume-slider::handle{
+	color: var(--mainLight);
+	border-radius: 2px;
+} 
+.volume-slider::groove:hover {
+    height: 5px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.audio-menu .volume-slider::sub-page {
+    background: var(--main);
+    border-radius: 2px;
+    height: 5px;
+}
+.audio-menu {
+    background-color:rgba(17, 17, 27, 0.5); 
+}
+.audio-container .device {
+	color: var(--mainLight);
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+	font-weight: bold;
+    border-radius: 4px;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.17);
+}
+
+/* LANGUAGE Settings */
+.language-widget {
+    padding-left: 0;
+}
+.language-widget .widget-container{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.language-widget .icon {
+	background: rgba(0, 0, 0, 0.01);
+    color: var(--main);
+    margin-right: 4px;
+}
+
+.language-widget .label {
+	color: var(--mainLight);
+	background: rgba(0, 0, 0, 0.01);
+    font-weight: bold;
+} 
+.language-menu {
+	background-color: rgba(17, 17, 27, 0.5);
+    min-width: 300px;
+}
+.language-menu .header {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    padding: 12px;
+	color: var(--mainLight);
+}
+.language-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: #B3B9D2;
+}
+.language-menu .footer:hover {
+    background-color: rgba(36, 36, 51, 0.1);
+    color: #fff;
+}
+.language-menu .language-item {
+    padding: 6px 12px;
+    margin: 2px 4px;
+}
+.language-menu .language-item.active {
+    background-color:rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+.language-menu .language-item:hover {
+    background-color:rgba(255, 255, 255, 0.17);
+}
+.language-menu .language-item.active:hover {
+    background-color:rgba(255, 255, 255, 0.17);
+    border-radius: 4px;
+}
+.language-menu .language-item .code {
+    font-weight: 900;
+    font-size: 14px;
+    min-width: 40px;
+    text-transform: uppercase;
+	color: var(--mainLight);
+}
+.language-menu .language-item .icon {
+    font-size: 16px;
+    margin-right: 8px;
+    color: var(--mainLight);
+}
+.language-menu .language-item .name {
+    font-weight: 600;
+    font-size: 14px;
+	color: var(--mainLight);
+}
+.language-menu .language-item .layout {
+    font-weight: 600;
+    font-size: 12px;
+	color: var(--mainLight);
+}
+/* WEATHER Settings */
+.weather-widget .icon {
+    font-size: 18px;
+    margin: 0 4px 1px 0;
+    color: var(--main);
+}
+.weather-card {
+    background-color:var(--crust);
+}
+ 
+.weather-card-today .label {
+    font-size: 12px;
+}
+.weather-card-today .label.location {
+    font-size: 24px;
+    font-weight: 700;
+}
+.weather-card-today .label.arert {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: rgba(247, 199, 42, 0.05);
+    border: 1px solid rgba(247, 209, 42, 0.1);
+    color: rgba(196, 181, 162, 0.85);
+    border-radius: 6px;
+    padding: 5px 0;
+}
+.weather-card-day {
+    border-radius: 8px;
+    background-color: var(--crust);
+}
+.weather-card-day .label {
+    font-size: 12px;
+}
+
+/* TASKBAR Settings */
+.taskbar-widget {
+    /* padding: 0; */
+    margin: 0;
+    border: none;
+}
+.taskbar-widget .app-icon {
+    padding: 0 5px;
+    border: none;
+    margin-bottom: 3px;    
+    margin-top: 3px;  
+    background-color: rgba(0, 0, 0, 0.01);	
+}
+.taskbar-widget .app-icon.foreground{
+    background-color: rgba(168, 168, 168, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+}
+.taskbar-widget {
+    padding-left: 0;
+    margin-right: -12px;
+}
+.taskbar-widget .widget-container {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    /* padding-left: 6px; */
+}
+
+/* ACTIVE WINDOW Settings */
+.active-window-widget .icon {
+    padding: 0 9px;
+}
+
+.active-window-widget .label {
+	color: var(--mainLight);
+	background: rgba(0, 0, 0, 0.01);
+    font-weight: bold;
+}
+
+.active-window-widget {
+    padding-right: 0;
+}
+.active-window-widget .widget-container {
+    padding: auto;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* HOME Settings */
+.home-widget {
+    padding: 2px 4px 2px 0px;    
+}
+.home-widget .widget-container {
+    background-color: var(--widget-background);
+    border-radius: 8px;    
+}
+.home-widget .icon:hover {
+    color: var(--main);
+}
+.home-menu {
+    background-color: var(--crust);
+}
+.home-menu .menu-item {
+    padding: 8px 48px 9px 16px;
+    font-size: 12px;
+    font-family: 'JetBrainsMono NFP';
+    color: var(--main);
+    font-weight: 600;
+}
+.home-menu .menu-item:hover {
+    background-color: rgba(157, 180, 141, 0.116);
+    color: #fff;
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color: rgba(157, 180, 141, 0.116);
+}
+
+/* MEDIA Settings */
+.media-widget {
+	padding: 0;
+	margin: 0;
+    border-radius: 0;
+}
+
+.media-widget .label {
+    color: var(--mainLight);
+    font-weight: bold;
+    padding: 0px;
+    padding-left: 16px;
+    font-size: 12px;
+    max-width: 220px;
+    min-width: 220px;
+}
+.media-widget .btn {
+	color: var(--main);
+	padding:0 1px;
+	margin: 0;
+    font-size: 12px;
+	background: rgba(0, 0, 0, 0.01);
+}
+.media-widget .btn:hover {
+	color: #babfd3;
+}
+.media-widget .btn.play {
+	font-size: 17px;
+    max-width: 22px;
+    min-width: 22px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+	color: #585b70;
+}
+
+.media-menu {
+    min-width: 420px;
+    max-width: 420px;
+    background-color: rgba(31, 39, 49, 0.5);
+}
+
+.media-menu .source {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.media-menu .title{
+	margin-left: 10px;
+	font-size: 16px;
+    font-weight: bold;
+	
+}
+.media-menu .artist {
+    font-size: 13px;
+	font-weight: 600;
+    color: var(--main);
+    margin-top: 0px;
+    margin-bottom: 8px;
+	margin-left: 12px;
+}
+.media-menu .source {
+    font-size: 11px;
+    color: #000;
+    font-weight: normal;
+    border-radius: 3px;
+    background-color: var(--main);
+    padding: 2px 4px;
+
+}
+.media-menu .btn {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    color: #babfd3;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.media-menu .btn.play {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 20px
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: #4e525c;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    color: #7f849c;
+    margin-top: 20px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 5px 4px;
+    border-radius: 3px;
+	color: var(--main);
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 2px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.media-menu .progress-slider::groove:hover {
+    background: transparent;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--main);
+    border-radius: 3px;
+    height: 4px;
+}
+
+/* NOTIFICATION Settings */
+.notification-widget .icon {
+    color: var(--main);
+}
+.notification-widget .icon.new-notification {
+    color: var(--main);
+}
+.notification-widget .label.new-notification {
+    color: var(--main);
+}
+
+/* bluetooth Settings */
+.bluetooth-widget .icon {
+	background: rgba(0, 0, 0, 0.01);
+}
+.bluetooth-widget {}
+.bluetooth-widget .widget-container {}
+.bluetooth-widget .label {
+	background: rgba(0, 0, 0, 0.01);
+}
+.bluetooth-widget .label.alt {
+	background: rgba(0, 0, 0, 0.01);
+}
