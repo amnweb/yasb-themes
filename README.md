@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Blime](themes/70d6d094-4e30-46cd-a385-c43476cbb52e)
+
+<a title="Blime YASB Theme" href="themes/70d6d094-4e30-46cd-a385-c43476cbb52e"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/70d6d094-4e30-46cd-a385-c43476cbb52e/image.png" width="830px"></a>
+
+
 ## [Aquamarine Dream](themes/764a14e0-2d6a-4826-994a-9289857886ba)
 
 <a title="Aquamarine Dream YASB Theme" href="themes/764a14e0-2d6a-4826-994a-9289857886ba"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/764a14e0-2d6a-4826-994a-9289857886ba/image.png" width="830px"></a>
