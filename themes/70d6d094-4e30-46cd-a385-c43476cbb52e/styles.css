@@ -1,13 +1,8 @@
-/*GENERAL CONFIGURATIONS*/
-.widget .icon {
-  font-size: 16px;
-}
-
 /*KOMOREBI LAYOUT*/
 .komorebi-active-layout .label {
-  border: 1px solid #18181b;
-  background-color: #B4FA72;
-  color: #18181b;
+  border: 1px solid #18181bFF;
+  background-color: #B4FA72FF;
+  color: #18181bFF;
   font-family: "Segoe UI Fluent";
   font-size: 18px;
   font-weight: 1000;
@@ -17,17 +12,17 @@
   margin-right: 2px;
 }
 .komorebi-layout-menu {
-  border : 1px solid #58585A;
-  background-color: #18181b;
-  color: #e5e7eb;
+  border : 1px solid #58585AFF;
+  background-color: #18181bFF;
+  color: #e5e7ebFF;
   border-radius: 4px;
 }.komorebi-layout-menu .menu-item {
   padding: 4px 16px;
   font-size: 14px;
-  color: #e5e7eb;
+  color: #e5e7ebFF;
 }
 .komorebi-layout-menu .menu-item-icon {
-  color: #e5e7eb;
+  color: #e5e7ebFF;
   font-size: 16px;
   font-weight: 1200;
 }
@@ -38,12 +33,12 @@
   font-weight: bold;
 }
 .komorebi-layout-menu .menu-item:hover {
-  border: 1px solid #B4FA72;
+  border: 1px solid #B4FA72FF;
   border-radius: 2px;
 }
 .komorebi-layout-menu .separator {
   max-height: 1px;
-  background-color: #58585A;
+  background-color: #58585AFF;
 }
 
 /*KOMOREBI-WORKSPACES*/
@@ -59,25 +54,25 @@
   border-radius: 4px;
 }
 .komorebi-workspaces .ws-btn.populated {
-  border: 1px solid #58585A;
-  background-color: #18181b;
-  color: #e5e7eb;
+  border: 1px solid #58585AFF;
+  background-color: #18181bFF;
+  color: #e5e7ebFF;
 }
 .komorebi-workspaces .ws-btn.active {
-  border: 1px solid #18181b;
-  background-color: #B4FA72;
-  color: #18181b;
+  border: 1px solid #18181bFF;
+  background-color: #B4FA72FF;
+  color: #18181bFF;
 }
 
 /*SYSTEM TRAY*/
 .systray {
   padding: 0 5px 0 5px;
-  background-color: #18181b;
+  background-color: #18181bFF;
   margin-right: 2px;
   margin-left: 2px;
   border-radius: 4px;
-  border: 1px solid #58585A;
-}
+  border: 1px solid #58585AFF;
+} 
 .systray .button {
   background: transparent;
   padding: 2px 2px;
@@ -85,23 +80,19 @@
 .systray .unpinned-visibility-btn {
   padding-right: 2px;
   padding-left: 2px;
-  color: #e5e7eb;
+  color: #e5e7ebFF;
+  background: transparent;
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
   font-size: 16px;
-
-}
-.systray .unpinned-visibility-btn:hover {
-  border: 1px solid #58585A;
-  border-radius: 1px;
 }
 
 /*TRAFFIC*/
 .traffic-widget .icon {
   font-family: "Segoe Fluent Icons";
-  background-color: #e5e7eb;
-  border: 1px solid #18181b;
-  color: #18181b;
+  background-color: #e5e7ebFF;
+  border: 1px solid #18181bFF;
+  color: #18181bFF;
   font-weight: bold;
   font-size: 16px;
   padding-right: 10px;
@@ -110,10 +101,10 @@
   margin-right: 2px;
 }
 .traffic-widget .label {
-  border: 1px solid #18181b;
-  background-color: #e5e7eb;
-  color: #18181b;
-  margin-right: 4px;
+  border: 1px solid #18181bFF;
+  background-color: #e5e7ebFF;
+  color: #18181bFF;
+  margin-right: 2px;
   border-radius: 4px;
   padding-right: 10px;
   padding-left: 10px;
@@ -124,8 +115,8 @@
 
 /*CPU*/
 .cpu-widget {
-  border: 1px solid #18181b;
-  background-color: #e5e7eb;
+  border: 1px solid #18181bFF;
+  background-color: #e5e7ebFF;
   border-radius: 4px;
   margin-right: 2px;
 }
@@ -133,7 +124,7 @@
   font-family: Arial;
   font-size: 14px;
   font-weight: bold;
-  color: #18181b;
+  color: #18181bFF;
   margin-right: 15px;
   padding-left: 6px;
 }
@@ -141,21 +132,21 @@
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
   font-size: 16px;
-  color: #18181b;
+  color: #18181bFF;
   margin-right: 6px;
 }
 
 /*AUDIO WIDGET*/
 .volume-widget {
-  border: 1px solid #18181b;
+  border: 1px solid #18181bFF;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #e5e7eb;
+  background-color: #e5e7ebFF;
   border-radius: 4px;
 }
 .volume-widget .icon {
   font-family: "Segoe Fluent Icons";
-  color: #18181b;
+  color: #18181bFF;
   font-size: 22px;
   font-weight: bold;
 }
@@ -164,18 +155,18 @@
   font-size: 14px;
   font-weight: bold;
   padding-left: 5px;
-  color: #18181b;
+  color: #18181bFF;
 }
 
 /*AUDIO DROPDOWN*/
 .audio-menu {
-  background-color: #18181b;
+  background-color: #18181bFF;
 }
 .audio-container .device {
   font-family: Arial;
-  color: #e5e7eb;
+  color: #e5e7ebFF;
   font-weight: bold;
-  background-color: #18181b;
+  background-color: #18181bFF;
   border: none;
   padding: 6px 8px 6px 4px;
   margin: 2px 0;
@@ -183,33 +174,32 @@
   border-radius: 4px;
 }
 .audio-container .device.selected {
-  border: 1px solid #B4FA72;
-  color: #e5e7eb;
+  border: 1px solid #B4FA72FF;
+  color: #e5e7ebFF;
 }
 
 /*CLOCK / CALENDAR WIDGET*/
 .clock-widget {
-  border: 1px solid #18181b;
-  background-color: #B4FA72;
+  border: 1px solid #58585AFF;
+  background-color: #18181bFF;
   padding-left: 10px;
   padding-right: 10px;
-  margin-left: 2px;
   border-radius: 4px;
 }
 .clock-widget .label {
-  background-color: #B4FA72;
-  color: #18181b;
+  background-color: #18181bFF;
+  color: #e5e7ebFF;
   font-family: Arial;
   font-size: 14px;
   font-weight: bold;
 }
 .calendar {
-  border: 1px solid #58585A;
-  background-color: #18181b;
+  border: 1px solid #58585AFF;
+  background-color: #18181bFF;
 }
 .calendar .calendar-table, .calendar .calendar-table::item {
-  background-color: #18181b;
-  color: #e5e7eb;
+  background-color: #18181bFF;
+  color: #e5e7ebFF;
   font-family: Arial;
   font-weight: bold;
   margin: 0;
@@ -218,8 +208,8 @@
   font-size: 14px;
 }
 .calendar .calendar-table::item:selected {
-  color: #18181b;
-  background-color: #B4FA72;
+  color: #18181bFF;
+  background-color: #B4FA72FF;
   border-radius: 4px;
 }
 .calendar .day-label {
@@ -228,7 +218,7 @@
 .calendar .day-label, .calendar .month-label, .calendar .date-label {
   font-family: Arial;
   font-size: 18px;
-  color: #e5e7eb;
+  color: #e5e7ebFF;
   font-weight: bold;
   min-width: 160px;
   max-width: 160px;
@@ -240,22 +230,22 @@
 .calendar .date-label {
   font-size: 88px;
   font-weight: 900;
-  color: #e5e7eb;
+  color: #e5e7ebFF;
   margin-top: -20px;
 }
 
 /*MEDIA WIDGET*/
 .media-widget {
-  border: 1px solid #18181b;
-  background-color: #e5e7eb;
+  border: 1px solid #18181bFF;
+  background-color: #B4FA72FF;
   border-radius: 4px;
   padding-left: 12px;
   padding-right: 12px;
   margin-right: 2px;
 }
 .media-widget .label {
-  color: #18181b;
-  background-color: #e5e7eb;
+  color: #18181bFF;
+  background-color: #B4FA72FF;
   padding: 0 0 0 10px;
   font-family: Arial;
   font-size: 14px;
@@ -263,37 +253,37 @@
 }
 .media-widget .btn {
   font-family: "Segoe Fluent Icons";
-  color: #18181b;
+  color: #18181bFF;
   font-weight: bold;
   font-size: 12px;
   padding: 0 3px 0 3px;
 }
 .media-widget .btn:hover {
-  color: #18181b;
+  color: #18181bFF;
 }
 .media-widget .btn.play {
   font-family: "Segoe Fluent Icons";
-  background-color: #e5e7eb;
+  background-color: #B4FA72FF;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
-  color: #18181b;
+  color: #18181bFF;
 }
 .media-widget .btn.disabled:hover, .media-widget .btn.disabled {
-  color: #18181b;
+  color: #18181bFF;
   font-size: 14px;
-  background-color: #e5e7eb;
+  background-color: #e5e7ebFF;
 }
 
 /*MEDIA POPUP*/
 .media-menu {
   min-width: 400px;
   max-width: 400px;
-  background-color: #e5e7eb;
+  background-color: #18181bFF;
   border-radius: 4px;
 }
 .media-menu .thumbnail {
-  border: 1px solid #18181b;
+  border: 1px solid #58585AFF;
   border-radius: 4px;
 }
 .media-menu .title,
@@ -302,39 +292,40 @@
   font-size: 16px;
   font-weight: bold;
   font-family: Arial;
-  color: #18181b;
+  color: #e5e7ebFF;
   margin-left: 10px;
 }
 .media-menu .artist {
   font-size: 14px;
-  color: #18181b;
+  color: #e5e7ebFF;
   margin-top: 4px;
   margin-bottom: 12px;
 }
 .media-menu .source {
   font-size: 14px;
-  color: #18181b;
+  color: #FFF;
   font-weight: bold;
   font-family: Arial;
   border-radius: 4px;
-  background-color: #bac2de;
+  background-color: #18181bFF;
+  border 1px solid #58585AFF;
   padding: 2px 4px;
 }
 .media-menu .source.firefox {
-  background-color: #ff583b;
-  color: #e5e7eb;
+  background-color: #ff583bFF;
+  color: #FFF;
 }
 .media-menu .source.spotify {
-  background-color: #199143;
-  color: #e5e7eb;
+  background-color: #199143FF;
+  color: #FFF;
 }
 .media-menu .source.edge {
-  background-color: #0078d4;
-  color: #e5e7eb;
+  background-color: #0078d4FF;
+  color: #FFF;
 }
 .media-menu .source.windows-media {
-  background-color: #0078d4;
-  color: #e5e7eb;
+  background-color: #0078d4FF;
+  color: #FFF;
 }
 .media-menu .btn {
   font-family: "Segoe Fluent Icons";
@@ -344,13 +335,13 @@
   max-width: 40px;
   min-height: 40px;
   max-height: 40px;
-  color: #18181b;
+  color: #e5e7ebFF;
 }
 .media-menu .btn.prev {
   margin-left: 10px;
 }
 .media-menu .btn:hover {
-  color: #18181b;
+  color: #e5e7ebFF;
   background-color: transparent;
 }
 .media-menu .btn.play {
@@ -359,14 +350,14 @@
 }
 .media-menu .btn.disabled:hover,
 .media-menu .btn.disabled {
-  color: #4e525c;
-  background-color: rgba(0, 0, 0, 0);
+  color: #4e525cFF;
+  background-color: #000000;
 }
 .media-menu .playback-time {
   font-size: 14px;
   font-family: Arial;
   font-weight: bold;
-  color: #18181b;
+  color: #e5e7ebFF;
   margin-top: 12px;
   min-width: 100px;
 }
@@ -383,35 +374,35 @@
   background: transparent;
   height: 6px;
   border-radius: 3px;
-  background: #a3a3a3;
+  background: #a3a3a3FF;
 }
 .media-menu .progress-slider::sub-page {
-  background: #18181b;
+  background: #e5e7ebFF;
   border-radius: 4px;
   height: 4px;
 }
 
 /*NOTIFICATIONS*/
 .notification-widget {
-  background-color: #18181b;
-  border: 1px solid #58585A;
-  margin-right: 2px;
+  background-color: #18181bFF;
+  border: 1px solid #58585AFF;
+  margin-left: 2px;
   border-radius: 4px;
 }
 .notification-widget .icon {
   font-family: "Segoe Fluent Icons";
   font-size: 16px;
   padding-right: 8px;
-  color: #e5e7eb;
+  color: #e5e7ebFF;
 }
 .notification-widget .icon.new-notification {
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
   font-size: 16px;
-  color: #e5e7eb;
+  color: #e5e7ebFF;
 }
 .notification-widget .label.new-notification {
-  color: #e5e7eb;
+  color: #e5e7ebFF;
   font-family: Arial;
   font-size: 14px;
   font-weight: bold;
