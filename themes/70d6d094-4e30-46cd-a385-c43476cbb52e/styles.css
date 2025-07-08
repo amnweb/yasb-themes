@@ -1,110 +1,117 @@
 /*KOMOREBI LAYOUT*/
 .komorebi-active-layout .label {
-  border: 1px solid #18181bFF;
-  background-color: #B4FA72FF;
-  color: #18181bFF;
-  font-family: "Segoe UI Fluent";
-  font-size: 18px;
-  font-weight: 1000;
-  padding-right: 11px;
-  padding-left: 6px;
+  border: 1px solid #58585A;
+  background-color: #18181b;
+  color: #e5e7eb;
+  font-family: "Segoe Fluent Icons";
+  font-size: 20px;
+  font-weight: bold;
+  padding: 1px 10px 1px 6px;
   border-radius: 4px;
-  margin-right: 2px;
 }
+
 .komorebi-layout-menu {
-  border : 1px solid #58585AFF;
-  background-color: #18181bFF;
-  color: #e5e7ebFF;
+  border: 1px solid #58585A;
+  background-color: #18181b;
+  color: #e5e7eb;
   border-radius: 4px;
-}.komorebi-layout-menu .menu-item {
+}
+
+.komorebi-layout-menu .menu-item {
   padding: 4px 16px;
   font-size: 14px;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
 }
+
 .komorebi-layout-menu .menu-item-icon {
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   font-size: 16px;
   font-weight: 1200;
 }
+
 .komorebi-layout-menu .menu-item-text {
   font-family: 'Arial';
   padding-left: 4px;
   font-size: 14px;
   font-weight: bold;
 }
+
 .komorebi-layout-menu .menu-item:hover {
-  border: 1px solid #B4FA72FF;
+  border: 1px solid #B4FA72;
   border-radius: 2px;
 }
+
 .komorebi-layout-menu .separator {
   max-height: 1px;
-  background-color: #58585AFF;
+  background-color: #58585A;
 }
 
 /*KOMOREBI-WORKSPACES*/
-.komorebi-workspaces {
-  border-radius: 4px;
-  margin-right: 2px;
-}
 .komorebi-workspaces .ws-btn {
   font-family: Arial;
   font-size: 14px;
   font-weight: bold;
   padding: 8px 11px 8px 11px;
   border-radius: 4px;
+  margin-left: 2px;
 }
+
 .komorebi-workspaces .ws-btn.populated {
-  border: 1px solid #58585AFF;
-  background-color: #18181bFF;
-  color: #e5e7ebFF;
+  border: 1px solid #58585A;
+  background-color: #18181b;
+  color: #e5e7eb;
 }
+
 .komorebi-workspaces .ws-btn.active {
-  border: 1px solid #18181bFF;
-  background-color: #B4FA72FF;
-  color: #18181bFF;
+  border: 1px solid #18181b;
+  background-color: #B4FA72;
+  color: #18181b;
 }
 
 /*SYSTEM TRAY*/
 .systray {
-  padding: 0 5px 0 5px;
-  background-color: #18181bFF;
-  margin-right: 2px;
+  padding: 2px 2px 2px 2px;
+  background-color: #18181b;
   margin-left: 2px;
   border-radius: 4px;
-  border: 1px solid #58585AFF;
-} 
+  border: 1px solid #58585A;
+}
+
 .systray .button {
   background: transparent;
   padding: 2px 2px;
+  border: none;
 }
+
 .systray .unpinned-visibility-btn {
   padding-right: 2px;
-  padding-left: 2px;
-  color: #e5e7ebFF;
+  padding: 2px 5px 2px 5px;
+  color: #e5e7eb;
   background: transparent;
+  border: none;
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /*TRAFFIC*/
 .traffic-widget .icon {
   font-family: "Segoe Fluent Icons";
-  background-color: #e5e7ebFF;
-  border: 1px solid #18181bFF;
-  color: #18181bFF;
+  background-color: #e5e7eb;
+  border: 1px solid #18181b;
+  color: #18181b;
   font-weight: bold;
   font-size: 16px;
   padding-right: 10px;
   padding-left: 10px;
   border-radius: 4px;
-  margin-right: 2px;
+  margin-left: 2px;
 }
+
 .traffic-widget .label {
-  border: 1px solid #18181bFF;
-  background-color: #e5e7ebFF;
-  color: #18181bFF;
-  margin-right: 2px;
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
+  color: #18181b;
   border-radius: 4px;
   padding-right: 10px;
   padding-left: 10px;
@@ -115,91 +122,102 @@
 
 /*CPU*/
 .cpu-widget {
-  border: 1px solid #18181bFF;
-  background-color: #e5e7ebFF;
+  border: 1px solid #18181b;
+  background-color: #e5e7eb;
   border-radius: 4px;
-  margin-right: 2px;
+  margin-left: 2px;
 }
+
 .cpu-widget .label {
   font-family: Arial;
   font-size: 14px;
   font-weight: bold;
-  color: #18181bFF;
+  color: #18181b;
   margin-right: 15px;
-  padding-left: 6px;
+  padding-left: 4px;
 }
+
 .cpu-widget .icon {
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
   font-size: 16px;
-  color: #18181bFF;
+  color: #18181b;
   margin-right: 6px;
 }
 
 /*AUDIO WIDGET*/
 .volume-widget {
-  border: 1px solid #18181bFF;
+  border: 1px solid #18181b;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #e5e7ebFF;
+  background-color: #e5e7eb;
   border-radius: 4px;
+  margin-left: 2px;
 }
+
 .volume-widget .icon {
   font-family: "Segoe Fluent Icons";
-  color: #18181bFF;
+  color: #18181b;
   font-size: 22px;
   font-weight: bold;
 }
+
 .volume-widget .label {
   font-family: Arial;
   font-size: 14px;
   font-weight: bold;
   padding-left: 5px;
-  color: #18181bFF;
+  color: #18181b;
 }
 
 /*AUDIO DROPDOWN*/
 .audio-menu {
-  background-color: #18181bFF;
+  background-color: #18181b;
 }
+
 .audio-container .device {
   font-family: Arial;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   font-weight: bold;
-  background-color: #18181bFF;
+  background-color: #18181b;
   border: none;
   padding: 6px 8px 6px 4px;
   margin: 2px 0;
   font-size: 14px;
   border-radius: 4px;
 }
+
 .audio-container .device.selected {
-  border: 1px solid #B4FA72FF;
-  color: #e5e7ebFF;
+  border: 1px solid #B4FA72;
+  color: #e5e7eb;
 }
 
 /*CLOCK / CALENDAR WIDGET*/
 .clock-widget {
-  border: 1px solid #58585AFF;
-  background-color: #18181bFF;
+  border: 1px solid #58585A;
+  background-color: #18181b;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 4px;
 }
+
 .clock-widget .label {
-  background-color: #18181bFF;
-  color: #e5e7ebFF;
-  font-family: Arial;
+  background-color: #18181b;
+  color: #e5e7eb;
+  font-family: "Arial";
   font-size: 14px;
   font-weight: bold;
 }
+
 .calendar {
-  border: 1px solid #58585AFF;
-  background-color: #18181bFF;
+  border: 1px solid #58585A;
+  background-color: #18181b;
 }
-.calendar .calendar-table, .calendar .calendar-table::item {
-  background-color: #18181bFF;
-  color: #e5e7ebFF;
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+  background-color: #18181b;
+  color: #e5e7eb;
   font-family: Arial;
   font-weight: bold;
   margin: 0;
@@ -207,126 +225,147 @@
   outline: none;
   font-size: 14px;
 }
+
 .calendar .calendar-table::item:selected {
-  color: #18181bFF;
-  background-color: #B4FA72FF;
+  color: #18181b;
+  background-color: #B4FA72;
   border-radius: 4px;
 }
+
 .calendar .day-label {
   margin-top: 20px;
 }
-.calendar .day-label, .calendar .month-label, .calendar .date-label {
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
   font-family: Arial;
   font-size: 18px;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   font-weight: bold;
   min-width: 160px;
   max-width: 160px;
 }
+
 .calendar .month-label {
   font-weight: bold;
   font-size: 16px;
 }
+
 .calendar .date-label {
   font-size: 88px;
   font-weight: 900;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   margin-top: -20px;
 }
 
 /*MEDIA WIDGET*/
 .media-widget {
-  border: 1px solid #18181bFF;
-  background-color: #B4FA72FF;
+  border: 1px solid #18181b;
+  background-color: #B4FA72;
   border-radius: 4px;
   padding-left: 12px;
   padding-right: 12px;
-  margin-right: 2px;
+  margin-left: 2px;
 }
+
 .media-widget .label {
-  color: #18181bFF;
-  background-color: #B4FA72FF;
+  color: #18181b;
+  background-color: #B4FA72;
   padding: 0 0 0 10px;
   font-family: Arial;
   font-size: 14px;
   font-weight: bold;
 }
+
 .media-widget .btn {
   font-family: "Segoe Fluent Icons";
-  color: #18181bFF;
+  color: #18181b;
   font-weight: bold;
   font-size: 12px;
   padding: 0 3px 0 3px;
 }
+
 .media-widget .btn:hover {
-  color: #18181bFF;
+  color: #18181b;
 }
+
 .media-widget .btn.play {
   font-family: "Segoe Fluent Icons";
-  background-color: #B4FA72FF;
+  background-color: #B4FA72;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
-  color: #18181bFF;
+  color: #18181b;
 }
-.media-widget .btn.disabled:hover, .media-widget .btn.disabled {
-  color: #18181bFF;
+
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+  color: #18181b;
   font-size: 14px;
-  background-color: #e5e7ebFF;
+  background-color: #e5e7eb;
 }
 
 /*MEDIA POPUP*/
 .media-menu {
   min-width: 400px;
   max-width: 400px;
-  background-color: #18181bFF;
+  background-color: #18181b;
   border-radius: 4px;
 }
+
 .media-menu .thumbnail {
-  border: 1px solid #58585AFF;
+  border: 1px solid #58585A;
   border-radius: 4px;
 }
+
 .media-menu .title,
 .media-menu .artist,
 .media-menu .source {
   font-size: 16px;
   font-weight: bold;
   font-family: Arial;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   margin-left: 10px;
 }
+
 .media-menu .artist {
   font-size: 14px;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   margin-top: 4px;
   margin-bottom: 12px;
 }
+
 .media-menu .source {
   font-size: 14px;
-  color: #FFF;
+  color: #18181b;
   font-weight: bold;
   font-family: Arial;
   border-radius: 4px;
-  background-color: #18181bFF;
-  border 1px solid #58585AFF;
+  background-color: #e5e7eb;
   padding: 2px 4px;
 }
+
 .media-menu .source.firefox {
-  background-color: #ff583bFF;
+  background-color: #ff583b;
   color: #FFF;
 }
+
 .media-menu .source.spotify {
-  background-color: #199143FF;
+  background-color: #199143;
   color: #FFF;
 }
+
 .media-menu .source.edge {
-  background-color: #0078d4FF;
+  background-color: #0078d4;
   color: #FFF;
 }
+
 .media-menu .source.windows-media {
-  background-color: #0078d4FF;
+  background-color: #0078d4;
   color: #FFF;
 }
+
 .media-menu .btn {
   font-family: "Segoe Fluent Icons";
   font-size: 14px;
@@ -335,74 +374,86 @@
   max-width: 40px;
   min-height: 40px;
   max-height: 40px;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
 }
+
 .media-menu .btn.prev {
   margin-left: 10px;
 }
+
 .media-menu .btn:hover {
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   background-color: transparent;
 }
+
 .media-menu .btn.play {
   background-color: transparent;
   font-size: 20px;
 }
+
 .media-menu .btn.disabled:hover,
 .media-menu .btn.disabled {
   color: #4e525cFF;
   background-color: #000000;
 }
+
 .media-menu .playback-time {
   font-size: 14px;
   font-family: Arial;
   font-weight: bold;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   margin-top: 12px;
   min-width: 100px;
 }
+
 .media-menu .progress-slider {
   height: 10px;
   border-radius: 3px;
 }
+
 .media-menu .progress-slider::groove {
   background: transparent;
   height: 4px;
   border-radius: 3px;
 }
+
 .media-menu .progress-slider::groove:hover {
   background: transparent;
   height: 6px;
   border-radius: 3px;
-  background: #a3a3a3FF;
+  background: #a3a3a3;
 }
+
 .media-menu .progress-slider::sub-page {
-  background: #e5e7ebFF;
+  background: #e5e7eb;
   border-radius: 4px;
   height: 4px;
 }
 
 /*NOTIFICATIONS*/
 .notification-widget {
-  background-color: #18181bFF;
-  border: 1px solid #58585AFF;
+  background-color: #18181b;
+  border: 1px solid #58585A;
   margin-left: 2px;
   border-radius: 4px;
 }
+
 .notification-widget .icon {
   font-family: "Segoe Fluent Icons";
   font-size: 16px;
   padding-right: 8px;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
 }
+
 .notification-widget .icon.new-notification {
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
   font-size: 16px;
-  color: #e5e7ebFF;
+  color: #e5e7eb;
 }
+
 .notification-widget .label.new-notification {
-  color: #e5e7ebFF;
+  color: #e5e7eb;
   font-family: Arial;
   font-size: 14px;
   font-weight: bold;
