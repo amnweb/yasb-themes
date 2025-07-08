@@ -71,11 +71,10 @@
 
 /*SYSTEM TRAY*/
 .systray {
-  padding: 5px;
-  margin: 0;
-  border: none;
+  padding: 0 5px 0 5px;
   background-color: #18181b;
   margin-right: 2px;
+  margin-left: 2px;
   border-radius: 4px;
   border: 1px solid #58585A;
 }
@@ -84,9 +83,6 @@
   padding: 2px 2px;
 }
 .systray .unpinned-visibility-btn {
-  border-radius: 4px;
-  height: 20px;
-  width: 20px;
   padding-right: 2px;
   padding-left: 2px;
   color: #e5e7eb;
@@ -197,7 +193,6 @@
   background-color: #B4FA72;
   padding-left: 10px;
   padding-right: 10px;
-  margin-right: 2px;
   margin-left: 2px;
   border-radius: 4px;
 }
@@ -223,8 +218,8 @@
   font-size: 14px;
 }
 .calendar .calendar-table::item:selected {
-  color: #e5e7eb;
-  background-color: #18181b;
+  color: #18181b;
+  background-color: #B4FA72;
   border-radius: 4px;
 }
 .calendar .day-label {
