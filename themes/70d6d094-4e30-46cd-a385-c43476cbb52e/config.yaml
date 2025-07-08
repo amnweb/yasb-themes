@@ -9,7 +9,7 @@ komorebi:
 bars:
   primary-bar:
     enabled: true
-    screens: ['*']
+    screens: ["*"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -33,15 +33,15 @@ bars:
       bottom: 1
       right: 1
     widgets:
-      left:
+      left: []
       center:
         - "komorebi_active_layout"
         - "komorebi_workspaces"
         - "traffic"
         - "cpu"
         - "volume"
-        - "systray"
         - "media"
+        - "systray"
       right:
         - "clock"
         - "notifications"
@@ -53,15 +53,15 @@ widgets:
       hide_if_offline: true
       label: "{icon}"
       layouts:
-        - 'bsp'
-        - 'columns'
-        - 'rows'
-        - 'grid'
-        - 'scrolling'
-        - 'vertical_stack'
-        - 'horizontal_stack'
-        - 'ultrawide_vertical_stack'
-        - 'right_main_vertical_stack'
+        - "bsp"
+        - "columns"
+        - "rows"
+        - "grid"
+        - "scrolling"
+        - "vertical_stack"
+        - "horizontal_stack"
+        - "ultrawide_vertical_stack"
+        - "right_main_vertical_stack"
       layout_icons:
         bsp: "\uebeb"
         columns: "\uebf7"
@@ -91,14 +91,16 @@ widgets:
         offset_top: 0
         offset_left: 0
         show_layout_icons: true
+
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
-      label_offline: "Komorebi OFFLINE"
+      label_offline: "<span>\ueb96</span>"
       label_default_name: ""
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: true
+
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -111,14 +113,16 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
+
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
       label: "<span>\ueda3</span>"
-      label_alt: "\uea9a  {download_speed}   |   {upload_speed} \ueaa1"
+      label_alt: "\uea9a  {download_speed}   |   {upload_speed} \ueaa1"
       update_interval: 1000
       callbacks:
-        on_left: 'toggle_label'
+        on_left: "toggle_label"
+
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -143,16 +147,18 @@ widgets:
         left: 12
         bottom: 0
         right: 0
+
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       volume_icons:
-        - "\ue74f"  # Icon for muted
-        - "\ue992"  # Icon for 0-10% volume
-        - "\ue993"  # Icon for 11-30% volume
-        - "\ue994"  # Icon for 31-60% volume
-        - "\ue995"  # Icon for 61-100% volume
+        - "\ue74f" # Icon for muted
+        - "\ue992" # Icon for 0-10% volume
+        - "\ue993" # Icon for 11-30% volume
+        - "\ue994" # Icon for 31-60% volume
+        - "\ue995" # Icon for 61-100% volume
+
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -161,6 +167,7 @@ widgets:
       callbacks:
         on_left: "toggle_calendar"
         on_right: "toggle_label"
+
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -209,6 +216,7 @@ widgets:
         pause: "\ue769"
         prev_track: "\ue892"
         next_track: "\ue893"
+
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
