@@ -40,10 +40,10 @@ bars:
         - "traffic"
         - "cpu"
         - "volume"
-        - "clock"
         - "systray"
         - "media"
       right:
+        - "clock"
         - "notifications"
 
 widgets:
@@ -91,11 +91,6 @@ widgets:
         offset_top: 0
         offset_left: 0
         show_layout_icons: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
