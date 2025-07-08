@@ -41,8 +41,7 @@ bars:
         "media"
       ]
       right: [
-
-"taskbar",
+        "taskbar",
         "clock",
         "wifi",
         "bluetooth",
