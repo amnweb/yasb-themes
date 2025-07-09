@@ -70,6 +70,22 @@
   color: #18181b;
 }
 
+/*ACTIVE WINDOW*/
+.active-window-widget {
+  background-color: #b4fa72;
+  border: 1px solid #18181b;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 4px;
+  margin-left: 2px;
+}
+.active-window-widget .label {
+  color: #18181b;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+}
+
 /*SYSTEM TRAY*/
 .systray {
   padding: 2px 2px 2px 2px;
@@ -313,7 +329,7 @@
 .volume-widget .icon {
   font-family: "Segoe Fluent Icons";
   color: #e5e7eb;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -425,8 +441,8 @@
 
 /*MEDIA WIDGET*/
 .media-widget {
-  border: 1px solid #18181b;
-  background-color: #b4fa72;
+  border: 1px solid #58585a;
+  background-color: #18181b;
   border-radius: 4px;
   padding-left: 12px;
   padding-right: 12px;
@@ -435,8 +451,8 @@
 }
 
 .media-widget .label {
-  color: #18181b;
-  background-color: #b4fa72;
+  color: #e5e7eb;
+  background-color: #18181b;
   padding: 0 0 0 10px;
   font-family: "JetBrains Mono";
   font-size: 14px;
@@ -445,30 +461,23 @@
 
 .media-widget .btn {
   font-family: "Segoe Fluent Icons";
-  color: #18181b;
+  color: #e5e7eb;
   font-weight: bold;
   font-size: 14px;
   padding: 0 3px 0 3px;
 }
 
 .media-widget .btn:hover {
-  color: #18181b;
+  color: #e5e7eb;
 }
 
 .media-widget .btn.play {
   font-family: "Segoe Fluent Icons";
-  background-color: #b4fa72;
+  background-color: #18181b;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
-  color: #18181b;
-}
-
-.media-widget .btn.disabled:hover,
-.media-widget .btn.disabled {
-  color: #18181b;
-  font-size: 14px;
-  background-color: #e5e7eb;
+  color: #e5e7eb;
 }
 
 /*MEDIA POPUP*/
