@@ -1,7 +1,6 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
-
 bars:
   primary-bar:
     enabled: true
@@ -31,10 +30,8 @@ bars:
       left: ["power_menu", "media"]
       center: ["apps"]
       right: ["weather","wifi","bluetooth", "battery","date","volume","clock"]
-
 widgets:
-
-#clock widget
+  #clock widget
   clock:
     type: "yasb.clock.ClockWidget"
     class_name: "time-clock"
@@ -45,16 +42,14 @@ widgets:
         on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-
-date:
+  date:
     type: "yasb.clock.ClockWidget"
     class_name: "date-clock"
     options:
       label: "{%a %d %b}"
       label_alt: "{%A, %d %B}"
       timezones: []
-
-#weather widget
+  #weather widget
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -90,8 +85,7 @@ date:
         direction: "down"
         distance: 6
         icon_size: 64
-
-#volume widget      
+      
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -105,8 +99,7 @@ date:
         - "\uf028"
       callbacks:
         on_right: "exec cmd.exe /c start ms-settings:sound"
-
-#battery widget
+  #battery widget
   battery:
     type: "yasb.battery.BatteryWidget"
     options:
@@ -118,10 +111,8 @@ date:
         on_middle: "do_nothing"
       charging_options:
         icon_format: "{charging_icon}"
-
-#wifi widget
-
-wifi:
+  #wifi widget
+  wifi:
       type: "yasb.wifi.WifiWidget"
       options:
         label: "<span>{wifi_icon}</span>"
@@ -163,8 +154,7 @@ wifi:
           "\udb82\udd25",  # Icon for 41-80% strength
           "\udb82\udd28"   # Icon for 81-100% strength
         ]
-
-#power menu widget 
+  #power menu widget 
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -181,8 +171,7 @@ wifi:
         hibernate: ["\uf28e", "Hibernate"]
         sleep: ["\u23fe", "Sleep"]
         cancel: ["", "Cancel"]
-
-#media widget
+  #media widget
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -236,8 +225,7 @@ wifi:
         pause: "\ue769"
         prev_track: "\ue892"
         next_track: "\ue893"
-
-bluetooth:
+  bluetooth:
     type: "yasb.bluetooth.BluetoothWidget"
     options:
       label: "<span>{icon}</span> {device_count}"
@@ -256,8 +244,7 @@ bluetooth:
       callbacks:
         on_left: "toggle_label"
         on_right: "exec cmd.exe /c start ms-settings:bluetooth"
-
-#applications widget
+  #applications widget
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
