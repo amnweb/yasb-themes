@@ -1,654 +1,267 @@
-/*KOMOREBI LAYOUT*/
-.komorebi-active-layout .label {
-  border: 1px solid #58585a;
-  background-color: #18181b;
-  color: #e5e7eb;
-  font-family: "Segoe Fluent Icons";
-  font-size: 20px;
-  font-weight: bold;
-  padding: 1px 9px 1px 4px;
-  border-radius: 4px;
-  outline: none;
-}
-
-.komorebi-layout-menu {
-  border: 1px solid #58585a;
-  background-color: #18181b;
-  color: #e5e7eb;
-  border-radius: 4px;
-}
-
-.komorebi-layout-menu .menu-item {
-  padding: 4px 16px;
-  font-size: 14px;
-  color: #e5e7eb;
-}
-
-.komorebi-layout-menu .menu-item-icon {
-  color: #e5e7eb;
-  font-size: 14px;
-  font-weight: 1200;
-}
-
-.komorebi-layout-menu .menu-item-text {
-  font-family: "JetBrains Mono";
-  padding-left: 4px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.komorebi-layout-menu .menu-item:hover {
-  border: 1px solid #b4fa72;
-  border-radius: 2px;
-}
-
-.komorebi-layout-menu .separator {
-  max-height: 1px;
-  background-color: #58585a;
-}
-
-/*KOMOREBI-WORKSPACES*/
-.komorebi-workspaces .ws-btn {
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-  padding: 8px 11px 8px 11px;
-  border-radius: 4px;
-  margin-left: 2px;
-  outline: none;
-}
-
-.komorebi-workspaces .ws-btn.populated {
-  border: 1px solid #58585a;
-  background-color: #18181b;
-  color: #e5e7eb;
-}
-
-.komorebi-workspaces .ws-btn.active {
-  border: 1px solid #18181b;
-  background-color: #b4fa72;
-  color: #18181b;
-}
-
-/*ACTIVE WINDOW*/
-.active-window-widget {
-  background-color: #b4fa72;
-  border: 1px solid #18181b;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-radius: 4px;
-  margin-left: 2px;
-  outline: none;
-}
-.active-window-widget .label {
-  color: #18181b;
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-  padding-top: 2px;
-  outline: none;
-}
-
-/*SYSTEM TRAY*/
-.systray {
-  padding: 2px 2px 2px 2px;
-  background-color: #18181b;
-  margin-left: 2px;
-  border-radius: 4px;
-  border: 1px solid #58585a;
-  outline: none;
-}
-
-.systray .button {
-  background: transparent;
-  padding: 2px 2px;
-  outline: none;
-  border: none;
-}
-
-.systray .unpinned-visibility-btn {
-  padding-right: 2px;
-  padding: 2px 5px 2px 5px;
-  color: #e5e7eb;
-  background: transparent;
-  border: none;
-  font-family: "Segoe Fluent Icons";
-  font-weight: bold;
-  font-size: 20px;
-  outline: none;
-}
-
-/*TRAFFIC*/
-.traffic-widget .icon {
-  font-family: "Segoe Fluent Icons";
-  background-color: #e5e7eb;
-  border: 1px solid #18181b;
-  color: #18181b;
-  font-weight: bold;
-  font-size: 18px;
-  padding-right: 8px;
-  padding-left: 10px;
-  border-radius: 4px;
-  margin-left: 2px;
-  outline: none;
-}
-
-.traffic-widget .label {
-  border: 1px solid #18181b;
-  background-color: #e5e7eb;
-  color: #18181b;
-  border-radius: 4px;
-  padding-top: 2px;
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-  margin-left: 2px;
-  padding-left: -6px;
-  width: 240px;
-  min-width: 0;
-  max-width: 240px;
-  outline: none;
-}
-
-.traffic-menu {
-  background-color: #18181b;
-  border: 1px solid #58585a;
-  color: #e5e7eb;
-  border-radius: 4px;
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-}
-
-/*TRAFFIC POPUP*/
-.traffic-menu {
-  background-color: #18181b;
-  border: 1px solid #58585a;
-  color: #e5e7eb;
-  border-radius: 4px;
-  min-width: 180px;
-}
-
-.traffic-menu .header {
-  border-bottom: 1px solid #58585a;
-  background-color: #18181b;
-}
-
-.traffic-menu .header .title {
-  padding: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: "JetBrains Mono";
-  color: #e5e7eb;
-}
-
-.traffic-menu .header .reset-button {
-  font-size: 12px;
-  padding: 4px 8px;
-  margin-right: 8px;
-  font-family: "JetBrains Mono";
-  font-size: 12px;
-  border-radius: 4px;
-  font-weight: bold;
-  background-color: transparent;
-  border: none;
-  color: #fbbf24;
-  outline: none;
-}
-
-.traffic-menu .download-speed,
-.traffic-menu .upload-speed {
-  background-color: transparent;
-  margin-right: 12px;
-  margin-left: 12px;
-  margin-top: 16px;
-  margin-bottom: 4px;
-}
-
-.traffic-menu .download-speed {
-  margin-left: 12px;
-  margin-right: 12px;
-}
-
-.traffic-menu .speed-separator {
-  max-width: 1px;
-  background-color: #ffffff33;
-  margin: 32px 0 16px 0;
-}
-
-.traffic-menu .upload-speed-value,
-.traffic-menu .download-speed-value {
-  font-size: 24px;
-  font-weight: 900;
-  font-family: "JetBrains Mono";
-  color: #e5e7eb;
-}
-
-.traffic-menu .upload-speed-unit,
-.traffic-menu .download-speed-unit {
-  font-size: 13px;
-  font-family: "JetBrains Mono";
-  font-weight: bold;
-  color: #e5e7eb;
-  padding-top: 4px;
-}
-
-.traffic-menu .upload-speed-placeholder,
-.traffic-menu .download-speed-placeholder {
-  color: #747474;
-  font-size: 11px;
-  font-family: "JetBrains Mono";
-  padding: 0 0 4px 0;
-}
-
-.traffic-menu .section-title {
-  font-size: 13px;
-  font-weight: bold;
-  color: #7c8192;
-  margin-bottom: 4px;
-  font-family: "JetBrains Mono";
-}
-
-.traffic-menu .session-section,
-.traffic-menu .today-section,
-.traffic-menu .alltime-section {
-  margin: 8px 8px 0 8px;
-  padding: 0 10px 10px 10px;
-  background-color: transparent;
-  border-bottom: 1px solid #ffffff1a;
-}
-
-.traffic-menu .data-text {
-  font-weight: bold;
-  font-size: 13px;
-  color: #e5e7eb;
-  padding: 2px 0;
-  font-family: "JetBrains Mono";
-}
-
-.traffic-menu .data-value {
-  font-weight: bold;
-  font-size: 13px;
-  font-family: "JetBrains Mono";
-  padding: 2px 0;
-}
-
-.traffic-menu .interface-info,
-.traffic-menu .internet-info {
-  font-size: 12px;
-  font-weight: bold;
-  color: #93c5fd;
-  padding: 8px 0;
-  font-family: "JetBrains Mono";
-}
-
-.traffic-menu .internet-info {
-  background-color: #4444441a;
-}
-
-.traffic-menu .internet-info.connected {
-  background-color: #a6e3a11a;
-  color: #a6e3a1;
-}
-
-.traffic-menu .internet-info.disconnected {
-  background-color: #f38ba81a;
-  color: #f38ba8;
-}
-
-/*CPU*/
-.cpu-widget {
-  border: 1px solid #18181b;
-  background-color: #e5e7eb;
-  border-radius: 4px;
-  margin-left: 2px;
-  outline: none;
-  width: 90px;
-  min-width: 0;
-  max-width: 90px;
-}
-
-.cpu-widget .label {
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-  color: #18181b;
-  padding-right: 6px;
-  padding-top: 2px;
-  width: 50px;
-  min-width: 0;
-  max-width: 50px;
-}
-
-.cpu-widget .icon {
-  font-family: "Segoe Fluent Icons";
-  font-weight: bold;
-  font-size: 18px;
-  padding-top: 2px;
-  padding-left: 6px;
-  padding-right: -4px;
-  color: #18181b;
-}
-
-/*AUDIO WIDGET*/
-.volume-widget {
-  border: 1px solid #58585a;
-  padding-right: 10px;
-  padding-left: 10px;
-  background-color: #18181b;
-  border-radius: 4px;
-  margin-left: 2px;
-  margin-right: 1px;
-  outline: none;
-}
-
-.volume-widget .icon {
-  font-family: "Segoe Fluent Icons";
-  color: #e5e7eb;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.volume-widget .label {
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-  padding-left: 2px;
-  color: #e5e7eb;
-}
-
-/*AUDIO POPUP*/
-.audio-menu {
-  background-color: #18181b;
-}
-
-.audio-container .device {
-  font-family: "JetBrains Mono";
-  color: #e5e7eb;
-  font-weight: bold;
-  background-color: #18181b;
-  border: none;
-  padding: 6px 8px 6px 4px;
-  margin: 2px 0;
-  font-size: 13px;
-  border-radius: 4px;
-  outline: none;
-}
-
-.audio-container .device.selected {
-  background-color: #b4fa72;
-  color: #18181b;
-}
-
-/*CLOCK / CALENDAR WIDGET*/
-.clock-widget {
-  border: 1px solid #58585a;
-  background-color: #18181b;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 4px;
-  outline: none;
-}
-
-.clock-widget .label {
-  background-color: #18181b;
-  color: #e5e7eb;
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.calendar {
-  border: 1px solid #58585a;
-  background-color: #18181b;
-  outline: none;
-}
-
-.calendar .calendar-table,
-.calendar .calendar-table::item {
-  background-color: #18181b;
-  color: #e5e7eb;
-  font-family: "JetBrains Mono";
-  font-weight: bold;
-  outline: none;
-  font-size: 14px;
-}
-
-.calendar .calendar-table::item:selected {
-  color: #18181b;
-  background-color: #b4fa72;
-  border-radius: 4px;
-}
-
-.calendar .day-label {
-  margin-top: 20px;
-}
-
-.calendar .day-label,
-.calendar .month-label,
-.calendar .date-label {
-  font-size: 18px;
-  color: #e5e7eb;
-  font-weight: bold;
-  min-width: 160px;
-  max-width: 160px;
-}
-
-.calendar .month-label {
-  font-family: "JetBrains Mono";
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.calendar .date-label {
-  font-family: "JetBrains Mono";
-  font-size: 88px;
-  font-weight: bold;
-  color: #e5e7eb;
-  margin-top: -20px;
-}
-
-.calendar .day-label {
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-  color: #e5e7eb;
-}
-
-/*MEDIA WIDGET*/
-.media-widget {
-  border: 1px solid #58585a;
-  background-color: #18181b;
-  border-radius: 4px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-left: 2px;
-  padding-top: 2px;
-  outline: none;
-}
-
-.media-widget .label {
-  color: #e5e7eb;
-  background-color: #18181b;
-  padding: 0 0 0 10px;
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-  outline: none;
-}
-
-.media-widget .btn {
-  font-family: "Segoe Fluent Icons";
-  color: #e5e7eb;
-  font-weight: bold;
-  font-size: 13px;
-  padding: 0 3px 0 3px;
-  outline: none;
-}
-
-.media-widget .btn.play {
-  font-family: "Segoe Fluent Icons";
-  background-color: #18181b;
-  border-radius: 4px;
-  font-size: 15px;
-  font-weight: bold;
-  color: #e5e7eb;
-  outline: none;
-}
-
-/*MEDIA POPUP*/
-.media-menu {
-  min-width: 400px;
-  max-width: 400px;
-  background-color: #18181b;
-  border-radius: 4px;
-  outline: none;
-}
-
-.media-menu .thumbnail {
-  border: 1px solid #58585a;
-  border-radius: 4px;
-  outline: none;
-}
-
-.media-menu .title,
-.media-menu .artist,
-.media-menu .source {
-  font-size: 16px;
-  font-weight: bold;
-  font-family: "JetBrains Mono";
-  color: #e5e7eb;
-  margin-left: 10px;
-}
-
-.media-menu .artist {
-  font-size: 14px;
-  color: #e5e7eb;
-  margin-top: 4px;
-  margin-bottom: 12px;
-  outline: none;
-}
-
-.media-menu .source {
-  font-size: 12px;
-  color: #18181b;
-  font-weight: bold;
-  font-family: "JetBrains Mono";
-  border-radius: 4px;
-  background-color: #e5e7eb;
-  padding: 2px 4px;
-  outline: none;
-}
-
-.media-menu .source.firefox {
-  background-color: #ff583b;
-  color: #fff;
-}
-
-.media-menu .source.spotify {
-  background-color: #199143;
-  color: #fff;
-}
-
-.media-menu .source.edge {
-  background-color: #0078d4;
-  color: #fff;
-}
-
-.media-menu .source.windows-media {
-  background-color: #0078d4;
-  color: #fff;
-}
-
-.media-menu .btn {
-  font-family: "Segoe Fluent Icons";
-  font-size: 14px;
-  font-weight: bold;
-  min-width: 40px;
-  max-width: 40px;
-  min-height: 40px;
-  max-height: 40px;
-  color: #e5e7eb;
-  outline: none;
-}
-
-.media-menu .btn.prev {
-  margin-left: 10px;
-  outline: none;
-}
-
-.media-menu .btn.play {
-  background-color: transparent;
-  font-size: 20px;
-  outline: none;
-}
-
-.media-menu .btn.disabled {
-  color: #4e525cff;
-}
-
-.media-menu .playback-time {
-  font-size: 14px;
-  font-family: "JetBrains Mono";
-  font-weight: bold;
-  color: #e5e7eb;
-  margin-top: 12px;
-  min-width: 100px;
-}
-
-.media-menu .progress-slider {
-  height: 10px;
-  border-radius: 4px;
-  outline: none;
-}
-
-.media-menu .progress-slider::groove {
-  background: transparent;
-  height: 4px;
-  border-radius: 4px;
-  outline: none;
-}
-
-.media-menu .progress-slider::groove:hover {
-  background: transparent;
-  height: 6px;
-  border-radius: 4px;
-  background: #58585a;
-}
-
-.media-menu .progress-slider::sub-page {
-  background: #e5e7eb;
-  border-radius: 4px;
-  height: 4px;
-  outline: none;
-}
-
-/*NOTIFICATIONS*/
-.notification-widget {
-  background-color: #18181b;
-  border: 1px solid #58585a;
-  margin-right: 1px;
-  margin-left: 1px;
-  border-radius: 4px;
-  outline: none;
-}
-
-.notification-widget .icon {
-  font-family: "Segoe Fluent Icons";
-  font-size: 14px;
-  padding-right: 8px;
-  color: #e5e7eb;
-}
-
-.notification-widget .icon.new-notification {
-  font-family: "Segoe Fluent Icons";
-  font-weight: bold;
-  font-size: 14px;
-  color: #e5e7eb;
-}
-
-.notification-widget .label.new-notification {
-  color: #e5e7eb;
-  font-family: "JetBrains Mono";
-  font-size: 14px;
-  font-weight: bold;
-}
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic reload-configuration"
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: true
+      round_corners: false
+      border_color: "None"
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "100%"
+      height: 30
+    padding:
+      top: 1
+      left: 1
+      bottom: 1
+      right: 1
+    widgets:
+      left: []
+      center:
+        - "komorebi_active_layout"
+        - "komorebi_workspaces"
+        - "traffic"
+        - "cpu"
+        - "active_window"
+        - "media"
+        - "systray"
+      right:
+        - "clock"
+        - "volume"
+        - "notifications"
+
+widgets:
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{icon}"
+      layouts:
+        - "bsp"
+        - "columns"
+        - "rows"
+        - "grid"
+        - "scrolling"
+        - "vertical_stack"
+        - "horizontal_stack"
+        - "ultrawide_vertical_stack"
+        - "right_main_vertical_stack"
+      layout_icons:
+        bsp: "\uebeb"
+        columns: "\uebf7"
+        rows: "\uec01"
+        grid: "\udb81\udf58"
+        scrolling: "\uebf7"
+        vertical_stack: "\uebee"
+        horizontal_stack: "\uebf0"
+        ultrawide_vertical_stack: "\uebee"
+        right_main_vertical_stack: "\uebf1"
+        monocle: "\uf06f"
+        maximized: "\uf06f"
+        floating: "\uf2d2"
+        paused: "\udb83\udf89"
+        tiling: "\udb81\ude40"
+      callbacks:
+        on_left: "toggle_layout_menu"
+        on_middle: "toggle_tiling"
+        on_right: "next_layout"
+      layout_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "left"
+        direction: "down"
+        offset_top: 0
+        offset_left: 0
+        show_layout_icons: true
+
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "<span>\ueb96</span>"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: true
+      hide_if_offline: true
+
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\uf207"
+      label_expanded: "\ue76c"
+      icon_size: 16
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: false
+
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "<span>\ueda3</span>"
+      label_alt: "\uea9a {download_speed} | {upload_speed} \ueaa1"
+      update_interval: 1000
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "toggle_label"
+
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\ue950</span> {info[percent][total]}%"
+      label_alt: "{info[histograms][cpu_percent]}"
+      update_interval: 1000
+      histogram_icons:
+        - '\u2581' # 0%
+        - '\u2581' # 10%
+        - '\u2582' # 20%
+        - '\u2583' # 30%
+        - '\u2584' # 40%
+        - '\u2585' # 50%
+        - '\u2586' # 60%
+        - '\u2587' # 70%
+        - '\u2588' # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      volume_icons:
+        - "\ue74f" # Icon for muted
+        - "\ue992" # Icon for 0-10% volume
+        - "\ue993" # Icon for 11-30% volume
+        - "\ue994" # Icon for 31-60% volume
+        - "\ue995" # Icon for 61-100% volume
+      audio_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_middle: "toggle_mute"
+
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%I:%M %p}"
+      label_alt: "{%A, %d %B %Y}"
+      callbacks:
+        on_left: "toggle_calendar"
+        on_right: "toggle_label"
+
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title}"
+      label_alt: "{artist}"
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "toggle_play_pause"
+        on_right: "toggle_label"
+      max_field_size:
+        label: 30
+        label_alt: 30
+      hide_empty: true
+      scrolling_label:
+        enabled: false
+        update_interval_ms: 33
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      media_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 0
+        offset_left: 0
+        thumbnail_corner_radius: 6
+        thumbnail_size: 100
+        max_title_size: 80
+        max_artist_size: 20
+        show_source: true
+      media_menu_icons:
+        play: "\ue768"
+        pause: "\ue769"
+        prev_track: "\ue892"
+        next_track: "\ue893"
+
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\ue7e7</span> {count}"
+      label_alt: "{count} notifications"
+      hide_empty: true
+      tooltip: false
+      container_padding:
+        top: 0
+        left: 10
+        bottom: 0
+        right: 12
+      callbacks:
+        on_left: "toggle_notification"
+        on_middle: "clear_notifications"
+        on_right: "toggle_label"
+
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "{win[process][name]}"
+      label_no_window: ""
+      label_icon: false
+      label_icon_size: 16
+      max_length: 30
+      max_length_ellipsis: "~"
+      monitor_exclusive: false
+      rewrite:
+        - pattern: "Visual Studio Code"
+          replacement: "VSC"
+        - pattern: "Zen Browser"
+          replacement: "Zen"
+      ignore_window:
+        classes: []
+        processes: []
+        titles:
+          ["Task Switching", "Magnifier", "Notification Center", "Raycast","Windows Shell Experience Host"]
+      callbacks:
+        on_left: "do_nothing"
+        on_right: "toggle_label"
