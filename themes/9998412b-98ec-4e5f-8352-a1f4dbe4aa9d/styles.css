@@ -1,0 +1,344 @@
+/* --- Root Variables (Colors) --- */
+:root {
+  --background-color: #a9928d57; /* Or light rgba if needed */
+  --foreground-color: #ffffff;
+  --foreground-color-alt: #000000;
+  --accent-color: #ffffff00;
+  --border-color: #00000000;
+  --icon-color: #000000;
+  --icon-hover: #3c3636;
+  --hover-color: rgba(42, 38, 38, 0.092);
+  --active-color: rgba(54, 51, 51, 0.743);
+  --inactive-color: rgba(0, 0, 0, 0.05);
+}
+
+/* --- Base Styles --- */
+* {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Segoe UI", "JetBrainsMono NFP", sans-serif;
+  color: var(--foreground-color-alt)!important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Yasb Bar --- */
+.yasb-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 36px;
+  z-index: 1000;
+
+background-color: rgba(255, 255, 255, 0);  /* light white tint */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 252, 252, 0);
+  border-radius: 10px;
+}
+
+/* --- Widget Basics --- */
+.widget {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 4px; /* More compact spacing */
+  margin: 0 2px;    /* Tighter gap between widgets */
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.widget .label {
+  padding: 0px 3px; /* Slightly reduced label padding */
+}
+
+.widget .label.alt {
+  padding: 1px 6px;
+}
+
+.widget:hover {
+  background-color: var(--hover-color);
+  border-radius: 6px;
+}
+
+/* --- Icon Style --- */
+.icon {
+  font-size: 14px;
+  color: var(--icon-color);
+  margin: 0 3px; /* Tighter icon spacing */
+}
+
+.container-right .widget .icon:hover {
+  color: var(--icon-hover);
+}
+
+/* --- App Widget --- */
+.apps-widget {
+  padding: 0 3px; /* Reduced side padding */
+}
+
+.apps-widget .label {
+  font-size: 14px;
+  padding: 0 2px;
+}
+
+.apps-widget .widget-container {
+  background-color: var(--background-color);
+  border-radius: 12px;
+  margin: 3px 0;
+  border: 1px solid var(--border-color);
+}
+
+/* --- Clock Widget --- */
+.clock-widget .label {
+  font-size: 14px;
+  padding-right: 8px; 
+}
+
+.ClockWidget .label {
+  font-size: 14px;
+  padding: 0 2px;
+  color: rgb(0, 0, 0);
+}
+
+.ClockWidget * {
+  background-color: #ffffff00 !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+/* --- Volume, Wi-Fi, Brightness --- */
+
+.volume-widget .icon,
+.brightness-widget .icon,
+.battery-widget .icon,
+.wifi-widget .icon {
+  color: var(--icon-color);
+  margin: 0 3px; /* Tighter icon margin */
+}
+
+.weather-widget,
+.battery-widget,
+.wifi-widget,
+.volume-widget,
+.brightness-widget {
+  padding: 2px 4px; /* Compact padding */
+}
+
+.weather-widget .icon {
+  font-size: 17px; /* Slightly smaller icon */
+  margin: 0 2px 1px 0;
+  color: var(--icon-color);
+}
+
+.weather-widget .label.alt {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--foreground-color);
+}
+
+.weather-card {
+  background-color: rgba(255, 255, 255, 0.589);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px; /* Slightly reduced padding */
+}
+
+/* --- Power Menu --- */
+.uptime {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgba(236, 60, 60, 0.6);
+}
+
+.power-menu-popup {
+  background-color: rgba(17, 17, 27, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+}
+
+.power-menu-popup .button {
+  width: 100%;
+  height: 72px; /* Original height restored */
+  padding: 12px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.power-menu-popup .button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.power-menu-popup .button .icon {
+  font-family: 'Segoe Fluent Icons', 'Segoe UI Symbol', sans-serif;
+  font-size: 24px; /* Original icon size */
+  color: var(--icon-color, #fff);
+  margin-bottom: 2px;
+  margin-top: 6px;
+}
+
+.power-menu-popup .button .label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--mainLight, #fff);
+  margin: 0;
+  padding: 0;
+  transform: translateY(-4px);
+}
+
+.power-menu-popup .button.cancel {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ccc;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.power-menu-popup .button.cancel:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.power-menu-widget .icon {
+  padding-left: 16px !important;
+  margin-left: 6px;
+  font-size: 16px;
+  color: var(--icon-color, #fff);
+}
+
+.power-menu-widget .label {
+  font-size: 14px;
+  padding-left: 16px;
+}
+
+/* --- WiFi Menu --- */
+.wifi-menu {
+  background-color: rgba(41, 37, 37, 0.312);
+  min-width: 320px;
+  max-height: 340px;
+  min-height: 340px;
+  border-radius: 10px;
+  padding: 8px 0;
+}
+
+.wifi-menu .header,
+.wifi-menu .footer {
+  font-size: 13px;
+  padding: 10px;
+  background-color: rgba(41, 37, 37, 0.312);
+}
+
+.wifi-menu .wifi-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  margin: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  min-height: 40px;
+}
+
+.wifi-menu .wifi-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.wifi-menu .wifi-item[active=true] {
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 13.5px;
+  min-height: 70px;
+}
+
+.wifi-menu .wifi-item .icon {
+  font-family: 'Segoe Fluent Icons';
+  font-size: 22px;
+  margin-right: 8px;
+}
+
+.wifi-menu .wifi-item .name,
+.wifi-menu .wifi-item .status,
+.wifi-menu .wifi-item .strength {
+  font-size: 13px;
+  color: var(--mainLight);
+  margin-right: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+  padding: 3px 24px;
+  font-size: 13px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--mainLight);
+  border: none;
+}
+
+.wifi-menu .wifi-item .connect:hover {
+  background-color: rgba(11, 15, 13, 0.545);
+}
+
+.wifi-menu .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+}
+
+.wifi-menu .footer .settings-button {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: none;
+  color: var(--mainLight);
+  transition: background 0.2s ease;
+}
+
+.wifi-menu .footer .settings-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.wifi-menu .footer .refresh-icon {
+  background-color: rgba(255, 255, 255, 0.08);
+  font-family: 'Segoe Fluent Icons';
+  font-size: 16px;
+  padding: 5px;
+  min-width: 24px;
+  min-height: 24px;
+  border-radius: 4px;
+  border: none;
+  color: var(--mainLight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
