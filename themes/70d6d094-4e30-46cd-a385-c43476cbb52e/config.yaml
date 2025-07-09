@@ -39,6 +39,7 @@ bars:
         - "komorebi_workspaces"
         - "traffic"
         - "cpu"
+        - "active_window"
         - "media"
         - "systray"
       right:
@@ -161,7 +162,7 @@ widgets:
         - "\ue995" # Icon for 61-100% volume
       audio_menu:
         blur: false
-        round_corners: True
+        round_corners: true
         round_corners_type: "normal"
         border_color: "System"
         alignment: "right"
@@ -243,4 +244,20 @@ widgets:
       callbacks:
         on_left: "toggle_notification"
         on_middle: "clear_notifications"
+        on_right: "toggle_label"
+
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "{win[process][name]}"
+      label_no_window: ""
+      label_icon: false
+      label_icon_size: 16
+      max_length: 30
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "close_active_window"
         on_right: "toggle_label"
