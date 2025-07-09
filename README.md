@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Sleek Windows](themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d)
+
+<a title="Sleek Windows YASB Theme" href="themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d/image.png" width="830px"></a>
+
+
 ## [Blime](themes/70d6d094-4e30-46cd-a385-c43476cbb52e)
 
 <a title="Blime YASB Theme" href="themes/70d6d094-4e30-46cd-a385-c43476cbb52e"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/70d6d094-4e30-46cd-a385-c43476cbb52e/image.png" width="830px"></a>
