@@ -9,7 +9,7 @@ komorebi:
 bars:
   primary-bar:
     enabled: true
-    screens: ['*']
+    screens: ["*"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -39,11 +39,12 @@ bars:
         - "komorebi_workspaces"
         - "traffic"
         - "cpu"
-        - "volume"
-        - "clock"
-        - "systray"
+        - "active_window"
         - "media"
+        - "systray"
       right:
+        - "clock"
+        - "volume"
         - "notifications"
 
 widgets:
@@ -53,15 +54,15 @@ widgets:
       hide_if_offline: true
       label: "{icon}"
       layouts:
-        - 'bsp'
-        - 'columns'
-        - 'rows'
-        - 'grid'
-        - 'scrolling'
-        - 'vertical_stack'
-        - 'horizontal_stack'
-        - 'ultrawide_vertical_stack'
-        - 'right_main_vertical_stack'
+        - "bsp"
+        - "columns"
+        - "rows"
+        - "grid"
+        - "scrolling"
+        - "vertical_stack"
+        - "horizontal_stack"
+        - "ultrawide_vertical_stack"
+        - "right_main_vertical_stack"
       layout_icons:
         bsp: "\uebeb"
         columns: "\uebf7"
@@ -91,19 +92,16 @@ widgets:
         offset_top: 0
         offset_left: 0
         show_layout_icons: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
+
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
-      label_offline: "Komorebi OFFLINE"
+      label_offline: "<span>\ueb96</span>"
       label_default_name: ""
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: true
+
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -116,14 +114,17 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
+
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
       label: "<span>\ueda3</span>"
-      label_alt: "\uea9a  {download_speed}   |   {upload_speed} \ueaa1"
+      label_alt: "\uea9a {download_speed} | {upload_speed} \ueaa1"
       update_interval: 1000
       callbacks:
-        on_left: 'toggle_label'
+        on_left: "toggle_menu"
+        on_right: "toggle_label"
+
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -148,16 +149,28 @@ widgets:
         left: 12
         bottom: 0
         right: 0
+
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       volume_icons:
-        - "\ue74f"  # Icon for muted
-        - "\ue992"  # Icon for 0-10% volume
-        - "\ue993"  # Icon for 11-30% volume
-        - "\ue994"  # Icon for 31-60% volume
-        - "\ue995"  # Icon for 61-100% volume
+        - "\ue74f" # Icon for muted
+        - "\ue992" # Icon for 0-10% volume
+        - "\ue993" # Icon for 11-30% volume
+        - "\ue994" # Icon for 31-60% volume
+        - "\ue995" # Icon for 61-100% volume
+      audio_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_middle: "toggle_mute"
+
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -166,6 +179,7 @@ widgets:
       callbacks:
         on_left: "toggle_calendar"
         on_right: "toggle_label"
+
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -173,7 +187,7 @@ widgets:
       label_alt: "{artist}"
       callbacks:
         on_left: "toggle_media_menu"
-        on_middle: "do_nothing"
+        on_middle: "toggle_play_pause"
         on_right: "toggle_label"
       max_field_size:
         label: 30
@@ -214,6 +228,7 @@ widgets:
         pause: "\ue769"
         prev_track: "\ue892"
         next_track: "\ue893"
+
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -228,4 +243,21 @@ widgets:
         right: 12
       callbacks:
         on_left: "toggle_notification"
+        on_middle: "clear_notifications"
+        on_right: "toggle_label"
+
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "{win[process][name]}"
+      label_no_window: ""
+      label_icon: false
+      label_icon_size: 16
+      max_length: 30
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "close_active_window"
         on_right: "toggle_label"

@@ -1,99 +1,118 @@
-/*GENERAL CONFIGURATIONS*/
-.widget .icon {
-  font-size: 16px;
-}
-
 /*KOMOREBI LAYOUT*/
 .komorebi-active-layout .label {
-  border: 1px solid #18181b;
-  background-color: #B4FA72;
-  color: #18181b;
-  font-family: "Segoe UI Fluent";
-  font-size: 18px;
-  font-weight: 1000;
-  padding-right: 11px;
-  padding-left: 6px;
+  border: 1px solid #58585a;
+  background-color: #18181b;
+  color: #e5e7eb;
+  font-family: "Segoe Fluent Icons";
+  font-size: 20px;
+  font-weight: bold;
+  padding: 1px 10px 1px 6px;
   border-radius: 4px;
-  margin-right: 2px;
+  outline: none;
 }
+
 .komorebi-layout-menu {
-  border : 1px solid #58585A;
+  border: 1px solid #58585a;
   background-color: #18181b;
   color: #e5e7eb;
   border-radius: 4px;
-}.komorebi-layout-menu .menu-item {
+}
+
+.komorebi-layout-menu .menu-item {
   padding: 4px 16px;
   font-size: 14px;
   color: #e5e7eb;
 }
+
 .komorebi-layout-menu .menu-item-icon {
   color: #e5e7eb;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 1200;
 }
+
 .komorebi-layout-menu .menu-item-text {
-  font-family: 'Arial';
+  font-family: "JetBrains Mono";
   padding-left: 4px;
   font-size: 14px;
   font-weight: bold;
 }
+
 .komorebi-layout-menu .menu-item:hover {
-  border: 1px solid #B4FA72;
+  border: 1px solid #b4fa72;
   border-radius: 2px;
 }
+
 .komorebi-layout-menu .separator {
   max-height: 1px;
-  background-color: #58585A;
+  background-color: #58585a;
 }
 
 /*KOMOREBI-WORKSPACES*/
-.komorebi-workspaces {
-  border-radius: 4px;
-  margin-right: 2px;
-}
 .komorebi-workspaces .ws-btn {
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: bold;
   padding: 8px 11px 8px 11px;
   border-radius: 4px;
+  margin-left: 2px;
+  outline: none;
 }
+
 .komorebi-workspaces .ws-btn.populated {
-  border: 1px solid #58585A;
+  border: 1px solid #58585a;
   background-color: #18181b;
   color: #e5e7eb;
 }
+
 .komorebi-workspaces .ws-btn.active {
   border: 1px solid #18181b;
-  background-color: #B4FA72;
+  background-color: #b4fa72;
   color: #18181b;
+}
+
+/*ACTIVE WINDOW*/
+.active-window-widget {
+  background-color: #b4fa72;
+  border: 1px solid #18181b;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 4px;
+  margin-left: 2px;
+}
+.active-window-widget .label {
+  color: #18181b;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /*SYSTEM TRAY*/
 .systray {
-  padding: 0 5px 0 5px;
+  padding: 2px 2px 2px 2px;
   background-color: #18181b;
-  margin-right: 2px;
   margin-left: 2px;
   border-radius: 4px;
-  border: 1px solid #58585A;
+  border: 1px solid #58585a;
+  outline: none;
 }
+
 .systray .button {
   background: transparent;
   padding: 2px 2px;
+  outline: none;
+  border: none;
 }
+
 .systray .unpinned-visibility-btn {
   padding-right: 2px;
-  padding-left: 2px;
+  padding: 2px 5px 2px 5px;
   color: #e5e7eb;
+  background: transparent;
+  border: none;
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
-  font-size: 16px;
-
-}
-.systray .unpinned-visibility-btn:hover {
-  border: 1px solid #58585A;
-  border-radius: 1px;
+  font-size: 20px;
+  outline: none;
 }
 
 /*TRAFFIC*/
@@ -103,23 +122,171 @@
   border: 1px solid #18181b;
   color: #18181b;
   font-weight: bold;
-  font-size: 16px;
-  padding-right: 10px;
+  font-size: 18px;
+  padding-right: 8px;
   padding-left: 10px;
   border-radius: 4px;
-  margin-right: 2px;
+  margin-left: 2px;
+  outline: none;
 }
+
 .traffic-widget .label {
   border: 1px solid #18181b;
   background-color: #e5e7eb;
   color: #18181b;
-  margin-right: 4px;
   border-radius: 4px;
-  padding-right: 10px;
+  padding-right: 12px;
   padding-left: 10px;
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: bold;
+  margin-left: 2px;
+  outline: none;
+}
+
+.traffic-menu {
+  background-color: #18181b;
+  border: 1px solid #58585a;
+  color: #e5e7eb;
+  border-radius: 4px;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+}
+
+/*TRAFFIC POPUP*/
+.traffic-menu {
+  background-color: #18181b;
+  border: 1px solid #58585a;
+  color: #e5e7eb;
+  border-radius: 4px;
+  min-width: 180px;
+}
+
+.traffic-menu .header {
+  border-bottom: 1px solid #18181b;
+  background-color: #b4fa72;
+}
+
+.traffic-menu .header .title {
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "JetBrains Mono";
+  color: #18181b;
+}
+
+.traffic-menu .header .reset-button {
+  font-size: 12px;
+  padding: 4px 8px;
+  margin-right: 8px;
+  font-family: "JetBrains Mono";
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color: #18181b;
+  outline: none;
+}
+
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+  background-color: transparent;
+  margin-right: 12px;
+  margin-left: 12px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.traffic-menu .download-speed {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.traffic-menu .speed-separator {
+  max-width: 1px;
+  background-color: #ffffff33;
+  margin: 32px 0 16px 0;
+}
+
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+  font-size: 24px;
+  font-weight: 900;
+  font-family: "JetBrains Mono";
+  color: #e5e7eb;
+}
+
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+  font-size: 13px;
+  font-family: "JetBrains Mono";
+  font-weight: bold;
+  color: #e5e7eb;
+  padding-top: 4px;
+}
+
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+  color: #747474;
+  font-size: 11px;
+  font-family: "JetBrains Mono";
+  padding: 0 0 4px 0;
+}
+
+.traffic-menu .section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #7c8192;
+  margin-bottom: 4px;
+  font-family: "JetBrains Mono";
+}
+
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+  margin: 8px 8px 0 8px;
+  padding: 0 10px 10px 10px;
+  background-color: transparent;
+  border-bottom: 1px solid #ffffff1a;
+}
+
+.traffic-menu .data-text {
+  font-weight: bold;
+  font-size: 13px;
+  color: #e5e7eb;
+  padding: 2px 0;
+  font-family: "JetBrains Mono";
+}
+
+.traffic-menu .data-value {
+  font-weight: bold;
+  font-size: 13px;
+  font-family: "JetBrains Mono";
+  padding: 2px 0;
+}
+
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+  font-size: 12px;
+  font-weight: bold;
+  color: #93c5fd;
+  padding: 8px 0;
+  font-family: "JetBrains Mono";
+}
+
+.traffic-menu .internet-info {
+  background-color: #4444441a;
+}
+
+.traffic-menu .internet-info.connected {
+  background-color: #a6e3a11a;
+  color: #a6e3a1;
+}
+
+.traffic-menu .internet-info.disconnected {
+  background-color: #f38ba81a;
+  color: #f38ba8;
 }
 
 /*CPU*/
@@ -127,215 +294,253 @@
   border: 1px solid #18181b;
   background-color: #e5e7eb;
   border-radius: 4px;
-  margin-right: 2px;
+  margin-left: 2px;
+  outline: none;
 }
+
 .cpu-widget .label {
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: bold;
   color: #18181b;
-  margin-right: 15px;
-  padding-left: 6px;
+  margin-right: 12px;
+  padding-left: 2px;
 }
+
 .cpu-widget .icon {
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   color: #18181b;
   margin-right: 6px;
 }
 
 /*AUDIO WIDGET*/
 .volume-widget {
-  border: 1px solid #18181b;
+  border: 1px solid #58585a;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #e5e7eb;
+  background-color: #18181b;
   border-radius: 4px;
-}
-.volume-widget .icon {
-  font-family: "Segoe Fluent Icons";
-  color: #18181b;
-  font-size: 22px;
-  font-weight: bold;
-}
-.volume-widget .label {
-  font-family: Arial;
-  font-size: 14px;
-  font-weight: bold;
-  padding-left: 5px;
-  color: #18181b;
+  margin-left: 2px;
+  outline: none;
 }
 
-/*AUDIO DROPDOWN*/
+.volume-widget .icon {
+  font-family: "Segoe Fluent Icons";
+  color: #e5e7eb;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.volume-widget .label {
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 2px;
+  color: #e5e7eb;
+}
+
+/*AUDIO POPUP*/
 .audio-menu {
   background-color: #18181b;
 }
+
 .audio-container .device {
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   color: #e5e7eb;
   font-weight: bold;
   background-color: #18181b;
   border: none;
   padding: 6px 8px 6px 4px;
   margin: 2px 0;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 4px;
+  outline: none;
 }
+
 .audio-container .device.selected {
-  border: 1px solid #B4FA72;
-  color: #e5e7eb;
+  background-color: #b4fa72;
+  color: #18181b;
 }
 
 /*CLOCK / CALENDAR WIDGET*/
 .clock-widget {
-  border: 1px solid #18181b;
-  background-color: #B4FA72;
+  border: 1px solid #58585a;
+  background-color: #18181b;
   padding-left: 10px;
   padding-right: 10px;
-  margin-left: 2px;
   border-radius: 4px;
+  outline: none;
 }
+
 .clock-widget .label {
-  background-color: #B4FA72;
-  color: #18181b;
-  font-family: Arial;
+  background-color: #18181b;
+  color: #e5e7eb;
+  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: bold;
 }
+
 .calendar {
-  border: 1px solid #58585A;
+  border: 1px solid #58585a;
   background-color: #18181b;
+  outline: none;
 }
-.calendar .calendar-table, .calendar .calendar-table::item {
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
   background-color: #18181b;
   color: #e5e7eb;
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   font-weight: bold;
-  margin: 0;
-  padding: 0;
   outline: none;
   font-size: 14px;
 }
+
 .calendar .calendar-table::item:selected {
   color: #18181b;
-  background-color: #B4FA72;
+  background-color: #b4fa72;
   border-radius: 4px;
 }
+
 .calendar .day-label {
   margin-top: 20px;
 }
-.calendar .day-label, .calendar .month-label, .calendar .date-label {
-  font-family: Arial;
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
   font-size: 18px;
   color: #e5e7eb;
   font-weight: bold;
   min-width: 160px;
   max-width: 160px;
 }
+
 .calendar .month-label {
+  font-family: "JetBrains Mono";
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
+
 .calendar .date-label {
+  font-family: "JetBrains Mono";
   font-size: 88px;
-  font-weight: 900;
+  font-weight: bold;
   color: #e5e7eb;
   margin-top: -20px;
 }
 
+.calendar .day-label {
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+  color: #e5e7eb;
+}
+
 /*MEDIA WIDGET*/
 .media-widget {
-  border: 1px solid #18181b;
-  background-color: #e5e7eb;
+  border: 1px solid #58585a;
+  background-color: #18181b;
   border-radius: 4px;
   padding-left: 12px;
   padding-right: 12px;
-  margin-right: 2px;
+  margin-left: 2px;
+  outline: none;
 }
+
 .media-widget .label {
-  color: #18181b;
-  background-color: #e5e7eb;
+  color: #e5e7eb;
+  background-color: #18181b;
   padding: 0 0 0 10px;
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: bold;
 }
+
 .media-widget .btn {
   font-family: "Segoe Fluent Icons";
-  color: #18181b;
+  color: #e5e7eb;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   padding: 0 3px 0 3px;
 }
+
 .media-widget .btn:hover {
-  color: #18181b;
+  color: #e5e7eb;
 }
+
 .media-widget .btn.play {
   font-family: "Segoe Fluent Icons";
-  background-color: #e5e7eb;
+  background-color: #18181b;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
-  color: #18181b;
-}
-.media-widget .btn.disabled:hover, .media-widget .btn.disabled {
-  color: #18181b;
-  font-size: 14px;
-  background-color: #e5e7eb;
+  color: #e5e7eb;
 }
 
 /*MEDIA POPUP*/
 .media-menu {
   min-width: 400px;
   max-width: 400px;
-  background-color: #e5e7eb;
+  background-color: #18181b;
   border-radius: 4px;
+  outline: none;
 }
+
 .media-menu .thumbnail {
-  border: 1px solid #18181b;
+  border: 1px solid #58585a;
   border-radius: 4px;
 }
+
 .media-menu .title,
 .media-menu .artist,
 .media-menu .source {
   font-size: 16px;
   font-weight: bold;
-  font-family: Arial;
-  color: #18181b;
+  font-family: "JetBrains Mono";
+  color: #e5e7eb;
   margin-left: 10px;
 }
+
 .media-menu .artist {
   font-size: 14px;
-  color: #18181b;
+  color: #e5e7eb;
   margin-top: 4px;
   margin-bottom: 12px;
 }
+
 .media-menu .source {
-  font-size: 14px;
+  font-size: 13px;
   color: #18181b;
   font-weight: bold;
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   border-radius: 4px;
-  background-color: #bac2de;
+  background-color: #e5e7eb;
   padding: 2px 4px;
 }
+
 .media-menu .source.firefox {
   background-color: #ff583b;
-  color: #e5e7eb;
+  color: #fff;
 }
+
 .media-menu .source.spotify {
   background-color: #199143;
-  color: #e5e7eb;
+  color: #fff;
 }
+
 .media-menu .source.edge {
   background-color: #0078d4;
-  color: #e5e7eb;
+  color: #fff;
 }
+
 .media-menu .source.windows-media {
   background-color: #0078d4;
-  color: #e5e7eb;
+  color: #fff;
 }
+
 .media-menu .btn {
   font-family: "Segoe Fluent Icons";
   font-size: 14px;
@@ -344,49 +549,58 @@
   max-width: 40px;
   min-height: 40px;
   max-height: 40px;
-  color: #18181b;
+  color: #e5e7eb;
 }
+
 .media-menu .btn.prev {
   margin-left: 10px;
 }
+
 .media-menu .btn:hover {
-  color: #18181b;
+  color: #e5e7eb;
   background-color: transparent;
 }
+
 .media-menu .btn.play {
   background-color: transparent;
   font-size: 20px;
 }
+
 .media-menu .btn.disabled:hover,
 .media-menu .btn.disabled {
-  color: #4e525c;
-  background-color: rgba(0, 0, 0, 0);
+  color: #4e525cff;
+  background-color: #000000;
 }
+
 .media-menu .playback-time {
   font-size: 14px;
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   font-weight: bold;
-  color: #18181b;
+  color: #e5e7eb;
   margin-top: 12px;
   min-width: 100px;
 }
+
 .media-menu .progress-slider {
   height: 10px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
+
 .media-menu .progress-slider::groove {
   background: transparent;
   height: 4px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
+
 .media-menu .progress-slider::groove:hover {
   background: transparent;
   height: 6px;
-  border-radius: 3px;
-  background: #a3a3a3;
+  border-radius: 4px;
+  background: #58585a;
 }
+
 .media-menu .progress-slider::sub-page {
-  background: #18181b;
+  background: #e5e7eb;
   border-radius: 4px;
   height: 4px;
 }
@@ -394,25 +608,29 @@
 /*NOTIFICATIONS*/
 .notification-widget {
   background-color: #18181b;
-  border: 1px solid #58585A;
-  margin-right: 2px;
+  border: 1px solid #58585a;
+  margin-left: 2px;
   border-radius: 4px;
+  outline: none;
 }
+
 .notification-widget .icon {
   font-family: "Segoe Fluent Icons";
-  font-size: 16px;
+  font-size: 14px;
   padding-right: 8px;
   color: #e5e7eb;
 }
+
 .notification-widget .icon.new-notification {
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   color: #e5e7eb;
 }
+
 .notification-widget .label.new-notification {
   color: #e5e7eb;
-  font-family: Arial;
+  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: bold;
 }
