@@ -33,17 +33,17 @@ bars:
       bottom: 1
       right: 1
     widgets:
-      left: []
+      left:
       center:
         - "komorebi_active_layout"
         - "komorebi_workspaces"
         - "traffic"
         - "cpu"
-        - "volume"
         - "media"
         - "systray"
       right:
         - "clock"
+        - "volume"
         - "notifications"
 
 widgets:
@@ -118,10 +118,11 @@ widgets:
     type: "yasb.traffic.TrafficWidget"
     options:
       label: "<span>\ueda3</span>"
-      label_alt: "\uea9a  {download_speed}   |   {upload_speed} \ueaa1"
+      label_alt: "\uea9a {download_speed} | {upload_speed} \ueaa1"
       update_interval: 1000
       callbacks:
-        on_left: "toggle_label"
+        on_left: "toggle_menu"
+        on_right: "toggle_label"
 
   cpu:
     type: "yasb.cpu.CpuWidget"
@@ -158,6 +159,16 @@ widgets:
         - "\ue993" # Icon for 11-30% volume
         - "\ue994" # Icon for 31-60% volume
         - "\ue995" # Icon for 61-100% volume
+      audio_menu:
+        blur: false
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_middle: "toggle_mute"
 
   clock:
     type: "yasb.clock.ClockWidget"
@@ -175,7 +186,7 @@ widgets:
       label_alt: "{artist}"
       callbacks:
         on_left: "toggle_media_menu"
-        on_middle: "do_nothing"
+        on_middle: "toggle_play_pause"
         on_right: "toggle_label"
       max_field_size:
         label: 30
@@ -231,4 +242,5 @@ widgets:
         right: 12
       callbacks:
         on_left: "toggle_notification"
+        on_middle: "clear_notifications"
         on_right: "toggle_label"
