@@ -1,0 +1,262 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: true 
+      acrylic: true
+      dark_mode: true
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 34
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left: ["power_menu", "media"]
+      center: ["apps"]
+      right: ["weather","wifi","bluetooth", "battery","date","volume","clock"]
+widgets:
+  #clock widget
+  clock:
+    type: "yasb.clock.ClockWidget"
+    class_name: "time-clock"
+    options:
+      label: "{%H:%M}"
+      timezones: []
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+  date:
+    type: "yasb.clock.ClockWidget"
+    class_name: "date-clock"
+    options:
+      label: "{%a %d %b}"
+      label_alt: "{%A, %d %B}"
+      timezones: []
+  #weather widget
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "3bf4cf9a7c3f40d6b31174128242807"
+      show_alerts: true
+      update_interval: 600
+      hide_decimal: true
+      units: "metric"
+      location: "auto:ip"
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      icons: 
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\udb81\udd99"
+        cloudyNight: "\ue311"
+        rainyDay: "\udb81\ude7e"
+        rainyNight: "\udb81\ude7e"
+        snowyIcyDay: "\udb81\udd98"
+        snowyIcyNight: "\udb81\udd98"
+        blizzardDay: "\uebaa"
+        default: "\uebaa"
+      weather_card: 
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        distance: 6
+        icon_size: 64
+      
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8"
+        - "\uf026"
+        - "\uf027"
+        - "\uf027"
+        - "\uf028"
+      callbacks:
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+  #battery widget
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span> {percent}%"
+      callbacks:
+        on_right: "do_nothing"
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+      charging_options:
+        icon_format: "{charging_icon}"
+  #wifi widget
+  wifi:
+      type: "yasb.wifi.WifiWidget"
+      options:
+        label: "<span>{wifi_icon}</span>"
+        update_interval: 5000
+        ethernet_icon: "\ue673"
+        ethernet_label_alt: "{ip_addr}"
+        animation:
+          enabled: true
+          duration: 100
+          type: "fadeInOut"
+        menu_config:
+          blur: true
+          round_corners: true
+          round_corners_type: "normal"
+          border_color: "System"
+          alignment: "right"
+          direction: "down"
+          offset_top: 6
+          offset_left: 0
+          wifi_icons_unsecured: [
+            "\uec3c",
+            "\uec3d",
+            "\uec3e",
+            "\uec3f",
+          ]
+        callbacks:
+          on_left: "toggle_menu"
+          on_middle: "toggle_label"
+          on_right: "exec cmd.exe /c start ms-settings:network"
+        container_padding:
+          top: 2
+          bottom: 2
+          left: 6
+          right: 8
+        wifi_icons: [
+          "\udb82\udd2e",  # Icon for 0% strength
+          "\udb82\udd1f",  # Icon for 1-20% strength
+          "\udb82\udd22",  # Icon for 21-40% strength
+          "\udb82\udd25",  # Icon for 41-80% strength
+          "\udb82\udd28"   # Icon for 81-100% strength
+        ]
+  #power menu widget 
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\ue62a"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 200
+      button_row: 5
+      buttons:
+        shutdown: ["\uE7E8", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        signout: ["\udb80\udf43", "Sign out"]
+        hibernate: ["\uf28e", "Hibernate"]
+        sleep: ["\u23fe", "Sleep"]
+        cancel: ["", "Cancel"]
+  #media widget
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{source} - {title}"
+      label_alt: "{source} - {title} - {artist}"
+      hide_empty: true
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      max_field_size:
+        label: 20
+        label_alt: 30
+      show_thumbnail: false
+      controls_only: false
+      controls_left: false
+      controls_hide: true
+      thumbnail_alpha: 80
+      thumbnail_padding: 8
+      thumbnail_corner_radius: 16
+      scrolling_label:
+        enabled: false
+        update_interval_ms: 33
+        style: "left"
+        separator: " | "
+        label_padding: 1
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      media_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        thumbnail_corner_radius: 8
+        thumbnail_size: 120
+        max_title_size: 80
+        max_artist_size: 20
+        show_source: true
+      media_menu_icons:
+        play: "\ue768"
+        pause: "\ue769"
+        prev_track: "\ue892"
+        next_track: "\ue893"
+  bluetooth:
+    type: "yasb.bluetooth.BluetoothWidget"
+    options:
+      label: "<span>{icon}</span> {device_count}"
+      label_alt: "{device_name}"
+      label_no_device: "No devices connected"
+      label_device_separator: ", "
+      max_length: 10
+      max_length_ellipsis: "..."
+      icons: 
+        bluetooth_on: "\udb80\udcaf"
+        bluetooth_off: "\udb80\udcb2"
+        bluetooth_connected: "\udb80\udcb1"
+      device_aliases:
+        - name: "T5.0"
+          alias: "\uf025"
+      callbacks:
+        on_left: "toggle_label"
+        on_right: "exec cmd.exe /c start ms-settings:bluetooth"
+  #applications widget
+  apps:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      container_padding:
+        top: 1
+        left: 8
+        bottom: 1
+        right: 8
+      label: "{data}"
+      app_list:
+        - { icon: "\uf0a2", launch: "notification_center" }
+        - { icon: "\uf002", launch: "search" }
+        - { icon: "\uf437", launch: "cmd /c Taskmgr" }
+        - { icon: "\uf489", launch: "wt.exe" }
+        #- { icon: "\uf1b6", launch: "C:/Program Files (x86)/Steam/Steam.exe" }
