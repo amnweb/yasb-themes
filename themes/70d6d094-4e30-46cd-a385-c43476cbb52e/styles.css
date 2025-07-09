@@ -76,6 +76,7 @@
   border: 1px solid #18181b;
   padding-right: 10px;
   padding-left: 10px;
+  padding-bottom: 2px;
   border-radius: 4px;
   margin-left: 2px;
   outline: none;
@@ -359,6 +360,8 @@
 /*AUDIO POPUP*/
 .audio-menu {
   background-color: #18181b;
+  border : 1px solid #58585a;
+  border-radius: 4px;
 }
 
 .audio-container .device {
@@ -377,6 +380,7 @@
 .audio-container .device.selected {
   background-color: #b4fa72;
   color: #18181b;
+  outline: none;
 }
 
 /*CLOCK / CALENDAR WIDGET*/
@@ -400,6 +404,7 @@
 .calendar {
   border: 1px solid #58585a;
   background-color: #18181b;
+  border-radius: 4px;
   outline: none;
 }
 
@@ -417,6 +422,7 @@
   color: #18181b;
   background-color: #b4fa72;
   border-radius: 4px;
+  outline: none;
 }
 
 .calendar .day-label {
@@ -469,7 +475,6 @@
 .media-widget .label {
   color: #e5e7eb;
   background-color: #18181b;
-  padding: 0 0 0 10px;
   font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: bold;
@@ -481,7 +486,7 @@
   color: #e5e7eb;
   font-weight: bold;
   font-size: 13px;
-  padding: 0 3px 0 3px;
+  padding: 0 3px 2px 3px;
   outline: none;
 }
 
