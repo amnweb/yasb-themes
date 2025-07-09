@@ -143,7 +143,9 @@ widgets:
         - '\u2588' # 80%+
       histogram_num_columns: 8
       callbacks:
-        on_right: "exec cmd /c Taskmgr"
+        on_left: "toggle_cpu_menu"
+        on_middle: "exec cmd /c Taskmgr"
+        on_right: "toggle_label"
       container_padding:
         top: 0
         left: 0
@@ -190,8 +192,8 @@ widgets:
         on_middle: "toggle_play_pause"
         on_right: "toggle_label"
       max_field_size:
-        label: 30
-        label_alt: 30
+        label: 20
+        label_alt: 20
       hide_empty: true
       scrolling_label:
         enabled: false
