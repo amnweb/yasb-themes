@@ -213,18 +213,13 @@ widgets:
       - pattern: "^(.+?)\\.exe$"
         replacement: "\\1"
         case: lower
-            
       - pattern: "(.*)zen(.*)$"
         replacement: "browser \\2"
-
-- pattern: "(.*)applicationframehost(.*)$"
+      - pattern: "(.*)applicationframehost(.*)$"
         replacement: "notepad \\2"
-
-- pattern: "(.*)microsoft.cmdpal.ui(.*)$"
+      - pattern: "(.*)microsoft.cmdpal.ui(.*)$"
         replacement: "Drun \\2"
-
-- pattern: "(.*)imageglass(.*)$"
-        replacement: "Photos \\2"
-      
+      - pattern: "(.*)imageglass(.*)$"
+        replacement: "Photos \\2" 
       - pattern: "(.*)robloxplayerbeta(.*)$"
         replacement: "Roblox \\2"
