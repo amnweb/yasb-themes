@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Aurora dock](themes/5ef86699-f1c7-4d48-a122-5822cecc9295)
+
+<a title="Aurora dock YASB Theme" href="themes/5ef86699-f1c7-4d48-a122-5822cecc9295"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5ef86699-f1c7-4d48-a122-5822cecc9295/image.png" width="830px"></a>
+
+
 ## [Sleek Windows](themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d)
 
 <a title="Sleek Windows YASB Theme" href="themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d/image.png" width="830px"></a>
