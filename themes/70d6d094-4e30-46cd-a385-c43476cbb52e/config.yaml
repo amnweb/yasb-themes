@@ -33,7 +33,7 @@ bars:
       bottom: 1
       right: 1
     widgets:
-      left:
+      left: []
       center:
         - "komorebi_active_layout"
         - "komorebi_workspaces"
@@ -146,7 +146,7 @@ widgets:
         on_right: "exec cmd /c Taskmgr"
       container_padding:
         top: 0
-        left: 12
+        left: 0
         bottom: 0
         right: 0
 
@@ -192,12 +192,7 @@ widgets:
       max_field_size:
         label: 30
         label_alt: 30
-      show_thumbnail: false
-      controls_hide: false
       hide_empty: true
-      thumbnail_alpha: 80
-      thumbnail_padding: 0
-      thumbnail_corner_radius: 0
       scrolling_label:
         enabled: false
         update_interval_ms: 33
@@ -210,7 +205,7 @@ widgets:
         play: "\ue768"
         pause: "\ue769"
       media_menu:
-        blur: true
+        blur: false
         round_corners: true
         round_corners_type: "normal"
         border_color: "system"
@@ -255,9 +250,18 @@ widgets:
       label_icon: false
       label_icon_size: 16
       max_length: 30
-      max_length_ellipsis: "..."
-      monitor_exclusive: true
+      max_length_ellipsis: "~"
+      monitor_exclusive: false
+      rewrite:
+        - pattern: "Visual Studio Code"
+          replacement: "VSC"
+        - pattern: "Zen Browser"
+          replacement: "Zen"
+      ignore_window:
+        classes: []
+        processes: []
+        titles:
+          ["Task Switching", "Magnifier", "Notification Center", "Raycast"]
       callbacks:
         on_left: "do_nothing"
-        on_middle: "close_active_window"
         on_right: "toggle_label"
