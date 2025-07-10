@@ -172,6 +172,11 @@ widgets:
       callbacks:
         on_left: "toggle_volume_menu"
         on_middle: "toggle_mute"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [ 0, 0 ]
 
   clock:
     type: "yasb.clock.ClockWidget"
@@ -181,6 +186,11 @@ widgets:
       callbacks:
         on_left: "toggle_calendar"
         on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [ 0, 0 ]
 
   media:
     type: "yasb.media.MediaWidget"
@@ -242,6 +252,11 @@ widgets:
         on_left: "toggle_notification"
         on_middle: "clear_notifications"
         on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [ 0, 0 ]
 
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
