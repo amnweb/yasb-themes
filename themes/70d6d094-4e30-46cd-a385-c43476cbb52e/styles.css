@@ -332,10 +332,9 @@
 
 /*AUDIO WIDGET*/
 .volume-widget {
-  border: 1px solid #58585a;
+  background-color: rgba(24, 24, 27, 0.5);
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #18181b;
   border-radius: 4px;
   margin-left: 2px;
   margin-right: 1px;
@@ -385,8 +384,7 @@
 
 /*CLOCK / CALENDAR WIDGET*/
 .clock-widget {
-  border: 1px solid #58585a;
-  background-color: #18181b;
+  background-color: rgba(24, 24, 27, 0.5);
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 4px;
@@ -394,7 +392,6 @@
 }
 
 .clock-widget .label {
-  background-color: #18181b;
   color: #e5e7eb;
   font-family: "JetBrains Mono";
   font-size: 14px;
@@ -629,8 +626,7 @@
 
 /*NOTIFICATIONS*/
 .notification-widget {
-  background-color: #18181b;
-  border: 1px solid #58585a;
+  background-color: rgba(24, 24, 27, 0.5);
   margin-right: 1px;
   margin-left: 1px;
   border-radius: 4px;
