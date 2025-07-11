@@ -38,7 +38,7 @@
 }
 
 .komorebi-layout-menu .menu-item:hover {
-  border: 1px solid  #5eead4;
+  border: 1px solid #b4fa72;
   border-radius: 2px;
 }
 
@@ -66,13 +66,13 @@
 
 .komorebi-workspaces .ws-btn.active {
   border: 1px solid #18181b;
-  background-color:  #b4fa72;
+  background-color: #b4fa72;
   color: #18181b;
 }
 
 /*ACTIVE WINDOW*/
 .active-window-widget {
-  background-color:  #b4fa72;
+  background-color: #b4fa72;
   border: 1px solid #18181b;
   padding-right: 10px;
   padding-left: 10px;
@@ -81,6 +81,7 @@
   margin-left: 2px;
   outline: none;
 }
+
 .active-window-widget .label {
   color: #18181b;
   font-family: "JetBrains Mono";
@@ -362,7 +363,7 @@
 /*AUDIO POPUP*/
 .audio-menu {
   background-color: #18181b;
-  border : 1px solid #58585a;
+  border: 1px solid #58585a;
   border-radius: 4px;
 }
 
@@ -380,7 +381,7 @@
 }
 
 .audio-container .device.selected {
-  background-color:  #b4fa72;
+  background-color: #b4fa72;
   color: #18181b;
   outline: none;
 }
@@ -420,7 +421,7 @@
 
 .calendar .calendar-table::item:selected {
   color: #18181b;
-  background-color:  #b4fa72;
+  background-color: #b4fa72;
   border-radius: 4px;
   outline: none;
 }
