@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Neos](themes/0c710881-e0ae-4deb-9257-2a096e9c7408)
+
+<a title="Neos YASB Theme" href="themes/0c710881-e0ae-4deb-9257-2a096e9c7408"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0c710881-e0ae-4deb-9257-2a096e9c7408/image.png" width="830px"></a>
+
+
 ## [Aurora dock](themes/5ef86699-f1c7-4d48-a122-5822cecc9295)
 
 <a title="Aurora dock YASB Theme" href="themes/5ef86699-f1c7-4d48-a122-5822cecc9295"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5ef86699-f1c7-4d48-a122-5822cecc9295/image.png" width="830px"></a>
