@@ -1,0 +1,636 @@
+/*KOMOREBI LAYOUT*/
+.komorebi-active-layout .label {
+  background-color: rgba(24, 24, 27, 0.7);
+  color: #e5e7eb;
+  font-family: "Segoe Fluent Icons";
+  font-size: 20px;
+  font-weight: bold;
+  padding: 1px 9px 2px 4px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.komorebi-layout-menu {
+  border: 1px solid #58585a;
+  background-color: #18181b;
+  color: #e5e7eb;
+  border-radius: 4px;
+}
+
+.komorebi-layout-menu .menu-item {
+  padding: 4px 16px;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.komorebi-layout-menu .menu-item-icon {
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 1200;
+}
+
+.komorebi-layout-menu .menu-item-text {
+  font-family: "JetBrains Mono";
+  padding-left: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.komorebi-layout-menu .menu-item:hover {
+  border: 1px solid  #5eead4;
+  border-radius: 2px;
+}
+
+.komorebi-layout-menu .separator {
+  max-height: 1px;
+  background-color: #58585a;
+}
+
+/*KOMOREBI-WORKSPACES*/
+.komorebi-workspaces .ws-btn {
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 11px 8px 11px;
+  border-radius: 4px;
+  margin-left: 2px;
+  outline: none;
+}
+
+.komorebi-workspaces .ws-btn.populated {
+  background-color: rgba(24, 24, 27, 0.8);
+  color: #e5e7eb;
+}
+
+.komorebi-workspaces .ws-btn.active {
+  background-color: rgba(24, 24, 27, 0.7);
+  color: #5eead4;
+}
+
+/*ACTIVE WINDOW*/
+.active-window-widget {
+  background-color: rgba(24, 24, 27, 0.7);
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 2px;
+  border-radius: 4px;
+  margin-left: 2px;
+  outline: none;
+}
+.active-window-widget .label {
+  color: #5eead4;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 2px;
+  outline: none;
+}
+
+/*SYSTEM TRAY*/
+.systray {
+  padding: 1px 1px 1px 1px;
+  background-color: rgba(24, 24, 27, 0.8);
+  margin-left: 2px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.systray .button {
+  background: transparent;
+  padding: 2px 2px;
+  outline: none;
+  border: none;
+}
+
+.systray .unpinned-visibility-btn {
+  padding-right: 2px;
+  padding: 2px 5px 2px 5px;
+  color: #e5e7eb;
+  background: transparent;
+  border: none;
+  font-family: "Segoe Fluent Icons";
+  font-weight: bold;
+  font-size: 18px;
+  outline: none;
+}
+
+/*TRAFFIC*/
+.traffic-widget .label {
+  background-color: rgba(24, 24, 27, 0.5);
+  color: #fda4af;
+  border-radius: 4px;
+  padding-top: 2px;
+  padding-right: 10px;
+  padding-left: 6px;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 1px;
+  outline: none;
+}
+
+.traffic-menu {
+  background-color: #18181b;
+  border: 1px solid #58585a;
+  color: #e5e7eb;
+  border-radius: 4px;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+}
+
+/*TRAFFIC POPUP*/
+.traffic-menu {
+  background-color: #18181b;
+  border: 1px solid #58585a;
+  color: #e5e7eb;
+  border-radius: 4px;
+  min-width: 180px;
+}
+
+.traffic-menu .header {
+  border-bottom: 1px solid #58585a;
+  background-color: #18181b;
+}
+
+.traffic-menu .header .title {
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "JetBrains Mono";
+  color: #e5e7eb;
+}
+
+.traffic-menu .header .reset-button {
+  font-size: 12px;
+  padding: 4px 8px;
+  margin-right: 8px;
+  font-family: "JetBrains Mono";
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color: #5eead4;
+  outline: none;
+}
+
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+  background-color: transparent;
+  margin-right: 12px;
+  margin-left: 12px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.traffic-menu .download-speed {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.traffic-menu .speed-separator {
+  max-width: 1px;
+  background-color: #ffffff33;
+  margin: 32px 0 16px 0;
+}
+
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+  font-size: 24px;
+  font-weight: 900;
+  font-family: "JetBrains Mono";
+  color: #e5e7eb;
+}
+
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+  font-size: 13px;
+  font-family: "JetBrains Mono";
+  font-weight: bold;
+  color: #e5e7eb;
+  padding-top: 4px;
+}
+
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+  color: #747474;
+  font-size: 11px;
+  font-family: "JetBrains Mono";
+  padding: 0 0 4px 0;
+}
+
+.traffic-menu .section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #7c8192;
+  margin-bottom: 4px;
+  font-family: "JetBrains Mono";
+}
+
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+  margin: 8px 8px 0 8px;
+  padding: 0 10px 10px 10px;
+  background-color: transparent;
+  border-bottom: 1px solid #ffffff1a;
+}
+
+.traffic-menu .data-text {
+  font-weight: bold;
+  font-size: 13px;
+  color: #e5e7eb;
+  padding: 2px 0;
+  font-family: "JetBrains Mono";
+}
+
+.traffic-menu .data-value {
+  font-weight: bold;
+  font-size: 13px;
+  font-family: "JetBrains Mono";
+  padding: 2px 0;
+}
+
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+  font-size: 12px;
+  font-weight: bold;
+  color: #93c5fd;
+  padding: 8px 0;
+  font-family: "JetBrains Mono";
+}
+
+.traffic-menu .internet-info {
+  background-color: #4444441a;
+}
+
+.traffic-menu .internet-info.connected {
+  background-color: #a6e3a11a;
+  color: #a6e3a1;
+}
+
+.traffic-menu .internet-info.disconnected {
+  background-color: #f38ba81a;
+  color: #f38ba8;
+}
+
+/*CPU*/
+.cpu-widget {
+  background-color: rgba(24, 24, 27, 0.8);
+  border-radius: 4px;
+  margin-left: 1px;
+  margin-right: 1px;
+  outline: none;
+  width: 90px;
+  min-width: 0;
+  max-width: 90px;
+}
+
+.cpu-widget .label {
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+  color: #f0abfc;
+  padding-right: 6px;
+  padding-top: 2px;
+  width: 50px;
+  min-width: 0;
+  max-width: 50px;
+}
+
+.cpu-widget .icon {
+  font-family: "Segoe Fluent Icons";
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 2px;
+  padding-left: 6px;
+  padding-right: -4px;
+  color: #e5e7eb;
+}
+
+/*AUDIO WIDGET*/
+.volume-widget {
+  background-color: rgba(24, 24, 27, 0.8);
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 4px;
+  margin-left: 2px;
+  margin-right: 1px;
+  outline: none;
+}
+
+.volume-widget .icon {
+  font-family: "Segoe Fluent Icons";
+  color: #e5e7eb;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+.volume-widget .label {
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 2px;
+  color: #e5e7eb;
+  padding-right: 4px;
+}
+
+/*AUDIO POPUP*/
+.audio-menu {
+  background-color: #18181b;
+  border : 1px solid #58585a;
+  border-radius: 4px;
+}
+
+.audio-container .device {
+  font-family: "JetBrains Mono";
+  color: #e5e7eb;
+  font-weight: bold;
+  background-color: #18181b;
+  border: none;
+  padding: 6px 8px 6px 4px;
+  margin: 2px 0;
+  font-size: 13px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.audio-container .device.selected {
+  border: 2px solid #5eead4;
+  outline: none;
+}
+
+/*CLOCK / CALENDAR WIDGET*/
+.clock-widget {
+  background-color: rgba(24, 24, 27, 0.8);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.clock-widget .label {
+  color: #e5e7eb;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.calendar {
+  border: 1px solid #58585a;
+  background-color: #18181b;
+  border-radius: 4px;
+  outline: none;
+}
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+  background-color: #18181b;
+  color: #e5e7eb;
+  font-family: "JetBrains Mono";
+  font-weight: bold;
+  outline: none;
+  font-size: 14px;
+}
+
+.calendar .calendar-table::item:selected {
+  border: 2px solid #5eead4;
+  border-radius: 4px;
+  outline: none;
+}
+
+.calendar .day-label {
+  margin-top: 20px;
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+  font-size: 18px;
+  color: #e5e7eb;
+  font-weight: bold;
+  min-width: 160px;
+  max-width: 160px;
+}
+
+.calendar .month-label {
+  font-family: "JetBrains Mono";
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.calendar .date-label {
+  font-family: "JetBrains Mono";
+  font-size: 88px;
+  font-weight: bold;
+  color: #e5e7eb;
+  margin-top: -20px;
+}
+
+.calendar .day-label {
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+  color: #e5e7eb;
+}
+
+/*MEDIA WIDGET*/
+.media-widget {
+  background-color: rgba(24, 24, 27, 0.8);
+  border-radius: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 2px;
+  padding-top: 2px;
+  outline: none;
+}
+
+.media-widget .label {
+  color: #e5e7eb;
+  background: transparent;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  padding-left: 10px;
+  font-weight: bold;
+  outline: none;
+}
+
+.media-widget .btn {
+  background: transparent;
+  font-family: "Segoe Fluent Icons";
+  color: #e5e7eb;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 0 3px 2px 3px;
+  outline: none;
+}
+
+.media-widget .btn.play {
+  font-family: "Segoe Fluent Icons";
+  background: transparent;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #e5e7eb;
+  outline: none;
+}
+
+/*MEDIA POPUP*/
+.media-menu {
+  min-width: 400px;
+  max-width: 400px;
+  background-color: #18181b;
+  border: 1px solid #58585a;
+  border-radius: 4px;
+  outline: none;
+}
+
+.media-menu .thumbnail {
+  border: 1px solid #58585a;
+  border-radius: 4px;
+  outline: none;
+}
+
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "JetBrains Mono";
+  color: #e5e7eb;
+  margin-left: 10px;
+}
+
+.media-menu .artist {
+  font-size: 14px;
+  color: #e5e7eb;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.media-menu .source {
+  font-size: 12px;
+  color: #18181b;
+  font-weight: bold;
+  font-family: "JetBrains Mono";
+  border-radius: 4px;
+  background-color: #e5e7eb;
+  padding: 2px 4px;
+  outline: none;
+}
+
+.media-menu .source.firefox {
+  background-color: #ff583b;
+  color: #fff;
+}
+
+.media-menu .source.spotify {
+  background-color: #199143;
+  color: #fff;
+}
+
+.media-menu .source.edge {
+  background-color: #0078d4;
+  color: #fff;
+}
+
+.media-menu .source.windows-media {
+  background-color: #0078d4;
+  color: #fff;
+}
+
+.media-menu .btn {
+  font-family: "Segoe Fluent Icons";
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  color: #e5e7eb;
+  outline: none;
+}
+
+.media-menu .btn.prev {
+  margin-left: 10px;
+  outline: none;
+}
+
+.media-menu .btn.play {
+  background-color: transparent;
+  font-size: 20px;
+  outline: none;
+}
+
+.media-menu .btn.disabled {
+  color: #4e525cff;
+}
+
+.media-menu .playback-time {
+  font-size: 14px;
+  font-family: "JetBrains Mono";
+  font-weight: bold;
+  color: #e5e7eb;
+  margin-top: 12px;
+  min-width: 100px;
+}
+
+.media-menu .progress-slider {
+  height: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.media-menu .progress-slider::groove {
+  background: transparent;
+  height: 4px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.media-menu .progress-slider::groove:hover {
+  background: transparent;
+  height: 6px;
+  border-radius: 4px;
+  background: #58585a;
+}
+
+.media-menu .progress-slider::sub-page {
+  background: #e5e7eb;
+  border-radius: 4px;
+  height: 4px;
+  outline: none;
+}
+
+/*NOTIFICATIONS*/
+.notification-widget {
+  background-color: rgba(24, 24, 27, 0.8);
+  margin-right: 1px;
+  margin-left: 1px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.notification-widget .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 14px;
+  padding-right: 8px;
+  color: #e5e7eb;
+}
+
+.notification-widget .icon.new-notification {
+  font-family: "Segoe Fluent Icons";
+  font-weight: bold;
+  font-size: 14px;
+  color: #d9f99d;
+}
+
+.notification-widget .label.new-notification {
+  color: #d9f99d;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+  font-weight: bold;
+}
