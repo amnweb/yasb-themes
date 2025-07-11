@@ -6,7 +6,7 @@
   font-family: "Segoe Fluent Icons";
   font-size: 20px;
   font-weight: bold;
-  padding: 1px 9px 1px 4px;
+  padding: 1px 9px 2px 4px;
   border-radius: 4px;
   outline: none;
 }
@@ -38,7 +38,7 @@
 }
 
 .komorebi-layout-menu .menu-item:hover {
-  border: 1px solid #b4fa72;
+  border: 1px solid  #5eead4;
   border-radius: 2px;
 }
 
@@ -66,13 +66,13 @@
 
 .komorebi-workspaces .ws-btn.active {
   border: 1px solid #18181b;
-  background-color: #b4fa72;
+  background-color:  #b4fa72;
   color: #18181b;
 }
 
 /*ACTIVE WINDOW*/
 .active-window-widget {
-  background-color: #b4fa72;
+  background-color:  #b4fa72;
   border: 1px solid #18181b;
   padding-right: 10px;
   padding-left: 10px;
@@ -92,7 +92,7 @@
 
 /*SYSTEM TRAY*/
 .systray {
-  padding: 2px 2px 2px 2px;
+  padding: 1px 1px 1px 1px;
   background-color: #18181b;
   margin-left: 2px;
   border-radius: 4px;
@@ -346,6 +346,8 @@
   color: #e5e7eb;
   font-size: 20px;
   font-weight: bold;
+  padding-right: 4px;
+  padding-left: 4px;
 }
 
 .volume-widget .label {
@@ -354,6 +356,7 @@
   font-weight: bold;
   padding-left: 2px;
   color: #e5e7eb;
+  padding-right: 4px;
 }
 
 /*AUDIO POPUP*/
@@ -377,7 +380,7 @@
 }
 
 .audio-container .device.selected {
-  background-color: #b4fa72;
+  background-color:  #b4fa72;
   color: #18181b;
   outline: none;
 }
@@ -417,7 +420,7 @@
 
 .calendar .calendar-table::item:selected {
   color: #18181b;
-  background-color: #b4fa72;
+  background-color:  #b4fa72;
   border-radius: 4px;
   outline: none;
 }
@@ -502,6 +505,7 @@
   min-width: 400px;
   max-width: 400px;
   background-color: #18181b;
+  border: 1px solid #58585a;
   border-radius: 4px;
   outline: none;
 }
