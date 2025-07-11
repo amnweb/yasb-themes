@@ -155,7 +155,7 @@ widgets:
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
-      label: "<span>{icon}</span> {level}"
+      label: "<span>{icon}</span>{level}"
       volume_icons:
         - "\ue74f" # Icon for muted
         - "\ue992" # Icon for 0-10% volume
@@ -171,12 +171,12 @@ widgets:
         direction: "down"
       callbacks:
         on_left: "toggle_volume_menu"
-        on_middle: "toggle_mute"
+        on_right: "toggle_mute"
       label_shadow:
         enabled: true
         color: "black"
         radius: 5
-        offset: [ 0, 0 ]
+        offset: [0, 0]
 
   clock:
     type: "yasb.clock.ClockWidget"
@@ -190,7 +190,7 @@ widgets:
         enabled: true
         color: "black"
         radius: 5
-        offset: [ 0, 0 ]
+        offset: [0, 0]
 
   media:
     type: "yasb.media.MediaWidget"
@@ -256,7 +256,7 @@ widgets:
         enabled: true
         color: "black"
         radius: 5
-        offset: [ 0, 0 ]
+        offset: [0, 0]
 
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
@@ -267,8 +267,12 @@ widgets:
       label_icon: false
       label_icon_size: 16
       max_length: 30
-      max_length_ellipsis: "~"
+      max_length_ellipsis: "..."
       monitor_exclusive: false
+      animation:
+        enabled: false
+        duration: 200
+        type: "fadeInOut"
       rewrite:
         - pattern: "Visual Studio Code"
           replacement: "VSC"
@@ -278,7 +282,12 @@ widgets:
         classes: []
         processes: []
         titles:
-          ["Task Switching", "Magnifier", "Notification Center", "Raycast","Windows Shell Experience Host"]
+          - Task Switching
+          - Magnifier
+          - Notification Center
+          - Raycast
+          - Windows Shell Experience Host
+          - Shut Down Windows
       callbacks:
         on_left: "do_nothing"
         on_right: "toggle_label"
