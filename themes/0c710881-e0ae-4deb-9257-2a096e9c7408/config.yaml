@@ -194,7 +194,7 @@ widgets:
         bottom: 0
         right: 0
       label_shadow:
-        enabled: false
+        enabled: true
         color: "black"
         radius: 5
         offset: [0, 0]
@@ -239,7 +239,7 @@ widgets:
         bottom: 0
         right: 0
       label_shadow:
-        enabled: false
+        enabled: true
         color: "black"
         radius: 5
         offset: [0, 0]
@@ -325,12 +325,12 @@ widgets:
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "Low: {min_temp} | High: {max_temp} | Humidity: {humidity}"
-      api_key: "f5bc02da05ce44f0b29231930251207" # Get your free API key from https://www.weatherapi.com/
+      api_key: "" # Get your free API key from https://www.weatherapi.com/
       show_alerts: true
       update_interval: 600
       hide_decimal: true
       units: "metric"
-      location: "Cairo, Egypt"
+      location: ""
       callbacks:
         on_left: "toggle_card"
         on_middle: "do_nothing"
