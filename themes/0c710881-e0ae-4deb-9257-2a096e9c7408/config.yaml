@@ -30,10 +30,10 @@ bars:
       width: "100%"
       height: 30
     padding:
-      top: 1
-      left: 1
-      bottom: 1
-      right: 1
+      top: 4
+      left: 4
+      bottom: -1
+      right: 4
     widgets:
       left:
         - "cpu"
@@ -46,11 +46,88 @@ bars:
         - "media"
         - "systray"
       right:
+        - "weather"
         - "clock"
         - "volume"
         - "notifications"
 
 widgets:
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\ue950</span> {info[percent][total]}%"
+      label_alt: "{info[histograms][cpu_percent]}"
+      update_interval: 1000
+      histogram_icons:
+        - '\u2581' # 0%
+        - '\u2581' # 10%
+        - '\u2582' # 20%
+        - '\u2583' # 30%
+        - '\u2584' # 40%
+        - '\u2585' # 50%
+        - '\u2586' # 60%
+        - '\u2587' # 70%
+        - '\u2588' # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "toggle_cpu_menu"
+        on_middle: "exec cmd /c Taskmgr"
+        on_right: "toggle_label"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
+      update_interval: 5000
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "<span class='download'>\uea9a {download_speed}</span>|<span class='upload'>{upload_speed} \ueaa1</span>"
+      update_interval: 1000
+      menu:
+        round_corners: false
+        alignment: "center"
+        direction: "down"
+        offset_top: true
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "do_nothing"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
@@ -86,15 +163,17 @@ widgets:
         on_middle: "toggle_tiling"
         on_right: "next_layout"
       layout_menu:
-        blur: false
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
+        blur: true
+        round_corners: false
         alignment: "left"
         direction: "down"
-        offset_top: 0
-        offset_left: 0
+        offset_top: true
         show_layout_icons: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
       label_shadow:
         enabled: true
         color: "black"
@@ -109,107 +188,58 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
       label_shadow:
-        enabled: true
+        enabled: false
         color: "black"
         radius: 5
         offset: [0, 0]
 
-  systray:
-    type: "yasb.systray.SystrayWidget"
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
     options:
-      class_name: "systray"
-      label_collapsed: "\uf207"
-      label_expanded: "\ue76c"
-      icon_size: 16
-      show_unpinned: false
-      show_unpinned_button: true
-      show_battery: false
-      show_volume: false
-      show_network: false
-      container_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
-  traffic:
-    type: "yasb.traffic.TrafficWidget"
-    options:
-      label: "<span class='download'>\uea9a {download_speed}</span>|<span class='upload'>{upload_speed} \ueaa1</span>"
-      update_interval: 1000
+      label: "{win[title]}"
+      label_alt: "{win[process][name]} | {win[class_name]}"
+      label_icon: false
+      label_icon_size: 16
+      max_length: 30
+      max_length_ellipsis: "..."
+      monitor_exclusive: false
+      animation:
+        enabled: false
+        duration: 200
+        type: "fadeInOut"
+      rewrite:
+        - pattern: "Visual Studio Code"
+          replacement: "VSC"
+      ignore_window:
+        classes: []
+        processes: []
+        titles:
+          - Task Switching
+          - Magnifier
+          - Notification Center
+          - Raycast
+          - Windows Shell Experience Host
+          - Shut Down Windows
+          - Delete File
+          - Delete Folder
+          - Delete Shortcut
+          - Delete Multiple Items
       callbacks:
-        on_left: "toggle_menu"
-        on_right: "do_nothing"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
-  cpu:
-    type: "yasb.cpu.CpuWidget"
-    options:
-      label: "<span>\ue950</span> {info[percent][total]}%"
-      label_alt: "{info[histograms][cpu_percent]}"
-      update_interval: 1000
-      histogram_icons:
-        - '\u2581' # 0%
-        - '\u2581' # 10%
-        - '\u2582' # 20%
-        - '\u2583' # 30%
-        - '\u2584' # 40%
-        - '\u2585' # 50%
-        - '\u2586' # 60%
-        - '\u2587' # 70%
-        - '\u2588' # 80%+
-      histogram_num_columns: 8
-      callbacks:
-        on_left: "toggle_cpu_menu"
-        on_middle: "exec cmd /c Taskmgr"
+        on_left: "do_nothing"
         on_right: "toggle_label"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
       label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
-  volume:
-    type: "yasb.volume.VolumeWidget"
-    options:
-      label: "<span>{icon}</span>{level}"
-      volume_icons:
-        - "\ue74f" # Icon for muted
-        - "\ue992" # Icon for 0-10% volume
-        - "\ue993" # Icon for 11-30% volume
-        - "\ue994" # Icon for 31-60% volume
-        - "\ue995" # Icon for 61-100% volume
-      audio_menu:
-        blur: false
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "right"
-        direction: "down"
-      callbacks:
-        on_left: "toggle_volume_menu"
-        on_right: "toggle_mute"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
-  clock:
-    type: "yasb.clock.ClockWidget"
-    options:
-      label: "{%I:%M %p}"
-      label_alt: "{%A, %d %B %Y}"
-      callbacks:
-        on_left: "toggle_calendar"
-        on_right: "toggle_label"
-      label_shadow:
-        enabled: true
+        enabled: false
         color: "black"
         radius: 5
         offset: [0, 0]
@@ -240,24 +270,159 @@ widgets:
         play: "\ue768"
         pause: "\ue769"
       media_menu:
-        blur: false
-        round_corners: true
+        blur: true
+        round_corners: false
         round_corners_type: "normal"
         border_color: "system"
-        alignment: "right"
+        alignment: "center"
         direction: "down"
-        offset_top: 0
-        offset_left: 0
+        offset_top: true
         thumbnail_corner_radius: 6
         thumbnail_size: 100
         max_title_size: 80
         max_artist_size: 20
         show_source: true
-      media_menu_icons:
+    icons:
         play: "\ue768"
         pause: "\ue769"
         prev_track: "\ue892"
         next_track: "\ue893"
+    container_padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    label_shadow:
+       enabled: true
+       color: "black"
+       radius: 5
+       offset: [0, 0]
+
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\uf207"
+      label_expanded: "\uf16d"
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: false
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      container_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "Low: {min_temp} | High: {max_temp} | Humidity: {humidity}"
+      api_key: "f5bc02da05ce44f0b29231930251207" # Get your free API key from https://www.weatherapi.com/
+      show_alerts: true
+      update_interval: 600
+      hide_decimal: true
+      units: "metric"
+      location: "Cairo, Egypt"
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\ue312"
+        cloudyNight: "\ue311"
+        rainyDay: "\ue308"
+        rainyNight: "\ue333"
+        snowyIcyDay: "\ue30a"
+        snowyIcyNight: "\ue335"
+        blizzardDay: "\udb83\udf36"
+        blizzardNight: "\udb83\udf36"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
+        default: "\uebaa"
+      weather_card:
+        blur: true
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+        icon_size: 40
+        offset_top: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%I:%M %p}"
+      label_alt: "{%A, %d %B %Y}"
+      update_interval: 1000
+      calendar:
+        blur: true
+        round_corners: false
+        alignment: "center"
+        direction: "down"
+        offset_top: true
+      callbacks:
+        on_left: "toggle_calendar"
+        on_right: "toggle_label"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span>{level}"
+      volume_icons:
+        - "\ue74f" # Icon for muted
+        - "\ue992" # Icon for 0-10% volume
+        - "\ue993" # Icon for 11-30% volume
+        - "\ue994" # Icon for 31-60% volume
+        - "\ue995" # Icon for 61-100% volume
+      audio_menu:
+        blur: true
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+        offset_top: true
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
       label_shadow:
         enabled: true
         color: "black"
@@ -267,81 +432,19 @@ widgets:
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
-      label: "<span>\ue7e7</span> {count}"
-      label_alt: "{count} notifications"
+      label: "<span>\ue7e7</span>{count}"
+      label_alt: "{count} Notification(s)"
       hide_empty: true
       tooltip: false
-      container_padding:
-        top: 0
-        left: 10
-        bottom: 0
-        right: 12
       callbacks:
         on_left: "toggle_notification"
         on_middle: "clear_notifications"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
-  active_window:
-    type: "yasb.active_window.ActiveWindowWidget"
-    options:
-      label: "{win[title]}"
-      label_alt: "{win[process][name]} | {win[class_name]}"
-      label_icon: false
-      label_icon_size: 16
-      max_length: 30
-      max_length_ellipsis: "..."
-      monitor_exclusive: false
-      animation:
-        enabled: false
-        duration: 200
-        type: "fadeInOut"
-      rewrite:
-        - pattern: "Visual Studio Code"
-          replacement: "VSC"
-        - pattern: "Zen Browser"
-          replacement: "Zen"
-      ignore_window:
-        classes: []
-        processes: []
-        titles:
-          - Task Switching
-          - Magnifier
-          - Notification Center
-          - Raycast
-          - Windows Shell Experience Host
-          - Shut Down Windows
-          - Delete File
-          - Delete Folder
-          - Delete Shortcut
-          - Delete Multiple Items
-      callbacks:
-        on_left: "do_nothing"
-        on_right: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
-  memory:
-    type: "yasb.memory.MemoryWidget"
-    options:
-      label: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
-      update_interval: 5000
-      callbacks:
-        on_left: "do_nothing"
-        on_middle: "do_nothing"
-        on_right: "do_nothing"
       container_padding:
         top: 0
-        left: 8
+        left: 10
         bottom: 0
-        right: 0
+        right: 10
       label_shadow:
         enabled: true
         color: "black"
