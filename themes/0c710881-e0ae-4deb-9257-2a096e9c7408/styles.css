@@ -8,9 +8,8 @@
 /* CPU */
 .cpu-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
-  border-radius: 4px;
-  margin: 0 1px;
+  border-radius: 6px;
+  margin: 0 2px 0 1px;
   outline: none;
   width: 90px;
   min-width: 90px;
@@ -22,7 +21,6 @@
   font-weight: bold;
   color: #f38ba8;
   padding-right: 10px;
-  padding-top: 2px;
   width: 50px;
   min-width: 50px;
   max-width: 50px;
@@ -34,18 +32,15 @@
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
   font-size: 16px;
-  padding-top: 2px;
   padding-right: 10px;
-  padding-left: 8px;
+  padding-left: 9px;
   color: #f38ba8;
 }
 
 /* MEMORY */
 .memory-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
-  border-radius: 4px;
-  margin-left: 1px;
+  border-radius: 6px;
   outline: none;
 }
 .memory-widget .label {
@@ -53,7 +48,7 @@
   font-size: 14px;
   font-weight: bold;
   color: #cba6f7;
-  padding: 2px 12px 0 2px;
+  padding: 0 12px 0 2px;
 }
 .memory-widget .icon {
   font-family: "Segoe Fluent Icons";
@@ -67,14 +62,13 @@
 /* TRAFFIC */
 .traffic-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
-  padding: 0 10px;
-  border-radius: 4px;
+  padding: 0 10px 2px 10px;
+  border-radius: 6px;
   margin: 0 1px 0 2px;
   outline: none;
 }
 .traffic-widget .label {
-  color: #cdd6f4;
+  color: #f5c2e7;
   padding: 0 8px;
   font-family: "JetBrains Mono";
   font-size: 14px;
@@ -89,7 +83,7 @@
   font-size: 14px;
 }
 .traffic-widget .upload {
-  color: #f5e0dc;
+  color: #f5c2e7;
   padding-top: 2px;
   font-family: "JetBrains Mono";
   font-weight: bold;
@@ -101,7 +95,7 @@
   background-color: rgba(24, 24, 37, 0.6);
   border: 1px solid #45475a;
   color: #cdd6f4;
-  border-radius: 4px;
+  border-radius: 6px;
   font-family: "JetBrains Mono";
   font-size: 14px;
   min-width: 220px;
@@ -163,7 +157,7 @@
   background-color: transparent;
   padding-top: 3px;
   padding-bottom: 3px;
-  color: #f2cdcd;
+  color: #9399b2;
   margin-bottom: 4px;
 }
 .traffic-menu .session-section,
@@ -202,20 +196,20 @@
 /* KOMOREBI LAYOUT */
 .komorebi-active-layout .label {
   background-color: rgba(24, 24, 37, 0.5);
-  border: 1px solid #181825;
   color: #cdd6f4;
   font-family: "Segoe Fluent Icons";
   font-size: 20px;
   font-weight: bold;
-  padding: 1px 9px 2px 4px;
-  border-radius: 4px;
+  margin-left: 2px;
+  padding: 1px 12px 2px 6px;
+  border-radius: 6px;
   outline: none;
 }
 .komorebi-layout-menu {
   border: 1px solid #45475a;
   background-color: rgba(24, 24, 37, 0.6);
   color: #cdd6f4;
-  border-radius: 4px;
+  border-radius: 6px;
   font-family: "JetBrains Mono";
   font-size: 14px;
 }
@@ -247,12 +241,11 @@
 
 /* KOMOREBI WORKSPACES */
 .komorebi-workspaces .ws-btn {
-  border: 1px solid #181825;
   font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: bold;
-  padding: 6px 12px 4px 12px;
-  border-radius: 4px;
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
   margin-left: 2px;
   outline: none;
 }
@@ -268,9 +261,8 @@
 /* ACTIVE WINDOW */
 .active-window-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
   padding: 0 10px 2px 10px;
-  border-radius: 4px;
+  border-radius: 6px;
   margin-left: 2px;
   outline: none;
 }
@@ -285,14 +277,14 @@
 /* MEDIA */
 .media-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 2px 12px 0 12px;
+  margin-right: 1px;
   margin-left: 2px;
   outline: none;
 }
 .media-widget .label {
-  color: #f2cdcd;
+  color: #eba0ac;
   background: transparent;
   font-family: "JetBrains Mono";
   font-size: 14px;
@@ -304,13 +296,13 @@
 .media-widget .btn {
   background: transparent;
   font-family: "Segoe Fluent Icons";
-  color: #f2cdcd;
+  color: #eba0ac;
   font-weight: bold;
   font-size: 14px;
   padding: 1px 6px 2px 3px;
 }
 .media-widget .btn.play {
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 14px;
 }
 
@@ -320,21 +312,21 @@
   max-width: 400px;
   background-color: rgba(24, 24, 37, 0.6);
   border: 1px solid #45475a;
-  border-radius: 4px;
+  border-radius: 6px;
   outline: none;
 }
 .media-menu .thumbnail {
   margin-left: 4px;
   margin-right: 4px;
   border: 1px solid #45475a;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .media-menu .title,
 .media-menu .artist,
 .media-menu .source {
   font-weight: bold;
   font-family: "JetBrains Mono";
-  color: #f2cdcd;
+  color: #eba0ac;
   margin-left: 10px;
 }
 .media-menu .title {
@@ -352,7 +344,7 @@
   font-weight: bold;
   color: #18181b;
   background-color: #cdd6f4;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 2px 4px;
 }
 .media-menu .source.brave {
@@ -408,30 +400,30 @@
 }
 .media-menu .progress-slider {
   height: 10px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .media-menu .progress-slider::groove {
   background: transparent;
   height: 4px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .media-menu .progress-slider::groove:hover {
   background: #585b70;
   height: 6px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .media-menu .progress-slider::sub-page {
   background: #eba0ac;
-  border-radius: 4px;
+  border-radius: 6px;
   height: 4px;
 }
 
 /* SYSTRAY */
 .systray {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
-  margin-left: 2px;
-  border-radius: 4px;
+  margin-right: 2px;
+  margin-left: 3px;
+  border-radius: 6px;
   padding: 1px;
 }
 .systray .button {
@@ -441,21 +433,20 @@
   outline: none;
 }
 .systray .unpinned-visibility-btn {
-  padding: 2px 5px 2px 5px;
-  color: #cdd6f4;
+  color: #74c7ec;
   background: transparent;
   border: none;
+  padding: 5px 10px 2px 10px;
   font-family: "Segoe Fluent Icons";
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   outline: none;
 }
 
 /* WEATHER */
 .weather-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
-  border-radius: 4px;
+  border-radius: 6px;
   outline: none;
 }
 .weather-widget .label,
@@ -517,7 +508,7 @@
 .weather-card {
   background-color: rgba(24, 24, 37, 0.6);
   border: 1px solid #45475a;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 10px;
   outline: none;
 }
@@ -525,7 +516,7 @@
   background-color: rgba(24, 24, 37, 0.6);
   font-family: "JetBrains Mono";
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 10px;
 }
 .weather-card-today .label {
@@ -540,14 +531,14 @@
   font-size: 24px;
 }
 .weather-card-today .label.alert {
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 5px 0;
 }
 .weather-card-day {
   background-color: rgba(24, 24, 37, 0.6);
   font-family: "JetBrains Mono";
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .weather-card-day .label {
   font-family: "JetBrains Mono";
@@ -559,10 +550,9 @@
 /* CLOCK */
 .clock-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
   padding: 0 10px;
   margin-left: 2px;
-  border-radius: 4px;
+  border-radius: 6px;
   outline: none;
 }
 .clock-widget .label {
@@ -577,7 +567,7 @@
 .calendar {
   background-color: rgba(24, 24, 37, 0.6);
   border: 1px solid #45475a;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .calendar .calendar-table,
 .calendar .calendar-table::item {
@@ -593,7 +583,7 @@
 }
 .calendar .calendar-table::item:selected {
   border: 2px solid #eba0ac;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .calendar .day-label,
 .calendar .month-label,
@@ -619,9 +609,8 @@
 /* VOLUME */
 .volume-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
   padding: 0 10px;
-  border-radius: 4px;
+  border-radius: 6px;
   margin: 0 1px 0 2px;
   outline: none;
 }
@@ -644,7 +633,7 @@
 .audio-menu {
   background-color: rgba(24, 24, 37, 0.6);
   border: 1px solid #45475a;
-  border-radius: 4px;
+  border-radius: 6px;
   outline: none;
 }
 .audio-container .device {
@@ -654,7 +643,7 @@
   border: none;
   padding: 6px 8px 6px 4px;
   font-size: 13px;
-  border-radius: 4px;
+  border-radius: 6px;
   outline: none;
 }
 .audio-container .device.selected {
@@ -664,9 +653,8 @@
 /* NOTIFICATIONS */
 .notification-widget {
   background-color: rgba(24, 24, 37, 0.8);
-  border: 1px solid #181825;
-  margin: 0 1px;
-  border-radius: 4px;
+  margin: 0 2px;
+  border-radius: 6px;
   outline: none;
 }
 .notification-widget .icon {
