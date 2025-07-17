@@ -36,19 +36,18 @@ bars:
       right: 4
     widgets:
       left:
+        - "komorebi_active_layout"
+        - "komorebi_workspaces"
+        - "systray"
         - "cpu"
         - "memory"
         - "traffic"
-      center:
-        - "komorebi_active_layout"
-        - "komorebi_workspaces"
-        - "active_window"
-        - "media"
-        - "systray"
+      center: []
       right:
         - "weather"
         - "clock"
         - "volume"
+        - "media"
         - "notifications"
 
 widgets:
@@ -254,8 +253,8 @@ widgets:
         on_middle: "toggle_play_pause"
         on_right: "toggle_label"
       max_field_size:
-        label: 20
-        label_alt: 20
+        label: 60
+        label_alt: 60
       hide_empty: true
       show_thumbnail: false
       scrolling_label:
@@ -279,7 +278,7 @@ widgets:
         offset_top: true
         thumbnail_corner_radius: 6
         thumbnail_size: 100
-        max_title_size: 80
+        max_title_size: 40
         max_artist_size: 20
         show_source: true
     icons:
@@ -302,8 +301,8 @@ widgets:
     type: "yasb.systray.SystrayWidget"
     options:
       class_name: "systray"
-      label_collapsed: "\uf207"
-      label_expanded: "\uf16d"
+      label_collapsed: "\ued59"
+      label_expanded: "\ue77c"
       show_unpinned: false
       show_unpinned_button: true
       show_battery: false
@@ -325,12 +324,12 @@ widgets:
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "Low: {min_temp} | High: {max_temp} | Humidity: {humidity}"
-      api_key: "" # Get your free API key from https://www.weatherapi.com/
+      api_key: "f5bc02da05ce44f0b29231930251207" # Get your free API key from https://www.weatherapi.com/
       show_alerts: true
       update_interval: 600
       hide_decimal: true
       units: "metric"
-      location: ""
+      location: "Cairo, Egypt"
       callbacks:
         on_left: "toggle_card"
         on_middle: "do_nothing"
