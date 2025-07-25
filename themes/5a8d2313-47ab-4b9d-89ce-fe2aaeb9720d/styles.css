@@ -1,0 +1,587 @@
+/* GLOBAL CONFIGURATIONS */
+* {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* CPU */
+.cpu-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  outline: none;
+  width: 90px;
+  min-width: 90px;
+  max-width: 90px;
+}
+.cpu-widget .label {
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  color: #cdd6f4;
+  padding-top: 2px;
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+}
+.cpu-widget .icon {
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 9px;
+  color: #cdd6f4;
+}
+
+/* MEMORY */
+.memory-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  outline: none;
+}
+.memory-widget .label {
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  color: #cdd6f4;
+  padding: 2px 12px 0 2px;
+}
+.memory-widget .icon {
+  font-family: "0xProto Nerd Font";
+  color: #cdd6f4;
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+/* TRAFFIC */
+.traffic-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  padding: 0 10px 2px 10px;
+  width: 190px;
+  min-width: 190px;
+  max-width: 190px;
+  outline: none;
+}
+.traffic-widget .label {
+  color: #cdd6f4;
+  font-size: 12px;
+  font-weight: bold;
+}
+.traffic-widget .download {
+  color: #cdd6f4;
+  padding-top: 4px;
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+}
+.traffic-widget .upload {
+  color: #cdd6f4;
+  padding-top: 4px;
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* TRAFFIC MENU */
+.traffic-menu {
+  background-color: rgba(17, 17, 27, 0.8);
+  border: 1px solid rgba(205, 214, 244, 0.2);
+  color: #cdd6f4;
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  min-width: 220px;
+}
+.traffic-menu .header {
+  border-bottom: 1px solid rgba(205, 214, 244, 0.2);
+  background-color: rgba(24, 24, 37, 0.4);
+}
+.traffic-menu .header .title {
+  padding-left: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #cdd6f4;
+  font-family: "0xProto Nerd Font";
+}
+.traffic-menu .header .reset-button {
+  font-size: 12px;
+  padding-right: 4px;
+  padding-top: 2px;
+  margin-right: 8px;
+  font-weight: bold;
+  background-color: transparent;
+  font-family: "0xProto Nerd Font";
+  border: none;
+  color: #cdd6f4;
+  outline: none;
+}
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+  font-family: "0xProto Nerd Font";
+  background-color: transparent;
+  margin: 16px 12px -8px 12px;
+}
+.traffic-menu .speed-separator {
+  max-width: 1px;
+  background-color: #585b70;
+  margin: 32px 0 16px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+  color: #cdd6f4;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "0xProto Nerd Font";
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+  font-family: "0xProto Nerd Font";
+  color: #cdd6f4;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 4px;
+}
+.traffic-menu .download-speed-placeholder {
+  color: transparent;
+}
+.traffic-menu .upload-speed-placeholder {
+  color: transparent;
+}
+.traffic-menu .section-title {
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  background-color: transparent;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: #9399b2;
+  margin-bottom: 4px;
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+  margin: 8px 8px 0 8px;
+  background-color: transparent;
+}
+.traffic-menu .data-text,
+.traffic-menu .data-value {
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+  color: #cdd6f4;
+  padding: 2px 0;
+}
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+  background-color: rgba(24, 24, 37, 0.4);
+  border-top: 1px solid rgba(205, 214, 244, 0.2);
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "0xProto Nerd Font";
+  color: #89dceb;
+  padding: 8px 0;
+  margin-top: 16px;
+}
+.traffic-menu .internet-info.connected {
+  font-family: "0xProto Nerd Font";
+  color: #a6e3a1;
+  margin-top: 0;
+}
+.traffic-menu .internet-info.disconnected {
+  font-family: "0xProto Nerd Font";
+  color: #eba0ac;
+  margin-top: 0;
+}
+
+/* KOMOREBI LAYOUT */
+.komorebi-active-layout {
+  background-color: rgba(17, 17, 27, 0.8);
+  width: 36px;
+  min-width: 36px;
+  max-width: 36px;
+}
+.komorebi-active-layout .label {
+  color: #cdd6f4;
+  font-family: "Segoe Fluent Icons";
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 11px 0 7px;
+  outline: none;
+}
+.komorebi-layout-menu {
+  border: 1px solid rgba(205, 214, 244, 0.2);
+  background-color: rgba(17, 17, 27, 0.8);
+  color: #cdd6f4;
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+}
+.komorebi-layout-menu .menu-item {
+  padding: 4px 16px;
+  color: #cdd6f4;
+  font-size: 12px;
+}
+.komorebi-layout-menu .menu-item-icon {
+  color: #cdd6f4;
+  font-size: 16px;
+  font-weight: bold;
+}
+.komorebi-layout-menu .menu-item-text {
+  font-family: "0xProto Nerd Font";
+  padding-left: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #cdd6f4;
+}
+.komorebi-layout-menu .menu-item:hover {
+  background-color: rgba(205, 214, 244, 0.2);
+}
+.komorebi-layout-menu .separator {
+  max-height: 1px;
+  background-color: #585b70;
+}
+
+/* KOMOREBI WORKSPACES */
+.komorebi-workspaces .ws-btn {
+  background-color: rgba(17, 17, 27, 0.8);
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 12px 8px 12px;
+  border: none;
+  outline: none;
+}
+.komorebi-workspaces .ws-btn.populated {
+  color: rgba(205, 214, 244, 0.6);
+}
+.komorebi-workspaces .ws-btn.active {
+  color: #cdd6f4;
+}
+
+/* MEDIA */
+.media-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  padding: 0 12px 0 12px;
+  outline: none;
+}
+.media-widget .label {
+  color: #cdd6f4;
+  background: transparent;
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+.media-widget .btn {
+  background: transparent;
+  font-family: "Segoe Fluent Icons";
+  color: #cdd6f4;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 3px 6px 2px 3px;
+}
+.media-widget .btn.play {
+  font-size: 12px;
+}
+
+/* MEDIA POPUP */
+.media-menu {
+  min-width: 400px;
+  max-width: 400px;
+  background-color: rgba(17, 17, 27, 0.8);
+  border: 1px solid rgba(205, 214, 244, 0.2);
+  outline: none;
+}
+.media-menu .thumbnail {
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 1px solid rgba(205, 214, 244, 0.2);
+}
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+  font-weight: bold;
+  font-family: "0xProto Nerd Font";
+  color: #cdd6f4;
+  margin-left: 10px;
+}
+.media-menu .title {
+  padding-left: 4px;
+  font-size: 16px;
+}
+.media-menu .artist {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+.media-menu .source {
+  font-size: 12px;
+  font-weight: bold;
+  color: #18181b;
+  background-color: #cdd6f4;
+  padding: 2px 4px;
+}
+.media-menu .source.brave {
+  background: transparent;
+  border: 1px solid #fe640b;
+  color: #cdd6f4;
+}
+.media-menu .source.firefox {
+  background-color: #fe640b;
+  color: #cdd6f4;
+}
+.media-menu .source.opera,
+.media-menu .source.vivaldi {
+  background-color: #f38ba8;
+  color: #18181b;
+}
+.media-menu .source.spotify {
+  background-color: #a6e3a1;
+  color: #18181b;
+}
+.media-menu .source.edge,
+.media-menu .source.windows-media {
+  background-color: #89b4fa;
+  color: #18181b;
+}
+.media-menu .btn {
+  font-family: "Segoe Fluent Icons";
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  color: #cdd6f4;
+}
+.media-menu .btn.prev {
+  margin-left: 10px;
+}
+.media-menu .btn.play {
+  background-color: transparent;
+  font-size: 20px;
+}
+.media-menu .btn.disabled {
+  color: rgba(205, 214, 244, 0.6);
+}
+.media-menu .playback-time {
+  font-size: 12px;
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  color: #cdd6f4;
+  margin-top: 12px;
+  min-width: 100px;
+}
+.media-menu .progress-slider {
+  height: 10px;
+}
+.media-menu .progress-slider::groove {
+  background: transparent;
+  height: 4px;
+}
+.media-menu .progress-slider::groove:hover {
+  background: rgba(205, 214, 244, 0.2);
+  height: 6px;
+}
+.media-menu .progress-slider::sub-page {
+  background: #cdd6f4;
+  height: 4px;
+}
+
+/* SYSTRAY */
+.systray {
+  background-color: rgba(17, 17, 27, 0.8);
+}
+.systray .button {
+  padding: 2px;
+  border: none;
+  outline: none;
+}
+.systray .unpinned-visibility-btn {
+  color: #cdd6f4;
+  background: transparent;
+  border: none;
+  padding: 1 0 0 7px;
+  font-family: "Segoe Fluent Icons";
+  font-weight: bold;
+  font-size: 14px;
+  outline: none;
+}
+
+/* WEATHER */
+.weather-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  outline: none;
+}
+.weather-widget .label,
+.weather-widget .label.alt {
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  color: #cdd6f4;
+  padding: 2 14px 0 12px;
+}
+.weather-widget .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 18px;
+  color: #cdd6f4;
+  padding-left: 12px;
+}
+
+/* WEATHER CARD */
+.weather-card {
+  background-color: rgba(17, 17, 27, 0.8);
+  border: 1px solid rgba(205, 214, 244, 0.2);
+  padding: 10px;
+  outline: none;
+}
+.weather-card-today {
+  background-color: rgba(17, 17, 27, 0.8);
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  padding: 10px;
+}
+.weather-card-today .label {
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  color: #cdd6f4;
+}
+.weather-card-today .label.location {
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 24px;
+}
+.weather-card-today .label.alert {
+  padding: 5px 0;
+}
+.weather-card-day {
+  background-color: rgba(17, 17, 27, 0.8);
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+}
+.weather-card-day .label {
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+  color: #cdd6f4;
+}
+
+/* CLOCK */
+.clock-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  padding: 0 10px;
+  padding-top: 2px;
+  outline: none;
+}
+.clock-widget .label {
+  color: #cdd6f4;
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 4px 0 4px;
+}
+
+/* CALENDAR */
+.calendar {
+  background-color: rgba(17, 17, 27, 0.8);
+  border: 1px solid rgba(205, 214, 244, 0.2);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+  background-color: rgba(24, 24, 37, 0);
+  color: #cdd6f4;
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.calendar .calendar-table::item:selected {
+  background-color: rgba(147, 153, 178, 0.3);
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  color: #cdd6f4;
+  min-width: 140px;
+  max-width: 140px;
+}
+.calendar .day-label {
+  font-size: 14px;
+  margin-top: 20px;
+}
+.calendar .month-label {
+  font-size: 12px;
+}
+.calendar .date-label {
+  font-size: 88px;
+  margin-top: -10px;
+}
+
+/* VOLUME */
+.volume-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  padding: 0 10px;
+  outline: none;
+  padding-top: 2px;
+}
+.volume-widget .icon {
+  font-family: "Segoe Fluent Icons";
+  color: #cdd6f4;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0x 4px 0 4px;
+}
+.volume-widget .label {
+  font-family: "0xProto Nerd Font";
+  font-size: 12px;
+  font-weight: bold;
+  color: #cdd6f4;
+  padding: 0 4px 0 4px;
+}
+
+/* VOLUME POPUP */
+.audio-menu {
+  background-color: rgba(17, 17, 27, 0.8);
+  border: 1px solid rgba(205, 214, 244, 0.2);
+  outline: none;
+}
+.audio-container .device {
+  font-family: "0xProto Nerd Font";
+  color: #cdd6f4;
+  font-weight: bold;
+  border: none;
+  padding: 6px 8px 6px 4px;
+  font-size: 12px;
+  outline: none;
+}
+.audio-container .device.selected {
+  background-color: rgba(147, 153, 178, 0.2);
+}
+
+/* NOTIFICATIONS */
+.notification-widget {
+  background-color: rgba(17, 17, 27, 0.8);
+  outline: none;
+}
+.notification-widget .icon {
+  font-family: "0xProto Nerd Font";
+  color: #cdd6f4;
+  padding-right: 10px;
+  padding-left: px;
+  padding-top: 1px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.notification-widget .label {
+  font-family: "0xProto Nerd Font";
+  color: #cdd6f4;
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 4px;
+  padding-top: 2px;
+}
