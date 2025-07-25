@@ -1,0 +1,388 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic reload-configuration"
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: true
+      round_corners: false
+      border_color: "None"
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "100%"
+      height: 26
+    padding:
+      top: 5
+      left: 0
+      bottom: -1
+      right: 0
+    widgets:
+      left: []
+      center:
+        - "systray"
+        - "komorebi_active_layout"
+        - "komorebi_workspaces"
+        - "cpu"
+        - "memory"
+        - "traffic"
+        - "weather"
+        - "clock"
+        - "volume"
+        - "media"
+        - "notifications"
+      right: []
+widgets:
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "{info[histograms][cpu_percent]}"
+      update_interval: 1000
+      histogram_icons:
+        - '\u2581' # 0%
+        - '\u2581' # 10%
+        - '\u2582' # 20%
+        - '\u2583' # 30%
+        - '\u2584' # 40%
+        - '\u2585' # 50%
+        - '\u2586' # 60%
+        - '\u2587' # 70%
+        - '\u2588' # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "toggle_cpu_menu"
+        on_middle: "exec cmd /c Taskmgr"
+        on_right: "toggle_label"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
+      update_interval: 5000
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "<span class='download'>\udb81\udf2e {download_speed}</span><span class='upload'>{upload_speed} \udb81\udf37</span>"
+      update_interval: 1000
+      menu:
+        round_corners: false
+        alignment: "center"
+        direction: "down"
+        offset_top: true
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "do_nothing"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{icon}"
+      layouts:
+        - "bsp"
+        - "columns"
+        - "rows"
+        - "grid"
+        - "scrolling"
+        - "vertical_stack"
+        - "horizontal_stack"
+        - "ultrawide_vertical_stack"
+        - "right_main_vertical_stack"
+      layout_icons:
+        bsp: "\uebeb"
+        columns: "\uebf7"
+        rows: "\uec01"
+        grid: "\udb81\udf58"
+        scrolling: "\uebf7"
+        vertical_stack: "\uebee"
+        horizontal_stack: "\uebf0"
+        ultrawide_vertical_stack: "\uebee"
+        right_main_vertical_stack: "\uebf1"
+        monocle: "\uf50c"
+        maximized: "\uf06f"
+        floating: "\uf2d2"
+        paused: "\udb83\udf89"
+        tiling: "\udb81\ude40"
+      callbacks:
+        on_left: "toggle_layout_menu"
+        on_middle: "toggle_tiling"
+        on_right: "next_layout"
+      layout_menu:
+        blur: true
+        round_corners: false
+        alignment: "left"
+        direction: "down"
+        offset_top: true
+        show_layout_icons: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "<span>\ueb96</span>"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: true
+      hide_if_offline: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title}"
+      label_alt: "{artist}"
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "toggle_play_pause"
+        on_right: "toggle_label"
+      max_field_size:
+        label: 30
+        label_alt: 30
+      hide_empty: true
+      show_thumbnail: false
+      scrolling_label:
+        enabled: false
+        update_interval_ms: 33
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      media_menu:
+        blur: true
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        offset_top: true
+        thumbnail_corner_radius: 6
+        thumbnail_size: 100
+        max_title_size: 40
+        max_artist_size: 20
+        show_source: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\ue893"
+      label_expanded: "\udb80\udd56"
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: false
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      container_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "Low: {min_temp} | High: {max_temp} | Humidity: {humidity}"
+      api_key: "f5bc02da05ce44f0b29231930251207" # Get your free API key from https://www.weatherapi.com/
+      show_alerts: true
+      update_interval: 600
+      hide_decimal: true
+      units: "metric"
+      location: "Cairo, Egypt"
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\ue312"
+        cloudyNight: "\ue311"
+        rainyDay: "\ue308"
+        rainyNight: "\ue333"
+        snowyIcyDay: "\ue30a"
+        snowyIcyNight: "\ue335"
+        blizzardDay: "\udb83\udf36"
+        blizzardNight: "\udb83\udf36"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
+        default: "\uebaa"
+      weather_card:
+        blur: true
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+        icon_size: 40
+        offset_top: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%I:%M %p}"
+      label_alt: "{%A, %d %B %Y}"
+      update_interval: 1000
+      calendar:
+        blur: true
+        round_corners: false
+        alignment: "center"
+        direction: "down"
+        offset_top: true
+      callbacks:
+        on_left: "toggle_calendar"
+        on_right: "toggle_label"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span>{level}"
+      volume_icons:
+        - "\ue74f" # Icon for muted
+        - "\ue992" # Icon for 0-10% volume
+        - "\ue993" # Icon for 11-30% volume
+        - "\ue994" # Icon for 31-60% volume
+        - "\ue995" # Icon for 61-100% volume
+      audio_menu:
+        blur: true
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+        offset_top: true
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\uf421</span>{count}"
+      label_alt: "{count} Notification(s)"
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_middle: "clear_notifications"
+        on_right: "toggle_label"
+      container_padding:
+        top: 0
+        left: 10
+        bottom: 0
+        right: 10
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 5
+        offset: [0, 0]
