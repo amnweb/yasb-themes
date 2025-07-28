@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Pillbox](themes/e675b585-4fad-4056-89ba-e318faeadab5)
+
+<a title="Pillbox YASB Theme" href="themes/e675b585-4fad-4056-89ba-e318faeadab5"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e675b585-4fad-4056-89ba-e318faeadab5/image.png" width="830px"></a>
+
+
 ## [Proto](themes/5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d)
 
 <a title="Proto YASB Theme" href="themes/5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d/image.png" width="830px"></a>
