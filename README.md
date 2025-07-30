@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Cosmic Bar](themes/b243b2d0-9985-4a0f-a347-70ece4f634ce)
+
+<a title="Cosmic Bar YASB Theme" href="themes/b243b2d0-9985-4a0f-a347-70ece4f634ce"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b243b2d0-9985-4a0f-a347-70ece4f634ce/image.png" width="830px"></a>
+
+
 ## [Pillbox](themes/e675b585-4fad-4056-89ba-e318faeadab5)
 
 <a title="Pillbox YASB Theme" href="themes/e675b585-4fad-4056-89ba-e318faeadab5"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e675b585-4fad-4056-89ba-e318faeadab5/image.png" width="830px"></a>
