@@ -1,0 +1,430 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+bars:
+  primary-bar:
+    enabled: true
+    screens: ['*'] 
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: true
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "100%"
+      height: 30
+    padding:
+      top: 0 # 4 4 2 4
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left:
+        [
+          "home",
+          "active_window",
+          "media",
+          "cava"
+        ]
+      center:
+        [
+          "clock",
+          "weather"
+        ]
+      right:
+        [
+          "traffic",
+          "sysinfo_widgets",
+          "wifi",
+          "volume",
+          "microphone",
+          "notifications",
+          "update_check",
+          "power_menu"
+        ]
+widgets:
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\ue893</span>"
+      menu_list:
+      - { title: "Home", path: "~" }
+      - { title: "Downloads", path: "C:\\Users\\SWoRD\\Downloads"}
+      - { title: "Documents", path: "C:\\Users\\SWoRD\\Documents"}
+      - { title: "Pictures", path: "C:\\Users\\SWoRD\\Pictures"}
+      - { title: "Videos", path: "C:\\Users\\SWoRD\\Videos"}
+      system_menu: true
+      power_menu: false
+      blur: true
+      round_corners: true
+      round_corners_type: "small"
+      border_color: "system"
+      distance: 5
+      container_padding: 
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      alignment: "left"
+      direction: "down"
+      menu_labels:
+        shutdown: "Shutdown"
+        restart: "Restart"
+        logout: "Logout"
+        lock: "Lock"
+        sleep: "Sleep"
+        system: "System Settings"
+        about: "About This PC"
+        task_manager: "Task Manager"
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp} - {location}"
+      label_alt: "{location}: {conditions}, Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "67c31ff99a9a42f8844114051252507"
+      update_interval: 600
+      hide_decimal: true
+      location: "Australia, Adelaide"
+      units: "metric"
+      callbacks:
+        on_left: "toggle_card"
+      icons:
+        sunnyDay: "\udb81\udd99"
+        clearNight: "\ue3c2"
+        cloudyDay: "\ue21d"
+        cloudyNight: "\ue226"
+        rainyDay: "\ue371"
+        rainyNight: "\ue371"
+        snowyIcyDay: "\udb81\udf17"
+        snowyIcyNight: "\udb81\udf17"
+        blizzardDay: "\udb81\udd99"
+        default: "\udb81\udd99"
+      weather_card:
+        show_hourly_forecast: true
+        blur: true
+        round_corners: true
+        round_corners_type: "small"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        icon_size: 48
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "<span>\udb80\udf87</span> {title}"
+      label_alt: "<span>\udb80\udf87</span> {title}"
+      hide_empty: true
+      callbacks:
+       on_left: "toggle_media_menu"
+       on_middle: "do_nothing"
+       on_right: "toggle_label"
+      max_field_size:
+        label: 55
+        label_alt: 80
+      show_thumbnail: true
+      controls_only: false
+      controls_left: true
+      thumbnail_alpha: 200
+      thumbnail_padding: 0
+      thumbnail_corner_radius: 8
+      thumbnail_edge_fade: true
+      scrolling_label:
+        enabled: false
+        update_interval_ms: 100
+        style: "left"  # can be "left", "right", "bounce", "bounce-ease"
+        separator: " | "
+        label_padding: 0
+        # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+      icons:
+        prev_track: "\uf048"
+        next_track: "\uf051"
+        play: "\uf04b"
+        pause: "\uf04c"
+      media_menu:
+       blur: true
+       round_corners: true
+       round_corners_type: "small"
+       border_color: "system"
+       alignment: "right"
+       direction: "down"
+       offset_top: 6
+       offset_left: 0
+       thumbnail_corner_radius: 8
+       thumbnail_size: 120
+       max_title_size: 80
+       max_artist_size: 20
+       show_source: true
+      media_menu_icons:
+       play: "\uf04b"
+       pause: "\uf04c"
+       prev_track: "\uf048"
+       next_track: "\uf051"
+      label_shadow:
+       enabled: true
+       color: "black"
+       radius: 3
+       offset: [ 1, 1 ]
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 14
+      max_length: 50
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a, %d %b - %H:%M}"
+      label_alt: "{%A, %d %B %Y - %H:%M}"
+      timezones: []
+      update_interval: 1000
+      calendar:
+        alignment: "center"
+        blur: True
+        round_corners: True
+        round_corners_type: "small"
+        border_color: "System"
+        direction: "down"
+        show_holidays: true
+        show_week_numbers: False
+        holiday_color: "#ff9f00"
+      callbacks:
+        on_left: "toggle_calendar"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+        label: "<span>\uf473</span>"
+        label_alt: "<span>\uf473</span>"
+        update_interval: 60
+        group_label:
+          volume_labels: ["C", "D", "E", "F"]
+          show_label_name: false
+          blur: True
+          round_corners: True
+          round_corners_type: "small"
+          border_color: "System"
+          alignment: "right"
+          direction: "down"
+          distance: 6
+        callbacks:
+          on_left: "toggle_group"
+          on_middle: "toggle_label"
+          on_right: "exec explorer" # Open disk C in file explorer
+  power_menu:
+      type: "yasb.power_menu.PowerMenuWidget"
+      options:
+        label: "\uf011"
+        uptime: True
+        blur: False
+        blur_background: True
+        animation_duration: 250 # Milisecond 
+        button_row: 5 # Number of buttons in row, min 1 max 5
+        buttons:
+          signout: ["\udb80\udf43","Sign out"]
+          shutdown: ["\uf011","Shut Down"]
+          restart: ["\uead2","Restart"]
+          hibernate: ["\uf28e","Hibernate"]
+          cancel: ["\udb81\udf3a","Cancel"]
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\uf476</span> {count}"
+      label_alt: "{count} notifications"
+      hide_empty: true
+      tooltip: true
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "toggle_label"
+        on_middle: "do_nothing" 
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
+      update_interval: 2000
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uefc5</span> {virtual_mem_percent}%"
+      label_alt: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
+      update_interval: 2000
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 8   
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8"  # Icon for muted
+        - "\uf026"  # Icon for 0-10% volume
+        - "\uf027"  # Icon for 11-30% volume
+        - "\uf027"  # Icon for 31-60% volume
+        - "\uf028"  # Icon for 61-100% volume
+      audio_menu:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 80
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_middle: "exec cmd.exe /c start ms-settings:sound"
+        on_right: "toggle_mute"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 6
+        offset: [ 1, 1 ]
+  update_check:
+    type: "yasb.update_check.UpdateCheckWidget"
+    options:
+      winget_update:
+        enabled: true
+        label: "<span>\uf0ab</span>{count}"
+        interval: 360
+        exclude: [Discord]
+      windows_update:
+        enabled: false
+        label: "<span>\uf0ab</span>{count}"
+        interval: 360
+        exclude: []
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "\uf103  {download_speed}  |  {upload_speed}  \uf102"
+      label_alt: "<span>\udb82\udcfa</span> Download {download_speed} | Upload {upload_speed}"
+      update_interval: 1000
+      speed_unit: "bytes"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "small"
+        border_color: "system"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "exec cmd.exe /c start ms-settings:network"
+  microphone:
+    type: "yasb.microphone.MicrophoneWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span> {level}"
+      icons:
+        normal: ""
+        muted: ""
+      callbacks:
+        on_left: "toggle_mic_menu"
+        on_middle: "exec cmd.exe /c start ms-settings:sound"
+        on_right: "toggle_mute"
+      mic_menu:
+        blur: True
+        round_corners: True
+        round_corners_type: "small"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+  wifi:
+      type: "yasb.wifi.WifiWidget"
+      options:
+        label: "\ueb01"
+        label_alt: "{wifi_name} {wifi_strength}%"
+        update_interval: 5000
+        callbacks:
+          on_left: "exec quick_settings"
+          on_middle: "toggle_label"
+          on_right: "exec cmd.exe /c start ms-settings:network"
+        ethernet_label: "\ueb01"
+        ethernet_label_alt: "\ueb01 {ip_addr}"
+        ethernet_icon: "\ueba9"
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 14
+      min_bar_height: 1
+      gradient: 1
+      reverse: 1
+      waveform: 0
+      foreground: "#fac389"
+      gradient_color_1: "#E6C13C"
+      gradient_color_2: "#E66C3C"
+      gradient_color_3: "#E63C60"
+      bars_number: 20
+      bar_spacing: 1
+      bar_width: 2
+      hide_empty: true
+      container_padding:
+        top: 0
+        left: 4
+        bottom: 0
+        right: 0
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+  sysinfo_widgets:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "sysinfo-grouped-widgets"
+      widgets: [
+        "cpu",
+        "memory",
+        "disk",
+      ]
+      container_padding:
+        top: 0
+        left: 2
+        bottom: 0
+        right: 2
