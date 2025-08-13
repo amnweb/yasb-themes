@@ -58,10 +58,10 @@ widgets:
       label: "<span>\ue893</span>"
       menu_list:
       - { title: "Home", path: "~" }
-      - { title: "Downloads", path: "C:\\Users\\SWoRD\\Downloads"} # Change Username to your own for the next 3 lines as well
-      - { title: "Documents", path: "C:\\Users\\SWoRD\\Documents"}
-      - { title: "Pictures", path: "C:\\Users\\SWoRD\\Pictures"}
-      - { title: "Videos", path: "C:\\Users\\SWoRD\\Videos"}
+      - { title: "Downloads", path: "$env:USERPROFILE/Downloads"}
+      - { title: "Documents", path: "$env:USERPROFILE/Documents"}
+      - { title: "Pictures", path: "$env:USERPROFILE/Pictures"}
+      - { title: "Videos", path: "$env:USERPROFILE/Videos"}
       system_menu: true
       power_menu: false
       blur: true
