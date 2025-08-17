@@ -1,0 +1,602 @@
+:root {
+	--base-color: rgba(212, 208, 200, 1);
+	--dark-base: rgb(172, 168, 161);
+	--vivid-gradient: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0.0 rgba(255, 0, 255, 255),
+        stop: 1.0 rgba(0, 255, 255, 255)
+    );
+	--internet-gradient1: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0.0 rgba(255, 255, 0, 255),
+        stop: 1.0 rgba(255, 155, 0, 255)
+    );
+	--internet-gradient2: qlineargradient(
+		x1: 0, y1: 0, x2: 1, y2: 0,
+		stop: 0.0 rgba(0, 255, 0, 255),
+		stop: 1.0 rgba(0, 255, 159, 255)
+	);
+	--weather-gradient: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0.0 #5f7fc3ff,
+        stop: 1.0 #3c5fa0ff
+    );
+}
+
+* {
+	font-size: 12px;
+	color: #3d3d3dff;
+	font-weight: 500;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+    background-color: transparent;
+	padding: 0 0px;
+	margin: 0;
+    border-radius: 0px;
+}
+.widget {
+	padding: 0 10px;
+	margin: 2px;
+	background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+.widget .label {
+	padding: 2px 2px 1px 2px;
+}
+.widget .label.alt {
+	padding: 1px 8px 1px 8px;
+}
+ .clock-widget .label {
+    padding-left:8px;
+}
+.komorebi-workspaces .ws-btn {
+	font-size: 18px;
+    background-color: transparent;
+	padding: 0 2px 0 2px;
+	color: #95a0ad;
+}
+
+.komorebi-workspaces .ws-btn.populated {
+	color: #74c7ec;
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover,
+.komorebi-workspaces .ws-btn.active {
+	color: #89b4fa;
+}
+/*POWER MENU WIDGET*/
+/* Uptime text */
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: rgba(191, 202, 219, 0.726);
+	font-weight: 600;
+}
+.power-menu-widget .label {
+	color: #9c4251;
+	font-size: 16px;
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 160px;
+	height: 240px;
+	background-color: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+	color: white;
+ 
+}
+.power-menu-popup .button.hover {
+	background-color: rgb(55, 56, 75);
+	border: 4px solid rgb(55, 56, 75);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgb(80, 80, 80);
+}
+.power-menu-popup .button .icon {
+	font-size: 64px;
+	padding-top: 54px;
+	color: rgb(24, 24, 24);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgb(199, 30, 30);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgb(199, 30, 30);
+}
+
+/* ICONS */
+.icon {
+	font-size: 16px;
+}
+.volume-widget .icon {
+	color: #3a69b6;
+	margin: 1px 2px 0 0;
+} 
+.volume-slider {
+    border: none;
+}
+.volume-slider::groove {
+    background: transparent;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+	border-bottom: 2px solid rgba(255, 255, 255, 200);
+	border-right: 2px solid rgba(255, 255, 255, 200);
+    border-left: 2px solid rgba(0, 0, 0, 30);
+    border-top: 2px solid rgba(0, 0, 0, 30);
+
+}
+.volume-slider::sub-page {
+    background: var(--vivid-gradient);
+	margin: 2px;
+	border-top: 2px solid rgba(255, 255, 255, 50);
+	border-left: 2px solid rgba(255, 255, 255, 50);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+    height: 4px;
+}
+.volume-slider::handle {
+	background: var(--dark-base);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+	border-right: 2px solid rgba(0, 0, 0, 80);
+	border-bottom: 2px solid rgba(0, 0, 0, 80);
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+}
+
+.audio-menu {
+    background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+.audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Menu styling */
+.traffic-menu { 
+	background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+	padding: 8px;
+}
+.traffic-menu .header .title {
+	font-size: 18px;
+	background: var(--vivid-gradient);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+	padding: 4px;
+	margin: 4px;
+}
+.traffic-menu .header .reset-button {
+	margin-right: 6px;
+	padding: 6px;
+	background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+
+.traffic-menu .interface-info {
+	background: var(--dark-base);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+	font-size: 16px;
+	padding: 4px;
+	margin: 0px 4px;
+}
+.traffic-menu .internet-info {
+	margin: 0px 4px;
+	margin-bottom: 4px;
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+.traffic-menu .internet-info.checking { 
+	background: var(--internet-gradient1)
+}
+.traffic-menu .internet-info.connected {
+	background: var(--internet-gradient2);
+}
+.traffic-menu .internet-info.disconnected {
+	background: var(--dark-base);
+}
+
+/* Section-specific styling */
+.traffic-menu .section { 
+	background: var(--dark-base);
+	border-bottom: 2px solid rgba(255, 255, 255, 200);
+	border-right: 2px solid rgba(255, 255, 255, 200);
+    border-left: 2px solid rgba(0, 0, 0, 80);
+    border-top: 2px solid rgba(0, 0, 0, 80);
+	padding: 4px;
+	margin: 4px;
+}
+.traffic-menu .section-title {
+	font-size: 16px;
+	padding: 2px;
+	margin: 0px;
+	font-weight: 800;
+}
+
+.start-menu .icon {
+    font-size: 18px;
+	color: #89b4fa
+}
+.clock-widget .icon {
+	color: #6832aa;
+    font-size: 14px;
+}
+
+/* WEATHER WIDGET */
+.weather-widget .icon {
+	font-size: 16px;
+	margin: 0 2px 0px 0;
+}
+.weather-widget .icon.sunnyDay {
+	color: rgb(233, 159, 0);
+}
+.weather-widget .icon.clearNight {
+	color: rgb(107, 189, 221);
+	font-size: 18px;
+	margin: -1px 2px 0px 0;
+}
+.weather-widget .icon.rainyNight {
+    font-size: 16px;
+}
+.weather-widget .icon.cloudyDay {
+    font-size: 18px;
+    color: rgb(233, 159, 0);
+}
+.weather-widget .icon.rainyDay {
+    color: rgb(245, 224, 220)
+}
+
+/* Weather card style */
+.weather-card {
+    background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+.weather-card-today {
+    background: var(--dark-base);
+	border-bottom: 2px solid rgba(255, 255, 255, 200);
+	border-right: 2px solid rgba(255, 255, 255, 200);
+    border-left: 2px solid rgba(0, 0, 0, 80);
+    border-top: 2px solid rgba(0, 0, 0, 80);
+}
+.weather-card-today .label {
+    font-size: 12px;
+}
+.weather-card-today .label.location {
+    font-size: 24px;
+    font-weight: 700;
+}
+.weather-card-today .label.alert {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: rgba(247, 199, 42, 0.05);
+    border: 1px solid rgba(247, 209, 42, 0.1);
+    color: rgba(196, 181, 162, 0.85);
+    padding: 5px 0;
+}
+.weather-card-day {
+    background: var(--dark-base);
+	border-bottom: 2px solid rgba(255, 255, 255, 200);
+	border-right: 2px solid rgba(255, 255, 255, 200);
+    border-left: 2px solid rgba(0, 0, 0, 80);
+    border-top: 2px solid rgba(0, 0, 0, 80);
+}
+
+.weather-card-day.active {
+    background: rgb(129, 126, 119);
+	border-bottom: 2px solid rgba(255, 255, 255, 200);
+	border-right: 2px solid rgba(255, 255, 255, 200);
+    border-left: 2px solid rgba(0, 0, 0, 80);
+    border-top: 2px solid rgba(0, 0, 0, 80);
+}
+
+.weather-card-day:hover {
+    background-color: rgba(40, 40, 60, 0.6);
+}
+
+.weather-card-day .label {
+    font-size: 12px;
+}
+
+.weather-card .hourly-container {
+    background: var(--weather-gradient);
+	border-bottom: 2px solid rgba(255, 255, 255, 200);
+	border-right: 2px solid rgba(255, 255, 255, 200);
+    border-left: 2px solid rgba(0, 0, 0, 80);
+    border-top: 2px solid rgba(0, 0, 0, 80);
+    min-height: 150px;
+}
+
+.weather-card .hourly-data {
+    background-color: #FAE93F;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.media-widget .label {
+	color: #2b388d;
+    padding: 0px;
+	padding-right: 4px;
+}
+ /* Hide media widget buttons */
+.media-widget .btn {
+    color: #2b388d;
+    padding: 0 4px;
+    margin: 2px;
+    font-weight: 400;
+	font-size: 18px;
+}
+
+.language-menu {
+	background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+.language-menu .header {
+	font-size: 16px;
+	font-weight: 800;
+	margin: 4px;
+}
+.language-menu .footer {
+	background: var(--dark-base);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+	padding: 4px;
+}
+.language-menu .language-item {
+	margin: 8px;
+}
+.language-menu .language-item.active {
+	background: var(--vivid-gradient);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+.language-menu .language-item .icon {
+	margin-right: 8px;
+}
+.language-menu .language-item.active .name {
+	font-weight: 800;
+	color: #ffffff;
+}
+.language-menu .language-item.active .icon {
+	font-weight: 800;
+	color: #ffffff;
+}
+.language-menu .language-item.active .layout {
+	font-weight: 800;
+	color: #ffffff;
+}
+
+.active-window-widget {
+	padding: 0 200%;
+	background: var(--vivid-gradient);
+	
+	border-top: 2px solid rgba(255, 255, 255, 100);
+	border-left: 2px solid rgba(255, 255, 255, 100);
+    border-right: 2px solid rgba(64, 64, 64, 200);
+    border-bottom: 2px solid rgba(64, 64, 64, 200);
+}
+.active-window-widget .label {
+	font-family: "Iosevka Nerd Font Mono";
+	color: rgba(255, 255, 255, 255);
+	font-weight: 800;
+}
+
+.calendar {
+	background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+	min-width: 480px;
+	max-width: 480px;
+}
+.calendar .calendar-table {
+	background: var(--base-color);
+}
+.calendar .calendar-table::item {
+	background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+	margin: 2px;
+}
+.calendar .calendar-table::item:selected {
+	color: #ffffff;
+	font-weight: 800;
+	background: var(--vivid-gradient);
+}
+.calendar .date-label {
+	font-size: 48px;
+	font-weight: 800;
+	color: var(--vivid-gradient);
+}
+
+.tooltip {
+	background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+	padding: 4px;
+	margin: 4px;
+	font-size: 12px;
+	color: #3d3d3dff;
+	font-weight: 500;
+}
+
+.media-menu {
+    min-width: 420px;
+    max-width: 420px;
+    background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+.media-menu .title {
+	font-size: 18px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.media-menu .artist,
+.media-menu .source {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.media-menu .artist {
+    font-size: 13px;
+    color: #6c7086;
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+.media-menu .source {
+    font-size: 12px;
+    color: #000;
+    font-weight: normal;
+    background-color: #bac2de;
+    padding: 8px 8px;
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+
+}
+/* The source class name is the same as what you see in the media widget; just replace spaces with dashes and convert it to lowercase. 
+Example: "Windows Media" becomes "windows-media" */
+.media-menu .source.firefox {
+    background-color: #ff583b;
+    color: #ffffff;
+}
+.media-menu .source.spotify {
+    background-color: #199143;
+    color: #ffffff;
+}
+.media-menu .source.edge {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+.media-menu .source.windows-media {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+
+.media-menu .btn {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    background: var(--base-color);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.media-menu .btn.play {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 20px
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: #4e525c;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    color: #7f849c;
+    margin-top: 20px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 16px;
+    margin: 5px 4px;
+	background: var(--dark-base);
+	border-top: 2px solid rgba(255, 255, 255, 200);
+	border-left: 2px solid rgba(255, 255, 255, 200);
+    border-right: 2px solid rgba(0, 0, 0, 40);
+    border-bottom: 2px solid rgba(0, 0, 0, 40);
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+	border-bottom: 2px solid rgba(255, 255, 255, 200);
+	border-right: 2px solid rgba(255, 255, 255, 200);
+    border-left: 2px solid rgba(0, 0, 0, 30);
+    border-top: 2px solid rgba(0, 0, 0, 30);
+
+}
+.media-menu .progress-slider::groove:hover {
+    background: transparent;
+    height: 10px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--vivid-gradient);
+	margin: 2px;
+	border-top: 2px solid rgba(255, 255, 255, 50);
+	border-left: 2px solid rgba(255, 255, 255, 50);
+    border-right: 2px solid rgba(0, 0, 0, 80);
+    border-bottom: 2px solid rgba(0, 0, 0, 80);
+    height: 4px;
+}
