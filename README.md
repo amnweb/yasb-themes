@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Windows9X NEO](themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f)
+
+<a title="Windows9X NEO YASB Theme" href="themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f/image.png" width="830px"></a>
+
+
 ## [Simple Elegance](themes/350edfcc-da1f-4aba-a5e2-f80d64940798)
 
 <a title="Simple Elegance YASB Theme" href="themes/350edfcc-da1f-4aba-a5e2-f80d64940798"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/350edfcc-da1f-4aba-a5e2-f80d64940798/image.png" width="830px"></a>
