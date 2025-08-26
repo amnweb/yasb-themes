@@ -485,11 +485,6 @@ widgets:
         processes: []
         titles: []
         classes: []
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
       callbacks:
         on_left: "toggle_window"
         on_middle: "close_app"
