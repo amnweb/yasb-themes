@@ -15,11 +15,25 @@
 	color: var(--main);
     background-color: rgba(17, 17, 27, 0.6);
 }
+.context-menu,
+.context-menu .menu-checkbox {
+    border: none;
+    padding: 4px 4px;
+}
 
 .menu-checkbox:hover
 {
 	background-color: rgba(17, 17, 27, 0.3);
 	color: var(--mainLight);
+}
+
+.context-menu::item,
+.context-menu .menu-checkbox {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: 6px;
+    min-width: 100px;
 }
 
 QMenu QCheckBox{
@@ -76,6 +90,7 @@ QToolTip {
     margin-right: 9px;
     margin-top: 0px;
     margin-bottom: 0px;
+	background: rgba(0, 0, 0, 0.01);
 }
 .widget {
     padding: 0 2px;
