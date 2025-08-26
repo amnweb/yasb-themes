@@ -780,29 +780,37 @@ QToolTip {
     /* padding: 0; */
     margin: 0;
     border: none;
+
 }
-.taskbar-widget .app-icon {
-    padding: 0 5px;
-    border: none;
-    margin-bottom: 3px;    
-    margin-top: 3px;  
-    background-color: rgba(0, 0, 0, 0.01);	
-}
-.taskbar-widget .app-icon.foreground{
-    background-color: rgba(168, 168, 168, 0.45);
+
+.taskbar-widget .app-container.foreground{
+    background-color: rgba(148, 148, 148, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 6px;
 }
+
+.taskbar-widget .app-container 
+{
+	margin-bottom: 4px;    
+    margin-top: 4px;  
+	padding: 0 3px 0 3px;
+	border: none; 
+    background-color: rgba(0, 0, 0, 0.01);	
+}
+
+.taskbar-widget .app-container.flashing {
+    background-color: rgba(255, 106, 106, 0.63);
+}
 .taskbar-widget {
-    padding-left: 0;
+   
     margin-right: -12px;
 }
 .taskbar-widget .widget-container {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+	padding: 0 12px 0 12px;
     /* padding-left: 6px; */
 }
-
 /* ACTIVE WINDOW Settings */
 .active-window-widget .icon {
     padding: 0 9px;
