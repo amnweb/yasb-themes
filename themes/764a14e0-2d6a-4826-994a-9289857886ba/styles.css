@@ -10,49 +10,53 @@
     --widget-background: #bc8bf7;
 }
 
-.menu-checkbox
-{
-	color: var(--main);
-    background-color: rgba(17, 17, 27, 0.6);
-}
-
-.menu-checkbox:hover
-{
-	background-color: rgba(17, 17, 27, 0.3);
-	color: var(--mainLight);
-}
-
-QMenu QCheckBox{
-	padding-top:5px;
-	/*padding-left:-17px;*/
-	color: var(--main);
-}
-QMenu QCheckBox:hover{
-	color: var(--mainLight);
-}
-
-QMenu {
-    background-color: rgba(17, 17, 27, 0.6);
+.context-menu {
+    padding: 4px 4px;
+	background-color: rgba(17, 17, 27, 0.6);
     border-radius: 9px;
 }
 
-QMenu::icon:checked { /* appearance of a 'checked' icon */
+.context-menu::icon:checked {
 	width:0px;
 	height:0px;
 }
 
-QMenu::item {
-	color: var(--main);
-    background-color: rgba(17, 17, 27, 0.6);
-	
-}
-
-QMenu::item:selected {
+.context-menu::item:selected {
     background-color: rgba(17, 17, 27, 0.3);
 	color: var(--mainLight);
 }
 
-QToolTip {
+.menu-checkbox {
+	color: var(--main);
+    background-color: rgba(17, 17, 27, 0.6);
+}
+
+.menu-checkbox:hover {
+	background-color: rgba(17, 17, 27, 0.3);
+	color: var(--mainLight);
+}
+
+.context-menu::item,
+.context-menu .menu-checkbox {
+	  border: none;
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: 6px;
+    min-width: 100px;
+}
+
+.context-menu .menu-checkbox .checkbox {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.context-menu .menu-checkbox:hover{
+	color: var(--mainLight);
+}
+
+
+.tooltip {
     padding: 6px;
     color: var(--main);
     font-size: 12px;
@@ -60,6 +64,7 @@ QToolTip {
     border: 0px solid #313244;
     border-radius: 9px;
 }
+
 * {
     font-size: 12px;
     color: var(--main);
@@ -76,6 +81,7 @@ QToolTip {
     margin-right: 9px;
     margin-top: 0px;
     margin-bottom: 0px;
+	background: rgba(0, 0, 0, 0.01);
 }
 .widget {
     padding: 0 2px;
@@ -265,6 +271,7 @@ QToolTip {
     border-radius: 4px;
 }
 
+
 /* CPU MEMORY Setting */
 .cpu-widget {
     padding-right: 0;
@@ -428,7 +435,7 @@ QToolTip {
 	background: rgba(0, 0, 0, 0.01);
 	color: var(--mainLight);
     font-weight: bold;
-}
+} 
 
 .calendar {
 	background-color: rgba(17, 17, 27, 0.5);
@@ -608,14 +615,14 @@ QToolTip {
     color: var(--main);
     margin-right: 4px;
 	min-width: 18px;
-}
+} 
 
 .volume-widget .label {
 	color: var(--mainLight);
 	background: rgba(0, 0, 0, 0.01);
     font-weight: bold;
 	min-width: 30px;
-}
+} 
 
 .volume-slider {
     border-radius: 2px;
@@ -780,26 +787,35 @@ QToolTip {
     /* padding: 0; */
     margin: 0;
     border: none;
+
 }
-.taskbar-widget .app-icon {
-    padding: 0 5px;
-    border: none;
-    margin-bottom: 3px;    
-    margin-top: 3px;  
-    background-color: rgba(0, 0, 0, 0.01);	
-}
-.taskbar-widget .app-icon.foreground{
-    background-color: rgba(168, 168, 168, 0.45);
+
+.taskbar-widget .app-container.foreground{
+    background-color: rgba(148, 148, 148, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 6px;
 }
+
+.taskbar-widget .app-container 
+{
+	margin-bottom: 4px;    
+    margin-top: 4px;  
+	padding: 0 3px 0 3px;
+	border: none; 
+    background-color: rgba(0, 0, 0, 0.01);	
+}
+
+.taskbar-widget .app-container.flashing {
+    background-color: rgba(255, 106, 106, 0.63);
+}
 .taskbar-widget {
-    padding-left: 0;
+   
     margin-right: -12px;
 }
 .taskbar-widget .widget-container {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+	padding: 0 12px 0 12px;
     /* padding-left: 6px; */
 }
 
@@ -812,7 +828,7 @@ QToolTip {
 	color: var(--mainLight);
 	background: rgba(0, 0, 0, 0.01);
     font-weight: bold;
-}
+} 
 
 .active-window-widget {
     padding-right: 0;
@@ -979,6 +995,7 @@ QToolTip {
     border-radius: 3px;
     height: 4px;
 }
+
 
 /* NOTIFICATION Settings */
 .notification-widget .icon {
