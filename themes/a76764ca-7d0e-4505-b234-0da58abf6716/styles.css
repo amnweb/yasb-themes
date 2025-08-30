@@ -1,0 +1,740 @@
+:root {
+    --red: #f393ae;
+    --yellow: #f9e2af;
+    --transparent: #f0f8ff;
+    --green: #a6e3a1;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #191970;
+    --pink: #f5c2e7;
+    --mauve: #70C4BD;
+    --sky: #89dceb;
+    --overlay2: #9399b2;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --base: #1e1e2e;
+    --mantle: rgba(24, 24, 37, 0.5);
+    --crust: #f0f8ff;
+    --main: #10151d;
+    --widget-background: #bc8bf7;
+
+}
+QToolTip {
+    padding: 6px;
+    color: #cdd6f4;
+    font-size: 12px;
+    background-color: #1e1e2e;
+    border: 0px solid #313244;
+    border-radius: 6px;
+}
+* {
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 400;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+.yasb-bar {
+    padding: -2px -2px;
+    margin: 0;
+    border-radius: 8px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.widget {
+    padding: 0 2px;
+    margin: 0;
+}
+.icon {
+    font-size: 14px;
+}
+.widget .label {
+    padding: 0px 2px;
+}
+
+.active-window-widget .widget-container,
+.battery-widget .widget-container,
+.bluetooth-widget .widget-container,
+.brightness-widget .widget-container, 
+.clock-widget .widget-container,
+.cpu-widget .widget-container,
+.komorebi-workspaces .widget-container 
+.language-widget .widget-container,
+.media-widget .widget-container,
+.memory-widget .widget-container,
+.notification-widget .widget-container,
+.power-menu-widget .widget-container,
+.systray .widget-container
+.taskbar-widget .widget-container,
+.traffic-widget .widget-container,
+.volume-widget .widget-container,
+.weather-widget .widget-container,
+.wifi-widget .widget-container
+{
+    background-color: var(--transparent);
+    margin: 0px 0 0px 0;
+    border-radius: 6px;
+}
+/*此处为小组件外边框的设统一设置，按照github的格式添加<.xxx-widget .widget-container>可以给小组件加外框，方便点击*/
+
+/* ACTIVE WINDOW Settings */
+.active-window-widget .icon {
+    padding: 0 9px;
+}
+.active-window-widget {
+    padding-right: 0;
+}
+.active-window-widget .widget-container {
+    padding: auto;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* APP Settings */
+.apps-widget .label {
+    background-color: rgba(0, 0, 0, 0.01);
+    font-size: 16px;
+    padding: 0 1px;
+}
+.apps-widget .label:hover {
+    color: var(--text);
+}
+
+/*BATTERY*/
+.battery-widget .widget-container .label {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.battery-widget .widget-container .label.alt {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+/*BLUETOOTH Settings */
+
+.bluetooth-widget {
+    color: var(--mauve);
+}
+
+/* BRIGHTNESS settings */
+
+.brightness-widget {
+    padding-left: 0;
+}
+
+.brightness-widget .widget-container {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    
+}
+
+.brightness-widget .widget-container .icon {
+    color: var(--mauve);
+    margin-right: 0px;
+}
+
+.brightness-menu {
+    background-color:var(--crust); 
+}
+.brightness-slider {
+    border: none;
+}
+
+/* CLOCK and CALENDAR Settings */
+.clock-widget .icon {
+    color: var(--mauve);
+    margin-right: 4px;
+}
+.calendar {
+    background-color: var(--crust)
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color:#000080;
+    font-family: 'JetBrainsMono NFP';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:selected {
+    color: var(--main);
+    border-radius: 8px;
+    background-color: var(--mauve);
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-family: 'JetBrainsMono NFP';
+    font-size: 16px;
+    color: var(--mauve);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .month-label {
+    font-weight: normal;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: var(--mauve);
+    margin-top: -20px;
+}
+
+/* CPU MEMORY Setting */
+.cpu-widget {
+    padding-right: 0;
+}
+.memory-widget {
+    padding-left: 0;
+}
+.cpu-widget .widget-container {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.memory-widget .widget-container {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.memory-widget .label {
+    min-width: 34px;
+    max-width: 34px;
+}
+.cpu-widget .label {
+    min-width: 34px;
+    max-width: 34px;
+}
+.cpu-widget .icon {
+    color: var(--mauve);
+    margin-right: 4px;
+}
+.memory-widget .icon {
+    color: var(--mauve);
+    margin-right: 4px;
+}
+
+/*DISK WIDGET*/
+.disk-widget {
+    background-color: rgba(0, 0, 0, 0.01);
+    padding-right: 0px;
+    padding-left: 12px;
+}
+                                        /*DISK DROPDOWN*/
+.disk-group {
+    background-color: var(--mantle);    
+}
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+.disk-group-row:hover {
+    background-color:rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.disk-group-label-bar{
+    max-height: 8px;
+    border:0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(148, 226, 213, 0.3);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk{
+    background-color: rgba(148, 226, 213, 1);
+    border-radius: 4px;
+}
+.disk-group-label {
+    font-size: 13px;
+}
+.disk-group-label-size {
+    font-size: 12px;
+    color: rgba(205, 214, 244, 0.5);
+}
+
+/* HOME Settings */
+.home-widget {
+    padding: 2px 4px 2px 0px;    
+}
+.home-widget .widget-container {
+    background-color: var(--widget-background);
+    border-radius: 8px;    
+}
+.home-widget .icon:hover {
+    color: var(--text);
+}
+.home-menu {
+    background-color: var(--crust);
+}
+.home-menu .menu-item {
+    padding: 8px 48px 9px 16px;
+    font-size: 12px;
+    font-family: 'JetBrainsMono NFP';
+    color: var(--text);
+    font-weight: 600;
+}
+.home-menu .menu-item:hover {
+    background-color: rgba(157, 180, 141, 0.116);
+    color: #fff;
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color: rgba(157, 180, 141, 0.116);
+}
+
+/* LANGUAGE Settings */
+.language-widget {
+    padding-left: 0;
+}
+.language-widget .widget-container{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.language-widget .icon {
+    color: var(--mauve);
+    margin-right: 4px;
+}
+
+/* MEDIA Settings */
+.media-widget {
+	padding: 0;
+	margin: 0;
+    border-radius: 0;
+}
+.media-widget .label {
+	color: var(--text);
+    padding: 0px;
+	padding-left: 8px;
+	font-size: 12px;
+    max-width: 220px;
+    min-width: 220px;
+}
+.media-widget .btn {
+	color: var(--mauve);
+	padding:0 1px;
+	margin: 0;
+    font-size: 12px;
+}
+.media-widget .btn:hover {
+	color: #babfd3;
+}
+.media-widget .btn.play {
+	font-size: 17px;
+    max-width: 22px;
+    min-width: 22px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+	color: var(--surface1);
+}
+
+/* Menu Style */
+.power-plan-menu .menu-content {
+    margin: 10px;
+}
+.power-plan-menu .menu-content .button {
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    padding: 6px 12px;
+    margin: 1px 0;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+}
+.power-plan-menu .menu-content  .button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.power-plan-menu .menu-content .button.active {
+    background-color: rgba(0, 120, 212, 0.1);
+    border: 1px solid rgba(0, 120, 212, 0.4);
+}
+
+/* NOTIFICATION Settings */
+.notification-widget .icon {
+    color: var(--mauve);
+}
+.notification-widget .icon.new-notification {
+    color: var(--mauve);
+}
+.notification-widget .label.new-notification {
+    color: var(--mauve);
+}
+
+/* POWERPLAN settings */
+
+.power-plan-widget {
+    padding: 0 6px 0 6px;
+}
+.power-plan-widget .label {
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.01)
+}
+.power-plan-widget .icon {
+    font-size: 12px;
+}
+
+.power-plan-menu {
+    background-color: var(--crust);
+}
+.power-plan-widget .icon {
+    padding-right: 4px;
+}
+.power-plan-widget .icon.balanced,
+.power-plan-widget .label.balanced {
+    color: #f9e2af;
+}
+.power-plan-widget .icon.high-performance,
+.power-plan-widget .label.high-performance {
+    color: #f38ba8;
+}
+.power-plan-widget .icon.power-saver,
+.power-plan-widget .label.power-saver {
+    color: #89b4fa;
+}
+
+/* POWER Settings */
+.power-menu-widget .label {
+    font-size: 14px;
+}
+.power-menu-popup {
+    background-color: transparent
+}
+.power-menu-popup .button {
+    padding: 0;
+    width: 180px;
+    height: 230px;
+    border-radius: 8px;
+    background-color: var(--crust);
+    color: var(--text);
+    border-left: 10px solid rgba(58, 59, 83, 0);
+    border-right: 10px solid rgba(58, 59, 83, 0);
+    border-top: 10px solid rgba(58, 59, 83, 0);
+    border-bottom: 10px solid rgba(58, 59, 83, 0);
+    margin: 0px;
+}
+.power-menu-popup .button.hover {
+    background-color: var(--base);
+    border-left: 10px solid var(--base);
+    border-right: 10px solid var(--base);
+    border-top: 10px solid var(--base);
+    border-bottom: 10px solid var(--base);
+}
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--overlay2)
+}
+.power-menu-popup .button .icon {
+    font-size: 64px;
+    padding-top: 32px;
+    color: var(--surface2)
+}
+.power-menu-popup .button.cancel .icon {
+    padding: 0;
+    margin: 0;
+}
+.power-menu-popup .button.cancel .label {
+    margin: 0;
+}
+.power-menu-popup .button.cancel {
+    height: 32px;
+    border-radius: 4px;
+}
+.power-menu-popup .button.hover .label,
+.power-menu-popup .button.hover .icon {
+    color: var(--mauve);
+}
+.uptime {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--overlay2);
+    font-weight: 600;
+}
+
+/*SYSTEMTRAY Settings */
+.systray {
+    background:var(--transparent);
+    border: None;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 6px;
+}
+
+.systray .unpinned-container {
+    background: var(--sky);
+    border-radius: 6px;
+    margin: 2px;
+}
+
+.systray .pinned-container {
+    background: transparent;
+}
+
+.systray .pinned-container[forceshow=true] {
+    background: red;
+}
+
+.systray .button {
+    border-radius: 4px;
+    padding: 2px 2px;
+}
+
+.systray .button:hover {
+    background: #727272;
+}
+
+.systray .button[dragging=true] {
+    background: orange;
+    border-color: #FF8800;
+}
+
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+}
+
+.systray .unpinned-visibility-btn:checked {
+    background: var(--mauve);
+}
+
+.systray .unpinned-visibility-btn:hover {
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    border-color: #AAAAAA;
+}
+
+/* TASKBAR Settings */
+.taskbar-widget {
+    /* padding: 0; */
+    /* margin: 0; */
+    border: none;
+}
+.taskbar-widget .app-icon {
+    padding: 0 5px;
+    border: none;
+    margin: 0;    
+}
+.taskbar-widget .app-icon.foreground{
+    background-color: rgba(168, 168, 168, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+}
+.taskbar-widget {
+    padding-left: 0;
+}
+.taskbar-widget .widget-container {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    /* padding-left: 6px; */
+}
+
+/* VOLUMEN Settings */
+.volume-widget {
+    padding-right: 0;
+}
+.volume-widget .widget-container{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    /* margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 6px; */
+}
+.volume-widget .icon {
+    color: var(--mauve);
+    margin-right: 4px;
+} 
+.volume-slider {
+    border: none;
+}
+.volume-slider::groove {
+    background-color: var(--mauve);
+    border-radius: 2px;
+    height: 4px;
+    margin: 4px 0;
+}
+.volume-slider::handle{
+    background-color: var(--mauve);
+    border: none;
+    height: 16px;
+    width: 10px;
+    margin: -8px 0;
+    border-radius: 2px;  
+}
+
+.audio-menu {
+    background-color:var(--crust); 
+}
+.audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.audio-container .device.selected {
+    background-color: var(--blue);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* WHKD Settings */
+.whkd-widget {
+    padding: 0 6px 0 6px;
+}
+.whkd-widget .icon {
+    font-size: 18px;
+}
+.whkd-popup .edit-config-button {
+    background-color:#1743a1;
+    color: #ffffff;
+    padding: 4px 8px 6px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    font-family: 'Segoe UI';
+}
+.whkd-popup .keybind-buttons-container {
+    min-width: 240px;
+}
+.whkd-popup .keybind-button {
+    background-color: #343538;
+    color: white;
+    padding: 4px 8px 6px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px inset #4f5055;
+    border-bottom: 2px inset #4f5055;
+    border-radius: 4px;
+    font-family: 'JetBrainsMono NFP';
+}
+.whkd-popup .keybind-button.special {
+    background-color: #343538;
+}
+.whkd-popup .keybind-row:hover{
+    background-color: rgba(136, 138, 155, 0.2);
+    border-radius: 8px;
+}
+.whkd-popup .plus-separator {
+    padding: 0 0px;
+    border:none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color:transparent
+}
+.whkd-popup .filter-input {
+    padding: 0 8px 2px 8px;
+    font-size: 14px;
+    font-family: 'Segoe UI';
+    border: 1px solid #2e2e2e;
+    border-radius: 4px;
+    outline: none;
+    color: white;
+    background-color: #2e2e2e;
+    min-height: 32px;
+}
+.whkd-popup .filter-input:focus {
+    border: 1px solid #0078D4;
+}
+.whkd-popup .keybind-command {
+    font-size: 14px;
+}
+.whkd-popup .keybind-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding: 8px 0;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* WEATHER Settings */
+.weather-widget .icon {
+    font-size: 18px;
+    margin: 0 4px 1px 0;
+    color: var(--mauve);
+}
+.weather-card {
+    background-color:var(--crust);
+}
+ 
+.weather-card-today .label {
+    font-size: 12px;
+}
+.weather-card-today .label.location {
+    font-size: 24px;
+    font-weight: 700;
+}
+.weather-card-today .label.arert {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: rgba(247, 199, 42, 0.05);
+    border: 1px solid rgba(247, 209, 42, 0.1);
+    color: rgba(196, 181, 162, 0.85);
+    border-radius: 6px;
+    padding: 5px 0;
+}
+.weather-card-day {
+    border-radius: 8px;
+    background-color: var(--crust);
+}
+.weather-card-day .label {
+    font-size: 12px;
+}
+
+/* WIFI Setting */
+.wifi-widget .icon{
+    color: var(--mauve) !important;
+}
+
+/* WORKSPACE Setting */
+.komorebi-workspaces .offline-status {
+    color: var(--overlay2);
+    padding: 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: #9cd1dd;
+    margin: 0px 4px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    height: 10px;
+    width: 10px;
+}
+.komorebi-workspaces .ws-btn:hover {
+    background-color: #91b2e7;
+}
+.komorebi-workspaces .ws-btn.populated {
+    background-color: var(--red);
+}
+.komorebi-workspaces .ws-btn.active {
+    background-color: var(--mauve); 
+    width: 36px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+/* .brightness-slider::groove {}
+.brightness-slider::handle{}  */
+
+/* Brightness progress bar styles if enabled */
+/* .brightness-widget .progress-circle {}  */
