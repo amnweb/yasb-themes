@@ -292,10 +292,19 @@ QToolTip {
     margin: 2px 0;
     border-radius: 8px;
 }
-.taskbar-widget .app-icon {
-    padding: 0 6px;
+.taskbar-widget .app-container{
+    padding:0 6px;
     border: none;
     margin: 0;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
+.taskbar-widget .app-container.foreground {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.taskbar-widget .app-container.flashing {
+    background-color: rgba(255, 106, 106, 0.63);
 }
 /* SYSTEM TRAY */
 .systray{

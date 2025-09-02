@@ -65,6 +65,9 @@ widgets:
       label: "{%a, %d %b %H:%M}"
       label_alt: "{%A, %d %B %Y %H:%M:%S}"
       timezones: []
+      calendar: 
+        alignment: "center"
+        offset_top: 6
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -77,11 +80,6 @@ widgets:
       hide_empty_workspaces: false
       hide_if_offline: true
       animation: true
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
@@ -111,11 +109,6 @@ widgets:
         maximised: "MAX"
         floating: "FLOATING"
         paused: "PAUSED"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
       callbacks:
         on_left: "next_layout"
         on_middle: "toggle_monocle"
@@ -174,11 +167,6 @@ widgets:
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
       label: "{data}"
       app_list:
         - { icon: "\uf0a2", launch: "notification_center" }
@@ -212,11 +200,6 @@ widgets:
         processes: []
         titles: []
         classes: []
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   ai:
     type: "yasb.custom.CustomWidget"
     options:

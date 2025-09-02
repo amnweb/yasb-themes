@@ -67,6 +67,7 @@
 	margin: 4px 0 4px 0;
 	border-radius: 12px;
     border: 0px solid var(--surface1);
+    padding: 0 8px;
 }
 .komorebi-workspaces .widget-container {
     border-top-left-radius: 6px;
@@ -223,10 +224,22 @@
     margin: 0;
     border: none;
 }
-.taskbar-widget .app-icon{
+.taskbar-widget .widget-container{
+    padding: 0 8px;
+}
+.taskbar-widget .app-container{
     padding:0 6px;
     border: none;
     margin: 0;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
+.taskbar-widget .app-container.foreground {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.taskbar-widget .app-container.flashing {
+    background-color: rgba(255, 106, 106, 0.63);
 }
 .whkd-widget {
     padding: 0 6px 0 6px;
@@ -359,4 +372,56 @@
 }
 .github-menu .contents .item.new .icon {
     color: #3fb950;
+}
+.calendar {
+    background-color: rgba(17, 17, 27, 0.4);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(162, 177, 196, 0.85);
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:selected {
+    color: rgb(255, 255, 255);
+    background-color: #007acc;
+    border-radius: 10px;
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label,
+.calendar .week-label,
+.calendar .holiday-label {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .week-label,
+.calendar .holiday-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(162, 177, 196, 0.85);
+}
+.calendar .holiday-label {
+    color: rgba(162, 177, 196, 0.85);
+    font-weight: 700;
+}
+.calendar .month-label {
+    font-weight: normal;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    margin-top: -20px;
 }
