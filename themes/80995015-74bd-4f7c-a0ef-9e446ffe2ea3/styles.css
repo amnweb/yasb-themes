@@ -288,20 +288,19 @@
     border: none;
 }
 
-.taskbar-widget .app-icon {
+.taskbar-widget .app-container {
     padding: 0 6px;
     border: none;
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.taskbar-widget .app-icon:hover {
+.taskbar-widget .app-container:hover {
     background-color: var(--hover-color);
     border-radius: 3px;
 }
-
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
 /* --- Whkd Widget --- */
 .whkd-widget {
     padding: 0 6px 0 6px;

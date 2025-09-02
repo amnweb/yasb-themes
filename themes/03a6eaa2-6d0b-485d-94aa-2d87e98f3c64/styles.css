@@ -141,9 +141,12 @@ font-size: 14px;
     background-color: var(--base2);
     padding: 0 2 0 2;
 }
-.taskbar-widget .app-icon {
+.taskbar-widget .app-container {
     padding: 0 4 0;
     border: none;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
 }
 .active-window-widget {
     background-color: var(--base2);

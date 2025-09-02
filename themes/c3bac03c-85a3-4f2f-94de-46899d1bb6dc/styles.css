@@ -465,15 +465,18 @@ QToolTip {
     /* margin: 0; */
     border: none;
 }
-.taskbar-widget .app-icon {
+.taskbar-widget .app-container {
     padding: 0 5px;
     border: none;
     margin: 0;    
 }
-.taskbar-widget .app-icon.foreground{
+.taskbar-widget .app-container.foreground{
     background-color: rgba(168, 168, 168, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 6px;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
 }
 .taskbar-widget {
     padding-left: 0;

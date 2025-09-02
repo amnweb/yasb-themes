@@ -128,12 +128,11 @@ QToolTip {
     padding: 0;
     margin: 0;
 }
-.taskbar-widget .app-icon {
+.taskbar-widget .app-container {
     padding:0 6px;
 }
-/*
-.taskbar-widget .app-icon.foreground{
-    background-color: #548585
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
 }
 
 /*language (menu) */

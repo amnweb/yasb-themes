@@ -279,10 +279,13 @@ QToolTip {
     margin: 0;
     border: none;
 }
-.taskbar-widget .app-icon {
+.taskbar-widget .app-container {
     padding: 0 6px;
     border: none;
     margin: 0;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
 }
 .home-widget {
     padding: 2px 4px 2px 0px;    

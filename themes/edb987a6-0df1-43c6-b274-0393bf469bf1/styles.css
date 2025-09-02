@@ -151,10 +151,13 @@
     background-color: #221f2e;
     padding: 0;
 }
-.taskbar-widget .app-icon {
+.taskbar-widget .app-container {
     padding: 0 8px;
     border: none;
     margin: 0;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
 }
 .active-window-widget {
     background-color: #c6a7e8;

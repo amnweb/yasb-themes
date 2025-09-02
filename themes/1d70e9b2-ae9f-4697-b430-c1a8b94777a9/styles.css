@@ -162,10 +162,13 @@
     border: none;
     background-color: transparent;
 }
-.taskbar-widget .app-icon{
+.taskbar-widget .app-container{
     padding:0 6px;
     border: none;
     margin: 0;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
 }
 .whkd-widget,
 *.dark .whkd-widget {

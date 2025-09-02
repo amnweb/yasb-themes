@@ -177,8 +177,11 @@
     padding: 0;
     margin: 0;
 }
-.taskbar-widget .app-icon {
+.taskbar-widget .app-container {
     padding:0 6px;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
 }
 .win-button-widget .label {
     font-size: 18px;
