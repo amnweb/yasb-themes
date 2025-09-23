@@ -13,7 +13,8 @@ bars:
       enabled: false
       acrylic: false
       dark_mode: true
-      round_corners: false
+      round_corners: true
+      round_corners_type: "small"
       border_color: None
     window_flags:
       always_on_top: true
@@ -23,10 +24,10 @@ bars:
       width: "100%"
       height: 30
     padding:
-      top: 0 # 4 4 2 4
-      left: 0
-      bottom: 0
-      right: 0
+      top: 2 # 4 4 2 4
+      left: 4
+      bottom: 2
+      right: 4
     widgets:
       left:
         [
@@ -38,15 +39,18 @@ bars:
       center:
         [
           "clock",
-          "weather"
+          "weather",
+          "ai_chat"
         ]
       right:
         [
           "traffic",
+          #"wifi",
+          "github",
           "sysinfo_widgets",
-          "wifi",
           "volume",
           "microphone",
+          "wallpapers",
           "notifications",
           "update_check",
           "power_menu"
@@ -69,11 +73,6 @@ widgets:
       round_corners_type: "small"
       border_color: "system"
       distance: 5
-      container_padding: 
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
       alignment: "left"
       direction: "down"
       menu_labels:
@@ -85,39 +84,27 @@ widgets:
         system: "System Settings"
         about: "About This PC"
         task_manager: "Task Manager"
-  weather:
-    type: "yasb.weather.WeatherWidget"
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
     options:
-      label: "<span>{icon}</span> {temp} - {location}"
-      label_alt: "{location}: {conditions}, Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "67c31ff99a9a42f8844114051252507" # Get your free API key from https://www.weatherapi.com/
-      update_interval: 600
-      hide_decimal: true
-      location: "Australia, Adelaide" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
-      units: "metric" # Can be 'metric' or 'imperial'
-      callbacks:
-        on_left: "toggle_card"
-      icons:
-        sunnyDay: "\udb81\udd99"
-        clearNight: "\ue3c2"
-        cloudyDay: "\ue21d"
-        cloudyNight: "\ue226"
-        rainyDay: "\ue371"
-        rainyNight: "\ue371"
-        snowyIcyDay: "\udb81\udf17"
-        snowyIcyNight: "\udb81\udf17"
-        blizzardDay: "\udb81\udd99"
-        default: "\udb81\udd99"
-      weather_card:
-        show_hourly_forecast: true
-        blur: true
-        round_corners: true
-        round_corners_type: "small"
-        border_color: "system"
-        alignment: "center"
-        direction: "down"
-        offset_top: 6
-        icon_size: 48
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 14
+      max_length: 40
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -129,7 +116,7 @@ widgets:
        on_middle: "do_nothing"
        on_right: "toggle_label"
       max_field_size:
-        label: 55
+        label: 40
         label_alt: 80
       show_thumbnail: true
       controls_only: false
@@ -154,40 +141,50 @@ widgets:
         play: "\uf04b"
         pause: "\uf04c"
       media_menu:
-       blur: true
-       round_corners: true
-       round_corners_type: "small"
-       border_color: "system"
-       alignment: "right"
-       direction: "down"
-       offset_top: 6
-       offset_left: 0
-       thumbnail_corner_radius: 4
-       thumbnail_size: 80
-       max_title_size: 80
-       max_artist_size: 20
-       show_source: true
+        blur: true
+        round_corners: true
+        round_corners_type: "small"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        thumbnail_corner_radius: 4
+        thumbnail_size: 80
+        max_title_size: 80
+        max_artist_size: 20
+        show_source: true
       media_menu_icons:
-       play: "\uf04b"
-       pause: "\uf04c"
-       prev_track: "\uf048"
-       next_track: "\uf051"
+        play: "\uf04b"
+        pause: "\uf04c"
+        prev_track: "\uf048"
+        next_track: "\uf051"
       label_shadow:
-       enabled: true
-       color: "black"
-       radius: 3
-       offset: [ 1, 1 ]
-  active_window:
-    type: "yasb.active_window.ActiveWindowWidget"
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  cava:
+    type: "yasb.cava.CavaWidget"
     options:
-      label: "{win[title]}"
-      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
-      label_no_window: ""
-      label_icon: true
-      label_icon_size: 14
-      max_length: 50
-      max_length_ellipsis: "..."
-      monitor_exclusive: true
+      bar_height: 12
+      min_bar_height: 1
+      noise_reduction: 0.77
+      gradient: 1
+      reverse: 1
+      waveform: 0
+      foreground: "#fac389"
+      gradient_color_1: "#E6C13C"
+      gradient_color_2: "#E66C3C"
+      gradient_color_3: "#E63C60"
+      bars_number: 20
+      bar_spacing: 1
+      bar_width: 2
+      hide_empty: true
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -209,51 +206,153 @@ widgets:
         on_left: "toggle_calendar"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-  disk:
-    type: "yasb.disk.DiskWidget"
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  weather:
+    type: "yasb.weather.WeatherWidget"
     options:
-        label: "<span>\uf473</span>"
-        label_alt: "<span>\uf473</span>"
-        update_interval: 60
-        group_label:
-          volume_labels: ["C", "D", "E", "F"]
-          show_label_name: false
-          blur: True
-          round_corners: True
-          round_corners_type: "small"
-          border_color: "System"
-          alignment: "right"
-          direction: "down"
-        callbacks:
-          on_left: "toggle_group"
-          on_middle: "toggle_label"
-          on_right: "exec explorer" # Open disk C in file explorer
-  power_menu:
-      type: "yasb.power_menu.PowerMenuWidget"
-      options:
-        label: "\uf011"
-        uptime: True
-        blur: False
-        blur_background: True
-        animation_duration: 250 # Milisecond 
-        button_row: 5 # Number of buttons in row, min 1 max 5
-        buttons:
-          signout: ["\udb80\udf43","Sign out"]
-          shutdown: ["\uf011","Shut Down"]
-          restart: ["\uead2","Restart"]
-          hibernate: ["\uf28e","Hibernate"]
-          cancel: ["\udb81\udf3a","Cancel"]
-  notifications:
-    type: "yasb.notifications.NotificationsWidget"
-    options:
-      label: "<span>\uf476</span> {count}"
-      label_alt: "{count} notifications"
-      hide_empty: true
-      tooltip: true
+      label: "<span>{icon}</span> {temp}" #  - {location}
+      label_alt: "<span>{icon}</span> {location}: {conditions}, {temp}" # Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "YOUR_API_KEY" # Get your free API key from https://www.weatherapi.com/
+      update_interval: 300
+      hide_decimal: true
+      location: "Adelaide" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      units: "metric" # Can be 'metric' or 'imperial'
       callbacks:
-        on_left: "toggle_notification"
+        on_left: "toggle_card"
         on_right: "toggle_label"
-        on_middle: "do_nothing" 
+      icons:
+        sunnyDay: "\udb81\udd99"
+        clearNight: "\ue3c2"
+        cloudyDay: "\ue21d"
+        cloudyNight: "\ue226"
+        rainyDay: "\ue371"
+        rainyNight: "\ue371"
+        snowyIcyDay: "\udb81\udf17"
+        snowyIcyNight: "\udb81\udf17"
+        blizzardDay: "\udb81\udd99"
+        default: "\udb81\udd99"
+      weather_card:
+        show_hourly_forecast: true
+        blur: true
+        round_corners: true
+        round_corners_type: "small"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        icon_size: 48
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  ai_chat:
+    type: "yasb.ai_chat.AiChatWidget"
+    options:
+      label: "<span>\uf086</span>"
+      chat:
+        blur: true
+        round_corners: true
+        round_corners_type: "small"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        offset_left: 0
+        offset_top: 6
+      icons:
+        send: "\uf1d8"
+        stop: "\uf04d"
+        clear: "\uf1f8"
+        assistant: "\udb81\ude74"
+      notification_dot:
+        enabled: false
+        corner: "top_right"
+        color: "red"
+        margin: [ 0, 2 ]
+      callbacks:
+        on_left: "toggle_chat"
+      providers:
+        - provider: "OpenAI"
+          api_endpoint: "https://api.openai.com/v1"
+          credential: "YOUR_API_KEY" # Get your free key after logging in from https://platform.openai.com/api-keys
+          models:
+          - name: "gpt-4o-mini"
+            label: "Chat GPT4"
+            temperature: 0.3
+            top_p: 0.95
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "\uf103  {download_speed}  |  {upload_speed}  \uf102"
+      label_alt: "<span>\udb82\udcfa</span> Download {download_speed} | Upload {upload_speed}"
+      update_interval: 1000
+      speed_unit: "bytes"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "small"
+        border_color: "system"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "exec cmd.exe /c start ms-settings:network"
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "\ueb01"
+      label_alt: "{wifi_name} {wifi_strength}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "exec quick_settings"
+        on_middle: "toggle_label"
+        on_right: "exec cmd.exe /c start ms-settings:network"
+      ethernet_label: "\ueb01"
+      ethernet_label_alt: "\ueb01 {ip_addr}"
+      ethernet_icon: "\ueba9"
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  github:
+    type: "yasb.github.GithubWidget"
+    options:
+      label: "<span>\ueba1</span>"
+      label_alt: "{data} Notifications" # {data} return number of unread notification
+      token: ghp_YOUR_TOKEN # GitHub Personal access tokens (classic) https://github.com/settings/tokens
+      max_notification: 20 # Max number of notification displaying in menu max: 50
+      notification_dot:
+        enabled: True
+        corner: "bottom_right" # Can be "top_left", "top_right", "bottom_left", "bottom_right"
+        color: "#FF534D" # Can be hex color or string - Set same as red variable in stylesheet
+        margin: [ 1, 4 ] # x and y margin for the dot
+      only_unread: false # Show only unread or all notifications; 
+      max_field_size: 54 # Max characters in title before truncation.
+      update_interval: 300 # Check for new notification in seconds
+      menu:
+        blur: True # Enable blur effect for the menu
+        round_corners: True # Enable round corners for the menu (this option is not supported on Windows 10)
+        round_corners_type: "small" # Set the type of round corners for the menu (normal, small) (this option is not supported on Windows 10)
+        border_color: "System" # Set the border color for the menu (this option is not supported on Windows 10)
+        alignment: "right"
+        direction: "down"
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -273,11 +372,11 @@ widgets:
       histogram_num_columns: 8
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -288,11 +387,35 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 8   
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+      label: "<span>\uf473</span>"
+      label_alt: "<span>\uf473</span>"
+      update_interval: 60
+      group_label:
+        volume_labels: ["C", "D", "E", "F"]
+        show_label_name: false
+        blur: True
+        round_corners: True
+        round_corners_type: "small"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_group"
+        on_middle: "toggle_label"
+        on_right: "exec explorer" # Open disk C in file explorer
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -318,42 +441,10 @@ widgets:
         on_middle: "exec cmd.exe /c start ms-settings:sound"
         on_right: "toggle_mute"
       label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]
-  update_check:
-    type: "yasb.update_check.UpdateCheckWidget"
-    options:
-      winget_update:
-        enabled: true
-        label: "<span>\uf0ab</span>{count}"
-        interval: 360
-        exclude: [Discord]
-      windows_update:
         enabled: false
-        label: "<span>\uf0ab</span>{count}"
-        interval: 360
-        exclude: []
-  traffic:
-    type: "yasb.traffic.TrafficWidget"
-    options:
-      label: "\uf103  {download_speed}  |  {upload_speed}  \uf102"
-      label_alt: "<span>\udb82\udcfa</span> Download {download_speed} | Upload {upload_speed}"
-      update_interval: 1000
-      speed_unit: "bytes"
-      menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "small"
-        border_color: "system"
-        alignment: "left"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-      callbacks:
-        on_left: "toggle_menu"
-        on_right: "exec cmd.exe /c start ms-settings:network"
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
     options:
@@ -375,44 +466,93 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-  wifi:
-      type: "yasb.wifi.WifiWidget"
-      options:
-        label: "\ueb01"
-        label_alt: "{wifi_name} {wifi_strength}%"
-        update_interval: 5000
-        callbacks:
-          on_left: "exec quick_settings"
-          on_middle: "toggle_label"
-          on_right: "exec cmd.exe /c start ms-settings:network"
-        ethernet_label: "\ueb01"
-        ethernet_label_alt: "\ueb01 {ip_addr}"
-        ethernet_icon: "\ueba9"
-  cava:
-    type: "yasb.cava.CavaWidget"
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
     options:
-      bar_height: 14
-      min_bar_height: 1
-      gradient: 1
-      reverse: 1
-      waveform: 0
-      foreground: "#fac389"
-      gradient_color_1: "#E6C13C"
-      gradient_color_2: "#E66C3C"
-      gradient_color_3: "#E63C60"
-      bars_number: 20
-      bar_spacing: 1
-      bar_width: 2
+      label: "<span>\uf00f</span>"
+      image_path: "E:\\OneDrive\\Pictures\\Wallpaper" # Example path to folder with images
+      change_automatically: false # Automatically change wallpaper
+      update_interval: 1800 # If change_automatically is true, update interval in seconds
+      gallery:
+        enabled: true
+        blur: true
+        image_width: 220
+        image_per_page: 8
+        show_buttons: true
+        orientation: "portrait"
+        image_spacing: 8
+        lazy_load: true
+        lazy_load_delay: 80
+        lazy_load_fadein: 400
+        image_corner_radius: 20
+        enable_cache: true
+      run_after: # List of functions to run after wallpaper is updated
+        #- "wal -s -t -e -q -n -i {image}" # Example command to run after wallpaper is updated
+        #- "cmd.exe /c start /min pwsh ./yasb.ps1" # Example command to run after wallpaper is updated
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\uf476</span> {count}"
+      label_alt: "{count} notifications"
       hide_empty: true
-      container_padding:
-        top: 0
-        left: 4
-        bottom: 0
-        right: 0
+      tooltip: true
       callbacks:
-        on_left: "do_nothing"
-        on_middle: "do_nothing"
-        on_right: "do_nothing"
+        on_left: "toggle_notification"
+        on_right: "toggle_label"
+        on_middle: "do_nothing" 
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  update_check:
+    type: "yasb.update_check.UpdateCheckWidget"
+    options:
+      winget_update:
+        enabled: true
+        label: "<span>\uf0ab</span>{count}"
+        interval: 60
+        exclude: [Discord]
+      windows_update:
+        enabled: false
+        label: "<span>\uf0ab</span>{count}"
+        interval: 360
+        exclude: []
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 250 # Milisecond 
+      button_row: 5 # Number of buttons in row, min 1 max 5
+      buttons:
+        signout: ["\udb80\udf43","Sign out"]
+        shutdown: ["\uf011","Shut Down"]
+        restart: ["\uead2","Restart"]
+        hibernate: ["\uf28e","Hibernate"]
+        cancel: ["\udb81\udf3a","Cancel"]
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 1
+        offset: [ 1, 1 ]
   sysinfo_widgets:
     type: "yasb.grouper.GrouperWidget"
     options:
@@ -422,8 +562,3 @@ widgets:
         "memory",
         "disk",
       ]
-      container_padding:
-        top: 0
-        left: 2
-        bottom: 0
-        right: 2
