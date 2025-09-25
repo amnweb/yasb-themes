@@ -1,0 +1,619 @@
+:root {
+    --red: #f38ba8;
+    --yellow: #f9e2af;
+    --green: #49b265;
+    --blue: #89b4fa;
+    --black: #000000;
+    --lavender: #b4befe;
+    --white: rgba(255, 255, 255, 0.7);
+    --pinkish: #cba6f7;
+    --overlay2: #9399b2;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --base: #1e1e2e;
+    --mantle: rgba(24, 24, 37, 0.5);
+    --crust: rgba(17, 17, 27, 0.5);
+    --main: #10151d;
+    --widget-background: rgba(203, 166, 247, 0.1);
+    --yasb-background: rgba(24, 0, 51, 0.7);
+}
+QToolTip {
+    padding: 6px;
+    color: #cdd6f4;
+    font-size: 12px;
+    background-color: #1e1e2e;
+    border: 0px solid #313244;
+    border-radius: 6px;
+}
+* { /*TEXT GLOBAL*/
+    font-size: 12px;
+    color: var(--white);
+    font-weight: 600;
+    font-family: "JetBrainsMono NFP ExtraBold";
+}
+.yasb-bar {
+    padding: 2 3px;
+    margin: 0 0 0 0;
+    background-color: var(--yasb-background);
+    /*border-radius: 12px;*/
+}
+.context-menu,
+.context-menu .menu-checkbox {
+    background-color: #202020;
+    font-size: 14px;
+}
+.context-menu::right-arrow {
+    width: 10px;
+    height: 10px;
+    padding-right: 24px;
+}
+.context-menu::item,
+.context-menu .menu-checkbox {
+    background-color: transparent;
+    padding: 5px 10px 5px 10px;
+    margin: 2px 6px;
+    border-radius: 6px;
+    min-width: 100px;
+}
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: #3a3a3a;
+    color: #FFFFFF;
+}
+.context-menu::separator {
+    height: 1px;
+    margin: 0px 10px 0px 10px;
+    background-color: var(--pinkish);
+    margin: 4px 8px;
+}
+.context-menu::item:disabled {
+    color: var(--pinkish);
+}
+.context-menu .menu-checkbox .checkbox {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 0px;
+}
+.context-menu .submenu::item:disabled {
+    margin: 0;
+    padding-left: 16px;
+}
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--surface2);
+}
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 12px;
+    height: 12px;
+    margin-left: 0px;
+    margin-right: 8px;
+    border-radius: 6px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: var(--surface2);
+}
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background: var(--pinkish);
+}
+.widget {
+    padding: 0 2px;
+    margin: 0;
+}
+.icon {
+    font-size: 14px;
+    color: var(--pinkish);
+}
+.widget .label {
+    padding: 0px 2px;
+}
+.clock-widget .widget-container,
+.volume-widget .widget-container,
+.weather-widget .widget-container,
+.media-widget .widget-container,
+.language-widget .widget-container,
+.notification-widget .widget-container,
+.power-menu-widget .widget-container,
+.memory-widget .widget-container,
+.cpu-widget .widget-container,
+.traffic-widget .widget-container,
+.microphone-widget .widget-container,
+.home-widget .widget-container,
+.windows-desktops .widget-container, 
+.systray {
+    /*background-color: var(--red);*/
+    margin: 2px 0px 7px 0px;
+    border-radius: 14px;
+}
+/* CPU CPU CPU CPU CPU CPU CPU CPU CPU CPU CPU CPU CPU CPU CPU CPU CPU */
+
+.cpu-widget {
+    padding: 0px;
+}
+.cpu-widget .progress-circle {
+    margin: 0px 0px 0px 0px;
+}
+.cpu-widget .label {
+    margin: 0px 4px 2px 0px;
+    font-size: 14px;
+}
+.cpu-widget .widget-container {
+    border-radius: 0px;
+    background: var(--widget-background);
+}
+.cpu-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+/* MEMORY MEMORY MEMORY MEMORY MEMORY MEMORY MEMORY MEMORY MEMORY MEMORY */
+.memory-widget {
+    padding-left: 0;
+}
+.memory-widget .widget-container {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background: var(--widget-background);
+}
+.memory-widget .icon {
+    margin: 0px 4px 0px 0px;
+}
+.memory-widget .label {
+    margin: 0px 4px 2px 0px;
+    font-size: 14px;
+}
+.memory-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.traffic-widget {
+    padding: 0px 0px 0px 4px;
+}
+.traffic-widget .icon{
+    font-size: 18px;
+    margin: 0 4px 3px 8px;
+}
+.traffic-widget .label {
+    margin: 0px 4px 2px 0px;
+    font-size: 14px;
+}
+.traffic-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.traffic-widget .widget-container {
+    background: var(--widget-background);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+/* CLOCK CLOCK CLOCK CLOCK CLOCK CLOCK CLOCK CLOCK CLOCK CLOCK CLOCK */
+.clock-widget .icon {
+    margin-left: 10px;
+}
+.clock-widget .label {
+    padding: 0px 10px 0px 10px;
+    font-size: 14px;
+}
+.clock-widget .widget-container {
+    background: var(--widget-background);
+}
+.clock-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+/* MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA */
+.media-widget {
+    padding: 0px;
+}
+.media-widget .widget-container {
+    background: var(--widget-background);
+    border-radius: 0px;
+}
+.media-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.media-widget .label {
+    font-size: 12px;
+}
+.media-widget .btn {
+    color: #9498a8;
+    padding: 0 4px;
+    margin: 0;
+    font-weight: 400;
+}
+.media-widget .btn:hover {
+    color: #babfd3;
+}
+.media-widget .btn.play {
+    font-size: 16px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+    color: #4e525c;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.media-menu {
+    background-color: var(--widget-background);
+    border-radius: 10px;
+    min-width: 420px;
+    max-width: 420px;
+}
+.media-menu .source {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.media-menu .title{
+    margin-left: 10px;
+    font-size: 16px;
+    color: var(--pinkish);    
+}
+.media-menu .artist {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 0px;
+    margin-bottom: 8px;
+    margin-left: 12px;
+}
+.media-menu .source {
+    font-size: 11px;
+    color: #000;
+    font-weight: normal;
+    border-radius: 3px;
+    background-color: var(--pinkish);
+    padding: 2px 4px;
+}
+.media-menu .source.spotify {
+    background-color: var(--green);
+}
+.media-menu .btn {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    color: var(--pinkish);
+    background: var(--widget-background);
+}
+.media-menu .btn.play {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 20px
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: #4e525c;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    color: var(--white);
+    margin-top: 20px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 5px 4px;
+    border-radius: 3px;
+    color: var(--pinkish);
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 2px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.media-menu .progress-slider::groove:hover {
+    background: transparent;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--pinkish);
+    border-radius: 3px;
+    height: 4px;
+}
+/* CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR */
+.calendar {
+    background-color: var(--widget-background);
+}
+.calendar .calendar-table {
+    background-color: var(--widget-background);
+    border-radius: 10px;
+}
+.calendar .calendar-table::item {
+    border: none;
+}
+.calendar .calendar-table::item:selected {
+    color: var(--pinkish);
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-size: 16px;
+    color: var(--pinkish);
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .month-label {
+    font-weight: normal;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: var(--pinkish);
+    margin-top: -20px;
+}
+/* UPTIME UPTIME UPTIME UPTIME UPTIME UPTIME UPTIME UPTIME UPTIME */
+.uptime {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--overlay2);
+    font-weight: 600;
+}
+/* MICROPHONE MICROPHONE MICROPHONE MICROPHONE MICROPHONE MICROPHONE */
+.microphone-widget {
+    padding-left: 0px;
+}
+.microphone-widget .widget-container{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background: var(--widget-background);
+    padding: 0px 8px 0px 8px;
+}
+.microphone-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.microphone-widget .icon {
+    margin-right: 4px;
+    font-size: 18px;
+}
+.microphone-widget .label {
+    padding-right: 8px;
+    font-size: 14px;
+}
+.microphone-slider::groove {
+    background-color: var(--pinkish);
+    border-radius: 2px;
+    height: 4px;
+    margin: 4px 0;
+}
+.microphone-slider::handle{
+    background-color: var(--pinkish);
+    height: 16px;
+    width: 10px;
+    margin: -8px 0;
+    border-radius: 4px;  
+} 
+.microphone-menu {
+    background-color: var(--widget-background); 
+}
+.microphone-widget .progress-circle {
+    padding: 0px 0px 0px 0px;
+} 
+/* VOLUME VOLUME VOLUME VOLUME VOLUME VOLUME VOLUME VOLUME VOLUME VOLUME */
+.volume-widget {
+    padding: 0px;
+}
+.volume-widget .widget-container {
+    border-radius: 0px;
+    background: var(--widget-background);
+    padding: 0px 8px 0px 8px;
+}
+.volume-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.volume-widget .icon {
+    margin-right: 4px;
+    font-size: 18px;
+} 
+.volume-widget .label {
+    font-size: 14px;
+}
+.volume-slider::groove {
+    background-color: var(--pinkish);
+    border-radius: 2px;
+    height: 4px;
+    margin: 4px 0;
+}
+.volume-slider::handle{
+    background-color: var(--pinkish);
+    height: 16px;
+    width: 10px;
+    margin: -8px 0;
+    border-radius: 4px;  
+} 
+/* AUDIO AUDIO AUDIO AUDIO AUDIO AUDIO AUDIO AUDIO AUDIO AUDIO AUDIO */
+.audio-menu {
+    background-color:var(--widget-background); 
+}
+.audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+/* WEATHER WEATHER WEATHER WEATHER WEATHER WEATHER WEATHER WEATHER */
+.weather-widget {
+    padding-right: 0;
+}
+.weather-widget .widget-container {
+    background: var(--widget-background);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0px 8px 0px 8px;
+}
+.weather-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.weather-widget .icon {
+    font-size: 22px;
+    margin: 0px 4px 2px 0px;
+}
+.weather-widget .label {
+    font-size: 14px;
+}
+.weather-card {
+    background-color:var(--widget-background);
+}
+.weather-card-today .label {
+    font-size: 14px;
+}
+.weather-card-today .label.location {
+    font-size: 24px;
+}
+.weather-card-day {
+    border-radius: 12px;
+    background-color: var(--widget-background);
+}
+.weather-card-day .label {
+    font-size: 14px;
+}
+/* LANGUAGE LANGUAGE LANGUAGE LANGUAGE LANGUAGE LANGUAGE LANGUAGE */
+.language-widget .widget-container {
+    background: var(--widget-background);
+    margin: 2px 0px 7px 0px;
+}
+.language-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.language-widget .label {
+    padding:3px 10px 3px 10px;
+    font-size: 14px;
+}
+/* SYSTEM TRAY SYSTEM TRAY SYSTEM TRAY SYSTEM TRAY SYSTEM TRAY */
+.systray {
+    padding: 0 0px 0 6px;
+    background-color: var(transparent);
+    border-radius: 12;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.systray .button {
+    border-radius: 4px;
+    padding: 4px 2px;
+}
+.systray .button:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.systray .button[dragging=true] {
+    background: rgba(203, 166, 247, 0.5);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 0px; /* Don't touch */
+    height: 20px;
+    width: 16px;
+}
+.systray .unpinned-visibility-btn:hover {
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    border-color: #AAAAAA;
+}
+/* HOME WIDGET HOME WIDGET HOME WIDGET HOME WIDGET HOME WIDGET*/
+.home-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.home-widget .widget-container {
+    background: var(--widget-background);
+    padding: 0px 12px 0px 12px;
+}
+.home-widget .icon {
+    font-size: 18px;
+}
+.home-menu .menu-item {
+    padding: 8px 48px 9px 16px;
+    font-size: 14px;
+}
+.home-menu .menu-item:hover {
+    background-color: rgba(203, 166, 247, 0.116);
+    color: #fff;
+}
+.home-menu .separator {
+    max-height: 1px;
+    margin: 0px 10px 0px 10px;
+    background-color: var(--pinkish);
+}
+/* Windows Desktops Windows Desktops Windows Desktops Windows Desktops Windows Desktops */
+.windows-desktops .widget-container {
+    background: var(--widget-background);
+    padding: 0px 8px 0px 8px;
+}
+.windows-desktops .ws-btn {
+    color: #7f849c;
+    border: none;
+    font-size: 24px;
+    padding: 0px 3px 0px 3px;
+    margin: 3px 0px 3px 0px;
+}
+.windows-desktops .ws-btn:hover {
+    background-color: rgba(203, 166, 247, 0.2);
+    border-radius: 10px;
+    margin: 6px 0px 6px 0px;
+}
+.windows-desktops .ws-btn.active {
+    color: var(--pinkish);
+    border-radius: 10px;
+    margin: 3px 0px 3px 0px;
+    padding: 0px 3px 0px 3px;
+} 
+.windows-desktops .ws-btn.active:hover {
+    background-color: rgba(203, 166, 247, 0.2);
+}
+.windows-desktops .context-menu {
+    background-color:rgba(17, 17, 27, 0.75);
+    border: none;
+    border-radius: 12px;
+    padding: 8px 0;
+}
+.windows-desktops .context-menu .menu-item {
+    padding: 6px 16px;
+}
+.windows-desktops .context-menu .menu-item:hover {
+    background-color: rgba(203, 166, 247, 0.116);
+    color: #ffffff;
+}
+.windows-desktops .context-menu .separator {
+    max-height: 4px;
+    background-color: rgba(203, 166, 247, 0.7);
+}
+
+.windows-desktops .rename-dialog {
+    background-color: rgba(17, 17, 27, 0.75);   
+}
+.windows-desktops .rename-dialog QPushButton{
+    background-color:rgba(255,255,255,0.1);
+    color: #ffffff;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+.windows-desktops .rename-dialog QPushButton:hover{
+    background-color: #585858;
+    color: #ffffff;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+ 
+.windows-desktops .rename-dialog QLabel {
+    color: #ffffff;
+}
+.windows-desktops .rename-dialog QLineEdit {
+    background-color: transparent;
+    border: 1px solid #89b4fa;
+    padding: 4px;
+    color: #ffffff;
+}
