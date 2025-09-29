@@ -1,0 +1,169 @@
+:root {
+	--color-primary: rgba(42, 38, 56, 0.55);
+	--color-primary-focus: rgba(62, 58, 76, 0.75);
+	--color-primary-hover: rgba(72, 68, 86, 0.85);
+	--color-primary-active: rgba(92, 88, 106, 0.9);
+
+--color-accent: rgba(208, 188, 255, 0.55);
+
+--overlay-background: rgba(17, 17, 27, 0.25);
+
+--container-padding: 0 16px;
+	--container-border-radius: 20px;
+}
+
+/* GLOBAL */
+* {
+	font-size: 18px;
+	color: #eee;
+	font-weight: 600;
+	font-family: "Segoe UI", "UbuntuSansMono NFP";
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+*:focus,
+*:active {
+	outline: none;
+}
+/* END GLOBAL */
+
+/* YASB GENERAL */
+.yasb-bar {
+	padding: 0 8px;
+	margin: 0;
+	background-color: transparent;
+}
+
+.widget-container {
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 5px 8px;
+	border-radius: var(--container-border-radius);
+	background-color: var(--color-primary);
+}
+
+.widget {
+	padding: 5px 0;
+}
+/* END YASB GENERAL */
+
+/* KOMOREBI WORKSPACES */
+.komorebi-workspaces .widget-container {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.komorebi-workspaces .ws-btn.populated,
+.komorebi-workspaces .ws-btn.active,
+.komorebi-workspaces .ws-btn .label {
+    background-color: var(--color-primary);
+	font-size: 24px;
+	margin: 0 4px;
+	border-radius: 14px;
+	border-bottom-left-radius: 6px;
+	border-top-left-radius: 6px;
+}
+
+.komorebi-workspaces .ws-btn .label:hover,
+.komorebi-workspaces .ws-btn.populated:hover {
+	background-color: var(--color-primary-hover);
+}
+
+.komorebi-workspaces .ws-btn.populated {
+	background-color: var(--color-primary-focus);
+}
+
+.komorebi-workspaces .ws-btn.active {
+	background-color: var(--color-accent);
+}
+
+.komorebi-workspaces .ws-btn.active .label {
+	background-color: transparent;
+}
+
+.komorebi-workspaces .ws-btn.populated .icon {
+	padding: 0 4px;
+}
+
+.komorebi-workspaces .ws-btn.active .icon {
+	padding: 0 8px;
+}
+/* END KOMOREBI WORKSPACES */
+
+/* KOMOREBI STACK */
+.komorebi-stack .offline-status,
+.komorebi-stack .no-window,
+.komorebi-stack .window {
+	padding: var(--container-padding);
+	border-radius: 14px;
+}
+
+.komorebi-stack .no-window,
+.komorebi-stack .offline-status {
+	background-color: var(--color-primary);
+	border-radius: var(--container-border-radius);
+}
+
+.komorebi-stack .window {
+	margin: 0 4px;
+}
+
+.komorebi-stack .window:hover {
+	background-color: var(--color-primary-hover);
+}
+
+.komorebi-stack .window .icon {
+	margin-right: 12px;
+	margin-top: 4px;
+}
+
+.komorebi-stack .window.active .label {
+	color: #fafafa;
+}
+
+.komorebi-stack .window.active,
+.komorebi-stack .window.active:hover {
+	background-color: var(--color-accent);
+}
+/* END KOMOREBI STACK */
+
+/* KOMOREBI ACTIVE LAYOUT */
+.komorebi-active-layout .widget-container {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.komorebi-active-layout .widget-container:hover {
+	background-color: var(--color-primary-hover);
+}
+
+.komorebi-active-layout .label {
+	margin: 0 8px;
+}
+
+.komorebi-layout-menu {
+    background-color: var(--overlay-background);
+}
+
+.komorebi-layout-menu .menu-item {
+    padding: 8px 16px;
+}
+
+.komorebi-layout-menu .menu-item-icon {
+    font-size: 24px;
+}
+
+.komorebi-layout-menu .menu-item-text {
+    padding-left: 4px;
+}
+
+.komorebi-layout-menu .menu-item:hover {
+    background-color:rgba(128, 130, 158, 0.15);
+}
+
+.komorebi-layout-menu .separator {
+    max-height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+/* END KOMOREBI ACTIVE LAYOUT */

@@ -1,0 +1,132 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic reload-configuration"
+bars:
+  status-bar:
+    enabled: true
+    screens: ['*']
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+    blur_effect:
+      enabled: true
+      acrylic: true
+      dark_mode: true
+      round_corners: true
+      border_color: None
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "100%"
+      height: 50
+    padding:
+      top: 8
+      left: 8
+      bottom: 10
+      right: 8
+    animation:
+      enabled: true
+      duration: 400
+    widgets:
+      left: [
+        "komorebi_workspaces"
+      ]
+      center: [
+        "komorebi_stack"
+      ]
+      right: [
+        "komorebi_active_layout"
+      ]
+
+widgets:
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{icon} {layout_name}"
+      animation:
+        enabled: true
+        type: "fadeInOut"
+        duration: 400
+      layouts: [
+        'bsp',
+        'columns',
+        'rows',
+        'grid',
+        'vertical_stack',
+        'horizontal_stack',
+        'scrolling',
+        'ultrawide_vertical_stack',
+        'right_main_vertical_stack'
+      ]
+      layout_icons:
+        bsp: "\uebeb"
+        columns: "\uebf7"
+        rows: "\uec01"
+        grid: "\udb81\udf58"
+        scrolling: "\uebf7"
+        vertical_stack: "\uebee"
+        horizontal_stack: "\uebf0"
+        ultrawide_vertical_stack: "\uebee"
+        right_main_vertical_stack: "\uebf1"
+        monocle: "\uf06f"
+        maximized: "\uf06f"
+        floating: "\uf2d2"
+        paused: "\udb83\udf89"
+        tiling: "\udb81\ude40"
+      callbacks:
+        on_left: 'toggle_monocle'
+        on_middle: 'toggle_float'
+        on_right: 'toggle_layout_menu'
+      layout_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        show_layout_icons: true
+
+komorebi_stack:
+    type: "komorebi.stack.StackWidget"
+    options:
+      label_window: "{process}"
+      label_window_active: "{title}"
+      label_no_window: "¯\\_( ͡° ͜ʖ ͡°)_/¯"
+      label_zero_index: false
+      label_offline: "(ಥ _ ಥ)  {{{(>_<)}}}  （＞人＜；）            Komorebi Offline            つ﹏⊂ .·´¯`(>▂<)´¯`·.  o(TヘTo)"
+      show_icons: "always"
+      icon_size: 24
+      max_length: 12
+      max_length_active: 60
+      max_length_ellipsis: "..."
+      hide_if_offline: false
+      show_only_stack: false
+      animation: true
+      enable_scroll_switching : false
+
+komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_workspace_btn: "    "
+      label_workspace_active_btn: ""
+      label_workspace_populated_btn: "    "
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+      animation: true
+      app_icons: 
+        enabled_populated: true
+        enabled_active: true
+        size: 20
+        max_icons: 0
+        hide_label: true
+        hide_duplicates: true
+        hide_floating: true
