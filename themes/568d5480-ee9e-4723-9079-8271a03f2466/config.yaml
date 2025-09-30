@@ -1,0 +1,408 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+bars:
+  status-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: true
+      acrylic: false
+      dark_mode: true
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 36
+    widgets:
+      left: ["home", "taskbar"]
+      center: ["launchpad", "clock", "weather", "media"]
+      right:
+        [
+          "systray",
+          "cpu",
+          "memory",
+          "disk",
+          "traffic",
+          "volume",
+          "settings",
+          "notifications",
+          "power_menu",
+        ]
+widgets:
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\ue62a</span>"
+      menu_labels:
+        about: "\ue66A  About This PC"
+        system: "\uF423  System Settings"
+        task_manager: "\uf437  Task Manager"
+        hibernate: "\uf28e  Hibernate"
+        sleep: "\u23fe   Sleep"
+        restart: "\uead2   Restart"
+        shutdown: "\uf011   Shutdown"
+        lock: "\uea75   Lock"
+        logout: "\udb80\udf43   Logout"
+      menu_list:
+        - { title: "\uE617  User Home", path: "~" }
+        - { title: "\udb80\udd20  Download", path: "~\\Downloads" }
+        - { title: "\udb80\ude1a  Documents", path: "~\\Documents" }
+        - { title: "\uf03e  Pictures", path: "~\\Pictures" }
+      system_menu: true
+      power_menu: true
+      blur: true
+      border_color: "System"
+      round_corners_type: "normal"
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a %d %b %H:%M}"
+      label_alt: "{%A, %d %B %Y, %H:%M}"
+      locale: "pl_PL" # Langugae for date, you can set your own, example fr_FR
+      timezones: ["Europe/Warsaw", "America/New_York", "America/Los_Angeles"] #Looking up time zone info from registry
+      #timezones: ["America/Montreal"]
+      callbacks:
+        on_middle: "next_timezone"
+        on_right: "exec cmd.exe /c start ms-clock:"
+      calendar:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+        show_holidays: true
+        show_week_numbers: true
+        country_code: "PL"
+        holiday_color: "#FF6464"
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "<span>{icon}</span> {location}: {temp}, Min {min_temp}, Max {max_temp}, Wind {wind}"
+      api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
+      update_interval: 600 # Update interval in seconds, Min 600 seconds
+      hide_decimal: true
+      location: "Warsaw, Poland" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "toggle_label"
+        on_right: "exec cmd.exe /c start msnweather:"
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\ue312"
+        cloudyNight: "\ue311"
+        rainyDay: "\ue308"
+        rainyNight: "\ue333"
+        snowyIcyDay: "\ue30a"
+        snowyIcyNight: "\ue335"
+        blizzardDay: "\udb83\udf36"
+        blizzardNight: "\udb83\udf36"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
+        default: "\uebaa"
+      weather_card:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        icon_size: 64
+        show_hourly_forecast: true # Set to False to disable hourly forecast
+        time_format: "24h" # can be 12h or 24h
+        hourly_point_spacing: 76
+        hourly_icon_size: 32 # better to set 16, 32 or 64 for better quality
+        icon_smoothing: true # should be true for smoother icon or false for sharper icon if using 16, 32 or 64 for hourly_icon_size
+        temp_line_width: 3 # can be 0 to hide the temperature line
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "{icon} {level}"
+      # label_alt: "{volume}"
+      tooltip: false
+      volume_icons:
+        - "\ueee8" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
+      callbacks:
+        on_middle: "toggle_mute"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 300 # Milisecond
+      button_row: 3 # Number of buttons in row, min 1 max 5
+      buttons:
+        lock: ["\uea75", "Lock"]
+        signout: ["\udb80\udf43", "Sign out"]
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        hibernate: ["\uf28e", "Hibernate"]
+        cancel: ["\udb81\udf3a", "Cancel"]
+  settings:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - { icon: "\ue690", launch: "quick_settings" }
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\udb80\udd78</span> {count}"
+      tooltip: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "do_nothing"
+        on_middle: "do_nothing"
+  launchpad:
+    type: "yasb.launchpad.LaunchpadWidget"
+    options:
+      label: "<span>\udb85\uddfc</span>"
+      search_placeholder: "Search apps..."
+      app_icon_size: 48
+      window:
+        fullscreen: false
+        width: 800
+        height: 600
+        overlay_block: true
+      window_style:
+        enable_blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+      window_animation:
+        fade_in_duration: 200
+        fade_out_duration: 200
+      callbacks:
+        on_left: "toggle_launchpad"
+      app_title_shadow:
+        enabled: true
+        color: "#00000090"
+        offset: [1, 1]
+        radius: 2
+      app_icon_shadow:
+        enabled: true
+        color: "#00000090"
+        offset: [0, 2]
+        radius: 8
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "\uf4bc {info[percent][total]}%"
+      label_alt: "\uf4bc {info[freq][current]} Mhz {info[histograms][cores]}"
+      update_interval: 2000
+      cpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "toggle_label"
+        on_right: "exec cmd /c Taskmgr"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [1, 1]
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "\uefc5 {virtual_mem_used}"
+      label_alt: "\uefc5 VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "toggle_label"
+        on_right: "exec cmd /c Taskmgr"
+      memory_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+      label: "{volume_label}: {space[used][percent]}"
+      label_alt: "{volume_label}: {space[used][gb]} / {space[total][gb]}"
+      volume_label: "C"
+      decimal_display: 1
+      update_interval: 60
+      group_label:
+        volume_labels:
+          [
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z",
+          ]
+        show_label_name: true
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_group"
+        on_middle: "toggle_label"
+        # on_right: "exec explorer C:\\" # Open disk C in file explorer
+      disk_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "<span>\udb83\udc9d</span>"
+      label_alt: "<span>\udb83\udc9d</span> \ueab4 {download_speed} | \ueab7 {upload_speed}"
+      update_interval: 1000
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "exec cmd.exe /c start ms-settings:network-status"
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      icon_size: 16
+      tooltip: false
+      show_only_visible: false
+      strict_filtering: false
+      monitor_exclusive: false
+      animation:
+        enabled: true
+      preview:
+        enabled: true
+        width: 450
+        delay: 400
+        padding: 12
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "◀"
+      label_expanded: "▶"
+      label_position: "right" # Can be "left" or "right"
+      icon_size: 16 # Can be any integer between 8 and 64
+      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: true
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title} - {artist}"
+      label_alt: ""
+      hide_empty: true
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      max_field_size:
+        label: 30
+        label_alt: 30
+      show_thumbnail: false
+      controls_only: false
+      controls_left: true
+      controls_hide: false
+      thumbnail_alpha: 80
+      thumbnail_padding: 8
+      thumbnail_corner_radius: 16
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      media_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        thumbnail_corner_radius: 8
+        thumbnail_size: 120
+        max_title_size: 90
+        max_artist_size: 40
+        show_source: true
+        show_volume_slider: true
+      media_menu_icons:
+        play: "\ue768"
+        pause: "\ue769"
+        prev_track: "\ue892"
+        next_track: "\ue893"
+      scrolling_label:
+        enabled: false
+        update_interval_ms: 13
+        style: "left" # can be "left", "right", "bounce", "bounce-ease"
+        separator: "    |    "
+        label_padding: 10
