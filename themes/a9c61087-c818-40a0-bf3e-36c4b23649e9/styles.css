@@ -1,0 +1,850 @@
+/*
+.widget .label {} -> Global label for all
+.active-window-widget {} -> Styles specific to the active window widget
+.clock-widget {} -> Styles specific to the clock widget
+.cpu-widget {} -> Styles specific to the CPU widget
+.memory-widget {} -> Styles specific to the memory widget
+.weather-widget {} -> Styles specific to the weather widget
+.komorebi-workspaces {} -> Styles specific to komorebi workspaces
+.komorebi-active-layout {} -> Styles specific to komorebi active layout
+.volume-widget {} -> Styles specific to the volume widget 
+.apps-widget {} -> Styles specific to the apps widget
+.power-menu-widget {} -> Styles for the power menu button widget
+.power-menu-popup {} -> Styles for the power menu popup widget
+.power-menu-popup > .button {} -> Styles for power buttons inside the popup 
+.power-menu-popup > .button > .icon,
+.power-menu-popup > .button > .label {} -> Styles for power buttons icons and labels inside the popup 
+.media-widget {} -> Styles specific to the media widget
+.github-widget {} -> Styles specific to the github widget
+*/
+
+:root {
+    --red: #FF534D; /*Power Button, Net Disconnect*/
+    --yellow: #f9e2af;
+    --green: #ffffff;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #ffffff;
+    --overlay2: #9399b2;
+    --surface2: #ffffff;
+    --surface1: #3d3d3d;
+    --base: #1e1e1e;
+    --mantle: rgba(24, 24, 37, 0.5);
+    --crust: rgba(17, 17, 27, 0.2);
+    --main: #10151d;
+    --widget-background: #24273a;
+    --traffic: #4cbb17;
+    --traffictopo: #ffffff;
+    --accent: #ffffff;
+}
+QToolTip {
+    padding: 6px;
+    color: #ffffff;
+    font-size: 12px;
+    background-color: #1e1e2e;
+    border: 0px solid #313244;
+    border-radius: 6px;
+}
+* {
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: 500;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0 8px;
+	margin: 0;
+    background-color: rgba(17, 17, 27, 0.2);
+}
+.widget {
+	padding: 0 8px;
+	margin: 0;
+}
+ 
+ 
+.container-left,
+.container-center,
+.container-right {
+	margin: 0;
+	padding: 0;
+}
+.active-window-widget .icon {
+    margin-right: 8px;
+}
+
+.komorebi-active-layout .label {
+	font-weight: 600;
+	padding: 2px 0 0 0;
+}
+.komorebi-workspaces .widget-container {
+    background-color: rgba(188, 195, 207, 0.178);
+    margin: 4px 0;
+    border-radius: 12px;
+}
+.komorebi-workspaces .ws-btn {
+	font-size: 14px;
+    background-color: transparent;
+	margin: 0 4px 0 4px;
+	color: #95a0ad;
+    padding: 0;
+}
+.komorebi-workspaces .ws-btn.populated {
+	color: #a0c3ee;
+}
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover,
+.komorebi-workspaces .ws-btn.active {
+	color: #c2daf7;
+}
+
+/*POWER MENU WIDGET*/
+/* Uptime text */
+.power-menu-widget .label {
+    font-size: 14px;
+}
+.power-menu-popup {
+    background-color: transparent
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 240px;
+	height: 120px;
+	border-radius: 8px;
+	background-color: var(--crust);
+	font-family: "Segoe UI";
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	margin: 8px;
+}
+.power-menu-popup .button.hover {
+	background-color: rgba(136, 136, 138, 0.548);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.95);
+	font-family: "Segoe UI";
+}
+.power-menu-popup .button .icon {
+	font-size: 48px;
+	padding-top: 8px;
+	color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+}
+.power-menu-popup .button.shutdown .icon {
+	color: rgba(137, 180, 250, 0.55);
+}
+.power-menu-popup .button.shutdown .label {
+	color: rgba(137, 180, 250, 0.95);
+}
+
+.uptime {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* ICONS */
+.icon {
+	font-size: 16px;
+}
+.volume-widget .icon {
+	color: #ffffff;
+}
+
+.cpu-widget .icon,
+.memory-widget .icon,
+.volume-widget .icon,
+.weather-widget .icon,
+.wifi-widget .icon {
+	margin: 0 4px 1px 0;
+}
+
+.cpu-widget .icon,
+
+.memory-widget .icon {
+	font-size: 14px;
+	color: #ffffff;
+}
+
+.wifi-widget .icon {
+    font-size: 18px;
+	color: #43d8d8;
+}
+
+.weather-widget .icon {
+    font-size: 18px;
+    margin: 0 4px 1px 0;
+    color: var(--green);
+}
+.weather-card {
+    background-color:var(--crust);
+}
+ 
+.weather-card-today .label {
+    font-size: 12px;
+}
+.weather-card-today .label.location {
+    font-size: 24px;
+    font-weight: 700;
+}
+.weather-card-today .label.arert {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: rgba(247, 199, 42, 0.05);
+    border: 1px solid rgba(247, 209, 42, 0.1);
+    color: rgba(196, 181, 162, 0.85);
+    border-radius: 6px;
+    padding: 5px 0;
+}
+.weather-card-day {
+    border-radius: 8px;
+    background-color: var(--crust);
+}
+.weather-card-day .label {
+    font-size: 12px;
+}
+
+/* MEDIA WIDGET */
+.media-widget {
+    padding-right: 5px;
+    padding-left: 2px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.media-widget .label {
+    background-color: rgba(0, 0, 0, 0);
+}
+.media-widget .btn {
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 5px;
+    margin: 0px 3;
+    font-weight: 500;
+    font-family: "Segoe Fluent Icons";
+}
+.media-widget .btn:hover {
+    color: #ffffff;
+}
+.media-widget .btn.play {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    font-size: 16px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.media-menu .app-volume-container {
+    background-color: rgba(255, 255, 255, 0); 
+    padding: 8px 6px;
+    border-radius: 16px;
+    margin-left: 10px; 
+}
+.media-menu .app-volume-container .volume-slider::groove {
+    background: rgba(255, 255, 255, 0.1);
+    width: 2px;
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::add-page {
+    background: white;
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::groove:hover {
+    background: rgba(255, 255, 255, 0.1);
+    width:  6px;    
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::sub-page {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .mute-button,
+.media-menu .app-volume-container .unmute-button {
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Segoe Fluent Icons";
+    margin-top: 4px; 
+}
+.media-menu .app-volume-container .unmute-button {
+    color: #a0a0a0;
+}
+
+/*CALENDAR DROPDOWN*/
+
+.calendar {
+    background-color: var(--menu_bg);
+}
+.calendar .calendar-table{
+	border-radius: 10px;
+	background-color:#00000025;
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    color: #ffffff41;
+    font-family: var(--font);
+	font-size: var(--font-size);
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:selected {
+    color: var(--accent);
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-family: var(--font);
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .month-label {
+    font-weight: 700;
+}
+.calendar .date-label {
+    font-size: 80px;
+    font-weight: 900;
+    margin-top: -5px;
+	color: var(--accent);
+}
+.calendar .week-label,
+.calendar .holiday-label {
+    font-family: var(--font);
+    font-size: 12px;
+    color: var(--media);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.disk-group {
+    background-color: var(--crust);
+	border: 1px solid rgba(128, 128, 128, 0.2);
+    background-color: var(--crust)
+}
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 100px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+    background-color: var(--crust)
+
+}
+
+.disk-group-row:hover {
+    background-color: rgba(24, 24, 24, 0.76);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.disk-group-label-bar {
+    max-height: 8px;
+    border: 0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(255, 255, 255, 0.404);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk {
+    background-color: #ffffff;
+    border-radius: 14px;
+}
+.disk-group-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.disk-group-label-size {
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    color: #ffffff;
+}
+
+.traffic-widget .icon {
+	margin:5px;
+}
+
+.volume-slider {
+    border: none;
+}
+
+.audio-menu {
+    background-color: var(--crust)
+	
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.137);
+    color: #191919;
+}
+.audio-container .device {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 6px 8px 6px 4px;
+    margin: -3px;
+    font-size: var(--font-size-text);
+    color: var(--muted);
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.server-widget {
+    padding: 0 6px 0 6px
+}
+.server-widget .label {}
+.server-widget .icon {
+    font-size: 14px
+}
+.server-widget .warning .icon {
+    color: #f9e2af
+}
+.server-widget .error .icon {
+    color: #f38ba8
+}
+.server-menu {
+    background-color: var(--crust)
+}
+.server-menu-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.server-menu-header .refresh-time {
+    padding-left: 18px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.server-menu-header .reload-button {
+    font-size: 16px;
+    padding-right: 18px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    color: #ffffff
+}
+.server-menu-container {
+    background-color: var(--crust);
+} 
+.server-menu-container .row {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-height: 40px;
+    padding:8px;
+    border-radius: 6px;
+    min-width: 300px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+.server-menu-container .row:hover {
+    background-color:var(--crust);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.server-menu-container .name {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 10px 2px 10px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.server-menu-container .status {
+    font-size: 24px;
+    padding-right: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.server-menu-container .details {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px 6px 10px;
+    color: #9399b2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.server-menu-container .row.online .status {
+    color: #09e098
+}
+.server-menu-container .row.offline .status {
+    color: #f38ba8
+}
+.server-menu-container .row.warning .status {
+    color: #ccca53
+}
+.server-menu-container .placeholder {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    padding:50px 8px;
+    min-width: 300px;
+    background-color:transparent    
+}
+.server-menu-overlay {
+    background-color: var(--crust);
+}
+.server-menu-overlay .text{
+    padding: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.taskbar-widget {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+.taskbar-widget .app-icon {
+    padding: 0 6px;
+    border: none;
+    margin: 0;
+}
+
+.home-widget {
+    padding: 2px 4px 2px 0px;    
+}
+.home-widget .widget-container {
+    border-radius: 8px;    
+}
+.home-widget .icon:hover {
+    color: var(--text);
+}
+.home-menu {
+    background-color: var(--crust);
+}
+.home-menu .menu-item {
+    padding: 8px 48px 9px 16px;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    font-weight: 600;
+}
+.home-menu .menu-item:hover {
+    background-color: rgba(157, 180, 141, 0.116);
+    color: #fff;
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color: rgba(157, 180, 141, 0.116);
+}
+
+.apps-widget,
+.dark .apps-widget {
+	padding: 0;
+    background-color: transparent;
+}
+.apps-widget .label {
+	font-size: 20px;
+	padding: 0 2px;
+    color: #ffffff;
+}
+.apps-widget .label:hover {
+	color: #ffffff;
+}
+
+/*                                  System Tray                         */
+.systray {
+    background: transparent;
+    border: None;
+    margin: 0;
+}
+.systray .unpinned-container {
+    background: transparent;
+    border-radius: 8px;
+}
+.systray .pinned-container {
+    background: transparent;
+}
+.systray .pinned-container[forceshow=true] {
+    background: red;
+}
+.systray .button {
+    border-radius: 10px;
+    padding: 3px 3px;
+}
+.systray .button:hover {
+    background: #727272;
+}
+.systray .button[dragging=true] {
+    background: orange;
+    border-color: #FF8800;
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+    font-size: 25px;
+}
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+.systray .unpinned-visibility-btn:hover {
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    border-color: #AAAAAA;
+}
+
+.media-menu {
+    min-width: 360px;
+    max-width: 360px;
+    background-color: var(--crust)
+}
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-family: 'Segoe UI'
+}
+.media-menu .artist {
+    font-size: 13px;
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+.media-menu .source {
+    font-size: 11px;
+    color: #000;
+    font-weight: normal;
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: 2px 4px;
+}
+.media-menu .source.firefox {
+    background-color: #ff583b;
+    color: #ffffff;
+}
+.media-menu .source.spotify {
+    background-color: #199143;
+    color: #ffffff;
+}
+.media-menu .source.edge {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+.media-menu .source.windows-media {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+.media-menu .btn {
+    font-family: "Segoe Fluent Icons";
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.media-menu .btn.play {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 20px
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+}
+.media-menu .playback-time {
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    color: #ffffff;
+    margin-top: 0px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 20px;
+    margin: 0 4px 5px 4px;
+    border-radius: 3px;
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 2px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+
+}
+.media-menu .progress-slider::groove:hover {
+    background: transparent;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.media-menu .progress-slider::sub-page {
+    background: #ffffff;
+    border-radius: 3px;
+    height: 4px;
+}
+
+.gpu-widget .widget-container .icon {
+   font-size: 25px;
+   margin-right: 5px;
+ }
+
+/* TRAFFIC */
+
+.traffic-widget .icon {
+    color: var(--traffictopo);
+    padding-right: 0px;
+    padding-left: 0px;
+	font-size: 13px;
+}
+.traffic-widget .label {
+	font-family: var(--font);
+	font-size: var(--font-size);
+	text-align: right;
+	float: right;
+	color: var(--traffictopo);
+	min-width: 100px;
+	max-width: 190px;
+}
+
+/* TRAFFIC DROPDOWN */
+
+.traffic-menu {
+    background-color: var(--menu_bg);
+    min-width: 280px;
+}
+.traffic-menu .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--menu_bg2);
+}
+.traffic-menu .header .title {
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font);
+    color: var(--accent);
+}
+.traffic-menu .header .reset-button {
+    font-size: var(--font-size);
+    padding: 4px 8px;
+    margin-right: 8px;
+    font-family: var(--font);
+    border-radius: 4px;
+    background-color: transparent;
+    border: none;
+}
+.traffic-menu .reset-button:hover {
+    color: #ffffff;
+    background-color: var(--hover);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .reset-button:pressed {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* TRAFFIC DROPDOWN SPEEDS & DATA */
+
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+    background-color: var(--menu_bg2);
+    padding: 4px 10px;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-top: 16px;
+    margin-bottom: 0;
+	border-radius: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.traffic-menu .download-speed {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.traffic-menu .speed-separator {
+    max-width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 32px 0 16px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: var(--font);
+    color: #bcc2c5;
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+    font-size: var(--font-size);
+    font-family: var(--font);
+    padding-top: 4px;
+}
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+    color: #747474;
+    font-size: var(--font-size);
+    font-family: var(--font);
+    padding: 0 0 4px 0;
+}
+.traffic-menu .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--subtext1);
+    margin-bottom: 4px;
+    font-family: var(--font);
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+    margin: 8px 8px 0 8px;
+    padding: 0 10px 10px 10px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .data-text {
+    font-size: var(--font-size);
+    color: var(--subtext2);
+    padding: 2px 0;
+    font-family: var(--font);
+}
+.traffic-menu .data-value {
+    font-size: var(--font-size);
+    font-family: var(--font);
+    padding: 2px 0;
+}
+
+/* TRAFFIC FOOTER */
+
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+    font-size: 12px;
+    color: var(--subtext2);
+    padding: 8px 0;
+    font-family: var(--font);
+}
+.traffic-menu .internet-info {
+    background-color: var(--menu_bg2);
+}
+.traffic-menu .internet-info.connected {
+    background-color: var(--menu_bg2);
+    color: var(--traffic);
+}
+.traffic-menu .internet-info.disconnected {
+    background-color: var(--menu_bg2);
+    color: var(--red);
+}
