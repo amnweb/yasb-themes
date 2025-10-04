@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Modern Glass](themes/568d5480-ee9e-4723-9079-8271a03f2466)
+
+<a title="Modern Glass YASB Theme" href="themes/568d5480-ee9e-4723-9079-8271a03f2466"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/568d5480-ee9e-4723-9079-8271a03f2466/image.png" width="830px"></a>
+
+
 ## [Komo Komo What](themes/a9196539-7f17-434a-b58d-80f33dd9374b)
 
 <a title="Komo Komo What YASB Theme" href="themes/a9196539-7f17-434a-b58d-80f33dd9374b"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/image.png" width="830px"></a>
