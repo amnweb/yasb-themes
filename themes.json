@@ -1,4 +1,16 @@
 {
+    "a9196539-7f17-434a-b58d-80f33dd9374b": {
+        "id": "a9196539-7f17-434a-b58d-80f33dd9374b",
+        "name": "Komo Komo What",
+        "description": "An extremely minimal theme. Just for managing komorebi stuff.",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/image.png",
+        "author": "SSeanin",
+        "publish_date": "2025-09-29T07:13:52.966510"
+    },
     "3a317331-e1ec-40ff-9040-53a7d6745e2d": {
         "id": "3a317331-e1ec-40ff-9040-53a7d6745e2d",
         "name": "dots windows",
