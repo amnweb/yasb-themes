@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Komo Komo What](themes/a9196539-7f17-434a-b58d-80f33dd9374b)
+
+<a title="Komo Komo What YASB Theme" href="themes/a9196539-7f17-434a-b58d-80f33dd9374b"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/image.png" width="830px"></a>
+
+
 ## [dots windows](themes/3a317331-e1ec-40ff-9040-53a7d6745e2d)
 
 <a title="dots windows YASB Theme" href="themes/3a317331-e1ec-40ff-9040-53a7d6745e2d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3a317331-e1ec-40ff-9040-53a7d6745e2d/image.png" width="830px"></a>
