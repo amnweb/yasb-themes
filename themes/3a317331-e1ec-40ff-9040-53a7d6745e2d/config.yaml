@@ -1,0 +1,321 @@
+watch_stylesheet: True
+watch_config: True
+debug: false
+bars:
+  primary-bar:
+    enabled: True
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "center"
+    animation:
+      enabled: True
+      duration: 1000
+    blur_effect:
+      enabled: True
+      acrylic: True
+    window_flags:
+      windows_app_bar: True
+    dimensions:
+      width: "100%"
+      height: 47
+    widgets:
+      left: [
+        "home",
+        "traffic",
+        "cpu",
+        "memory"
+      ]
+      center: [
+        "windows_workspaces",
+        "clock"
+      ]
+      right: [
+        "weather",
+        "volume",
+        "media",
+        "microphone",
+        "systray",
+        "language"
+        ]
+widgets:
+# WIDGETS LEFT # WIDGETS LEFT #
+  # HOME # HOME #
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\uf1de</span>"
+      menu_list:
+      - { title: "\uf46d User Home", path: "~" }
+      - { title: "\uf409 Download", path: "~\\Downloads" }
+      - { title: "\udb82\uddee Documents", path: "~\\Documents" }
+      - { title: "\uf03e Pictures", path: "~\\Pictures" }
+      system_menu: True
+      power_menu: True
+      blur: True
+      round_corners: True
+      border_color: "System"
+      round_corners_type: "normal"
+      offset_top: 6
+      offset_left: 0
+      alignment: "left"
+      direction: "down"
+      menu_labels:
+        shutdown: "\uf011 Shutdown"
+        restart: "\uead2 Reboot"
+        hibernate: "\uf28e Hibernate"
+        logout: "\udb80\udf43 Logout"
+        lock: "\uea75 Lock"
+        sleep: "\u23fe Sleep"
+        system: "\uf423 System Settings"
+        about: "\udb86\udc76 About This PC"
+        task_manager: "\uf201 Task Manager"
+  # TRAFFIC # TRAFFIC #
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "<span>\udb82\udcfa</span> {download_speed}"   
+      label_alt: "\udb82\udd97 {download_speed} \udb82\udd98 {upload_speed}"   
+      update_interval: 3000
+      speed_unit: "bytes"
+  # CPU # CPU #
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "{info[percent][total]}%"
+      update_interval: 2000
+      progress_bar:
+        'enabled': True
+        'position': 'left'
+        'size': 24
+        'thickness': 10
+        'color': '#cba6f7'
+        'animation': True
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+        on_left: "exec cmd /c Taskmgr"
+        on_middle: "do_nothing"
+  # MEMORY # MEMORY #
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "{virtual_mem_used}/{virtual_mem_total}"
+      label_alt: "{virtual_mem_percent}%"
+      update_interval: 1000
+      progress_bar: 
+        'enabled': True
+        'position': 'left'
+        'size': 24
+        'thickness': 10
+        'color': '#cba6f7'
+        'animation': True
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+
+# WIDGETS CENTER # WIDGETS CENTER #
+  # WINDOWS WORKSPACES # WINDOWS WORKSPACES #
+  windows_workspaces:
+    type: "yasb.windows_desktops.WorkspaceWidget"
+    options:
+      label_workspace_btn: "\u2022"
+      label_workspace_active_btn: "\uebb4"
+  # CLOCK # CLOCK #
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%H:%M \u2022 %a, %d/%m}"
+      label_alt: "{%I:%M \u2022 %a, %m/%d}"
+      locale: "us"
+      update_interval: 1000
+      # CALENDAR # CALENDAR #
+      calendar: 
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+        show_holidays: True
+        country_code: "US"
+        holiday_color: "#FF6464"
+      callbacks:
+        on_left: "toggle_calendar"
+        on_right: "toggle_label"
+
+# WIDGETS RIGHT # WIDGETS RIGHT #
+  # WEATHER # WEATHER #
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: 
+        "
+        <span>{icon}</span> {temp} | 
+        <span>\udb80\udc46</span> {min_temp} 
+        <span>\udb80\udc5e</span> {max_temp}
+        <span>\udb86\ude86</span> {humidity}
+        "
+      api_key: "5124e645eb8f4160aee111426250707"
+      update_interval: 600
+      hide_decimal: True
+      location: "Kanash"
+      callbacks:
+        on_left: "toggle_card"
+        on_right: "toggle_label"
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\ue302"
+        cloudyNight: "\udb83\udf31"
+        rainyDay: "\ue308"
+        rainyNight: "\ue325"
+        snowyIcyDay: "\ue30a"
+        snowyIcyNight: "\ue327"
+        blizzardDay: "\ue36f"
+        default: "\ue350"
+      # WEATHER CARD # WEATHER CARD #
+      weather_card: 
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        icon_size: 64
+  # VOLUME # VOLUME #
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      tooltip: True
+      volume_icons:
+        - "\ueee8"
+        - "\uf026"
+        - "\uf027"
+        - "\uf027"
+        - "\uf028"
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+      # AUDIO MENU # AUDIO MENU #
+      audio_menu:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+  # MEDIA # MEDIA #
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title} - {artist}"
+      label_alt: "{title}"
+      hide_empty: false
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_play_pause"
+      max_field_size:
+        label: 15
+        label_alt: 15
+      show_thumbnail: true
+      controls_hide: True
+      thumbnail_alpha: 100
+      thumbnail_edge_fade: True
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      # MEDIA MENU # MEDIA MENU #
+      media_menu:
+        blur: True
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        thumbnail_size: 120
+        max_title_size: 60
+        max_artist_size: 20
+        show_source: true
+      media_menu_icons:
+        play: "\udb81\udc0a"
+        pause: "\udb80\udfe4"
+        prev_track: "\ueb6f"
+        next_track: "\ueb70"
+      scrolling_label:
+        enabled: True
+        update_interval_ms: 33
+        style: "left"
+        separator: "   "
+  # MICROPHONE # MICROPHONE #
+  microphone:
+    type: "yasb.microphone.MicrophoneWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "<span>{icon}</span>"
+      mute_text: "mute"
+    icons:
+      normal: "\uf130"
+      muted: "\uf131"
+    mic_menu:
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "system"
+      alignment: "right"
+      direction: "down"  
+    callbacks:
+      on_left: "toggle_mic_menu"
+      on_middle: "toggle_label"
+      on_right: "toggle_mute"
+  # SYSTEM TRAY # SYSTEM TRAY #
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\uf106"
+      label_expanded: "\uf105"
+      label_position: "left"
+      icon_size: 18
+      pin_click_modifier: "alt"
+      show_unpinned: True
+      show_unpinned_button: True
+      show_battery: false
+      show_volume: false
+      show_network: True
+  # LANGUAGE # LANGUAGE #
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "{lang[country_code]}"
+      label_alt: "{lang[full_name]}"
+      update_interval: 1
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+  # POWER MENU # POWER MENU #
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: True
+      blur_background: True
+      animation_duration: 200
+      button_row: 5
+      buttons:
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Reboot"]
+        signout: ["\udb80\udf43", "Sign out"]
+        hibernate: ["\uf28e", "Hibernate"]
+        sleep: ["\u23fe", "Sleep"]
