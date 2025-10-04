@@ -1,0 +1,1 @@
+Design minimalista e funcional, com fundo escuro que destaca os elementos visuais. Essa barra é perfeita para quem busca uma interface elegante e objetiva para cálculos complexos, mantendo a estética moderna e a usabilidade em primeiro plano.
