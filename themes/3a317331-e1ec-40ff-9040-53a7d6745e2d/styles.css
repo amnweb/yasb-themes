@@ -17,7 +17,7 @@
     --widget-background: rgba(203, 166, 247, 0.1);
     --yasb-background: rgba(24, 0, 51, 0.7);
 }
-QToolTip {
+.tooltip {
     padding: 6px;
     color: #cdd6f4;
     font-size: 12px;
@@ -532,6 +532,9 @@ QToolTip {
 }
 .home-widget .icon {
     font-size: 18px;
+}
+.home-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
 }
 .home-menu .menu-item {
     padding: 8px 48px 9px 16px;
