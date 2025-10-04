@@ -1,4 +1,16 @@
 {
+    "568d5480-ee9e-4723-9079-8271a03f2466": {
+        "id": "568d5480-ee9e-4723-9079-8271a03f2466",
+        "name": "Modern Glass",
+        "description": "Modern glass theme with fully styled aestethic widgets.",
+        "homepage": "https://github.com/airfortech/YASB-Modern-Glass-Theme",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/568d5480-ee9e-4723-9079-8271a03f2466/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/568d5480-ee9e-4723-9079-8271a03f2466/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/568d5480-ee9e-4723-9079-8271a03f2466/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/568d5480-ee9e-4723-9079-8271a03f2466/image.png",
+        "author": "airfortech",
+        "publish_date": "2025-09-30T21:26:46.997570"
+    },
     "a9196539-7f17-434a-b58d-80f33dd9374b": {
         "id": "a9196539-7f17-434a-b58d-80f33dd9374b",
         "name": "Komo Komo What",
