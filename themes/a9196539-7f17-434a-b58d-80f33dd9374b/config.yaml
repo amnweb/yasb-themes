@@ -43,7 +43,6 @@ bars:
       right: [
         "komorebi_active_layout"
       ]
-
 widgets:
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
@@ -92,41 +91,39 @@ widgets:
         alignment: "right"
         direction: "down"
         show_layout_icons: true
-
-komorebi_stack:
-    type: "komorebi.stack.StackWidget"
-    options:
-      label_window: "{process}"
-      label_window_active: "{title}"
-      label_no_window: "¯\\_( ͡° ͜ʖ ͡°)_/¯"
-      label_zero_index: false
-      label_offline: "(ಥ _ ಥ)  {{{(>_<)}}}  （＞人＜；）            Komorebi Offline            つ﹏⊂ .·´¯`(>▂<)´¯`·.  o(TヘTo)"
-      show_icons: "always"
-      icon_size: 24
-      max_length: 12
-      max_length_active: 60
-      max_length_ellipsis: "..."
-      hide_if_offline: false
-      show_only_stack: false
-      animation: true
-      enable_scroll_switching : false
-
-komorebi_workspaces:
-    type: "komorebi.workspaces.WorkspaceWidget"
-    options:
-      label_workspace_btn: "    "
-      label_workspace_active_btn: ""
-      label_workspace_populated_btn: "    "
-      label_default_name: ""
-      label_zero_index: false
-      hide_empty_workspaces: false
-      hide_if_offline: true
-      animation: true
-      app_icons: 
-        enabled_populated: true
-        enabled_active: true
-        size: 20
-        max_icons: 0
-        hide_label: true
-        hide_duplicates: true
-        hide_floating: true
+  komorebi_stack:
+      type: "komorebi.stack.StackWidget"
+      options:
+        label_window: "{process}"
+        label_window_active: "{title}"
+        label_no_window: "¯\\_( ͡° ͜ʖ ͡°)_/¯"
+        label_zero_index: false
+        label_offline: "(ಥ _ ಥ)  {{{(>_<)}}}  （＞人＜；）            Komorebi Offline            つ﹏⊂ .·´¯`(>▂<)´¯`·.  o(TヘTo)"
+        show_icons: "always"
+        icon_size: 24
+        max_length: 12
+        max_length_active: 60
+        max_length_ellipsis: "..."
+        hide_if_offline: false
+        show_only_stack: false
+        animation: true
+        enable_scroll_switching : false
+  komorebi_workspaces:
+      type: "komorebi.workspaces.WorkspaceWidget"
+      options:
+        label_workspace_btn: "    "
+        label_workspace_active_btn: ""
+        label_workspace_populated_btn: "    "
+        label_default_name: ""
+        label_zero_index: false
+        hide_empty_workspaces: false
+        hide_if_offline: true
+        animation: true
+        app_icons: 
+          enabled_populated: true
+          enabled_active: true
+          size: 20
+          max_icons: 0
+          hide_label: true
+          hide_duplicates: true
+          hide_floating: true
