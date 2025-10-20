@@ -223,7 +223,7 @@ widgets:
         enabled: True
         update_interval_ms: 33
         style: "left"
-        separator: ""
+        separator: " "
   windows_workspaces:
     type: "yasb.windows_desktops.WorkspaceWidget"
     options:
