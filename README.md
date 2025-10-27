@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [dots windows](themes/d513044f-9218-46e1-ab62-c15705b80341)
+
+<a title="dots windows YASB Theme" href="themes/d513044f-9218-46e1-ab62-c15705b80341"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d513044f-9218-46e1-ab62-c15705b80341/image.png" width="830px"></a>
+
+
 ## [Basic Revamped](themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2)
 
 <a title="Basic Revamped YASB Theme" href="themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/image.png" width="830px"></a>
