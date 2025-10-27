@@ -1,0 +1,671 @@
+/* root */
+/* To center the contents of the bar exactly in the center, use: */
+.clock-grouper {
+    margin: 0px 50px 0px 0px;
+}
+/* To center the contents of the bar exactly in the center, use this*/
+:root {
+    --green: #49b265;
+    --black: #000000;
+    --white: rgba(255, 255, 255, 0.7);
+    --pale-blue: rgba(210, 229, 244, 1);
+    --slate-gray: rgba(55, 73, 85, 1);
+    --surface2: #585b70;
+    --widget-background: rgba(24, 28, 31, 1);
+    --yasb-background: rgba(16, 22, 25, 1);
+}
+.tooltip {
+    padding: 6px;
+    color: #cdd6f4;
+    font-size: 12px;
+    background-color: var(--yasb-background);
+    border: 0px solid #313244;
+    border-radius: 6px;
+}
+* { /*TEXT GLOBAL*/
+    font-size: 16px;
+    color: var(--pale-blue);
+    font-weight: 600;
+    font-family: "Rubik Light";
+}
+/* Bar */
+.yasb-bar {
+    padding: 2px 3px;
+    border-radius: 18px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: var(--yasb-background);
+}
+.context-menu,
+.context-menu .menu-checkbox {
+    background-color: #202020;  
+}
+.context-menu::right-arrow {
+    width: 10px;
+    height: 10px;
+    padding-right: 24px;
+}
+.context-menu::item,
+.context-menu .menu-checkbox {
+    background-color: transparent;
+    padding: 5px 10px 5px 10px;
+    margin: 2px 6px;
+    border-radius: 6px;
+    min-width: 100px;
+}
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: #3a3a3a;
+    color: #FFFFFF;
+}
+.context-menu::separator {
+    height: 1px;
+    margin: 0px 10px 0px 10px;
+    background-color: var(--pale-blue);
+    margin: 4px 8px;
+}
+.context-menu::item:disabled {
+    color: var(--pale-blue);
+}
+.context-menu .menu-checkbox .checkbox {
+    padding: 8px 16px;
+    margin: 0px;
+}
+.context-menu .submenu::item:disabled {
+    margin: 0;
+    padding-left: 16px;
+}
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--surface2);
+}
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 12px;
+    height: 12px;
+    margin-left: 0px;
+    margin-right: 8px;
+    border-radius: 6px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: var(--surface2);
+}
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background: var(--pale-blue);
+}
+.widget {
+    padding: 0 2px;
+}
+.icon {
+    font-family: "JetBrainsMono NFP ExtraBold";
+    font-size: 16px;
+    color: var(--pale-blue);
+}
+/* Groupers */
+.info-grouper .container {
+    padding: 0px 10px 0px 10px;
+}
+.clock-grouper .container {
+    padding: 0px 10px 0px 10px;
+}
+/* Widgets */
+.clock-widget .widget-container,
+.volume-widget .widget-container,
+.weather-widget .widget-container,
+.media-widget .widget-container,
+.power-menu-widget .widget-container,
+.memory-widget .widget-container,
+.cpu-widget .widget-container,
+.traffic-widget .widget-container,
+.microphone-widget .widget-container,
+.windows-desktops .widget-container, 
+.screenshot-widget .widget-container,
+.clock-grouper .container,
+.showkeyboard-widget .widget-container,
+.brightness-widget .widget-container,
+.info-grouper .container,
+.systray {
+    background-color: var(--widget-background);
+    margin: 2px 0px 2px 0px;
+}
+.clock-grouper .container, 
+.info-grouper .container,
+.windows-desktops .widget-container {
+    border-radius: 12px;
+}
+.cpu-widget, .memory-widget,
+.traffic-widget, .media-widget {
+    padding: 0px;
+}
+.cpu-widget, .memory-widget,
+.traffic-widget {
+    padding-right: 2px;
+}
+.language-widget, .dotseparator-widget,
+.notification-widget, .wifi-widget,
+.bluetooth-widget {
+    padding-right: 15px;
+}
+.bluetooth-widget .icon {
+    font-size: 20px;
+}
+.screenshot-widget .label,
+.showkeyboard-widget .label,
+.dotseparator-widget .label,
+.screenshot-widget .label,
+.media-menu .label {
+    font-family: "JetBrainsMono NFP ExtraBold";
+}
+/* Home */
+.home-widget {
+padding-left: 16px;
+}
+.home-widget .widget-container:hover {
+    background: rgba(203, 166, 247, 0.2);
+}
+.home-widget .widget-container {
+    background-color: var(--slate-gray);
+    padding: 0px 12px 0px 12px;
+    border-radius: 18px;
+}
+.home-widget .icon {
+    font-size: 20px;
+}
+.home-menu .menu-item {
+    padding: 8px 48px 9px 16px;
+    font-family: "JetBrainsMono NFP ExtraBold";
+}
+.home-menu {
+    background-color: var(--yasb-background);
+}
+.home-menu .menu-item:hover {
+    background-color: rgba(203, 166, 247, 0.116);
+    color: #fff;
+}
+.home-menu .separator {
+    max-height: 1px;
+    margin: 0px 10px 0px 10px;
+    background-color: var(--pale-blue);
+}
+/* Cpu */
+.cpu-widget {
+    width: 70px;
+    max-width: 70px;
+    min-width: 70px;
+}
+.cpu-widget .label {
+    margin: 0px 0px 2px 0px;
+}
+/* Memory */
+.memory-widget {
+    width: 82px;
+    max-width: 82px;
+    min-width: 82px;
+}
+.memory-widget .label {
+    margin: 0px 0px 2px 2px;
+}
+/* Traffic */
+.traffic-widget {
+    width: 125px;
+    max-width: 125px;
+    min-width: 125px;
+}
+.traffic-widget .icon{
+    font-size: 18px;
+    margin: 0 4px 3px 8px;
+}
+.traffic-widget .label {
+    margin: 0px 0px 2px 0px;
+}
+/* Media */
+.media-widget {
+    max-width: 180px;
+    min-width: 180px;
+}
+.media-widget .widget-container {
+    margin-left: 7px;
+}
+/* Media menu*/
+.media-menu {
+    background-color: var(--yasb-background);
+    border-radius: 10px;
+    min-width: 420px;
+    max-width: 420px;
+}
+.media-menu .source {
+    font-family: "JetBrainsMono NFP ExtraBold";
+}
+.media-menu .title{
+    margin-left: 10px;
+    font-size: 16px;
+    color: var(--pale-blue);    
+}
+.media-menu .artist {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 0px;
+    margin-bottom: 8px;
+    margin-left: 12px;
+}
+.media-menu .source {
+    font-size: 11px;
+    color: #000;
+    font-weight: normal;
+    border-radius: 3px;
+    background-color: var(--pale-blue);
+    padding: 2px 4px;
+}
+.media-menu .source.spotify {
+    background-color: var(--green);
+}
+.media-menu .btn {
+    color: var(--white);
+    font-weight: 400;
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    color: var(--pale-blue);
+    background: var(--widget-background);
+}
+.media-menu .btn.play {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 20px
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: #4e525c;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    color: var(--white);
+    margin-top: 20px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 5px 4px;
+    border-radius: 3px;
+    color: var(--pale-blue);
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 2px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.media-menu .progress-slider::groove:hover {
+    background: transparent;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--pale-blue);
+    border-radius: 3px;
+    height: 4px;
+}
+/* Windows desktops */
+.windows-desktops .widget-container {
+    padding: 0px 5px 0px 5px;
+}
+.windows-desktops .ws-btn {
+    font-family: "JetBrainsMono NFP ExtraBold";
+    color: #7f849c;
+    border: none;
+    font-size: 25px;
+    padding: 0px 6px 0px 6px;
+}
+.windows-desktops .ws-btn:hover {
+    background-color: rgba(210, 229, 244, 0.2);
+    border-radius: 13px;
+    margin: 0px 0px 6px 0px;
+}
+.windows-desktops .ws-btn.active {
+    font-family: "JetBrainsMono NFP ExtraBold";
+    color: var(--pale-blue);
+    border-radius: 13px;
+    margin: 3px 0px 3px 0px;
+    padding: 0px 3px 0px 3px;
+} 
+.windows-desktops .ws-btn.active:hover {
+    background-color: rgba(210, 229, 244, 0.2);
+    margin: 0px 0px 3px 0px;
+}
+.windows-desktops .context-menu {
+    background-color: var(--yasb-background);
+    border-radius: 12px;
+    padding: 8px 0;
+}
+.windows-desktops .context-menu .separator {
+    max-height: 4px;
+    background-color: rgba(203, 166, 247, 0.7);
+}
+
+.windows-desktops .rename-dialog {
+    background-color: var(--yasb-background);   
+}
+.windows-desktops .rename-dialog QPushButton{
+    background-color:rgba(255,255,255,0.1);
+    color: #ffffff;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+.windows-desktops .rename-dialog QPushButton:hover{
+    background-color: #585858;
+    color: #ffffff;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+ 
+.windows-desktops .rename-dialog QLabel {
+    color: #ffffff;
+}
+.windows-desktops .rename-dialog QLineEdit {
+    background-color: transparent;
+    border: 1px solid #89b4fa;
+    padding: 4px;
+    color: #ffffff;
+}
+/* Clock */
+.clock-widget {
+    padding: 0px 37px 0px 30px;
+}
+/* Calendar */
+.calendar {
+    background-color: var(--yasb-background);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none; 
+}
+.calendar .calendar-table::item:selected {
+    background-color: var(--slate-gray);
+    border-radius: 10px;
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label,
+.calendar .week-label,
+.calendar .holiday-label {
+    font-size: 18px;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .week-label,
+.calendar .holiday-label {
+    font-size: 12px;
+}
+.calendar .holiday-label {
+    color: var(--slate-gray);
+    font-weight: 700;
+}
+.calendar .month-label {
+    font-weight: normal;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    margin-top: -20px;
+}
+/* Screenshot */
+.screenshot-widget {
+    padding: 0px 1px 0px 1px;
+}
+.screenshot-widget .widget-container {
+    padding: 0px 6px 0px 6px;
+    border-radius: 13px;
+}
+.screenshot-widget .widget-container:hover { 
+    background-color: var(--slate-gray);
+}
+/* Showkeyboard */
+.showkeyboard-widget {
+    padding: 0px 2px 0px 2px;
+}
+.showkeyboard-widget .widget-container {
+    padding: 0px 5px 0px 5px;
+    border-radius: 13px;
+}
+.showkeyboard-widget .widget-container:hover { 
+    background-color: var(--slate-gray);
+}
+/* Brightness */
+.brightness-widget {
+    padding: 0px 4px 0px 4px;
+}
+.brightness-widget .icon {
+    font-size: 18px;
+}
+.brightness-widget .widget-container {
+    padding: 0px 3px 0px 3px;
+    border-radius: 14px;
+}
+.brightness-widget .widget-container:hover { 
+    background-color: var(--slate-gray);
+}
+/* Battery */
+.battery-widget .widget-container {
+    background-color: var(--pale-blue);
+    padding: 0px 5px 2px 5px;
+    border-radius: 10px;
+    margin: 5px 0px 5px 0px;
+}
+.battery-widget .label {
+    color: var(--black);
+}
+.battery-widget {
+    padding: 0px 7px 0px 7px;
+}
+.brightness-menu {
+    background-color: var(--yasb-background);
+}
+.brightness-slider::groove {
+    background-color: var(--slate-gray);
+    border-radius: 6px;
+    height: 12px;
+}
+.brightness-slider::handle{
+    background-color: var(--pale-blue);
+    height: 16px;
+    width: 16px;
+    border-radius: 6px;  
+}
+/* Weather */
+.weather-widget {
+    padding: 0px 0px 0px 30px;
+    width: 80px;
+    max-width: 80px;
+    min-width: 80px;
+}
+.weather-widget .icon {
+    font-size: 22px;
+    margin: 0px 4px 2px 0px;
+}
+.weather-card {
+    background-color: var(--yasb-background);
+}
+.weather-card-today {
+    border: 1px solid #282936;
+    border-radius: 12px;
+    background-color:  var(--yasb-background);
+}
+.weather-card-today .label {
+    font-size: 12px;
+}
+.weather-card-today .label.location {
+    font-size: 24px;
+    font-weight: 700;
+}
+.weather-card-today .label.alert {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: rgba(247, 199, 42, 0.05);
+    border: 1px solid rgba(247, 209, 42, 0.1);
+    color: rgba(196, 181, 162, 0.85);
+    border-radius: 6px;
+    padding: 5px 0;
+}
+.weather-card-day {
+    border: 1px solid #45475a;
+    border-radius: 12px;
+    background-color:  var(--yasb-background);
+}
+.weather-card-day.active {
+    background-color: rgba(40, 40, 60, 0.6);
+    border: 1px solid rgba(50, 50, 75, 1);
+}
+.weather-card-day:hover {
+    background-color: rgba(40, 40, 60, 0.6);
+}
+.weather-card-day .label {
+    font-size: 12px;
+}
+.weather-card .hourly-container {
+    background-color: var(--yasb-background);
+    min-height: 150px;
+    border: none;
+}
+.weather-card .hourly-data {
+    background-color: #FAE93F;
+    font-size: 12px;
+}
+/* dotseparator */
+.dotseparator-widget .label {
+    font-size: 16px;
+}
+/* Wifi */
+.wifi-menu {
+    background-color: var(--yasb-background);
+    max-height: 350px;
+    min-height: 375px;
+    min-width: 375px;
+}
+.wifi-menu .progress-bar {
+    max-height: 2px;
+}
+.wifi-menu .progress-bar::chunk {
+    background-color: #4cc2ff;
+}
+.wifi-menu .header {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--yasb-background);
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .error-message {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .wifi-list {
+    background-color: var(--yasb-background);
+    margin-right: 3px;
+}
+.wifi-menu .wifi-item {
+    min-height: 35px;
+    padding: 2px 12px;
+    margin: 2px 4px;
+}
+.wifi-menu .wifi-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+.wifi-menu .wifi-item[active=true] {
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: 14px;
+    border-radius: 6px;
+    min-height: 80px;
+}
+.wifi-menu .wifi-item .icon {
+    font-family: 'Segoe Fluent Icons';
+    font-size: 26px;
+    margin-right: 10px;
+}
+.wifi-menu .wifi-item .name {
+    font-size: 14px;
+    margin-right: 10px;
+}
+.wifi-menu .wifi-item .password {
+    background-color: transparent;
+    font-size: 14px;
+}
+.wifi-menu .wifi-item .status {
+    font-size: 14px;
+}
+.wifi-menu .wifi-item .strength {
+    font-size: 14px;
+}
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+.wifi-menu .wifi-item .connect {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 30px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+.wifi-menu .wifi-item .connect:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.wifi-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: #9399b2;
+    background-color: rgba(17, 17, 27, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.wifi-menu .footer .settings-button {
+    background-color: transparent;
+    border: none;
+    padding: 0 2px;
+    min-width: 26px;
+    min-height: 26px;
+    color: #fff;
+}
+.wifi-menu .footer .refresh-icon {
+    font-family: 'Segoe Fluent Icons';
+    background-color: transparent;
+    border: none;
+    min-width: 26px;
+    min-height: 26px;
+    color: #fff;
+}
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
