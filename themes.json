@@ -1,4 +1,16 @@
 {
+    "758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2": {
+        "id": "758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2",
+        "name": "Basic Revamped",
+        "description": "Modified Basic Theme with korembi support (not in used in demo img)",
+        "homepage": "https://github.com/Pikolosan/Yasb-Reborn-MyTheme/tree/main",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/image.png",
+        "author": "Pikolosan",
+        "publish_date": "2025-10-21T14:57:43.857661"
+    },
     "568d5480-ee9e-4723-9079-8271a03f2466": {
         "id": "568d5480-ee9e-4723-9079-8271a03f2466",
         "name": "Modern Glass",
