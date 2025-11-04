@@ -1,0 +1,481 @@
+/***----------------------------------      • YASB Style Sheet •      -----------------------------------***/
+:root {
+    --Coffee-Brown: #6f4e37;
+    --burnt-orange: #cc5500;
+    --mint-green: #98FF98;    
+    --dusty-rose: #dcae96;
+    --powder-blue: #b0e0e6;
+    --hot-pink: #ff69b4;
+    --surface1: #000000;
+    --lemon-yellow: #fff44f;
+    --memory: #800080;
+    --cream: #fffdd0; 
+}
+/* Global styles for ToolTip */
+.tooltip {
+    padding: 8px;
+    color: var(--hot-pink);
+    font-size: 16px;
+    background-color: var(--Coffee-Brown);
+    border: 2px solid #cc5500;
+    border-radius: 6px;
+}
+* {
+    font-size: 18px;
+    color: var(--powder-blue);
+    font-family: "0xProto Nerd Font";
+}
+.yasb-bar {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border-radius: 0px;
+}
+.widget {
+    padding: 0 0;
+    margin: 0;
+}
+.icon {
+    font-size: 24px;
+}
+.widget .label {
+    padding: 2px 2px;
+}
+/***----------------------------------      • Container Background Color & Borders •      -----------------------------------***/
+.komorebi-workspaces .widget-container,.komorebi-active-layout .widget-container,.home-widget .widget-container,.taskbar-widget .widget-container,.active-window-widget .widget-container,.weather-widget .widget-container,.clock-widget .widget-container,.media-widget .widget-container,.notification-widget .widget-container,.systray .widget-container,.memory-widget .widget-container,.cpu-widget .widget-container,.disk-widget .widget-container,.volume-widget .widget-container,.microphone-widget .widget-container{
+    background-color: var(--Coffee-Brown);
+    border-radius: 12px;
+    border: 3px solid var(--burnt-orange);
+    padding: 2px 8px 2px 8px;
+}
+/***----------------------------------      • Left Widgets •      -----------------------------------***/
+/***----------  • komorebi_workspaces • ----------***/ 
+.komorebi-workspaces {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.komorebi-workspaces .offline-status {
+    background-color: var(--Coffee-Brown);
+    border-radius: 12px;
+    border: 3px solid var(--burnt-orange);
+    padding: 2px 8px 2px 8px;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    font-family: "JetBrainsMono NFP";
+    font-size: 14px;
+    background-color: transparent;
+    margin: 0px 2px 0px 2px;
+    padding: 4px;
+    border-radius: 2px;
+    height: 20px;
+    width: 20px;
+}
+.komorebi-workspaces .ws-btn.populated {
+    border: none;
+    background-color: var(--burnt-orange);
+    color: var(--powder-blue);
+    width: 15px;
+    height: 15px;
+    border-radius: 7px;
+}
+.komorebi-workspaces .ws-btn.active {
+    border: none;
+    background-color: var(--cream);
+    color: var(--hot-pink);
+    width: 15px;
+    height: 15px;
+    border-radius: 7px;
+}
+/***----------  • komorebi_active_layout • ----------***/ 
+.komorebi-active-layout {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.komorebi-layout-menu {
+    border: 4px solid var(--burnt-orange);
+    background-color: var(--Coffee-Brown);
+    color: var(--burnt-orange);
+    border-radius: 8px;
+}
+.komorebi-layout-menu .menu-item {
+    padding: 8px 48px 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.komorebi-layout-menu .menu-item-icon {
+    color: var(--mint-green);
+    font-size: 16px;
+}
+.komorebi-layout-menu .menu-item:hover {
+    background-color: var(--burnt-orange);
+    color: var(--mint-green)
+}
+.komorebi-layout-menu .separator {
+    max-height: 1px;
+    background-color: var(--cream);
+    margin: 0 8px;
+}
+/***----------  • home • ----------***/ 
+.home-widget {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.home-widget .icon:hover {
+    color: var(--hot-pink);
+}
+.home-menu {
+    border: 4px solid var(--burnt-orange);
+    background-color: var(--Coffee-Brown);
+    border-radius: 8px;
+    padding: 0;
+    margin: 0px;
+}
+.home-menu .menu-item {
+    padding: 8px 48px 8px 12px;
+}
+.home-menu .menu-item:hover {
+    background-color: var(--burnt-orange);
+    color: var(--mint-green);
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color: var(--cream);
+    margin: 0 8px;
+}
+/***----------  • taskbar • ----------***/ 
+.taskbar-widget {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.taskbar-widget .app-container {
+    margin: 4px 4px;
+    border-radius: 4px;
+    padding: 0 4px 0px 4px;
+}
+.taskbar-widget .app-container.foreground {
+    background-color: var(--cream);
+}
+.taskbar-widget .app-container.flashing {
+    background-color: var(--hot-pink);
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
+/***----------  • active_window • ----------***/ 
+.active-window-widget {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+/***----------------------------------      • center widgets •      -----------------------------------***/
+/***----------  • weather • ----------***/ 
+.weather-widget {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.weather-widget .icon {
+    font-size: 16px;
+    margin: 0 2px 2px 0;
+    color: var(--lemon-yellow);
+}
+.weather-card {
+    border: 4px solid var(--burnt-orange);
+	background-color: var(--cream);
+    border-radius: 6px;
+}
+.weather-card-today {
+	border-radius: 8px;
+	background-color: var(--Coffee-Brown);
+	color: var(--mint-green);
+}
+.weather-card-today .label {
+	font-size: 16px;
+}
+.weather-card-today .label.location {
+	font-size: 24px;
+	font-weight: 800;
+}
+.weather-card-today .label.alert {
+	font-size: 12px;
+	font-weight: 700;
+	background-color: rgba(247, 199, 42, 0.05);
+	border: 1px solid rgba(247, 209, 42, 0.1);
+	color: rgba(196, 181, 162, 0.85);
+	border-radius: 6px;
+	padding: 5px 0;
+}
+.weather-card-day {
+	border-radius: 8px;
+	background-color: var(--Coffee-Brown);
+}
+.weather-card-day .label {
+	font-size: 12px;
+}	
+/***----------  • clock & calendar • ----------***/ 
+.clock-widget {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.calendar {
+	border: 4px solid var(--burnt-orange);
+    background-color: var(--Coffee-Brown);
+    border-radius: 6px;
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+	background-color: rgba(17, 17, 27, 0);
+	color: var(--mint-green);
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+.calendar .calendar-table::item:selected {
+	color: var(--burnt-orange);
+	background: var(--cream);
+	border-radius: 8px;
+}
+.calendar .day-label {
+	margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+	font-size: 16px;
+	color: var(--cream);
+	font-weight: 600;
+	min-width: 180px;
+	max-width: 180px;
+}
+.calendar .month-label {
+	font-weight: normal;
+    padding-top: 12px;
+	padding-bottom: 12px;
+}
+.calendar .date-label {
+	font-size: 70px;
+	font-weight: 600;
+	color: var(--cream);
+	margin-top: -20px;
+}
+/***----------  • media • ----------***/
+.media-widget {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.media-widget .label {
+    color: var(--hot-pink);
+    padding: 0px;
+    padding-right: 4px;
+    font-size: 14px;
+}
+.media-widget .btn {
+    color: var(--hot-pink);
+    padding: 0 4px;
+    margin: 0;
+    font-family: "JetBrainsMono NFP";
+    font-weight: 600;
+    font-size: 20px;
+}
+.media-widget .btn:hover {
+    color: var(--mint-green);
+}
+.media-widget .btn.play {
+    font-size: 24px;
+    color: var(--mint-green);
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+    color: #4e525c;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 20px;
+}
+/***----------------------------------      • right widgets •      -----------------------------------***/
+/***----------  • notifications • ----------***/ 
+.notification-widget {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.notification-widget .icon {
+    font-size: 16px;
+}
+.notification-widget .icon.new-notification {
+    color: var(--hot-pink);
+}
+/***----------  • systray • ----------***/ 
+.systray {
+    border: none;
+    background-color: var(--widget-background);
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.systray .pinned-container {
+    background: transparent;
+}
+.systray .pinned-container[forceshow=true] {
+    background: var(--widget-background);
+}
+.systray .button {
+    border-radius: 8px;
+    padding: 4px 4px;
+}
+.systray .button:hover {
+    background: var(--cream);
+}
+.systray .button[dragging=true] {
+    background: var(--hot-pink);
+    border-color: var(--powder-blue);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+}
+.systray .unpinned-visibility-btn:checked {
+    background: (--widget-background);
+}
+.systray .unpinned-visibility-btn:hover {
+    border: 2px solid var(--cream);
+    border-radius: 4px;
+}	
+/***----------  • memory • ----------***/ 
+.memory-widget {
+    background-color: transparent;
+    border: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    outline: none;
+}
+/***----------  • CPU • ----------***/ 
+.cpu-widget {
+    background-color: transparent;
+    border: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    outline: none;
+}
+/***----------  • Disk • ----------***/ 
+.disk-widget {
+    background-color: transparent;
+    border: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    outline: none;
+}
+.disk-group {
+    background-color: var(--Coffee-Brown);    
+}
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+.disk-group-row:hover {
+    background-color: var(--burnt-orange);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.disk-group-label-bar{
+    max-height: 8px;
+    border:0px solid rgba(128, 128, 128, 0);
+    background-color: var(--hot-pink);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk{
+    background-color: var(--cream);
+    border-radius: 4px;
+}
+.disk-group-label {
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--mint-green);
+    padding: 0px 2px 0 2px;
+}
+.disk-group-label-size {
+    font-size: 14px;
+}
+/***----------  • volume • ----------***/
+.volume-widget {
+    padding-right: 1px;
+    padding-left: 1px;
+} 
+.volume-widget .icon {
+    font-size: 18px;
+    color: var(--hot-pink);
+}
+.volume-slider {
+    border: none;
+}
+.audio-menu {
+    background-color:var(--Coffee-Brown); 
+}
+.audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.audio-container .device.selected {
+    background-color: var(--burnt-orange);
+}
+.audio-container .device:hover {
+    background-color: var(--hot-pink);
+}
+/***----------  • microphone • ----------***/ 
+.microphone-widget {
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.microphone-widget .icon {
+    font-size: 18px;
+}
+.microphone-widget .icon {
+    color: var(--hot-pink);
+}
