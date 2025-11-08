@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Warriors Dreams](themes/179863d1-4b68-4126-92b5-621a671b49de)
+
+<a title="Warriors Dreams YASB Theme" href="themes/179863d1-4b68-4126-92b5-621a671b49de"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/image.png" width="830px"></a>
+
+
 ## [dots windows](themes/d513044f-9218-46e1-ab62-c15705b80341)
 
 <a title="dots windows YASB Theme" href="themes/d513044f-9218-46e1-ab62-c15705b80341"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d513044f-9218-46e1-ab62-c15705b80341/image.png" width="830px"></a>
