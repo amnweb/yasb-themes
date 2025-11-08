@@ -1,4 +1,16 @@
 {
+    "179863d1-4b68-4126-92b5-621a671b49de": {
+        "id": "179863d1-4b68-4126-92b5-621a671b49de",
+        "name": "Warriors Dreams",
+        "description": "YASB theme inspired by 70s color scheme",
+        "homepage": "https://github.com/willowsplace/Warriors-Dreams",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/image.png",
+        "author": "willowsplace",
+        "publish_date": "2025-11-04T08:34:09.875897"
+    },
     "d513044f-9218-46e1-ab62-c15705b80341": {
         "id": "d513044f-9218-46e1-ab62-c15705b80341",
         "name": "dots windows",
