@@ -1,4 +1,3 @@
-import os
 import json
 
 THEMES_DATA_FILE = './themes.json'
