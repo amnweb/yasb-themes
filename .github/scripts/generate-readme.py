@@ -12,7 +12,7 @@ def generate_readme(themes_data):
         readme.write('<div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="64"></a><ul style="list-style:none"><summary><h2>Theme repository for YASB</h2></summary></ul></div>\n\n')
         readme.write('## Submitting a Theme\n\n')
         readme.write('To submit a theme, please follow these steps:\n')
-        readme.write('1. Open an issue in [this template](https://github.com/amnweb/yasb-themes/issues/new?assignees=&labels=new-theme&projects=&template=create-theme.yml&title=%5Bcreate-theme%5D%3A+) with the title `[create-theme]: <theme-name>`\n')
+        readme.write('1. Open an issue in [this template](https://github.com/amnweb/yasb-themes/issues/new?assignees=&labels=new-theme&projects=&template=create-theme.yaml&title=%5Bcreate-theme%5D%3A+) with the title `[create-theme]: <theme-name>`\n')
         readme.write('2. Fill out the template with the necessary information\n')
         readme.write('3. Submit the issue\n')
         readme.write('4. Let us take care of the rest!\n')
