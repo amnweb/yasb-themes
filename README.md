@@ -3,7 +3,7 @@
 ## Submitting a Theme
 
 To submit a theme, please follow these steps:
-1. Open an issue in [this template](https://github.com/amnweb/yasb-themes/issues/new?assignees=&labels=new-theme&projects=&template=create-theme.yml&title=%5Bcreate-theme%5D%3A+) with the title `[create-theme]: <theme-name>`
+1. Open an issue in [this template](https://github.com/amnweb/yasb-themes/issues/new?assignees=&labels=new-theme&projects=&template=create-theme.yaml&title=%5Bcreate-theme%5D%3A+) with the title `[create-theme]: <theme-name>`
 2. Fill out the template with the necessary information
 3. Submit the issue
 4. Let us take care of the rest!
