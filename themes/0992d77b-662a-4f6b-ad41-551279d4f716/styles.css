@@ -458,8 +458,8 @@
 
 
 /* WIFI Setting */
-.wifi-widget .icon{
-    color: var(--mauve) !important;
+.wifi-widget .widget-container .label {
+    color: var(--mauve);
 }
 
 
