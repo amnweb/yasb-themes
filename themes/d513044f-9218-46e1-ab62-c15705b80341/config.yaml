@@ -181,7 +181,7 @@ widgets:
       update_interval: 3000
       speed_unit: "bytes"
     callbacks:
-      on_left: "toggle_menu" # amnweb, callbacks are not working (win 11)
+      on_left: "toggle_menu" # callbacks are not working (win 11)
       on_middle: "do_nothing"
       on_right: "toggle_menu"
   media:
@@ -223,7 +223,7 @@ widgets:
         enabled: True
         update_interval_ms: 33
         style: "left"
-        separator: ""
+        separator: " "
   windows_workspaces:
     type: "yasb.windows_desktops.WorkspaceWidget"
     options:
@@ -370,6 +370,23 @@ widgets:
         current_line_color: "#8EAEE8"
         current_line_width: 1 
         current_line_style: "dot"
+        hourly_gradient:
+          enabled: true
+          top_color: "#8EAEE8"
+          bottom_color: "#2A3E68"
+        hourly_forecast_buttons:
+          enabled: true # hide/show the buttons
+          default_view: "temperature"
+          temperature_icon: "\udb81\udd04" # or \udb81\udd05
+          rain_icon: "\uef1c"
+          snow_icon: "\udb81\udf17"
+        weather_animation:
+          enabled: true
+          snow_overrides_rain: true
+          temp_line_animation_style: both # can be "rain", "snow", "both", or "none"
+          rain_effect_intensity: 1.0 # 0.01 - 10.0
+          snow_effect_intensity: 1.0 # 0.01 - 10.0
+          scale_with_chance: true
   language:
     type: "yasb.language.LanguageWidget"
     options:
@@ -446,12 +463,12 @@ widgets:
   bluetooth:
    type: "yasb.bluetooth.BluetoothWidget"
    options:
-     label: "<span>{icon}</span> {device_count}"
+     label: "<span>{icon}</span>"
      label_alt: "{device_name}"
-     label_no_device: "No devices connected"
+     label_no_device: "No devices"
      label_device_separator: ", "
      max_length: 10
-     max_length_ellipsis: "..."
+     max_length_ellipsis: ""
      icons: 
        bluetooth_on: "\udb80\udcaf"
        bluetooth_off: "\udb80\udcb2"
