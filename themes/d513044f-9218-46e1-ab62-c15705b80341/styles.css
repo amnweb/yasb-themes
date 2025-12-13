@@ -23,7 +23,7 @@
     border-radius: 6px;
 }
 * { /*TEXT GLOBAL*/
-    font-size: 16px;
+    font-size: 17px;
     color: var(--pale-blue);
     font-weight: 600;
     font-family: "Rubik Light";
@@ -177,7 +177,7 @@ padding-left: 16px;
     background-color: var(--yasb-background);
 }
 .home-menu .menu-item:hover {
-    background-color: rgba(203, 166, 247, 0.116);
+    background-color: var(--slate-gray);
     color: #fff;
 }
 .home-menu .separator {
@@ -236,7 +236,7 @@ padding-left: 16px;
 }
 .media-menu .title{
     margin-left: 10px;
-    font-size: 16px;
+    font-size: 17px;
     color: var(--pale-blue);    
 }
 .media-menu .artist {
@@ -425,7 +425,6 @@ padding-left: 16px;
 .calendar .date-label {
     font-size: 88px;
     font-weight: 900;
-    margin-top: -20px;
 }
 /* Screenshot */
 .screenshot-widget {
@@ -548,6 +547,47 @@ padding-left: 16px;
 .weather-card .hourly-data {
     background-color: #FAE93F;
     font-size: 12px;
+}
+.weather-card .hourly-data.temperature {
+    background-color: #FAE93F; /* Temperature line color */
+}
+
+.weather-card .hourly-data.rain {
+    background-color: #4A90E2; /* Rain line color */
+}
+
+.weather-card .hourly-data.snow {
+    background-color: #A0C4FF; /* Snow line color */
+}
+.weather-card .hourly-data .hourly-rain-animation {
+    color: rgba(150, 200, 255, 40); /* Rain color */
+    background-color: rgba(0, 0, 0, 0.1); /* Rain BG */
+}
+
+.weather-card .hourly-data .hourly-snow-animation {
+    color: rgba(255, 255, 255, 150); /* Snow color */
+    background-color: rgba(0, 0, 0, 0.1); /* Snow BG */
+}
+.weather-card .hourly-data-buttons {
+    margin: 15px 0px 0px 480px;
+}
+.weather-card .hourly-data-button {
+    margin: 0px;
+    border-radius: 12px;
+    min-height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--widget-background);
+}
+.weather-card .hourly-data-button:hover {
+    background-color: var(--slate-gray);
+}
+.weather-card .hourly-data-button.active {
+    color: #fff;
+    background-color: var(--slate-gray);
 }
 /* dotseparator */
 .dotseparator-widget .label {
