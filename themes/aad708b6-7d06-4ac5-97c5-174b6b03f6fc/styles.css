@@ -1,0 +1,331 @@
+* {
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: 600;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+.yasb-bar {
+	padding: 0 8px;
+	margin: 0;
+    background-color: rgba(35, 35, 35, 0.6);
+}
+.widget {
+	padding: 0 10px;
+	margin: 0;
+}
+.widget .label {
+	padding: 2px 2px 1px 2px;
+}
+.widget .label.alt {
+	padding: 1px 8px 1px 8px;
+}
+.clock-widget .label {
+    padding-left:8px;
+}
+/* POWER MENU WIDGET */
+.uptime { /* UPTIME */
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: rgb(255, 255, 255);
+	font-weight: 600;
+	font-family: "JetBrains Mono";
+}
+.power-menu-widget .label {
+	color: #eba0ac;
+	font-size: 16px;
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 160px;
+	height: 240px;
+	border-radius: 4px;
+	background-color: rgba(41, 42, 58, 0.75);
+	font-family: "JetBrains Mono";
+	color: white;
+	border: 4px solid rgba(255, 255, 255, 0);
+}
+.power-menu-popup .button.hover {
+	background-color: rgb(55, 56, 75);
+	border: 4px solid rgb(55, 56, 75);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.6);
+	font-family: "JetBrains Mono";
+}
+.power-menu-popup .button .icon {
+	font-size: 64px;
+	padding-top: 54px;
+	color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+}
+
+/* ICONS */
+.icon {
+	font-size: 16px;
+}
+
+.volume-widget .icon {
+	color: #89b4fa;
+	margin: 1px 2px 0 0;
+}
+
+.start-menu .icon {
+    font-size: 18px;
+	color: #ffffff
+}
+
+/* WEATHER WIDGET */
+.weather-widget .icon {
+	font-size: 16px;
+	margin: 0 2px 0px 0;
+}
+.weather-widget .icon.sunnyDay {
+	color: rgb(221, 210, 107);
+}
+.weather-widget .icon.clearNight {
+	color: rgb(107, 189, 221);
+	font-size: 18px;
+	margin: -1px 2px 0px 0;
+}
+.weather-widget .icon.rainyNight {
+    font-size: 16px;
+}
+.weather-widget .icon.cloudyDay {
+    font-size: 18px;
+    color: rgb(221, 210, 107);
+}
+.weather-widget .icon.rainyDay {
+    color: rgb(245, 224, 220)
+}
+
+/* MEDIA */
+.media-widget {
+	padding: 0;
+	margin: 0;
+}
+.media-widget .label {
+	color: #ffffff;
+    padding: 0px;
+	padding-left: 10px;
+	padding-right: 4px;
+}
+.media-menu .btn, .media-menu .title, .media-menu .artist { padding-left: 10px; font-family: 'JetBrains Mono'; }
+.media-menu .btn.prev:hover, .media-menu .btn.next:hover { color: #ffc400; }
+.media-menu .source {
+    font-size: 11px;
+    color: #000;
+    border-radius: 3px;
+    background-color: #bac2de;
+    padding: 2px 4px;
+    font-weight: 600;
+    font-family: 'JetBrains Mono';
+	margin-bottom: 10px;
+}
+
+/* GITHUB */
+.github-widget {
+	color: #fff;
+}
+.github-widget .icon:hover {
+	color: #0091ff;
+}
+.github-menu {
+    background-color:  rgba(17, 17, 27, 0.2);
+    max-height: 500px;
+    min-height: 500px;
+    min-width: 420px;
+}
+.github-menu .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Segoe UI';
+    padding: 8px;
+    color: white;
+    background-color: rgba(17, 17, 27, 0.75);
+}
+.github-menu .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px 8px 6px 8px;
+    background-color: rgba(17, 17, 27, 0.75);
+}
+.github-menu .footer .label{
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    color: #9399b2;
+}
+.github-menu .contents {
+    background-color:  rgba(17, 17, 27, 0.2);
+}
+.github-menu .contents .item {
+    min-height: 40px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+}
+.github-menu .contents .item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.github-menu .contents .item .title,
+.github-menu .contents .item .description {
+    color: #9399b2;
+    font-family: Segoe UI;
+}
+.github-menu .contents .item .title {
+    font-size: 14px;
+    font-weight: 600; 
+}
+.github-menu .contents .item .description {
+    font-size: 12px;
+    font-weight: 500
+}
+.github-menu .contents .item.new .title,
+.github-menu .contents .item.new .description {
+    color: #ffffff
+}
+.github-menu .contents .item .icon {
+    font-size: 16px;
+    padding-right: 0;
+    padding-left: 8px;
+    padding-right: 4px;
+    color: #9399b2;
+}
+.github-menu .contents .item.new .icon {
+    color: #3fb950;
+}
+/* SYSTEMINFO GROUPER */
+.grouped-widgets .container {
+    background-color: rgba(35, 35, 35, 0.1);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 2px solid #45475a;
+}
+/* CPU & MEMORY */
+.cpu-widget .icon {
+    color: var(--orange);
+}
+.memory-widget .label,
+.cpu-widget .label {
+    padding-right: 8px;
+}
+/* HOME */
+.home-widget {
+    padding: 0 4px 0 0;
+}
+.home-widget .icon {
+    color: #b4befe;
+}
+.home-widget .icon:hover {
+    color: #cdd6f4;
+}
+.home-menu {
+    background-color:rgba(17, 17, 27, 0.5); 
+}
+.home-menu .menu-item {
+    padding: 6px 48px 7px 16px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono';
+    color: var(--text); 
+    font-weight: 600;
+}
+.home-menu .menu-item:hover {
+    background-color:rgba(128, 130, 158, 0.15);
+    color: #fff;
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color:rgba(128, 130, 158, 0.3);
+}
+/* MUSIC SOURCES */
+.media-menu .source.aimp {
+    background-color: #6f42c1;
+    color: #ffffff;
+}
+.media-menu .source.apple-music {
+    background-color: #fa2b56;
+    color: #ffffff;
+}
+.media-menu .source.brave {
+    background-color: #fb542b;
+    color: #ffffff;
+}
+.media-menu .source.chrome {
+    background-color: #4285f4;
+    color: #ffffff;
+}
+.media-menu .source.edge {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+.media-menu .source.firefox {
+    background-color: #ff7139;
+    color: #ffffff;
+}
+.media-menu .source.foobar2000 {
+    background-color: #444444;
+    color: #ffffff;
+}
+.media-menu .source.media-player {
+    background-color: #0078d4;
+    color: #ffffff;
+}
+.media-menu .source.murglar {
+    background-color: #8a8a8a;
+    color: #ffffff;
+}
+.media-menu .source.musicbee {
+    background-color: #ffcc00;
+    color: #000000;
+}
+.media-menu .source.nsmusics {
+    background-color: #e64a19;
+    color: #ffffff;
+}
+.media-menu .source.opera {
+    background-color: #ff1b2d;
+    color: #ffffff;
+}
+.media-menu .source.qobuz {
+    background-color: #003a6f;
+    color: #ffffff;
+}
+.media-menu .source.spotify {
+    background-color: #1db954;
+    color: #ffffff;
+}
+.media-menu .source.tidal {
+    background-color: #000000;
+    color: #ffffff;
+}
+.media-menu .source.winamp {
+    background-color: #f1a11b;
+    color: #000000;
+}
+.media-menu .source.youtube {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+.media-menu .source.youtube-music {
+    background-color: #c51f1f;
+    color: #ffffff;
+}
+.media-menu .source.zen {
+    background-color: #2ecc71;
+    color: #000000;
+}
+/* Hide media widget buttons */
+.media-widget .btn {
+	padding: 0;
+	margin: 0 -6px;
+    padding-left: 4px;
+}
