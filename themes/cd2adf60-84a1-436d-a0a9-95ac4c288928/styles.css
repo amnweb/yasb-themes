@@ -1,0 +1,1871 @@
+/*
+ * ============================================================================
+ * YASB CYBERPUNK THEME
+ * Adapted from cyberpunk-css by alddesign
+ * Optimized for yasb Qt Stylesheet limitations
+ *
+ * NOTE: It's recommended to download Oxanium and 
+ * Blender Pro book fonts for this theme.
+ * ============================================================================
+ */
+
+/* ============================================================================
+ * 1. CSS VARIABLES
+ * ============================================================================ */
+:root {
+    /* Base Colors */
+    --yellow: #f8ef02;
+    --cyan: #00ffd2;
+    --red: #ff003c;
+    --blue: #136377;
+    --green: #1f9c1f;
+    --purple: #8b008b;
+    --pink: #ca04a9;
+    --black: #000;
+    --white: #fff;
+    --dark: #333;
+
+/* Neon Colors */
+    --yellow-neon: #feed00;
+    --cyan-neon1: #46dffb;
+    --cyan-neon2: #45aefb;
+    --pink-neon: #ff00d4;
+    --green-neon: #04d804;
+
+/* Background Overlays */
+    --bg-transparent: rgba(128, 128, 128, 0);
+    --bg-black-transparent: rgba(0, 0, 0, 0.4);
+    --bg-dark-transparent: rgba(51, 51, 51, 0.8);
+    --bg-blue-overlay: rgba(19, 99, 119, 0.3);
+    --bg-cyan-overlay: rgba(0, 255, 210, 0.1);
+    --bg-yellow-overlay: rgba(248, 239, 2, 0.1);
+    --bg-purple-overlay: rgba(139, 0, 139, 0.3);
+    --bg-pink-overlay: rgba(202, 4, 169, 0.3);
+    --bg-green-overlay: rgba(4, 216, 4, 0.3);
+    --bg-red-overlay: rgba(255, 0, 0, 0.3);
+
+/* Widget Specific */
+    --widget-background: rgba(19, 99, 119, 0.4);
+    --widget-hover: rgba(0, 255, 210, 0.2);
+    --widget-active: rgba(248, 239, 2, 0.3);
+}
+
+/* ============================================================================
+ * 2. GLOBAL STYLES
+ * ============================================================================ */
+
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "JetBrainsMono NFP";
+    color: var(--yellow-neon);
+}
+
+/* Main Bar */
+.yasb-bar {
+    padding: 0 2px;
+    border-top-width: 0px;
+    border-style: solid;
+    border-color: var(--red);
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 transparent,
+        stop: 1 var(--bg-black-transparent)
+    );
+}
+
+/* Widget Base */
+.widget {
+    padding: 0 2px;
+    margin: 0;
+}
+
+.widget .label {
+    font-family: "Blender Pro Book";
+    color: var(--yellow);
+}
+
+/* Icons */
+.icon {
+    font-size: 14px;
+    color: var(--cyan);
+    font-family: "JetBrainsMono NFP";
+}
+
+/* Tooltips */
+.tooltip {
+    padding: 8px -2px 8px 4px;
+    color: var(--red);
+    font-size: 16px;
+    font-family: "Blender Pro Book";
+    letter-spacing: 2px;
+    background-color: var(--bg-dark-transparent);
+    border: 1px solid var(--cyan);
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* ============================================================================
+ * 3. CONTEXT MENU
+ * ============================================================================ */
+.context-menu {
+    padding-top: 4px;
+    font-family: "Oxanium";
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--yellow);
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border: 2px solid var(--yellow-neon);
+    border-radius: 8px;
+}
+
+.context-menu::right-arrow {
+    width: 8px;
+    height: 8px;
+    padding-right: 24px;
+}
+
+.context-menu::item,
+.context-menu .menu-checkbox {
+    padding: 6px 12px;
+    margin: 2px 6px;
+    min-width: 100px;
+    background-color: transparent;
+    border-top-right-radius: 11px;
+    border-bottom-left-radius: 11px;
+}
+
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    color: var(--yellow);
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-hover),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--cyan);
+}
+
+.context-menu::item:disabled {
+    font-family: "Cyberpunk";
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cyan-neon1);
+    background-color: transparent;
+}
+
+.context-menu::separator {
+    height: 1px;
+    margin: 4px 8px;
+    background-color: var(--cyan-neon2);
+}
+
+/* Context Menu Checkbox */
+.context-menu .menu-checkbox {
+    padding-top: 4px;
+    font-family: "Oxanium";
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--yellow);
+}
+
+.context-menu .menu-checkbox .checkbox {
+    padding: 8px 16px;
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Oxanium';
+    letter-spacing: 2px;
+    color: var(--yellow);
+}
+
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--red);
+}
+
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 12px;
+    height: 12px;
+    margin-left: 0px;
+    margin-right: 8px;
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: var(--dark);
+    border-radius: 3px;
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background: var(--cyan);
+    border-radius: 6px;
+}
+
+.context-menu .submenu::item:disabled {
+    margin: 0;
+    padding-left: 16px;
+}
+
+/* ============================================================================
+ * 4. WIDGETS
+ * ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+ * 4.1 HOME WIDGET
+ * ---------------------------------------------------------------------------- */
+.home-widget {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 2px;
+    max-width: 35px;
+}
+
+.home-widget .widget-container {
+    background-color: var(--widget-background);
+    border-top-right-radius: 9px;
+    border: 1px solid var(--cyan);
+}
+
+.home-widget .icon {
+    color: var(--yellow);
+    width: auto;
+}
+
+.home-widget .icon:hover {
+    color: var(--cyan);
+}
+
+.home-menu {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border: 1px solid var(--yellow-neon);
+    border-radius: 8px;
+}
+
+.home-menu .menu-item {
+    padding: 8px 48px 9px 16px;
+    font-size: 14px;
+    font-family: 'Blender Pro Book';
+    letter-spacing: 2px;
+    color: var(--yellow-neon);
+    font-weight: 600;
+}
+
+.home-menu .menu-item:hover {
+    background-color: var(--widget-hover);
+    color: var(--cyan);
+}
+
+.home-menu .separator {
+    max-height: 2px;
+    background-color: var(--cyan);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.2 WORKSPACE WIDGET
+ * ---------------------------------------------------------------------------- */
+.komorebi-workspaces {
+    font-family: "JetBrainsMono NFP";
+}
+
+.komorebi-workspaces .widget-container {
+    background-color: var(--widget-background);
+    max-height: 20px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border: 1px solid var(--cyan);
+}
+
+.komorebi-workspaces .offline-status {
+    color: var(--red);
+    padding: 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.komorebi-workspaces .ws-btn {
+    border: 1px solid var(--cyan);
+    background-color: var(--bg-transparent);
+    margin: 0px 4px;
+    border-radius: 6px;
+    height: 10px;
+    width: 10px;
+}
+
+.komorebi-workspaces .ws-btn .label {
+    font-weight: normal;
+    background-color: var(--yellow);
+}
+
+.komorebi-workspaces .ws-btn:hover {
+    background-color: var(--cyan);
+    border: 1px solid var(--white);
+    border-radius: 6px;
+    color: var(--pink-neon);
+}
+
+.komorebi-workspaces .ws-btn.populated {
+    background-color: var(--bg-dark-transparent);
+    color: var(--red);
+    border: 1px solid var(--cyan);
+}
+
+.komorebi-workspaces .ws-btn.populated:hover {
+    border: 1px solid var(--cyan);
+}
+
+.komorebi-workspaces .ws-btn.active {
+    color: var(--cyan);
+    background-color: var(--widget-active);
+    border: 1px solid var(--cyan);
+    width: 40px;
+    height: 10px;
+    padding: 1px 3px 1px 3px;
+    border-radius: 6px;
+}
+
+.komorebi-workspaces .ws-btn.active:hover {
+    border: 1px solid var(--white);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.3 SYSTRAY WIDGET
+ * ---------------------------------------------------------------------------- */
+.systray {
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    margin: 0;
+}
+
+.systray .unpinned-container {
+    background: var(--bg-purple-overlay);
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border: 1px solid var(--yellow-neon);
+    max-height: 20px;
+}
+
+.systray .pinned-container {
+    background: transparent;
+}
+
+.systray .button {
+    border-radius: 6px;
+    padding: 2px 2px;
+}
+
+.systray .button:hover {
+    background: var(--widget-active);
+}
+
+.systray .unpinned-visibility-btn {
+    font-size: 24px;
+    width: 24px;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: var(--yellow);
+}
+
+.systray .unpinned-visibility-btn:checked {
+    color: var(--red);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.4 DISK WIDGET
+ * ---------------------------------------------------------------------------- */
+.disk-widget {
+    width: auto;
+}
+
+.disk-widget .widget-container {
+    padding-right: 3px;
+}
+
+.disk-widget .widget-container .label {
+    color: var(--cyan);
+    font-family: "JetBrainsMono NFP";
+    font-size: 14px;
+}
+
+.disk-widget .widget-container .label:hover {
+    color: var(--yellow);
+}
+
+.disk-widget .widget-container .label.alt {
+    color: var(--yellow);
+}
+
+.disk-widget .widget-container .label.alt:hover {
+    color: var(--cyan);
+}
+
+.disk-widget .progress-circle {
+    padding-right: 2px;
+}
+
+.disk-group {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border: 2px solid var(--yellow-neon);
+    border-radius: 6px;
+}
+
+.disk-group-row {
+    min-width: 250px;
+    max-width: 250px;
+    max-height: 40px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border: 1px solid rgba(0, 255, 210, 0);
+}
+
+.disk-group-row:hover {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-hover),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--cyan);
+}
+
+.disk-group-label-bar {
+    max-height: 8px;
+    background-color: var(--bg-dark-transparent);
+    border-radius: 4px;
+}
+
+.disk-group-label-bar::chunk {
+    background-color: var(--pink-neon);
+    border-radius: 4px;
+}
+
+.disk-group-label {
+    font-size: 13px;
+    color: var(--yellow-neon);
+}
+
+.disk-group-label-size {
+    font-size: 12px;
+    color: var(--yellow);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.5 APPS WIDGET
+ * ---------------------------------------------------------------------------- */
+.apps-widget .widget-container {
+    width: auto;
+    padding-right: -6px;
+}
+
+.apps-widget .widget-container .label {
+    font-family: "JetBrainsMono NFP";
+    color: var(--cyan);
+    padding-right: 1px;
+    padding-left: -4px;
+}
+
+.apps-widget .widget-container .label:hover {
+    color: var(--yellow);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.6 MEDIA WIDGET
+ * ---------------------------------------------------------------------------- */
+.media-widget .widget-container {
+    background-color: var(--widget-background);
+    max-height: 20px;
+    max-width: 150px;
+    padding: 0 2px 0 4px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border: 1px solid var(--cyan);
+}
+
+.media-widget .label {
+    color: var(--yellow-neon);
+    font-size: 16px;
+}
+
+.media-widget .btn {
+    color: var(--cyan);
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.media-widget .btn:hover {
+    color: var(--yellow);
+}
+
+.media-widget .btn.play {
+    font-size: 17px;
+}
+
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+    color: var(--dark);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.7 MEDIA MENU WIDGET
+ * ---------------------------------------------------------------------------- */
+.media-menu {
+    min-width: 420px;
+    max-width: 420px;
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border: 3px solid var(--yellow-neon);
+    border-radius: 6px;
+}
+
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 0px;
+    width: auto;
+    font-family: 'Blender Pro Book';
+    color: var(--yellow-neon);
+    qproperty-alignment: 'AlignCenter';
+}
+
+.media-menu .artist {
+    font-size: 16px;
+    color: var(--cyan);
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.media-menu .source {
+    font-size: 16px;
+    color: var(--black);
+    font-weight: normal;
+    border-radius: 0px;
+    background-color: var(--yellow);
+    border: 1px solid var(--cyan);
+}
+
+.media-menu .source.firefox {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.media-menu .source.spotify {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.media-menu .source.edge {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.media-menu .source.windows-media {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.media-menu .btn {
+    font-family: "JetBrainsMono NFP";
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 65px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+}
+
+.media-menu .btn.prev {
+    padding-left: 0;
+    margin-left: 8px;
+}
+
+.media-menu .btn:hover {
+    color: var(--yellow);
+    background-color: var(--widget-hover);
+}
+
+.media-menu .btn.play {
+    font-size: 20px;
+}
+
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: var(--dark);
+    background-color: var(--bg-transparent);
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    font-family: 'BlenderProBook';
+    color: var(--cyan);
+    margin-top: 20px;
+    min-width: 100px;
+}
+
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 5px 4px;
+    border-radius: 0px;
+}
+
+.media-menu .progress-slider::groove {
+    background: var(--bg-blue-overlay);
+    height: 2px;
+    border-radius: 0px;
+}
+
+.media-menu .progress-slider::groove:hover {
+    background: var(--bg-cyan-overlay);
+    height: 6px;
+    border-radius: 0px;
+}
+
+.media-menu .progress-slider::sub-page {
+    background-color: var(--cyan);
+    border-radius: 4px;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.8 VOLUME WIDGET
+ * ---------------------------------------------------------------------------- */
+.volume-widget {
+    width: auto;
+}
+
+.volume-widget .icon {
+    color: var(--cyan);
+    margin-right: 4px;
+}
+
+.volume-widget .icon:hover {
+    color: var(--yellow);
+}
+
+.audio-menu {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border: 2px solid var(--yellow-neon);
+    border-radius: 8px;
+}
+
+.audio-menu .system-volume-container {
+    border-radius: 12px;
+}
+
+.audio-menu .system-volume-container .volume-slider {
+    border: none;
+    border-radius: 2px;
+    height: auto;
+    width: auto;
+}
+
+.audio-menu .system-volume-container .volume-slider::groove {
+    background-color: var(--red);
+    border-radius: 2px;
+    height: 4px;
+    margin: 4px 0;
+}
+
+.audio-menu .system-volume-container .volume-slider::handle {
+    background-color: var(--cyan-neon2);
+    border-radius: 5px;
+    height: 12px;
+    width: 12px;
+    margin: -8px 0;
+}
+
+.audio-menu .system-volume-container .volume-slider::handle:hover {
+    background-color: var(--cyan-neon1);
+}
+
+.audio-menu .audio-container .device {
+    background-color: transparent;
+    border: none;
+    padding: 6px 4px 6px 4px;
+    margin-top: 2px;
+    font-size: 14px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.audio-menu .audio-container .device.selected {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-active),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--yellow-neon);
+    color: var(--red);
+}
+
+.audio-menu .audio-container .device:hover {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-hover),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--cyan);
+}
+
+.audio-menu .toggle-apps {
+    background-color: transparent;
+    border: none;
+    margin-left: 6px;
+    margin-right: 4px;
+    border-radius: 0px;
+}
+
+.audio-menu .toggle-apps:hover {
+    color: var(--cyan);
+}
+
+.audio-menu .toggle-apps.expanded {
+    color: var(--red);
+}
+
+.audio-menu .toggle-apps.expanded:hover {
+    color: var(--cyan);
+}
+
+.audio-menu .apps-container {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--bg-pink-overlay),
+        stop: 1 var(--bg-transparent)
+    );
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-left: 1px solid var(--pink-neon);
+    border-bottom: 1px solid var(--pink-neon);
+    padding-right: 4px;
+}
+
+.audio-menu .apps-container .app-volume {
+    padding-left: 2px;
+    padding-right: 8px;
+    min-height: 24px;
+    max-height: 24px;
+}
+
+.audio-menu .apps-container .app-volume:hover {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-hover),
+        stop: 1 var(--bg-transparent)
+    );
+    border-bottom-left-radius: 12px;
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container .app-icon {
+    font-size: 24px;
+}
+
+.audio-menu .apps-container .app-volume .app-slider {
+    border-bottom-left-radius: 12px;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.9 CLOCK AND CALENDAR WIDGETS
+ * ---------------------------------------------------------------------------- */
+.clock-widget {
+    padding-right: -1px;
+    margin: 0;
+}
+
+.clock-widget .widget-container {
+    background-color: var(--widget-background);
+    max-height: 20px;
+    border-bottom-left-radius: 9px;
+    border: 1px solid var(--cyan);
+}
+
+.clock-widget .icon {
+    color: var(--cyan);
+    margin-right: 6px;
+}
+
+.clock-widget .label {
+    padding-right: 4px;
+}
+
+/* Calendar Popup */
+.clock-popup {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border: 1px solid var(--yellow-neon);
+    border-radius: 8px;
+}
+
+.clock-popup.calendar {
+    border: 2px solid var(--yellow-neon);
+}
+
+.clock-popup.alarm {
+    width: auto;
+    height: auto;
+}
+
+.clock-popup.calendar .calendar-table {
+    border-left: 1px solid var(--yellow);
+    border-right: 1px solid var(--yellow);
+    padding-left: -5px;
+}
+
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--cyan);
+    font-family: 'Blender Pro Book';
+    letter-spacing: 2px;
+}
+
+.clock-popup.calendar .calendar-table::item:hover {
+    color: var(--yellow);
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-hover),
+        stop: 0.5 var(--widget-hover),
+        stop: 1 var(--bg-transparent)
+    );
+    border-bottom-left-radius: 8px;
+}
+
+.clock-popup.calendar .calendar-table::item:selected {
+    color: var(--black);
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-active),
+        stop: 0.5 var(--widget-active),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--cyan);
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.clock-popup.calendar .day-label,
+.clock-popup.calendar .month-label,
+.calendar .date-label {
+    font-family: 'Blender Pro Book';
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--yellow-neon);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.clock-popup.calendar .day-label {
+    margin-top: 20px;
+}
+
+.clock-popup.calendar .week-label {
+    color: var(--pink-neon);
+}
+
+.clock-popup.calendar .month-label {
+    font-size: 25px;
+    font-weight: normal;
+    color: var(--cyan);
+}
+
+.calendar .date-label {
+    font-size: 100px;
+    font-weight: 900;
+    color: var(--yellow-neon);
+}
+
+.clock-popup.calendar .extended-container {
+    padding-left: 16px;
+}
+
+.clock-popup.calendar .upcoming-events-header {
+    color: var(--green-neon);
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+    font-size: 32px;
+    border-bottom: 1px solid var(--cyan);
+    background-color: transparent;
+    padding-bottom: 6px;
+    margin-top: 6px;
+}
+
+.clock-popup.calendar .upcoming-events-item {
+    font-family: "Blender Pro Book";
+    letter-spacing: 2px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.clock-popup.calendar .extended-container .button {
+    background-color: transparent;
+    border: none;
+    color: var(--cyan);
+    font-family: "Oxanium";
+    margin-bottom: 8px;
+    padding: 4px 0px;
+}
+
+.clock-popup.calendar .extended-container .button:hover {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-active),
+        stop: 1 var(--bg-transparent)
+    );
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+/* Timer and Alarm */
+.clock-popup .clock-label-timer,
+.clock-popup .alarm-input-title {
+    font-size: 24px;
+    font-family: "Blender Pro Book";
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 8px 0px;
+    background-color: transparent;
+    width: auto;
+    color: var(--yellow);
+}
+
+.clock-popup .clock-input-time {
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+}
+
+.clock-popup.timer .button,
+.clock-popup.alarm .button {
+    background-color: transparent;
+    border: 1px solid var(--bg-transparent);
+    font-family: "Oxanium";
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 3px;
+    margin: 0px 2px;
+    width: auto;
+}
+
+.clock-popup.timer .button:hover,
+.clock-popup.alarm .button:hover {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-transparent)
+    );
+    border-bottom-left-radius: 12px;
+}
+
+.clock-popup .button.day:checked,
+.clock-popup .button.quick-option:checked {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-active),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--cyan);
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+}
+
+.clock-popup .alarm-input-title {
+    font-family: "Blender Pro Book";
+    border: 1px solid var(--cyan);
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin: 0px 4px;
+    padding-left: 4px;
+}
+
+.clock-popup .button.start,
+.clock-popup .button.save,
+.clock-popup .button.cancel {
+    margin: 8px;
+}
+
+.active-alarm-window .button:hover,
+.clock-popup.alarm .button.cancel:hover,
+.clock-popup.timer .button.cancel:hover {
+    background-color: var(--bg-red-overlay);
+    border: 1px solid var(--red);
+    border-top-right-radius: 12px;
+}
+
+.clock-popup.timer .button.start:hover,
+.clock-popup.alarm .button.save:hover {
+    background-color: var(--bg-cyan-overlay);
+    border: 1px solid var(--cyan-neon1);
+    border-top-right-radius: 12px;
+}
+
+/* Active Alarm Window */
+.active-alarm-window {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+        stop: 0 var(--bg-red-overlay),
+        stop: 1 var(--bg-transparent)
+    );
+    border: 1px solid var(--red);
+    border-radius: 8px;
+}
+
+.active-alarm-window .alarm-title-icon {
+    font-size: 32px;
+    margin-top: 4px;
+}
+
+.active-alarm-window .alarm-info,
+.active-alarm-window .alarm-title {
+    font-size: 24px;
+    font-family: "Oxanium";
+}
+
+.active-alarm-window .alarm-info {
+    color: var(--red);
+    margin-top: 12px;
+}
+
+.active-alarm-window .alarm-title {
+    color: var(--cyan);
+}
+
+.active-alarm-window .button {
+    font-family: "Blender Pro Book";
+    letter-spacing: 2px;
+    background: transparent;
+    border: none;
+    margin: 12px 4px;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+
+.active-alarm-window .button:hover {
+    border-bottom-left-radius: 12px;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.10 WEATHER WIDGET
+ * ---------------------------------------------------------------------------- */
+.weather-widget {
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+.weather-widget .widget-container {
+    background-color: var(--widget-background);
+    max-height: 20px;
+    border-top-right-radius: 9px;
+    border: 1px solid var(--cyan);
+    padding-left: 4px;
+}
+
+.weather-widget .icon {
+    font-size: 16px;
+    margin-right: 4px;
+    color: none;
+}
+
+.weather-card {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border: 2px solid var(--yellow-neon);
+    border-radius: 8px;
+}
+
+.weather-card-today .label {
+    font-family: "Blender Pro Book";
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding-bottom: 16px;
+    color: var(--yellow-neon);
+}
+
+.weather-card-today .label.location {
+    background-color: transparent;
+    width: auto;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--cyan);
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--blue);
+}
+
+.weather-card-today .label.alert {
+    font-size: 12px;
+    font-weight: 700;
+    background-color: var(--bg-red-overlay);
+    border: 1px solid var(--red);
+    color: var(--yellow);
+    border-radius: 8px;
+    padding: 5px 0;
+}
+
+.weather-card-day {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-transparent)
+    );
+    border-top-right-radius: 24px;
+}
+
+.weather-card-day:hover {
+    border: 1px solid var(--cyan);
+    border-bottom: none;
+}
+
+.weather-card-day.active {
+    border: 1px solid var(--yellow);
+    border-bottom: none;
+}
+
+.weather-card-day .label {
+    font-family: "Oxanium";
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--cyan);
+}
+
+.weather-card .hourly-container {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--bg-black-transparent),
+        stop: 1 var(--bg-transparent)
+    );
+    min-height: 150px;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 8px;
+    margin: 0px 10px;
+}
+
+.weather-card .hourly-data {
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+    color: var(--yellow-neon);
+    padding-right: 50px;
+}
+
+.weather-card .hourly-data.temperature {
+    letter-spacing: 0px;
+    background-color: var(--red);
+}
+
+.weather-card .hourly-data.rain {
+    background-color: var(--cyan-neon2);
+}
+
+.weather-card .hourly-data.snow {
+    background-color: var(--white);
+}
+
+.weather-card .hourly-data .hourly-rain-animation {
+    color: var(--cyan);
+    background-color: var(--blue);
+}
+
+.weather-card .hourly-data .hourly-snow-animation {
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+.weather-card .hourly-data-buttons {
+    margin-top: 235px;
+    margin-left: 5px;
+    padding: 0;
+}
+
+.weather-card .hourly-data-button {
+    color: var(--green);
+}
+
+.weather-card .hourly-data-button:hover {
+    color: var(--green-neon);
+    background-color: var(--widget-hover);
+    border-radius: 7px;
+}
+
+.weather-card .hourly-data-button.active {
+    color: var(--green-neon);
+    background-color: var(--widget-active);
+    border-radius: 7px;
+    height: auto;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.11 ACTIVE WINDOW WIDGET
+ * ---------------------------------------------------------------------------- */
+.active-window-widget {
+    margin-right: -2px;
+}
+
+.active-window-widget .widget-container {
+    background-color: var(--widget-background);
+    max-height: 20px;
+    border-bottom-left-radius: 9px;
+    border: 1px solid var(--cyan);
+    border-right: none;
+}
+
+.active-window-widget .icon {
+    padding: 2px 4px;
+    color: var(--cyan);
+}
+
+.active-window-widget .label {
+    color: var(--yellow-neon);
+    qproperty-alignment: 'AlignVCenter';
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.12 TASKBAR WIDGET
+ * ---------------------------------------------------------------------------- */
+.taskbar-widget .app-container {
+    background-color: var(--widget-background);
+    margin: 5px 0px;
+    margin-right: 4px;
+    padding: 0 4px;
+    border-top-right-radius: 5px;
+    border: 1px solid var(--cyan);
+}
+
+.taskbar-widget .app-container.foreground {
+    background-color: var(--widget-active);
+    border: 1px solid var(--yellow);
+}
+
+.taskbar-widget .app-container.flashing {
+    background-color: var(--bg-red-overlay);
+    border: 1px solid var(--red);
+}
+
+.taskbar-widget .app-container.running {
+    background-color: var(--bg-green-overlay);
+    border: 1px solid var(--green-neon);
+}
+
+.taskbar-widget .app-container:hover {
+    background-color: var(--bg-pink-overlay);
+    border: 1px solid var(--cyan);
+}
+
+.taskbar-preview {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--cyan),
+        stop: 1 var(--purple)
+    );
+    border: 2px solid var(--yellow-neon);
+    border-radius: 8px;
+}
+
+.taskbar-preview .header {
+    padding: 4px 4px;
+    margin-bottom: 4px;
+}
+
+.taskbar-preview .header .title {
+    font-size: 14px;
+    font-family: "Blender Pro Book";
+    letter-spacing: 2px;
+    qproperty-alignment: "AlignVCenter";
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.13 CPU AND MEMORY WIDGETS
+ * ---------------------------------------------------------------------------- */
+.cpu-widget .widget-container {
+    margin-left: -8px;
+}
+
+.cpu-widget .label,
+.memory-widget .label {
+    color: var(--yellow-neon);
+}
+
+.cpu-widget .icon,
+.memory-widget .icon {
+    color: var(--cyan);
+    margin-right: 4px;
+}
+
+.memory-widget {
+    padding-left: 0;
+}
+
+.memory-widget .widget-container {
+    margin-right: -8px;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.14 WIFI WIDGET
+ * ---------------------------------------------------------------------------- */
+.wifi-widget {
+    width: auto;
+}
+
+.wifi-widget .widget-container {
+    margin: 0 -4px;
+    padding-left: 0;
+}
+
+.wifi-widget .icon {
+    color: var(--cyan);
+}
+
+.wifi-widget .label {
+    font-family: "JetBrainsMono NFP";
+    color: var(--cyan);
+}
+
+.wifi-menu {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--cyan),
+        stop: 1 var(--purple)
+    );
+    border: 3px solid var(--yellow-neon);
+    border-radius: 8px;
+    max-height: 350px;
+    min-height: 375px;
+    min-width: 375px;
+}
+
+.wifi-menu .progress-bar {
+    max-height: 3px;
+    max-width: 372px;
+    padding-left: 5px;
+}
+
+.wifi-menu .progress-bar::chunk {
+    background-color: var(--green-neon);
+}
+
+.wifi-menu .header {
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+    font-size: 18px;
+    qproperty-alignment: "AlignHCenter";
+    margin-top: 8px;
+    padding: 4px 0;
+}
+
+.wifi-menu .error-message {
+    font-family: "Blender Pro Book";
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    background-color: var(--bg-pink-overlay);
+    border-radius: 8px;
+    border: 2px solid var(--red);
+    color: var(--black);
+    padding: 2px 0px;
+    min-width: 355px;
+    min-height: 24px;
+    margin: 4px 12px 4px 10px;
+}
+
+.wifi-menu .wifi-list {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-transparent),
+        stop: 1 var(--bg-dark-transparent)
+    );
+    border: 3px solid var(--yellow-neon);
+    border-radius: 8px;
+    margin-right: 12px;
+    margin-left: 8px;
+}
+
+.wifi-menu .wifi-item {
+    background-color: transparent;
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: var(--cyan);
+    min-height: 35px;
+    padding: 2px 12px;
+    margin: 2px 4px;
+    border-bottom-left-radius: 12px;
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-hover),
+        stop: 1 var(--bg-transparent)
+    );
+    color: var(--yellow);
+}
+
+.wifi-menu .wifi-item[active=true] {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-active),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--yellow-neon);
+    color: var(--red);
+}
+
+.wifi-menu .wifi-item .icon {
+    font-family: "Segoe Fluent Icons";
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .name {
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .password {
+    font-family: "Segoe Fluent Icons";
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .status {
+    font-family: "Segoe Fluent Icons";
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .strength {
+    font-family: "Segoe Fluent Icons";
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+    font-family: "Blender Pro Book";
+    letter-spacing: 2px;
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-hover),
+        stop: 1 var(--bg-black-transparent)
+    );
+    padding: 4px 30px;
+    border-radius: 4px;
+    border: 1px solid var(--cyan);
+    font-size: 18px;
+}
+
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-active),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--yellow-neon);
+    color: var(--red);
+}
+
+.wifi-menu .footer {
+    font-weight: 600;
+    margin: 4px 0;
+    padding: 0px 90px;
+}
+
+.wifi-menu .footer .settings-button {
+    font-family: "Blender Pro Book";
+    letter-spacing: 2px;
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--bg-black-transparent),
+        stop: 0.5 var(--bg-dark-transparent),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 2px solid var(--blue);
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin: 0 12px;
+    padding: 0 8px;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--yellow);
+}
+
+.wifi-menu .footer .settings-button:hover {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--cyan-overlay),
+        stop: 0.2 var(--cyan-overlay),
+        stop: 1 var(--yellow)
+    );
+    border: 2px solid var(--purple);
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: var(--pink-neon);
+}
+
+.wifi-menu .footer .refresh-icon {
+    font-family: "Segoe Fluent Icons";
+    background-color: transparent;
+    border: none;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--purple);
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: var(--bg-dark-transparent);
+    color: var(--yellow-neon);
+    border-radius: 8px;
+    border: 1px solid var(--yellow);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.15 TRAFFIC WIDGET
+ * ---------------------------------------------------------------------------- */
+.traffic-widget {
+    margin: 0;
+}
+
+.traffic-widget .widget-container {
+    padding: 0px -8px 0px 8px;
+    margin: 0;
+    background-color: var(--widget-background);
+    max-height: 20px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border: 1px solid var(--cyan);
+}
+
+.traffic-widget .label {
+    padding: 0 4px;
+    color: var(--yellow-neon);
+}
+
+.traffic-widget .label.offline {
+    color: var(--white);
+}
+
+.traffic-widget .icon {
+    color: var(--pink-neon);
+}
+
+.traffic-widget .icon.offline {
+    color: var(--red);
+}
+
+.traffic-menu {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border: 2px solid var(--yellow-neon);
+    border-radius: 8px;
+}
+
+.traffic-menu .header {
+    border-bottom: 1px solid var(--cyan);
+    margin-bottom: 8px;
+}
+
+.traffic-menu .header .title {
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+    font-size: 18px;
+    padding: 12px;
+}
+
+.traffic-menu .header .reset-button {
+    background-color: transparent;
+    border: none;
+    font-family: "Blender Pro Book";
+    letter-spacing: 2px;
+    padding: 0px 4px;
+    margin: 0 4px;
+    border-left: 1px solid black;
+}
+
+.traffic-menu .header .reset-button:hover {
+    padding: 2px;
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-active),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--red);
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: var(--red);
+}
+
+.traffic-menu .interface-info {
+    height: 50px;
+    padding: 12px 6px 6px 6px;
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+    color: var(--cyan);
+}
+
+.traffic-menu .internet-info {
+    height: 50px;
+    padding: 0px 6px 6px;
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+    color: var(--green-neon);
+}
+
+.traffic-menu .section {
+    padding: 0px 12px;
+}
+
+.traffic-menu .section-title {
+    margin: 16px 0 8px;
+    font-family: "Oxanium";
+    font-size: 18px;
+    letter-spacing: 2px;
+    qproperty-alignment: "AlignHCenter";
+    color: var(--cyan-neon2);
+}
+
+.traffic-menu .data-text {
+    color: var(--cyan-neon1);
+}
+
+.traffic-menu .data-text.session-upload-text,
+.traffic-menu .data-text.session-download-text,
+.traffic-menu .data-text.session-duration-text,
+.traffic-menu .data-text.today-upload-text,
+.traffic-menu .data-text.today-download-text,
+.traffic-menu .data-text.alltime-upload-text,
+.traffic-menu .data-text.alltime-download-text {
+    font-family: "Blender Pro Book";
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.traffic-menu .data-value.session-upload-value,
+.traffic-menu .data-value.session-download-value,
+.traffic-menu .data-value.session-duration-value,
+.traffic-menu .data-value.today-upload-value,
+.traffic-menu .data-value.today-download-value,
+.traffic-menu .data-value.alltime-upload-value,
+.traffic-menu .data-value.alltime-download-value {
+    font-family: "Blender Pro Book";
+    font-size: 18px;
+    letter-spacing: 2px;
+    qproperty-alignment: "AlignRight";
+    margin-top: 5px;
+}
+
+.traffic-menu .upload-speed,
+.traffic-menu .download-speed {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 1, y2: 0,
+        stop: 0 var(--widget-hover),
+        stop: 1 var(--bg-black-transparent)
+    );
+    border: 1px solid var(--cyan);
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding: 8px;
+    min-width: 70px;
+}
+
+.traffic-menu .speed-separator {
+    background-color: var(--cyan);
+    max-height: 1px;
+}
+
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+    font-family: "Oxanium";
+    letter-spacing: 2px;
+}
+
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+    font-size: 12px;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4.16 POWER MENU WIDGET
+ * ---------------------------------------------------------------------------- */
+.power-menu-widget {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 2px;
+    max-width: 35px;
+}
+
+.power-menu-widget .widget-container {
+    background-color: var(--widget-background);
+    border-top-right-radius: 9px;
+    border: 1px solid var(--cyan);
+}
+
+.power-menu-widget .label {
+    font-family: "JetBrainsMono NFP";
+    font-size: 14px;
+    color: var(--yellow);
+}
+
+.power-menu-widget .label:hover {
+    color: var(--red);
+}
+
+.power-menu-popup {
+    background-color: qlineargradient(
+        x1: 0, y1: 1,
+        x2: 0, y2: 0,
+        stop: 0 var(--bg-cyan-overlay),
+        stop: 1 var(--bg-purple-overlay)
+    );
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 5px solid var(--yellow);
+}
+
+.power-menu-popup .button {
+    padding: 0px;
+    width: 180px;
+    height: 180px;
+    border-top-right-radius: 20px;
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+        stop: 0 var(--bg-red-overlay),
+        stop: 1 var(--bg-transparent)
+    );
+    border: 3px solid var(--bg-blue-overlay);
+    border-bottom: none;
+    margin: 5px;
+}
+
+.power-menu-popup .button.hover {
+    background-color: qlineargradient(
+        x1: 0, y1: 0,
+        x2: 0, y2: 1,
+        stop: 0.2 var(--bg-black-transparent),
+        stop: 0.5 var(--bg-red-overlay),
+        stop: 1 var(--bg-transparent)
+    );
+    border: 3px solid var(--cyan);
+    border-bottom: none;
+}
+
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--red);
+    font-family: "Cyberpunk";
+}
+
+.power-menu-popup .button .icon {
+    font-size: 64px;
+    padding-top: 32px;
+    color: var(--blue);
+}
+
+.power-menu-popup .button.hover .label,
+.power-menu-popup .button.hover .icon {
+    color: var(--yellow);
+}
+
+.power-menu-popup .button.cancel .icon {
+    padding: 0;
+    margin: 0;
+}
+
+.power-menu-popup .button.cancel .label {
+    font-size: 54px;
+}
+
+.power-menu-popup .button.cancel {
+    height: 64px;
+    border: 3px solid var(--bg-blue-overlay);
+}
+
+.power-menu-popup .button.cancel:hover {
+    border: 3px solid var(--cyan);
+}
+
+.uptime {
+    font-family: "Blender Pro Book";
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: var(--red);
+}
+
+/* ============================================================================
+ * END OF STYLESHEET
+ * ============================================================================ */
