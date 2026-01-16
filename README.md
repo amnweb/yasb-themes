@@ -22,6 +22,11 @@ To update a theme, please follow these steps:
 <a title="IlyaTheme YASB Theme" href="themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/image.png" width="830px"></a>
 
 
+## [Pywal Theme](themes/4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3)
+
+<a title="Pywal Theme YASB Theme" href="themes/4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3/image.png" width="830px"></a>
+
+
 ## [Warriors Dreams](themes/179863d1-4b68-4126-92b5-621a671b49de)
 
 <a title="Warriors Dreams YASB Theme" href="themes/179863d1-4b68-4126-92b5-621a671b49de"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/image.png" width="830px"></a>
