@@ -4,10 +4,10 @@ debug: false
 komorebi:
   start_command: "komorebic start --whkd"
   stop_command: "komorebic stop --whkd"
-  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd "
 bars:
   primary-bar:
-    enabled: true
+    enabled: truea
     screens: ["*"]
     class_name: "yasb-bar"
     alignment:
@@ -31,12 +31,22 @@ bars:
       bottom: 0
       right: 6
     widgets:
-      left: ["home","komorebi_workspaces","active_window"]
-      center: ["clock","apps"]
-      right: ["update","wallpapers","media","weather","memory","bin","wifi","volume","power_menu"]
+      left: ["home", "komorebi_workspaces", "active_window"]
+      center: ["clock", "apps"]
+      right:
+        [
+          "update",
+          "wallpapers",
+          "media",
+          "weather",
+          "memory",
+          "bin",
+          "wifi",
+          "volume",
+          "power_menu",
+        ]
 widgets:
-
-bin:
+  bin:
     type: "yasb.recycle_bin.RecycleBinWidget"
     options:
       label: "<span color='#89b4fa'>{icon}</span> Items {items_count} ({items_size})"
@@ -52,7 +62,7 @@ bin:
         enabled: true
         color: "black"
         radius: 3
-        offset: [ 1, 1 ]
+        offset: [1, 1]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -68,22 +78,21 @@ bin:
         medium: 50
         high: 90
       histogram_icons:
-        - "\u2581" # 0%
-        - "\u2581" # 10%
-        - "\u2582" # 20%
-        - "\u2583" # 30%
-        - "\u2584" # 40%
-        - "\u2585" # 50%
-        - "\u2586" # 60%
-        - "\u2587" # 70%
-        - "\u2588" # 80%+
+        - "\u2581"
+        - "\u2581"
+        - "\u2582"
+        - "\u2583"
+        - "\u2584"
+        - "\u2585"
+        - "\u2586"
+        - "\u2587"
+        - "\u2588"
       label_shadow:
         enabled: true
         color: "black"
         radius: 3
-        offset: [ 1, 1 ]
-
-wifi:
+        offset: [1, 1]
+  wifi:
     type: "yasb.wifi.WifiWidget"
     options:
       label: "<span>{wifi_icon}</span>"
@@ -96,19 +105,20 @@ wifi:
       ethernet_label: "<span>{wifi_icon}</span>"
       ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
       ethernet_icon: "\ueba9"
-      get_exact_wifi_strength: false  # Optional. Will require location access permission if true.
-      wifi_icons: [
-        "\udb82\udd2e",  # Icon for 0% strength
-        "\udb82\udd1f",  # Icon for 1-24% strength
-        "\udb82\udd22",  # Icon for 25-49% strength
-        "\udb82\udd25",  # Icon for 50-74% strength
-        "\udb82\udd28"   # Icon for 75-100% strength
-      ]
+      get_exact_wifi_strength: false
+      wifi_icons:
+        [
+          "\udb82\udd2e",
+          "\udb82\udd1f",
+          "\udb82\udd22",
+          "\udb82\udd25",
+          "\udb82\udd28",
+        ]
       label_shadow:
         enabled: true
         color: "black"
         radius: 3
-        offset: [ 1, 1 ]
+        offset: [1, 1]
       menu_config:
         blur: true
         round_corners: true
@@ -118,49 +128,32 @@ wifi:
         direction: "down"
         offset_top: 6
         offset_left: 0
-        wifi_icons_secured: [
-          "\ue670",
-          "\ue671",
-          "\ue672",
-          "\ue673",
-        ]
-        wifi_icons_unsecured: [
-          "\uec3c",
-          "\uec3d",
-          "\uec3e",
-          "\uec3f",
-          ] 
+        wifi_icons_secured: ["\ue670", "\ue671", "\ue672", "\ue673"]
+        wifi_icons_unsecured: ["\uec3c", "\uec3d", "\uec3e", "\uec3f"]
   media:
-      type: "yasb.media.MediaWidget"
-      options:
-        label: "{title} - {artist}"
-        label_alt: "{title}"
-        max_field_size:
-          label: 20
-          label_alt: 30
-        show_thumbnail: true
-        controls_hide: true
-        callbacks:
-          on_left: "toggle_media_menu"
-        controls_only: false
-        controls_left: true
-        hide_empty: true
-        thumbnail_alpha: 80
-        thumbnail_padding: 8
-        thumbnail_corner_radius: 16 # Set to 0 for square corners
-        icons:
-          prev_track: "\ue892"
-          next_track: "\ue893"
-          play: "\ue768"
-          pause: "\ue769"
-      # --- Standard icon definitions ---
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title} - {artist}"
+      label_alt: "{title}"
+      max_field_size:
+        label: 20
+        label_alt: 30
+      show_thumbnail: true
+      controls_hide: true
+      callbacks:
+        on_left: "toggle_media_menu"
+      controls_only: false
+      controls_left: true
+      hide_empty: true
+      thumbnail_alpha: 80
+      thumbnail_padding: 8
+      thumbnail_corner_radius: 16
       icons:
         prev_track: "\ue892"
         next_track: "\ue893"
         play: "\ue768"
         pause: "\ue769"
-
-media_menu:
+      media_menu:
         blur: true
         round_corners: true
         alignment: "right"
@@ -169,12 +162,6 @@ media_menu:
         thumbnail_corner_radius: 12
         thumbnail_size: 90
         show_source: true
-      
-      icons:
-        prev_track: "\ue892"
-        next_track: "\ue893"
-        play: "\ue768"
-        pause: "\ue769"  
   update:
     type: "yasb.update_check.UpdateCheckWidget"
     options:
@@ -187,7 +174,7 @@ media_menu:
         enabled: true
         label: "<span>\uf0ab</span>{count}"
         interval: 240
-        exclude: [] 
+        exclude: []
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -197,7 +184,6 @@ media_menu:
       label_icon: false
       label_icon_size: 14
       monitor_exclusive: false
-      # --- Text Truncation for Older Versions ---
       max_length: 30
       max_length_ellipsis: "..."
   home:
@@ -205,10 +191,10 @@ media_menu:
     options:
       label: "<span>\uf192</span>"
       menu_list:
-      - { title: "User Home", path: "~" }
-      - { title: "Download", path: "~\\Downloads" }
-      - { title: "Documents", path: "~\\Documents" }
-      - { title: "Pictures", path: "~\\Pictures" }
+        - { title: "User Home", path: "~" }
+        - { title: "Download", path: "~\\Downloads" }
+        - { title: "Documents", path: "~\\Documents" }
+        - { title: "Pictures", path: "~\\Pictures" }
       system_menu: true
       power_menu: true
       blur: true
@@ -224,7 +210,7 @@ media_menu:
       label: "{%a, %d %b %I:%M %p}"
       label_alt: "{%A, %d %B %Y %I:%M:%S %p}"
       timezones: []
-      calendar: 
+      calendar:
         alignment: "center"
         offset_top: 6
   komorebi_workspaces:
@@ -239,51 +225,18 @@ media_menu:
       hide_empty_workspaces: false
       hide_if_offline: true
       animation: true
-  komorebi_active_layout:
-    type: "komorebi.active_layout.ActiveLayoutWidget"
-    options:
-      hide_if_offline: true
-      label: "{icon}"
-      layouts:
-        [
-          "bsp",
-          "columns",
-          "rows",
-          "grid",
-          "vertical_stack",
-          "horizontal_stack",
-          "ultrawide_vertical_stack",
-          "right_main_vertical_stack",
-        ]
-      layout_icons:
-        bsp: "BSP"
-        columns: "COLS"
-        rows: "ROWS"
-        grid: "GRID"
-        vertical_stack: "V-STACK"
-        horizontal_stack: "H-STACK"
-        ultrawide_vertical_stack: "W-STACK"
-        right_main_vertical_stack: "RMV-STACK"
-        monocle: "MONOCLE"
-        maximised: "MAX"
-        floating: "FLOATING"
-        paused: "PAUSED"
-      callbacks:
-        on_left: "next_layout"
-        on_middle: "toggle_monocle"
-        on_right: "prev_layout"
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "insert api key" # Get your free API key from https://www.weatherapi.com/
+      api_key: "Enter Api Key"
       show_alerts: true
       tooltip: true
-      update_interval: 600 # Update interval in seconds, Min 600 seconds
+      update_interval: 600
       hide_decimal: true
-      units: "metric" # Can be 'metric' or 'imperial'
-      location: "Pakistan Peshawar 25000" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      units: "metric"
+      location: "Enter Location"
       callbacks:
         on_left: "toggle_card"
         on_middle: "do_nothing"
@@ -312,49 +265,36 @@ media_menu:
         alignment: "right"
         direction: "down"
         icon_size: 64
-        show_hourly_forecast: true # Set to False to disable hourly forecast
-        time_format: "24h" # can be 12h or 24h
+        show_hourly_forecast: true
+        time_format: "24h"
         hourly_point_spacing: 76
-        hourly_icon_size: 32 # better to set 16, 32 or 64 for better quality
-        icon_smoothing: true # should be true for smoother icon or false for sharper icon if using 16, 32 or 64 for hourly_icon_size
-        temp_line_width: 2 # can be 0 to hide the temperature line
+        hourly_icon_size: 32
+        icon_smoothing: true
+        temp_line_width: 2
         current_line_color: "#8EAEE8"
-        current_line_width: 1 # can be 0 to hide the current hour line
+        current_line_width: 1
         current_line_style: "dot"
         hourly_gradient:
           enabled: false
           top_color: "#8EAEE8"
           bottom_color: "#2A3E68"
-        hourly_forecast_buttons: # Optional hourly forecast data type toggle buttons, default disabled
-          enabled: true # Set to false to hide the buttons
-          default_view: "temperature" # Default view when opening the weather card. Options: "temperature", "rain", "snow"
+        hourly_forecast_buttons:
+          enabled: true
+          default_view: "temperature"
           temperature_icon: "\udb81\udd99"
           rain_icon: "\udb81\udd96"
           snow_icon: "\udb81\udd98"
-        weather_animation:
-          enabled: false
-          snow_overrides_rain: true
-          temp_line_animation_style: both # can be "rain", "snow", "both", or "none"
-          rain_effect_intensity: 1.0 # 0.01 - 10.0
-          snow_effect_intensity: 1.0 # 0.01 - 10.0
-          scale_with_chance: true
-          enable_debug: false
       label_shadow:
         enabled: true
         color: "black"
         radius: 3
-        offset: [ 1, 1 ]
+        offset: [1, 1]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
-        - "\ueee8"
-        - "\uf026"
-        - "\uf027"
-        - "\uf027"
-        - "\uf028"
+      volume_icons: ["\ueee8", "\uf026", "\uf027", "\uf027", "\uf028"]
       callbacks:
         on_right: "exec cmd.exe /c start ms-settings:sound"
   power_menu:
@@ -381,10 +321,15 @@ media_menu:
         - { icon: "\uf0a2", launch: "notification_center" }
         - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
         - { icon: "\uf489", launch: "wt" }
-        - {icon: "\udb80\ude39", launch: "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"}
-        - { icon: "\udb82\ude1e",launch: "C:\\Users\\amn\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe" }
-
-taskbar:
+        - {
+            icon: "\udb80\ude39",
+            launch: "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+          }
+        - {
+            icon: "\udb82\ude1e",
+            launch: "C:\\Users\\amn\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+          }
+  taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
       animation:
@@ -394,11 +339,6 @@ taskbar:
         processes: []
         titles: []
         classes: []
-  
-  whkd:
-    type: "yasb.whkd.WhkdWidget"
-    options:
-      label: "<span>\uf11c</span>"
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
@@ -419,3 +359,4 @@ taskbar:
         lazy_load_fadein: 200
         image_corner_radius: 20
         enable_cache: true
+
