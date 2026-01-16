@@ -7,7 +7,7 @@ komorebi:
   reload_command: "komorebic stop --whkd && komorebic start --whkd "
 bars:
   primary-bar:
-    enabled: truea
+    enabled: true
     screens: ["*"]
     class_name: "yasb-bar"
     alignment:
