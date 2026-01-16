@@ -491,7 +491,7 @@ widgets:
       callbacks:
         on_left: "toggle_window"
         on_middle: "do_nothing"
-        on_left: "context_menu"
+        on_right: "context_menu"
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
