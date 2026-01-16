@@ -9,7 +9,7 @@
 .yasb-bar {
 	padding: 0 8px;
 	margin: 0;
-    background-color: rgba(35, 35, 35, 0);
+    background-color: rgba(35, 35, 35, 0.01);
 }
 .widget {
 	padding: 0 10px;
