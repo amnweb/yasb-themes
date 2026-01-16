@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Edgerunners](themes/cd2adf60-84a1-436d-a0a9-95ac4c288928)
+
+<a title="Edgerunners YASB Theme" href="themes/cd2adf60-84a1-436d-a0a9-95ac4c288928"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/cd2adf60-84a1-436d-a0a9-95ac4c288928/image.png" width="830px"></a>
+
+
 ## [IlyaTheme](themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc)
 
 <a title="IlyaTheme YASB Theme" href="themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/image.png" width="830px"></a>
