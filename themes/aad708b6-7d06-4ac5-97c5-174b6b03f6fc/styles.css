@@ -9,7 +9,7 @@
 .yasb-bar {
 	padding: 0 8px;
 	margin: 0;
-    background-color: rgba(35, 35, 35, 0.6);
+    background-color: rgba(35, 35, 35, 0);
 }
 .widget {
 	padding: 0 10px;
@@ -24,6 +24,7 @@
 .clock-widget .label {
     padding-left:8px;
 }
+
 /* POWER MENU WIDGET */
 .uptime { /* UPTIME */
 	font-size: 14px;
@@ -73,15 +74,9 @@
 .icon {
 	font-size: 16px;
 }
-
 .volume-widget .icon {
 	color: #89b4fa;
 	margin: 1px 2px 0 0;
-}
-
-.start-menu .icon {
-    font-size: 18px;
-	color: #ffffff
 }
 
 /* WEATHER WIDGET */
@@ -119,11 +114,15 @@
 	padding-left: 10px;
 	padding-right: 4px;
 }
+
 .media-menu .btn, .media-menu .title, .media-menu .artist { padding-left: 10px; font-family: 'JetBrains Mono'; }
+
 .media-menu .btn.prev:hover, .media-menu .btn.next:hover { color: #ffc400; }
+
 .media-menu .source {
     font-size: 11px;
     color: #000;
+    padding-left: 10px;
     border-radius: 3px;
     background-color: #bac2de;
     padding: 2px 4px;
@@ -203,6 +202,35 @@
 .github-menu .contents .item.new .icon {
     color: #3fb950;
 }
+/* KOMOREBI */
+.komorebi-control-widget .label {
+    font-size: 14px;
+    color: #cdd6f4;
+    font-weight: 600;
+}
+.komorebi-control-menu {
+    background-color: rgba(17, 17, 27, 0.2);
+}
+.komorebi-control-menu .button {
+    color: rgba(162, 177, 199, 0.4);
+    padding: 8px 16px;
+    font-size: 32px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+.komorebi-control-menu .button.active {
+    color: rgb(228, 228, 228);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+.komorebi-control-menu .button:disabled,
+.komorebi-control-menu .button.active:disabled {
+    background-color: rgba(255, 255, 255, 0.01);
+    color: rgba(255, 255, 255, 0.2);
+}
+.komorebi-control-menu .footer .text {
+    font-size: 12px;
+    color: #6c7086;
+}
 /* SYSTEMINFO GROUPER */
 .grouped-widgets .container {
     background-color: rgba(35, 35, 35, 0.1);
@@ -210,6 +238,7 @@
     border-radius: 12px;
     border: 2px solid #45475a;
 }
+
 /* CPU & MEMORY */
 .cpu-widget .icon {
     color: var(--orange);
@@ -218,6 +247,7 @@
 .cpu-widget .label {
     padding-right: 8px;
 }
+
 /* HOME */
 .home-widget {
     padding: 0 4px 0 0;
@@ -246,6 +276,7 @@
     max-height: 1px;
     background-color:rgba(128, 130, 158, 0.3);
 }
+
 /* MUSIC SOURCES */
 .media-menu .source.aimp {
     background-color: #6f42c1;
@@ -323,6 +354,7 @@
     background-color: #2ecc71;
     color: #000000;
 }
+
 /* Hide media widget buttons */
 .media-widget .btn {
 	padding: 0;
