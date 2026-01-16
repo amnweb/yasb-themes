@@ -1,4 +1,16 @@
 {
+    "aad708b6-7d06-4ac5-97c5-174b6b03f6fc": {
+        "id": "aad708b6-7d06-4ac5-97c5-174b6b03f6fc",
+        "name": "IlyaTheme",
+        "description": "The theme created by ii5601!",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/image.png",
+        "author": "ii5601",
+        "publish_date": "2026-01-05T14:19:50.678950"
+    },
     "179863d1-4b68-4126-92b5-621a671b49de": {
         "id": "179863d1-4b68-4126-92b5-621a671b49de",
         "name": "Warriors Dreams",
@@ -14,7 +26,7 @@
     "d513044f-9218-46e1-ab62-c15705b80341": {
         "id": "d513044f-9218-46e1-ab62-c15705b80341",
         "name": "dots windows",
-        "description": "The Yasb theme is inspired by dots-hyprland - end-4. Now available for PC  laptop",
+        "description": "The Yasb theme is inspired by dots-hyprland - end-4. To center bar use style css",
         "homepage": "https://github.com/shawanGIT/dots-windows",
         "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d513044f-9218-46e1-ab62-c15705b80341/styles.css",
         "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d513044f-9218-46e1-ab62-c15705b80341/config.yaml",
