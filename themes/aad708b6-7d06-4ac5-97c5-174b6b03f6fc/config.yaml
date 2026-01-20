@@ -1,6 +1,12 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
+
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+
 bars:
   status-bar:
     enabled: true
@@ -10,8 +16,8 @@ bars:
       position: "top"
       center: false
     blur_effect:
-      enabled: true 
-      acrylic: true 
+      enabled: false 
+      acrylic: false 
       dark_mode: true
       round_corners: false
       border_color: None
@@ -29,7 +35,9 @@ bars:
     widgets:
       left:
         [
-          "home",
+          "komorebi_control",
+          "komorebi_workspaces",
+          "cava",
           "media"
         ]
       center: ["clock"]
@@ -38,9 +46,110 @@ bars:
           "grouped_widgets",
           "volume",
           "github",
+          "notes",
           "power_menu"
         ]
 widgets:
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 12
+      min_bar_height: 0
+      gradient: 1
+      foreground: "#89b4fa"
+      gradient_color_1: '#74c7ec'
+      gradient_color_2: '#89b4fa'
+      gradient_color_3: '#cba6f7'
+      bars_number: 16
+      bar_spacing: 2
+      bar_width: 4
+      bar_type: "bars"
+      framerate: 60
+      hide_empty: false
+  komorebi_control:
+    type: "komorebi.control.KomorebiControlWidget"
+    options:
+      label: "<span>\udb80\uddd9</span>"
+      icons:
+        start: "\uead3"
+        stop: "\uead7"
+        reload: "\uead2"
+      run_ahk: false
+      run_whkd: false
+      run_masir: false
+      show_version: true
+      komorebi_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: 'normal'
+        border_color: 'System'
+        alignment: 'left'
+        direction: 'down'
+        offset_top: 6
+        offset_left: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Komorebi Offline"
+      label_workspace_btn: "\udb81\udc3d"
+      label_workspace_active_btn: "\udb81\udc3e"
+      label_workspace_populated_btn: "\udb81\udc3e"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+      animation: true
+      toggle_workspace_layer:
+        enabled: false
+        tiling_label: "Tiling"
+        floating_label: "Floating"
+      app_icons: 
+        enabled_populated: false
+        enabled_active: false
+        size: 12
+        max_icons: 0
+        hide_label: false
+        hide_duplicates: false
+        hide_floating: false
+      btn_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  notes:
+    type: "yasb.notes.NotesWidget"
+    options:
+      label: "<span>\udb82\udd0c</span> {count}"
+      label_alt: "{count} notes"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        max_title_size: 150
+        show_date_time: true
+      icons:
+        note: "\udb82\udd0c"
+        delete: "\ueab8"
+        copy: "\uebcc"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -93,7 +202,7 @@ widgets:
     options:
       label: "<span>\ueba1</span>"
       label_alt: "Notifications {data}"
-      token: ghp_xxxxxxxxxxx # GitHub Personal access tokens (classic) https://github.com/settings/tokens
+      token: ghp_xxxxxxxxxxxxxxxxxxxxxx # GitHub Personal access tokens (classic) https://github.com/settings/tokens
       max_notification: 50
       notification_dot:
         enabled: True
@@ -271,34 +380,3 @@ widgets:
           restart: ["\uead2","Restart"]
           signout: ["\udb80\udf43","Sign out"]
           cancel: ["\udb81\udf3a","Cancel"]
-  home:
-    type: "yasb.home.HomeWidget"
-    options:
-      label: "<span>\uf40e</span>"
-      menu_list:
-        - { title: "User Home", path: "~" }
-        - { title: "Download", path: "~\\Downloads" }
-        - { title: "Documents", path: "~\\Documents" }
-        - { title: "Pictures", path: "~\\Pictures" }
-      system_menu: false
-      power_menu: true
-      blur: true
-      round_corners: true
-      round_corners_type: "normal"
-      border_color: "System"
-      offset_top: 6
-      offset_left: 0
-      alignment: "left"
-      direction: "down"
-      menu_labels:
-        shutdown: "Shutdown"
-        restart: "Restart"
-        logout: "Logout"
-        lock: "Lock"
-        sleep: "Sleep"
-        task_manager: "Task Manager"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
