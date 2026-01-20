@@ -1,41 +1,27 @@
-* {
-    :root {
-    /* --- UNIFIED CLEAN PALETTE --- */
-    --base:       #090915;
-    --mantle:     #12121E; 
-    --crust:      #090915; 
-    --text:       #c1c1c4;
-    --subtext0:   #c1c1c4;
-    --subtext1:   #c1c1c4;
-    --surface0:   #1F1F2A;
-    --surface1:   #2E2E38; 
-    --surface2:   #2E2E38;
-    --overlay0:   #2E2E38;
-    --overlay1:   #c1c1c4;
-    --overlay2:   #c1c1c4;
-    --red:        #889cbd;
-    --green:      #889cbd;
-    --yellow:     #889cbd;
-    --blue:       #666c82;
-    --mauve:      #666c82;
-    --teal:       #889cbd;
-    --lavender:   #666c82;
-    --rosewater:  #889cbd;
-    --flamingo:   #889cbd;
-    --pink:       #889cbd;
-    --maroon:     #889cbd;
-    --peach:      #889cbd;
-    --sky:        #666c82;
-    --sapphire:   #666c82;
+:root {
+    --base: #1e1e2e;
+    --mantle:      #150909; 
+    --crust:       #150909; 
+    --text:        #c4c1c1;
+    --subtext0:    #c4c1c1;
+    --subtext1:    #c4c1c1;
+    --surface0:    #30211E; 
+    --surface1:    #42312C; 
+    --surface2:    #42312C;
+    --teal:        #c9aa96;
+    --blue:        #c9aa96;
+    --red:         #c9aa96;
+    --green:       #c9aa96;
+    --yellow:      #c9aa96;
+    --pink:        #c9aa96;
+    --sky:         #c9aa96;
 }
 
-font-size: 12px;
-    /* CHANGED: Made default text brighter (was subtext0) */
+* {
+    font-size: 12px;
     color: var(--text);
     font-weight: 600;
     font-family: "JetBrainsMono NFP";
-    margin: 0;
-    padding: 0;
 }
 
 .yasb-bar {
@@ -107,28 +93,33 @@ font-size: 12px;
     background-color: transparent;
     margin: 0;
     font-size: 12px;
-    color: var(--overlay1);
+    /* This is the color for empty workspaces */
+    color: var(--teal) !important;
     height: 28px;
     width: 18px;
 }
 
 .komorebi-workspaces .ws-btn:hover {
-    color: var(--subtext1);
+    color: var(--text) !important;
 }
 
 .komorebi-workspaces .ws-btn.populated {
-    color: transparent;
-    width: 10px;
-    height: 10px;
-    background-color: var(--lavender);
-    border-radius: 5px;
-    margin: 0 4px;
-    font-size: 1px;
+    color: transparent !important;
+    width: 10px !important;
+    height: 10px !important;
+
+    /* CHANGE: Using 50% ensures a perfect circle */
+    border-radius: 5px !important;
+
+    /* CHANGE: Using teal so it matches your other widgets */
+    background-color: var(--teal) !important;
+    margin: 0 4px !important;
 }
 
 .komorebi-workspaces .ws-btn.active {
-    color: transparent;
-    background-color: var(--teal);
+    color: transparent !important;
+    background-color: var(--teal) !important;
+    /* This pill shape is already rounded at 5px for its 10px height */
     width: 36px;
     height: 10px;
     margin: 0 4px;
@@ -138,8 +129,8 @@ font-size: 12px;
 .apps-widget .label {
     font-size: 14px;
     padding: 0 2px;
-    /* CHANGED: Was subtext0/yellow. Now Teal to match Clock */
-    color: var(--teal);
+    /* Ensure this is using your theme accent */
+    color: var(--teal) !important;
 }
 
 .apps-widget .label:hover {
@@ -619,8 +610,11 @@ font-size: 12px;
     border: 4px solid var(--sapphire);
 }
 
+/* --- UPDATED UPDATE-CHECK-WIDGET --- */
 .update-check-widget {
-    padding: 0 0px 0 0px;
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 .update-check-widget .icon {
@@ -629,43 +623,58 @@ font-size: 12px;
 
 .update-check-widget .widget-container.winget,
 .update-check-widget .widget-container.windows {
-    background: var(--maroon);
-    margin: 7px 2px 7px 2px;
+    /* Using your original margin/radius logic for 'perfect pillness' */
+    background: var(--teal) !important;
+    margin: 7px 2px;
     border-radius: 9px;
-    border: 2px solid var(--red);
+    border: 2px solid var(--teal);
+    /* Matches background for a seamless pill */
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
 }
 
+/* Ensure the Windows container also uses the teal theme */
 .update-check-widget .widget-container.windows {
-    background: var(--lavender);
-    margin: 7px 2px 7px 2px;
-    border-radius: 9px;
-    border: 2px solid var(--blue);
+    background: var(--teal) !important;
+    border: 2px solid var(--teal) !important;
 }
 
 .update-check-widget .widget-container.winget .icon,
 .update-check-widget .widget-container.windows .icon {
-    color: var(--base);
+    color: var(--base) !important;
     margin: 0 1px 0 6px;
 }
 
 .update-check-widget .widget-container.winget .label,
 .update-check-widget .widget-container.windows .label {
     margin: 0 6px 0 1px;
-    color: var(--base);
+    color: var(--base) !important;
     font-weight: 900;
     font-size: 14px;
 }
 
+
+.home-widget .icon {
+    color: var(--teal) !important;
+}
+
+.home-widget .icon :hover {
+    color: var(--base) !important;
+}
+
 .home-menu {
-    background-color: var(--crust);
+    /* CHANGE: Fixed typo from --lavendera to --mantle or --crust */
+    background-color: var(--mantle) !important;
     border-radius: 8px;
+    border: 1px solid var(--surface1);
 }
 
 .home-menu .menu-item {
     padding: 8px 48px 9px 16px;
     font-size: 12px;
     font-family: 'Segoe UI';
-    color: var(--text);
+    color: var(--teal);
     font-weight: 600;
 }
 
@@ -908,3 +917,4 @@ font-size: 12px;
 .active-window-widget .widget-container .label {
     color: var(--sky);
 }
+
