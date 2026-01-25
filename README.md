@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Deep Work Control](themes/20650dea-7e59-4e8a-b69b-c8664666805d)
+
+<a title="Deep Work Control YASB Theme" href="themes/20650dea-7e59-4e8a-b69b-c8664666805d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/image.png" width="830px"></a>
+
+
 ## [Edgerunners](themes/cd2adf60-84a1-436d-a0a9-95ac4c288928)
 
 <a title="Edgerunners YASB Theme" href="themes/cd2adf60-84a1-436d-a0a9-95ac4c288928"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/cd2adf60-84a1-436d-a0a9-95ac4c288928/image.png" width="830px"></a>
