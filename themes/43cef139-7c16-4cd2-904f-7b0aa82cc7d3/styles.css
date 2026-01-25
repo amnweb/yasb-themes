@@ -1,0 +1,778 @@
+/* 
+Base Configuration, modified from i3-style with a new look.
+For more information about configuration options, please visit their documentation https://github.com/amnweb/yasb/wiki
+*/
+:root {
+    --line: rgb(125, 125, 125);
+    --power_menu_elem_bg: rgba(15, 15, 15, 1);
+    --power_menu_elem_hover: rgba(45, 45, 45, 1);
+    --power_menu_buttons: rgba(100, 100, 100, 1);
+    --power_menu_border: rgba(200, 200, 200, 1);
+    --bar_bg: #000000;
+    --workspace_active: rgb(200, 200, 200);
+    --workspace_inactive: #707070;
+    --workspace_empty: #707070;
+    --workspace_hover: #404040;
+    --text: rgb(200, 200, 200);
+    --text_alt: rgb(150, 150, 150);
+    --text_hover: #fafafa;
+    --text_selected: #fefefe;
+    --widget_bg: rgba(20, 20, 20, 1);
+    --widget_bg_alt: rgb(13, 13, 13);
+    --widget_border: rgb(85, 85, 85);
+    --widget_border_alt: rgb(45, 45, 45); 
+    --progress_bar_load: rgb(135, 135, 135);
+    --tooltip_color: rgba(25, 25, 25, 1);
+    --context_menu_bg: rgb(20, 20, 20);
+    --text_unchecked: #999;
+    --context_menu_box_checked: rgb(225, 225, 225);
+    --context_menu_box_unchecked: rgb(50, 50, 50);
+    --context_menu_separator: rgb(80, 80, 80);
+    --context_menu_disabled: rgb(100, 100, 100);
+    --notes_border: rgb(50, 50, 50);
+    --notes_hover: rgba(140, 140, 140, 0.1);
+    --notes_elem_bg: rgba(65, 65, 65, 0.4);
+    --notes_elem_hover: rgba(90, 90, 90, 0.25);
+    --notes_add_note_hover: rgba(120, 120, 120, 0.25);
+    --notes_input_bg: rgba(5, 5, 5, 0.25);
+    --notes_del_button: rgb(255, 100, 100);
+    --notes_copy_button: rgb(135, 135, 135);
+    --notes_copy_button_pressed: rgb(120, 255, 120);
+    --notes_del_button_pressed: rgb(255, 50, 50);
+    --global_widget_border: 1px solid var(--widget_border);
+    --global_widget_border_alt: 1px solid var(--widget_border_alt);
+    --wallpaper_focused: rgba(180, 180, 180, 1);
+    --media_menu_source: rgba(180, 180, 180, 1);
+    --media_menu_source_text: rgb(0, 0, 0);
+    --media_menu_prog_slid_gr: rgba(255, 255, 255, 0.1);
+    --media_menu_prog_slid_gr_hover: rgba(255, 255, 255, 0.15);
+    --media_menu_prog_slid_gr_sp: rgba(255, 255, 255, 1);
+    --media_menu_btn_hover: #FFFFFF;
+    --media_menu_btn_hover_alt: rgba(175, 175, 175, 1);
+    --media_menu_btn_disabled: #3b3b3b;
+    --media_menu_btn: #acacac;
+    --media_menu_btn_alt: #4A4A4A;
+}
+
+/*                                 COMMON YASB ELEMENTS                          */
+* {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 750;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+.yasb-bar {
+    padding: 0 2px;
+    margin: 0;
+    background-color: var(--bar_bg);
+}
+
+.widget {
+    padding: 0 3px;
+    margin: 0;
+}
+.icon {
+    font-size: 14px;
+    font-weight: 700;
+}
+.widget .label {
+    padding: 0px 2px;
+}
+.grouper-button {
+    font-size: 14px;
+    font-weight: 700;
+}
+/*                                      WIDGETS                                     */
+/*              Power Menu                     */
+.power-menu-widget .label {
+    padding: 0 2px 0 2px;
+}
+.power-menu-popup {
+    background: transparent;
+}
+.power-menu-popup .button {
+    padding: 0;
+    width: 180px;
+    height: 230px;
+    border-radius: 0px;
+    background-color: var(--power_menu_elem_bg);
+    color: var(--text);
+    border-left: 4px solid rgba(58, 59, 83, 0);
+    border-right: 4px solid rgba(58, 59, 83, 0);
+    border-top: 4px solid rgba(58, 59, 83, 0);
+    border-bottom: 4px solid rgba(58, 59, 83, 0);
+    margin: 0px;
+}
+.power-menu-popup .button.hover {
+    background-color: var(--power_menu_elem_hover);
+    border-left: 4px solid var(--power_menu_border);
+    border-right: 4px solid var(--power_menu_border);
+    border-top: 4px solid var(--power_menu_border);
+    border-bottom: 4px solid var(--power_menu_border);
+}
+
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+}
+.power-menu-popup .button .icon {
+    font-size: 64px;
+    padding-top: 32px;
+    color: var(--power_menu_buttons);
+}
+.uptime{
+    font-size: 26px;
+    margin-bottom: 60px;
+    background: transparent;
+    border-radius: 0px;
+    margin-left: 625px;
+    margin-right: 625px;
+}
+
+/*                          GlazeWM                              */
+.glazewm-workspaces {
+    margin: 0;
+}
+
+.glazewm-workspaces .ws-btn {
+    background-color: transparent;
+    border: none;
+    padding:1px 2px 0 4px;
+    margin: 0 2px 0 2px;
+    font-size: 14px;
+}
+
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
+    color: var(--workspace_active);
+}
+
+.glazewm-workspaces .ws-btn.populated {
+    color: var(--workspace_inactive);
+}
+
+.glazewm-workspaces .ws-btn.empty {
+    color: var(--workspace_empty);
+}
+
+.glazewm-workspaces .ws-btn:hover,
+.glazewm-workspaces .ws-btn.populated:hover,
+.glazewm-workspaces .ws-btn.empty:hover {
+    color: var(--workspace_hover);
+}
+
+/*                          Media                              */
+.media-widget {
+    padding: 0;
+    margin: 0;
+}
+.media-widget .label {
+    color: var(--text);
+    padding: 0 2px 0 8px;
+    font-size: 14px;
+}
+/*                          Media-Menu                          */
+.media-menu {
+    min-width: 420px;
+    max-width: 420px;
+    background-color: var(--widget_bg);
+    border: var(--global_widget_border);
+}
+.media-menu .title,
+.media-menu .artist {
+    margin-left: 10px;
+
+}
+.media-menu .title {
+    color: var(--text);
+    font-size: 15px;
+}
+.media-menu .artist {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text_alt);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.media-menu .source {
+    font-size: 11px;
+    color: var(--media_menu_source_text);
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: var(--media_menu_source);
+    padding: 4px 6px;
+}
+.media-menu .thumbnail {
+    border: var(--global_widget_border_alt);
+}
+/*                                  Media-Menu source specific                          */
+.media-menu .source.aimp {
+    background-color: #6f42c1;
+}
+.media-menu .source.apple-music {
+    background-color: #fa2b56;
+}
+.media-menu .source.brave {
+    background-color: #fb542b;
+}
+.media-menu .source.chrome {
+    background-color: #4285f4;
+}
+.media-menu .source.edge {
+    background-color: #0078d4;
+}
+.media-menu .source.firefox {
+    background-color: #ff7139;
+}
+.media-menu .source.foobar2000 {
+    background-color: #444444;
+}
+.media-menu .source.media-player {
+    background-color: #0078d4;
+}
+.media-menu .source.murglar {
+    background-color: #8a8a8a;
+}
+.media-menu .source.musicbee {
+    background-color: #ffcc00;
+}
+.media-menu .source.nsmusics {
+    background-color: #e64a19;
+}
+.media-menu .source.opera {
+    background-color: #ff1b2d;
+}
+.media-menu .source.qobuz {
+    background-color: #003a6f;
+}
+.media-menu .source.spotify {
+    background-color: #1db954;
+}
+.media-menu .source.screenbox {
+    background-color: #007ab3;
+}
+.media-menu .source.tidal {
+    background-color: #000000;
+}
+.media-menu .source.winamp {
+    background-color: #f1a11b;
+}
+.media-menu .source.youtube {
+    background-color: #ff0000;
+}
+.media-menu .source.youtube-music {
+    background-color: #c51f1f;
+}
+.media-menu .source.zen {
+    background-color: #dfdfdf;
+}
+
+.media-menu .btn {
+    font-size: 28px;
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 0px;
+}
+
+.media-menu .btn.play:hover {
+    color: var(--media_menu_btn_hover);
+}
+.media-menu .btn.prev:hover,
+.media-menu .btn.next:hover {
+    color: var(--media_menu_btn_hover_alt);
+}
+.media-menu .btn.prev,
+.media-menu .btn.next {
+    color: var(--media_menu_btn_alt);
+}
+.media-menu .btn.play {
+    color: var(--media_menu_btn);
+    font-size: 42px;
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: var(--media_menu_btn_disabled);
+    background-color: transparent;
+}
+
+.media-menu .playback-time {
+    font-size: 13px;
+    color: var(--text);
+    margin-top: 20px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 5px 4px;
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 2px;
+    background: var(--media_menu_prog_slid_gr);
+
+}
+.media-menu .progress-slider::groove:hover {
+    background: transparent;
+    height: 4px;
+    background: var(--media_menu_prog_slid_gr_hover);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--media_menu_prog_slid_gr_sp);
+    height: 4px;
+}
+
+/*                                  Systray                         */
+.systray {
+    background: transparent;
+    border: None;
+    margin: 0;
+}
+
+.systray .unpinned-container {
+    background: transparent;
+    border-radius: 0;
+    padding: 0 0 0 2px;
+}
+
+.systray .pinned-container {
+    background: transparent;
+}
+
+.systray .pinned-container[forceshow=true] {
+    background: rgba(0, 0, 0, 0);
+}
+
+.systray .button {
+    border-radius: 4px;
+    padding: 2px 2px;
+    background: transparent;
+}
+
+.systray .button:hover {
+    background: rgb(44, 44, 44);
+}
+
+.systray .button[dragging=true] {
+    background: rgb(88, 88, 88);
+    border-color: rgb(88, 88, 88);
+}
+
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+}
+
+.systray .unpinned-visibility-btn:checked {
+    background: rgba(0, 0, 0, 0);
+}
+
+.systray .unpinned-visibility-btn:hover {
+    border: 1px solid #AAAAAA;
+    border-radius: 0px;
+    border-color: #AAAAAA;
+}
+
+/*                          Wi-Fi                           */
+.wifi-widget {
+    padding: 0 2px 0 0;
+    margin: 0;
+}
+
+.wifi-widget .widget-container .icon {
+    color: var(--text);
+    background: transparent;
+    padding: 1px 2px;
+    font-size: 13px;
+}
+
+/*                          Battery                           */
+.battery-widget .widget-container .icon {
+    padding: 0px 2px;
+    font-size: 16px;
+    font-family: "Segoe Fluent Icons";
+}
+.battery-widget .widget-container .icon.status-low {
+    color: red;
+    background: transparent;
+}
+.battery-widget .widget-container .icon.status-medium {
+    color: yellow;
+    background: transparent;
+}
+.battery-widget .widget-container .icon.status-charging {
+    color: var(--text);
+    background: transparent;
+}
+
+/*                          Wallpaper                          */
+.wallpapers-widget {
+    padding: 0 6px 0 4px;
+}
+.wallpapers-gallery-window {
+    background-color: var(--widget_bg);
+    border: var(--global_widget_border);
+}
+.wallpapers-gallery-image {
+    border: var(--global_widget_border_alt);
+    border-radius: 0px;
+    margin: 0 0 2px 0 ;
+}
+.wallpapers-gallery-image:hover {
+    border: 2px solid var(--wallpaper_focused);
+}
+.wallpapers-gallery-image.focused {
+    border: 2px solid var(--wallpaper_focused);
+}
+
+/*                          Clock & Calendar                            */
+.clock-widget .widget-container .label {
+    padding: 0px 0px 0px;
+}
+.calendar {
+    background-color: var(--widget_bg);
+    border: var(--global_widget_border);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--text_alt);
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:hover {
+    color: var(--text_hover);
+}
+.calendar .calendar-table::item:selected {
+    color: var(--text_selected);
+    border: none;
+    outline: none;
+}
+.calendar .day-label {
+    margin-top: 20px;
+}
+.calendar .day-label,
+.calendar .month-label {
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .month-label {
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: var(--text);
+    margin-top: -20px;
+}
+
+/*                             Memory                           */
+.memory-widget .icon {
+    padding: 0px 2px;
+}
+
+/*                              CPU                             */
+.cpu-widget .widget-container .icon {
+    padding: 0px 2px;
+}
+
+/*                          Notifications                        */
+.notification-widget {
+    padding: 0 3px 0 3px;
+}
+.notification-widget .widget-container {
+	background: transparent;
+	margin: 3px 0 3px 0;
+}
+.notification-widget .icon {
+    font-size: 14px;
+}
+.notification-widget .icon.new-notification {
+    color: var(--text);
+}
+.notification-widget .label.new-notification {
+    color: var(--text);
+}
+
+/*                              Disk                                */
+.disk-widget {
+    padding: 0 2px;
+}
+.disk-widget .label{
+    padding: 0 2px 0 6px;
+}
+.disk-group {
+    background-color:var(--widget_bg); 
+    border: var(--global_widget_border);
+}
+
+/*                          Notes                       */
+.notes-widget {
+    padding: 0 4px 0 4px;
+}
+.notes-menu {
+    min-width: 400px;
+    max-width: 400px;
+    background-color: var(--widget_bg);
+    border: var(--global_widget_border);
+}
+.notes-menu .note-item {
+    background-color:transparent;
+    border-bottom: 1px solid var(--notes_border);
+}
+.notes-menu .note-item:hover {
+    background-color: var(--notes_hover);
+}
+.notes-menu .note-item .icon {
+    font-size: 16px;
+    padding: 0 4px;
+}
+.notes-menu .note-item .icon:hover{
+    background-color: var(--notes_elem_hover);
+}
+.notes-menu .delete-button {
+    color: var(--notes_del_button);
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 9px;
+    margin-right: 6px;
+}
+.notes-menu .delete-button:hover {
+    background-color: var(--notes_elem_hover);
+}
+.notes-menu .delete-button:pressed {
+    color: var(--notes_del_button_pressed);
+    background-color: transparent;
+}
+.notes-menu .copy-button {
+    color: var(--notes_copy_button);
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 12px;
+    margin-right: 6px;
+}
+.notes-menu .copy-button:hover {
+    background-color: var(--notes_elem_hover);
+}
+.notes-menu .copy-button:pressed {
+    color: var(--notes_copy_button_pressed);
+    background-color: transparent;
+}
+.notes-menu .note-item .title {
+    font-size: 13px;
+}
+.notes-menu .note-item .date {
+    font-size: 12px;
+    color: var(--text_alt);
+}
+.notes-menu .empty-list {
+    color: var(--text_alt);
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0 20px 0;     
+}
+.notes-menu .add-button,  
+.notes-menu .cancel-button {
+    margin-top: 4px;
+    padding: 8px;
+    background-color: var(--notes_elem_bg);
+    border: none;
+    border-radius: 0px;
+    color: var(--text);
+}
+.notes-menu .cancel-button {
+    margin-left: 4px;
+}
+.notes-menu .add-button:hover,
+.notes-menu .cancel-button:hover {
+    background-color: var(--notes_add_note_hover);
+}
+.notes-menu .scroll-area {
+    background: transparent; 
+    border: none; 
+    border-radius:0;
+}
+.notes-menu .note-input {
+    background-color: var(--notes_input_bg);
+    border: var(--global_widget_border_alt);
+    font-size: 14px;
+    max-height: 150px;
+    padding: 4px;
+    border-radius: 0px;
+}
+
+/*                      Volume                     */
+.volume-slider {
+    border: none;
+}
+.volume-slider::groove {
+    color: var(--widget_bg);
+}
+.volume-slider::handle{
+    color: var(--widget_bg);
+} 
+.audio-menu {
+    background-color: var(--widget_bg); 
+    border: var(--global_widget_border);
+}
+.audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 0px;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/*                    Weather                   */
+
+.weather-card{
+    background-color: var(--widget_bg);
+    border: var(--global_widget_border);
+}
+.weather-card-today,
+.weather-card-day{
+    background-color: var(--widget_bg_alt);
+    border: var(--global_widget_border_alt);
+}
+.weather-card-today .label.location {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/*                  Lines-Separator             */
+.separator-widget .widget-container .label {
+    color: var(--line);
+    padding: 0;
+    margin: 0;
+}
+
+/*                  Start Menu                  */
+.start-menu-widget .widget-container .label {
+    color: var(--text);
+}
+
+/*              Border Fixes                    */
+QPushButton {
+    outline: none;
+    border-radius: 0px;
+}
+
+/*                  Tooltip                     */
+.tooltip {
+    background-color: var(--tooltip_color);
+    border: 1px solid var(--global_widget_border);
+    border-radius: 0px;
+    color: var(--text);
+    padding: 4px 8px;
+    font-family: "JetBrainsMono NFP";
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+/*              Context Menu                     */
+.context-menu,
+.context-menu .menu-checkbox {
+    background-color: var(--context_menu_bg);
+    padding: 4px 0px;
+    font-size: 12px;
+    color: var(--text);
+}
+.context-menu{
+    border: var(--global_widget_border);
+}
+.context-menu::right-arrow {
+    width: 8px;
+    height: 8px;
+    padding-right: 24px;
+}
+.context-menu::item,
+.context-menu .menu-checkbox {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: 0;
+    min-width: 100px;
+}
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: transparent;
+    color: var(--text_hover);
+}
+.context-menu::separator {
+    height: 1px;
+    background-color: var(--context_menu_separator);
+    margin: 4px 8px;
+}
+.context-menu::item:disabled {
+    color: var(--context_menu_disabled);
+    background-color: transparent;
+}
+.context-menu .menu-checkbox .checkbox {
+    border: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    margin: 0;
+}
+.context-menu .menu-checkbox .checkbox:hover{
+    color: var(--text_hover);
+}
+.context-menu .submenu::item:disabled {
+    margin: 0;
+    padding-left: 16px;
+}
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--text_unchecked);
+}
+.context-menu .menu-checkbox .checkbox:unchecked:hover {
+    color: var(--text_hover);
+}
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 12px;
+    height: 12px;
+    margin-left: 0px;
+    margin-right: 8px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: var(--context_menu_box_unchecked);
+    border-radius: 0;
+}
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background: var(--context_menu_box_checked);
+    border-radius: 0;
+}
+.context-menu .menu-checkbox .checkbox:focus {
+    outline: none;
+}
+
+/*                                  GROUP WIDGETS                     */
+/*                System Tray                     */
+.system-tray .grouper-button {
+    font-size: 10px; 
+    font-weight: 900;
+    padding: 1px 4px 0 0;
+}
