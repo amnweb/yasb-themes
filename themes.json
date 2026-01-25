@@ -1,4 +1,16 @@
 {
+    "20650dea-7e59-4e8a-b69b-c8664666805d": {
+        "id": "20650dea-7e59-4e8a-b69b-c8664666805d",
+        "name": "Deep Work Control",
+        "description": "Clean theme with grouped widgets",
+        "homepage": "https://github.com/stylebending/yasb-deep-work-control",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/image.png",
+        "author": "stylebending",
+        "publish_date": "2026-01-24T20:53:00.622587"
+    },
     "cd2adf60-84a1-436d-a0a9-95ac4c288928": {
         "id": "cd2adf60-84a1-436d-a0a9-95ac4c288928",
         "name": "Edgerunners",
@@ -14,7 +26,7 @@
     "aad708b6-7d06-4ac5-97c5-174b6b03f6fc": {
         "id": "aad708b6-7d06-4ac5-97c5-174b6b03f6fc",
         "name": "IlyaTheme",
-        "description": "The theme created by ii5601!",
+        "description": "The theme created by ii5601! (v1.1)",
         "homepage": "",
         "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/styles.css",
         "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/config.yaml",
