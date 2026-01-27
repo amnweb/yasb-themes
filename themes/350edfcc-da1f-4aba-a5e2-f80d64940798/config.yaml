@@ -22,7 +22,7 @@ bars:
       hide_on_fullscreen: true
     dimensions:
       width: "100%"
-      height: 30
+      height: 26
     padding:
       top: 2 # 4 4 2 4
       left: 4
@@ -46,13 +46,13 @@ bars:
         [
           "traffic",
           #"wifi",
-          "github",
           "sysinfo_widgets",
           "volume",
           "microphone",
           "wallpapers",
+          "github",
           "notifications",
-          "update_check",
+          "update",
           "power_menu"
         ]
 widgets:
@@ -64,7 +64,7 @@ widgets:
       - { title: "Home", path: "~" }
       - { title: "Downloads", path: "$env:USERPROFILE/Downloads"}
       - { title: "Documents", path: "$env:USERPROFILE/Documents"}
-      - { title: "Pictures", path: "$env:USERPROFILE/Pictures"}
+      - { title: "Pictures", path: "E:/OneDrive/Pictures"} #Change to your Pictures Folder
       - { title: "Videos", path: "$env:USERPROFILE/Videos"}
       system_menu: true
       power_menu: false
@@ -154,6 +154,7 @@ widgets:
         max_title_size: 80
         max_artist_size: 20
         show_source: true
+        show_volume_slider: true
       media_menu_icons:
         play: "\uf04b"
         pause: "\uf04c"
@@ -214,9 +215,9 @@ widgets:
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
-      label: "<span>{icon}</span> {temp}" #  - {location}
-      label_alt: "<span>{icon}</span> {location}: {conditions}, {temp}" # Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "YOUR_API_KEY" # Get your free API key from https://www.weatherapi.com/
+      label_alt: "<span>{icon}</span> {temp}" #  - {location}
+      label: "<span>{icon}</span> {location} - {conditions}, {temp}" # Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "PASTE YOUR KEY HERE" # Get your free API key from https://www.weatherapi.com/
       update_interval: 300
       hide_decimal: true
       location: "Adelaide" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
@@ -278,7 +279,7 @@ widgets:
       providers:
         - provider: "OpenAI"
           api_endpoint: "https://api.openai.com/v1"
-          credential: "YOUR_API_KEY" # Get your free key after logging in from https://platform.openai.com/api-keys
+          credential: "PASTE YOUR KEY HERE" # Get your free key after logging in from https://platform.openai.com/api-keys
           models:
           - name: "gpt-4o-mini"
             label: "Chat GPT4"
@@ -331,7 +332,7 @@ widgets:
     options:
       label: "<span>\uf09b</span>"
       label_alt: "{data} Notifications" # {data} return number of unread notification
-      token: ghp_YOUR_TOKEN # GitHub Personal access tokens (classic) https://github.com/settings/tokens
+      token: PASTE YOUR TOKEN HERE # GitHub Personal access tokens (classic) https://github.com/settings/tokens
       max_notification: 20 # Max number of notification displaying in menu max: 50
       notification_dot:
         enabled: True
@@ -392,6 +393,29 @@ widgets:
         color: "black"
         radius: 1
         offset: [ 1, 1 ]
+  gpu:
+    type: "yasb.gpu.GpuWidget"
+    options:
+      label: "<span>\ue266</span>{info[utilization]}% | {info[temp]}°C"
+      label_alt: "<span>\ue266</span>{info[mem_used]} | {info[temp]}°C"
+      update_interval: 2000
+      gpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "toggle_label"
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -436,6 +460,13 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 80
+        show_apps: true # Whether to show the list of applications with audio sessions
+        show_app_labels: true # Whether to show application labels in the audio menu
+        show_app_icons: true # Whether to show application icons in the audio menu
+        show_apps_expanded: true # Whether application volumes are expanded by default when opening the menu
+        app_icons: # Icons for the toggle button to expand/collapse application volumes
+          toggle_down: "\uf078" # Icon for btn collapsed state
+          toggle_up: "\uf077" # Icon for btn expa
       callbacks:
         on_left: "toggle_volume_menu"
         on_middle: "exec cmd.exe /c start ms-settings:sound"
@@ -482,7 +513,7 @@ widgets:
         enabled: true
         blur: true
         image_width: 220
-        image_per_page: 8
+        image_per_page: 6
         show_buttons: true
         orientation: "portrait"
         image_spacing: 8
@@ -515,24 +546,19 @@ widgets:
         color: "black"
         radius: 1
         offset: [ 1, 1 ]
-  update_check:
+  update:
     type: "yasb.update_check.UpdateCheckWidget"
     options:
       winget_update:
         enabled: true
         label: "<span>\uf0ab</span>{count}"
-        interval: 60
-        exclude: [Discord]
-      windows_update:
-        enabled: false
-        label: "<span>\uf0ab</span>{count}"
-        interval: 360
+        interval: 30
         exclude: []
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
+      windows_update:
+        enabled: true
+        label: "<span>\uf0ab</span>{count}"
+        interval: 240
+        exclude: []
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -560,5 +586,6 @@ widgets:
       widgets: [
         "cpu",
         "memory",
+        "gpu",
         "disk",
       ]
