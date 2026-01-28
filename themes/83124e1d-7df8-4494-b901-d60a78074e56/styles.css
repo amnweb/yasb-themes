@@ -1,0 +1,472 @@
+/*GENERAL CONFIGRATIONS*/
+:root {
+  --bg-light: #e5e7eb;
+  --bg-light-hover: #d1d5db;
+  --bg-light-transparent: #e5e7eb71;
+  --text-dark: #18181b;
+  --text-gray: #59595f;
+  --text-gray-light: #4e525c;
+  --text-white: #ffffff;
+  --accent-blue: #0176a3;
+  --accent-blue-dark: #0078d4;
+  --accent-orange: #ff583b;
+  --accent-green: #199143;
+  --source-bg-default: #bac2de;
+  --slider-groove: #d9dbdf;
+  --slider-groove-hover: #a3a3a3;
+  --separator-color: #b8b7b7;
+  --notification-badge-bg: #18181b;
+  --notification-badge-text: #f9f9f9;
+}
+.widget .icon {
+  font-size: 16px;
+}
+/*KOMOREBI LAYOUT*/
+.komorebi-active-layout .label {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: "Material Symbols Rounded";
+  font-size: 18.6667px;
+  font-weight: 450;
+  padding-right: 12px;
+  padding-left: 10px;
+  border-radius: 12px;
+  margin-left: 8px;
+  width: 20px;
+}
+.komorebi-layout-menu {
+  background-color: var(--bg-light);
+  color: var(--text-gray);
+  border-radius: 12px;
+  margin-left: 8px;
+  margin-top: 4px;
+}
+.komorebi-layout-menu:hover {
+  background-color: var(--bg-light-hover);
+  color: var(--text-dark);
+}
+.komorebi-layout-menu .menu-item {
+  padding: 8px 16px;
+  margin-top: 4px;
+  margin-left: 8px;
+  font-size: 16px;
+  color: var(--text-gray);
+}
+.komorebi-layout-menu .menu-item-icon {
+  font-family: "Material Symbols Rounded";
+  color: var(--text-gray);
+  font-size: 18px;
+}
+.komorebi-layout-menu .menu-item-icon:hover {
+  color: var(--accent-blue);
+}
+.komorebi-layout-menu .menu-item-text {
+  font-family: "Segoe UI Semibold";
+  padding-left: 4px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.komorebi-layout-menu .menu-item-text:hover {
+  color: var(--accent-blue);
+}
+.komorebi-layout-menu .separator {
+  max-height: 1px;
+  background-color: var(--separator-color);
+}
+/*KOMOREBI-WORKSPACES*/
+.komorebi-workspaces {
+  font-family: "Material Symbols Rounded";
+  background-color: transparent;
+  margin: 0 24px -2px 8px;
+  padding: 0 0 0 0;
+  border-radius: 6px;
+}
+.komorebi-workspaces .offline-status {
+  color: var(--bg-light-transparent);
+  font-size: 14px;
+  padding: 0 4px;
+  font-weight: bold;
+}
+.komorebi-workspaces .ws-btn {
+  font-family: "Material Symbols Rounded";
+  qproperty-text: "";
+  border: none;
+  width:0;
+  height:0;
+  font-size:22.6667px;
+}
+.komorebi-workspaces .ws-btn.populated {
+  width:0;
+  height:0;
+}
+.komorebi-workspaces .ws-btn.active {
+  font-weight:400;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  margin: 0 4px 2px 2px;
+  border-radius: 12px;
+  padding: 6px 6px 6px 5px;
+  height: 24px;
+  width: 31px;
+}
+.komorebi-workspaces .ws-btn.button-1 {
+    font-family: "Material Symbols Rounded";
+    qproperty-text: "";
+}
+.komorebi-workspaces .ws-btn.button-2 {
+    font-family: "Material Symbols Rounded";
+    qproperty-text: "";
+}
+.komorebi-workspaces .ws-btn.button-3 {
+    font-family: "Material Symbols Rounded";
+    qproperty-text: "";
+}
+.komorebi-workspaces .ws-btn.button-4 {
+    font-family: "Material Symbols Rounded";
+    qproperty-text: "";
+}
+.komorebi-workspaces .ws-btn.button-5 {
+    font-family: "Material Symbols Rounded";
+    qproperty-text: "";
+}
+.komorebi-workspaces .ws-btn.button-6 {
+    font-family: "Material Symbols Rounded";
+    qproperty-text: "";
+}
+/*ACTIVE WINDOW*/
+.active-window-widget {
+  background-color: var(--bg-light);
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 12px;
+}
+.active-window-widget .label {
+  color: #000000;
+  font-family: "Segoe UI Semibold";
+  font-size: 16px;
+  font-weight: bold;
+}
+.active-window-widget .icon{
+  padding-right:10px;
+}
+/*AUDIO WIDGET*/
+.volume-widget {
+  margin-right: 8px;
+  padding-right: 15px;
+  padding-left: 12px;
+  background-color: var(--bg-light);
+  color:var(--text-dark);
+  border-radius: 12px;
+}
+.volume-widget .icon {
+  min-width:20px;
+  font-family: "Segoe Fluent Icons";
+  color: var(--text-dark);
+  font-size: 20px;
+  padding: 3px 0 0 0;
+  font-weight: bold;
+}
+.volume-widget .label {
+  font-family: "Segoe UI Semibold";
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+  color: var(--text-dark);
+}
+/*AUDIO DROPDOWN*/
+.audio-menu {
+  background-color:var(--bg-light);
+  color: var(--text-dark);
+  border-radius:12px;
+}
+.audio-container .device {
+  font-family: "Segoe UI Semibold";
+  font-weight: bold;
+  background-color:var(--bg-light);
+  color: var(--text-dark);
+  border: none;
+  padding: 10px 8px 6px 4px;
+  margin: 2px 0;
+  font-size: 16px;
+  border-radius: 12px;
+}
+.audio-container .device.selected {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+/*CLOCK / CALENDAR WIDGET*/
+.clock-widget {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 12px;
+}
+.clock-widget .label {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: "Segoe UI Semibold";
+  font-size: 16px;
+  font-weight: bold;
+}
+.calendar {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+.calendar .calendar-table,.calendar .calendar-table .item {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: "Segoe UI Semibold";
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 16px;
+}
+.calendar .calendar-table .item.selected {
+  color: var(--bg-light);
+  background-color: var(--text-dark);
+  border-radius: 6px;
+}
+.calendar .day-label {
+  margin-top: 20px;
+}
+.calendar .day-label,.calendar .month-label,.calendar .date-label {
+  font-family: "Segoe UI Semibold";
+  font-size: 18px;
+  color: var(--text-dark);
+  font-weight: bold;
+  min-width: 160px;
+  max-width: 160px;
+}
+.calendar .month-label {
+  font-size: 16px;
+}
+.calendar .date-label {
+  font-size: 88px;
+  font-weight: 900;
+  margin-top: -20px;
+}
+/*MEDIA WIDGET*/
+.media-widget {
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  padding-left: 12px;
+  padding-right: 10 px;
+  margin-right: 10px;
+  min-width: 400px;
+}
+.media-widget .label {
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  padding: 0 0 0 8px;
+  font-family: "Segoe UI Semibold";
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 300px;
+}
+.media-widget .btn {
+  font-family: "Material Symbols Rounded";
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 19px;
+  padding: 0 10px;
+}
+.media-widget .btn:hover,.media-widget .btn.play:hover {
+  color: var(--accent-blue);
+}
+.media-widget .btn.play {
+  background-color: var(--bg-light);
+  border-radius: 6px;
+  padding:0 4px;
+}
+.media-widget .btn.prev {
+  padding-right:1px;
+}
+.media-widget .btn.next {
+  padding-left: 2px;
+}
+.media-widget .btn.disabled:hover,.media-widget .btn.disabled {
+  font-family: "Segoe Variable Display";
+  color: var(--text-dark);
+  font-size: 19px;
+  background-color: var(--bg-light);
+}
+/*MEDIA POPUP*/
+.media-menu {
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  min-height: 200px;
+  min-width: 500px;
+}
+.media-menu .title{
+  margin-left:20px;
+  margin-right:20px;
+}
+.media-menu .artist {
+  margin-left:21px;
+  margin-right:20px;
+}
+.media-menu .title,
+.media-menu .source {
+  font-weight: bold;
+  font-family: "Segoe UI Bold";
+  padding-bottom:10px;
+  color: var(--text-dark);
+}
+.media-menu .title {
+  font-size: 22px;
+  padding-top:18px;
+  letter-spacing:1px;
+}
+.media-menu .artist {
+  font-family: "Segoe UI Semibold";
+  font-size: 18px;
+  color: var(--text-dark);
+  padding-bottom: 10px;
+  padding-top:5px;
+}
+.media-menu .source {
+  color:transparent;
+}
+.media-menu .btn {
+  font-family: "Material Symbols Rounded";
+  min-width: 18px;
+  color: var(--text-dark);
+}
+.media-menu .btn.prev {
+  padding-left:18px;
+  font-size: 38px;
+  font-weight:300;
+}
+.media-menu .btn.play {
+  font-size: 48px;
+  font-weight: 300;
+}
+.media-menu .btn.pause {
+  font-size: 48px;
+  font-weight: 300;
+}
+.media-menu .btn.next {
+  font-size: 38px;
+  font-weight: 300;
+}
+.media-menu .btn:hover {
+  color: var(--text-dark);
+  background-color: transparent;
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+  color: var(--text-gray-light);
+  background-color: rgba(0,0,0,0);
+}
+.media-menu .playback-time {
+  font-size: 16px;
+  font-family: "Segoe UI Semibold";
+  font-weight: bold;
+  color: var(--text-dark);
+  min-width: 100px;
+  margin-top:4px;
+  margin-bottom:10px;
+  border-radius:4px;
+}
+.media-menu .progress-slider {
+  height: 8px;
+  border-radius: 4px;
+  padding-bottom:16px;
+}
+.media-menu .progress-slider::groove {
+  background: var(--slider-groove);
+  height: 8px;
+  border-radius: 4px;
+}
+.media-menu .progress-slider::groove:hover {
+  height: 8px;
+  background: var(--slider-groove-hover);
+  border-radius: 4px;
+}
+.media-menu .progress-slider::sub-page {
+  background: var(--accent-blue-dark);
+  border-radius: 4px;
+  height: 8px;
+}
+/*NOTIFICATIONS*/
+.notification-widget {
+  background-color: var(--bg-light);
+  margin:0 10px 0 0;
+  border-radius: 12px;
+}
+.notification-widget .icon {
+  font-family: "Material Symbols Rounded";
+  qproperty-text: "";
+  padding: 2px 8px 0 0;
+  color: var(--text-dark);
+  font-size:21.667px;
+  font-weight:350;
+}
+.notification-widget .icon.new-notification {
+  font-size:21.667px;
+  qproperty-text: "";
+  color: var(--text-dark);
+}
+.notification-widget .label.new-notification {
+  width:0;
+  height:0;
+}
+.notification-widget .label {
+  color: transparent;
+  background:transparent;
+  max-width:0;
+  padding:0;
+  margin:0;
+}
+.notification-widget.notify {
+  font-family: "Material Symbols Rounded";
+}
+.apps-widget {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  border-radius: 12px;
+  padding: 0 5px 0 12px;
+  margin:0 10px;
+}
+.apps-widget .widget-container {
+  padding:0 8px;
+}
+.apps-widget .widget-container .label { 
+  font-family: "Material Symbols Rounded"; 
+  font-size:18px;
+  max-width:32px;
+  min-width:26px;
+}
+
+/* Stack Widget*/
+
+.komorebi-stack {
+    border-radius: 12px;
+    min-width:40px;
+    background-color: var(--bg-light-transparent);
+    color: var(--text-dark);
+    margin-right:10px;
+}
+.komorebi-stack .widget-container {
+    color: var(--text-dark);
+    border-radius: 12px;
+}
+.komorebi-stack .window .icon{
+  margin-left:4px;
+  padding:0 10px;
+}
+.komorebi-stack .window {
+    background-color: transparent;
+    border: none;
+}
+.komorebi-stack .window.active {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border-radius: 12px;
+    height: auto;
+    margin: 0;
+}
