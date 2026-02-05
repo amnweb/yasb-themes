@@ -1,6 +1,6 @@
 :root {
     --mauve: #cba6f7;
-    --red: #f38ba8;
+    --red: #ff6b6b;
     --yellow: #f9e2af;
     --orange: #fab387;
     --blue: #89b4fa;
@@ -39,7 +39,7 @@
     color: var(--text);
     padding: 4px 8px 5px 8px;
     font-size: 12px;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     font-weight: 600;
     margin-top: 4px;
 }
@@ -50,12 +50,12 @@
 /* Global context menu style */
 .context-menu,
 .context-menu .menu-checkbox {
-    background-color: #202020;
+    background-color: var(--base);
     border: none;
     padding: 4px 0px;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     font-size: 12px;
-    color: #FFFFFF;
+    color: var(--text);
 }
 .context-menu::right-arrow {
     width: 8px;
@@ -72,16 +72,16 @@
 }
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
-    background-color: #313131;
-    color: #FFFFFF;
+    background-color: var(--base);
+    color: var(--text);
 }
 .context-menu::separator {
     height: 1px;
-    background-color: #404040;
+    background-color: var(--base);
     margin: 4px 8px;
 }
 .context-menu::item:disabled {
-    color: #666666;
+    color: var(--overlay0);
     background-color: transparent;
 }
 .context-menu .menu-checkbox .checkbox {
@@ -89,15 +89,15 @@
     padding: 8px 16px;
     font-size: 12px;
     margin: 0;
-    color: #FFFFFF;
-    font-family: 'Segoe UI'
+    color: var(--text);
+    font-family: "Segoe UI";
 }
 .context-menu .submenu::item:disabled {
     margin: 0;
     padding-left: 16px;
 }
 .context-menu .menu-checkbox .checkbox:unchecked {
-    color: #999
+    color: var(--overlay0);
 }
 .context-menu .menu-checkbox .checkbox::indicator {
     width: 12px;
@@ -106,11 +106,11 @@
     margin-right: 8px;
 }
 .context-menu .menu-checkbox .checkbox::indicator:unchecked {
-    background: #444444;
+    background: var(--base);
     border-radius: 2px;
 }
 .context-menu .menu-checkbox .checkbox::indicator:checked {
-    background: #007acc;
+    background: var(--blue);
     border-radius: 2px;
 }
 .context-menu .menu-checkbox .checkbox:focus {
@@ -125,36 +125,12 @@
     padding-right: 4px;
 }
 .widget .label {
-    padding: 0px 2px;
+    padding: 0px 5px;
 }
 .grouped-widgets .container {
     background-color: var(--base);
-    margin: 4px 0 4px 0;
-    border-radius: 12px;
-    border: 1px solid var(--surface1);
-}
-.komorebi-workspaces .offline-status {
-    color: var(--surface2);
-    font-size: 12px;
-    padding: 0 0 0 4px;
-    font-weight: 600;
-}
-.komorebi-workspaces .ws-btn {
-    border: none;
-    background-color: transparent;
-    margin: 0 3px;
-    padding: 0;
-    font-size: 14px;
-    color: var(--surface2);
-}
-.komorebi-workspaces .ws-btn:hover {
-    color: var(--overlay2);
-}
-.komorebi-workspaces .ws-btn.populated {
-    color: var(--text);
-}
-.komorebi-workspaces .ws-btn.active {
-    color: var(--text);
+    border-radius: 6px;
+    border: 1px solid var(--overlay1);
 }
 .cpu-widget .icon {
     color: var(--orange);
@@ -164,24 +140,24 @@
     padding-right: 8px;
 }
 .clock-widget .label {
-    color: var(--green);
+    color: var(--text);
 }
 .calendar {
-    background-color: var(--crust)
+    background-color: var(--crust);
 }
 .calendar .calendar-table,
 .calendar .calendar-table::item {
-    background-color: rgba(17, 17, 27, 0);
-    color: rgba(162, 177, 196, 0.85);
-    font-family: 'Segoe UI';
+    background-color: var(--base);
+    color: var(--text);
+    font-family: "Segoe UI";
     margin: 0;
     padding: 0;
     border: none;
     outline: none;
 }
 .calendar .calendar-table::item:selected {
-    color: rgb(255, 255, 255);
-    background-color: #007acc;
+    color: var(--text);
+    background-color: var(--blue);
     border-radius: 12px;
 }
 .calendar .day-label {
@@ -192,9 +168,9 @@
 .calendar .date-label,
 .calendar .week-label,
 .calendar .holiday-label {
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     font-size: 16px;
-    color: #fff;
+    color: var(--text);
     font-weight: 700;
     min-width: 180px;
     max-width: 180px;
@@ -206,7 +182,7 @@
 .calendar .holiday-label {
     font-size: 12px;
     font-weight: 600;
-    color: rgba(162, 177, 196, 0.85);
+    color: var(--text);
 }
 .calendar .holiday-label {
     color: var(--red);
@@ -215,7 +191,7 @@
 .calendar .date-label {
     font-size: 88px;
     font-weight: 900;
-    color: rgb(255, 255, 255);
+    color: var(--text);
     margin-top: -20px;
     margin-bottom: -10px;
 }
@@ -224,7 +200,7 @@
     font-size: 15px;
 }
 .power-menu-popup {
-    background-color: transparent
+    background-color: transparent;
 }
 .power-menu-popup .button {
     padding: 0;
@@ -232,35 +208,35 @@
     height: 230px;
     border-radius: 0;
     background-color: var(--crust);
-    color: var(--green);
-    border-left: 4px solid rgba(58, 83, 80, 0);
-    border-right: 4px solid rgba(58, 83, 80, 0);
-    border-top: 4px solid rgba(58, 83, 80, 0);
-    border-bottom: 4px solid rgba(58, 83, 80, 0);
+    color: var(--blue);
+    border-left: 4px solid var(--blue);
+    border-right: 4px solid var(--blue);
+    border-top: 4px solid var(--blue);
+    border-bottom: 4px solid var(--blue);
     margin: 0px;
 }
 .power-menu-popup .button.hover {
-    border-left: 4px solid #94e2d5;
-    border-right: 4px solid #94e2d5;
-    border-top: 4px solid #94e2d5;
-    border-bottom: 4px solid #94e2d5;
+    border-left: 4px solid var(--blue);
+    border-right: 4px solid var(--blue);
+    border-top: 4px solid var(--blue);
+    border-bottom: 4px solid var(--blue);
 }
 .power-menu-popup .button.cancel.hover {
-    border-left: 4px solid #e29494;
-    border-right: 4px solid #e29494;
-    border-top: 4px solid #e29494;
-    border-bottom: 4px solid #e29494;
+    border-left: 4px solid var(--red);
+    border-right: 4px solid var(--red);
+    border-top: 4px solid var(--red);
+    border-bottom: 4px solid var(--red);
 }
 .power-menu-popup .button .label {
     margin-bottom: 8px;
     font-size: 16px;
     font-weight: 500;
-    color: var(--green)
+    color: var(--blue);
 }
 .power-menu-popup .button .icon {
     font-size: 64px;
     padding-top: 32px;
-    color: var(--green)
+    color: var(--blue);
 }
 .power-menu-popup .button.cancel .icon,
 .power-menu-popup .button.cancel .label {
@@ -273,72 +249,11 @@
     font-weight: 600;
 }
 .audio-menu {
-    background-color: var(--crust)
+    background-color: var(--crust);
 }
 .volume-widget .icon {
     font-size: 12px;
-    color: var(--green);
-}
-.language-widget .icon {
-    color: var(--green);
-}
-.language-menu {
-    background-color: var(--crust);
-    min-width: 300px;
-}
-.language-menu .header {
-    font-family: 'Segoe UI';
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 2px;
-    padding: 12px;
-}
-.language-menu .footer {
-    font-family: 'Segoe UI';
-    font-size: 12px;
-    font-weight: 600;
-    padding: 12px;
-    margin-top: 2px;
-    color: #9399b2;
-}
-.language-menu .footer:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-.language-menu .language-item {
-    padding: 6px 12px;
-    margin: 2px 4px;
-}
-.language-menu .language-item.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-.language-menu .language-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-.language-menu .language-item.active:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-.language-menu .language-item .code {
-    font-weight: 900;
-    font-size: 14px;
-    min-width: 40px;
-    text-transform: uppercase;
-}
-.language-menu .language-item .icon {
-    font-size: 16px;
-    margin-right: 8px;
-    color: #fff;
-}
-.language-menu .language-item .name {
-    font-weight: 600;
-    font-family: 'Segoe UI';
-    font-size: 14px;
-}
-.language-menu .language-item .layout {
-    font-weight: 600;
-    font-family: 'Segoe UI';
-    font-size: 12px;
+    color: var(--blue);
 }
 .notification-widget .icon.new-notification {
     color: var(--blue);
@@ -346,7 +261,7 @@
 .media-menu {
     min-width: 360px;
     max-width: 360px;
-    background-color: var(--crust)
+    background-color: var(--crust);
 }
 .media-menu .title,
 .media-menu .artist,
@@ -354,37 +269,45 @@
     font-size: 14px;
     font-weight: 600;
     margin-left: 10px;
-    font-family: 'Segoe UI'
+    font-family: "Segoe UI";
 }
 .media-menu .artist {
     font-size: 13px;
-    color: #6c7086;
+    color: var(--overlay0);
     margin-top: 0px;
     margin-bottom: 8px;
 }
 .media-menu .source {
     font-size: 11px;
-    color: #000;
+    color: var(--base);
     font-weight: normal;
     border-radius: 3px;
-    background-color: #bac2de;
+    background-color: var(--lavender);
     padding: 2px 4px;
 }
 .media-menu .source.firefox {
-    background-color: #ff583b;
-    color: #ffffff;
+    background-color: var(--red);
+    color: var(--text);
 }
-.media-menu .source.spotify {
-    background-color: #199143;
-    color: #ffffff;
+.media-menu .source.brave {
+    background-color: var(--red);
+    color: var(--text);
+}
+.media-menu .source.chrome {
+    background-color: var(--orange);
+    color: var(--text);
 }
 .media-menu .source.edge {
-    background-color: #0078d4;
-    color: #ffffff;
+    background-color: var(--blue);
+    color: var(--text);
+}
+.media-menu .source.spotify {
+    background-color: var(--green);
+    color: var(--text);
 }
 .media-menu .source.windows-media {
-    background-color: #0078d4;
-    color: #ffffff;
+    background-color: var(--blue);
+    color: var(--text);
 }
 .media-menu .btn {
     font-family: "Segoe Fluent Icons";
@@ -401,22 +324,22 @@
     margin-left: 10px;
 }
 .media-menu .btn:hover {
-    color: white;
+    color: var(--text);
     background-color: rgba(255, 255, 255, 0.1);
 }
 .media-menu .btn.play {
     background-color: rgba(255, 255, 255, 0.1);
-    font-size: 20px
+    font-size: 20px;
 }
 .media-menu .btn.disabled:hover,
 .media-menu .btn.disabled {
-    color: #4e525c;
-    background-color: rgba(0, 0, 0, 0);
+    color: var(--surface1);
+    background-color: var(--base);
 }
 .media-menu .playback-time {
     font-size: 13px;
-    font-family: 'Segoe UI';
-    color: #7f849c;
+    font-family: "Segoe UI";
+    color: var(--overlay1);
     margin-top: 0px;
     min-width: 100px;
 }
@@ -430,7 +353,6 @@
     height: 2px;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.1);
-
 }
 .media-menu .progress-slider::groove:hover {
     background: transparent;
@@ -461,39 +383,38 @@
 .weather-card-today .label.alert {
     font-size: 13px;
     font-weight: 600;
-    background-color: rgba(247, 175, 42, 0.05);
-    border: 1px solid rgba(247, 209, 42, 0.1);
-    color: rgba(196, 181, 162, 0.85);
+    background-color: var(--orange);
+    border: 1px solid var(--orange);
+    color: var(--red);
     border-radius: 6px;
     padding: 5px 0;
 }
 .weather-card-day {
     border-radius: 6px;
-    background-color: var(--crust)
+    background-color: var(--crust);
 }
 .weather-card-day .label {
     font-size: 13px;
-
 }
 .weather-card-day.active {
-    background-color: rgba(40, 40, 60, 0.6);
-    border: 1px solid rgba(50, 50, 75, 1);
+    background-color: var(--base);
+    border: 1px solid var(--base);
 }
 .weather-card-day:hover {
-    background-color: rgba(40, 40, 60, 0.6);
+    background-color: var(--crust);
 }
 .weather-card .hourly-container {
     border: none;
-    background-color: rgba(40, 40, 60, 0.0);
+    background-color: var(--crust);
     min-height: 150px;
 }
 .weather-card .hourly-data {
-    background-color: #FAE93F;
+    background-color: var(--yellow);
     font-size: 11px;
     font-weight: bold;
 }
 .battery-widget .widget-container .icon {
-    color: #94e2d5;
+    color: var(--blue);
 }
 .glazewm-workspaces {
     margin: 0;
@@ -502,44 +423,44 @@
 .glazewm-workspaces .ws-btn {
     font-size: 14px;
     background-color: transparent;
-    padding: 0px 4px 0px 4px;
+    padding: 0px 10px 0px 10px;
     margin: 0 2px 0 2px;
-    color: #CDD6F4;
+    color: var(--text);
 }
 
 .glazewm-workspaces .ws-btn.active_populated {
-    color: #000000;
-    background-color: #94e2d5;
+    color: var(--base);
+    background-color: var(--surface2);
 }
 .glazewm-workspaces .ws-btn.active_empty {
-    color: #000000;
-    background-color: #94e2d5;
+    color: var(--base);
+    background-color: var(--surface2);
 }
 
 .glazewm-workspaces .ws-btn.populated {
-    color: #C2DAF7;
+    color: var(--text);
 }
 
 .glazewm-workspaces .ws-btn.empty {
-    color: #7D8B9D;
+    color: var(--text);
 }
 
 .glazewm-workspaces .ws-btn:hover,
 .glazewm-workspaces .ws-btn.populated:hover,
 .glazewm-workspaces .ws-btn.empty:hover {
-    background-color: #727272;
+    background-color: var(--overlay1);
 }
 .microphone-widget .icon.muted {
-    color: #ff6b6b;
+    color: var(--red);
     margin: 0 2px 0 0;
 }
 
 .microphone-widget .icon {
-    color: #94e2d5;
+    color: var(--blue);
     margin: 0 2px 0 0;
 }
 .microphone-menu {
-    background-color: rgba(17, 17, 27, 0.4);
+    background-color: var(--base);
     min-width: 300px;
 }
 /* System microphone volume */
@@ -560,4 +481,235 @@
 }
 .microphone-menu .microphone-container .device:hover {
     background-color: rgba(255, 255, 255, 0.06);
+}
+.taskbar-widget .app-container {
+    margin: 4px 2px;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+.taskbar-widget .app-container.foreground {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.taskbar-widget .app-container.flashing {
+    background-color: var(--red);
+}
+.taskbar-widget .app-container.running {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.taskbar-widget .app-container:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
+/* Taskbar preview popup is very limited in styling options, do not use margins/paddings here */
+.taskbar-preview {
+    border-radius: 8px;
+    background-color: var(--sruface0);
+}
+.taskbar-preview.flashing {
+    background-color: var(--red);
+}
+.taskbar-preview .header {
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+.taskbar-preview .header .title {
+    color: var(--text);
+    font-family: "Segoe UI";
+    font-weight: 600;
+    font-size: 13px;
+}
+.systray {
+    border: none;
+    margin: 0;
+}
+
+.systray .unpinned-container {
+    border-radius: 8px;
+}
+
+.systray .pinned-container {
+    background: transparent;
+}
+
+.systray .pinned-container[forceshow="true"] {
+    background: red;
+}
+
+.systray .button {
+    border-radius: 4px;
+    padding: 4px 4px;
+    margin: 2px 2px;
+    background: var(--surface0);
+}
+
+.systray .button:hover {
+    background: var(--overlay1);
+}
+
+.systray .button[dragging="true"] {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+}
+
+.systray .unpinned-visibility-btn:checked {
+}
+
+.systray .unpinned-visibility-btn:hover {
+    border: 1px solid var(--subtext1);
+    border-radius: 4px;
+    border-color: var(--subtext1);
+}
+.wifi-widget .widget-container .icon {
+    color: var(--blue);
+}
+
+.wifi-menu {
+    font-family: "Segoe UI";
+    background-color: var(--base);
+    max-height: 350px;
+    min-height: 375px;
+    min-width: 375px;
+}
+
+.wifi-menu .progress-bar {
+    max-height: 2px;
+}
+
+.wifi-menu .progress-bar::chunk {
+    background-color: var(--blue);
+}
+
+.wifi-menu .header {
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--base);
+    color: var(--text);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .error-message {
+    font-family: "Segoe UI";
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--red);
+    color: var(--text);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .wifi-list {
+    background-color: var(--base);
+    margin-right: 3px;
+}
+
+.wifi-menu .wifi-item {
+    min-height: 35px;
+    padding: 2px 12px;
+    margin: 2px 4px;
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.wifi-menu .wifi-item[active="true"] {
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: 14px;
+    border-radius: 6px;
+    min-height: 80px;
+}
+
+.wifi-menu .wifi-item .icon {
+    font-family: "Segoe Fluent Icons";
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .name {
+    font-family: "Segoe UI";
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .password {
+    font-family: "Segoe UI";
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .status {
+    font-family: "Segoe UI";
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .strength {
+    font-family: "Segoe UI";
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 30px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .connect:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.wifi-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: var(--overlay2);
+    background-color: var(--base);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .footer .settings-button {
+    font-family: "Segoe UI";
+    background-color: transparent;
+    border: none;
+    padding: 0 2px;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--tetx);
+}
+
+.wifi-menu .footer .refresh-icon {
+    font-family: "Segoe Fluent Icons";
+    background-color: transparent;
+    border: none;
+    min-width: 26px;
+    min-height: 26px;
+    color: var(--text);
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
 }

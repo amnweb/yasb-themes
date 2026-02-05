@@ -1,1 +1,12 @@
-{"id": "20650dea-7e59-4e8a-b69b-c8664666805d", "name": "Deep Work Control", "description": "Clean theme with grouped widgets", "homepage": "https://github.com/stylebending/yasb-deep-work-control", "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/styles.css", "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/config.yaml", "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/readme.md", "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/image.png", "author": "stylebending", "publish_date": "2026-01-24T20:53:00.622587"}
+{
+    "id": "20650dea-7e59-4e8a-b69b-c8664666805d",
+    "name": "Deep Work Control",
+    "description": "Theme with grouped widgets",
+    "homepage": "https://github.com/stylebending/yasb-deep-work-control",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/image.png",
+    "author": "stylebending",
+    "publish_date": "2026-01-24T20:53:00.622587"
+}
