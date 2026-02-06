@@ -349,8 +349,8 @@ widgets:
         cloudyNight: "\udb83\udf31"
         rainyDay: "\ue308"
         rainyNight: "\ue325"
-        snowyIcyDay: "\ue30a"
-        snowyIcyNight: "\ue327"
+        snowyDay: "\ue30a"
+        snowyNight: "\ue327"
         blizzardDay: "\ue36f"
         default: "\ue350"
       weather_card:
