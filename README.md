@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [i3 WinBars](themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3)
+
+<a title="i3 WinBars YASB Theme" href="themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3/image.png" width="830px"></a>
+
+
 ## [Deep Work Control](themes/20650dea-7e59-4e8a-b69b-c8664666805d)
 
 <a title="Deep Work Control YASB Theme" href="themes/20650dea-7e59-4e8a-b69b-c8664666805d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/image.png" width="830px"></a>
