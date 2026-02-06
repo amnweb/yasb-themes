@@ -31,9 +31,6 @@
 /* Bar */
 .yasb-bar {
     padding: 2px 3px;
-    border-radius: 18px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
     background-color: var(--yasb-background);
 }
 .context-menu,
@@ -474,6 +471,9 @@ padding-left: 16px;
 }
 .battery-widget {
     padding: 0px 7px 0px 7px;
+    width: 45px;
+    max-width: 45px;
+    min-width: 45px;
 }
 .brightness-menu {
     background-color: var(--yasb-background);
