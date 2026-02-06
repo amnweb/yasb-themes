@@ -218,7 +218,7 @@ widgets:
           lazy_load_fadein: 0
           image_corner_radius: 0
 
-system-tray:
+  system-tray:
     type: "yasb.grouper.GrouperWidget"
     options:
       class_name: "system-tray"
@@ -436,24 +436,19 @@ system-tray:
         - pattern: "^(.+?)\\.exe$"
           replacement: "\\1"
           case: title
-
-# Uppercase UI  
+        # Uppercase UI  
         - pattern: "\\bui\\b"
           replacement: "UI"
-
-# Change "* – Zen Browser" to "Zen Browser"
+        # Change "* – Zen Browser" to "Zen Browser"
         - pattern: "^(.*) — Zen Browser$"
           replacement: "Zen Browser"
-
-# Change "WinSpy *" to "WinSpy"
+        # Change "WinSpy *" to "WinSpy"
         - pattern: "^WinSpy .*"
           replacement: "WinSpy"
-
-# Ignore ShareX window showing at startup (show nothing)
+        # Ignore ShareX window showing at startup (show nothing)
         - pattern: "^ShareX .*"
           replacement: ""
-
-- pattern: "^ShareX - .*"
+        - pattern: "^ShareX - .*"
           replacement: "ShareX"
       callbacks:
         on_left: "do_nothing"
