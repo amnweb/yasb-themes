@@ -80,9 +80,10 @@ widgets:
         cloudyNight: "\ue311"
         rainyDay: "\udb81\ude7e"
         rainyNight: "\udb81\ude7e"
-        snowyIcyDay: "\udb81\udd98"
-        snowyIcyNight: "\udb81\udd98"
-        blizzard: "\uebaa"
+        snowyDay: "\udb81\udd98"
+        snowyNight: "\udb81\udd98"
+        blizzardDay: "\uebaa"
+        blizzardNight: "\uebaa"
         default: "\uebaa"
       weather_card:
         blur: True

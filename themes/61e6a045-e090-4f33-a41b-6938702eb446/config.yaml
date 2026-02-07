@@ -154,8 +154,8 @@ widgets:
         cloudyNight: "\uebaa"
         rainyDay: "\udb81\udd96"
         rainyNight: "\udb81\udd96"
-        snowyIcyDay: "\udb81\udd92"
-        snowyIcyNight: "\udb81\udd92"
+        snowyDay: "\udb81\udd92"
+        snowyNight: "\udb81\udd92"
         blizzardDay: "\udb81\udd93"
         default: "\uebaa"
   volume:
