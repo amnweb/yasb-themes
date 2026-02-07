@@ -480,8 +480,8 @@
   color: #89b4fa;
   font-size: 16px;
 }
-.weather-widget .icon.snowyIcyDay,
-.weather-widget .icon.snowyIcyNight {
+.weather-widget .icon.snowyDay,
+.weather-widget .icon.snowyNight {
   color: #cdd6f4;
   padding-bottom: 4px;
 }

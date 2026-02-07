@@ -252,10 +252,10 @@
 .weather-widget .icon.rainyNight {
 	color: var(--mauve);
 }
-.weather-widget .icon.snowyIcyDay {
+.weather-widget .icon.snowyDay {
 	color: var(--mauve);
 }
-.weather-widget .icon.snowyIcyNight {
+.weather-widget .icon.snowyNight {
 	color: var(--mauve);
 }
 .weather-widget .icon.blizzardDay {

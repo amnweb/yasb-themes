@@ -385,8 +385,8 @@ widgets:
         cloudyNight: "\U0001F315"
         rainyDay: "\U0001F327"
         rainyNight: "\U0001F327\U0001F311"
-        snowyIcyDay: "\U00002744"
-        snowyIcyNight: "\U0001F328"
+        snowyDay: "\U00002744"
+        snowyNight: "\U0001F328"
         blizzardDay: "\U0001F32C"
       container_padding:
         top: 0
