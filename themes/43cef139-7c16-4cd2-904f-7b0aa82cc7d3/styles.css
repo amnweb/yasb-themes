@@ -59,7 +59,7 @@ For more information about configuration options, please visit their documentati
     font-size: 13px;
     color: var(--text);
     font-weight: 750;
-    font-family: "JetBrainsMono NFP";
+    font-family: "JetBrainsMono Nerd Font Propo";
     margin: 0;
     padding: 0;
 }
@@ -688,7 +688,7 @@ QPushButton {
     border-radius: 0px;
     color: var(--text);
     padding: 4px 8px;
-    font-family: "JetBrainsMono NFP";
+    font-family: "JetBrainsMono Nerd Font Propo";
     font-size: 11px;
     font-weight: 700;
     margin-top: 8px;
