@@ -105,15 +105,12 @@
 }
 /* Widgets */
 .clock-widget .widget-container,
-.volume-widget .widget-container,
 .weather-widget .widget-container,
 .media-widget .widget-container,
-.power-menu-widget .widget-container,
-.memory-widget .widget-container,
-.cpu-widget .widget-container,
 .traffic-widget .widget-container,
 .microphone-widget .widget-container,
 .windows-desktops .widget-container, 
+.taskbar-widget .widget-container,
 .screenshot-widget .widget-container,
 .clock-grouper .container,
 .showkeyboard-widget .widget-container,
@@ -125,7 +122,8 @@
 }
 .clock-grouper .container, 
 .info-grouper .container,
-.windows-desktops .widget-container {
+.windows-desktops .widget-container,
+.taskbar-widget .widget-container {
     border-radius: 12px;
 }
 .cpu-widget, .memory-widget,
@@ -153,7 +151,7 @@
 }
 /* Home */
 .home-widget {
-padding-left: 16px;
+    padding-left: 16px;
 }
 .home-widget .widget-container:hover {
     background: rgba(203, 166, 247, 0.2);
@@ -240,7 +238,7 @@ padding-left: 16px;
     font-size: 13px;
     font-weight: 600;
     color: var(--white);
-    margin-top: 0px;
+    margin-top: 5px;
     margin-bottom: 8px;
     margin-left: 12px;
 }
@@ -248,9 +246,10 @@ padding-left: 16px;
     font-size: 11px;
     color: #000;
     font-weight: normal;
-    border-radius: 3px;
+    border-radius: 4px;
     background-color: var(--pale-blue);
     padding: 2px 4px;
+    margin: 15px 30px 0px 0px;
 }
 .media-menu .source.spotify {
     background-color: var(--green);
@@ -310,6 +309,31 @@ padding-left: 16px;
     background: var(--pale-blue);
     border-radius: 3px;
     height: 4px;
+}
+.media-menu .app-volume-container {
+    margin-left: 10px; 
+}
+.media-menu .app-volume-container .volume-slider::groove {
+    width: 2px;
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::add-page {
+    background: var(--pale-blue);
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::groove:hover {
+    background: var(--widget-background);
+    width: 6px;    
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::sub-page {
+    background: var(--widget-background);
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .mute-button,
+.media-menu .app-volume-container .unmute-button {
+    font-size: 1px;
+    color: var(--yasb-background);
 }
 /* Windows desktops */
 .windows-desktops .widget-container {
@@ -569,7 +593,7 @@ padding-left: 16px;
     background-color: rgba(0, 0, 0, 0.1); /* Snow BG */
 }
 .weather-card .hourly-data-buttons {
-    margin: 15px 0px 0px 480px;
+    margin: 15px 0px 0px 475px;
 }
 .weather-card .hourly-data-button {
     margin: 0px;
@@ -708,4 +732,76 @@ padding-left: 16px;
 .wifi-menu .footer .refresh-icon:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+}
+
+.taskbar-widget .widget-container {
+    padding: 0px 5px 0px 5px;
+}
+.taskbar-widget .app-container {
+    background-color: var(--green);
+    padding: 3px 3px 3px 3px;
+    margin: 5px 2px 5px 2px;
+    border-radius: 10px;
+}
+.taskbar-widget .app-container.foreground {
+    background-color: var(--pale-blue); 
+}
+.taskbar-widget .app-container .app-icon {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8;
+}
+.taskbar-widget .app-container:hover {
+    border-radius: 10px;
+    padding: 0px 2px 0px 2px;
+    margin: 3px 2px 7px 2px;
+}
+.taskbar-widget .app-container.running {
+    background-color: rgba(210, 229, 244, 0.2);
+}
+.power-menu-widget {
+    padding-left: 16px;
+}
+.power-menu-widget .label {
+    font-size: 20px;
+    font-family: "JetBrainsMono NFP ExtraBold";
+}
+.power-menu-widget .widget-container {
+    background-color: var(--slate-gray);
+    padding: 0px 12px 0px 12px;
+    border-radius: 18px;
+}
+.power-menu-widget .widget-container:hover { 
+    background-color: rgba(210, 229, 244, 0.2);
+}
+.power-menu-popup {
+    background-color: rgba(255, 255, 255, 0);
+}
+.power-menu-popup .button {
+    padding: 0;
+    min-width: 155px;
+    max-width: 155px;
+    min-height: 155px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 8px solid rgba(255, 255, 255, 0)
+}
+.power-menu-popup .button.hover {
+    background-color: var(--pale-blue);
+    border-radius: 85px;
+}
+.power-menu-popup .button .label {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+}
+.power-menu-popup .button .icon {
+    font-size: 48px;
+    color: white;
+}
+.power-menu-popup .button.hover .label,
+.power-menu-popup .button.hover .icon {
+    color: black;
+}
+.power-menu-overlay {
+    background-color: rgba(0, 0, 0, 0.15);
 }

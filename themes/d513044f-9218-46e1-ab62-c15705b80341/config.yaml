@@ -33,12 +33,14 @@ bars:
         stretch: True
     widgets:
       left: [
-        "home",
+        "power_menu",
+        #"home",
         "active_window"
       ]
       center: [
         "info-grouper",
-        "windows_workspaces",
+        "taskbar",
+        #"windows_workspaces",
         "clock-grouper"
       ]
       right: [
@@ -187,7 +189,7 @@ widgets:
   media:
     type: "yasb.media.MediaWidget"
     options:
-      label: "{title} \u2022 {artist}"
+      label: "{title} \u2022 {artist} \u2022"
       label_alt: "{title}"
       hide_empty: False
       callbacks:
@@ -214,6 +216,7 @@ widgets:
         max_title_size: 60
         max_artist_size: 20
         show_source: True
+        show_volume_slider: True
       media_menu_icons:
         play: "\udb81\udc0a"
         pause: "\udb80\udfe4"
@@ -354,39 +357,39 @@ widgets:
         blizzardDay: "\ue36f"
         default: "\ue350"
       weather_card:
-        blur: true
-        round_corners: true
+        blur: True
+        round_corners: True
         round_corners_type: "normal"
         border_color: "system"
         alignment: "right"
         direction: "down"
         icon_size: 64
-        show_hourly_forecast: true
+        show_hourly_forecast: True
         time_format: "24h" 
         hourly_point_spacing: 76
         hourly_icon_size: 32
-        icon_smoothing: true 
+        icon_smoothing: True 
         temp_line_width: 2 
         current_line_color: "#8EAEE8"
         current_line_width: 1 
         current_line_style: "dot"
         hourly_gradient:
-          enabled: true
+          enabled: True
           top_color: "#8EAEE8"
           bottom_color: "#2A3E68"
         hourly_forecast_buttons:
-          enabled: true # hide/show the buttons
+          enabled: True # hide/show the buttons
           default_view: "temperature"
           temperature_icon: "\udb81\udd04" # or \udb81\udd05
           rain_icon: "\uef1c"
           snow_icon: "\udb81\udf17"
         weather_animation:
-          enabled: true
-          snow_overrides_rain: true
+          enabled: True
+          snow_overrides_rain: True
           temp_line_animation_style: both # can be "rain", "snow", "both", or "none"
           rain_effect_intensity: 1.0 # 0.01 - 10.0
           snow_effect_intensity: 1.0 # 0.01 - 10.0
-          scale_with_chance: true
+          scale_with_chance: True
   language:
     type: "yasb.language.LanguageWidget"
     options:
@@ -479,3 +482,41 @@ widgets:
      callbacks:
        on_left: "toggle_label"
        on_right: "exec cmd.exe /c start ms-settings:bluetooth"
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      icon_size: 16
+      tooltip: True
+      show_only_visible: False
+      strict_filtering: False
+      hide_empty: True
+      animation:
+        enabled: False
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "<span>\uf51b</span>"
+      uptime: False
+      show_user: False
+      blur: False
+      blur_background: True
+      animation_duration: 120 # Milliseconds
+      button_row: 4 # Number of buttons in a row, min 1 max 6
+      buttons:
+        lock: ["\udb80\udf41", "Lock"]
+        sleep: ["\ue32b", "Sleep"]
+        signout: ["\udb81\uddfd", "Sign out"]
+        force_restart: ["\udb84\udd0c", "Force Reboot"]
+        hibernate: ["\uf28e", "Hibernate"]
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Reboot"]
+        cancel: ["\udb81\udf3a", "Cancel"]
+      label_shadow:
+        enabled: False
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
