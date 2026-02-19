@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Init Light](themes/83124e1d-7df8-4494-b901-d60a78074e56)
+
+<a title="Init Light YASB Theme" href="themes/83124e1d-7df8-4494-b901-d60a78074e56"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/image.png" width="830px"></a>
+
+
 ## [i3 WinBars](themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3)
 
 <a title="i3 WinBars YASB Theme" href="themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3/image.png" width="830px"></a>
