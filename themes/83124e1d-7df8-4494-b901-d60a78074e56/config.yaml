@@ -1,0 +1,242 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic reload-configuration"
+bars:
+  primary-bar:
+    enabled: true
+    screens: ['*']
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "center"
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: true
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "99%"
+      height: 32
+    padding:
+      top: 10
+      left: 0
+      bottom: 1
+      right: 10
+    widgets:
+      left:
+        - "komorebi_active_layout"
+        - "komorebi_workspaces"
+        - "notifications"
+        - "komorebi_stack"
+        - "media"
+      center:
+        - "active_window"
+      right:
+        - "apps"
+        - "volume"
+        - "clock"
+widgets:
+  komorebi_stack:
+    type: "komorebi.stack.StackWidget"
+    options:
+      label_offline: ""
+      label_window: ""
+      label_window_active: ""
+      label_no_window: ""
+      label_zero_index: false
+      show_icons: "always"
+      icon_size: 19
+      max_length: 10
+      max_length_active: 20
+      max_length_ellipsis: ".."
+      hide_if_offline: false
+      show_only_stack: false
+      animation: true
+      enable_scroll_switching : true
+
+komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: false
+      label: "{icon}"
+      layouts:
+        - 'bsp'
+        - 'columns'
+        - 'rows'
+        - 'grid'
+        - 'scrolling'
+        - 'vertical_stack'
+        - 'horizontal_stack'
+        - 'ultrawide_vertical_stack'
+        - 'right_main_vertical_stack'
+      layout_icons:
+        bsp: ""
+        columns: ""
+        rows: ""
+        grid: ""
+        scrolling: ""
+        vertical_stack: ""
+        horizontal_stack: ""
+        ultrawide_vertical_stack: ""
+        right_main_vertical_stack: ""
+        monocle: ""
+        maximized: ""
+        floating: ""
+        paused: "\udb83\udf89"
+        tiling: "\udb81\ude40"
+      callbacks:
+        on_left: 'toggle_layout_menu'
+        on_middle: 'next_layout'
+        on_right: 'prev_layout'
+      layout_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "left"
+        direction: "down"
+        offset_top: 10
+        offset_left: 0
+        show_layout_icons: true
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  apps:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - {icon: "", launch: "taskmgr", name: "Task Manager"}
+        - {icon: "", launch: "quick_settings",name: "Quick Settings"}
+        - {icon: "", launch: "search", name: "Search"}
+        - {icon: "", launch: "control", name: "Control Panel"}
+        - {icon: "", launch: "ncpa.cpl", name: "Network Settings"}
+        - {icon: "", launch: "notification_center", name: "Notification Center"}
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Komorebi OFFLINE"
+      label_workspace_btn: "{index}"
+      label_workspace_active_btn: "{index}"
+      label_workspace_populated_btn: "{index}"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "{win[title]}"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 22
+      max_length: 100
+      max_length_ellipsis: "..."
+      monitor_exclusive: false
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      tooltip: false
+      label: "<span>{icon}</span> {level}"
+      volume_icons:
+        - "󰝟"  # Icon for muted
+        - "󰕿"  # Icon for 0-10% volume
+        - "󰖀"  # Icon for 11-30% volume
+        - "󰕾"  # Icon for 31-60% volume
+        - "󰕾"  # Icon for 61-100% volume
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "none"
+        alignment: "right"
+        offset_top: 16
+        offset_left: -5
+        direction: "down"
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%A, %b %d %Y   %I:%M %p}"
+      label_alt: "{%I:%M %p}"
+      tooltip: false
+      callbacks:
+        on_left: "toggle_calendar"
+        on_right: "toggle_label"
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{artist} - {title}"
+      label_alt: "{artist}"
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      max_field_size:
+        label: 100
+        label_alt: 100
+      show_thumbnail: false
+      controls_left: false
+      controls_hide: false
+      hide_empty: true
+      thumbnail_alpha: 80
+      thumbnail_padding: 10
+      thumbnail_corner_radius: 0
+      scrolling_label:
+        enabled: true
+        update_interval_ms: 33
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+      icons:
+        prev_track: ""
+        next_track: ""
+        play: ""
+        pause: ""
+      media_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "left"
+        direction: "down"
+        offset_top: 16
+        offset_left: 1
+        thumbnail_corner_radius: 6
+        thumbnail_size: 150
+        max_title_size: 45
+        max_artist_size: 40
+        show_source: true
+      media_menu_icons:
+        play: ""
+        pause: ""
+        prev_track: ""
+        next_track: ""
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      class_name: "notify"
+      label: "<span></span>"
+      label_alt: "<span></span>"
+      hide_empty: true
+      tooltip: false
+      container_padding:
+        top: 0
+        left: 10
+        bottom: 0
+        right: 4
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "toggle_label"
