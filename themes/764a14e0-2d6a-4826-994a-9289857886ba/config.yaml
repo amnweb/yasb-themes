@@ -35,7 +35,8 @@ bars:
     widgets:
       left: [
         "power_menu",
-        "apps"
+        "apps",
+        "systray"
       ]
       center: [                                                                                                                                                                                                                                                                                                                 
         "media"
@@ -46,8 +47,8 @@ bars:
         "wifi",
         "bluetooth",
         "volume",
-        "language",
-        "systray"
+        "brightness",
+        "language"
         ]
     layouts:
       left:
@@ -60,6 +61,41 @@ bars:
         alignment: "right"
         stretch: true
 widgets:
+  brightness:
+    type: "yasb.brightness.BrightnessWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "Brightness {percent}%"
+      tooltip: true
+      hide_unsupported: true
+      brightness_toggle_level: [0, 50, 100]
+      auto_light: false
+      auto_light_icon: "\udb80\udce1"
+      auto_light_night_level: 35
+      auto_light_night_start_time: "19:00"
+      auto_light_night_end_time: "06:45"
+      auto_light_day_level: 75
+      brightness_icons: [
+        "\udb80\udcde",  # Icon for 0-25% brightness
+        "\udb80\udcdd",  # Icon for 26-50% brightness
+        "\udb80\udcdf",  # Icon for 51-75% brightness
+        "\udb80\udce0"   # Icon for 76-100% brightness
+      ]
+      brightness_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+          on_left: "toggle_brightness_menu"
+          on_middle: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
@@ -99,7 +135,7 @@ widgets:
           on_right: "exec cmd.exe /c start ms-settings:network"
         container_padding:
           top: 0
-          left: 
+          left: 8
           bottom: 0
           right: 8
         wifi_icons: [
@@ -113,9 +149,9 @@ widgets:
     type: "yasb.systray.SystrayWidget"
     options:
       class_name: "systray"
-      label_collapsed: "\uf137"
-      label_expanded: "\uf138"
-      label_position: "right" # Can be "left" or "right"
+      label_collapsed: "\uf138"
+      label_expanded: "\uf137"
+      label_position: "left" # Can be "left" or "right"
       icon_size: 15 # Can be any integer between 8 and 64
       pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
       #show_unpinned: false
@@ -183,13 +219,13 @@ widgets:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
       label: "{win[title]}"
-      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}']"
       label_no_window: ""
-      label_icon: true
+      label_icon: false
       label_icon_size: 14
       max_length: 20
       max_length_ellipsis: "..."
-      monitor_exclusive: false 
+      monitor_exclusive: true 
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -267,11 +303,12 @@ widgets:
   media:
     type: "yasb.media.MediaWidget"
     options:
-      label: "{title} - {artist}"
+      label: "{title}{s}{artist}"
       label_alt: "{title}"
+      separator: " - "
       max_field_size:
-        label: 17
-        label_alt: 24
+        label: 20
+        label_alt: 30
       show_thumbnail: true
       controls_only: false
       controls_left: true
@@ -279,6 +316,9 @@ widgets:
       thumbnail_alpha: 255
       thumbnail_padding: 0
       thumbnail_edge_fade: true
+      progress_bar:
+        enabled: true
+        alignment: "top"
       icons:
         prev_track: "\uf048"
         next_track: "\uf051"
@@ -287,13 +327,14 @@ widgets:
       scrolling_label:
         enabled: true
         update_interval_ms: 30
-        style: "left"  # can be "left", "right", "bounce", "bounce-ease"
+        style: "bounce"  # can be "left", "right", "bounce", "bounce-ease"
         separator: " | "
         label_padding: 1
       # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
         ease_slope: 20
         ease_pos: 0.8
         ease_min: 0.5
+        always_scroll: false
       media_menu:
         blur: true
         round_corners: true
@@ -321,7 +362,7 @@ widgets:
       label_shadow:
         enabled: true
         color: "black"
-        radius: 3
+        radius: 4
         offset: [ 1, 1 ]
       callbacks:
         on_left: "toggle_play_pause"
@@ -344,6 +385,11 @@ widgets:
         alignment: "center"
         direction: "down"
         distance: 6
+        show_holidays: true
+        show_week_numbers: true
+        show_years: true
+        country_code: "RU"
+        extended: false
       container_padding:
         top: 0
         left: 8
@@ -385,8 +431,8 @@ widgets:
         cloudyNight: "\U0001F315"
         rainyDay: "\U0001F327"
         rainyNight: "\U0001F327\U0001F311"
-        snowyDay: "\U00002744"
-        snowyNight: "\U0001F328"
+        snowyIcyDay: "\U00002744"
+        snowyIcyNight: "\U0001F328"
         blizzardDay: "\U0001F32C"
       container_padding:
         top: 0
@@ -430,6 +476,10 @@ widgets:
         alignment: "right"
         direction: "down"
         distance: 6
+        show_apps: true # Whether to show the list of applications with audio sessions
+        show_app_labels: true # Whether to show application labels in the audio menu
+        show_app_icons: true # Whether to show application icons in the audio menu
+        show_apps_expanded: true # Whether application volumes are expanded by default when opening the menu
       container_padding:
         top: 0
         left: 8
@@ -461,26 +511,30 @@ widgets:
     options:
       container_padding:
         top: 0
-        left: 4
+        left: 0
         bottom: 0
         right: 0
       label: "{data}"
       app_list:
         - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
-        - { icon: "\uf282",launch: "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Edge.lnk" }
         - { icon: "\uf489", launch: "wt" }
-        - { icon: "\uf07b", launch: "explorer" }
-        - { icon: "\uee59",launch: "C:\\Users\\alex2\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\TeamSpeak.lnk" }
         - { icon: "\uf1b6",launch: "C:\\Users\\alex2\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Steam\\Steam.lnk" }
-        - { icon: "\uf2c6",launch: "C:\\Program Files\\WindowsApps\\TelegramMessengerLLP.TelegramDesktop_5.15.2.0_x64__t4vj0pshhgkwm\\Telegram.exe" }
+        - { icon: "\uee59",launch: "C:\\Users\\alex2\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\TeamSpeak.lnk" }
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
+      tooltip: true
       animation:
         enabled: true
         duration: 100
         type: "fadeInOut"
       icon_size: 16
+      preview:
+        enabled: true
+        width: 240
+        delay: 400
+        padding: 8
+        margin: 8
       ignore_apps:
         processes: []
         titles: []
@@ -488,7 +542,12 @@ widgets:
       callbacks:
         on_left: "toggle_window"
         on_middle: "close_app"
-        on_right: "do_nothing"
+        on_right: "context_menu"
+      title_label:
+        enabled: true
+        show: "focused"
+        min_length: 5
+        max_length: 15
   bluetooth:
     type: "yasb.bluetooth.BluetoothWidget"
     options:
