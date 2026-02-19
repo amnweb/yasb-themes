@@ -1,4 +1,16 @@
 {
+    "83124e1d-7df8-4494-b901-d60a78074e56": {
+        "id": "83124e1d-7df8-4494-b901-d60a78074e56",
+        "name": "Init Light",
+        "description": "A minimal rounded, boxy and light theme for Yasb.",
+        "homepage": "https://github.com/initiateit/Init-Light",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/image.png",
+        "author": "initiateit",
+        "publish_date": "2026-01-28T03:36:04.345476"
+    },
     "43cef139-7c16-4cd2-904f-7b0aa82cc7d3": {
         "id": "43cef139-7c16-4cd2-904f-7b0aa82cc7d3",
         "name": "i3 WinBars",
