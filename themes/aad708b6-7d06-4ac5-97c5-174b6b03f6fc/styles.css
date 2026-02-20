@@ -7,67 +7,118 @@
 	padding: 0;
 }
 .yasb-bar {
-	padding: 0 8px;
-	margin: 0;
-    background-color: rgba(35, 35, 35, 0.01);
+	padding: 2px 4px;
+    background: rgba(20, 20, 30, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 .widget {
 	padding: 0 10px;
 	margin: 0;
+	transition: all 0.2s ease;
 }
-.widget .label {
-	padding: 2px 2px 1px 2px;
+.widget:hover {
+	color: #89dceb;
 }
-.widget .label.alt {
-	padding: 1px 8px 1px 8px;
+.widget .label { padding: 2px 2px 1px 2px; }
+.widget .label.alt { padding: 1px 8px 1px 8px; }
+.clock-widget .label { padding-left: 8px;}
+
+/* POWER */
+.power-menu-widget .label {
+    color: #f38ba8;
+    font-size: 13px;
 }
-.clock-widget .label {
-    padding-left:8px;
+.power-menu-compact {
+    min-width: 260px;
+    background-color: rgba(55, 58, 65, 0.6);
+}
+.power-menu-compact .profile-info { padding: 12px 0 24px 0; }
+ 
+.power-menu-compact .profile-info .profile-username {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e0e3ee;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    margin-top: 4px;
 }
 
-/* POWER MENU WIDGET */
-.uptime { /* UPTIME */
-	font-size: 14px;
-	margin-bottom: 10px;
-	color: rgb(255, 255, 255);
-	font-weight: 600;
-	font-family: "JetBrains Mono";
+.power-menu-compact .profile-info .profile-account-type {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 8px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #74b0ff;
+    padding: 2px 6px;
+    border-radius: 6px;
 }
-.power-menu-widget .label {
-	color: #eba0ac;
-	font-size: 16px;
+
+.power-menu-compact .profile-info .profile-email {
+    font-size: 13px;
+    color: rgba(205, 214, 244, 0.6);
+    margin-top: 2px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
 }
-.power-menu-popup .button {
-	padding: 0;
-	width: 160px;
-	height: 240px;
-	border-radius: 4px;
-	background-color: rgba(41, 42, 58, 0.75);
-	font-family: "JetBrains Mono";
-	color: white;
-	border: 4px solid rgba(255, 255, 255, 0);
+
+.power-menu-compact .manage-accounts {
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.08);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    padding: 2px 8px;
+    margin-top: 16px;
+    border-radius: 6px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.power-menu-popup .button.hover {
-	background-color: rgb(55, 56, 75);
-	border: 4px solid rgb(55, 56, 75);
+
+.power-menu-compact .buttons {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 0 12px 12px 12px;
+    border-radius: 8px;
 }
-.power-menu-popup .button .label {
-	margin-bottom: 8px;
-	font-size: 16px;
-	font-weight: 600;
-	color: rgba(255, 255, 255, 0.6);
-	font-family: "JetBrains Mono";
+
+.power-menu-compact .button {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
 }
-.power-menu-popup .button .icon {
-	font-size: 64px;
-	padding-top: 54px;
-	color: rgba(255, 255, 255, 0.25);
+
+.power-menu-compact .button.hover {
+    background-color: rgba(137, 180, 250, 0.2);
+    transition: all 0.2s ease;
 }
-.power-menu-popup .button.cancel .icon {
-	color: rgba(243, 139, 168, 0.55);
+
+.power-menu-compact .button.lock.hover {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
-.power-menu-popup .button.cancel .label {
-	color: rgba(243, 139, 168, 0.95);
+
+.power-menu-compact .button.shutdown.hover {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.power-menu-compact .button .icon {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    padding-right: 10px;
+    min-width: 20px;
+}
+
+.power-menu-compact .button .label {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #bebec0;
+}
+
+.power-menu-compact .icon.hover,
+.power-menu-compact .label.hover {
+    color: #ffffff;
 }
 
 /* ICONS */
@@ -77,30 +128,421 @@
 .volume-widget .icon {
 	color: #89b4fa;
 	margin: 1px 2px 0 0;
+	transition: all 0.2s ease;
 }
 
-/* WEATHER WIDGET */
-.weather-widget .icon {
-	font-size: 16px;
-	margin: 0 2px 0px 0;
+/* LAUNCHPAD */
+.launchpad-widget {
+    padding: 0 6px 0 6px;
 }
-.weather-widget .icon.sunnyDay {
-	color: rgb(221, 210, 107);
-}
-.weather-widget .icon.clearNight {
-	color: rgb(107, 189, 221);
-	font-size: 18px;
-	margin: -1px 2px 0px 0;
-}
-.weather-widget .icon.rainyNight {
+.launchpad-widget .icon {
     font-size: 16px;
+    color: #89b4fa;
 }
-.weather-widget .icon.cloudyDay {
+
+/* Launchpad context menu style */
+.launchpad .context-menu {
+    background-color: #202020;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 0px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: 600
+}
+.launchpad .context-menu::item {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: 4px;
+    min-width: 100px;
+}
+.launchpad .context-menu::item:selected {
+    background-color: #3a3a3a;
+    color: #FFFFFF;
+}
+.launchpad .context-menu::item:pressed {
+    background-color: #3A3A3A;
+}
+.launchpad .context-menu::separator {
+    height: 1px;
+    background-color: #404040;
+    margin: 4px 8px;
+}
+.launchpad .context-menu::item:disabled {
+    color: #666666;
+    background-color: transparent;
+}
+
+/* Launchpad App dialog style */
+.launchpad .app-dialog {
+    font-family: 'Segoe UI';
+    background-color: #202020;
+}
+.launchpad .app-dialog .buttons-container {
+    background-color: #171717;
+    margin-top: 16px;
+    border-top: 1px solid #000;
+    max-height: 80px;
+    min-height: 80px;
+    padding: 0 20px 0 20px;
+}
+.launchpad .app-dialog .message {
+    color: #FFFFFF;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 0
+}
+.launchpad .app-dialog .title-field,
+.launchpad .app-dialog .path-field,
+.launchpad .app-dialog .icon-field,
+.launchpad .app-dialog .group-field{
+    background-color: #181818;
+    border: 1px solid #303030;
+    border-radius: 4px;
+    padding: 0 6px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 10px 0px 5px 0;
+    min-height: 30px;
+}
+.launchpad .app-dialog .title-field:focus,
+.launchpad .app-dialog .path-field:focus,
+.launchpad .app-dialog .icon-field:focus {
+    border-bottom-color: #4cc2ff;
+}
+.launchpad .app-dialog .button {
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFFFFF;
+    min-width: 80px;
+    padding: 0 6px;
+    margin: 10px 0 5px 6px;
+    min-height: 28px;
+    outline: none;
+}
+.launchpad .app-dialog .buttons-container .button {
+    margin: 10px 0 5px 0px;
+    font-size: 13px;
+}
+.launchpad .app-dialog .button:focus {
+    border: 2px solid #adadad;
+}
+.launchpad .app-dialog .button:focus,
+.launchpad .app-dialog .button:hover {
+    background-color: #4A4A4A;
+}
+.launchpad .app-dialog .button:pressed {
+    background-color: #3A3A3A;
+}
+.launchpad .app-dialog .button.add,
+.launchpad .app-dialog .button.save {
+    background-color: #0078D4;
+}
+.launchpad .app-dialog .button.add:focus,
+.launchpad .app-dialog .button.save:focus,
+.launchpad .app-dialog .button.add:hover,
+.launchpad .app-dialog .button.save:hover {
+    background-color: #0066B2;
+}
+.launchpad .app-dialog .button.add:pressed,
+.launchpad .app-dialog .button.save:pressed {
+    background-color: #00509E;
+}
+.launchpad .app-dialog .button.delete {
+    background-color: #bd2d14;
+}
+.launchpad .app-dialog .button.delete:focus,
+.launchpad .app-dialog .button.delete:hover {
+    background-color: #b30f00;
+}
+.launchpad .app-dialog .button.delete:pressed {
+    background-color: #a00b00;
+}
+.launchpad .app-dialog .warning-message {
+    background-color: #2b0b0e;
+    border: 1px solid #5a303c;
+    border-radius: 4px;
+    color: #cc9b9f;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin: 4px 0px;
+}
+/* Launchpad popup style */
+.launchpad .drop-overlay {
+    background-color: rgba(24, 25, 27, 0.8);
+    border:4px dashed #3c80ff;
+}
+.launchpad .drop-overlay .text {
+    color: #ffffff;
+    font-family: 'Segoe UI';
+    font-size: 64px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.launchpad .launchpad-container {
+    background-color: rgba(24, 25, 27, 0.8);
+}
+.launchpad .search-container {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background-color:rgba(0, 0, 0, 0.3);
+    min-height: 80px;
+    margin: 0;
+    padding: 0
+}
+.launchpad .search-input {
+    max-width: 400px;
+    padding: 8px 12px;
+    font-size: 14px;
+    min-height: 24px;
+    max-height: 24px;
+    font-family: 'Segoe UI';
+    border-radius: 20px;
+    border: 2px solid rgb(53, 54, 56);
+    background-color: rgba(0, 0, 0, 0.507);
+    color: #a6adc8;
+}
+.launchpad .search-input:focus  {
+    border: 2px solid rgb(22, 114, 190);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.launchpad .launchpad-scroll-area {
+    background-color: transparent;
+    border: none;
+}
+.launchpad .app-icon {
+    background-color: rgba(102, 10, 10, 0);
+    border-radius: 12px;
+    border: 2px solid rgba(112, 76, 32, 0);
+    padding-top: 10px;
+    margin: 24px 6px 6px 6px;
+    max-width: 110px;
+    min-width: 110px;
+    min-height: 110px;
+    max-height: 110px; 
+}
+.launchpad .app-icon:focus {
+    border: 2px solid #89b4fa;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.launchpad .app-icon:hover {
+    border: 2px solid #89b4fa;
+    background-color: rgba(255, 255, 255, 0.13);
+}
+.launchpad .app-icon .title {
+    color: #a6adc8;
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    margin-top: 2px;
+    font-weight: 600
+}
+/* App icon .launchpad .app-icon or URL icon .launchpad .app-icon.url */
+.launchpad .app-icon.url .title{
+    color: #52f1d2;
+}
+.launchpad .app-icon .icon {
+    padding: 0;
+    margin: 0
+}
+
+/* Group icon styling */
+.launchpad .group-icon {
+    background-color: rgba(102, 10, 10, 0);
+    border-radius: 12px;
+    border: 2px solid rgba(112, 76, 32, 0);
+    padding-top: 10px;
+    margin: 24px 6px 6px 6px;
+    max-width: 110px;
+    min-width: 110px;
+    min-height: 110px;
+    max-height: 110px;
+}
+.launchpad .group-icon:focus {
+    border: 2px solid #89b4fa;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.launchpad .group-icon:hover {
+    border: 2px solid #89b4fa;
+    background-color: rgba(255, 255, 255, 0.13);
+}
+.launchpad .group-icon .group-icon-container {
+    background-color: rgb(39, 40, 43);
+    border: 1px solid rgb(47, 49, 53);
+    border-radius: 8px;
+}
+.launchpad .group-icon .title {
+    color: #a6adc8;
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    margin-top: 2px;
+    font-weight: 600;
+}
+
+/* Per-group styling
+   Each group gets a class based on its group name:
+   - Lowercase conversion
+   - Spaces replaced with hyphens
+   Examples:
+   - "Browsers" group → .browsers
+   - "My Apps" group → .my-apps
+   - "Work Tools" group → .work-tools
+*/
+.launchpad .group-icon .group-icon-container.browser {
+    background-color: rgb(33, 47, 71);
+    border-color: rgb(34, 57, 94);
+}
+
+/* Back button when inside a group */
+.launchpad .group-back-button {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
-    color: rgb(221, 210, 107);
+    font-family: "Segoe UI";
+    font-weight: 400;
+    text-align: left;
+    padding: 0 32px;
 }
-.weather-widget .icon.rainyDay {
-    color: rgb(245, 224, 220)
+.launchpad .group-back-button:hover {
+    color: #ffffff;
+}
+
+/* DISK */
+.disk-widget {
+    padding: 0 6px 0 6px;
+}
+.disk-group {
+    background-color:rgba(17, 17, 27, 0.4); 
+}
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+.disk-group-row:hover {
+    background-color: rgba(137, 180, 250, 0.15);
+    border: 1px solid rgba(137, 180, 250, 0.3);
+}
+.disk-group-label-bar{
+    max-height:8px;
+    border:0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(137, 180, 250, 0.1);
+    border-radius: 4px;
+}
+.disk-group-label-bar::chunk{
+    background-color: #74b0ff;
+    border-radius: 4px;
+}
+.disk-group-label {
+    font-size: 10px;
+}
+.disk-group-label-size {
+    font-size: 10px;
+    color: #666879;
+}
+
+/* LANGUAGE */
+.language-menu {
+    background-color: rgba(17, 17, 27, 0.4);
+    min-width: 300px;
+}
+.language-menu .header {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: rgba(17, 17, 27, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.language-menu .footer {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: #9399b2;
+    background-color: rgba(17, 17, 27, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.language-menu .footer:hover {
+    background-color: rgba(137, 180, 250, 0.15);
+    color: #89dceb;
+    transition: all 0.2s ease;
+}
+.language-menu .language-item {
+    padding: 6px 12px;
+    margin: 2px 4px;
+}
+.language-menu .language-item.active {
+    background-color:rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+.language-menu .language-item:hover {
+    background-color: rgba(166, 227, 161, 0.15);
+    transition: all 0.2s ease;
+}
+.language-menu .language-item.active:hover {
+    background-color: rgba(137, 180, 250, 0.2);
+    border-radius: 4px;
+}
+.language-menu .language-item .code {
+    font-weight: 900;
+    font-size: 14px;
+    min-width: 40px;
+    text-transform: uppercase;
+}
+.language-menu .language-item .icon {
+    font-size: 16px;
+    margin-right: 8px;
+    color: #fff;
+}
+.language-menu .language-item .name {
+    font-weight: 600;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+}
+.language-menu .language-item .layout {
+    font-weight: 600;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+}
+
+/* HARDWARE */
+.hardware-widget .container {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hardware-widget .grouper-button {
+    font-size: 12px;
+    color: #a2b1c7;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.hardware-widget .grouper-button:hover {
+    color: #89dceb;
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* MEDIA */
@@ -115,9 +557,12 @@
 	padding-right: 4px;
 }
 
-.media-menu .btn, .media-menu .title, .media-menu .artist { padding-left: 10px; font-family: 'JetBrains Mono'; }
+.media-menu .btn, .media-menu .title, .media-menu .artist { padding-left: 10px; font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif; }
 
-.media-menu .btn.prev:hover, .media-menu .btn.next:hover { color: #ffc400; }
+.media-menu .btn.prev:hover, .media-menu .btn.next:hover {
+    color: #f38ba8;
+    transition: all 0.2s ease;
+}
 
 .media-menu .source {
     font-size: 11px;
@@ -127,7 +572,7 @@
     background-color: #bac2de;
     padding: 2px 4px;
     font-weight: 600;
-    font-family: 'JetBrains Mono';
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
 	margin-bottom: 10px;
 }
 
@@ -135,8 +580,8 @@
 .github-widget {
 	color: #fff;
 }
-.github-widget .icon:hover {
-	color: #0091ff;
+.github-widget .icon {
+	padding-right: 5px;
 }
 .github-menu {
     background-color:  rgba(17, 17, 27, 0.2);
@@ -148,7 +593,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 15px;
     font-weight: 400;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
     padding: 8px;
     color: white;
     background-color: rgba(17, 17, 27, 0.75);
@@ -160,7 +605,7 @@
 }
 .github-menu .footer .label{
     font-size: 12px;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
     color: #9399b2;
 }
 .github-menu .contents {
@@ -172,13 +617,14 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.075);
 }
 .github-menu .contents .item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    background-color: rgba(166, 227, 161, 0.1);
+    border-bottom: 1px solid rgba(166, 227, 161, 0.2);
+    transition: all 0.2s ease;
 }
 .github-menu .contents .item .title,
 .github-menu .contents .item .description {
     color: #9399b2;
-    font-family: Segoe UI;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .github-menu .contents .item .title {
     font-size: 14px;
@@ -217,10 +663,17 @@
     font-size: 32px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.04);
+    transition: all 0.2s ease;
 }
+
+.komorebi-control-menu .button:hover {
+    color: rgba(166, 227, 161, 0.8);
+    background-color: rgba(166, 227, 161, 0.1);
+}
+
 .komorebi-control-menu .button.active {
     color: rgb(228, 228, 228);
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(137, 180, 250, 0.15);
 }
 .komorebi-control-menu .button:disabled,
 .komorebi-control-menu .button.active:disabled {
@@ -231,21 +684,39 @@
     font-size: 12px;
     color: #6c7086;
 }
-/* SYSTEMINFO GROUPER */
-.grouped-widgets .container {
-    background-color: rgba(35, 35, 35, 0.1);
-    margin: 4px 0 4px 0;
-    border-radius: 12px;
-    border: 2px solid #45475a;
+
+/* MEMORY */
+.memory-widget {
+    padding: 0 8px;
 }
 
-/* CPU & MEMORY */
-.cpu-widget .icon {
-    color: var(--orange);
+.memory-widget .widget-container .label {
+    font-size: 13px;
 }
-.memory-widget .label,
-.cpu-widget .label {
-    padding-right: 8px;
+
+.memory-widget .widget-container .label {
+    font-size: 14px;
+}
+
+.memory-widget .widget-container .label.status-low {
+    color: #a6e3a1; /* Green */
+}
+
+.memory-widget .widget-container .label.status-medium {
+    color: #f9e2af; /* Yellow */
+}
+
+.memory-widget .widget-container .label.status-high {
+    color: #fab387; /* Orange */
+}
+
+.memory-widget .widget-container .label.status-critical {
+    color: #f38ba8; /* Red */
+}
+
+/* Progress bar customization */
+.memory-widget .progress-circle {
+    margin-right: 6px;
 }
 
 /* HOME */
@@ -256,7 +727,8 @@
     color: #b4befe;
 }
 .home-widget .icon:hover {
-    color: #cdd6f4;
+    color: #cba6f7;
+    transition: all 0.2s ease;
 }
 .home-menu {
     background-color:rgba(17, 17, 27, 0.5); 
@@ -269,12 +741,650 @@
     font-weight: 600;
 }
 .home-menu .menu-item:hover {
-    background-color:rgba(128, 130, 158, 0.15);
-    color: #fff;
+    background-color: rgba(243, 139, 168, 0.15);
+    color: #f38ba8;
+    transition: all 0.2s ease;
 }
 .home-menu .separator {
     max-height: 1px;
     background-color:rgba(128, 130, 158, 0.3);
+}
+
+/* CLOCK */
+.clock-widget {
+    padding: 0 4px 0 0px;
+}
+
+.clock-widget .icon {
+    color: #89dceb;
+    font-size: 14px;
+    padding-right: 4px;
+    transition: all 0.2s ease;
+}
+
+.clock-widget:hover .icon {
+    color: #cba6f7;
+}
+
+.clock-widget .icon.alarm {
+    color: #f38ba8;
+    margin-left: 4px;
+}
+
+.clock-widget:hover .icon.alarm {
+    color: #ff7a8e;
+}
+
+.clock-widget .label.alarm {
+    color: #74b0ff;
+    margin-left: 4px;
+}
+
+/* Calendar, Alarm, and Timer Popups */
+.clock-popup.alarm,
+.clock-popup.timer,
+.clock-popup.calendar {
+    min-width: 460px;
+    background-color: rgba(17, 17, 27, 0.4);
+}
+
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(162, 177, 196, 0.85);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.clock-popup.calendar .calendar-table::item:selected {
+    color: #282936;
+    font-weight: bold;
+    background-color: #74b0ff;
+    border-radius: 12px;
+}
+
+.clock-popup.calendar .day-label { margin-top: 20px; }
+
+.clock-popup.calendar .day-label,
+.clock-popup.calendar .month-label,
+.clock-popup.calendar .year-label,
+.clock-popup.calendar .date-label {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.clock-popup.calendar .month-label {
+    font-weight: normal;
+}
+
+.clock-popup.calendar .year-label {
+    font-weight: normal;
+}
+
+.clock-popup.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    margin-top: -20px;
+}
+
+.clock-popup.calendar .extended-container {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    padding-left: 16px;
+}
+
+.clock-popup.calendar .extended-container .button.alarm.small,
+.clock-popup.calendar .extended-container .button.timer.small {
+    min-width: 32px;
+    min-height: 16px;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 2px;
+}
+
+.clock-popup.calendar .extended-container .upcoming-events-header {
+    font-size: 12px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    margin: 4px 0 8px 0;
+    color: #d2d6e2;
+}
+
+.clock-popup.calendar .extended-container .upcoming-events-item {
+    font-size: 12px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    padding: 3px 0;
+    color: #b2b6c0;
+}
+
+.clock-popup.calendar .extended-container .upcoming-events-item:hover {
+    color: #ced1d8;
+}
+
+/* Alarm and Timer Dialog Containers */
+.clock-popup.timer .clock-popup-container,
+.clock-popup.alarm .clock-popup-container {
+    padding: 16px;
+}
+
+.clock-popup.timer .clock-popup-footer,
+.clock-popup.alarm .clock-popup-footer {
+    padding: 16px;
+    border-top: 1px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.clock-popup .clock-label-timer {
+    font-size: 13px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    color: #8d9196;
+}
+
+.clock-popup .clock-input-time {
+    font-size: 48px;
+    background-color: transparent;
+    border: none;
+    font-family: monospace, "Tahoma", "Segoe UI";
+    font-weight: 600;
+    color: #ced3d8;
+}
+
+.clock-popup .clock-input-time.colon {
+    padding-bottom: 8px;
+}
+
+/* Dialog Buttons */
+.clock-popup .button {
+    border-radius: 4px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    min-height: 28px;
+    min-width: 64px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.clock-popup .button.save,
+.clock-popup .button.start,
+.clock-popup .button.delete,
+.clock-popup .button.cancel {
+    min-width: 120px;
+}
+
+.clock-popup .button.save,
+.clock-popup .button.start {
+    background-color: rgba(0, 110, 255, 0.5);
+    margin-right: 8px;
+}
+
+.clock-popup .button.save:hover,
+.clock-popup .button.start:hover {
+    background-color: rgba(0, 110, 255, 0.7);
+}
+
+.clock-popup .button.delete {
+    background-color: rgba(255, 80, 80, 0.5);
+}
+
+.clock-popup .button.delete:hover {
+    background-color: rgba(255, 80, 80, 0.7);
+}
+
+.clock-popup .button.is-alarm-enabled {
+    background-color: rgba(0, 110, 255, 0.5);
+}
+
+.clock-popup .button.is-alarm-enabled:hover {
+    background-color: rgba(0, 110, 255, 0.7);
+}
+
+.clock-popup .button.is-alarm-disabled {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.clock-popup .button.day {
+    background-color: rgba(255, 255, 255, 0.1);
+    max-height: 20px;
+    min-height: 20px;
+}
+
+.clock-popup .button.day:checked {
+    background-color: rgba(0, 110, 255, 0.5);
+}
+
+.clock-popup .button.quick-option {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.clock-popup .button.quick-option:checked {
+    background-color: rgba(0, 110, 255, 0.5);
+}
+
+.clock-popup .button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.clock-popup .button:disabled {
+    background-color: rgba(100, 100, 100, 0.2);
+    color: rgba(150, 150, 150, 0.7);
+}
+
+.clock-popup .alarm-input-title {
+    font-size: 14px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    color: #d2d6e2;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-top: 8px;
+    outline: none;
+    min-width: 300px;
+}
+
+.clock-popup .alarm-input-title:focus { border: 1px solid #0078D4; }
+
+/* Active Alarm Popup Window */
+.active-alarm-window {
+    background-color: rgba(255, 255, 255, 0.048);
+    max-width: 500px;
+    min-width: 500px;
+    padding: 32px;
+}
+
+.active-alarm-window .alarm-title-icon {
+    font-size: 64px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.active-alarm-window .alarm-title {
+    font-size: 24px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    max-width: 500px;
+    min-width: 500px;
+}
+
+.active-alarm-window .alarm-info {
+    font-size: 16px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    color: #b2b6c0;
+    margin-bottom: 32px;
+}
+
+.active-alarm-window .button {
+    border-radius: 4px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 36px;
+    min-width: 100px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.active-alarm-window .button:hover { background-color: rgba(255, 255, 255, 0.3); }
+
+/* TRAFFIC */
+.traffic-menu {
+    background-color: rgba(24, 25, 27, 0.85);
+    min-width: 280px;
+}
+.traffic-menu .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(24, 25, 27, 0.8);
+}
+.traffic-menu .header .title {
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Segoe UI';
+    color: #ffffff
+}
+.traffic-menu .header .reset-button {
+    font-size: 11px;
+    padding: 4px 8px;
+    margin-right: 8px;
+    font-family: 'Segoe UI';
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+}
+.traffic-menu .reset-button:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .reset-button:pressed {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Speed column styles */
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+    background-color: transparent;
+    padding: 4px 10px;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-top: 16px;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.traffic-menu .download-speed {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.traffic-menu .speed-separator {
+    max-width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 32px 0 16px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: 'Segoe UI';
+    color: #bcc2c5;
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    padding-top: 4px;
+}
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+    color: #747474;
+    font-size: 11px;
+    font-family: 'Segoe UI';
+    padding: 0 0 4px 0;
+}
+
+/* Section and data styles */
+.traffic-menu .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7c8192;
+    margin-bottom: 4px;
+    font-family: 'Segoe UI';
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+    margin: 8px 8px 0 8px;
+    padding: 0 10px 10px 10px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .data-text {
+    font-size: 13px;
+    color: #afb5cc;
+    padding: 2px 0;
+    font-family: 'Segoe UI';
+
+}
+.traffic-menu .data-value {
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    padding: 2px 0;
+}
+
+/* Interface and Internet info styles */
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+    font-size: 12px;
+    color: #6f7486;
+    padding: 8px 0;
+    font-family: 'Segoe UI';
+}
+.traffic-menu .internet-info {
+    background-color: rgba(68, 68, 68, 0.1);
+}
+.traffic-menu .internet-info.connected {
+    background-color: rgba(166, 227, 161, 0.096);
+    color: #a6e3a1;
+}
+.traffic-menu .internet-info.disconnected {
+    background-color: rgba(243, 139, 168, 0.1);
+    color: #f38ba8;
+}
+
+/* CPU */
+.cpu-widget { padding: 0 8px; }
+.cpu-widget .widget-container .label { font-size: 13px; color: #cdd6f4; }
+.cpu-widget .widget-container .icon { font-size: 14px; color: #89b4fa; }
+
+.cpu-widget .widget-container .label.status-low { color: #a6e3a1; /* Green */ }
+.cpu-widget .widget-container .label.status-medium { color: #f9e2af; /* Yellow */ }
+.cpu-widget .widget-container .label.status-high { color: #fab387; /* Orange */ }
+.cpu-widget .widget-container .label.status-critical { color: #f38ba8; /* Red */ }
+
+/* Progress bar customization */
+.cpu-widget .progress-circle {
+    margin-right: 6px;
+}
+
+/* UPDATE */
+.update-check-widget {
+    padding: 0 6px 0 6px;
+}
+.update-check-widget .icon {
+    font-size: 14px;
+}
+.update-check-widget .widget-container.winget.paired { margin-right: 1px; }
+.update-check-widget .widget-container.winget .icon {
+    margin: 0 1px 0 6px;
+}
+.update-check-widget .widget-container.winget .label {
+    margin: 0 6px 0 1px;
+    font-weight: 900;
+    font-size: 14px;
+} 
+
+/* NOTES */
+.notes-widget { padding-right: 5px; }
+
+.notes-widget .label, .notes-widget .icon { font-size: 14px; }
+
+/* Notes Widget Menu */
+.notes-menu {
+    min-width: 400px;
+    max-width: 400px;
+    background-color: rgba(17, 17, 27, 0.4);
+}
+
+.notes-menu .note-item {
+    background-color:transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notes-menu .note-item:hover {
+    background-color: rgba(243, 139, 168, 0.15);
+    transition: all 0.2s ease;
+}
+
+.notes-menu .note-item .icon {
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.notes-menu .delete-button {
+    color: #ff6b6b;
+    background: transparent;
+    border: none;
+    font-size: 8px;
+    padding: 7px 8px;
+    border-radius: 3px;
+}
+
+.notes-menu .delete-button:hover {
+    background-color: rgba(255, 107, 107, 0.2);
+    transition: all 0.2s ease;
+}
+
+.notes-menu .copy-button {
+    color: #babfd3;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 3px;
+}
+
+.notes-menu .copy-button:hover {
+    background-color: rgba(166, 227, 161, 0.2);
+    color: #a6e3a1;
+    transition: all 0.2s ease;
+}
+
+.notes-menu .copy-button:pressed { color: #ffffff; }
+
+.notes-menu .note-item .title {
+    font-size: 13px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.notes-menu .note-item .date {
+    font-size: 12px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+}
+.notes-menu .empty-list {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0 20px 0;     
+}
+.notes-menu .add-button,  
+.notes-menu .cancel-button {
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.notes-menu .cancel-button { margin-left: 4px; }
+
+.notes-menu .add-button:hover, .notes-menu .cancel-button:hover {
+    background-color: rgba(137, 180, 250, 0.3);
+    color: #89dceb;
+    transition: all 0.2s ease;
+}
+
+.notes-menu .scroll-area {
+    background: transparent; 
+    border: none; 
+    border-radius:0;
+}
+
+.notes-menu .note-input {
+    background-color:rgba(17, 17, 27, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    max-height: 30px;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.notes-menu .note-input:hover {
+    border: 1px solid rgba(137, 180, 250, 0.3);
+    background-color:rgba(17, 17, 27, 0.4);
+}
+
+.note-input:focus { border: 1px solid #89b4fa; }
+
+/* VOLUME */
+.volume-widget .icon {
+	color: #74b0ff;;
+	margin: 0 2px 0 0;
+}
+
+.audio-menu {
+    background-color:rgba(17, 17, 27, 0.4); 
+    min-width: 300px;
+}
+
+/* System volume */
+.audio-menu .system-volume-container .volume-slider { border: none; }
+
+/* Device list styles */
+.audio-menu .audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.audio-menu .audio-container .device.selected { background-color: rgba(255, 255, 255, 0.085); }
+.audio-menu .audio-container .device:hover {
+    background-color: rgba(180, 190, 254, 0.2);
+    color: #b4befe;
+    transition: all 0.2s ease;
+}
+
+/* Toggle button for application volumes (if is enabled) */
+.audio-menu .toggle-apps {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-height: 24px;
+    min-width: 24px;
+    border-radius: 4px;
+}
+
+.audio-menu .toggle-apps:hover {
+    background-color: rgba(243, 139, 168, 0.15);
+    transition: all 0.2s ease;
+}
+
+.audio-menu .toggle-apps.expanded {
+    background-color: rgba(166, 227, 161, 0.15);
+}
+
+/* Container for application volumes (if is enabled) */
+.audio-menu .apps-container {
+    padding: 8px;
+    margin-top:20px;
+    border-radius: 8px;
+    background-color:rgba(255, 255, 255, 0.062)
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* MUSIC SOURCES */
