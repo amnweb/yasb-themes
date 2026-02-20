@@ -1,4 +1,28 @@
 {
+    "80198c48-f70a-44a1-8507-ce300ff8e360": {
+        "id": "80198c48-f70a-44a1-8507-ce300ff8e360",
+        "name": "Win11 Fluent Onyx",
+        "description": "Windows 11 theme with authentic Fluent Design",
+        "homepage": "https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/image.png",
+        "author": "Hoxiee",
+        "publish_date": "2026-02-08T22:10:16.006494"
+    },
+    "83124e1d-7df8-4494-b901-d60a78074e56": {
+        "id": "83124e1d-7df8-4494-b901-d60a78074e56",
+        "name": "Init Light",
+        "description": "A minimal rounded, boxy and light theme for Yasb.",
+        "homepage": "https://github.com/initiateit/Init-Light",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/image.png",
+        "author": "initiateit",
+        "publish_date": "2026-01-28T03:36:04.345476"
+    },
     "43cef139-7c16-4cd2-904f-7b0aa82cc7d3": {
         "id": "43cef139-7c16-4cd2-904f-7b0aa82cc7d3",
         "name": "i3 WinBars",
@@ -491,16 +515,88 @@
         "author": "elrondforwin",
         "publish_date": "2025-02-24T14:07:58"
     },
-    "1f279c28-38a1-4067-90ed-614b87dd7290": {
-        "id": "1f279c28-38a1-4067-90ed-614b87dd7290",
-        "name": "Minimal Glaze",
-        "description": "Practical, no bells or whistles",
-        "homepage": "",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png",
-        "author": "hax2",
+    "a93f1976-0c89-4593-b333-eaa374164c73": {
+        "id": "a93f1976-0c89-4593-b333-eaa374164c73",
+        "name": "Acrylic",
+        "description": "Acrylic YASB theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/README.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07"
+    },
+    "41b5828c-ab86-4ceb-847d-f7c253d23a1a": {
+        "id": "41b5828c-ab86-4ceb-847d-f7c253d23a1a",
+        "name": "Nord Dynamic",
+        "description": "A Nord based theme, with light and dark variants.",
+        "homepage": "https://github.com/S-N00B-1/Nord-Dynamic-Yasb-Theme",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png",
+        "author": "S-N00B-1",
+        "publish_date": "2025-02-20T13:52:07"
+    },
+    "1d70e9b2-ae9f-4697-b430-c1a8b94777a9": {
+        "id": "1d70e9b2-ae9f-4697-b430-c1a8b94777a9",
+        "name": "Yasb 002 Dynamic",
+        "description": "Yasb 002 Dynamic is a theme which follows your OS style.",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07"
+    },
+    "7d3895d4-454b-40db-a2f9-44a238d5793b": {
+        "id": "7d3895d4-454b-40db-a2f9-44a238d5793b",
+        "name": "Windows 11 Theme",
+        "description": "Windows 11 Theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07"
+    },
+    "0892faae-d929-4c65-8689-4ef1de32f73d": {
+        "id": "0892faae-d929-4c65-8689-4ef1de32f73d",
+        "name": "Yasb 004",
+        "description": "My personal and favorite theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07"
+    },
+    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
+        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
+        "name": "Default",
+        "description": "Default YASB theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07"
+    },
+    "61e6a045-e090-4f33-a41b-6938702eb446": {
+        "id": "61e6a045-e090-4f33-a41b-6938702eb446",
+        "name": "Yasb 001",
+        "description": "Simple yasb theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png",
+        "author": "amnweb",
         "publish_date": "2025-02-20T13:52:07"
     },
     "56d372d9-3806-499f-9caf-03782b11413b": {
@@ -527,42 +623,6 @@
         "author": "amnweb",
         "publish_date": "2025-02-20T13:52:07"
     },
-    "0892faae-d929-4c65-8689-4ef1de32f73d": {
-        "id": "0892faae-d929-4c65-8689-4ef1de32f73d",
-        "name": "Yasb 004",
-        "description": "My personal and favorite theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "61e6a045-e090-4f33-a41b-6938702eb446": {
-        "id": "61e6a045-e090-4f33-a41b-6938702eb446",
-        "name": "Yasb 001",
-        "description": "Simple yasb theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
-        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
-        "name": "Default",
-        "description": "Default YASB theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
     "5e5118ca-4e79-4be0-be09-144b519bfd35": {
         "id": "5e5118ca-4e79-4be0-be09-144b519bfd35",
         "name": "Yasb 003",
@@ -573,30 +633,6 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/image.png",
         "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "7d3895d4-454b-40db-a2f9-44a238d5793b": {
-        "id": "7d3895d4-454b-40db-a2f9-44a238d5793b",
-        "name": "Windows 11 Theme",
-        "description": "Windows 11 Theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba": {
-        "id": "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba",
-        "name": "Everforest",
-        "description": "An everforest theme, comfortable for the eyes. Both light and dark mode colours are available.",
-        "homepage": "",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png",
-        "author": "IONODO",
         "publish_date": "2025-02-20T13:52:07"
     },
     "c353fb20-a4dc-40dd-baaa-71561dc0308d": {
@@ -611,28 +647,16 @@
         "author": "ashwinjadhav818",
         "publish_date": "2025-02-20T13:52:07"
     },
-    "1d70e9b2-ae9f-4697-b430-c1a8b94777a9": {
-        "id": "1d70e9b2-ae9f-4697-b430-c1a8b94777a9",
-        "name": "Yasb 002 Dynamic",
-        "description": "Yasb 002 Dynamic is a theme which follows your OS style.",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "41b5828c-ab86-4ceb-847d-f7c253d23a1a": {
-        "id": "41b5828c-ab86-4ceb-847d-f7c253d23a1a",
-        "name": "Nord Dynamic",
-        "description": "A Nord based theme, with light and dark variants.",
-        "homepage": "https://github.com/S-N00B-1/Nord-Dynamic-Yasb-Theme",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png",
-        "author": "S-N00B-1",
+    "1f279c28-38a1-4067-90ed-614b87dd7290": {
+        "id": "1f279c28-38a1-4067-90ed-614b87dd7290",
+        "name": "Minimal Glaze",
+        "description": "Practical, no bells or whistles",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png",
+        "author": "hax2",
         "publish_date": "2025-02-20T13:52:07"
     },
     "eb3be3fa-3424-4dcb-8c83-1a143526c91e": {
@@ -647,16 +671,16 @@
         "author": "mauveyo1",
         "publish_date": "2025-02-20T13:52:07"
     },
-    "a93f1976-0c89-4593-b333-eaa374164c73": {
-        "id": "a93f1976-0c89-4593-b333-eaa374164c73",
-        "name": "Acrylic",
-        "description": "Acrylic YASB theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/README.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png",
-        "author": "amnweb",
+    "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba": {
+        "id": "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba",
+        "name": "Everforest",
+        "description": "An everforest theme, comfortable for the eyes. Both light and dark mode colours are available.",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png",
+        "author": "IONODO",
         "publish_date": "2025-02-20T13:52:07"
     }
 }

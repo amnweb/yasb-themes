@@ -73,20 +73,17 @@
     margin: 0;
     padding: 0;
 }
+
 .yasb-bar {
-    padding: 0 -2px;
+    padding: 0 0px;
     margin: 0;
-    border-radius: 8px;
-    margin-left: 9px;
-    margin-right: 9px;
+    border-radius: 20px;
+    margin-right: 3px;
     margin-top: 0px;
     margin-bottom: 0px;
 	background: rgba(0, 0, 0, 0.01);
 }
-.widget {
-    padding: 0 2px;
-    margin: 0;
-}
+
 .icon {
     font-size: 14px;
 }
@@ -109,7 +106,8 @@
     background-color: rgba(0, 0, 0, 0);
     margin: 0px 0 0px 0;
     border-radius: 6px;
-
+	margin-right: 4px;
+    margin-left: 4px;
 }
 
 .media-widget .widget-container
@@ -120,6 +118,14 @@
 
 }
 
+.brightness-widget {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.brightness-widget .widget-container {}
+.brightness-widget .widget-container .label {}
+.brightness-widget .widget-container .icon {}
+
 /* WIFI Setting */
 .wifi-widget .icon{
     color: var(--main) !important;
@@ -127,7 +133,9 @@
 .wifi-widget {
 	background: rgba(0, 0, 0, 0.01);
 }
-.wifi-widget .widget-container {}
+.wifi-widget .widget-container {
+
+}
 .wifi-widget .widget-container .label {}
 .wifi-widget .widget-container .label.alt {}
 .wifi-widget .widget-container .icon {}
@@ -357,7 +365,6 @@
     border-radius: 6px;
 }
 .systray .button[dragging=true] {
-    background: var(--main);
     border-color: var(--main);
 }
 .systray .unpinned-visibility-btn {
@@ -368,10 +375,6 @@
 
 .systray .unpinned-visibility-btn:hover {
     color: #babfd3;
-}
-
-.systray .unpinned-visibility-btn:checked {
-	margin-left: 8px;
 }
 
 /*DISK WIDGET*/
@@ -435,6 +438,11 @@
 	background: rgba(0, 0, 0, 0.01);
 	color: var(--mainLight);
     font-weight: bold;
+} 
+
+.clock-widget .widget-container {
+	margin-right: 0;
+    margin-left: 0;
 } 
 
 .calendar {
@@ -609,11 +617,10 @@
     border-radius: 8px;
 }
 
-/* VOLUMEN Settings */
+/* VOLUME Settings */
 .volume-widget .icon {
 	background: rgba(0, 0, 0, 0.01);
     color: var(--main);
-    margin-right: 4px;
 	min-width: 18px;
 } 
 
@@ -637,7 +644,11 @@
 }
 .volume-slider::handle{
 	color: var(--mainLight);
-	border-radius: 2px;
+	border-radius: 5px;
+    margin: -5px 0;
+    background: var(--mainLight);
+    width: 10px;
+    height: 10px;
 } 
 .volume-slider::groove:hover {
     height: 5px;
@@ -670,6 +681,81 @@
     background-color: rgba(255, 255, 255, 0.17);
 }
 
+/* Container for application volumes (if is enabled) */
+.audio-menu .apps-container {
+    padding: 8px;
+    margin-top:20px;
+    border-radius: 8px;
+    background-color:rgba(255, 255, 255, 0.062)
+}
+.audio-menu .apps-container .app-volume .app-icon-container {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+
+.audio-menu .apps-container .app-volume .app-slider {
+    border-radius: 2px;
+	border: none;
+	color: var(--main);
+	height: 5px;
+}
+.audio-menu .apps-container .app-volume .app-slider::groove {
+    height: 5px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.audio-menu .apps-container .app-volume .app-slider::handle{
+	color: var(--mainLight);
+	border-radius: 5px;
+    margin: -5px 0;
+    background: var(--mainLight);
+    width: 10px;
+    height: 10px;
+} 
+.audio-menu .apps-container .app-volume .app-slider::groove:hover {
+    height: 5px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.audio-menu .apps-container .app-volume .app-slider::sub-page {
+    background: var(--main);
+    border-radius: 2px;
+    height: 5px;
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Toggle button for application volumes (if is enabled) */
+.audio-menu .toggle-apps {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 5px;
+    min-height: 24px;
+    min-width: 24px;
+    border-radius: 4px;
+}
+.audio-menu .toggle-apps.expanded {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.audio-menu .toggle-apps:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    
+}
+
+.audio-menu .apps-container .app-volume .app-label {
+    color: var(--mainLight);
+	background: rgba(0, 0, 0, 0.01);
+    font-weight: bold;
+} /* Application label */
+
 /* LANGUAGE Settings */
 .language-widget {
     padding-left: 0;
@@ -678,6 +764,7 @@
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
+
 .language-widget .icon {
 	background: rgba(0, 0, 0, 0.01);
     color: var(--main);
@@ -791,52 +878,69 @@
 }
 
 .taskbar-widget .app-container.foreground{
-    background-color: rgba(148, 148, 148, 0.45);
+    background-color: rgba(148, 148, 148, 0.27);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 6px;
+}
+
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+    color: var(--main);
+    font-weight: bold;
 }
 
 .taskbar-widget .app-container 
 {
 	margin-bottom: 4px;    
     margin-top: 4px;  
-	padding: 0 3px 0 3px;
+    margin-left: 2px;  
+	padding: 2px 3px 2px 3px;
 	border: none; 
     background-color: rgba(0, 0, 0, 0.01);	
 }
 
-.taskbar-widget .app-container.flashing {
-    background-color: rgba(255, 106, 106, 0.63);
-}
 .taskbar-widget {
-   
-    margin-right: -12px;
+    margin-right: -4px;
 }
 .taskbar-widget .widget-container {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
-	padding: 0 12px 0 12px;
+	padding: 0 6px 0 6px;
     /* padding-left: 6px; */
 }
 
+.taskbar-widget .app-container.running
+{
+    background-color: rgba(148, 148, 148, 0.07);
+    border-radius: 6px;
+}
+
+.taskbar-preview {
+    border-radius: 8px; 
+    background-color: rgba(17, 17, 27, 0.8);
+}
+.taskbar-preview .header {
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+.taskbar-preview .header .title {
+    color: var(--mainLight);
+    font-weight: 600;
+    font-size: 12px;
+}
+
 /* ACTIVE WINDOW Settings */
-.active-window-widget .icon {
+.active-window-widget .widget-container .icon {
     padding: 0 9px;
 }
 
-.active-window-widget .label {
+.active-window-widget .widget-container .label {
 	color: var(--mainLight);
 	background: rgba(0, 0, 0, 0.01);
-    font-weight: bold;
 } 
 
 .active-window-widget {
     padding-right: 0;
-}
-.active-window-widget .widget-container {
-    padding: auto;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
 }
 
 /* HOME Settings */
@@ -879,11 +983,10 @@
 .media-widget .label {
     color: var(--mainLight);
     font-weight: bold;
-    padding: 0px;
-    padding-left: 16px;
+    padding-left: 10px;
     font-size: 12px;
-    max-width: 220px;
-    min-width: 220px;
+    max-width: 240px;
+    min-width: 240px;
 }
 .media-widget .btn {
 	color: var(--main);
@@ -996,6 +1099,17 @@
     height: 4px;
 }
 
+.media-widget .progress-bar {
+    max-height: 2px;
+    background-color: transparent;
+    margin-left: 5px;
+    border: none;
+}
+
+.media-widget .progress-bar::chunk {
+    background-color: var(--main);
+    border-radius: 5px;
+}
 
 /* NOTIFICATION Settings */
 .notification-widget .icon {
@@ -1011,6 +1125,8 @@
 /* bluetooth Settings */
 .bluetooth-widget .icon {
 	background: rgba(0, 0, 0, 0.01);
+    margin-left: 1px;
+    margin-right: 2px;
 }
 .bluetooth-widget {}
 .bluetooth-widget .widget-container {}

@@ -1,0 +1,1133 @@
+/* ============================================================================
+   YASB Panel Styles - Windows 11 Fluent Onyx
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   CSS Variables - Windows 11 Design Tokens
+   ---------------------------------------------------------------------------- */
+:root {
+	/* Typography */
+	--font-primary: "Segoe UI Variable Display", "Segoe UI";
+	--font-text: "Segoe UI Variable Text", "Segoe UI", system-ui;
+	--font-mono: "JetBrainsMono Nerd Font";
+	--font-icon: "Segoe Fluent Icons", "JetBrainsMono NFP";
+	--font-icon-2: "JetBrainsMono NFP";
+	
+	--font-size-caption: 12px;
+	--font-size-body: 14px;
+	--font-size-body-strong: 18px;
+	--font-size-subtitle: 20px;
+	--font-size-title: 28px;
+	
+	--font-weight-regular: 400;
+	--font-weight-semibold: 500;
+	--font-weight-bold: 700;
+	
+	/* Windows 11 Dark Theme Colors */
+	--color-background-base: rgba(8, 8, 8, 0.6);
+	--color-background-layer: rgba(44, 44, 44, 0.5);
+	--color-background-elevated: rgba(44, 44, 44, 0.4);
+	--color-background-elevated-x2: rgba(44, 44, 44, 0.8);
+	--color-taskbar: rgba(43, 44, 45, 0.85);
+
+/* Surface Colors */
+	--color-surface-default: rgba(255, 255, 255, 0.0605);
+	--color-surface-secondary: rgba(255, 255, 255, 0.0419);
+	--color-surface-tertiary: rgba(255, 255, 255, 0.0326);
+	--color-surface-disabled: rgba(255, 255, 255, 0.0419);
+	
+	/* Text Colors */
+	--color-text-primary: rgba(255, 255, 255, 1);
+	--color-text-secondary: rgba(255, 255, 255, 0.786);
+	--color-text-tertiary: rgba(255, 255, 255, 0.544);
+	--color-text-disabled: rgba(255, 255, 255, 0.362);
+	
+	/* Accent Colors (Windows Blue) */
+	--color-accent-default: #60CDFF;           /* Default accent */
+	--color-accent-secondary: #0078D4;         /* Secondary accent */
+	--color-accent-tertiary: rgba(96, 205, 255, 0.5);
+	--color-accent-disabled: rgba(255, 255, 255, 0.1581);
+	
+	/* Semantic Colors */
+	--color-success: #6CCB5F;
+	--color-warning: #FCE100;
+	--color-error: #FF99A4;
+	--color-info: #60CDFF;
+	
+	/* Interactive States */
+	--color-subtle-fill-rest: rgba(255, 255, 255, 0.0605);
+	--color-subtle-fill-hover: rgba(255, 255, 255, 0.0837);
+	--color-subtle-fill-pressed: rgba(255, 255, 255, 0.0512);
+	--color-subtle-fill-disabled: transparent;
+	
+	/* Stroke/Border Colors */
+	--color-stroke-surface: rgba(255, 255, 255, 0.0698);
+	--color-stroke-control-default: rgba(255, 255, 255, 0.0838);
+	--color-stroke-divider: rgba(255, 255, 255, 0.0838);
+	--color-stroke-focus: rgba(255, 255, 255, 0.1047);
+	
+	/* Spacing */
+	--space-2: 2px;
+	--space-4: 4px;
+	--space-8: 8px;
+	--space-12: 12px;
+	--space-16: 16px;
+	--space-20: 20px;
+	--space-24: 24px;
+	--space-32: 32px;
+	
+	/* Border Radius  */
+	--radius-none: 0;
+	--radius-small: 4px;
+	--radius-medium: 8px;
+	--radius-large: 12px;
+	--radius-circle: 32px;
+}
+
+/* ----------------------------------------------------------------------------
+   Global Reset
+   ---------------------------------------------------------------------------- */
+* {
+	font-size: var(--font-size-body);
+	color: var(--color-text-primary);
+	font-weight: var(--font-weight-regular);
+	font-family: var(--font-primary);
+	margin: 0;
+	padding: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Layout - Taskbar Base
+   ---------------------------------------------------------------------------- */
+.yasb-bar {
+	padding: 0 var(--space-4);
+	margin: 0;
+	background-color: var(--color-background-base);
+	border-bottom: 1px solid var(--color-stroke-control-default);
+}
+
+.widget {
+	padding: 0 var(--space-4);
+	margin: 0;
+}
+
+.widget .label {
+	padding: 0 var(--space-4);
+	font-size: var(--font-size-body);
+	color: var(--color-text-secondary);
+}
+
+.widget .label.alt {
+	padding: 0 var(--space-8);
+}
+
+.widget .label:hover {
+	color: var(--color-text-primary);
+}
+
+.widget .icon {
+	padding-top: 1px;
+}
+
+.tooltip {
+	background-color: var(--color-background-elevated-x2);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	padding: var(--space-8) var(--space-12);
+	margin-top: var(--space-12);
+	font-size: var(--font-size-body);
+	font-family: var(--font-primary);
+	color: var(--color-text-primary);
+	font-weight: var(--font-weight-regular);
+}
+
+/* ----------------------------------------------------------------------------
+   Context Menu
+   ---------------------------------------------------------------------------- */
+.context-menu,
+.context-menu .menu-checkbox {
+    background-color: var(--color-background-elevated);
+    border: 1px solid var(--color-stroke-surface);
+    border-radius: var(--radius-medium);
+    padding: var(--space-8) 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-body);
+    color: var(--color-text-primary);
+}
+
+.context-menu::right-arrow {
+    width: 8px;
+    height: 8px;
+    padding-right: var(--space-24);
+}
+
+.context-menu::item,
+.context-menu .menu-checkbox {
+    background-color: transparent;
+    padding: var(--space-8) var(--space-12);
+    margin: var(--space-2) var(--space-8);
+    border-radius: var(--radius-small);
+	border: 0;
+    min-width: 150px;
+}
+
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: var(--color-subtle-fill-hover);
+    color: var(--color-text-primary);
+}
+
+.context-menu::separator {
+    height: 1px;
+    background-color: var(--color-stroke-divider);
+    margin: var(--space-4) var(--space-8);
+}
+
+.context-menu::item:disabled {
+    color: var(--color-text-disabled);
+    background-color: transparent;
+}
+
+.context-menu .menu-checkbox .checkbox {
+    border: none;
+    padding: var(--space-8) var(--space-16);
+    font-size: var(--font-size-body);
+    margin: 0;
+    color: var(--color-text-primary);
+    font-family: var(--font-primary);
+}
+
+.context-menu .submenu::item:disabled {
+    margin: 0;
+    padding-left: var(--space-16);
+}
+
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--color-text-tertiary);
+}
+
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 12px;
+    height: 12px;
+    margin-left: 0;
+    margin-right: var(--space-8);
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background-color: var(--color-surface-secondary);
+    border-radius: var(--radius-small);
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background-color: var(--color-accent-secondary);
+    border-radius: var(--radius-small);
+}
+
+.context-menu .menu-checkbox .checkbox:focus {
+    outline: none;
+}
+
+/* ----------------------------------------------------------------------------
+   Common Widget Container
+   ---------------------------------------------------------------------------- */
+.widget-container {
+	padding: var(--space-4) var(--space-12);
+	margin: var(--space-4) 0;
+	background-color: var(--color-acrylic-default);
+	border-radius: var(--radius-large);
+	border: 1px solid var(--color-stroke-control-default);
+}
+
+.widget-container:hover {
+	background-color: rgba(60, 60, 60, 0.7);
+	border-color: var(--color-stroke-focus);
+}
+
+/* ----------------------------------------------------------------------------
+   Icons
+   ---------------------------------------------------------------------------- */
+.widget .icon {
+	font-family: var(--font-icon);
+	font-size: 16px;
+	color: var(--color-text-secondary);
+	margin-right: var(--space-4);
+}
+
+.widget:hover .icon {
+	color: var(--color-text-primary);
+}
+
+/* ----------------------------------------------------------------------------
+   Task View Widget
+   ---------------------------------------------------------------------------- */
+.task-view-widget .widget-container {
+	background-color: transparent;
+	border: 0;
+}
+
+.task-view-widget .icon {
+	font-family: var(--font-icon-2);
+	font-size: 18px;
+	color: var(--color-text-secondary);
+}
+
+.task-view-widget .icon:hover {
+	color: var(--color-accent-default);
+}
+
+/* ----------------------------------------------------------------------------
+   Home Widget
+   ---------------------------------------------------------------------------- */
+.home-widget .widget-container {
+	background-color: transparent;
+	border: 0;
+}
+
+.home-widget .icon {
+	font-family: var(--font-icon-2);
+	font-size: 18px;
+	color: var(--color-text-secondary);
+}
+
+.home-widget .icon:hover {
+	color: var(--color-accent-default);
+}
+
+.home-menu {
+	background-color: var(--color-background-elevated);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	padding: var(--space-8) 0;
+	font-family: var(--font-primary);
+	font-size: var(--font-size-body);
+	color: var(--color-text-primary);
+}
+
+.home-menu .menu-item {
+	background-color: transparent;
+	padding: var(--space-8) var(--space-12);
+	margin: var(--space-2) var(--space-8);
+	border-radius: var(--radius-small);
+	font-family: var(--font-icon-2);
+	border: 0;
+	min-width: 150px;
+}
+
+.home-menu .menu-item:hover {
+	background-color: var(--color-subtle-fill-hover);
+	color: var(--color-text-primary);
+}
+
+.home-menu .separator {
+	height: 1px;
+	min-height: 1px;
+	max-height: 1px;
+	background-color: var(--color-stroke-divider);
+	margin: var(--space-4) var(--space-8);
+}
+
+/* ----------------------------------------------------------------------------
+   Windows Desktops (Virtual Desktops)
+   ---------------------------------------------------------------------------- */
+.windows-desktops .ws-btn {
+	color: var(--color-text-tertiary);
+	background-color: transparent;
+	border: none;
+	font-size: var(--font-size-body-strong);
+	padding: var(--space-2) var(--space-4);
+	margin: -2 0 0 0;
+	border-radius: var(--radius-small);
+	min-width: 20px;
+}
+
+.windows-desktops .ws-btn:hover {
+	color: var(--color-text-secondary);
+}
+
+.windows-desktops .ws-btn.active {
+	color: var(--color-accent-default);
+	font-weight: var(--font-weight-semibold);
+}
+
+.windows-desktops .context-menu {
+	background-color: var(--color-background-elevated);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	padding: var(--space-4);
+}
+
+.windows-desktops .context-menu .menu-item {
+	padding: var(--space-8) var(--space-16);
+	border-radius: var(--radius-small);
+	color: var(--color-text-secondary);
+}
+
+.windows-desktops .context-menu .menu-item:hover {
+	background-color: var(--color-subtle-fill-hover);
+	color: var(--color-text-primary);
+}
+
+.windows-desktops .context-menu .separator {
+	height: 1px;
+	background-color: var(--color-stroke-divider);
+	margin: var(--space-4) 0;
+}
+
+/* Qt-specific Dialog Styles */
+.windows-desktops .rename-dialog {
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-large);
+}
+
+.windows-desktops .rename-dialog QPushButton {
+	background-color: var(--color-accent-default);
+	color: var(--color-background-base);
+	border: none;
+	padding: var(--space-8) var(--space-16);
+	border-radius: var(--radius-small);
+	font-weight: var(--font-weight-semibold);
+}
+
+.windows-desktops .rename-dialog QPushButton:hover {
+	background-color: var(--color-accent-secondary);
+}
+
+.windows-desktops .rename-dialog QLabel {
+	color: var(--color-text-primary);
+	font-size: var(--font-size-body);
+}
+
+.windows-desktops .rename-dialog QLineEdit {
+	background-color: var(--color-surface-secondary);
+	border: 1px solid var(--color-stroke-control-default);
+	border-radius: var(--radius-small);
+	padding: var(--space-8);
+	color: var(--color-text-primary);
+	font-family: var(--font-text);
+}
+
+.windows-desktops .rename-dialog QLineEdit:focus {
+	border-color: var(--color-accent-default);
+	outline: none;
+}
+
+/* ----------------------------------------------------------------------------
+   Taskbar Widget
+   ---------------------------------------------------------------------------- */
+.taskbar-widget .app-container {
+	padding: 0 var(--space-4);
+	margin: 0 var(--space-2);
+	border-radius: var(--radius-small);
+}
+
+.taskbar-widget .app-container:hover {
+	background-color: var(--color-subtle-fill-hover);
+}
+
+.taskbar-widget .app-container.foreground {
+	background-color: var(--color-subtle-fill-rest);
+	border-left: 2px solid var(--color-accent-default);
+}
+
+.taskbar-widget .app-container .app-title {
+	padding-left: var(--space-4);
+	color: var(--color-text-secondary);
+	font-size: var(--font-size-body);
+}
+
+.taskbar-widget .app-container.foreground .app-title {
+	color: var(--color-text-primary);
+	font-weight: var(--font-weight-semibold);
+}
+
+.taskbar-preview {
+	background-color: var(--color-taskbar);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	padding: var(--space-8);
+}
+
+.taskbar-preview .header {
+	padding-bottom: 12px;
+	padding-top: var(--margin-normal);
+}
+
+.taskbar-preview .header .title {
+	color: var(--text-primary);
+	font-weight: var(--font-bold);
+	font-size: var(--font-size-body);
+}
+
+/* ----------------------------------------------------------------------------
+   Media Widget
+   ---------------------------------------------------------------------------- */
+.media-widget .btn {
+	font-size: 18px;
+	color: var(--color-text-secondary);
+	padding: var(--space-4) var(--space-8);
+	margin: 0 var(--space-2);
+	background-color: transparent;
+	border: none;
+	border-radius: var(--radius-small);
+}
+
+.media-widget .btn:hover {
+	color: var(--color-text-primary);
+	background-color: var(--color-subtle-fill-hover);
+}
+
+.media-widget .btn:active {
+	background-color: var(--color-subtle-fill-pressed);
+}
+
+.media-menu {
+	min-width: 380px;
+	max-width: 380px;
+	border-radius: var(--radius-medium);
+	padding: var(--space-16);
+	background-color: var(--color-background-elevated);
+}
+
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+	font-family: var(--font-text);
+	margin-left: var(--space-4);
+}
+
+.media-menu .title {
+	font-size: var(--font-size-body);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-primary);
+}
+
+.media-menu .artist {
+	font-size: var(--font-size-caption);
+	color: var(--color-text-secondary);
+	margin-top: var(--space-2);
+	margin-bottom: var(--space-4);
+}
+
+.media-menu .source {
+	font-size: var(--font-size-caption);
+	color: var(--color-text-tertiary);
+}
+
+.media-menu .btn {
+	font-family: var(--font-icon);
+	font-size: 18px;
+	margin: var(--space-12) var(--space-4) 0;
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+	border-radius: var(--radius-large);
+	color: var(--color-text-secondary);
+	background-color: var(--color-subtle-fill-rest);
+	border: 1px solid var(--color-stroke-control-default);
+}
+
+.media-menu .btn:hover {
+	background-color: var(--color-subtle-fill-hover);
+	color: var(--color-text-primary);
+}
+
+.media-menu .btn.play {
+	background-color: var(--color-accent-default);
+	color: var(--color-background-base);
+	border-color: transparent;
+}
+
+.media-menu .btn.play:hover {
+	background-color: var(--color-accent-secondary);
+}
+
+.media-menu .btn.disabled,
+.media-menu .btn.disabled:hover {
+	color: var(--color-text-disabled);
+	background-color: var(--color-surface-disabled);
+	cursor: not-allowed;
+}
+
+.media-menu .playback-time {
+	font-size: var(--font-size-caption);
+	font-family: var(--font-mono);
+	color: var(--color-text-tertiary);
+	margin-top: var(--space-16);
+	min-width: 100px;
+}
+
+.media-menu .progress-slider {
+	height: 20px;
+	margin: var(--space-4);
+	border-radius: var(--radius-small);
+}
+
+.media-menu .progress-slider::groove {
+	background-color: var(--color-surface-tertiary);
+	height: 4px;
+	border-radius: var(--radius-small);
+}
+
+.media-menu .progress-slider::groove:hover {
+	height: 6px;
+	background-color: var(--color-surface-secondary);
+}
+
+.media-menu .progress-slider::sub-page {
+	background-color: var(--color-accent-default);
+	border-radius: var(--radius-small);
+	height: 4px;
+}
+
+/* ----------------------------------------------------------------------------
+   Clock Widget
+   ---------------------------------------------------------------------------- */
+.clock-widget .widget-container {
+	background-color: transparent;
+	border: transparent;
+}
+
+.clock-widget .widget-container .icon {
+	margin-right: var(--space-8);
+}
+
+.clock-widget .label {
+	font-family: var(--font-text);
+	font-size: var(--font-size-body);
+	font-weight: var(--font-weight-semibold);
+}
+
+/* ----------------------------------------------------------------------------
+   Calendar Flyout
+   ---------------------------------------------------------------------------- */
+.calendar {
+	padding: var(--space-16);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	background-color: var(--color-background-elevated);
+}
+
+.calendar .calendar-table::item:selected {
+	background-color: var(--color-accent-default);
+	color: var(--color-background-base);
+	border-radius: var(--radius-small);
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+	font-family: var(--font-primary);
+	color: var(--color-text-primary);
+	min-width: 180px;
+	max-width: 180px;
+}
+
+.calendar .month-label {
+	font-size: var(--font-size-body-strong);
+	font-weight: var(--font-weight-semibold);
+	margin-top: var(--space-20);
+}
+
+.calendar .day-label {
+	font-size: var(--font-size-subtitle);
+	font-weight: var(--font-weight-semibold);
+	margin-top: var(--space-8);
+}
+
+.calendar .date-label {
+	font-size: 64px;
+	font-weight: var(--font-weight-bold);
+	margin-top: -var(--space-8);
+}
+
+/* ----------------------------------------------------------------------------
+   CPU Widget
+   ---------------------------------------------------------------------------- */
+.cpu-widget {
+	cursor: crosshair;
+}
+
+.cpu-widget .widget-container .icon {
+	padding-right: var(--space-4);
+}
+
+.cpu-widget .widget-container .label {
+	color: var(--color-text-secondary);
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-semibold);
+}
+
+/* ----------------------------------------------------------------------------
+   GPU Widget
+   ---------------------------------------------------------------------------- */
+.gpu-widget .widget-container .icon {
+	padding-right: var(--space-4);
+}
+
+.gpu-widget .widget-container .label {
+	color: var(--color-text-secondary);
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-semibold);
+}
+
+/* ----------------------------------------------------------------------------
+   Memory Widget
+   ---------------------------------------------------------------------------- */
+.memory-widget .widget-container .icon {
+	padding-right: var(--space-4);
+}
+
+.memory-widget .widget-container .label {
+	color: var(--color-text-secondary);
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-semibold);
+}
+
+.memory-widget .widget-container .label.status-low {
+	color: var(--color-success);
+}
+
+.memory-widget .widget-container .label.status-medium {
+	color: var(--color-warning);
+}
+
+.memory-widget .widget-container .label.status-high {
+	color: var(--color-accent-default);
+}
+
+.memory-widget .widget-container .label.status-critical {
+	color: var(--color-error);
+}
+
+.memory-widget .progress-circle {
+	margin-right: var(--space-8);
+}
+
+/* ----------------------------------------------------------------------------
+   Traffic Widget
+   ---------------------------------------------------------------------------- */
+.traffic-widget {
+	width:     220px;
+  	min-width: 220px;
+  	max-width: 220px;
+}
+
+.traffic-widget .download {
+	color: #6CCB5F;
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-semibold);
+}
+.traffic-widget .upload {
+	color: #FF99A4;
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-semibold);
+}
+
+.traffic-menu {
+	background-color: var(--color-background-elevated);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	min-width: 320px;
+	padding: var(--space-16);
+}
+
+.traffic-menu .header .title {
+	padding: var(--space-16);
+	font-size: var(--font-size-subtitle);
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-primary);
+}
+
+.traffic-menu .header .reset-button {
+	font-size: var(--font-size-caption);
+	padding: var(--space-8) var(--space-12);
+	margin-right: var(--space-16);
+	border-radius: var(--radius-medium);
+	font-weight: var(--font-weight-semibold);
+	background-color: transparent;
+	border: 1px solid transparent;
+	color: var(--color-text-secondary);
+}
+
+.traffic-menu .reset-button:hover {
+	color: var(--color-text-primary);
+	background-color: var(--color-subtle-fill-hover);
+	border: 1px solid var(--color-stroke-control-default);
+}
+
+/* Speed column styles */
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+	background-color: transparent;
+	padding: var(--space-12);
+	margin: var(--space-16) var(--space-12) 0;
+}
+
+.traffic-menu .speed-separator {
+	max-width: 1px;
+	background-color: var(--color-stroke-divider);
+	margin: var(--space-32) 0 var(--space-16) 0;
+}
+
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+	font-size: var(--font-size-title);
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-primary);
+}
+
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+	font-size: var(--font-size-body);
+	font-weight: var(--font-weight-semibold);
+	padding-top: var(--space-8);
+	color: var(--color-text-secondary);
+}
+
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+	color: var(--color-text-tertiary);
+	font-size: var(--font-size-caption);
+	padding-bottom: var(--space-16);
+}
+
+/* Section and data styles */
+.traffic-menu .section-title {
+	font-size: var(--font-size-caption);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-primary);
+	margin-bottom: var(--space-4);
+}
+
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+	margin: var(--space-8);
+	padding: 0 var(--space-12) var(--space-12);
+	background-color: transparent;
+}
+
+.traffic-menu .data-text {
+	font-size: var(--font-size-body);
+	color: var(--color-text-secondary);
+	padding: var(--space-4);
+}
+
+.traffic-menu .data-value {
+	font-weight: var(--font-weight-semibold);
+	font-size: var(--font-size-body);
+	padding: var(--space-4);
+	color: var(--color-text-primary);
+}
+
+/* Interface and Internet info styles */
+.traffic-menu .interface-info {
+	margin-top: var(--space-12);
+	border-top: 1px solid var(--color-stroke-divider);
+	padding: var(--space-8) 0;
+	font-size: var(--font-size-caption);
+	color: var(--color-text-secondary);
+	font-family: var(--font-text);
+}
+
+.traffic-menu .internet-info {
+	font-size: var(--font-size-caption);
+	color: var(--color-text-secondary);
+	padding: var(--space-8) 0;
+	font-family: var(--font-text);
+}
+
+.traffic-menu .internet-info.connected {
+	background-color: rgba(108, 203, 95, 0.2);
+	color: var(--color-success);
+	padding: var(--space-8) var(--space-12);
+	border-radius: var(--radius-small);
+}
+
+.traffic-menu .internet-info.disconnected {
+	background-color: rgba(255, 153, 164, 0.2);
+	color: var(--color-error);
+	padding: var(--space-8) var(--space-12);
+	border-radius: var(--radius-small);
+}
+
+/* ----------------------------------------------------------------------------
+   Volume Widget
+   ---------------------------------------------------------------------------- */
+.volume-widget .widget-container .label {
+	color: var(--color-text-secondary);
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-semibold);
+}
+
+.audio-menu {
+	background-color: var(--color-background-elevated);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	min-width: 320px;
+	padding: var(--space-8);
+}
+
+.audio-menu .system-volume-container .volume-slider {
+	border: none;
+}
+
+.audio-menu .audio-container .device {
+	background-color: transparent;
+	border: none;
+	padding: var(--space-8) var(--space-12);
+	margin: var(--space-2) 0;
+	font-size: var(--font-size-body);
+	color: var(--color-text-secondary);
+	border-radius: var(--radius-small);
+}
+
+.audio-menu .audio-container .device:hover {
+	background-color: var(--color-subtle-fill-hover);
+	color: var(--color-text-primary);
+}
+
+.audio-menu .audio-container .device.selected {
+	background-color: var(--color-subtle-fill-rest);
+	color: var(--color-text-primary);
+}
+
+.audio-menu .toggle-apps {
+	background-color: transparent;
+	border: none;
+	padding: var(--space-8);
+	margin: 0;
+	min-height: 32px;
+	min-width: 32px;
+	border-radius: var(--radius-small);
+}
+
+.audio-menu .toggle-apps:hover {
+	background-color: var(--color-subtle-fill-hover);
+}
+
+.audio-menu .toggle-apps.expanded {
+	background-color: var(--color-subtle-fill-rest);
+}
+
+.audio-menu .apps-container {
+	padding: var(--space-12);
+	margin-top: var(--space-16);
+	border-radius: var(--radius-medium);
+	background-color: var(--color-surface-secondary);
+	border: 1px solid var(--color-stroke-divider);
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container {
+	min-width: 40px;
+	min-height: 40px;
+	max-width: 40px;
+	max-height: 40px;
+	border-radius: var(--radius-small);
+	margin-right: var(--space-8);
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+	background-color: var(--color-subtle-fill-hover);
+}
+
+/* ----------------------------------------------------------------------------
+   Microphone Widget
+   ---------------------------------------------------------------------------- */
+.microphone-widget .widget-container .label {
+	color: var(--color-text-secondary);
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-semibold);
+}
+
+.microphone-menu {
+	background-color: var(--color-background-elevated);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	min-width: 320px;
+	padding: var(--space-8);
+}
+
+.microphone-menu .system-volume-container .volume-slider {
+	border: none;
+}
+
+.microphone-menu .microphone-container .device {
+	background-color: transparent;
+	border: none;
+	padding: var(--space-8) var(--space-12);
+	margin: var(--space-2) 0;
+	font-size: var(--font-size-body);
+	color: var(--color-text-secondary);
+	border-radius: var(--radius-small);
+}
+
+.microphone-menu .microphone-container .device:hover {
+	background-color: var(--color-subtle-fill-hover);
+	color: var(--color-text-primary);
+}
+
+.microphone-menu .microphone-container .device.selected {
+	background-color: var(--color-subtle-fill-rest);
+	color: var(--color-text-primary);
+}
+
+/* ----------------------------------------------------------------------------
+   Disk Widget
+   ---------------------------------------------------------------------------- */
+.disk-widget .widget-container .icon {
+	font-family: var(--font-icon-2);
+}
+
+.disk-widget .widget-container .label {
+	color: var(--color-text-secondary);
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-semibold);
+}
+
+.disk-group {
+	background-color: var(--color-background-elevated);
+	border: 1px solid var(--color-stroke-surface);
+	border-radius: var(--radius-medium);
+	padding: var(--space-8);
+}
+
+.disk-group-row {
+	min-width: 270px;
+	max-width: 320px;
+	min-height: 40px;
+	max-height: 40px;
+	margin: 0;
+	padding: var(--space-16);
+	border-radius: var(--radius-medium);
+	border: 1px solid transparent;
+}
+
+.disk-group-row:hover {
+	background-color: var(--color-subtle-fill-hover);
+	border: 1px solid var(--color-stroke-control-default);
+}
+
+.disk-group-label-bar {
+	margin-bottom: var(--space-12);
+	max-height: 8px;
+	border: 0px solid transparent;
+	background-color: var(--color-surface-secondary);
+	border-radius: var(--radius-small);
+}
+
+.disk-group-label-bar::chunk {
+	background-color: var(--color-success);
+	border-radius: var(--radius-small);
+}
+
+.disk-group-label {
+	font-size: var(--font-size-body);
+	color: var(--color-text-primary);
+}
+
+.disk-group-label-size {
+	font-size: var(--font-size-body);
+	color: var(--color-text-secondary);
+}
+
+/* ----------------------------------------------------------------------------
+   Apps Widget
+   ---------------------------------------------------------------------------- */
+.apps-widget .widget-container {
+	padding: 0 4px;
+}
+
+.apps-widget .label {
+	font-size: var(--font-size-body);
+	color: var(--color-text-secondary);
+}
+
+.apps-widget .label:hover {
+	color: var(--color-accent-default);
+}
+
+.active-window-widget .icon {
+	padding: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Power Menu Widget
+   ---------------------------------------------------------------------------- */
+.power-menu-widget .widget-container {
+	background-color: transparent;
+	border: 0;
+}
+
+.power-menu-widget .label {
+	font-family: var(--font-icon);
+	font-size: 16px;
+	color: var(--color-error);
+	font-weight: var(--font-weight-semibold);
+}
+
+.power-menu-widget .label:hover {
+	color: var(--color-accent-default);
+}
+
+.power-menu-popup {
+	border-radius: var(--radius-large);
+	border: 1px solid var(--color-stroke-surface);
+	padding: var(--space-16);
+}
+
+.power-menu-popup .button {
+	width: 200px;
+	height: 100px;
+	padding: var(--space-16);
+	margin: var(--space-8);
+	
+	background-color: var(--color-subtle-fill-rest);
+	border: 1px solid var(--color-stroke-control-default);
+	border-radius: var(--radius-medium);
+	
+	color: var(--color-text-primary);
+	font-family: var(--font-primary);
+	
+	cursor: pointer;
+}
+
+.power-menu-popup .button:hover,
+.power-menu-popup .button.hover {
+	background-color: var(--color-subtle-fill-hover);
+	border-color: var(--color-stroke-focus);
+}
+
+.power-menu-popup .button:active {
+	background-color: var(--color-subtle-fill-pressed);
+}
+
+.power-menu-popup .button .label {
+	font-size: var(--font-size-body-strong);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-primary);
+	margin-bottom: var(--space-8);
+}
+
+.power-menu-popup .button .icon {
+	font-size: 48px;
+	color: var(--color-text-tertiary);
+	margin-top: var(--space-16);
+}
+
+.power-menu-popup .button.shutdown .icon {
+	font-family: var(--font-icon);
+	color: var(--color-accent-default);
+}
+
+.power-menu-popup .button.cancel .icon {
+	color: var(--color-error);
+}
+
+.uptime {
+	font-size: var(--font-size-subtitle);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-primary);
+	margin-bottom: var(--space-12);
+}
