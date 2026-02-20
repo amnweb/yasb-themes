@@ -10,7 +10,7 @@ Ilya theme for YASB!
 </div>
 <div align="center">
     <img src="https://raw.githubusercontent.com/ii5601/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/images/github.png">
-    <img src="https://raw.githubusercontent.com/ii5601/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/images/launchpad.png">
+    <img style="width: 25%;" src="https://raw.githubusercontent.com/ii5601/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/images/launchpad.png">
     <img src="https://raw.githubusercontent.com/ii5601/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/images/traffic.png">
 </div>
 
