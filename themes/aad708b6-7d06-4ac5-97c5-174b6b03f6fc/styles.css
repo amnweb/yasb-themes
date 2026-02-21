@@ -8,15 +8,12 @@
 }
 .yasb-bar {
 	padding: 2px 4px;
-    background: rgba(20, 20, 30, 0.6);
+    background: rgba(20, 20, 30, 0.01);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 .widget {
 	padding: 0 10px;
-	margin: 0;
+	margin: 0 2px;
 	transition: all 0.2s ease;
 }
 .widget:hover {
@@ -28,6 +25,13 @@
 
 /* POWER */
 .power-menu-widget .label {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding-left: 5px;
+    padding-right: 5px;
     color: #f38ba8;
     font-size: 13px;
 }
@@ -128,12 +132,15 @@
 .volume-widget .icon {
 	color: #89b4fa;
 	margin: 1px 2px 0 0;
-	transition: all 0.2s ease;
 }
 
 /* LAUNCHPAD */
 .launchpad-widget {
-    padding: 0 6px 0 6px;
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 .launchpad-widget .icon {
     font-size: 16px;
@@ -456,6 +463,14 @@
 }
 
 /* LANGUAGE */
+.language-widget {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
 .language-menu {
     background-color: rgba(17, 17, 27, 0.4);
     min-width: 300px;
@@ -551,18 +566,20 @@
 	margin: 0;
 }
 .media-widget .label {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 	color: #ffffff;
     padding: 0px;
 	padding-left: 10px;
-	padding-right: 4px;
+	padding-right: 10px;
 }
 
 .media-menu .btn, .media-menu .title, .media-menu .artist { padding-left: 10px; font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif; }
 
-.media-menu .btn.prev:hover, .media-menu .btn.next:hover {
-    color: #f38ba8;
-    transition: all 0.2s ease;
-}
+.media-menu .btn.prev:hover, .media-menu .btn.next:hover { color: #f38ba8; }
 
 .media-menu .source {
     font-size: 11px;
@@ -578,10 +595,12 @@
 
 /* GITHUB */
 .github-widget {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 	color: #fff;
-}
-.github-widget .icon {
-	padding-right: 5px;
 }
 .github-menu {
     background-color:  rgba(17, 17, 27, 0.2);
@@ -649,6 +668,13 @@
     color: #3fb950;
 }
 /* KOMOREBI */
+.komorebi-control-widget {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 .komorebi-control-widget .label {
     font-size: 14px;
     color: #cdd6f4;
@@ -719,39 +745,13 @@
     margin-right: 6px;
 }
 
-/* HOME */
-.home-widget {
-    padding: 0 4px 0 0;
-}
-.home-widget .icon {
-    color: #b4befe;
-}
-.home-widget .icon:hover {
-    color: #cba6f7;
-    transition: all 0.2s ease;
-}
-.home-menu {
-    background-color:rgba(17, 17, 27, 0.5); 
-}
-.home-menu .menu-item {
-    padding: 6px 48px 7px 16px;
-    font-size: 12px;
-    font-family: 'JetBrains Mono';
-    color: var(--text); 
-    font-weight: 600;
-}
-.home-menu .menu-item:hover {
-    background-color: rgba(243, 139, 168, 0.15);
-    color: #f38ba8;
-    transition: all 0.2s ease;
-}
-.home-menu .separator {
-    max-height: 1px;
-    background-color:rgba(128, 130, 158, 0.3);
-}
-
 /* CLOCK */
 .clock-widget {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     padding: 0 4px 0 0px;
 }
 
@@ -1185,6 +1185,11 @@
 
 /* UPDATE */
 .update-check-widget {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     padding: 0 6px 0 6px;
 }
 .update-check-widget .icon {
@@ -1201,7 +1206,15 @@
 } 
 
 /* NOTES */
-.notes-widget { padding-right: 5px; }
+.notes-widget {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding-right: 5px;
+    padding-left: 5px;
+}
 
 .notes-widget .label, .notes-widget .icon { font-size: 14px; }
 
@@ -1316,8 +1329,16 @@
 .note-input:focus { border: 1px solid #89b4fa; }
 
 /* VOLUME */
+.volume-widget {
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
 .volume-widget .icon {
-	color: #74b0ff;;
+	color: #74b0ff;
 	margin: 0 2px 0 0;
 }
 
