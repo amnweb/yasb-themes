@@ -16,8 +16,8 @@ bars:
       position: "top"
       center: false
     blur_effect:
-      enabled: false 
-      acrylic: false 
+      enabled: true 
+      acrylic: true 
       dark_mode: true
       round_corners: false
       border_color: None
@@ -36,20 +36,134 @@ bars:
       left:
         [
           "komorebi_control",
+          "update_check",
           "komorebi_workspaces",
-          "cava",
-          "media"
+          "language",
+          "media",
+          "cava"
         ]
       center: ["clock"]
       right:
         [
-          "grouped_widgets",
+          "hardware_widget",
           "volume",
           "github",
           "notes",
+          "launchpad",
           "power_menu"
         ]
 widgets:
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "\ueab4 {download_speed} | \ueab7 {upload_speed}"
+      label_alt: "Download {download_speed} | Upload {upload_speed}"
+      update_interval: 5000
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  update_check:
+    type: "yasb.update_check.UpdateCheckWidget"
+    options:
+      winget_update:
+        enabled: true
+        label: "<span>\uf0ab</span> {count}"
+        interval: 60
+        exclude: []
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+  launchpad:
+    type: "yasb.launchpad.LaunchpadWidget"
+    options:
+      label: "<span>\udb85\udcde</span>"
+      search_placeholder: "Search apps..."
+      app_icon_size: 48
+      window:
+        fullscreen: false
+        width: 1024
+        height: 768
+        overlay_block: true
+      window_style:
+        enable_blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+      window_animation:
+        fade_in_duration: 120
+        fade_out_duration: 100
+      group_apps: false
+      callbacks:
+        on_left: "toggle_launchpad"
+      app_title_shadow:
+        enabled: true
+        color: "#00000090"
+        offset: [1, 1]
+        radius: 2
+      app_icon_shadow:
+        enabled: true
+        color: "#00000090"
+        offset: [0, 2]
+        radius: 8
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+      label: "<span>\uf473</span>"
+      label_alt: "<span>\uf473</span>"
+      group_label:
+        volume_labels: ["C", "D", "E", "F"]
+        show_label_name: true 
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        distance: 6
+      callbacks:
+        on_left: "toggle_group"
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "\uf11c {lang[language_code]} ({lang[country_code]})"
+      label_alt: "{lang[full_name]}"
+      update_interval: 5
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      language_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icon: true
+        layout_icon: "\uf11c"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   cava:
     type: "yasb.cava.CavaWidget"
     options:
@@ -65,7 +179,7 @@ widgets:
       bar_width: 4
       bar_type: "bars"
       framerate: 60
-      hide_empty: false
+      hide_empty: true
   komorebi_control:
     type: "komorebi.control.KomorebiControlWidget"
     options:
@@ -153,26 +267,34 @@ widgets:
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
-      label: "MEM"
+      label: "{virtual_mem_free}/{virtual_mem_total}"
       label_alt: "VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
       update_interval: 5000
       progress_bar:
         enabled: true
+        position: "left"
         size: 14
         thickness: 2
         color: "#91d7e3"
         background_color: "#242739" 
       callbacks:
         on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
       memory_thresholds:
         low: 25
         medium: 50
         high: 90
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
       label: "CPU"
-      label_alt: "CPU {info[percent][total]:.0f}%"
+      label_alt: "CPU {info[percent][total]}%"
       progress_bar:
         enabled: true
         position: "left"
@@ -183,14 +305,15 @@ widgets:
       update_interval: 2000
       callbacks:
         on_right: "do_nothing"
-  grouped_widgets:
+  hardware_widget:
     type: "yasb.grouper.GrouperWidget"
     options:
-      class_name: "grouped-widgets"
+      class_name: "hardware-widget"
       widgets: [
         "memory",
         "cpu",
-        "weather",
+        "traffic",
+        "disk"
       ]
       container_padding:
         top: 0
@@ -202,14 +325,14 @@ widgets:
     options:
       label: "<span>\ueba1</span>"
       label_alt: "Notifications {data}"
-      token: ghp_xxxxxxxxxxxxxxxxxxxxxx # GitHub Personal access tokens (classic) https://github.com/settings/tokens
+      token: env # GitHub Personal access tokens (classic) https://github.com/settings/tokens
       max_notification: 50
       notification_dot:
         enabled: True
         corner: "bottom_left"
         color: "red"
         margin: [ 1, 1 ]
-      only_unread: false
+      only_unread: true
       show_comment_count: false
       reason_filters: []
       max_field_size: 54
@@ -221,7 +344,7 @@ widgets:
         border_color: "System"
         alignment: "right"
         direction: "down"
-        show_categories: false
+        show_categories: true
         categories_order: ["PullRequest", "Issue", "CheckSuite", "Release", "Discussion"]
       label_shadow:
         enabled: True
@@ -231,7 +354,7 @@ widgets:
   media:
     type: "yasb.media.MediaWidget"
     options:
-      label: "<span>\uf001</span> {title}"
+      label: "<span>\uf001</span>"
       label_alt: "<span>\udb80\udf87</span> {title}"
       hide_empty: true
       callbacks:
@@ -251,10 +374,9 @@ widgets:
       scrolling_label:
         enabled: false
         update_interval_ms: 100
-        style: "left"  # can be "left", "right", "bounce", "bounce-ease"
+        style: "left"
         separator: " | "
         label_padding: 0
-        # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
         ease_slope: 20
         ease_pos: 0.8
         ease_min: 0.5
@@ -313,70 +435,62 @@ widgets:
         color: "black"
         radius: 1
         offset: [ 1, 1 ]
-  weather:
-    type: "yasb.weather.WeatherWidget"
+  volume:
+    type: "yasb.volume.VolumeWidget"
     options:
-      label: "<span>{icon}</span> {temp}" #  - {location}
-      label_alt: "<span>{icon}</span> {location}: {conditions}, {temp}" # Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "YOUR_API_KEY" # Get your free API key from https://www.weatherapi.com/
-      update_interval: 300
-      hide_decimal: true
-      location: "Adelaide" # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
-      units: "metric" # Can be 'metric' or 'imperial'
-      callbacks:
-        on_left: "toggle_card"
-        on_right: "toggle_label"
-      icons:
-        sunnyDay: "\udb81\udd99"
-        clearNight: "\ue3c2"
-        cloudyDay: "\ue21d"
-        cloudyNight: "\ue226"
-        rainyDay: "\ue371"
-        rainyNight: "\ue371"
-        snowyDay: "\udb81\udf17"
-        snowyNight: "\udb81\udf17"
-        blizzardDay: "\udb81\udd99"
-        default: "\udb81\udd99"
-      weather_card:
-        show_hourly_forecast: true
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8"
+        - "\uf026"
+        - "\uf027"
+        - "\uf027"
+        - "\uf028"
+      audio_menu:
         blur: true
         round_corners: true
-        round_corners_type: "small"
+        round_corners_type: "normal"
         border_color: "system"
-        alignment: "center"
+        alignment: "right"
         direction: "down"
         offset_top: 6
-        icon_size: 48
+        offset_left: 0
+        show_apps: true
+        show_app_labels: false
+        show_app_icons: true
+        show_apps_expanded: false
+        app_icons:
+          toggle_down: "\uf078" 
+          toggle_up: "\uf077"
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
       label_shadow:
-        enabled: false
+        enabled: true
         color: "black"
-        radius: 1
+        radius: 3
         offset: [ 1, 1 ]
-  volume:
-      type: "yasb.volume.VolumeWidget"
-      options:
-        label: "{level}"
-        label_alt: "{volume}"
-        progress_bar:
-          enabled: true
-          position: "left"
-          size: 14
-          thickness: 2
-          color: "#91d7e3"
-          background_color: "#242739" 
-        callbacks:
-          on_right: "exec cmd.exe /c start ms-settings:sound"
   power_menu:
-      type: "yasb.power_menu.PowerMenuWidget"
-      options:
-        label: "\uf011"
-        uptime: True
-        blur: True
-        blur_background: True
-        animation_duration: 250 # Milisecond 
-        button_row: 5 # Number of buttons in row, min 1 max 5
-        buttons:
-          shutdown: ["\uf011","Shut Down"]
-          restart: ["\uead2","Restart"]
-          signout: ["\udb80\udf43","Sign out"]
-          cancel: ["\udb81\udf3a","Cancel"]
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: true
+      show_user: true
+      menu_style: "popup"
+      popup:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      buttons:
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        sleep: ["\u23fe", "Sleep"]
+        signout: ["\udb80\udf43", "Sign out"]
+        lock: ["\uea75", "Lock"]
+        hibernate: ["\uf28e", "Hibernate"]
+        cancel: ["", "Cancel"]
