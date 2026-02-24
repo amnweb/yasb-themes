@@ -96,14 +96,14 @@
     transition: all 0.2s ease;
 }
 
-.power-menu-compact .button.lock.hover {
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+.power-menu-compact .button.hibernate.hover {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .power-menu-compact .button.shutdown.hover {
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
 .power-menu-compact .button .icon {
