@@ -495,8 +495,8 @@ widgets:
       label: "{win[app_name]}"
       label_no_window: ""
       label_alt: "{win[process]}"
-      label_icon: False
-      label_icon_size: 14
+      label_icon: True
+      label_icon_size: 12
       max_length: 75
       max_length_ellipsis: ""
       monitor_exclusive: False
