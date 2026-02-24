@@ -52,6 +52,10 @@ For more information about configuration options, please visit their documentati
     --media_menu_btn_disabled: #3b3b3b;
     --media_menu_btn: #acacac;
     --media_menu_btn_alt: #4A4A4A;
+    --open_meteo_card_day_hover: rgba(255, 255, 255, 0.01);
+    --open_meteo_card_day_active: rgba(255, 255, 255, 0.04);
+    --open_meteo_card_hourly_active: rgba(255, 255, 255, 0.1);
+    --power_menu_overlay_bg: rgba(0, 0, 0, 0); 
 }
 
 /*                                 COMMON YASB ELEMENTS                          */
@@ -84,13 +88,32 @@ For more information about configuration options, please visit their documentati
     font-size: 14px;
     font-weight: 700;
 }
+
 /*                                      WIDGETS                                     */
 /*              Power Menu                     */
+.power-menu-popup .profile-info {
+    padding: 0 0 16px 0;
+    background-color: transparent;
+    margin-bottom: 16px;
+}
+.power-menu-popup .profile-info .profile-username {
+    font-size: 32px;
+    font-weight: 750;
+    color: var(--text);
+    margin-bottom: 12px;
+    margin-top: 24px;
+}
+.power-menu-popup .profile-info .profile-account-type {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 600;
+}
 .power-menu-widget .label {
     padding: 0 2px 0 2px;
 }
 .power-menu-popup {
     background: transparent;
+    margin-bottom: 56px;
 }
 .power-menu-popup .button {
     padding: 0;
@@ -103,7 +126,7 @@ For more information about configuration options, please visit their documentati
     border-right: 4px solid rgba(58, 59, 83, 0);
     border-top: 4px solid rgba(58, 59, 83, 0);
     border-bottom: 4px solid rgba(58, 59, 83, 0);
-    margin: 0px;
+    margin: 4px;
 }
 .power-menu-popup .button.hover {
     background-color: var(--power_menu_elem_hover);
@@ -118,13 +141,14 @@ For more information about configuration options, please visit their documentati
     font-size: 16px;
     font-weight: 500;
     color: var(--text);
+    margin: 12px 0 0 0;
 }
 .power-menu-popup .button .icon {
     font-size: 64px;
-    padding-top: 32px;
     color: var(--power_menu_buttons);
+    margin-bottom: 24px;
 }
-.uptime{
+.power-menu-overlay .uptime {
     font-size: 26px;
     margin-bottom: 60px;
     background: transparent;
@@ -132,20 +156,22 @@ For more information about configuration options, please visit their documentati
     margin-left: 625px;
     margin-right: 625px;
 }
+.power-menu-overlay {
+    background-color: var(--power_menu_overlay_bg);
+}
 
 /*                          GlazeWM                              */
+/*                 Workspaces                          */
 .glazewm-workspaces {
     margin: 0;
 }
-
 .glazewm-workspaces .ws-btn {
     background-color: transparent;
     border: none;
-    padding:1px 2px 0 4px;
+    padding:0 2px;
     margin: 0 2px 0 2px;
     font-size: 14px;
 }
-
 .glazewm-workspaces .ws-btn.active_populated,
 .glazewm-workspaces .ws-btn.active_empty {
     color: var(--workspace_active);
@@ -158,11 +184,17 @@ For more information about configuration options, please visit their documentati
 .glazewm-workspaces .ws-btn.empty {
     color: var(--workspace_empty);
 }
-
 .glazewm-workspaces .ws-btn:hover,
 .glazewm-workspaces .ws-btn.populated:hover,
 .glazewm-workspaces .ws-btn.empty:hover {
     color: var(--workspace_hover);
+}
+
+/*                Binding Mode                          */
+.glazewm-binding-mode {
+    color: var(--text);
+    font-weight: 900;
+    margin: 0 0 0 4px;
 }
 
 /*                          Media                              */
@@ -175,6 +207,7 @@ For more information about configuration options, please visit their documentati
     padding: 0 2px 0 8px;
     font-size: 14px;
 }
+
 /*                          Media-Menu                          */
 .media-menu {
     min-width: 420px;
@@ -209,6 +242,7 @@ For more information about configuration options, please visit their documentati
 .media-menu .thumbnail {
     border: var(--global_widget_border_alt);
 }
+
 /*                                  Media-Menu source specific                          */
 .media-menu .source.aimp {
     background-color: #6f42c1;
@@ -270,7 +304,6 @@ For more information about configuration options, please visit their documentati
 .media-menu .source.zen {
     background-color: #dfdfdf;
 }
-
 .media-menu .btn {
     font-size: 28px;
     margin: 10px 2px 0px 2px;
@@ -280,7 +313,6 @@ For more information about configuration options, please visit their documentati
     max-height: 40px;
     border-radius: 0px;
 }
-
 .media-menu .btn.play:hover {
     color: var(--media_menu_btn_hover);
 }
@@ -395,7 +427,7 @@ For more information about configuration options, please visit their documentati
 
 /*                          Battery                           */
 .battery-widget .widget-container .icon {
-    padding: 0px 2px;
+    padding: 0px 2px 0 0;
     font-size: 16px;
     font-family: "Segoe Fluent Icons";
 }
@@ -456,6 +488,7 @@ For more information about configuration options, please visit their documentati
     color: var(--text_selected);
     border: none;
     outline: none;
+    background: var(--widget_bg);
 }
 .calendar .day-label {
     margin-top: 20px;
@@ -477,6 +510,12 @@ For more information about configuration options, please visit their documentati
     font-weight: 900;
     color: var(--text);
     margin-top: -20px;
+}
+.calendar .holiday-label {
+    font-size: 14px;
+    /* padding-bottom: 24px; */
+    font-weight: 700;
+    color: var(--text);
 }
 
 /*                             Memory                           */
@@ -515,7 +554,7 @@ For more information about configuration options, please visit their documentati
     padding: 0 2px 0 6px;
 }
 .disk-group {
-    background-color:var(--widget_bg); 
+    background-color: var(--widget_bg); 
     border: var(--global_widget_border);
 }
 
@@ -619,6 +658,14 @@ For more information about configuration options, please visit their documentati
 }
 
 /*                      Volume                     */
+.volume-widget .widget-container .icon {
+    padding: 0;
+    font-family: "Segoe Fluent Icons";
+    font-size: 16px;
+}
+.volume-widget .widget-container .label {
+    padding: 0 0 0 1px;
+}
 .volume-slider {
     border: none;
 }
@@ -647,20 +694,156 @@ For more information about configuration options, please visit their documentati
     background-color: rgba(255, 255, 255, 0.06);
 }
 
-/*                    Weather                   */
+/*                          Open Meteo                          */
+.open-meteo-widget .icon {
+    font-size: 16px;
+}
 
-.weather-card{
+/* 							Open Meteo Card						 */
+.open-meteo-card {
     background-color: var(--widget_bg);
     border: var(--global_widget_border);
+    min-width: 500px;
 }
-.weather-card-today,
-.weather-card-day{
+.open-meteo-card-today .label {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text_alt);
+}
+.open-meteo-card-today .label.location {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+}
+.open-meteo-card-today .label.sunrisesunset {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(201, 204, 159);
+}
+.open-meteo-card-today .label.sunrisesunset-icon {
+    font-size: 18px;
+    color: rgb(201, 204, 159);
+}
+.open-meteo-card-day {
+    border: var(--global_widget_border_alt);
+    border-radius: 0;
     background-color: var(--widget_bg_alt);
+    padding: 4px;
+    min-width: 70px;
+}
+.open-meteo-card-day .day-name {
+    color: var(--text_alt);
+    font-size: 12px;
+    font-weight: 600;
+}
+.open-meteo-card-day .day-temp-max {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+}
+.open-meteo-card-day .day-temp-min {
+    color: var(--text);
+    font-weight: 400;
+    font-size: 13px;
+}
+.open-meteo-card-day.active {
+    background-color: var(--open_meteo_card_day_active);
+}
+.open-meteo-card-day:hover {
+    background-color: var(--open_meteo_card_day_hover);
+}
+.open-meteo-card .hourly-container {
+    border: none;
+    background-color: transparent;
+    min-height: 120px;
+}
+.open-meteo-card .hourly-data {
+    font-size: 11px;
+    font-weight: 700;
+}
+.open-meteo-card .hourly-data.temperature {
+    background-color: #c9be48;
+}
+.open-meteo-card .hourly-data.rain {
+    background-color: #4a90e2;
+}
+.open-meteo-card .hourly-data.snow {
+    background-color: #a0c4ff;
+}
+.open-meteo-card .hourly-data .hourly-rain-animation {
+    color: rgba(150, 200, 255, 40);
+    background-color: rgba(0, 0, 0, 0);
+}
+.open-meteo-card .hourly-data .hourly-snow-animation {
+    color: rgba(255, 255, 255, 150);
+    background-color: rgba(0, 0, 0, 0);
+}
+.open-meteo-card .hourly-data-buttons {
+    margin-top: 11px;
+    margin-left: 11px;
+}
+.open-meteo-card .hourly-data-button {
+    border-radius: 0;
+    min-height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    font-size: 14px;
+    color: var(--text_alt);
+    border: 1px solid transparent;
+}
+.open-meteo-card .hourly-data-button.active {
+    color: var(--text);
+    background-color: rgba(255, 255, 255, 0.1);
     border: var(--global_widget_border_alt);
 }
-.weather-card-today .label.location {
-    font-size: 24px;
-    font-weight: 700;
+
+/* 						Open Meteo Search Dialog					 */
+.open-meteo-card .search-head {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+}
+.open-meteo-card .search-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text_alt);
+    padding-bottom: 8px;
+}
+.open-meteo-card .no-data-icon {
+    font-size: 88px;
+}
+.open-meteo-card .no-data-text {
+    font-size: 16px;
+    font-weight: 400;
+}
+.open-meteo-card .search-input {
+    padding: 8px 12px;
+    border: var(--global_widget_border_alt);
+    border-radius: 0;
+    background-color: var(--widget_bg_alt);
+    color: var(--text);
+    font-size: 14px;
+}
+.open-meteo-card .search-input:focus {
+    border: var(--global_widget_border_alt);
+    background-color: var(--widget_bg_alt);
+}
+.open-meteo-card .search-results {
+    border: var(--global_widget_border_alt);
+    border-radius: 0;
+    background-color: var(--widget_bg_alt);
+    color: var(--text);
+    font-size: 13px;
+}
+.open-meteo-card .search-results::item {
+    padding: 4px;
+    border: 0;
+    border-radius: 0;
+}
+.open-meteo-card .search-results::item:hover {
+    background: transparent;
+    color: var(--text_hover);
 }
 
 /*                  Lines-Separator             */
@@ -668,11 +851,6 @@ For more information about configuration options, please visit their documentati
     color: var(--line);
     padding: 0;
     margin: 0;
-}
-
-/*                  Start Menu                  */
-.start-menu-widget .widget-container .label {
-    color: var(--text);
 }
 
 /*              Border Fixes                    */
@@ -684,7 +862,7 @@ QPushButton {
 /*                  Tooltip                     */
 .tooltip {
     background-color: var(--tooltip_color);
-    border: 1px solid var(--global_widget_border);
+    border: var(--global_widget_border);
     border-radius: 0px;
     color: var(--text);
     padding: 4px 8px;

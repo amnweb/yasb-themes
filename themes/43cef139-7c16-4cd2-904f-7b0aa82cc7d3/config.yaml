@@ -1,9 +1,10 @@
 # Bar For GlazeWM
 # For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
 watch_stylesheet: True
-watch_config: True
-debug: False
+watch_config: False
+debug: True
 update_check: False
+show_systray: True
 glazewm:
   start_command: "glazewm.exe start"
   stop_command: "glazewm.exe command wm-exit"
@@ -11,11 +12,11 @@ glazewm:
 bars:
   primary-bar:
     enabled: True
-    screens: ["*"]
+    screens: ['*']
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: False
+      align: "center"
     animation:
       enabled: False
       duration: 0
@@ -24,12 +25,24 @@ bars:
       acrylic: False
       dark_mode: False
       round_corners: False
-      border_color: "None"
+      border_color: None
     window_flags:
       always_on_top: False
       windows_app_bar: True # This interferes with apps in full-screen. Notably while watching videos in full screen
-      hide_on_fullscreen: True
-    dimensions: 
+      hide_on_fullscreen: False
+      hide_on_maximized: False
+      auto_hide: False
+    layouts:
+      left:
+        alignment: "left"
+        stretch: True
+      center:
+        alignment: "center"
+        stretch: True
+      right:
+        alignment: "right"
+        stretch: True
+    dimensions:
       width: "100%"
       height: 30
     padding:
@@ -39,8 +52,9 @@ bars:
       right: 0
     widgets:
       left: [
-        "start_menu",
+        "power_menu",
         "media",
+        "glazewm_binding_mode",
         "glazewm_workspaces"
       ]
       center: [
@@ -54,21 +68,80 @@ bars:
         "lines",
         "sysinfo",
         "notifications",
-        "weather",
+        "open_meteo", 
         "wallpapers",
         "notes",
         "clock"
       ]
 widgets:
-  start_menu:
-    type: "yasb.custom.CustomWidget"
+  open_meteo:
+    type: "yasb.open_meteo.OpenMeteoWidget"
     options:
-      label: "\ue62a"
-      label_alt: "\ue62a"
-      class_name: "start-menu-widget"
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp} Max {max_temp} Hum {humidity}"
+      update_interval: 600
+      hide_decimal: True
+      units: "metric"
+      tooltip: False
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\ue312"
+        cloudyNight: "\ue311"
+        drizzleDay: "\udb81\ude7e"
+        drizzleNight: "\udb81\ude7e"
+        rainyDay: "\ue308"
+        rainyNight: "\ue333"
+        snowyDay: "\ue30a"
+        snowyNight: "\ue335"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
+        default: "\uebaa"
+      animation:
+        enabled: False
+        duration: 0
       callbacks:
-        on_left: "exec start_menu"
-        on_right: "exec quick_link"
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      weather_card:
+        blur: False
+        round_corners: False
+        round_corners_type: "normal"
+        border_color: "none"
+        alignment: "right"
+        direction: "down"
+        offset_top: 4
+        offset_left: 85
+        icon_size: 48
+        show_hourly_forecast: True
+        time_format: "24h"
+        hourly_point_spacing: 76
+        hourly_icon_size: 24
+        icon_smoothing: True
+        temp_line_width: 2
+        current_line_color: "#8EAEE8"
+        current_line_width: 1
+        current_line_style: "dot"
+        hourly_gradient:
+          enabled: False
+          top_color: "#8EAEE8"
+          bottom_color: "#2A3E68"
+        hourly_forecast_buttons:
+          enabled: True
+          default_view: "temperature"
+          temperature_icon: "\udb81\udd99"
+          rain_icon: "\udb81\udd96"
+          snow_icon: "\udb81\udd98"
+        weather_animation:
+          enabled: False
+          snow_overrides_rain: True
+          temp_line_animation_style: both
+          rain_effect_intensity: 1.0
+          snow_effect_intensity: 1.0
+          scale_with_chance: True
   lines:
     type: "yasb.custom.CustomWidget"
     options:
@@ -94,7 +167,7 @@ widgets:
         offset_left: 44
         max_title_size: 150
         show_date_time: True
-      icons:                      
+      icons:
         note: "\udb82\udd0c"
         delete: "\udb82\udde7"
         copy: "\uf4bb"
@@ -105,18 +178,16 @@ widgets:
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
-      label: "<span>\ueb9a</span>"
-      label_alt: "<span>\ueb9a</span> {count}"
-      hide_empty: True
+      label: "<span>\udb80\udd78</span>"
+      label_alt: "<span>\udb80\udd78</span> {count}"
+      hide_empty: False
       tooltip: False
       callbacks:
         on_left: "toggle_notification"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
+      animation:
+        enabled: False
+        duration: 0
   sysinfo:
     type: "yasb.grouper.GrouperWidget"
     options:
@@ -188,22 +259,23 @@ widgets:
         high: 90
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-        on_left: "toggle_label"   
+        on_left: "toggle_label"
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\udb83\ude09</span>"
       # Example path to folder with images. Can be a single string or a list of strings.
-      # image_path: "C:\\Users\\{Username}\\Images" 
+      # image_path: "C:\\Users\\{Username}\\Images"
       image_path: "C:\\Users\\Lone\\Pictures\\Wallpapers\\Home Screen\\"
       change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
       animation:
         enabled: False
         duration: 0
+      tooltip: False
       gallery:
           enabled: true
-          blur: true
+          blur: false
           image_width: 250
           image_per_page: 7
           gallery_columns: 0 # 0 = auto, matches image_per_page for a single row
@@ -246,12 +318,34 @@ widgets:
       show_volume: False
       show_network: False
   glazewm_workspaces:
-      type: "glazewm.workspaces.GlazewmWorkspacesWidget"
-      options:
-        offline_label: "Offline"
-        hide_empty_workspaces: True
-        hide_if_offline: True
-        enable_scroll_switching: True
+    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+    options:
+      offline_label: "Offline"
+      hide_if_offline: True
+      monitor_exclusive: False 
+      enable_scroll_switching: False
+      animation: False
+  glazewm_binding_mode:
+    type: "glazewm.binding_mode.GlazewmBindingModeWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span> {binding_mode}"
+      hide_if_no_active: True
+      label_if_no_active: ""
+      default_icon: ""
+      icons:
+        none: ""
+        resize: "\udb82\ude68"
+        pause: "\uf28c"
+      binding_modes_to_cycle_through: [
+        "none", # none handles if no binding mode is active
+        "resize",
+        "pause"
+      ]
+      callbacks:
+        on_left: "next_binding_mode"
+        on_middle: "do_nothing"
+        on_right: "disable_binding_mode"
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -259,10 +353,6 @@ widgets:
       hide_empty: False
       callbacks:
         on_left: "toggle_media_menu"
-      max_field_size:
-        label: 17
-        label_alt: 30
-        truncate_whole_label: False
       show_thumbnail: False
       controls_only: False
       controls_left: False
@@ -294,7 +384,6 @@ widgets:
         label: "{%H:%M}"
         label_alt: "{%A %d %B %Y %H:%M}"
         tooltip: False
-        timezones: [] # To be added later once figured out
         calendar:
           blur: False
           round_corners: False
@@ -306,33 +395,9 @@ widgets:
           show_holidays: True
           holiday_color: "#FF6E00"
           country_code: "IN"
+          extended: False
         animation:
           enabled: False
-  weather:
-      type: "yasb.weather.WeatherWidget"
-      options:
-        label: "<span>{icon}</span> {temp}"
-        label_alt: "Min {min_temp} Max {max_temp} Hum {humidity}"
-        api_key: env
-        location: env
-        update_interval: 3600
-        hide_decimal: True
-        tooltip: False
-        animation: 
-          enabled: False
-          duration: 0
-        callbacks:
-          on_left: "toggle_card"
-          on_right: "toggle_label"
-        weather_card: 
-          blur: False
-          round_corners: False
-          border_color: "None"
-          alignment: "right"
-          direction: "down"
-          icon_size: 64
-          offset_top: 4
-          offset_left: 85
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
@@ -362,11 +427,11 @@ widgets:
         enabled: False
         duration: 0
       volume_icons:
-        - "\ueee8"  # Icon for muted
-        - "\uf026"  # Icon for 0-10% volume
-        - "\uf027"  # Icon for 11-30% volume
-        - "\uf027"  # Icon for 31-60% volume
-        - "\uf028"  # Icon for 61-100% volume
+        - "\ue74f"  # Icon for muted
+        - "\ue994"  # Icon for 0-10% volume
+        - "\ue994"  # Icon for 11-30% volume
+        - "\ue994"  # Icon for 31-60% volume
+        - "\ue994"  # Icon for 61-100% volume
       audio_menu:
         blur: False
         round_corners: False
@@ -382,15 +447,16 @@ widgets:
     type: "yasb.battery.BatteryWidget"
     options:
         label: "<span>{icon}</span>{percent}%"
-        label_alt: "<span>{icon}</span>{time_remaining}"
+        label_alt: "Pow {power}W HP {health}%"
         update_interval: 5000
         hide_unsupported: True
-        time_remaining_natural: True
+        time_remaining_natural: False
         animation:
           enabled: False
           duration: 0
         charging_options:
           icon_format: "{charging_icon}"
+          blink_charging_icon: False
         status_thresholds:
           critical: 10
           low: 25
@@ -409,46 +475,61 @@ widgets:
     options:
       label: "\ue62a"
       uptime: True
+      show_user: True
+      profile_image_size: 180
+      menu_style: "fullscreen"
       blur: False
       blur_background: True
       animation_duration: 50
       button_row: 3
       buttons:
-        lock: ["\uea75", "Lock"]
-        sleep: ["\u23fe","Sleep"]
-        signout: ["\udb80\udf43", "Sign out"]
+        lock: ["\uf456", "Lock"]
+        sleep: ["\uf4ee","Sleep"]
+        signout: ["\uf08b", "Sign out"]
         shutdown: ["\uf011", "Shut Down"]
         restart: ["\uead2", "Restart"]
         cancel: ["\udb81\udf3a", "Cancel"]
   active_window: # TO-DO: Add rewrite rules for specific apps
     type: "yasb.active_window.ActiveWindowWidget"
     options:
-      label: "{win[title]}"
+      label: "{win[app_name]}"
       label_no_window: ""
       label_alt: "{win[process]}"
-      label_icon: False
-      label_icon_size: 14
+      label_icon: True
+      label_icon_size: 12
       max_length: 75
       max_length_ellipsis: ""
-      monitor_exclusive: True
+      monitor_exclusive: False
+      animation:
+        enabled: False
+        duration: 0
+      callbacks:
+        on_left: "do_nothing"
       rewrite:
         # Strip trailing “.exe” (case-insensitive) and lowercase:
         - pattern: "^(.+?)\\.exe$"
           replacement: "\\1"
           case: title
-        # Uppercase UI  
+
+        # Uppercase UI
         - pattern: "\\bui\\b"
           replacement: "UI"
+
         # Change "* – Zen Browser" to "Zen Browser"
-        - pattern: "^(.*) — Zen Browser$"
+        - pattern: "^(.*) — Zen Browser"
           replacement: "Zen Browser"
+
         # Change "WinSpy *" to "WinSpy"
         - pattern: "^WinSpy .*"
           replacement: "WinSpy"
+
         # Ignore ShareX window showing at startup (show nothing)
         - pattern: "^ShareX .*"
           replacement: ""
+
         - pattern: "^ShareX - .*"
           replacement: "ShareX"
-      callbacks:
-        on_left: "do_nothing"
+
+        # BCUninstaller Title
+        - pattern: "^Bulk Crap Uninstaller .*"
+          replacement: "Bulk Crap Uninstaller"
