@@ -63,8 +63,7 @@ widgets:
       show_only_stack: false
       animation: true
       enable_scroll_switching : true
-
-komorebi_active_layout:
+  komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
       hide_if_offline: false
