@@ -29,7 +29,7 @@ body:
     id: image
     attributes:
       label: Image
-      description: "A URL to an image representing the theme. It can be a temporary image, it will be cloned to the theme library. Note: The image must be direct link to the PNG file. E.g. an (`https://i.imgur.com/cWzvOqq.png`) This image should contain a preview of the bar only."
+      description: "A URL to an image representing the theme. It can be a temporary image, it will be cloned to the theme library. Note: The image must be direct link to the PNG file. E.g. an (`https://i.imgur.com/cWzvOqq.png`) This image should contain a preview of the bar only. DO NOT USER ibb.co"
       placeholder: https://example.com/image.png
     validations:
       required: true
@@ -54,7 +54,7 @@ body:
     attributes:
       render: markdown
       label: Readme
-      description: The markdown README file for the theme. You can create a nice readme with a preview of the theme.
+      description: The Markdown README file for the theme. Please include a preview of the theme, as well as any relevant information about the theme, such as the fonts needed. Here is an example of a [README file](https://github.com/amnweb/yasb-themes/blob/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/readme.md)
     validations:
       required: true
   - type: markdown
