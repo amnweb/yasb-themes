@@ -35,14 +35,13 @@ bars:
         "taskbar",
       ]
       center: [        
-        "active_window",]
+        "active_window"
+      ]
       right: [
         "systray",
-        #"volume",
         "language",
         "clock",
-        "notifications",
- 
+        "notifications"
         ]
 widgets:
   wifi:
@@ -87,28 +86,6 @@ widgets:
       hide_empty_workspaces: false
       hide_if_offline: false
       animation: true
-  volume:
-    type: "yasb.volume.VolumeWidget"
-    options:
-      label: "<span>{icon}</span> {level}"
-      label_alt: "{volume}"
-      tooltip: false
-      volume_icons:
-        - "\ueee8" # Icon for muted
-        - "\uf026" # Icon for 0-10% volume
-        - "\uf027" # Icon for 11-30% volume
-        - "\uf027" # Icon for 31-60% volume
-        - "\uf028" # Icon for 61-100% volume
-      callbacks:
-        on_left: "toggle_volume_menu"
-        on_right: "toggle_mute"
-      audio_menu:
-        blur: True
-        round_corners: True
-        border_color: None
-        alignment: "right"
-        direction: "down"
-        distance: 4
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -134,11 +111,6 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
-      container_padding:
-          left: 0
-          top: 0
-          right: 0
-          bottom: 0
       btn_shadow:
         enabled: false
         color: "black"
@@ -187,12 +159,6 @@ widgets:
         processes: []
         titles: []
         classes: []
-      container_padding: 
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
-        active_window:
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
