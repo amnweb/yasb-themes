@@ -1,0 +1,1094 @@
+:root {
+    --bar-dark-bg: rgba(36, 36, 36, 0.6);
+    --bar-light-bg: rgba(255, 255, 255, 0.75);
+    --bar-dark-border: #303030;
+    --bar-light-border: #e7e7e7;
+    --dark-menu-bg: rgba(36, 36, 36, 0.6);
+    --light-menu-bg: rgba(255, 255, 255, 0.75);
+    --dark-color: rgb(65, 65, 65);
+    --dark-dim-color: rgb(117, 117, 117);
+    --light-color: rgba(255, 255, 255, 0.9);
+    --light-dim-color: rgba(255, 255, 255, 0.6);
+    --dark-icon-color: rgb(36, 36, 36);
+    --light-icon-color: rgba(255, 255, 255, 0.9);
+}
+* {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Segoe UI", "Segoe Fluent Icons"
+}
+.dark.yasb-bar {
+    background-color: var(--bar-dark-bg);
+    border-bottom: 1px solid var(--bar-dark-border);
+    padding: 0 12px;
+}
+.yasb-bar {
+    background-color: var(--bar-light-bg);
+    border-bottom: 1px solid var(--bar-light-border);
+    padding: 0 12px;
+}
+.tooltip {
+    background-color: rgba(36, 36, 36, 0.95);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    margin-top: 4px;
+}
+.context-menu,
+.context-menu .menu-checkbox {
+    background-color: rgba(26, 26, 26, 0.6);
+    padding: 4px 0px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+.context-menu {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+}
+.context-menu::right-arrow {
+    width: 8px;
+    height: 8px;
+    padding-right: 24px;
+}
+.context-menu::item,
+.context-menu .menu-checkbox {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: 6px;
+    min-width: 100px;
+}
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+.context-menu::separator {
+    height: 1px;
+    background-color: #404040;
+    margin: 4px 8px;
+}
+.context-menu::item:disabled {
+    color: #666666;
+    background-color: transparent;
+}
+.context-menu .menu-checkbox .checkbox {
+    border: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Segoe UI'
+}
+.context-menu .submenu::item:disabled {
+    margin: 0;
+    padding-left: 16px;
+}
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: rgba(255, 255, 255, 0.9);
+}
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 12px;
+    height: 12px;
+    margin-left: 0px;
+    margin-right: 8px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: #444444;
+    border-radius: 2px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background: #4a90e2;
+    border-radius: 2px;
+}
+.context-menu .menu-checkbox .checkbox:focus {
+    outline: none;
+}
+.widget {
+    padding: 2px 8px 0 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+}
+
+.widget .icon {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--dark-icon-color);
+}
+.yasb-bar.dark .widget .icon {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--light-icon-color);
+}
+.widget .label {
+    padding: 0px 0px 4px 4px;
+    color: var(--dark-color)
+}
+
+.yasb-bar.dark .widget .label {
+    color: var(--light-color);
+}
+.widget:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+.dark .widget:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Quick Launch Popup - main window */
+.quick-launch-popup .container {
+    background-color: var(--light-menu-bg);
+}
+.dark .quick-launch-popup .container {
+    background-color: var(--dark-menu-bg);
+}
+/* Search bar container */
+.quick-launch-popup .search {
+    padding: 12px 16px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dark .quick-launch-popup .search {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+/* Search loader line color */
+.quick-launch-popup .search .loader-line {
+    color: #449bff;
+}
+.quick-launch-popup .search .search-icon {
+    font-family: "Segoe Fluent Icons";
+    font-size: 18px;
+    color: var(--dark-color);
+    padding-right: 8px;
+    min-width: 18px;
+}
+.dark .quick-launch-popup .search .search-icon {
+    color: var(--light-color);
+}
+.quick-launch-popup .search .search-submit-icon {
+    font-family: "Segoe Fluent Icons";
+    font-size: 18px;
+    color: var(--dark-color);
+    min-width: 18px;
+}
+.dark .quick-launch-popup .search .search-submit-icon {
+    color: var(--light-color);
+}
+.quick-launch-popup .search .search-input {
+    background: transparent;
+    border: none;
+    color: var(--dark-color);
+    font-size: 16px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    padding: 4px 0;
+}
+.dark .quick-launch-popup .search .search-input {
+    color: var(--light-color);
+}
+/* Search prefix styling (e.g., ">" for commands) */
+.quick-launch-popup .search .prefix {
+    background: #2167d8;
+    border-radius: 6px;
+    color: #ffffff;
+    padding: -2px 8px 0px 8px;
+    margin-top: 2px;
+    margin-right: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Segoe UI";
+    max-height: 28px;
+}
+
+/* Results list */
+.quick-launch-popup .results {
+    background: transparent;
+    padding: 8px;
+}
+/* Individual result item here you can set font szie for title */
+.quick-launch-popup .results-list-view {
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: 600;
+    color: var(--dark-color)
+}
+.dark .quick-launch-popup .results-list-view {
+    color: var(--light-color);
+}
+.quick-launch-popup .results-list-view .description {
+    color: var(--dark-dim-color);
+    font-size: 11px;
+    font-family: "Segoe UI";
+    font-weight: 600;
+}
+.dark .quick-launch-popup .results-list-view .description {
+    color: var(--light-dim-color);
+}
+.quick-launch-popup .results-list-view .separator {
+    color: var(--dark-dim-color);
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    padding: 4px 0 4px 12px;
+}
+/* Result item hover and selected states */
+.quick-launch-popup .results-list-view::item {
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+.quick-launch-popup .results-list-view::item:hover,
+.quick-launch-popup .results-list-view::item:selected {
+    background-color: rgba(128, 130, 158, 0.1);
+}
+/* Empty state when no results found */
+.quick-launch-popup .results-empty-text {
+    font-size: 24px;
+    font-family: "Segoe UI";
+    color: rgb(255, 255, 255);
+    padding-top: 8px;
+}
+
+/* Preview Pane */
+.quick-launch-popup .preview {
+    background: rgba(0, 0, 0, 0);
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+.quick-launch-popup .preview .preview-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 8px 12px;
+    font-family: "Segoe UI";
+    background-color: rgba(255, 255, 255, 0.03);
+    border: none;
+}
+.quick-launch-popup .preview .preview-image {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 8px 12px;
+}
+.quick-launch-popup .preview .preview-meta {
+    padding: 6px 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-family: "Segoe UI";
+}
+.quick-launch-popup .preview .preview-meta .preview-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    font-family: "Segoe UI";
+    margin-bottom: 10px;
+    margin-left: -2px;
+}
+
+.quick-launch-popup .preview .preview-meta .preview-subtitle {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Segoe UI";
+    padding-bottom: 1px;
+}
+
+/* Preview inline edit form (.preview.edit) */
+.quick-launch-popup .preview.edit .preview-title {
+    font-size: 13px;
+    font-family: "Segoe UI";
+    font-weight: 600;
+    color: #ffffff;
+    padding: 8px 12px 4px 12px;
+}
+.quick-launch-popup .preview.edit .preview-line-edit {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: "Segoe UI";
+    padding: 6px 8px;
+    margin: 0 12px;
+}
+.quick-launch-popup .preview.edit .preview-line-edit:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.quick-launch-popup .preview.edit .preview-text-edit {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: "Segoe UI";
+    padding: 6px 8px;
+    margin: 0 12px;
+}
+.quick-launch-popup .preview.edit .preview-text-edit:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.quick-launch-popup .preview.edit .preview-actions {
+    padding: 8px 12px;
+}
+.quick-launch-popup .preview.edit .preview-btn {
+    background: rgb(45, 46, 48);
+    border: none;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-family: "Segoe UI";
+    font-weight: 600;
+    padding: 4px 16px;
+}
+.quick-launch-popup .preview.edit .preview-btn:hover {
+    background: rgb(59, 60, 63);
+}
+.quick-launch-popup .preview.edit .preview-btn.save {
+    background: rgb(12, 81, 190);
+    color: #ffffff;
+}
+.quick-launch-popup .preview.edit .preview-btn.save:hover {
+    background: rgb(19, 90, 204);
+}
+
+.cpu-popup,
+.memory-popup {
+    background-color: var(--light-menu-bg);
+    min-width: 400px;
+    max-width: 400px;
+}
+.dark .cpu-popup,
+.dark .memory-popup {
+    background-color: var(--dark-menu-bg);
+    min-width: 400px;
+    max-width: 400px;
+}
+
+.cpu-popup .header,
+.memory-popup .header {
+    background: transparent;
+    padding: 12px 16px;
+}
+.cpu-popup .header .text,
+.memory-popup .header .text {
+    font-size: 16px;
+    font-family: "Segoe UI";
+
+}
+.cpu-popup .header .pin-btn,
+.memory-popup .header .pin-btn {
+    font-size: 14px;
+    background: transparent;
+    font-family: "Segoe Fluent Icons";
+    border: none;
+    padding: 6px;
+    color: var(--dark-dim-color)
+}
+.dark .cpu-popup .header .pin-btn,
+.dark .memory-popup .header .pin-btn {
+    color: var(--light-dim-color);
+}
+.cpu-popup .header .pin-btn:hover,
+.memory-popup .header .pin-btn:hover {
+    color: var(--dark-dim-color)
+}
+.dark .cpu-popup .header .pin-btn:hover,
+.dark .memory-popup .header .pin-btn:hover {
+    color: var(--light-dim-color);
+}
+.cpu-popup .header .pin-btn.pinned,
+.memory-popup .header .pin-btn.pinned {
+    color: var(--dark-color)
+}
+.dark .cpu-popup .header .pin-btn.pinned,
+.dark .memory-popup .header .pin-btn.pinned {
+    color: var(--light-color);
+}
+/* Graph area */
+.cpu-popup .graph-container,
+.memory-popup .graph-container {
+    background: transparent;
+    min-height: 64px;
+}
+.cpu-popup .cpu-graph,
+.memory-popup .memory-graph {
+    color: #0f6bff;
+    /* <-- set the graph line/fill color */
+}
+.cpu-popup .cpu-graph-grid,
+.memory-popup .memory-graph-grid {
+    color: rgba(0, 0, 0, 0.05);
+    /* set the grid line color */
+}
+.dark .cpu-popup .cpu-graph-grid,
+.dark .memory-popup .memory-graph-grid {
+    color: rgba(255, 255, 255, 0.05);
+    /* set the grid line color */
+}
+.cpu-popup .graph-title,
+.memory-popup .graph-title {
+    font-size: 12px;
+    color: var(--dark-dim-color);
+    font-family: 'Segoe UI';
+    padding: 0px 0px 4px 14px;
+}
+.dark .cpu-popup .graph-title,
+.dark .memory-popup .graph-title {
+    color: var(--light-dim-color);
+}
+/* Stats grid */
+.cpu-popup .stats,
+.memory-popup .stats {
+    background: transparent;
+    padding: 16px;
+}
+.cpu-popup .stats .stat-item,
+.memory-popup .stats .stat-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 8px;
+}
+.cpu-popup .stats .stat-item,
+.memory-popup .stats .stat-item {
+    background-color: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 8px;
+}
+.dark .cpu-popup .stats .stat-item,
+.dark .memory-popup .stats .stat-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 8px;
+}
+.cpu-popup .stats .stat-label,
+.memory-popup .stats .stat-label {
+    font-size: 13px;
+    color: var(--dark-dim-color);
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    padding: 6px 4px 2px 4px;
+}
+.dark .cpu-popup .stats .stat-label,
+.dark .memory-popup .stats .stat-label {
+    color: var(--light-dim-color);
+}
+.cpu-popup .stats .stat-value,
+.memory-popup .stats .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark-color);
+    font-family: 'Segoe UI';
+    padding: 0 4px 12px 4px;
+}
+.dark .cpu-popup .stats .stat-value,
+.dark .memory-popup .stats .stat-value {
+    color: var(--light-color);
+}
+
+.power-menu-widget .label {
+    font-size: 16px;
+    padding: 0;
+}
+.power-menu-compact {
+    min-width: 260px;
+    background-color: var(--light-menu-bg)
+}
+.dark .power-menu-compact {
+    min-width: 260px;
+    background-color: var(--dark-menu-bg);
+}
+.power-menu-compact .profile-info {
+    padding: 12px 0 24px 0;
+}
+
+.power-menu-compact .profile-info .profile-username {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-dim-color);
+    font-family: 'Segoe UI';
+    margin-top: 4px;
+}
+.dark .power-menu-compact .profile-info .profile-username {
+    color: var(--light-dim-color);
+}
+.power-menu-compact .profile-info .profile-account-type {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 8px;
+    font-family: 'Segoe UI';
+    background-color: #0f68dd;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+.power-menu-compact .profile-info .profile-email {
+    font-size: 13px;
+    color: var(--dark-dim-color);
+    margin-top: 2px;
+    font-family: 'Segoe UI';
+}
+.dark .power-menu-compact .profile-info .profile-email {
+    color: var(--light-dim-color);
+}
+.power-menu-compact .manage-accounts {
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.08);
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    padding: 2px 8px;
+    margin-top: 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.power-menu-compact .manage-accounts:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.power-menu-compact .buttons {
+    background-color: rgba(255, 255, 255, 0.35);
+    margin: 0 12px 12px 12px;
+    border-radius: 8px;
+}
+.dark .power-menu-compact .buttons {
+    background-color: rgba(255, 255, 255, 0.03);
+    margin: 0 12px 12px 12px;
+    border-radius: 8px;
+}
+.power-menu-compact .button {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+.power-menu-compact .button.hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.dark .power-menu-compact .button.hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.power-menu-compact .button.lock.hover {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.power-menu-compact .button.shutdown.hover {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.power-menu-compact .button .icon {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--dark-color);
+    padding-right: 10px;
+    min-width: 20px;
+}
+.dark .power-menu-compact .button .icon {
+    color: var(--light-color);
+}
+.power-menu-compact .button .label {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "Segoe UI";
+    color: var(--dark-dim-color)
+}
+.dark .power-menu-compact .button .label {
+    color: var(--light-dim-color);
+}
+
+.power-menu-compact .icon.hover,
+.power-menu-compact .label.hover {
+    color: var(--dark-color)
+}
+.dark .power-menu-compact .icon.hover,
+.dark .power-menu-compact .label.hover {
+    color: var(--light-color);
+}
+.dark .open-meteo-widget .icon {
+    color: #F6E3B4
+}
+.open-meteo-card {
+    background-color: var(--light-menu-bg);
+    min-width: 500px;
+}
+.dark .open-meteo-card {
+    background-color: var(--dark-menu-bg);
+    min-width: 500px;
+}
+.open-meteo-card-today .label {
+    font-size: 13px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    color: var(--dark-dim-color)
+}
+.dark .open-meteo-card-today .label {
+    color: var(--light-dim-color);
+}
+.open-meteo-card-today .label.location {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Segoe UI";
+    color: var(--dark-color)
+}
+.dark .open-meteo-card-today .label.location {
+    color: var(--light-color);
+}
+.open-meteo-card-today .label.sunrisesunset {
+    font-size: 18px;
+    font-family: "Segoe UI";
+    font-weight: 600;
+    color: rgb(201, 204, 159);
+}
+.open-meteo-card-today .label.sunrisesunset-icon {
+    font-size: 16px;
+    color: rgb(201, 204, 159);
+    font-family: "Segoe Fluent Icons";
+    font-weight: 600;
+}
+.open-meteo-card-day {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 4px;
+    min-width: 70px;
+}
+.open-meteo-card-day .day-name {
+    font-family: "Segoe UI";
+    color: var(--dark-dim-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+.dark .open-meteo-card-day .day-name {
+    color: var(--light-dim-color);
+}
+.open-meteo-card-day .day-temp-max {
+    font-family: "Segoe UI";
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--dark-color);
+}
+.dark .open-meteo-card-day .day-temp-max {
+    color: var(--light-color);
+}
+
+.open-meteo-card-day .day-temp-min {
+    font-family: "Segoe UI";
+    color: var(--dark-color);
+    font-weight: 400;
+    font-size: 13px;
+}
+.dark .open-meteo-card-day .day-temp-min {
+    color: var(--light-color);
+}
+
+.open-meteo-card-day.active {
+    background-color: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.dark .open-meteo-card-day.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.open-meteo-card-day:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.dark .open-meteo-card-day:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.open-meteo-card .hourly-container {
+    border: none;
+    background-color: transparent;
+    min-height: 120px;
+}
+.open-meteo-card .hourly-data {
+    font-size: 11px;
+    font-weight: 700;
+    font-family: "Segoe UI";
+}
+.open-meteo-card .hourly-data.temperature {
+    background-color: #c9be48;
+}
+.open-meteo-card .hourly-data.rain {
+    background-color: #4a90e2;
+}
+.open-meteo-card .hourly-data.snow {
+    background-color: #a0c4ff;
+}
+.open-meteo-card .hourly-data .hourly-rain-animation {
+    color: rgba(150, 200, 255, 40);
+    background-color: rgba(0, 0, 0, 0);
+}
+.open-meteo-card .hourly-data .hourly-snow-animation {
+    color: rgba(255, 255, 255, 150);
+    background-color: rgba(0, 0, 0, 0);
+}
+.open-meteo-card .hourly-data-buttons {
+    margin-top: 11px;
+    margin-left: 11px;
+}
+.open-meteo-card .hourly-data-button {
+    border-radius: 4px;
+    min-height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.3);
+    border: 1px solid transparent;
+}
+.open-meteo-card .hourly-data-button.active {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.open-meteo-card .search-head {
+    font-size: 18px;
+    font-family: "Segoe UI";
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+.open-meteo-card .search-description {
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 8px;
+}
+.open-meteo-card .no-data-icon {
+    font-size: 88px;
+}
+.open-meteo-card .no-data-text {
+    font-size: 16px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+/* search dialog */
+.open-meteo-card .search-input {
+    padding: 8px 12px;
+    border: 1px solid #5e6070;
+    border-radius: 6px;
+    background-color: rgba(17, 17, 27, 0.1);
+    color: #cdd6f4;
+    font-family: "Segoe UI";
+    font-size: 14px;
+}
+.open-meteo-card .search-input:focus {
+    border: 1px solid #89b4fa;
+    background-color: rgba(17, 17, 27, 0.2);
+}
+.open-meteo-card .search-results {
+    border: 1px solid #45475a00;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #cbced8;
+    font-size: 13px;
+    font-family: "Segoe UI";
+}
+.open-meteo-card .search-results::item {
+    padding: 6px;
+}
+.open-meteo-card .search-results::item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.clock-widget .icon {
+    font-size: 14px;
+    padding-right: 4px;
+}
+.clock-widget .icon.alarm {
+    color: #f38ba8;
+    margin-left: 4px;
+}
+.clock-widget .label.alarm {
+    color: #74b0ff;
+    margin-left: 4px;
+}
+
+/* Calendar, Alarm, and Timer Popups */
+.clock-popup.alarm,
+.clock-popup.timer,
+.clock-popup.calendar {
+    min-width: 460px;
+    background-color: var(--light-menu-bg);
+}
+.dark .clock-popup.alarm,
+.dark .clock-popup.timer,
+.dark .clock-popup.calendar {
+    background-color: var(--dark-menu-bg);
+}
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(133, 144, 160, 0.85);
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+.dark .clock-popup.calendar .calendar-table,
+.dark .clock-popup.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(162, 177, 196, 0.85);
+}
+.clock-popup.calendar .calendar-table::item:selected {
+    color: #282936;
+    font-weight: bold;
+    background-color: #74b0ff;
+    border-radius: 12px;
+}
+.clock-popup.calendar .day-label {
+    margin-top: 20px;
+}
+.clock-popup.calendar .day-label,
+.clock-popup.calendar .month-label,
+.clock-popup.calendar .year-label,
+.clock-popup.calendar .date-label {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.clock-popup.calendar .month-label {
+    font-weight: normal;
+}
+.clock-popup.calendar .year-label {
+    font-weight: normal;
+}
+.clock-popup.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    margin-top: -20px;
+}
+
+/* Alarm and Timer Dialog Containers */
+.clock-popup.timer .clock-popup-container,
+.clock-popup.alarm .clock-popup-container {
+    padding: 16px;
+}
+.clock-popup.timer .clock-popup-footer,
+.clock-popup.alarm .clock-popup-footer {
+    padding: 16px;
+    border-top: 1px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.clock-popup .clock-label-timer {
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #8d9196;
+}
+.clock-popup .clock-input-time {
+    font-size: 48px;
+    background-color: transparent;
+    border: none;
+    font-family: monospace, "Tahoma", "Segoe UI";
+    font-weight: 600;
+    color: #ced3d8;
+}
+.clock-popup .clock-input-time.colon {
+    padding-bottom: 8px;
+}
+
+/* Dialog Buttons */
+.clock-popup .button {
+    border-radius: 4px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 13px;
+    min-height: 28px;
+    min-width: 64px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.clock-popup .button.save,
+.clock-popup .button.start,
+.clock-popup .button.delete,
+.clock-popup .button.cancel {
+    min-width: 120px;
+}
+
+.clock-popup .button.save,
+.clock-popup .button.start {
+    background-color: rgba(0, 110, 255, 0.5);
+    margin-right: 8px;
+}
+
+.clock-popup .button.save:hover,
+.clock-popup .button.start:hover {
+    background-color: rgba(0, 110, 255, 0.7);
+}
+.clock-popup .button.delete {
+    background-color: rgba(255, 80, 80, 0.5);
+}
+.clock-popup .button.delete:hover {
+    background-color: rgba(255, 80, 80, 0.7);
+}
+.clock-popup .button.is-alarm-enabled {
+    background-color: rgba(0, 110, 255, 0.5);
+}
+.clock-popup .button.is-alarm-enabled:hover {
+    background-color: rgba(0, 110, 255, 0.7);
+}
+.clock-popup .button.is-alarm-disabled {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.clock-popup .button.day {
+    background-color: rgba(255, 255, 255, 0.1);
+    max-height: 20px;
+    min-height: 20px;
+}
+.clock-popup .button.day:checked {
+    background-color: rgba(0, 110, 255, 0.5);
+}
+.clock-popup .button.quick-option {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.clock-popup .button.quick-option:checked {
+    background-color: rgba(0, 110, 255, 0.5);
+}
+.clock-popup .button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.clock-popup .button:disabled {
+    background-color: rgba(100, 100, 100, 0.2);
+    color: rgba(150, 150, 150, 0.7);
+}
+.clock-popup .alarm-input-title {
+    font-size: 14px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #d2d6e2;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-top: 8px;
+    outline: none;
+    min-width: 300px;
+}
+
+.clock-popup .alarm-input-title:focus {
+    border: 1px solid #0078D4;
+}
+
+/* Active Alarm Popup Window */
+.active-alarm-window {
+    background-color: rgba(255, 255, 255, 0.048);
+    max-width: 500px;
+    min-width: 500px;
+    padding: 32px;
+}
+.active-alarm-window .alarm-title-icon {
+    font-size: 64px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+.active-alarm-window .alarm-title {
+    font-size: 24px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #ffffff;
+    max-width: 500px;
+    min-width: 500px;
+}
+.active-alarm-window .alarm-info {
+    font-size: 16px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #b2b6c0;
+    margin-bottom: 32px;
+}
+.active-alarm-window .button {
+    border-radius: 4px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 36px;
+    min-width: 100px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.active-alarm-window .button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.home-menu {
+    background-color: var(--light-menu-bg);
+}
+.dark .home-menu {
+    background-color: var(--dark-menu-bg);
+}
+.home-menu .menu-item {
+    color: var(--dark-color);
+    padding: 6px 48px 7px 16px;
+}
+.dark .home-menu .menu-item {
+    color: var(--light-color);
+}
+
+.home-menu .menu-item:hover {
+    background-color: rgba(128, 130, 158, 0.15);
+    color: #fff;
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color: rgba(128, 130, 158, 0.3);
+}
+
+.systray .button {
+    border-radius: 4px;
+    padding: 2px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.systray .button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.systray .button.drag-over {
+    background: rgba(255, 255, 255, 0.4);
+}
+.systray .pinned-container.drop-target {
+    background: rgba(255, 255, 255, 0.1);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+    border: none;
+    outline: none;
+}
+
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+.systray-popup .button.drag-over {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.systray .pinned-container.pinned-container.drop-target {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.systray-popup {
+    background-color: var(--light-menu-bg);
+    padding: 4px;
+}
+.dark .systray-popup {
+    background-color: var(--dark-menu-bg);
+}
+.systray-popup .button {
+    padding: 10px;
+    margin: 0;
+    border: 0;
+    border-radius: 6px;
+}
+.systray-popup .button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.dark .systray-popup .button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
