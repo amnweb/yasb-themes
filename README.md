@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [WinUI11](themes/7c2f646f-bbb1-4492-854d-3cc60b25012f)
+
+<a title="WinUI11 YASB Theme" href="themes/7c2f646f-bbb1-4492-854d-3cc60b25012f"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7c2f646f-bbb1-4492-854d-3cc60b25012f/image.png" width="830px"></a>
+
+
 ## [Win11 Fluent Onyx](themes/80198c48-f70a-44a1-8507-ce300ff8e360)
 
 <a title="Win11 Fluent Onyx YASB Theme" href="themes/80198c48-f70a-44a1-8507-ce300ff8e360"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/image.png" width="830px"></a>
