@@ -2,8 +2,7 @@
 
 This theme supports dark and light modes and is designed to be like the default Windows 11 UI. The theme requires the Segoe UI and Segoe Fluent Icons fonts to be installed on the system.
 
-- Minimum YASB version: 1.9.1
-- `alt` + `space` triggers the Quick Launch.
+Note: Requires YASB version 1.9.1 or later to work properly. `alt` + `space` triggers the Quick Launch.
 
 ## Demos
 
