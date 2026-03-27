@@ -1,0 +1,1691 @@
+/* 
+This is default and very simple styles file for Yasb. 
+For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
+*/
+:root {
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --yellow: #ffd16d;
+    --blue: #448fff;
+    --lavender: #b4befe;
+    --text1: #d4d9eb;
+    --text2: #8f929e;
+    --text3: #9399b2;
+    --text4: #7f849c;
+    --bg-color1: #191919;
+    --bg-color2: #333333;
+}
+
+* {
+    font-size: 12px;
+    color: var(--text1);
+    font-weight: 600;
+    font-family: "JetBrainsMono NFP";
+}
+
+.yasb-bar {
+    background-color: rgba(25, 25, 25, 0.85);
+    border-radius: 0px;
+    border: 1px solid var(--bg-color1);
+}
+/* Global styles for ToolTip */
+.tooltip {
+    background-color: var(--bg-color1);
+    border-radius: 4px;
+    color: var(--text1);
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    margin-top: 4px;
+}
+/* Global context menu style */
+.context-menu,
+.context-menu .menu-checkbox {
+    background-color: rgba(25, 25, 25, 0.85);
+    border: none;
+    padding: 4px 0px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color: var(--text1)
+}
+
+.context-menu::right-arrow {
+        width: 8px;
+        height: 8px;
+        padding-right: 24px;
+    }
+
+.context-menu::item,
+    .context-menu .menu-checkbox {
+        background-color: transparent;
+        padding: 6px 12px;
+        margin: 2px 6px;
+        border-radius: 6px;
+        min-width: 100px;
+    }
+
+.context-menu::item:selected,
+        .context-menu .menu-checkbox:hover {
+            background-color: var(--bg-color2);
+            color: #FFFFFF;
+        }
+
+.context-menu::separator {
+        height: 1px;
+        background-color: #404040;
+        margin: 4px 8px;
+    }
+
+.context-menu::item:disabled {
+        color: #666666;
+        background-color: transparent;
+    }
+
+.context-menu .menu-checkbox .checkbox {
+        border: none;
+        padding: 8px 16px;
+        font-size: 12px;
+        margin: 0;
+        color: var(--text1);
+        font-family: 'Segoe UI'
+    }
+
+.context-menu .submenu::item:disabled {
+        margin: 0;
+        padding-left: 16px;
+    }
+
+.context-menu .menu-checkbox .checkbox:unchecked {
+        color: var(--text2)
+    }
+
+.context-menu .menu-checkbox .checkbox::indicator {
+        width: 12px;
+        height: 12px;
+        margin-left: 0px;
+        margin-right: 8px;
+    }
+
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+            background: #444444;
+            border-radius: 2px;
+        }
+
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+            background: var(--blue);
+            border-radius: 2px;
+        }
+
+.context-menu .menu-checkbox .checkbox:focus {
+        outline: none;
+    }
+
+.widget {
+    padding: 0 12px;
+    margin: 0;
+}
+
+.icon {
+    font-size: 16px;
+}
+
+.widget .label {
+    padding: 0px 2px;
+}
+
+.komorebi-active-layout {
+    padding: 0
+}
+
+.komorebi-workspaces .offline-status {
+    color: var(--text4);
+    font-size: 12px;
+    padding: 0 0 0 4px;
+    font-weight: 600;
+}
+
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: var(--text4);
+    margin: 0 3px;
+    height: 9px;
+    width: 9px;
+    border-radius: 4px;
+}
+
+.komorebi-workspaces .ws-btn:hover {
+        color: var(--text2);
+    }
+
+.komorebi-workspaces .ws-btn.populated {
+        background-color: var(--lavender);
+    }
+
+.komorebi-workspaces .ws-btn.active {
+        background-color: var(--blue);
+        width: 36px;
+    }
+
+.power-menu-widget .label {
+    color: #f38ba8;
+    font-size: 13px;
+}
+
+.power-menu-popup {
+    background-color: rgba(255, 255, 255, 0.04);
+    padding: 32px;
+    border-radius: 32px;
+}
+
+.power-menu-popup .button {
+        padding: 0;
+        min-width: 140px;
+        max-width: 140px;
+        min-height: 80px;
+        border-radius: 12px;
+        background-color: #ffffff11;
+        border: 8px solid rgba(255, 255, 255, 0)
+    }
+
+.power-menu-popup .button.hover {
+            background-color: #134c96;
+            border: 8px solid #134c96;
+        }
+
+.power-menu-popup .button .label {
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Segoe UI';
+            color: #a9a9ac;
+        }
+
+.power-menu-popup .button .icon {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.4)
+        }
+
+.power-menu-popup .button.hover .label,
+        .power-menu-popup .button.hover .icon {
+            color: #ffffff
+        }
+
+.power-menu-popup .profile-info {
+        padding: 0 0 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: transparent;
+        margin-bottom: 16px;
+    }
+
+.power-menu-popup .profile-info .profile-username {
+            font-size: 24px;
+            font-weight: 600;
+            color: #cdd6f4;
+            margin-top: 0;
+            font-family: 'Segoe UI';
+        }
+
+.power-menu-popup .profile-info .profile-account-type {
+            font-size: 15px;
+            color: rgba(205, 214, 244, 0.6);
+            margin-top: 8px;
+            font-family: 'Segoe UI'
+        }
+
+.power-menu-popup .profile-info .profile-email {
+            font-size: 13px;
+            color: rgba(205, 214, 244, 0.4);
+            margin-top: 4px;
+            font-family: 'Segoe UI'
+        }
+
+.power-menu-overlay {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.power-menu-overlay .uptime {
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #9ea2b4;
+        font-weight: 600;
+    }
+
+.microphone-widget {
+    padding: 0 6px 0 6px;
+}
+
+.microphone-widget .icon {
+        font-size: 18px;
+    }
+
+.microphone-widget .icon {
+        color: var(--mauve);
+    }
+
+.volume-widget .icon {
+    color: #74b0ff;
+    ;
+    margin: 0 2px 0 0;
+}
+
+.audio-menu {
+    background-color: rgba(25, 25, 25, 0.85);
+    min-width: 300px;
+    background-color: rgba(25, 25, 25, 0.85);
+    border-radius: 8px;
+    border: 1px solid var(--bg-color2);
+}
+    /* System volume */
+    .audio-menu .system-volume-container .volume-slider {
+        border: system;
+    }
+    /* Device list styles */
+    .audio-menu .audio-container .device {
+        background-color: transparent;
+        border: none;
+        padding: 6px 8px 6px 4px;
+        margin: 2px 0;
+        font-size: 12px;
+        border-radius: 4px;
+    }
+
+.audio-menu .audio-container .device.selected {
+            background-color: rgb(68, 65, 65);
+        }
+
+.audio-menu .audio-container .device:hover {
+            background-color: rgba(68, 65, 65, 0.85);
+        }
+    /* Toggle button for application volumes (if is enabled) */
+    .audio-menu .toggle-apps {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        min-height: 24px;
+        min-width: 24px;
+        border-radius: 4px;
+    }
+
+.audio-menu .toggle-apps.expanded {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+.audio-menu .toggle-apps:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+    /* Container for application volumes (if is enabled) */
+    .audio-menu .apps-container {
+        padding: 8px;
+        margin-top: 20px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.062)
+    }
+
+.audio-menu .apps-container .app-volume .app-icon-container {
+            min-width: 40px;
+            min-height: 40px;
+            max-width: 40px;
+            max-height: 40px;
+            border-radius: 6px;
+            margin-right: 8px;
+        }
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+.weather-widget .icon {
+    font-size: 18px;
+    margin: 0 2px 1px 0;
+    color: var(--yellow);
+}
+
+.weather-card {
+    background-color: rgba(25, 25, 25, 0.85);
+    border-radius: 8px;
+    min-width: 540px;
+    border: 1px solid var(--bg-color2);
+}
+
+.weather-card-today .label {
+    font-size: 12px;
+}
+
+.weather-card-today .label.location {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+.weather-card-today .label.alert {
+        font-size: 12px;
+        font-weight: 700;
+        background-color: rgba(25, 25, 25, 0.85);
+        border: 1px solid rgba(247, 209, 42, 0.1);
+        color: rgba(196, 181, 162, 0.85);
+        border-radius: 6px;
+        padding: 5px 0;
+    }
+
+.weather-card-day {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: rgba(25, 25, 25, 0.85);
+}
+
+.weather-card-day.active {
+        border: 1px solid rgb(61, 61, 80);
+    }
+
+.weather-card-day .label {
+        font-size: 12px;
+    }
+
+.weather-card .hourly-container {
+    background-color: transparent;
+    min-height: 150px;
+    border: none
+}
+
+.weather-card .hourly-data {
+    background-color: #FAE93F;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.media-widget {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    background-color: rgba(25, 25, 25, 0.85);
+}
+
+.media-widget .btn {
+        color: #7a7f8b;
+        padding: 0 4px;
+        margin: 0;
+        font-family: "JetBrainsMono NFP";
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+.media-widget .btn:hover {
+            color: #babfd3;
+        }
+
+.media-widget .btn.play {
+            font-size: 24px;
+            color: #989caa;
+        }
+
+.media-widget .btn.disabled:hover,
+        .media-widget .btn.disabled {
+            color: #4e525c;
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 20px;
+        }
+
+.media-menu {
+    min-width: 420px;
+    max-width: 420px;
+    background-color: rgba(25, 25, 25, 0.85);
+    border-radius: 8px;
+    border: 1px solid var(--bg-color2);
+}
+
+.media-menu .title,
+    .media-menu .artist,
+    .media-menu .source {
+        font-size: 14px;
+        font-weight: 600;
+        margin-left: 10px;
+        font-family: 'Segoe UI'
+    }
+
+.media-menu .artist {
+        font-size: 13px;
+        color: #6c7086;
+        margin-top: 0px;
+        margin-bottom: 8px;
+    }
+
+.media-menu .source {
+        font-size: 11px;
+        color: #000;
+        font-weight: normal;
+        border-radius: 3px;
+        background-color: #bac2de;
+        padding: 2px 4px;
+    }
+
+.media-menu .source.firefox {
+            background-color: #ff583b;
+            color: #ffffff;
+        }
+
+.media-menu .source.spotify {
+            background-color: #199143;
+            color: #ffffff;
+        }
+
+.media-menu .source.edge {
+            background-color: #0078d4;
+            color: #ffffff;
+        }
+
+.media-menu .source.windows-media {
+            background-color: #0078d4;
+            color: #ffffff;
+        }
+
+.media-menu .btn {
+        font-family: "Segoe Fluent Icons";
+        font-size: 14px;
+        font-weight: 400;
+        margin: 10px 2px 0px 2px;
+        min-width: 40px;
+        max-width: 40px;
+        min-height: 40px;
+        max-height: 40px;
+        border-radius: 20px;
+    }
+
+.media-menu .btn.prev {
+            margin-left: 10px;
+        }
+
+.media-menu .btn:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+.media-menu .btn.play {
+            background-color: rgba(255, 255, 255, 0.1);
+            font-size: 20px
+        }
+
+.media-menu .btn.disabled:hover,
+        .media-menu .btn.disabled {
+            color: #4e525c;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+.media-menu .playback-time {
+        font-size: 13px;
+        font-family: 'Segoe UI';
+        color: #7f849c;
+        margin-top: 20px;
+        min-width: 100px;
+    }
+
+.media-menu .progress-slider {
+        height: 10px;
+        margin: 5px 4px;
+        border-radius: 3px;
+    }
+
+.media-menu .progress-slider::groove {
+            background: transparent;
+            height: 2px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+.media-menu .progress-slider::groove:hover {
+                background: transparent;
+                height: 6px;
+                border-radius: 3px;
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+.media-menu .progress-slider::sub-page {
+            background: white;
+            border-radius: 3px;
+            height: 4px;
+        }
+
+.home-widget {
+    padding: 0 4px 0 12px;
+}
+
+.home-widget .icon {
+        color: #d4d9eb;
+    }
+
+.home-widget .icon:hover {
+            color: #d4d9eb;
+        }
+
+.home-menu {
+    background-color: rgba(25, 25, 25, 0.85);
+    border-radius: 8px;
+    border: 1px solid var(--bg-color2);
+}
+
+.home-menu .menu-item {
+        padding: 8px 48px 9px 16px;
+        font-size: 12px;
+        font-family: 'Segoe UI';
+        color: var(--text1);
+        font-weight: 600;
+    }
+
+.home-menu .menu-item:hover {
+            background-color: rgba(128, 130, 158, 0.15);
+            color: #fff;
+        }
+
+.home-menu .separator {
+        max-height: 1px;
+        background-color: rgba(128, 130, 158, 0.3);
+    }
+
+.notification-widget {
+    padding: 0 0px 0 4px;
+}
+
+.notification-widget .icon {
+        font-size: 14px;
+    }
+
+.notification-widget .icon.new-notification {
+            color: var(--blue);
+        }
+
+.calendar {
+    background-color: rgba(25, 25, 25, 0.85);
+    border-radius: 8px;
+    border: 1px solid var(--bg-color2);
+}
+
+.calendar .calendar-table,
+    .calendar .calendar-table::item {
+        background-color: rgba(17, 17, 27, 0);
+        color: rgba(162, 177, 196, 0.85);
+        font-family: "Segoe UI";
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+    }
+
+.calendar .calendar-table::item:selected {
+            color: #000000;
+            background-color: var(--blue);
+            border-radius: 10px;
+        }
+
+.calendar .day-label {
+        margin-top: 20px;
+    }
+
+.calendar .day-label,
+    .calendar .month-label,
+    .calendar .date-label,
+    .calendar .week-label,
+    .calendar .holiday-label {
+        font-family: "Segoe UI";
+        font-size: 16px;
+        color: #fff;
+        font-weight: 700;
+        min-width: 180px;
+        max-width: 180px;
+    }
+
+.calendar .week-label,
+    .calendar .holiday-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: rgba(162, 177, 196, 0.85);
+    }
+
+.calendar .holiday-label {
+        color: rgba(162, 177, 196, 0.85);
+        font-weight: 700;
+    }
+
+.calendar .month-label {
+        font-weight: normal;
+    }
+
+.calendar .date-label {
+        font-size: 88px;
+        font-weight: 900;
+        color: rgb(255, 255, 255);
+        margin-top: -20px;
+    }
+.systray {
+    background: transparent;
+    border: none;
+    margin: 0;
+}
+.systray .unpinned-container {
+    background: transparent;
+}
+.systray .pinned-container {
+    background: transparent;
+}
+.systray .button {
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.systray .button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+/* Icon being dragged, we already apply some transparency to it so you don't need to use it */
+.systray .button.dragging {}
+
+.systray .button.drag-over {
+     background: rgba(255, 255, 255, 0.4);
+}
+
+.systray .pinned-container.drop-target {
+    background: rgba(255, 255, 255, 0.1);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+    border: none;
+    outline: none;
+}
+
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+
+.systray .unpinned-visibility-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Popup styles (when show_in_popup is true) */
+ 
+/* The icon the drag is hovering over (drop target icon) */
+.systray-popup .button.drag-over {
+    background-color: rgba(25, 25, 25, 0.85);
+}
+/* Icon being dragged, we already apply some transparency to it so you don't need to use it */
+.systray-popup .button.dragging {}
+
+.systray .pinned-container.pinned-container.drop-target {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.systray-popup {
+    background-color: rgba(25, 25, 25, 0.85);
+    padding: 4px;
+    border-radius: 8px
+    
+}
+.systray-popup .button {
+    padding: 10px;
+    margin: 0;
+    border: 0;
+    border-radius: 6px;
+}
+.systray-popup .button:hover {
+    background-color: #3c3c3c;
+}
+/* Widget style */
+.launchpad-widget {
+    padding: 0 6px 0 6px;
+}
+
+.launchpad-widget:hover {
+        background: #3c3c3c;
+        margin: 4px 2px;
+        border-radius: 4px;
+        padding: 0 4px
+    }
+
+.launchpad-widget .label {
+    }
+
+.launchpad-widget .icon {
+        font-size: 16px;
+        color: #d4d9eb;
+    }
+
+/* Launchpad context menu style */
+.launchpad .context-menu {
+    background-color: #202020;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 0px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: 600
+}
+
+.launchpad .context-menu::item {
+        background-color: transparent;
+        padding: 6px 12px;
+        margin: 2px 6px;
+        border-radius: 4px;
+        min-width: 100px;
+    }
+
+.launchpad .context-menu::item:selected {
+            background-color: #3a3a3a;
+            color: #FFFFFF;
+        }
+
+.launchpad .context-menu::item:pressed {
+            background-color: #3A3A3A;
+        }
+
+.launchpad .context-menu::separator {
+        height: 1px;
+        background-color: #404040;
+        margin: 4px 8px;
+    }
+
+.launchpad .context-menu::item:disabled {
+        color: #666666;
+        background-color: transparent;
+    }
+
+/* Launchpad App dialog style */
+.launchpad .app-dialog {
+    font-family: 'Segoe UI';
+    background-color: #202020;
+}
+
+.launchpad .app-dialog .buttons-container {
+        background-color: #171717;
+        margin-top: 16px;
+        border-top: 1px solid #000;
+        max-height: 80px;
+        min-height: 80px;
+        padding: 0 20px 0 20px;
+    }
+
+.launchpad .app-dialog .message {
+        color: #FFFFFF;
+        font-family: 'Segoe UI';
+        font-size: 12px;
+        font-weight: 600;
+        padding: 10px 0
+    }
+
+.launchpad .app-dialog .title-field,
+    .launchpad .app-dialog .path-field,
+    .launchpad .app-dialog .icon-field,
+    .launchpad .app-dialog .group-field {
+        background-color: #181818;
+        border: 1px solid #303030;
+        border-radius: 4px;
+        padding: 0 6px;
+        font-family: 'Segoe UI';
+        font-size: 12px;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin: 10px 0px 5px 0;
+        min-height: 30px;
+    }
+
+.launchpad .app-dialog .title-field:focus,
+        .launchpad .app-dialog .path-field:focus,
+        .launchpad .app-dialog .icon-field:focus {
+            border-bottom-color: #4cc2ff;
+        }
+
+.launchpad .app-dialog .button {
+        background-color: #2d2d2d;
+        border: none;
+        border-radius: 4px;
+        font-family: 'Segoe UI';
+        font-size: 12px;
+        font-weight: 600;
+        color: #FFFFFF;
+        min-width: 80px;
+        padding: 0 6px;
+        margin: 10px 0 5px 6px;
+        min-height: 28px;
+        outline: none;
+    }
+
+.launchpad .app-dialog .buttons-container .button {
+        margin: 10px 0 5px 0px;
+        font-size: 13px;
+    }
+
+.launchpad .app-dialog .button:focus {
+        border: 2px solid #adadad;
+    }
+
+.launchpad .app-dialog .button:focus,
+    .launchpad .app-dialog .button:hover {
+        background-color: #4A4A4A;
+    }
+
+.launchpad .app-dialog .button:pressed {
+        background-color: #3A3A3A;
+    }
+
+.launchpad .app-dialog .button.add,
+    .launchpad .app-dialog .button.save {
+        background-color: #0078D4;
+    }
+
+.launchpad .app-dialog .button.add:focus,
+        .launchpad .app-dialog .button.save:focus,
+        .launchpad .app-dialog .button.add:hover,
+        .launchpad .app-dialog .button.save:hover {
+            background-color: #0066B2;
+        }
+
+.launchpad .app-dialog .button.add:pressed,
+        .launchpad .app-dialog .button.save:pressed {
+            background-color: #00509E;
+        }
+
+.launchpad .app-dialog .button.delete {
+        background-color: #bd2d14;
+    }
+
+.launchpad .app-dialog .button.delete:focus,
+        .launchpad .app-dialog .button.delete:hover {
+            background-color: #b30f00;
+        }
+
+.launchpad .app-dialog .button.delete:pressed {
+            background-color: #a00b00;
+        }
+
+.launchpad .app-dialog .warning-message {
+        background-color: #2b0b0e;
+        border: 1px solid #5a303c;
+        border-radius: 4px;
+        color: #cc9b9f;
+        font-family: 'Segoe UI';
+        font-size: 12px;
+        font-weight: 600;
+        padding: 8px 12px;
+        margin: 4px 0px;
+    }
+/* Launchpad popup style */
+.launchpad .drop-overlay {
+    background-color: rgba(25, 25, 25, 0.85);
+    border: 4px #3c80ff;
+    border-radius: 8px
+}
+
+.launchpad .drop-overlay .text {
+        color: #ffffff;
+        font-family: 'Segoe UI';
+        font-size: 64px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+.launchpad .launchpad-container {
+    background-color: rgba(25, 25, 25, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px
+}
+
+.launchpad .search-container {
+    border: 1px solid rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0);
+    min-height: 80px;
+    margin: 0;
+    padding: 0;
+    border-radius: 40px
+}
+
+.launchpad .search-input {
+    max-width: 400px;
+    padding: 8px 12px;
+    font-size: 14px;
+    min-height: 24px;
+    max-height: 24px;
+    font-family: 'Segoe UI';
+    border-radius: 20px;
+    border: 2px solid rgb(53, 54, 56);
+    background-color: rgba(0, 0, 0, 0.507);
+    color: #a6adc8;
+}
+
+.launchpad .search-input:focus {
+        border: 2px solid rgb(22, 114, 190);
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+.launchpad .launchpad-scroll-area {
+    background-color: transparent;
+    border: none;
+}
+
+.launchpad .app-icon {
+    background-color: rgba(25, 25, 25, 1);
+    border-radius: 12px;
+    border: 2px solid #3c3c3c;
+    padding-top: 10px;
+    margin: 24px 6px 6px 6px;
+    max-width: 110px;
+    min-width: 110px;
+    min-height: 110px;
+    max-height: 110px;
+}
+
+.launchpad .app-icon:focus {
+        border: 1px solid #89b4fa;
+        background-color: rgba(255, 255, 255, 0.06);
+    }
+
+.launchpad .app-icon:hover {
+        border: 1px solid #89b4fa;
+        background-color: rgba(255, 255, 255, 0.13);
+    }
+
+.launchpad .app-icon .title {
+        color: #a6adc8;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        margin-top: 2px;
+        font-weight: 600
+    }
+    /* App icon .launchpad .app-icon or URL icon .launchpad .app-icon.url */
+    .launchpad .app-icon.url .title {
+        color: #52f1d2;
+    }
+
+.launchpad .app-icon .icon {
+        padding: 0;
+        margin: 0
+    }
+
+/* Group icon styling */
+.launchpad .group-icon {
+    background-color: rgba(102, 10, 10, 0);
+    border-radius: 12px;
+    border: 2px solid rgba(112, 76, 32, 0);
+    padding-top: 10px;
+    margin: 24px 6px 6px 6px;
+    max-width: 110px;
+    min-width: 110px;
+    min-height: 110px;
+    max-height: 110px;
+}
+
+.launchpad .group-icon:focus {
+        border: 2px solid #89b4fa;
+        background-color: rgba(255, 255, 255, 0.06);
+    }
+
+.launchpad .group-icon:hover {
+        border: 2px solid #89b4fa;
+        background-color: rgba(255, 255, 255, 0.13);
+    }
+
+.launchpad .group-icon .group-icon-container {
+        background-color: rgb(39, 40, 43);
+        border: 1px solid rgb(47, 49, 53);
+        border-radius: 8px;
+    }
+
+.launchpad .group-icon .title {
+        color: #a6adc8;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        margin-top: 2px;
+        font-weight: 600;
+    }
+
+/* Per-group styling
+   Each group gets a class based on its group name:
+   - Lowercase conversion
+   - Spaces replaced with hyphens
+   Examples:
+   - "Browsers" group → .browsers
+   - "My Apps" group → .my-apps
+   - "Work Tools" group → .work-tools
+*/
+/* Back button when inside a group */
+.launchpad .group-back-button {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    text-align: left;
+    padding: 0 32px;
+}
+
+.launchpad .group-back-button:hover {
+        color: #ffffff;
+    }
+
+.taskbar-widget .app-container {
+    margin: 4px 2px;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+
+.taskbar-widget .app-container.foreground {
+        background-color: #3c3c3c;
+    }
+
+.taskbar-widget .app-container.flashing {
+        background-color: rgba(255, 106, 106, 0.63);
+    }
+
+.taskbar-widget .app-container.running {
+        background-color: rgba(25, 25, 25, 0.1);
+    }
+
+.taskbar-widget .app-container:hover {
+        background-color: #3c3c3c;
+    }
+
+.taskbar-widget .app-container .app-title {
+        padding-left: 4px;
+    }
+/* Taskbar preview popup is very limited in styling options, do not use margins/paddings here */
+.taskbar-preview {
+    border-radius: 8px;
+    background-color: rgba(25, 25, 25, 0.85);
+}
+
+.taskbar-preview.flashing {
+        background-color: #7f434a;
+    }
+
+.taskbar-preview .header {
+        padding-bottom: 12px;
+        padding-top: 4px;
+    }
+
+.taskbar-preview .header .title {
+            color: #d6d6d6;
+            font-family: "Segoe UI";
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+.taskbar-preview .close-button {
+        color: #999;
+        font-size: 20px;
+        background-color: transparent;
+        border: none;
+        min-width: 20px;
+        border-radius: 4px;
+        min-height: 20px;
+    }
+
+.taskbar-preview .close-button:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(226, 0, 0);
+        }
+
+.disk-widget {
+    padding: 0 6px 0 6px;
+    border-radius: 4px;
+    color: #202020;
+    background: transparent;
+}
+
+.disk-menu-popup {
+    background-color: rgba(25, 25, 25, 0.85);
+}
+
+.disk-widget:hover {
+    background: #3c3c3c;
+    margin: 4px 2px;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+
+.disk-group {
+    background-color: rgba(25, 25, 25, 0.85);
+    border-radius: 8px;
+    border: 1px solid var(--bg-color2);
+}
+
+.disk-group-row {
+    min-width: 220px;
+    max-width: 220px;
+    max-height: 40px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+
+.disk-group-row:hover {
+        background-color: rgba(25, 25, 25, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+.disk-group-label-bar {
+    max-height: 8px;
+    border: 0px solid rgba(128, 128, 128, 0);
+    background-color: rgba(137, 180, 250, 0.1);
+    border-radius: 4px;
+}
+
+.disk-group-label-bar:chunk {
+        background-color: #3c3c3c;
+        border-radius: 4px;
+    }
+
+.disk-group-label {
+    font-size: 10px;
+}
+
+.disk-group-label-size {
+    font-size: 10px;
+    color: #666879;
+}
+
+.cpu-widget {
+    padding: 0 8px;
+}
+
+.windows-desktops {
+    padding: 0 4px 0 14px;
+}
+
+.windows-desktops .widget-container {
+        background-color: rgba(25, 25, 25, 0.4);
+        margin: 4px 0 4px 0;
+        border-radius: 12px;
+    }
+
+.windows-desktops .ws-btn {
+        color: #3c3c3c;
+        border: none;
+        font-size: 14px;
+        margin: 0 3px;
+        padding: 0
+    }
+
+.windows-desktops .ws-btn.active {
+            color: #d4d9eb;
+        }
+
+.windows-desktops .ws-btn.active {
+            color: #d4d9eb;
+        }
+
+.windows-desktops .context-menu {
+        background-color: rgba(25, 25, 25, 0.1);
+        border: none;
+        border-radius: 2px;
+        padding: 8px 0;
+    }
+
+.windows-desktops .context-menu .menu-item {
+            padding: 6px 16px;
+        }
+
+.windows-desktops .context-menu .menu-item:hover {
+                background-color: rgba(255,255,255,0.05);
+                color: #ffffff;
+            }
+
+.windows-desktops .context-menu .separator {
+            margin: 2px 0px 2px 0px;
+            height: 1px;
+            background-color: rgba(255,255,255,0.1);
+        }
+
+.windows-desktops .rename-dialog {
+        background-color: rgba(17, 17, 27, 0.75);
+    }
+
+.windows-desktops .rename-dialog QPushButton {
+            background-color: rgba(255,255,255,0.1);
+            color: #ffffff;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+.windows-desktops .rename-dialog QPushButton:hover {
+                background-color: #585858;
+                color: #ffffff;
+                border: none;
+                padding: 4px 12px;
+                border-radius: 4px;
+            }
+
+.windows-desktops .rename-dialog QLabel {
+            color: #ffffff;
+        }
+
+.windows-desktops .rename-dialog QLineEdit {
+            background-color: transparent;
+            border: 1px solid #89b4fa;
+            padding: 4px;
+            color: #ffffff;
+        }
+.update-check-widget {
+    padding: 0 4px;
+}
+
+.update-check-widget .icon {
+        font-size: 14px;
+    }
+
+.update-check-widget .widget-container.winget,
+    .update-check-widget .widget-container.scoop,
+    .update-check-widget .widget-container.windows {
+        background: rgba(25, 25, 25, 0);
+        margin: 6px 2px;
+        border-radius: 4px;
+        border: 0px solid rgba(25, 25, 25, 0.85);
+    }
+
+.update-check-widget .widget-container.paired-left {
+        margin-left: 2px;
+    }
+
+.update-check-widget .widget-container.paired-right {
+        margin-right: 2px;
+    }
+
+.update-check-widget .widget-container.windows {
+        background: #3353e4;
+        border: 1px solid #5574fc;
+    }
+
+.update-check-widget .widget-container.scoop {
+        background: #2b9e78;
+        border: 1px solid #4ac59c;
+    }
+
+.update-check-widget .widget-container.winget .icon,
+        .update-check-widget .widget-container.scoop .icon,
+        .update-check-widget .widget-container.windows .icon {
+            color: #ffffff;
+            margin: 0 1px 0 6px;
+        }
+
+.update-check-widget .widget-container.winget .label,
+        .update-check-widget .widget-container.scoop .label,
+        .update-check-widget .widget-container.windows .label {
+            margin: 0 6px 0 1px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+.notes-widget {
+    padding: 0;
+}
+
+.notes-widget .label {
+        font-size: 14px;
+        color: #d4d9eb;
+    }
+
+.notes-widget .icon {
+        font-size: 16px;
+        color: #d4d9eb;
+    }
+/* Notes Widget Menu */
+.notes-menu {
+    min-width: 400px;
+    max-width: 400px;
+    background-color: rgba(25, 25, 25, 0.85);
+    border-radius: 8px;
+    border: 1px solid var(--bg-color2);
+}
+    /* Floating state - can have different size */
+    .notes-menu.floating {
+        min-width: 600px;
+        max-width: 600px;
+        min-height: 600px;
+        max-height: 600px;
+    }
+    /* Notes Widget Menu Header */
+    .notes-menu .notes-header {
+        background-color: rgba(0, 0, 0, 0);
+        padding: 4px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+.notes-menu .notes-header .header-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: white;
+        }
+
+.notes-menu .notes-header .float-button,
+        .notes-menu .notes-header .close-button {
+            background-color: transparent;
+            border: none;
+            color: #cfcfcf;
+            font-size: 16px;
+            padding: 4px;
+        }
+
+.notes-menu .notes-header .float-button:hover,
+            .notes-menu .notes-header .close-button:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 4px;
+            }
+
+.notes-menu .note-item {
+        background-color: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+.notes-menu .note-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+.notes-menu .note-item .icon {
+            font-size: 16px;
+            padding: 0 4px;
+        }
+
+.notes-menu .delete-button {
+        color: #ff6b6b;
+        background: transparent;
+        border: none;
+        font-size: 8px;
+        padding: 7px 8px;
+        border-radius: 3px;
+    }
+
+.notes-menu .delete-button:hover {
+            background-color: rgba(128, 128, 128, 0.5);
+        }
+
+.notes-menu .copy-button {
+        color: #babfd3;
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        padding: 4px 8px;
+        border-radius: 3px;
+    }
+
+.notes-menu .copy-button:hover {
+            background-color: rgba(128, 128, 128, 0.5);
+        }
+
+.notes-menu .copy-button:pressed {
+            color: #ffffff;
+        }
+
+.notes-menu .note-item .title {
+        font-size: 13px;
+        font-family: 'Segoe UI'
+    }
+
+.notes-menu .note-item .date {
+        font-size: 12px;
+        font-family: 'Segoe UI';
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+.notes-menu .empty-list {
+        font-family: 'Segoe UI';
+        color: rgba(255, 255, 255, 0.2);
+        font-size: 24px;
+        font-weight: 600;
+        padding: 10px 0 20px 0;
+    }
+
+.notes-menu .add-button,
+    .notes-menu .cancel-button {
+        padding: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-family: 'Segoe UI'
+    }
+
+.notes-menu .cancel-button {
+        margin-left: 4px;
+    }
+
+.notes-menu .add-button:hover,
+        .notes-menu .cancel-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+.notes-menu .scroll-area {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+    }
+
+.notes-menu .note-input {
+        background-color: rgba(17, 17, 27, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        max-height: 30px;
+        padding: 4px;
+        border-radius: 6px;
+    }
+
+.note-input:focus {
+    border: 1px solid #89b4fa;
+}
+
+.notes-menu .input-copy-button {
+    color: #babfd3;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.notes-menu .input-copy-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+.notes-menu .input-copy-button:pressed {
+        color: #ffffff;
+    }
+    /* Quick Launch Widget */
+.quick-launch-widget .icon {
+	font-size: 14px;
+	padding: 0 4px;
+}
+.quick-launch-widget .icon:hover {
+	        background: #3c3c3c;
+        margin: 4px 2px;
+        border-radius: 4px;
+        padding: 0 4px
+}
+
+/* Quick Launch Popup - main window */
+.quick-launch-popup .container {
+	background-color: rgba(25, 25, 25, 0.85);
+  border: 1px solid var(--bg-color2);
+  border-radius: 8px;
+}
+/* Search bar container */
+.quick-launch-popup .search {
+	padding: 12px 16px;
+	background-color: transparent;
+  border-radius: 8px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+/* Search loader line color */
+.quick-launch-popup .search .loader-line {
+	color: #449bff;
+}
+.quick-launch-popup .search .search-icon {
+	font-family: "Segoe Fluent Icons";
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.6);
+	padding-right: 8px;
+	min-width: 18px;
+}
+.quick-launch-popup .search .search-submit-icon {
+	font-family: "Segoe Fluent Icons";
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.6);
+	min-width: 18px;
+}
+.quick-launch-popup .search .search-input {
+	background: transparent;
+	border: none;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: "Segoe UI";
+	font-weight: 400;
+	padding: 4px 0;
+}
+/* Search prefix styling (e.g., ">" for commands) */
+.quick-launch-popup .search .prefix {
+	background: #2167d8;
+	border-radius: 6px;
+	color: #ffffff;
+	padding: -2px 8px 0px 8px;
+	margin-top: 2px;
+	margin-right: 4px;
+	font-size: 13px;
+	font-weight: 600;
+	font-family: "Segoe UI";
+	max-height: 28px;
+}
+
+/* Results list */
+.quick-launch-popup .results {
+	background: transparent;
+	padding: 8px;
+}
+/* Individual result item here you can set font szie for title */
+.quick-launch-popup .results-list-view {
+	font-size: 16px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	color: #ffffff;
+}
+.quick-launch-popup .results-list-view .description {
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 11px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+}
+.quick-launch-popup .results-list-view .separator {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    padding: 4px 0 4px 12px;
+}
+/* Result item hover and selected states */
+.quick-launch-popup .results-list-view::item {
+	padding: 12px;
+	border-radius: 8px;
+}
+.quick-launch-popup .results-list-view::item:hover,
+.quick-launch-popup .results-list-view::item:selected {
+	background-color: rgba(128, 130, 158, 0.1);
+}
+/* Empty state when no results found */
+.quick-launch-popup .results-empty-text {
+	font-size: 24px;
+	font-family: "Segoe UI";
+	color: rgb(255, 255, 255);
+	padding-top: 8px;
+}
+
+/* Preview Pane */
+.quick-launch-popup .preview {
+	background: rgba(0, 0, 0, 0);
+	border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+.quick-launch-popup .preview .preview-text {
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.85);
+	padding: 8px 12px;
+	font-family: "Segoe UI";
+	background-color: rgba(255, 255, 255, 0.03);
+	border: none;
+}
+.quick-launch-popup .preview .preview-image {
+	background-color: rgba(255, 255, 255, 0.03);
+	padding: 8px 12px;
+}
+.quick-launch-popup .preview .preview-meta {
+	padding: 6px 12px;
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+	font-family: "Segoe UI";
+}
+.quick-launch-popup .preview .preview-meta .preview-title {
+	font-size: 14px;
+	font-weight: 600;
+	color: rgb(255, 255, 255);
+	font-family: "Segoe UI";
+	margin-bottom: 10px;
+	margin-left: -2px;
+}
+
+.quick-launch-popup .preview .preview-meta .preview-subtitle {
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.8);
+	font-family: "Segoe UI";
+	padding-bottom: 1px;
+}
+
+/* Preview inline edit form (.preview.edit) */
+.quick-launch-popup .preview.edit .preview-title {
+	font-size: 13px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	color: #ffffff;
+	padding: 8px 12px 4px 12px;
+}
+.quick-launch-popup .preview.edit .preview-line-edit {
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 4px;
+	color: #ffffff;
+	font-size: 13px;
+	font-family: "Segoe UI";
+	padding: 6px 8px;
+	margin: 0 12px;
+}
+.quick-launch-popup .preview.edit .preview-line-edit:focus {
+	border-color: rgba(255, 255, 255, 0.3);
+}
+.quick-launch-popup .preview.edit .preview-text-edit {
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 4px;
+	color: #ffffff;
+	font-size: 13px;
+	font-family: "Segoe UI";
+	padding: 6px 8px;
+	margin: 0 12px;
+}
+.quick-launch-popup .preview.edit .preview-text-edit:focus {
+	border-color: rgba(255, 255, 255, 0.3);
+}
+.quick-launch-popup .preview.edit .preview-actions {
+	padding: 8px 12px;
+}
+.quick-launch-popup .preview.edit .preview-btn {
+	background: rgb(45, 46, 48);
+	border: none;
+	border-radius: 4px;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 12px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	padding: 4px 16px;
+}
+.quick-launch-popup .preview.edit .preview-btn:hover {
+	background: rgb(59, 60, 63);
+}
+.quick-launch-popup .preview.edit .preview-btn.save {
+	background: rgb(12, 81, 190);
+	color: #ffffff;
+}
+.quick-launch-popup .preview.edit .preview-btn.save:hover {
+	background: rgb(19, 90, 204);
+}
