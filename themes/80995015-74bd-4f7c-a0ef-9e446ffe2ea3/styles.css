@@ -77,8 +77,9 @@
 .glazewm-workspaces .widget-container,
 .glazewm-tiling-direction .widget-container {
     background-color: var(--background-color);
-    border-radius: 12px;
-    margin: 4px 0;
+    border-radius: 11px;
+    margin: 5px 0;
+    padding: 0px 5px 0px 5px;
     border: 1px solid var(--border-color);
 }
 
