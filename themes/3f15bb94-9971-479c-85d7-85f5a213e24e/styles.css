@@ -1,0 +1,612 @@
+:root {
+    --font-name-primary: "JetBrainsMono NFP", monospace;
+    --font-name-secondary: "JetBrainsMono NFP", monospace;
+
+/* Clean System Color Palette */
+    --bg-taskbar: rgba(25, 25, 25, 0.9);
+    --bg-primary: rgba(30, 30, 30, 0.95);
+    --bg-secondary: rgba(30, 30, 30, 1);
+    --bg-hover: rgba(60, 60, 60, 1);
+
+--text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-color: palette(highlight);
+    --separator-color: #444444; /* Neutral dark grey dividers */
+
+/* System State Colors */
+    --color-good: #4cc864;
+    --color-bad: #e81123;
+    --color-warn: #fbc100;
+
+--text-small: 11px;
+    --text-normal: 13px;
+    --text-lg: 14px;
+    --text-xl: 16px;
+    --font-normal: 400;
+    --font-bold: 600;
+}
+
+* {
+    font-size: var(--text-normal);
+    color: var(--text-primary);
+    font-weight: var(--font-normal);
+    font-family: var(--font-name-primary);
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.yasb-bar {
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-taskbar);
+}
+
+.widget {
+    padding: 0 10px;
+    margin: 8px 0; /* Shrinks the box for the shorter line */
+    background-color: transparent;
+    border-radius: 0;
+    border-right: 1px solid var(--separator-color);
+}
+
+.media-widget {
+    margin: 8px 0;
+    padding: 0 8px;
+}
+
+.sysinfo-toggle,
+.system-behavior_toggle {
+    margin: 8px 0;
+    padding: 0 10px;
+    border-right: 1px solid var(--separator-color);
+}
+
+.sysinfo-toggle .widget,
+.system-behavior_toggle .widget {
+    margin: 0;
+    padding: 0 10px;
+    border-right: 1px solid var(--separator-color);
+}
+
+/* Hide the duplicate line at the very end of the inside of the toggle */
+.sysinfo-toggle .widget:last-child,
+.system-behavior_toggle .widget:last-child {
+    border-right: none;
+}
+
+.home-widget,
+.windows-desktops,
+.weather-widget,
+.taskbar-widget {
+    margin: 0;
+    border-right: none;
+}
+
+.widget:hover {
+    background-color: transparent;
+}
+
+.widget .label {
+    padding: 0;
+    font-family: var(--font-name-primary);
+}
+
+.widget .label span {
+    color: var(--accent-color);
+    margin-right: 4px;
+    font-size: var(--text-normal);
+}
+
+/* Unifying all popup menus */
+.media-menu,
+.traffic-menu,
+.audio-menu,
+.home-menu,
+.calendar,
+.language-menu,
+.weather-card,
+.disk-group {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--separator-color);
+    border-radius: 0px;
+}
+
+.media-menu .btn,
+.notes-menu .note-item,
+.notes-menu .button,
+.audio-container .device,
+.calendar .calendar-table::item:selected {
+    border-radius: 0px;
+}
+
+/* Workspaces / Tags */
+.windows-desktops {
+    background: transparent;
+}
+.windows-desktops .ws-btn {
+    color: var(--text-secondary);
+    background-color: transparent;
+    padding: 0 10px;
+    margin: 0;
+    min-width: 18px;
+}
+.windows-desktops .ws-btn.active {
+    color: var(--accent-color);
+    font-weight: var(--font-bold);
+}
+
+/* Tooltip */
+.tooltip {
+    margin-top: 4px;
+    padding: 4px 8px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--separator-color);
+    color: var(--text-primary);
+}
+
+/* Home */
+.home-widget .icon {
+    font-size: var(--text-lg);
+}
+.home-menu {
+    padding: 6px;
+}
+.home-menu .menu-item {
+    padding: 8px 12px;
+    margin: 2px 0;
+    font-size: var(--text-lg);
+}
+.home-menu .menu-item:hover {
+    background-color: var(--bg-hover);
+}
+.home-menu .separator {
+    max-height: 1px;
+    background-color: var(--separator-color);
+    margin: 4px 0;
+}
+
+/* Language Popup Menu Items */
+.language-menu {
+    background-color: var(--bg-primary);
+    min-width: 300px;
+}
+.language-menu .header {
+    font-family: var(--font-name-primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: rgba(17, 17, 27, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.language-menu .footer {
+    font-family: var(--font-name-primary);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: #9399b2;
+    background-color: rgba(17, 17, 27, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.language-menu .footer:hover {
+    background-color: rgba(36, 36, 51, 0.6);
+    color: #fff;
+}
+.language-menu .language-item {
+    padding: 6px 12px;
+    margin: 2px 4px;
+}
+
+.language-menu .language-item .icon {
+    font-size: 12px;
+    margin-right: 10px;
+    color: #fff;
+}
+
+/* Weather */
+.weather-widget .icon {
+    margin: 0 2px 0 0;
+}
+.weather-widget .icon.sunnyDay {
+    color: var(--color-warn);
+}
+.weather-widget .icon.clearNight {
+    font-size: var(--text-xl);
+}
+.weather-card-today .label {
+    font-size: var(--text-normal);
+}
+.weather-card-today .label.location {
+    font-size: 20px;
+    font-weight: var(--font-bold);
+}
+.weather-card-today .label.alert {
+    font-weight: var(--font-bold);
+    border: 1px solid var(--color-warn);
+    color: var(--color-warn);
+    padding: 5px 0;
+}
+.weather-card-day.active {
+    background-color: var(--bg-hover);
+    border: 1px solid var(--separator-color);
+}
+.weather-card-day:hover {
+    background-color: var(--bg-hover);
+}
+.weather-card .hourly-container {
+    min-height: 150px;
+    background-color: transparent;
+}
+.weather-card .hourly-data {
+    background-color: var(--accent-color);
+    font-weight: var(--font-bold);
+}
+
+/* Clock */
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+}
+.calendar .calendar-table::item:selected {
+    color: var(--text-primary);
+    background-color: var(--bg-hover);
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label,
+.calendar .week-label,
+.calendar .holiday-label {
+    font-size: var(--text-lg);
+    min-width: 250px;
+    max-width: 270px;
+}
+.calendar .week-label {
+    font-weight: var(--font-bold);
+    color: var(--text-secondary);
+}
+.calendar .holiday-label {
+    color: var(--text-primary);
+    font-weight: var(--font-bold);
+}
+.calendar .date-label {
+    font-size: 89px;
+    font-weight: 800;
+    margin-top: -12px;
+}
+
+/* Volume */
+.volume-slider {
+    padding: 8px;
+}
+.audio-container .device {
+    padding: 8px;
+    border: 1px solid transparent;
+}
+.audio-container .device.selected {
+    background-color: var(--bg-hover);
+    border: 1px solid var(--separator-color);
+}
+.audio-container .device:hover {
+    background-color: var(--bg-hover);
+}
+
+/* Cpu */
+.cpu-widget .icon {
+    padding-bottom: 1px;
+}
+.cpu-widget .label {
+    padding-top: 1px;
+}
+
+/* Disk */
+.disk-group-row {
+    min-width: 270px;
+    max-width: 320px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 20px;
+    border: 1px solid transparent;
+}
+.disk-group-row:hover {
+    background-color: var(--bg-hover);
+    border: 1px solid var(--separator-color);
+}
+.disk-group-label-bar {
+    margin-bottom: 12px;
+    max-height: 8px;
+    background-color: var(--bg-hover);
+}
+.disk-group-label-bar::chunk {
+    background-color: var(--accent-color);
+}
+.disk-group-label-size {
+    color: var(--text-secondary);
+}
+
+/* Traffic */
+.traffic-widget .icon.offline {
+    color: var(--color-bad);
+}
+.traffic-menu {
+    min-width: 420px;
+}
+.traffic-menu .header .title {
+    padding: 14px;
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+}
+.traffic-menu .header .reset-button {
+    padding: 4px 8px;
+    margin-right: 14px;
+    font-weight: var(--font-bold);
+}
+.traffic-menu .reset-button:hover {
+    background-color: var(--bg-hover);
+    border: 1px solid var(--separator-color);
+}
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+    padding: 10px;
+    margin: 16px 12px 0 12px;
+}
+.traffic-menu .speed-separator {
+    max-width: 1px;
+    background-color: transparent;
+    margin: 32px 0 16px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+    font-size: 24px;
+    font-weight: 800;
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+    font-weight: var(--font-bold);
+    padding-top: 8px;
+}
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+    color: var(--text-secondary);
+    padding-bottom: 18px;
+}
+.traffic-menu .section-title {
+    font-weight: var(--font-bold);
+    margin-bottom: 4px;
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+    margin: 8px 8px 0 8px;
+    padding: 0 10px 10px 10px;
+}
+.traffic-menu .data-text {
+    color: var(--text-secondary);
+    padding: 4px;
+}
+.traffic-menu .data-value {
+    font-weight: var(--font-bold);
+    padding: 4px;
+}
+.traffic-menu .interface-info {
+    margin-top: 12px;
+    border-top: 1px solid var(--separator-color);
+}
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+    color: var(--text-secondary);
+    padding: 8px 0;
+}
+.traffic-menu .internet-info.connected {
+    color: var(--color-good);
+}
+.traffic-menu .internet-info.disconnected {
+    color: var(--color-bad);
+}
+
+/* Taskbar */
+.taskbar-widget {
+    margin-left: 27px;
+}
+.taskbar-widget .app-container {
+    padding: 0 7px;
+    margin: 0 1px;
+}
+.taskbar-widget .app-container:hover {
+    background-color: var(--bg-hover);
+}
+.taskbar-widget .app-container.foreground {
+    background-color: var(--separator-color);
+}
+.taskbar-widget .app-container.flashing {
+    background-color: var(--color-bad);
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
+.taskbar-preview {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--separator-color);
+}
+.taskbar-preview .header {
+    padding-bottom: 18px;
+    padding-top: 8px;
+}
+.taskbar-preview .header .title {
+    font-weight: var(--font-bold);
+}
+
+/* Systray */
+.systray .unpinned-container {
+    margin: 0px;
+    padding: 0 4px;
+    border-right: 1px solid var(--text-secondary);
+}
+.systray .pinned-container {
+    padding: 0 4px;
+}
+.systray .button {
+    padding: 6px;
+    outline: none;
+}
+.systray .button:hover {
+    background-color: var(--bg-hover);
+}
+.systray .button[dragging="true"] {
+    background-color: var(--bg-hover);
+    border: 1px solid var(--color-good);
+}
+.systray .unpinned-visibility-btn {
+    height: 20px;
+    width: 16px;
+    outline: none;
+}
+
+/* Media Bar Buttons */
+.media-widget .label {
+    padding: 2px 5px 2px 0;
+}
+.media-widget .btn {
+    color: var(--text-secondary);
+    padding: 0 6px;
+    margin: 0 4px;
+    min-width: 10px;
+    background-color: transparent;
+    font-family: "JetBrainsMono NFP", monospace; /* bugfix*/
+}
+.media-widget .btn:hover {
+    color: var(--text-primary);
+}
+.media-widget .btn.play {
+    font-size: var(--text-lg);
+}
+.media-widget .btn.disabled,
+.media-widget .btn.disabled:hover {
+    color: var(--separator-color);
+}
+
+/* Media Popup Menu */
+.media-menu {
+    min-width: 440px;
+    max-width: 540px;
+}
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-left: 20px;
+}
+.media-menu .artist {
+    font-size: var(--text-normal);
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+.media-menu .source {
+    font-size: 11px;
+    color: var(--text-secondary);
+    background-color: var(--bg-hover);
+    padding: 4px 8px;
+    margin-top: 10px;
+}
+.media-menu .btn {
+    font-family: "JetBrainsMono NFP", monospace; /* bugfix */
+    font-size: var(--text-lg);
+    margin: 10px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    background-color: var(--bg-hover);
+}
+.media-menu .btn.play {
+    background-color: var(--bg-hover);
+    font-size: 20px;
+}
+.media-menu .btn.play:hover {
+    background-color: var(--separator-color);
+}
+.media-menu .btn.disabled,
+.media-menu .btn.disabled:hover {
+    color: var(--separator-color);
+    background-color: transparent;
+}
+
+.media-menu .playback-time {
+    color: var(--text-secondary);
+    margin-top: 20px;
+    min-width: 100px;
+}
+
+/* Media Progress Bar Visibility */
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 10px 4px 14px 4px;
+}
+.media-menu .progress-slider::groove {
+    height: 4px;
+    background: var(--separator-color);
+}
+.media-menu .progress-slider::groove:hover {
+    height: 6px;
+    background: var(--separator-color);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--accent-color);
+    height: 4px;
+}
+
+.media-menu .app-volume-container {
+    background-color: var(--bg-hover);
+    padding: 8px 6px;
+    margin-left: 10px;
+}
+.media-menu .app-volume-container .volume-slider::groove {
+    background: var(--separator-color);
+    width: 4px;
+}
+.media-menu .app-volume-container .volume-slider::add-page {
+    background: var(--accent-color);
+}
+.media-menu .app-volume-container .volume-slider::groove:hover {
+    background: var(--separator-color);
+    width: 6px;
+}
+.media-menu .app-volume-container .volume-slider::sub-page {
+    background: var(--separator-color);
+}
+.media-menu .app-volume-container .mute-button,
+.media-menu .app-volume-container .unmute-button {
+    font-size: var(--text-lg);
+    margin-top: 4px;
+}
+.media-menu .app-volume-container .unmute-button {
+    color: var(--text-secondary);
+}
+
+/* --- Grouper Toggle Button Hover States --- */
+
+/* 1. Default state: Dim grey */
+.sysinfo-toggle .grouper-button,
+.system-behavior_toggle .grouper-button {
+    color: var(--text-secondary);
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+/* 2. Hover state: Bright white */
+.sysinfo-toggle .grouper-button:hover,
+.system-behavior_toggle .grouper-button:hover {
+    color: var(--text-primary);
+}
