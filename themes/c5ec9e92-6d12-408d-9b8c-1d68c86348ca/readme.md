@@ -2,19 +2,22 @@
 
 > *A dark, minimal, glass-and-grain status bar experience powered by Catppuccin Mocha.*
 
----
-
 ## ✨ Preview
 
-| Widget | Preview |
-  |--------|---------|
-  | Yasb Bar| ![Bar](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_bar_yasb-bar_20260406_004705.png) |
-  | AI Chat | ![AI Chat](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_ai-chat.png) |
-  | Memory Popup | ![Memory](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_memory.png) |
-  | Notes | ![Notes](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_notes.png) |
-  | Todo | ![Todo](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_todo.png) |
+### Yasb Bar
+![Yasb Bar](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_bar_yasb-bar_20260406_004705.png)
 
----
+### AI Chat
+![AI Chat](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_ai-chat.png)
+
+### Memory Popup
+![Memory Popup](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_memory.png)
+
+### Notes
+![Notes](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_notes.png)
+
+### Todo
+![Todo](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_todo.png)
 
 ## 🛠️ Requirements
 
