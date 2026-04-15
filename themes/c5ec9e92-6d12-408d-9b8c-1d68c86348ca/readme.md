@@ -25,7 +25,3 @@
 [Ollama](https://ollama.com/) — Local AI (for AI Chat widget)
 
 [JetBrainsMono Nerd Font Propo](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs
-
----
-
-## ⚙️ Pre requisi
