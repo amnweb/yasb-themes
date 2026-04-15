@@ -17,6 +17,11 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Glazing Mocha](themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca)
+
+<a title="Glazing Mocha YASB Theme" href="themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/image.png" width="830px"></a>
+
+
 ## [dwmblocks](themes/3f15bb94-9971-479c-85d7-85f5a213e24e)
 
 <a title="dwmblocks YASB Theme" href="themes/3f15bb94-9971-479c-85d7-85f5a213e24e"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/image.png" width="830px"></a>
