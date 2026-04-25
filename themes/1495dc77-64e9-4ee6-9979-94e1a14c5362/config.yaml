@@ -1,0 +1,326 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: true
+    blur_effect:
+      enabled: true
+      acrylic: false
+      dark_mode: true
+      round_corners: true
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 32
+    padding:
+      top: 4
+      left: 4
+      bottom: 4
+      right: 4
+    widgets:
+      left: ["power_menu", "komorebi_workspaces", "active_window"]
+      center: ["clock", "media", "center-grouper"]
+      right: ["memory", "cpu_temp", "wifi", "volume", "battery", "notifications"]
+
+widgets:
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\ue62a"
+      uptime: true
+      blur: false
+      blur_background: true
+      animation_duration: 170
+      button_row: 6
+      buttons:
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        lock: ["\udb80\udf3e", "Lock"]
+        signout: ["\uf08b", "Sign out"]
+        hibernate: ["\uf28e", "Hibernate"]
+        sleep: ["\udb82\udd04", "Sleep"]
+        cancel: ["", "Cancel"]
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "\u23fc Offline"
+      label_workspace_btn: "\udb81\udc3d"
+      label_workspace_active_btn: ""
+      label_workspace_populated_btn: "\udb81\udc3e"
+      label_default_name: "{index}"
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+      animation: true
+  komorebi_control:
+    type: "komorebi.control.KomorebiControlWidget"
+    options:
+      label: "<span>\udb85\uddfc</span>"
+      icons:
+        start: "\uead3"
+        stop: "\uead7"
+        reload: "\uead2"
+      run_ahk: false
+      run_whkd: true
+      show_version: true
+      komorebi_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "left"
+        direction: "down"
+        offset_top: 10
+        offset_left: -120
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_no_window: ""
+      label_alt: "{win[app_name]}"
+      label_icon: true
+      label_icon_size: 14
+      max_length: 22
+      max_length_ellipsis: "..."
+      monitor_exclusive: false
+      rewrite:
+        - pattern: "^(.+?)\\.exe$"
+          replacement: "\\1"
+          case: title
+        - pattern: "\\bui\\b"
+          replacement: "UI"
+        - pattern: "^(.*) — Zen Browser$"
+          replacement: "Zen Browser"
+        - pattern: "^IntelliJ IDEA Community Edition$"
+          replacement: "IntelliJ IDE"
+        - pattern: "^.* - (.+)$"
+          replacement: "\\1"
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a, %d %b %H:%M}"
+      label_alt: "{%A, %d %B %Y %H:%M:%S}"
+      timezones: []
+      calendar:
+        alignment: "center"
+        border_color: "None"
+        offset_top: 6
+  apps:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - { icon: "\uf0a2", launch: "notification_center" }
+        - { icon: "\uf422", launch: "start ms-settings:Findasetting" }
+  appsd:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - { icon: "\uf489", launch: "wt.exe" }
+        - { icon: "\ue690", launch: "quick_settings" }
+  appse:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
+  center-grouper:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "center-grouper"
+      widgets: ["apps", "komorebi_control", "appse", "wallpapers", "appsd"]
+      collapse_options:
+        enabled: false
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\uf00f</span>"
+      # Set this to the folder where your wallpapers are stored
+      # Example: "C:\\Users\\YourName\\Pictures\\Wallpapers"
+      image_path: "C:\\Users\\{username}\\Walls"
+      change_automatically: false
+      update_interval: 60
+      gallery:
+        enabled: true
+        blur: true
+        image_width: 240
+        image_per_page: 6
+        show_buttons: false
+        orientation: "landscape"
+        image_spacing: 10
+        lazy_load: true
+        lazy_load_delay: 5
+        lazy_load_fadein: 100
+        image_corner_radius: 8
+        enable_cache: true
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title} - {artist}"
+      label_alt: "{artist} - {title}"
+      hide_empty: true
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      max_field_size:
+        label: 27
+        label_alt: 42
+      show_thumbnail: false
+      controls_only: false
+      controls_left: true
+      controls_hide: false
+      thumbnail_alpha: 80
+      thumbnail_padding: 8
+      thumbnail_corner_radius: 16
+      icons:
+        prev_track: "\udb81\udcae"
+        next_track: "\udb81\udcad"
+        play: "\uf144"
+        pause: "\uf28b"
+      media_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "None"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        thumbnail_corner_radius: 10
+        thumbnail_size: 120
+        max_title_size: 28
+        max_artist_size: 20
+        show_source: true
+      media_menu_icons:
+        play: "\ue768"
+        pause: "\ue769"
+        prev_track: "\ue892"
+        next_track: "\ue893"
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uebe4</span> {virtual_mem_outof}"
+      label_alt: "<span>\uf4bc</span> {virtual_mem_outof}%"
+      update_interval: 5000
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+        on_left: "exec cmd /c Taskmgr"
+  cpu_temp:
+    type: "yasb.libre_monitor.LibreHardwareMonitorWidget"
+    options:
+      label: "<span>\uefa7</span>{info[value]}{info[unit]}"
+      label_alt: "<span>\uefa7</span>{info[value]}{info[unit]}"
+      # To find your sensor_id: open LibreHardwareMonitor, go to
+      # http://localhost:8085 in your browser, find your CPU temperature
+      # sensor and copy its path. Replace the value below with your sensor_id.
+      # Common examples:
+      # Intel: /intelcpu/0/temperature/12
+      # AMD:   /amdcpu/0/temperature/0
+      sensor_id: "/intelcpu/0/temperature/12"
+      update_interval: 2000
+      precision: 0
+      server_host: "localhost"
+      server_port: 8085
+      connection_error_label: "LHM offline"
+      sensor_id_error_label: "N/A"
+      class_name: "cpu-temp-widget"
+    callbacks:
+      on_left: "do_nothing"
+      on_middle: "do_nothing"
+      on_right: "do_nothing"
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span> {wifi_strength}%"
+      label_alt: "<span>{wifi_icon}</span> {wifi_name}"
+      update_interval: 5000
+      animation:
+        enabled: true
+        duration: 100
+        type: "fadeInOut"
+      menu_config:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        wifi_icons_unsecured:
+          - "\uec3c"
+          - "\uec3d"
+          - "\uec3e"
+          - "\uec3f"
+      wifi_icons:
+        - "\udb82\udd2d"
+        - "\udb82\udd1f"
+        - "\udb82\udd22"
+        - "\udb82\udd25"
+        - "\udb82\udd28"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "exec quick_settings"
+        on_right: "toggle_label"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8"
+        - "\uf026"
+        - "\uf027"
+        - "\uf027"
+        - "\uf028"
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "None"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+      callbacks:
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "<span>{icon}</span>{percent}%"
+      label_alt: "<span>{icon}</span> {percent}% | time: {time_remaining}"
+      charging_options:
+        icon_format: "{charging_icon}"
+      status_icons:
+        icon_charging: "\udb85\udc0b"
+        icon_critical: "\udb80\udc7a"
+        icon_low: "\udb80\udc7b"
+        icon_medium: "\udb80\udc7e"
+        icon_high: "\udb80\udc80"
+        icon_full: "\udb80\udc79"
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\ueaa2</span>"
+      label_alt: "<span>\ueb9a {count} </span>"
+      hide_empty: true
+      tooltip: true
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "toggle_label"

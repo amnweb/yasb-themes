@@ -1,0 +1,732 @@
+:root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface0: #282936;
+    --base: #1e1e2e;
+    --mantle: rgba(24, 24, 37, 0.5);
+    --crust: rgba(17, 17, 27, 0.5);
+}
+* {
+    font-size: 12px;
+    color: var(--subtext1);
+    font-weight: 600;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+.yasb-bar {
+    padding: 0;
+    margin: 0;
+    background-color: var(--crust);
+}
+.widget {
+    padding: 0 3px;
+    margin: 0;
+}
+.icon {
+    font-size: 16px;
+}
+.widget .label {
+    padding: 0px 2px;
+}
+.widget .label-alt {
+    padding: 0px 2px;
+}
+/* POWER MENU */
+.power-menu-widget .label {
+    color: white;
+    font-size: 16px;
+    padding-left: 11px;
+    padding-right: 0px;
+    padding-bottom: 2px;
+}
+.power-menu-widget .label:hover {
+    color: var(--text);
+}
+.power-menu-popup {
+    background-color: transparent;
+}
+.power-menu-popup .button {
+    padding: 0;
+    width: 180px;
+    height: 230px;
+    border-radius: 8px;
+    background-color: rgba(30, 30, 46, 0.35);
+    margin: 5px;
+}
+.power-menu-popup .button.hover {
+    background-color: rgba(30, 30, 46, 0.95);
+}
+.power-menu-popup .button .label {
+    margin-top: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+}
+.power-menu-popup .button .icon {
+    font-size: 64px;
+    font-family: "JetBrainsMono NFP";
+    padding-top: 5px;
+}
+.power-menu-popup .button.shutdown .icon {
+    color: var(--red);
+}
+.power-menu-popup .button.restart .icon {
+    color: var(--blue);
+}
+.power-menu-popup .button.lock .icon {
+    color: var(--green);
+}
+.power-menu-popup .button.signout .icon {
+    color: var(--surface2);
+}
+.power-menu-popup .button.hibernate .icon {
+    color: var(--mauve);
+}
+.power-menu-popup .button.sleep .icon {
+    color: var(--yellow);
+}
+.power-menu-popup .button.cancel .icon {
+    padding: 0;
+    margin: 0;
+}
+.power-menu-popup .button.cancel .label {
+    color: var(--red);
+    margin: 0;
+}
+.power-menu-popup .button.cancel {
+    height: 32px;
+    width: 560px;
+    border-radius: 4px;
+}
+.uptime {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: var(--text);
+    font-weight: 600;
+}
+/* KOMOREBI WORKSPACES */
+.komorebi-workspaces .widget-container {
+    background-color: var(--crust);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 0px solid var(--surface1);
+    padding: 0 8px;
+}
+.komorebi-workspaces {
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    padding: 0 4px 0 8px;
+}
+.komorebi-workspaces .offline-status {
+    color: var(--surface2);
+    font-size: 12px;
+    padding: 0 0 0 4px;
+    font-weight: 600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    font-size: 11px;
+    color: var(--subtext1);
+    height: 28px;
+    width: 18px;
+}
+.komorebi-workspaces .ws-btn:hover {
+    color: var(--text);
+}
+.komorebi-workspaces .ws-btn.populated {
+    color: transparent;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(205, 214, 244, 0.7);
+    border-radius: 5px;
+    margin: 0 4px;
+    font-size: 1px;
+}
+.komorebi-workspaces .ws-btn.active {
+    color: transparent;
+    background-color: var(--text);
+    width: 36px;
+    height: 10px;
+    margin: 0 4px;
+    border-radius: 5px;
+}
+/* ACTIVE WINDOW */
+.active-window-widget .icon {
+    font-size: 14px;
+    margin-bottom: 1px;
+    color: var(--subtext0);
+    padding-left: 6px;
+}
+.active-window-widget .label {
+    padding-top: 0px;
+    color: var(--text);
+}
+.active-window-widget .label:hover {
+    color: white;
+}
+/* CLOCK AND CALENDAR */
+.clock-widget .label {
+    color: var(--subtext1);
+}
+.clock-widget .label:hover {
+    color: var(--text);
+}
+.clock-widget {
+    padding: 0 4px;
+}
+.calendar {
+    background-color: var(--mantle);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: transparent;
+    color: rgba(162, 177, 196, 0.85);
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+.calendar .calendar-table::item:selected {
+    color: var(--crust);
+    background-color: var(--yellow);
+    border-radius: 5px;
+}
+.calendar .day-label {
+    margin-top: 20px;
+    color: var(--peach);
+}
+.calendar .month-label {
+    color: var(--flamingo);
+    font-weight: normal;
+}
+.calendar .day_label,
+.calendar .month-label,
+.calendar .date-label {
+    font-size: 16px;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: var(--yellow);
+    margin-top: -20px;
+}
+/* MEDIA WIDGET AND MEDIA MENU */
+.media-widget {
+    margin: 4px 4px;
+    padding: 0 6px 0 6px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.media-widget .label {
+    color: var(--text);
+    padding: 2px 6px;
+    font-family: "JetBrainsMono NFP";
+    font-size: 11px;
+    font-weight: 500;
+}
+.media-widget .label:hover {
+    color: wheat;
+}
+.media-widget .btn {
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0 4px;
+    margin: 0;
+    font-size: 18px;
+}
+.media-widget .btn:hover {
+    color: wheat;
+}
+.media-widget .btn.play {
+    font-size: 18px;
+}
+.media-widget .btn.prev_track {
+    font-size: 18px;
+}
+.media-menu {
+    min-width: 450px;
+    background-color: rgba(17, 17, 27, 0.5);
+}
+.media-menu .title,
+.media-menu .source {
+    font-size: 17px;
+    font-weight: 800;
+    margin-left: 15px;
+    font-family: "Segoe UI", "JetBrainsMono NFP";
+}
+.media-menu .title {
+    padding-right: 10px;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.media-menu .artist {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.54);
+    margin-top: 0px;
+    margin-left: 16px;
+    font-family: "Segoe UI", "JetBrainsMono NFP";
+}
+.media-menu .source {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.54);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 4px 8px;
+    font-weight: 400;
+    font-family: "Segoe UI", "JetBrainsMono NFP";
+    margin-top: 10px;
+}
+.media-menu .btn {
+    font-family: "Segoe Fluent Icons";
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px 2px 0px 2px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 20px;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.media-menu .btn.play {
+    background-color: rgba(255, 255, 255, 0.08);
+    font-size: 20px;
+}
+.media-menu .btn.play:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+    color: rgba(186, 187, 202, 0.3);
+    background-color: transparent;
+}
+.media-menu .playback-time {
+    font-size: 13px;
+    font-family: "Segoe UI";
+    color: var(--subtext0);
+    margin-top: 6px;
+    min-width: 100px;
+}
+.media-menu .progress-slider {
+    height: 20px;
+    margin: 0 4px 1px 4px;
+    border-radius: 3px;
+}
+.media-menu .progress-slider::groove {
+    background: rgba(255, 255, 255, 0.1);
+    height: 2px;
+    border-radius: 3px;
+}
+.media-menu .progress-slider::groove:hover {
+    background: rgba(255, 255, 255, 0.2);
+    height: 6px;
+    border-radius: 3px;
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--text);
+    border-radius: 3px;
+    height: 4px;
+}
+.media-menu .source.spotify {
+    background-color: #199143;
+    color: #ffffff;
+    font-size: 12px;
+}
+.media-menu .source.zen {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+.media-menu .app-volume-container {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 8px 6px;
+    border-radius: 16px;
+    margin-left: 10px;
+}
+.media-menu .app-volume-container .volume-slider::groove {
+    background: rgba(255, 255, 255, 0.08);
+    width: 4px;
+    border-radius: 2px;
+}
+.media-menu .app-volume-container .volume-slider::add-page {
+    background: #61ad7e;
+    border-radius: 2px;
+}
+.media-menu .app-volume-container .volume-slider::groove:hover {
+    background: rgba(255, 255, 255, 0.08);
+    width: 6px;
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::sub-page {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+}
+.media-menu .app-volume-container .mute-button,
+.media-menu .app-volume-container .unmute-button {
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Segoe Fluent Icons";
+    margin-top: 4px;
+}
+.media-menu .app-volume-container .unmute-button {
+    color: rgba(255, 255, 255, 0.54);
+}
+/* APPS WIDGET AND CENTER GROUPER */
+.center-grouper {
+    padding: 0 4px 0 4px;
+}
+.center-grouper .container {
+    background-color: var(--crust);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 0px solid var(--surface1);
+    padding: 0 6px;
+}
+.center-grouper .grouper-button {
+    font-size: 13px;
+    color: var(--subtext0);
+    background-color: transparent;
+    border: none;
+    padding-bottom: 2px;
+}
+.center-grouper .grouper-button:hover {
+    color: var(--text);
+}
+.apps-widget .label {
+    font-size: 14px;
+    padding: 0 2px;
+    color: var(--subtext0);
+}
+.apps-widget .label:hover {
+    color: var(--text);
+}
+/* KOMOREBI CONTROL */
+.komorebi-control-widget .label {
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 600;
+}
+.komorebi-control-widget .icon {
+    font-size: 16px;
+    color: var(--subtext0);
+    padding-left: 0px;
+}
+.komorebi-control-widget .icon:hover {
+    color: var(--text);
+}
+.komorebi-control-menu {
+    background-color: rgba(17, 17, 27, 0.2);
+}
+.komorebi-control-menu .button {
+    color: rgba(102, 102, 102, 0.4);
+    padding: 8px 16px;
+    font-size: 32px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+.komorebi-control-menu .button.active {
+    color: rgb(228, 228, 228);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+.komorebi-control-menu .button.start:hover {
+    background-color: rgba(166, 227, 161, 0.3);
+    color: var(--green);
+}
+.komorebi-control-menu .button.stop:hover {
+    background-color: rgba(241, 138, 168, 0.3);
+    color: var(--red);
+}
+.komorebi-control-menu .button.reload:hover {
+    background-color: rgba(116, 199, 236, 0.3);
+    color: var(--sapphire);
+}
+.komorebi-control-menu .button:disabled,
+.komorebi-control-menu .button.active:disabled {
+    background-color: rgba(255, 255, 255, 0.01);
+    color: rgba(255, 255, 255, 0.2);
+}
+.komorebi-control-menu .footer .text {
+    font-size: 12px;
+    color: var(--subtext0);
+}
+/* WALLPAPERS WIDGET */
+.wallpapers-widget .icon {
+    font-size: 14px;
+    color: var(--subtext0);
+    padding-left: 0px;
+}
+.wallpapers-widget .icon:hover {
+    color: var(--text);
+}
+.wallpapers-gallery-window {
+    background-color: rgba(17, 17, 27, 0.3);
+    border: 0;
+    margin: 0;
+}
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 12px;
+}
+.wallpapers-gallery-image:hover {
+    border: 4px solid var(--sapphire);
+}
+.wallpapers-gallery-image.focused {
+    border: 4px solid var(--sapphire);
+}
+/* MEMORY WIDGET */
+.memory-widget .icon {
+    font-size: 18px;
+    color: #f38ba8;
+    padding: 0 2px;
+}
+.memory-widget .label {
+    padding: 0 3px;
+    color: var(--subtext0);
+    font-size: 11px;
+}
+.memory-widget .widget-container {
+    background-color: rgba(17, 17, 27, 0.5);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 0px solid var(--surface1);
+    padding: 0 6px;
+}
+/* CPU TEMP WIDGET — requires LibreHardwareMonitor running */
+.cpu-temp-widget .icon {
+    font-size: 16px;
+    color: var(--peach);
+    padding: 0 2px;
+}
+.cpu-temp-widget .widget-container {
+    background-color: rgba(17, 17, 27, 0.5);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 0px solid var(--surface1);
+    padding: 0 8px;
+}
+.cpu-temp-widget .label {
+    padding: 0 5px;
+    color: var(--subtext1);
+    font-size: 11px;
+}
+/* WIFI WIDGET */
+.wifi-widget .icon {
+    font-size: 17px;
+    color: var(--yellow);
+    padding: 0 2px;
+}
+.wifi-widget .widget-container {
+    background-color: rgba(17, 17, 27, 0.5);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 0px solid var(--surface1);
+    padding: 0 6px;
+}
+.wifi-widget .label {
+    padding: 0 5px;
+    color: var(--subtext1);
+    font-size: 11px;
+}
+.wifi-menu {
+    background-color: rgba(17, 17, 27, 0.25);
+    min-width: 320px;
+    max-height: 340px;
+    min-height: 340px;
+    border-radius: 10px;
+    padding: 8px 0;
+}
+.wifi-menu .header,
+.wifi-menu .footer {
+    font-size: 13px;
+    padding: 10px;
+    background-color: rgba(17, 17, 27, 0.11);
+}
+.wifi-menu .wifi-item {
+    padding: 6px 12px;
+    margin: 4px 6px;
+    border-radius: 6px;
+    min-height: 40px;
+}
+.wifi-menu .wifi-item:hover {
+    background-color: rgba(205, 214, 244, 0.05);
+}
+.wifi-menu .wifi-item[active=true] {
+    background-color: rgba(205, 214, 244, 0.07);
+    font-size: 13.5px;
+    min-height: 70px;
+}
+.wifi-menu .wifi-item .icon {
+    font-family: "Segoe Fluent Icons";
+    font-size: 22px;
+    color: var(--subtext1);
+    margin-right: 8px;
+}
+.wifi-menu .wifi-item .name,
+.wifi-menu .wifi-item .status,
+.wifi-menu .wifi-item .strength {
+    font-size: 13px;
+    color: var(--subtext1);
+    margin-right: 8px;
+}
+.wifi-menu .wifi-item[active=true] .name {
+    color: var(--text);
+    font-weight: 700;
+}
+.wifi-menu .wifi-item[active=true] .status {
+    color: var(--green);
+    font-size: 11px;
+}
+.wifi-menu .wifi-item .connect {
+    padding: 3px 24px;
+    font-size: 13px;
+    border-radius: 4px;
+    background-color: rgba(205, 214, 244, 0.06);
+    color: var(--subtext0);
+    border: none;
+}
+.wifi-menu .wifi-item .connect:hover {
+    background-color: rgba(205, 214, 244, 0.12);
+    color: var(--text);
+}
+.wifi-menu .footer {
+    padding: 6px 12px;
+    background-color: rgba(24, 24, 37, 0.35);
+    border-top: 1px solid var(--surface0);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 0 0 8px 8px;
+}
+.wifi-menu .footer .settings-button {
+    background-color: rgba(205, 214, 244, 0.06);
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+    color: var(--subtext0);
+}
+.wifi-menu .footer .settings-button:hover {
+    background-color: rgba(205, 214, 244, 0.12);
+    color: var(--text);
+}
+.wifi-menu .footer .refresh-icon {
+    background-color: rgba(205, 214, 244, 0.06);
+    font-family: "Segoe Fluent Icons";
+    font-size: 16px;
+    padding: 5px;
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 4px;
+    border: none;
+    color: var(--subtext1);
+}
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: rgba(205, 214, 244, 0.12);
+    color: var(--text);
+}
+/* VOLUME WIDGET */
+.volume-widget .icon {
+    color: var(--blue);
+    margin: 1px 2px 0 0;
+}
+.volume-widget .widget-container {
+    background-color: var(--crust);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 0px solid var(--surface1);
+    padding: 0 8px;
+}
+.volume-widget .label {
+    padding: 0 3px;
+    color: var(--subtext1);
+    font-size: 11px;
+}
+.audio-menu {
+    background-color: var(--crust);
+}
+.audio-container .device {
+    background-color: transparent;
+    border: none;
+    padding: 6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.09);
+    border-radius: 6px;
+}
+.audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+}
+/* BATTERY WIDGET */
+.battery-widget .icon {
+    font-size: 16px;
+    color: var(--flamingo);
+    padding: 0 2px;
+}
+.battery-widget .charging_icon {
+    color: var(--green);
+}
+.battery-widget .widget-container {
+    background-color: var(--crust);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 0px solid var(--surface1);
+    padding: 0 8px;
+}
+.battery-widget .label {
+    padding: 0 6px;
+    color: var(--subtext1);
+    font-size: 11px;
+}
+/* NOTIFICATIONS WIDGET */
+.notification-widget .icon {
+    font-size: 14px;
+    color: var(--text);
+    padding-left: 2px;
+}
+.notification-widget .widget-container {
+    background-color: var(--crust);
+    margin: 4px 0 4px 0;
+    border-radius: 12px;
+    border: 0px solid var(--surface1);
+    padding: 0 8px;
+}
+.notification-widget .icon.new-notification {
+    color: #f07178;
+}
