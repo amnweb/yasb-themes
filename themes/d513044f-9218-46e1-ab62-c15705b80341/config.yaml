@@ -34,7 +34,6 @@ bars:
     widgets:
       left: [
         "power_menu",
-        #"home",
         "active_window"
       ]
       center: [
@@ -67,7 +66,7 @@ widgets:
         "showkeyboard",
         "brightness",
         "battery",
-        "weather"
+        "open_meteo"
       ]
   right-grouper:
     type: "yasb.grouper.GrouperWidget"
@@ -80,35 +79,6 @@ widgets:
         "wifi",
         "bluetooth"
       ]
-  home:
-    type: "yasb.home.HomeWidget"
-    options:
-      label: "<span>\uf51b</span>"
-      menu_list:
-      - { title: "\uf46d User Home", path: "~" }
-      - { title: "\uf409 Download", path: "~\\Downloads" }
-      - { title: "\udb82\uddee Documents", path: "~\\Documents" }
-      - { title: "\uf03e Pictures", path: "~\\Pictures" }
-      system_menu: True
-      power_menu: True
-      blur: True
-      round_corners: True
-      border_color: "System"
-      round_corners_type: "normal"
-      offset_top: 6
-      offset_left: 0
-      alignment: "left"
-      direction: "down"
-      menu_labels:
-        shutdown: "\uf011 Shutdown"
-        restart: "\uead2 Reboot"
-        hibernate: "\uf28e Hibernate"
-        logout: "\udb80\udf43 Logout"
-        lock: "\uea75 Lock"
-        sleep: "\u23fe Sleep"
-        system: "\uf423 System Settings"
-        about: "\udb86\udc76 About This PC"
-        task_manager: "\uf201 Task Manager"
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -189,7 +159,7 @@ widgets:
   media:
     type: "yasb.media.MediaWidget"
     options:
-      label: "{title} \u2022 {artist} \u2022"
+      label: "{title} - {artist}"
       label_alt: "{title}"
       hide_empty: False
       callbacks:
@@ -226,7 +196,10 @@ widgets:
         enabled: True
         update_interval_ms: 33
         style: "left"
-        separator: " "
+        separator: " \u2022 "
+      progress_bar:
+        enabled: True
+        alignment: "bottom"
   windows_workspaces:
     type: "yasb.windows_desktops.WorkspaceWidget"
     options:
@@ -334,27 +307,33 @@ widgets:
         on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-  weather:
-    type: "yasb.weather.WeatherWidget"
+  open_meteo:
+    type: "yasb.open_meteo.OpenMeteoWidget"
     options:
       label: "<span>{icon}</span> {temp}"
-      label_alt: ""
-      api_key: "5124e645eb8f4160aee111426250707"
+      tooltip: True
       update_interval: 600
       hide_decimal: True
-      location: "Kanash"
+      units: "metric"
       callbacks:
         on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
       icons:
         sunnyDay: "\ue30d"
         clearNight: "\ue32b"
         cloudyDay: "\ue302"
         cloudyNight: "\udb83\udf31"
+        drizzleDay: "\udb81\ude7e"
+        drizzleNight: "\udb81\ude7e"
         rainyDay: "\ue308"
         rainyNight: "\ue325"
         snowyDay: "\ue30a"
         snowyNight: "\ue327"
-        blizzardDay: "\ue36f"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
         default: "\ue350"
       weather_card:
         blur: True
@@ -365,11 +344,11 @@ widgets:
         direction: "down"
         icon_size: 64
         show_hourly_forecast: True
-        time_format: "24h" 
+        time_format: "24h"
         hourly_point_spacing: 76
         hourly_icon_size: 32
-        icon_smoothing: True 
-        temp_line_width: 2 
+        icon_smoothing: True
+        temp_line_width: 2
         current_line_color: "#8EAEE8"
         current_line_width: 1 
         current_line_style: "dot"
@@ -378,8 +357,7 @@ widgets:
           top_color: "#8EAEE8"
           bottom_color: "#2A3E68"
         hourly_forecast_buttons:
-          enabled: True # hide/show the buttons
-          default_view: "temperature"
+          enabled: True
           temperature_icon: "\udb81\udd04" # or \udb81\udd05
           rain_icon: "\uef1c"
           snow_icon: "\udb81\udf17"
@@ -397,9 +375,20 @@ widgets:
       label_alt: "{lang[full_name]}"
       update_interval: 1
       callbacks:
-        on_left: "do_nothing"
+        on_left: "toggle_menu"
         on_middle: "do_nothing"
         on_right: "do_nothing"
+      language_menu:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icon: True
+        layout_icon: "\uf11c"
   dotseparator:
     type: "yasb.custom.CustomWidget"
     options:
@@ -491,7 +480,8 @@ widgets:
       strict_filtering: False
       hide_empty: True
       animation:
-        enabled: False
+        enabled: True
+        duration: 25
       ignore_apps:
         processes: []
         titles: []
