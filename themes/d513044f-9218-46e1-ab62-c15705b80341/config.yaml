@@ -79,21 +79,6 @@ widgets:
         "wifi",
         "bluetooth"
       ]
-  power_menu:
-    type: "yasb.power_menu.PowerMenuWidget"
-    options:
-      label: "\uf011"
-      uptime: True
-      blur: True
-      blur_background: True
-      animation_duration: 200
-      button_row: 5
-      buttons:
-        shutdown: ["\uf011", "Shut Down"]
-        restart: ["\uead2", "Reboot"]
-        signout: ["\udb80\udf43", "Sign out"]
-        hibernate: ["\uf28e", "Hibernate"]
-        sleep: ["\u23fe", "Sleep"]
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -494,8 +479,8 @@ widgets:
       show_user: False
       blur: False
       blur_background: True
-      animation_duration: 120 # Milliseconds
-      button_row: 4 # Number of buttons in a row, min 1 max 6
+      animation_duration: 120
+      button_row: 4
       buttons:
         lock: ["\udb80\udf41", "Lock"]
         sleep: ["\ue32b", "Sleep"]
