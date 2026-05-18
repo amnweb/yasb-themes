@@ -104,20 +104,22 @@
     padding: 0px 10px 0px 10px;
 }
 /* Widgets */
+.taskbar-widget .widget-container,
+.clock-grouper .container,
+.info-grouper .container,
+.systray {
+    background-color: var(--widget-background);
+    margin: 2px 0px 2px 0px;
+}
+
 .clock-widget .widget-container,
 .open-meteo-widget .widget-container,
 .media-widget .widget-container,
 .traffic-widget .widget-container,
-.microphone-widget .widget-container,
-.windows-desktops .widget-container, 
-.taskbar-widget .widget-container,
+.windows-desktops .widget-container,
 .screenshot-widget .widget-container,
-.clock-grouper .container,
 .showkeyboard-widget .widget-container,
-.brightness-widget .widget-container,
-.info-grouper .container,
-.systray {
-    background-color: var(--widget-background);
+.brightness-widget .widget-container {
     margin: 2px 0px 2px 0px;
 }
 .clock-grouper .container, 
@@ -254,6 +256,73 @@
 .cpu-widget .label {
     margin: 0px 0px 2px 0px;
 }
+.cpu-popup {
+    background-color: var(--widget-background);
+    min-width: 400px;
+}
+.cpu-popup .header {
+    background: transparent;
+    padding: 12px 16px;
+}
+.cpu-popup .header .text {
+    font-size: 16px;
+    font-family: "Rubik";
+    color: var(--pale-blue);
+}
+.cpu-popup .header .pin-btn {
+    font-size: 14px;
+    background: transparent;
+    font-family: "Segoe Fluent Icons";
+    border: none;
+    padding: 6px;
+    color: var(--pale-blue);
+}
+.cpu-popup .header .pin-btn:hover {
+    color: var(--slate-gray);
+}
+.cpu-popup .header .pin-btn.pinned {
+    color: var(--pale-blue);
+}
+.cpu-popup .graph-container {
+    min-height: 64px;
+    margin: 0px 16px 0px 16px;
+}
+.cpu-popup .cpu-graph {
+    color: var(--pale-blue);
+}
+.cpu-popup .cpu-graph-grid {
+    color: var(--slate-gray);
+}
+.cpu-popup .graph-title {
+    font-size: 12px;
+    color: var(--surface2);
+    font-family: 'Rubik';
+    padding: 0px 0px 4px 14px;
+}
+.cpu-popup .stats {
+    padding: 18px;
+}
+.cpu-popup .stats .stat-item {
+    background-color: var(--yasb-background);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 4px;
+}
+.cpu-popup .stats .stat-label {
+    font-size: 13px;
+    color: var(--pale-blue);
+    font-family: 'Rubik';
+    font-weight: 400;
+    padding: 6px 4px 2px 4px;
+}
+.cpu-popup .stats .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Rubik Bold';
+    padding: 4px 4px 12px 4px;
+}
+
 /* Memory */
 .memory-widget {
     width: 82px;
@@ -263,6 +332,74 @@
 .memory-widget .label {
     margin: 0px 0px 2px 2px;
 }
+.memory-popup {
+    background-color: var(--widget-background);
+    min-width: 400px;
+}
+
+.memory-popup .header {
+    background: transparent;
+    padding: 12px 16px;
+}
+.memory-popup .header .text {
+    font-size: 16px;
+    font-family: "Rubik";
+    color: var(--pale-blue);
+}
+.memory-popup .header .pin-btn {
+    font-size: 14px;
+    background: transparent;
+    font-family: "Segoe Fluent Icons";
+    border: none;
+    padding: 6px;
+    color: var(--pale-blue);
+}
+.memory-popup .header .pin-btn:hover {
+    color: var(--slate-gray);
+}
+.memory-popup .header .pin-btn.pinned {
+    color: var(--pale-blue);
+}
+.memory-popup .graph-container {
+    min-height: 64px;
+    margin: 0px 16px 0px 16px;
+}
+.memory-popup .memory-graph {
+    color: var(--pale-blue);
+}
+.memory-popup .memory-graph-grid {
+    color: var(--slate-gray);
+}
+.memory-popup .graph-title {
+    font-size: 12px;
+    color: var(--surface2);
+    font-family: 'Rubik';
+    padding: 0px 0px 4px 14px;
+}
+.memory-popup .stats {
+    padding: 18px;
+}
+.memory-popup .stats .stat-item {
+    background-color: var(--yasb-background);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 4px;
+}
+.memory-popup .stats .stat-label {
+    font-size: 13px;
+    color: var(--pale-blue);
+    font-family: 'Rubik';
+    font-weight: 400;
+    padding: 6px 4px 2px 4px;
+}
+.memory-popup .stats .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Rubik Bold';
+    padding: 4px 4px 12px 4px;
+}
+
 /* Traffic */
 .traffic-widget {
     width: 125px;
@@ -285,8 +422,7 @@
     margin-left: 7px;
 }
 .media-widget .progress-bar {
-    max-height: 2px;
-    background-color: var(--surface2);
+    max-height: 3px;
     border: none;
 }
 /* Media menu*/
@@ -553,6 +689,54 @@
 .brightness-widget .widget-container:hover { 
     background-color: var(--slate-gray);
 }
+.brightness-menu {
+    min-width: 300px;
+    background-color: var(--yasb-background);
+}
+.brightness-menu .monitor-row {
+    background-color: transparent;
+    margin: 12px;
+}
+.brightness-menu .monitor-title  {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 4px;
+}
+.brightness-menu .monitor-subtitle {
+    font-size: 11px;
+    color: var(--pale-blue);
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+.brightness-menu .slider-rows {
+    background-color: var(--widget-background);
+    border-radius: 8px;
+    padding: 16px; 
+}
+.brightness-menu .slider-icon {
+    font-family: "JetBrainsMono NFP";
+    font-size: 26px;
+}
+.brightness-menu .slider-row {
+    margin: 4px 0;
+    padding: 8px 0px;
+}
+.brightness-slider::groove,
+.contrast-slider::groove {
+    background-color: var(--slate-gray);
+    border-radius: 6px;
+    height: 12px;
+}
+.brightness-slider::handle,
+.contrast-slider::handle {
+    background-color: var(--widget-background);
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    margin-top: -4px;
+    margin-bottom: -4px;
+}
 /* Battery */
 .battery-widget .widget-container {
     background-color: var(--pale-blue);
@@ -569,25 +753,10 @@
     max-width: 45px;
     min-width: 45px;
 }
-.brightness-menu {
-    background-color: var(--yasb-background);
-}
-.brightness-slider::groove {
-    background-color: var(--slate-gray);
-    border-radius: 6px;
-    height: 12px;
-}
-.brightness-slider::handle{
-    background-color: var(--pale-blue);
-    height: 16px;
-    width: 16px;
-    border-radius: 6px;  
-}
 /* Open-meteo-weather */
 .open-meteo-widget {
     padding: 0px 0px 0px 30px;
     width: 80px;
-    max-width: 80px;
     min-width: 80px;
 }
 .open-meteo-widget .icon {
