@@ -137,10 +137,27 @@
     padding-right: 2px;
 }
 .language-widget, .dotseparator-widget,
-.notification-widget, .wifi-widget,
-.bluetooth-widget {
+.wifi-widget {
     padding-right: 15px;
 }
+.notification-widget, .bluetooth-widget {
+    padding-right: 8px;
+}
+.control-center {
+    background-color: transparent;
+    padding-left: 7px;
+    margin: 2px 0px 2px 0px;
+    border-radius: 6px;
+
+    transition-property: border-radius, background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+}
+.control-center:hover {
+    border-radius: 16px;
+    background-color: var(--slate-gray);
+}
+
 .bluetooth-widget .icon {
     font-size: 20px;
 }
@@ -547,10 +564,16 @@
 }
 .windows-desktops .ws-btn {
     font-family: "JetBrainsMono NFP ExtraBold";
-    color: #7f849c;
+    color: var(--slate-gray);
     border: none;
     font-size: 25px;
     padding: 0px 6px 0px 6px;
+    border-radius: 13px;
+    margin: 0px;
+
+    transition-property: background-color, border-radius, margin;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
 }
 .windows-desktops .ws-btn:hover {
     background-color: rgba(210, 229, 244, 0.2);
@@ -611,7 +634,7 @@
 }
 /* Calendar */
 .calendar {
-    background-color: var(--yasb-background);
+    background-color: var(--widget-background);
 }
 .calendar .calendar-table,
 .calendar .calendar-table::item {
@@ -619,7 +642,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    outline: none; 
+    outline: none;
 }
 .calendar .calendar-table::item:selected {
     background-color: var(--slate-gray);
@@ -661,9 +684,6 @@
     padding: 0px 6px 0px 6px;
     border-radius: 13px;
 }
-.screenshot-widget .widget-container:hover { 
-    background-color: var(--slate-gray);
-}
 /* Showkeyboard */
 .showkeyboard-widget {
     padding: 0px 2px 0px 2px;
@@ -671,9 +691,6 @@
 .showkeyboard-widget .widget-container {
     padding: 0px 5px 0px 5px;
     border-radius: 13px;
-}
-.showkeyboard-widget .widget-container:hover { 
-    background-color: var(--slate-gray);
 }
 /* Brightness */
 .brightness-widget {
@@ -685,9 +702,6 @@
 .brightness-widget .widget-container {
     padding: 0px 3px 0px 3px;
     border-radius: 14px;
-}
-.brightness-widget .widget-container:hover { 
-    background-color: var(--slate-gray);
 }
 .brightness-menu {
     min-width: 300px;
@@ -791,9 +805,11 @@
 .open-meteo-card-day {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0);
     padding: 4px;
     min-width: 70px;
+    transition-property: background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
 }
 .open-meteo-card-day .day-name {
     font-family: "Rubik Light";
@@ -850,13 +866,14 @@
 }
 .open-meteo-card .hourly-data-button {
     border-radius: 13px;
-    min-height: 24px;
-    min-width: 24px;
-    max-width: 24px;
-    max-height: 24px;
+    min-height: 26px;
+    min-width: 26px;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.3);
     border: 1px solid transparent;
+    transition-property: background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
 }
 .open-meteo-card .hourly-data-button.active {
     color: #fff;
@@ -1030,31 +1047,33 @@
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
 }
-
 .taskbar-widget .widget-container {
     padding: 0px 5px 0px 5px;
 }
 .taskbar-widget .app-container {
     background-color: var(--green);
-    padding: 3px 3px 3px 3px;
-    margin: 5px 2px 5px 2px;
+    padding: 3px;
+    margin: 5px 2px;
     border-radius: 10px;
+    transition-property: border, padding, margin, background-color, max-width, max-height;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
 }
 .taskbar-widget .app-container.foreground {
     background-color: var(--pale-blue); 
 }
 .taskbar-widget .app-container .app-icon {
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 8;
+    border-radius: 8px;
 }
 .taskbar-widget .app-container:hover {
-    border-radius: 10px;
-    padding: 0px 2px 0px 2px;
-    margin: 3px 2px 7px 2px;
+    padding: 3px;
+    margin: 0px 5px 10px 5px;
 }
 .taskbar-widget .app-container.running {
     background-color: rgba(210, 229, 244, 0.2);
 }
+/* Power menu */
 .power-menu-widget {
     padding-left: 16px;
 }
@@ -1066,12 +1085,16 @@
     font-size: 20px;
 }
 .power-menu-widget .widget-container {
-    background-color: var(--slate-gray);
+    background-color: transparent;
+    transition-property: border-radius, background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
     padding: 0px 9px 0px 9px;
-    border-radius: 18px;
+    border-radius: 8px;
 }
 .power-menu-widget .widget-container:hover { 
-    background-color: rgba(210, 229, 244, 0.2);
+    background-color: var(--slate-gray);
+    border-radius: 18px;
 }
 .power-menu-popup {
     background-color: rgba(255, 255, 255, 0);
@@ -1083,7 +1106,10 @@
     min-height: 155px;
     border-radius: 50px;
     background-color: rgba(0, 0, 0, 0.7);
-    border: 8px solid rgba(255, 255, 255, 0)
+    border: 8px solid rgba(255, 255, 255, 0);
+    transition-property: background-color, border-radius;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
 }
 .power-menu-popup .button.hover {
     background-color: var(--pale-blue);
@@ -1104,4 +1130,20 @@
 }
 .power-menu-overlay {
     background-color: rgba(0, 0, 0, 0.15);
+}
+/* Wallpapers */
+.wallpapers-gallery-window {
+    background-color: var(--widget-background);
+    border-radius: 26px;
+    padding: 16px;
+}
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 26px;
+}
+.wallpapers-gallery-image.focused {
+    border: 4px solid var(--pale-blue);
+}
+.wallpapers-gallery-image:hover {
+    border: 4px solid var(--slate-gray);
 }
