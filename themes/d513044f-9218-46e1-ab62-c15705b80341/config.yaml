@@ -42,6 +42,7 @@ bars:
         "clock-grouper"
       ]
       right: [
+        "wallpapers",
         "right-grouper"
         ]
 widgets:
@@ -75,18 +76,21 @@ widgets:
         "language",
         "dotseparator",
         "notifications",
+        "control-center"
+      ]
+  control-center:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "control-center"
+      widgets: [
         "wifi",
         "bluetooth"
       ]
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
-      label: " {win[process][name]}"
-      rewrite:
-        - pattern: "^(.+?)\\.exe$"
-          replacement: "\\1"
-      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
-      label_no_window: ""
+      label: " {win[app_name]}"
+      label_no_window: "Workspace"
       label_icon: True
       label_icon_size: 18
       max_length: 30
@@ -136,9 +140,9 @@ widgets:
         on_middle: "toggle_label"
         on_right: "do_nothing"
       menu:
-        enabled: true
-        show_graph: true
-        show_graph_grid: true
+        enabled: True
+        show_graph: True
+        show_graph_grid: True
         graph_history_size: 60
         alignment: "center"
   traffic:
@@ -400,9 +404,9 @@ widgets:
      label_alt: "{wifi_name} {wifi_strength}%"
      update_interval: 5000
      callbacks:
-       on_left: "toggle_menu"
+       on_left: "exec cmd.exe /c explorer.exe ms-actioncenter:controlcenter/true"
        on_middle: "exec cmd.exe /c start ms-settings:network"
-       on_right: "toggle_label"
+       on_right: "toggle_menu"
      ethernet_label: "<span>{wifi_icon}</span>"
      ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
      ethernet_icon: "\udb80\ude00"
@@ -452,7 +456,8 @@ widgets:
        - name: "T5.0"
          alias: "\uf025"
      callbacks:
-       on_left: "toggle_label"
+       on_left: "exec cmd.exe /c explorer.exe ms-actioncenter:controlcenter/true"
+       on_middle: "toggle_label"
        on_right: "exec cmd.exe /c start ms-settings:bluetooth"
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
@@ -488,3 +493,33 @@ widgets:
         shutdown: ["\uf011", "Shut Down"]
         restart: ["\uead2", "Reboot"]
         cancel: ["\udb81\udf3a", "Cancel"]
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: ""
+      image_path: "C:\\Users\\Shaw\\Pictures"
+      engine:
+        enabled: True
+        animation: "circle"
+      gallery:
+        enabled: True
+        blur: False
+        image_width: 400
+        image_per_page: 3
+        gallery_columns: 1
+        horizontal_position: "center"
+        vertical_position: "center"
+        respect_work_area: True
+        show_buttons: False
+        orientation: "landscape"
+        image_spacing: 8
+        lazy_load: True
+        lazy_load_fadein: 400
+        image_corner_radius: 22
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      keybindings:
+        - keys: "ctrl+shift+w"
+          action: "toggle_gallery"
