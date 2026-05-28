@@ -13,21 +13,16 @@ def generate_readme(themes_data):
         readme.write(
             '<div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="64"></a><ul style="list-style:none"><summary><h2>Theme repository for YASB</h2></summary></ul></div>\n\n\n'
         )
-        readme.write("> [!IMPORTANT]  \n")
         readme.write(
-            "> Before submitting a theme please read [CONTRIBUTING.md](https://github.com/amnweb/yasb-themes/blob/main/CONTRIBUTING.md)\n\n"
-        )
-        readme.write(">\n")
-        readme.write(
+            "> [!IMPORTANT]\n"
+            "> Before submitting a theme please read [CONTRIBUTING.md](https://github.com/amnweb/yasb-themes/blob/main/CONTRIBUTING.md)\n"
+            ">\n"
             "> Make sure your theme is compatible with the latest version of YASB.\n"
-        )
-        readme.write(">\n")
-        readme.write(
+            ">\n"
             "> Please submit clean and well formatted themes. We have a bot that will automatically process your theme, and if it is not well formatted, it will be closed without being merged.\n"
-        )
-        readme.write(">\n")
-        readme.write(
+            ">\n"
             '> For screenshots you can use build-in function in YASB, right click on the panel and select "Take a Screenshot" to save it as an image.\n'
+            ">\n"
         )
         readme.write("## Submitting a Theme\n\n")
         readme.write("To submit a theme, please follow these steps:\n")
