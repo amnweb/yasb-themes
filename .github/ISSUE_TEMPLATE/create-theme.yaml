@@ -54,7 +54,7 @@ body:
     attributes:
       render: markdown
       label: Readme
-      description: The Markdown README file for the theme. Please include a preview of the theme, as well as any relevant information about the theme, such as the fonts needed. Here is an example of a [README file](https://github.com/amnweb/yasb-themes/blob/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/readme.md)
+      description: The Markdown README file for the theme. Please include a preview of the theme, as well as any relevant information about the theme, such as the fonts needed. Here is an example of a [README file](https://github.com/amnweb/yasb-themes/blob/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/readme.md). DO NOT USER ibb.co for images.
     validations:
       required: true
   - type: markdown

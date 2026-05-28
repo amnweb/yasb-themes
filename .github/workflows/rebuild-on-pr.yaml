@@ -4,22 +4,25 @@ on:
     types: [closed]
   workflow_dispatch:
   
+env:
+  PYTHON_VERSION: '3.14'
+
 jobs:
   submitPR:
-    if: github.event.pull_request.user.login == 'github-actions[bot]'
+    if: github.event.pull_request.merged == true && github.event.pull_request.user.login == 'github-actions[bot]'
     permissions: write-all
     name: Rebuild themes after theme submission
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           
       - name: Install python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: ${{ env.PYTHON_VERSION }}
           
       - name: Setup Git
         run: |
@@ -45,14 +48,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           
       - name: Install python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: ${{ env.PYTHON_VERSION }}
           
       - name: Setup Git
         run: |

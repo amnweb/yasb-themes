@@ -3,77 +3,59 @@ on:
   issues:
     types: [opened]
 
+env:
+  PYTHON_VERSION: '3.14'
+
 jobs:
   createPR:
     permissions: write-all
     name: Submit a theme
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     if: startsWith(github.event.issue.title, '[create-theme]:')
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: ${{ env.PYTHON_VERSION }}
         
       - name: Setup python modules
         run: |
-          pip3 install requests
+          pip install requests pyyaml
 
-      - name: Parse issue
-        id: issue-parser
-        uses: stefanbuck/github-issue-parser@v3
+      - name: Checkout YASB repo
+        uses: actions/checkout@v6
         with:
-          template-path: .github/ISSUE_TEMPLATE/create-theme.yaml
+          repository: amnweb/yasb
+          path: yasb-repo
 
-      - name: Export parsed payload into variables
-        id: export
+      - name: Install YASB dependencies
         run: |
-          echo "THEME_NAME=${{ fromJson(steps.issue-parser.outputs.jsonString)['name'] }}" >> $GITHUB_ENV
-          echo "THEME_DESCRIPTION=${{ fromJson(steps.issue-parser.outputs.jsonString)['description'] }}" >> $GITHUB_ENV
-          echo "THEME_HOMEPAGE=${{ fromJson(steps.issue-parser.outputs.jsonString)['homepage'] }}" >> $GITHUB_ENV
-          echo "THEME_IMAGE=${{ fromJson(steps.issue-parser.outputs.jsonString)['image'] }}" >> $GITHUB_ENV
-          echo "THEME_AUTHOR=${{ github.event.issue.user.login }}" >> $GITHUB_ENV
-
-      - name: Write styles to file
-        uses: "DamianReeves/write-file-action@master"
-        with:
-          contents: ${{ fromJson(steps.issue-parser.outputs.jsonString)['styles'] }}
-          path: styles.css
-
-      - name: Write config to file
-        uses: "DamianReeves/write-file-action@master"
-        with:
-          contents: ${{ fromJson(steps.issue-parser.outputs.jsonString)['config'] }}
-          path: config.yaml
-
-      - name: Write readme to file
-        uses: "DamianReeves/write-file-action@master"
-        with:
-          contents: ${{ fromJson(steps.issue-parser.outputs.jsonString)['readme'] }}
-          path: readme.md
+          pip install ./yasb-repo
 
       - name: Setup Git
+        shell: bash
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Create theme content
+        env:
+          THEME_AUTHOR: ${{ github.event.issue.user.login }}
+        shell: bash
         run: |
-          python3 .github/scripts/submit-theme.py \
-              --name "${{ env.THEME_NAME }}" \
-              --description "${{ env.THEME_DESCRIPTION }}" \
-              --author "${{ env.THEME_AUTHOR }}" \
-              --image "${{ env.THEME_IMAGE }}" \
-              --homepage "${{ env.THEME_HOMEPAGE }}" 2> error.log
+          python .github/scripts/process-theme.py 2> error.log
 
       - name: Export creation output
         if: failure()
+        shell: bash
         run: |
           cat error.log
-          echo "CREATION_OUTPUT=$(cat error.log)" >> $GITHUB_ENV
+          echo "CREATION_OUTPUT<<EOF" >> $GITHUB_ENV
+          cat error.log >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
       
       - name: Show error message
         if: failure()
@@ -81,14 +63,16 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN  }}
           comment: |
-            # Error creating theme
+            # Theme Validation Error ❌
 
-            Sorry about that! There was an error creating the theme. Please try again or contact the maintainers for help.
+            It looks like there was a validation error with your submitted theme configuration. Please review the error message below, fix the issues in your YAML config, styles or image and submit a new request.
 
-            > ${{ env.CREATION_OUTPUT }}
+            ```text
+            ${{ env.CREATION_OUTPUT }}
+            ```
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         if: success()
         with:
           add-paths: themes/
