@@ -1,15 +1,15 @@
 <div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="64"></a><ul style="list-style:none"><summary><h2>Theme repository for YASB</h2></summary></ul></div>
 
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Before submitting a theme please read [CONTRIBUTING.md](https://github.com/amnweb/yasb-themes/blob/main/CONTRIBUTING.md)
-
 >
 > Make sure your theme is compatible with the latest version of YASB.
 >
 > Please submit clean and well formatted themes. We have a bot that will automatically process your theme, and if it is not well formatted, it will be closed without being merged.
 >
 > For screenshots you can use build-in function in YASB, right click on the panel and select "Take a Screenshot" to save it as an image.
+>
 ## Submitting a Theme
 
 To submit a theme, please follow these steps:
@@ -32,304 +32,248 @@ To update a theme, please follow these steps:
 
 <a title="Dream In Mocha Mauve YASB Theme" href="themes/8458901e-4dfe-4833-826c-0d6591f216bd"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8458901e-4dfe-4833-826c-0d6591f216bd/image.png" width="830px"></a>
 
-
 ## [Glazing Mocha](themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca)
 
 <a title="Glazing Mocha YASB Theme" href="themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/image.png" width="830px"></a>
-
 
 ## [dwmblocks](themes/3f15bb94-9971-479c-85d7-85f5a213e24e)
 
 <a title="dwmblocks YASB Theme" href="themes/3f15bb94-9971-479c-85d7-85f5a213e24e"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/image.png" width="830px"></a>
 
-
 ## [WinUI11](themes/7c2f646f-bbb1-4492-854d-3cc60b25012f)
 
 <a title="WinUI11 YASB Theme" href="themes/7c2f646f-bbb1-4492-854d-3cc60b25012f"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7c2f646f-bbb1-4492-854d-3cc60b25012f/image.png" width="830px"></a>
-
 
 ## [Win11 Fluent Onyx](themes/80198c48-f70a-44a1-8507-ce300ff8e360)
 
 <a title="Win11 Fluent Onyx YASB Theme" href="themes/80198c48-f70a-44a1-8507-ce300ff8e360"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/image.png" width="830px"></a>
 
-
 ## [Init Light](themes/83124e1d-7df8-4494-b901-d60a78074e56)
 
 <a title="Init Light YASB Theme" href="themes/83124e1d-7df8-4494-b901-d60a78074e56"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/image.png" width="830px"></a>
-
 
 ## [i3 WinBars](themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3)
 
 <a title="i3 WinBars YASB Theme" href="themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3/image.png" width="830px"></a>
 
-
 ## [Deep Work Control](themes/20650dea-7e59-4e8a-b69b-c8664666805d)
 
 <a title="Deep Work Control YASB Theme" href="themes/20650dea-7e59-4e8a-b69b-c8664666805d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/image.png" width="830px"></a>
-
-
-## [Edgerunners](themes/cd2adf60-84a1-436d-a0a9-95ac4c288928)
-
-<a title="Edgerunners YASB Theme" href="themes/cd2adf60-84a1-436d-a0a9-95ac4c288928"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/cd2adf60-84a1-436d-a0a9-95ac4c288928/image.png" width="830px"></a>
-
 
 ## [IlyaTheme](themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc)
 
 <a title="IlyaTheme YASB Theme" href="themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/image.png" width="830px"></a>
 
-
 ## [Pywal Theme](themes/4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3)
 
 <a title="Pywal Theme YASB Theme" href="themes/4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3/image.png" width="830px"></a>
-
 
 ## [Warriors Dreams](themes/179863d1-4b68-4126-92b5-621a671b49de)
 
 <a title="Warriors Dreams YASB Theme" href="themes/179863d1-4b68-4126-92b5-621a671b49de"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/image.png" width="830px"></a>
 
-
 ## [dots windows](themes/d513044f-9218-46e1-ab62-c15705b80341)
 
 <a title="dots windows YASB Theme" href="themes/d513044f-9218-46e1-ab62-c15705b80341"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d513044f-9218-46e1-ab62-c15705b80341/image.png" width="830px"></a>
-
 
 ## [Basic Revamped](themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2)
 
 <a title="Basic Revamped YASB Theme" href="themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/image.png" width="830px"></a>
 
-
 ## [Modern Glass](themes/568d5480-ee9e-4723-9079-8271a03f2466)
 
 <a title="Modern Glass YASB Theme" href="themes/568d5480-ee9e-4723-9079-8271a03f2466"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/568d5480-ee9e-4723-9079-8271a03f2466/image.png" width="830px"></a>
-
 
 ## [Komo Komo What](themes/a9196539-7f17-434a-b58d-80f33dd9374b)
 
 <a title="Komo Komo What YASB Theme" href="themes/a9196539-7f17-434a-b58d-80f33dd9374b"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/image.png" width="830px"></a>
 
-
 ## [minimal but productive](themes/d49a15b7-3ea1-4fd4-9fd4-3e8279c888a2)
 
 <a title="minimal but productive YASB Theme" href="themes/d49a15b7-3ea1-4fd4-9fd4-3e8279c888a2"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d49a15b7-3ea1-4fd4-9fd4-3e8279c888a2/image.png" width="830px"></a>
-
 
 ## [Windows9X NEO](themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f)
 
 <a title="Windows9X NEO YASB Theme" href="themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f/image.png" width="830px"></a>
 
-
 ## [Simple Elegance](themes/350edfcc-da1f-4aba-a5e2-f80d64940798)
 
 <a title="Simple Elegance YASB Theme" href="themes/350edfcc-da1f-4aba-a5e2-f80d64940798"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/350edfcc-da1f-4aba-a5e2-f80d64940798/image.png" width="830px"></a>
-
 
 ## [Cosmic Bar](themes/b243b2d0-9985-4a0f-a347-70ece4f634ce)
 
 <a title="Cosmic Bar YASB Theme" href="themes/b243b2d0-9985-4a0f-a347-70ece4f634ce"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b243b2d0-9985-4a0f-a347-70ece4f634ce/image.png" width="830px"></a>
 
-
 ## [Pillbox](themes/e675b585-4fad-4056-89ba-e318faeadab5)
 
 <a title="Pillbox YASB Theme" href="themes/e675b585-4fad-4056-89ba-e318faeadab5"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e675b585-4fad-4056-89ba-e318faeadab5/image.png" width="830px"></a>
-
 
 ## [Proto](themes/5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d)
 
 <a title="Proto YASB Theme" href="themes/5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d/image.png" width="830px"></a>
 
-
 ## [Neos](themes/0c710881-e0ae-4deb-9257-2a096e9c7408)
 
 <a title="Neos YASB Theme" href="themes/0c710881-e0ae-4deb-9257-2a096e9c7408"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0c710881-e0ae-4deb-9257-2a096e9c7408/image.png" width="830px"></a>
-
 
 ## [Aurora dock](themes/5ef86699-f1c7-4d48-a122-5822cecc9295)
 
 <a title="Aurora dock YASB Theme" href="themes/5ef86699-f1c7-4d48-a122-5822cecc9295"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5ef86699-f1c7-4d48-a122-5822cecc9295/image.png" width="830px"></a>
 
-
 ## [Sleek Windows](themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d)
 
 <a title="Sleek Windows YASB Theme" href="themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d/image.png" width="830px"></a>
-
 
 ## [Blime](themes/70d6d094-4e30-46cd-a385-c43476cbb52e)
 
 <a title="Blime YASB Theme" href="themes/70d6d094-4e30-46cd-a385-c43476cbb52e"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/70d6d094-4e30-46cd-a385-c43476cbb52e/image.png" width="830px"></a>
 
-
 ## [Aquamarine Dream](themes/764a14e0-2d6a-4826-994a-9289857886ba)
 
 <a title="Aquamarine Dream YASB Theme" href="themes/764a14e0-2d6a-4826-994a-9289857886ba"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/764a14e0-2d6a-4826-994a-9289857886ba/image.png" width="830px"></a>
-
 
 ## [Mono](themes/186930eb-4621-4aba-bce5-42959863e988)
 
 <a title="Mono YASB Theme" href="themes/186930eb-4621-4aba-bce5-42959863e988"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/186930eb-4621-4aba-bce5-42959863e988/image.png" width="830px"></a>
 
-
 ## [Kosmo](themes/0d077c3f-e206-4425-8077-c64819cea1d1)
 
 <a title="Kosmo YASB Theme" href="themes/0d077c3f-e206-4425-8077-c64819cea1d1"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0d077c3f-e206-4425-8077-c64819cea1d1/image.png" width="830px"></a>
-
 
 ## [minty green](themes/4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8)
 
 <a title="minty green YASB Theme" href="themes/4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8/image.png" width="830px"></a>
 
-
 ## [Dark Nord](themes/03a6eaa2-6d0b-485d-94aa-2d87e98f3c64)
 
 <a title="Dark Nord YASB Theme" href="themes/03a6eaa2-6d0b-485d-94aa-2d87e98f3c64"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/03a6eaa2-6d0b-485d-94aa-2d87e98f3c64/image.png" width="830px"></a>
-
 
 ## [WinVista](themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09)
 
 <a title="WinVista YASB Theme" href="themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/image.png" width="830px"></a>
 
-
 ## [blue yasb](themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11)
 
 <a title="blue yasb YASB Theme" href="themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11/image.png" width="830px"></a>
-
 
 ## [Catppuccin Mocha Reimagined](themes/68dd7099-3fea-45a7-9882-6d59bb05431c)
 
 <a title="Catppuccin Mocha Reimagined YASB Theme" href="themes/68dd7099-3fea-45a7-9882-6d59bb05431c"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/68dd7099-3fea-45a7-9882-6d59bb05431c/image.png" width="830px"></a>
 
-
 ## [Fluency](themes/38332072-b910-46e4-8315-f0094369ae52)
 
 <a title="Fluency YASB Theme" href="themes/38332072-b910-46e4-8315-f0094369ae52"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/38332072-b910-46e4-8315-f0094369ae52/image.png" width="830px"></a>
-
 
 ## [Comfyppuccin Reimagined](themes/0992d77b-662a-4f6b-ad41-551279d4f716)
 
 <a title="Comfyppuccin Reimagined YASB Theme" href="themes/0992d77b-662a-4f6b-ad41-551279d4f716"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0992d77b-662a-4f6b-ad41-551279d4f716/image.png" width="830px"></a>
 
-
 ## [Gruvbox Material Dark](themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4)
 
 <a title="Gruvbox Material Dark YASB Theme" href="themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4/image.png" width="830px"></a>
-
 
 ## [Moonlit Harmony](themes/c44e2f37-df78-46db-a87b-4f97b5ff58da)
 
 <a title="Moonlit Harmony YASB Theme" href="themes/c44e2f37-df78-46db-a87b-4f97b5ff58da"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c44e2f37-df78-46db-a87b-4f97b5ff58da/image.png" width="830px"></a>
 
-
 ## [Fluent Design](themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3)
 
 <a title="Fluent Design YASB Theme" href="themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3/image.png" width="830px"></a>
-
 
 ## [Comfyppuccin](themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d)
 
 <a title="Comfyppuccin YASB Theme" href="themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/image.png" width="830px"></a>
 
-
 ## [HexDock](themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018)
 
 <a title="HexDock YASB Theme" href="themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/image.png" width="830px"></a>
-
 
 ## [Simple Floating Widgets](themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042)
 
 <a title="Simple Floating Widgets YASB Theme" href="themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png" width="830px"></a>
 
-
 ## [Sky Theme](themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc)
 
 <a title="Sky Theme YASB Theme" href="themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/image.png" width="830px"></a>
-
 
 ## [Aero Glass](themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3)
 
 <a title="Aero Glass YASB Theme" href="themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/image.png" width="830px"></a>
 
-
 ## [Soft Segment](themes/f60c809d-1378-4042-9f11-46d0e9c37cf5)
 
 <a title="Soft Segment YASB Theme" href="themes/f60c809d-1378-4042-9f11-46d0e9c37cf5"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png" width="830px"></a>
-
 
 ## [Yasb 005](themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8)
 
 <a title="Yasb 005 YASB Theme" href="themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/image.png" width="830px"></a>
 
-
 ## [Simple Widgets](themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9)
 
 <a title="Simple Widgets YASB Theme" href="themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/image.png" width="830px"></a>
-
 
 ## [Mauveyos Mocha](themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e)
 
 <a title="Mauveyos Mocha YASB Theme" href="themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/image.png" width="830px"></a>
 
-
 ## [Aura](themes/c353fb20-a4dc-40dd-baaa-71561dc0308d)
 
 <a title="Aura YASB Theme" href="themes/c353fb20-a4dc-40dd-baaa-71561dc0308d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/image.png" width="830px"></a>
-
 
 ## [Catppuccin Mocha](themes/56d372d9-3806-499f-9caf-03782b11413b)
 
 <a title="Catppuccin Mocha YASB Theme" href="themes/56d372d9-3806-499f-9caf-03782b11413b"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/image.png" width="830px"></a>
 
-
 ## [Spectrum Symphony](themes/edb987a6-0df1-43c6-b274-0393bf469bf1)
 
 <a title="Spectrum Symphony YASB Theme" href="themes/edb987a6-0df1-43c6-b274-0393bf469bf1"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/image.png" width="830px"></a>
-
 
 ## [Yasb 004](themes/0892faae-d929-4c65-8689-4ef1de32f73d)
 
 <a title="Yasb 004 YASB Theme" href="themes/0892faae-d929-4c65-8689-4ef1de32f73d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/image.png" width="830px"></a>
 
-
 ## [Acrylic](themes/a93f1976-0c89-4593-b333-eaa374164c73)
 
 <a title="Acrylic YASB Theme" href="themes/a93f1976-0c89-4593-b333-eaa374164c73"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png" width="830px"></a>
-
 
 ## [Yasb 001](themes/61e6a045-e090-4f33-a41b-6938702eb446)
 
 <a title="Yasb 001 YASB Theme" href="themes/61e6a045-e090-4f33-a41b-6938702eb446"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png" width="830px"></a>
 
-
 ## [Yasb 002 Dynamic](themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9)
 
 <a title="Yasb 002 Dynamic YASB Theme" href="themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png" width="830px"></a>
-
 
 ## [Minimal Glaze](themes/1f279c28-38a1-4067-90ed-614b87dd7290)
 
 <a title="Minimal Glaze YASB Theme" href="themes/1f279c28-38a1-4067-90ed-614b87dd7290"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png" width="830px"></a>
 
-
 ## [Yasb 003](themes/5e5118ca-4e79-4be0-be09-144b519bfd35)
 
 <a title="Yasb 003 YASB Theme" href="themes/5e5118ca-4e79-4be0-be09-144b519bfd35"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/image.png" width="830px"></a>
-
 
 ## [Windows 11 Theme](themes/7d3895d4-454b-40db-a2f9-44a238d5793b)
 
 <a title="Windows 11 Theme YASB Theme" href="themes/7d3895d4-454b-40db-a2f9-44a238d5793b"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png" width="830px"></a>
 
-
 ## [Default](themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491)
 
 <a title="Default YASB Theme" href="themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png" width="830px"></a>
-
 
 ## [Everforest](themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba)
 
 <a title="Everforest YASB Theme" href="themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png" width="830px"></a>
 
-
 ## [Nord Dynamic](themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a)
 
 <a title="Nord Dynamic YASB Theme" href="themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png" width="830px"></a>
 
+## Disabled Themes
+
+> [!NOTE]
+> These themes are currently disabled in the catalog because they may be incompatible with the latest YASB version, waiting for the author to update them, or otherwise not currently recommended for use.
+
+## [Edgerunners](themes/cd2adf60-84a1-436d-a0a9-95ac4c288928)
+
+<a title="Edgerunners YASB Theme" href="themes/cd2adf60-84a1-436d-a0a9-95ac4c288928"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/cd2adf60-84a1-436d-a0a9-95ac4c288928/image.png" width="830px"></a>
 
