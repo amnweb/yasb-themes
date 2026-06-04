@@ -8,7 +8,17 @@ def load_themes_data():
         return json.load(f)
 
 
+def write_theme_card(readme, theme_id, theme_data):
+    name = theme_data["name"]
+    image = theme_data["image"]
+    readme.write(f"## [{name}](themes/{theme_id})\n\n")
+    readme.write(f'<a title="{name} YASB Theme" href="themes/{theme_id}"><img src="{image}" width="830px"></a>\n\n')
+
+
 def generate_readme(themes_data):
+    enabled_themes = {k: v for k, v in themes_data.items() if not v.get("disabled", False)}
+    disabled_themes = {k: v for k, v in themes_data.items() if v.get("disabled", False)}
+
     with open("README.md", "w") as readme:
         readme.write(
             '<div id="toc" align="center"><a href="https://github.com/amnweb/yasb"><img src="https://raw.githubusercontent.com/amnweb/yasb/main/src/assets/images/app_icon.png" width="64"></a><ul style="list-style:none"><summary><h2>Theme repository for YASB</h2></summary></ul></div>\n\n\n'
@@ -42,14 +52,17 @@ def generate_readme(themes_data):
             "> This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.\n\n"
         )
         readme.write("## Latest Themes\n")
-        for theme_id, theme_data in themes_data.items():
-            name = theme_data["name"]
-            image = theme_data["image"]
-            readme.write(f"## [{name}](themes/{theme_id})\n\n")
+        for theme_id, theme_data in enabled_themes.items():
+            write_theme_card(readme, theme_id, theme_data)
+
+        if disabled_themes:
+            readme.write("## Disabled Themes\n\n")
             readme.write(
-                f'<a title="{name} YASB Theme" href="themes/{theme_id}"><img src="{image}" width="830px"></a>\n\n'
+                "> [!NOTE]\n"
+                "> These themes are currently disabled in the catalog because they may be incompatible with the latest YASB version, waiting for the author to update them, or otherwise not currently recommended for use.\n\n"
             )
-            readme.write("\n")
+            for theme_id, theme_data in disabled_themes.items():
+                write_theme_card(readme, theme_id, theme_data)
 
 
 if __name__ == "__main__":

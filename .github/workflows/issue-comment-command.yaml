@@ -1,0 +1,72 @@
+name: Handle YasbBot issue comment
+
+on:
+  issue_comment:
+    types: [created]
+
+env:
+  PYTHON_VERSION: '3.14'
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  process-command:
+    if: >-
+      github.event.issue.pull_request == null &&
+      github.event.comment.user.login == github.repository_owner &&
+      startsWith(github.event.comment.body, '/yasbbot')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Parse /yasbbot command
+        id: parse
+        env:
+          ISSUE_COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          python .github/scripts/handle-yasbbot-comment.py
+
+      - name: Rebuild README
+        run: |
+          python .github/scripts/generate-readme.py
+
+      - name: Commit and push changes
+        env:
+          ACTION: ${{ fromJSON(steps.parse.outputs.result_json).action }}
+          THEME_NAME: ${{ fromJSON(steps.parse.outputs.result_json).theme_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add themes.json README.md
+          if git diff --cached --quiet; then
+            echo "No metadata changes to push."
+          else
+            ACTION_LABEL="$(printf '%s' "$ACTION" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')"
+            git commit -m "${ACTION_LABEL} theme: ${THEME_NAME}"
+            git push
+          fi
+
+      - name: Comment result
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            I've ${{ fromJSON(steps.parse.outputs.result_json).action }}d theme “${{ fromJSON(steps.parse.outputs.result_json).theme_name }}” (ID: ${{ fromJSON(steps.parse.outputs.result_json).theme_id }}).
+            The repository README have been refreshed to reflect the current status.
+
+      - name: Close issue
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue close ${{ github.event.issue.number }} --reason completed
