@@ -9,10 +9,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       #round_corners: true
       border_color: "System"
@@ -81,8 +79,6 @@ widgets:
     options:
       label_workspace_btn: "{index}"
       label_workspace_active_btn: "{index}"
-      btn_shadow:
-        enabled: false
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -166,7 +162,7 @@ widgets:
       label: "{icon} {level}"
       # label_alt: "{volume}"
       tooltip: false
-      volume_icons:
+      icons:
         - "\uEEE8" # Icon for muted
         - "\uF026" # Icon for 0-10% volume
         - "\uF027" # Icon for 11-30% volume
@@ -223,11 +219,6 @@ widgets:
         on_left: "do_nothing"
         on_middle: "toggle_label"
         on_right: "exec cmd /c Taskmgr"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -330,11 +321,6 @@ widgets:
         on_right: "toggle_label"
         on_middle: "empty_bin"
       show_confirmation: true
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
@@ -471,8 +457,3 @@ widgets:
         offset_left: 0
         show_layout_icon: true
         layout_icon: "\uf11c"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]

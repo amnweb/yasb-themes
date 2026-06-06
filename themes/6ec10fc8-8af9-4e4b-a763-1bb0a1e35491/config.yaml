@@ -16,10 +16,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false 
-      acrylic: false 
       dark_mode: false
       round_corners: false
       border_color: None
@@ -167,11 +165,6 @@ widgets:
           label_zero_index: false
           hide_empty_workspaces: false
           hide_if_offline: false
-          container_padding: 
-            top: 0
-            left: 8
-            bottom: 0
-            right: 8
   komorebi_active_layout:
       type: "komorebi.active_layout.ActiveLayoutWidget"
       options:
@@ -188,18 +181,13 @@ widgets:
           ultrawide_vertical_stack: "W-STACK"
           right_main_vertical_stack: "RMV-STACK"
           monocle: "MONOCLE"
-          maximised: "MAX"
+          maximized: "MAX"
           floating: "FLOATING"
           paused: "PAUSED"
         callbacks:
           on_left: 'next_layout'
           on_middle: 'toggle_monocle'
           on_right: 'prev_layout'
-        container_padding: 
-          top: 0
-          left: 8
-          bottom: 0
-          right: 8
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
@@ -262,7 +250,7 @@ widgets:
       options:
         label: "<span>{icon}</span> {level}"
         label_alt: "{volume}"
-        volume_icons:
+        icons:
           - "\ueee8"  # Icon for muted
           - "\uf026"  # Icon for 0-10% volume
           - "\uf027"  # Icon for 11-30% volume
@@ -306,11 +294,6 @@ widgets:
           - {icon: "\uf422", launch: "search"}
           #- {icon: "\udb84\udf55", launch: "widget"}
           # Currently available to use quick_settings, notification_center, search, widget, launcher (launcher will trigger ALT+A)
-        container_padding: 
-          top: 0
-          left: 8
-          bottom: 0
-          right: 8
   github:
       type: "yasb.github.GithubWidget"
       options:

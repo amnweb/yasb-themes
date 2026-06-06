@@ -15,7 +15,6 @@ bars:
       duration: 1000
     blur_effect:
       enabled: True
-      acrylic: True
     window_flags:
       windows_app_bar: True
     dimensions:
@@ -232,7 +231,6 @@ widgets:
     options:
       label_workspace_btn: "\u2022"
       label_workspace_active_btn: "\uebb4"
-      animation: True
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -275,7 +273,6 @@ widgets:
       label: ""
       label_alt: ""
       tooltip: True
-      hide_unsupported: True
       brightness_toggle_level: [0, 50, 100]
       auto_light: False
       auto_light_icon: "\udb80\udce1"
@@ -515,8 +512,3 @@ widgets:
         shutdown: ["\uf011", "Shut Down"]
         restart: ["\uead2", "Reboot"]
         cancel: ["\udb81\udf3a", "Cancel"]
-      label_shadow:
-        enabled: False
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]

@@ -99,7 +99,7 @@ widgets:
       label: "<span>{icon}</span>{level}"
       tooltip: false
       mute_text: "Muted"
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"

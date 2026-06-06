@@ -19,7 +19,6 @@ bars:
       duration: 1000
     blur_effect:
       enabled: false 
-      acrylic: true 
       dark_mode: true
       round_corners: false
       border_color: None
@@ -61,11 +60,6 @@ widgets:
     type: "yasb.home.HomeWidget"
     options:
       label: "<span>\udb81\udf17</span>"
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       menu_list:
       - { title: "User Home", path: "~" }
       - { title: "Download", path: "~\\Downloads" }
@@ -76,24 +70,9 @@ widgets:
       blur: true
       border_color: "None"
       round_corners_type: "small"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
-      label_shadow:
-        enabled: true
-        offset: [0, 0]
-        radius: 4
-        color: "#feed00"
       label_offline: "\u23fc Offline"
       label_workspace_btn: "\udb80\uddc6"
       label_workspace_active_btn: "\ue285  \ue200"
@@ -102,13 +81,7 @@ widgets:
       label_zero_index: true
       hide_empty_workspaces: false
       hide_if_offline: false
-      animation: true
       enable_scroll_switching: true
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -116,11 +89,6 @@ widgets:
       label_collapsed: "\udb81\udeb6"
       label_expanded: "\udb82\ude03"
       label_position: "left"
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#46dffb"
       icon_size: 12 
       pin_click_modifier: "alt" 
       show_unpinned: false
@@ -131,20 +99,11 @@ widgets:
     options:
       label: "\ue240"
       label_alt: "{volume_label} {space[used][gb]} / {space[total][gb]}"
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       update_interval: 60
       disk_thresholds:
         low: 25
         medium: 50
         high: 90
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 1500
       group_label:
         volume_labels: ["C", "D", "E", "F"]
         show_label_name: true
@@ -154,7 +113,6 @@ widgets:
         border_color: "System"
         alignment: "left"
         direction: "down"
-        distance: 6
       progress_bar:
         enabled: true
         position: "left"
@@ -170,18 +128,8 @@ widgets:
     type: "yasb.applications.ApplicationsWidget"
     options:
       image_icon_size: 14
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
       label: "{data}"
       tooltip: True
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       app_list:
         - { icon: "\uf422", launch: "~\\AppData\\Local\\Programs\\EverythingToolbar\\EverythingToolbar.Launcher.exe", name: "Search" }
         - { icon: "\ueb01", launch: "~\\Path\\To-Your\\Browser", name: "Network" }
@@ -193,16 +141,6 @@ widgets:
     options:
       label: "{artist} - {title}"
       label_alt: "{title}"
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 2
-        color: "#00ffd2"
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       max_field_size:
         label: 32
         label_alt: 32
@@ -239,11 +177,6 @@ widgets:
         max_artist_size: 20
         show_source: true
         show_volume_slider: true
-      container_padding:
-        top: 8
-        left: 8
-        bottom: 8
-        right: 8
       scrolling_label:
         enabled: true
         always_scroll: false
@@ -260,13 +193,8 @@ widgets:
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       tooltip: true
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"
@@ -282,29 +210,13 @@ widgets:
         border_color: "None"
         alignment: "center"
         direction: "down"
-        distance: 6
         show_apps: true
         show_apps_expanded: true
-      container_padding:
-        top: 0
-        left: 4
-        bottom: 0
-        right: 8
   clock:
     type: "yasb.clock.ClockWidget"
     options:
       label: "<span>\uf017</span> {%a, %d/%m/%y %H:%M}"
       label_alt: "{%A, %d %B %Y %H:%M}"
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 3
-        color: "#00ffd2"
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 2
-        color: "#ff003c"
       callbacks:
         on_left: "toggle_calendar"
         on_middle: "next_timezone"
@@ -316,18 +228,12 @@ widgets:
         border_color: "None"
         alignment: "center"
         direction: "down"
-        distance: 6
         show_holidays: true
         country_code: "$env:YASB_CALENDAR_COUNTRY_CODE"
         subdivision: "$env:YASB_CALENDAR_SUBDIVISION"
         holiday_color: "#ff003c"
         extended: true
         show_week_numbers: true
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 0
       timezones: ["JP"]
       icons:
         clock_01 : "\udb85\udc3f"
@@ -355,16 +261,6 @@ widgets:
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 3
-        color: "#00ffd2"
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       api_key: "$env:YASB_WEATHER_API_KEY"
       show_alerts: true
       tooltip: true
@@ -391,11 +287,6 @@ widgets:
         thunderstormDay: "\ue30f"
         thunderstormNight: "\ue338"
         default: "\udb81\udd99"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 8
       weather_card: 
         blur: true
         round_corners: true
@@ -403,7 +294,6 @@ widgets:
         border_color: "None"
         alignment: "center"
         direction: "down"
-        distance: 6
         icon_size: 64
         show_hourly_forecast: true
         time_format: "24h"
@@ -440,16 +330,6 @@ widgets:
       label_no_window: ""
       label_icon: true
       label_icon_size: 12
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 3
-        color: "#00ffd2"
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       max_length: 32
       max_length_ellipsis: "..."
       monitor_exclusive: true
@@ -463,16 +343,6 @@ widgets:
       tooltip: true
       monitor_exclusive: true
       hide_empty: true
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 3
-        color: "#00ffd2"
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       preview:
         enabled: true
         width: 240
@@ -483,11 +353,6 @@ widgets:
         processes: []
         titles: []
         classes: []
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
       callbacks:
         on_left: "toggle_window"
         on_middle: "do_nothing"
@@ -497,11 +362,6 @@ widgets:
     options:
       label: "<span>\uf4bc</span> {info[percent][total]}%"
       label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       update_interval: 2000
       histogram_icons:
         [
@@ -519,50 +379,26 @@ widgets:
       callbacks:
         on_right: "toggle_label"
         on_left: "exec cmd /c Taskmgr"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 0
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
       label: "<span>\uefc5</span> {virtual_mem_percent}%"
       label_alt: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       update_interval: 5000
       callbacks:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      container_padding:
-        top: 0
-        left: 6
-        bottom: 0
-        right: 8
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
         label: "<span>{wifi_icon}</span>"
         label_alt: "{wifi_name} {wifi_strength}%"
-        label_shadow:
-          enabled: true
-          offset: [-1, 2]
-          radius: 1
-          color: "#ff003c"
         update_interval: 5000
         callbacks:
           on_left: "toggle_menu"
           on_middle: "do_nothing"
           on_right: "exec cmd.exe /c start ms-settings:network`"
-        animation:
-          enabled: true
-          type: "fadeInOut"
-          duration: 1000
         menu_config:
           blur: true
           round_corners: true
@@ -584,11 +420,6 @@ widgets:
             "\uec3e",
             "\uec3f",
           ]
-        container_padding:
-          top: 0
-          left: 8
-          bottom: 0
-          right: 8
         wifi_icons: [
           "\udb82\udd2e",  # Icon for 0% strength
           "\udb82\udd1f",  # Icon for 1-20% strength
@@ -601,16 +432,6 @@ widgets:
       options:
         label: "<span>\uf0ab</span> {download_speed}   <span>\uf0aa</span> {upload_speed}"
         label_alt: "Today Down: {today_downloaded} | Today Up: {today_uploaded}"
-        label_shadow:
-          enabled: true
-          offset: [-1, 2]
-          radius: 1
-          color: "#00ffd2"
-        container_shadow:
-          enabled: true
-          offset: [-1, 2]
-          radius: 1
-          color: "#ff003c"
         update_interval: 1000
         max_label_length: 8
         max_label_length_align: "center"
@@ -626,29 +447,10 @@ widgets:
           border_color: None
           alignment: "right"
           direction: "down"
-        animation:
-          enabled: true
-          type: "fadeInOut"
-          duration: 600
-        container_padding:
-          top: 0
-          left: 0
-          bottom: 0
-          right: 8 
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
       label: "\uf011"
-      label_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#00ffd2"
-      container_shadow:
-        enabled: true
-        offset: [-1, 2]
-        radius: 1
-        color: "#ff003c"
       uptime: True
       blur: True
       blur_background: True
@@ -660,8 +462,3 @@ widgets:
         signout: ["\ue009", "Sign out"]
         sleep: ["\udb81\udcb2", "Sleep"]
         cancel: ["", "Cancel"]
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8

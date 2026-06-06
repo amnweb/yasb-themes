@@ -15,7 +15,6 @@ bars:
       duration: 800
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
     window_flags:
@@ -80,7 +79,6 @@ widgets:
           round_corners: true
           border_color: None
           alignment: "center"
-          distance: 4
         callbacks:
           on_left: "toggle_group"
   home:
@@ -97,7 +95,6 @@ widgets:
       blur: true
       round_corners: true
       border_color: None
-      distance: 4
       menu_labels:
         shutdown: "Shutdown"
         restart: "Restart"
@@ -135,7 +132,6 @@ widgets:
         blur: true
         round_corners: true
         border_color: None
-        distance: 4
         alignment: "left"
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
@@ -148,7 +144,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: false
       hide_if_offline: false
-      animation: true
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -168,7 +163,6 @@ widgets:
         round_corners: true
         border_color: None
         alignment: "right"
-        distance: 4
         icon_size: 32
       icons:
         sunnyDay: "\udb81\udd99"
@@ -187,7 +181,7 @@ widgets:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
       tooltip: false
-      volume_icons:
+      icons:
         - "\ueee8" # Icon for muted
         - "\uf026" # Icon for 0-10% volume
         - "\uf027" # Icon for 11-30% volume
@@ -202,7 +196,6 @@ widgets:
         border_color: None
         alignment: "right"
         direction: "down"
-        distance: 4
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:

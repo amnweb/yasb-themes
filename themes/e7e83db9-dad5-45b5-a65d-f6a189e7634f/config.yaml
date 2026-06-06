@@ -14,10 +14,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       round_corners: false
       border_color: None
@@ -137,7 +135,7 @@ widgets:
           ultrawide_vertical_stack: "W-STACK"
           right_main_vertical_stack: "RMV-STACK"
           monocle: "MONOCLE"
-          maximised: "MAX"
+          maximized: "MAX"
           floating: "FLOATING"
           paused: "PAUSED"
         callbacks:
@@ -186,7 +184,7 @@ widgets:
       options:
         label: "<span>{icon}</span> {level}"
         label_alt: "{volume}"
-        volume_icons:
+        icons:
           - "\ueee8"  # Icon for muted
           - "\uf026"  # Icon for 0-10% volume
           - "\uf027"  # Icon for 11-30% volume
@@ -301,11 +299,6 @@ widgets:
         work: "\uf252"
         break: "\uf253"
         paused: "\uf254"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
       menu:
         blur: true
         round_corners: true
@@ -339,11 +332,6 @@ widgets:
       bar_spacing: 2
       bar_width: 4
       hide_empty: true
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -402,8 +390,3 @@ widgets:
         on_left: "toggle_notification"
         on_right: "do_nothing"
         on_middle: "toggle_label"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8

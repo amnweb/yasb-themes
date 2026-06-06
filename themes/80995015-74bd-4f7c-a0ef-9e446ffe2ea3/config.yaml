@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true 
-      acrylic: false
       dark_mode: true
       round_corners: true
       border_color: None
@@ -63,12 +61,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: true 
       hide_if_offline: true
-      animation: true
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
@@ -84,23 +76,17 @@ widgets:
         horizontal_stack: "[H]="
         ultrawide_vertical_stack: "||="
         monocle: "[M]"
-        maximised: "[X]"
+        maximized: "[X]"
         floating: "><>"
         paused: "[P]"
       callbacks:
         on_left: "next_layout"
         on_middle: "toggle_monocle"
         on_right: "prev_layout" 
-      container_padding: 
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8 
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "GlazeWM Offline"
-      hide_empty_workspaces: true
       hide_if_offline: true
   glazewm_tiling_direction:
     type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
@@ -140,14 +126,13 @@ widgets:
         border_color: "System"
         alignment: "right"
         direction: "down"
-        distance: 6
         icon_size: 64
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"
@@ -182,11 +167,6 @@ widgets:
       ]       
       callbacks:
         on_left: "toggle_label"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
@@ -253,11 +233,6 @@ widgets:
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
       label: "{data}"
       app_list:
         - { icon: "\uf0a2", launch: "notification_center" }
@@ -273,24 +248,15 @@ widgets:
       max_notification: 30
       only_unread: false
       max_field_size: 54
-      menu_width: 400
-      menu_height: 400
-      menu_offset: 240
       update_interval: 60
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
-      animation: true
       icon_size: 16
       ignore_apps:
         processes: []
         titles: []
         classes: []
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
@@ -307,7 +273,5 @@ widgets:
         orientation: "portrait"
         image_spacing: 8
         lazy_load: true
-        lazy_load_delay: 80
         lazy_load_fadein: 400
         image_corner_radius: 20
-        enable_cache: false

@@ -8,10 +8,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: false
       round_corners: false
       border_color: None
@@ -98,7 +96,7 @@ widgets:
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"
@@ -131,11 +129,6 @@ widgets:
         processes: []
         titles: []
         classes: []
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
@@ -152,10 +145,8 @@ widgets:
         orientation: "portrait"
         image_spacing: 8
         lazy_load: true
-        lazy_load_delay: 10
         lazy_load_fadein: 10
         image_corner_radius: 0
-        enable_cache: true
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -226,11 +217,6 @@ widgets:
     options:
       label: "<span>\udb82\udd0c</span> {count}"
       label_alt: "{count} notes"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
       menu:
         blur: true
         round_corners: true
@@ -253,7 +239,6 @@ widgets:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "Sum"
-      hide_empty_workspaces: false
       hide_if_offline: false
   bluetooth:
     type: "yasb.bluetooth.BluetoothWidget"
@@ -282,8 +267,3 @@ widgets:
       bar_width: 4
       sleep_timer: 2
       hide_empty: false
-      container_padding:
-        top: 2
-        left: 8
-        bottom: 0
-        right: 8

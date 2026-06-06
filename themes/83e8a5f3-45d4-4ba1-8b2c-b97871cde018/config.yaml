@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       round_corners: false
       border_color: None
@@ -53,7 +51,6 @@ widgets:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "GlazeWM Offline"
-      hide_empty_workspaces: true
       hide_if_offline: false      
   media:
       type: "yasb.media.MediaWidget"
@@ -89,7 +86,7 @@ widgets:
       type: "yasb.volume.VolumeWidget"
       options:
         label: "<span>{icon}</span>"
-        volume_icons:
+        icons:
           - "\ueee8"  # Icon for muted
           - "\uf026"  # Icon for 0-10% volume
           - "\uf027"  # Icon for 11-30% volume
@@ -121,7 +118,6 @@ widgets:
           border_color: "System"
           alignment: "right"
           direction: "down"
-          distance: 6
         callbacks:
           on_left: "toggle_group"
           on_middle: "toggle_label"
@@ -142,10 +138,8 @@ widgets:
         orientation: "portrait"
         image_spacing: 10
         lazy_load: true
-        lazy_load_delay: 10
         lazy_load_fadein: 200
         image_corner_radius: 20
-        enable_cache: true
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -157,11 +151,6 @@ widgets:
         on_left: "toggle_notification"
         on_right: "do_nothing"
         on_middle: "toggle_label"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   systray:
     type: "yasb.systray.SystrayWidget"
     options:

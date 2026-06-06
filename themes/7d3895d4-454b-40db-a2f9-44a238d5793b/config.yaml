@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true 
-      acrylic: true 
       dark_mode: true
       round_corners: true
       border_color: None
@@ -116,7 +114,7 @@ widgets:
         ultrawide_vertical_stack: "W-STACK"
         right_main_vertical_stack: "RMV-STACK"
         monocle: "MONOCLE"
-        maximised: "MAX"
+        maximized: "MAX"
         floating: "FLOATING"
         paused: "PAUSED"
       callbacks:
@@ -150,7 +148,7 @@ widgets:
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
         - "\uf027"  # Icon for 11-30% volume
@@ -184,11 +182,6 @@ widgets:
         - {icon: "\uf46a", launch: "cmd.exe /c start ms-settings:windowsupdate"}
         - {icon: "\uf422", launch: "search"}
         - {icon: "\udb84\udf55", launch: "widget"}
-      container_padding: 
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:

@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: false
       round_corners: false
       border_color: None
@@ -63,7 +61,6 @@ widgets:
         label_zero_index: false
         hide_empty_workspaces: false
         hide_if_offline: false
-        animation: true
   weather:
     type: "yasb.weather.WeatherWidget"
     options:

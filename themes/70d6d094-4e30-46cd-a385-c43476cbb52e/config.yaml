@@ -13,10 +13,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       round_corners: false
       border_color: "None"
@@ -146,17 +144,11 @@ widgets:
         on_left: "toggle_cpu_menu"
         on_middle: "exec cmd /c Taskmgr"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span>{level}"
-      volume_icons:
+      icons:
         - "\ue74f" # Icon for muted
         - "\ue992" # Icon for 0-10% volume
         - "\ue993" # Icon for 11-30% volume
@@ -172,12 +164,6 @@ widgets:
       callbacks:
         on_left: "toggle_volume_menu"
         on_right: "toggle_mute"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -186,12 +172,6 @@ widgets:
       callbacks:
         on_left: "toggle_calendar"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -243,21 +223,10 @@ widgets:
       label_alt: "{count} notifications"
       hide_empty: true
       tooltip: false
-      container_padding:
-        top: 0
-        left: 10
-        bottom: 0
-        right: 12
       callbacks:
         on_left: "toggle_notification"
         on_middle: "clear_notifications"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
-
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -269,10 +238,6 @@ widgets:
       max_length: 30
       max_length_ellipsis: "..."
       monitor_exclusive: false
-      animation:
-        enabled: false
-        duration: 200
-        type: "fadeInOut"
       rewrite:
         - pattern: "Visual Studio Code"
           replacement: "VSC"

@@ -14,10 +14,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true 
-      acrylic: true 
       dark_mode: true
       round_corners: false
       border_color: None
@@ -71,11 +69,6 @@ widgets:
       callbacks:
         on_left: "toggle_menu"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   update_check:
     type: "yasb.update_check.UpdateCheckWidget"
     options:
@@ -84,11 +77,6 @@ widgets:
         label: "<span>\uf0ab</span> {count}"
         interval: 60
         exclude: []
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   launchpad:
     type: "yasb.launchpad.LaunchpadWidget"
     options:
@@ -111,16 +99,6 @@ widgets:
       group_apps: false
       callbacks:
         on_left: "toggle_launchpad"
-      app_title_shadow:
-        enabled: true
-        color: "#00000090"
-        offset: [1, 1]
-        radius: 2
-      app_icon_shadow:
-        enabled: true
-        color: "#00000090"
-        offset: [0, 2]
-        radius: 8
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -135,7 +113,6 @@ widgets:
         border_color: "System"
         alignment: "right"
         direction: "down"
-        distance: 6
       callbacks:
         on_left: "toggle_group"
   language:
@@ -159,11 +136,6 @@ widgets:
         offset_left: 0
         show_layout_icon: true
         layout_icon: "\uf11c"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   cava:
     type: "yasb.cava.CavaWidget"
     options:
@@ -201,11 +173,6 @@ widgets:
         direction: 'down'
         offset_top: 6
         offset_left: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -217,7 +184,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: false
       hide_if_offline: true
-      animation: true
       toggle_workspace_layer:
         enabled: false
         tiling_label: "Tiling"
@@ -230,11 +196,6 @@ widgets:
         hide_label: false
         hide_duplicates: false
         hide_floating: false
-      btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   notes:
     type: "yasb.notes.NotesWidget"
     options:
@@ -259,11 +220,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -285,11 +241,6 @@ widgets:
         low: 25
         medium: 50
         high: 90
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -315,11 +266,6 @@ widgets:
         "traffic",
         "disk"
       ]
-      container_padding:
-        top: 0
-        left: 2
-        bottom: 0
-        right: 6
   github:
     type: "yasb.github.GithubWidget"
     options:
@@ -346,11 +292,6 @@ widgets:
         direction: "down"
         show_categories: true
         categories_order: ["PullRequest", "Issue", "CheckSuite", "Release", "Discussion"]
-      label_shadow:
-        enabled: True
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -404,11 +345,6 @@ widgets:
         pause: "\uf04c"
         prev_track: "\uf048"
         next_track: "\uf051"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -430,17 +366,12 @@ widgets:
         on_left: "toggle_calendar"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"
@@ -465,11 +396,6 @@ widgets:
       callbacks:
         on_left: "toggle_volume_menu"
         on_right: "toggle_mute"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:

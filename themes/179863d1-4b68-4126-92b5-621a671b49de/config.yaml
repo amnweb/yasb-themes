@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: true
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: false
       round_corners: false
       round_corners_type: "normal"
@@ -96,7 +94,6 @@ widgets:
       animation:
         enabled: true
         duration: 200
-        type: "fadeInOut"
       icon_size: 16
       title_label: 
         enabled: false
@@ -266,11 +263,6 @@ widgets:
       show_volume: false
       show_network: false
       tooltip: true
-      btn_shadow:
-        enabled: false
-        color: "white"
-        radius: 3
-        offset: [ 1, 1 ]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -329,7 +321,7 @@ widgets:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
       tooltip: false
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"

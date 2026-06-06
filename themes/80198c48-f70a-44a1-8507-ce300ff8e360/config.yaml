@@ -12,10 +12,8 @@ bars:
       duration: 400
     alignment:
       position: "top"
-      center: true
     blur_effect:
       enabled: true
-      acrylic: true
       dark_mode: true
       round_corners: false
       border_color: None
@@ -98,12 +96,6 @@ widgets:
       options:
         label_workspace_btn: "\udb81\udc3d"
         label_workspace_active_btn: "\udb81\udc3e"
-        btn_shadow:
-          enabled: true
-          color: "black"
-          radius: 3
-          offset: [ 1, 1 ]
-
   taskbar:
       type: "yasb.taskbar.TaskbarWidget"
       options:
@@ -160,12 +152,6 @@ widgets:
           pause: "\ue769"
           prev_track: "\ue892"
           next_track: "\ue893"
-        label_shadow:
-          enabled: true
-          color: "black"
-          radius: 3
-          offset: [1, 1]
-
   clock:
       type: "yasb.clock.ClockWidget"
       options:
@@ -206,17 +192,6 @@ widgets:
           on_left: "do_nothing"
           on_middle: "exec cmd /c Taskmgr"
           on_right: "toggle_label"
-        container_padding:
-          top: 0
-          left: 0
-          bottom: 0
-          right: 0
-        label_shadow:
-          enabled: false
-          color: "black"
-          radius: 5
-          offset: [ 0, 0 ]
-
   gpu:
       type: "yasb.gpu.GpuWidget"
       options:
@@ -267,12 +242,6 @@ widgets:
           - "\u2586"  # 60%
           - "\u2587"  # 70%
           - "\u2588"  # 80%+
-        label_shadow:
-          enabled: true
-          color: "black"
-          radius: 3
-          offset: [ 1, 1 ]
-
   traffic:
       type: "yasb.traffic.TrafficWidget"
       options:
@@ -293,19 +262,13 @@ widgets:
           on_left: "toggle_menu"
           on_middle: "exec cmd.exe /c start ms-settings:network-status"
           on_right: "do_nothing"
-        label_shadow:
-          enabled: false
-          color: "black"
-          radius: 3
-          offset: [ 1, 1 ]
-
   volume:
       type: "yasb.volume.VolumeWidget"
       options:
         label: "<span>{icon}</span> {level}"
         label_alt: "{volume}"
         mute_text: "Mute"
-        volume_icons:
+        icons:
           - "\ue74f"  # Icon for muted
           - "\ue992"  # Icon for 0-10% volume
           - "\ue993"  # Icon for 11-30% volume
@@ -343,12 +306,6 @@ widgets:
           on_left: "toggle_mic_menu"
           on_middle: "exec cmd.exe /c start ms-settings:sound"
           on_right: "toggle_mute"
-        label_shadow:
-          enabled: true
-          color: "black"
-          radius: 3
-          offset: [ 1, 1 ]
-
   disk:
       type: "yasb.disk.DiskWidget"
       options:
@@ -388,12 +345,6 @@ widgets:
           - { icon: "\uf489", launch: "wt", name: "Windows Terminal" }
           - { icon: "\udb82\ude1e", launch: "cmd /c code", name: "VS Code" }
           - { icon: "\uf1b6", launch: "C:/Program Files (x86)/Steam/Steam.exe", name: "Steam" }
-        container_padding:
-          top: 0
-          left: 8
-          bottom: 0
-          right: 8
-
   power_menu:
       type: "yasb.power_menu.PowerMenuWidget"
       options:

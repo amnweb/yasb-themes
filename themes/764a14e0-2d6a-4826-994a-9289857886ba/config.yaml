@@ -9,13 +9,11 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     animation:
       enabled: true
       duration: 1000
     blur_effect:
       enabled: true 
-      acrylic: false 
       dark_mode: true
       round_corners: false
       #border_color: None
@@ -67,7 +65,6 @@ widgets:
       label: "<span>{icon}</span>"
       label_alt: "Brightness {percent}%"
       tooltip: true
-      hide_unsupported: true
       brightness_toggle_level: [0, 50, 100]
       auto_light: false
       auto_light_icon: "\udb80\udce1"
@@ -91,11 +88,6 @@ widgets:
       callbacks:
           on_left: "toggle_brightness_menu"
           on_middle: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
@@ -104,10 +96,6 @@ widgets:
         update_interval: 5000
         ethernet_icon: "\uf0ac"
         ethernet_label_alt: "{ip_addr}"
-        animation:
-          enabled: true
-          duration: 200
-          type: "fadeInOut"
         menu_config:
           blur: true
           round_corners: true
@@ -133,11 +121,6 @@ widgets:
           on_left: "toggle_menu"
           on_middle: "toggle_label"
           on_right: "exec cmd.exe /c start ms-settings:network"
-        container_padding:
-          top: 0
-          left: 8
-          bottom: 0
-          right: 8
         wifi_icons: [
           "\udb82\udd2e",  # Icon for 0% strength
           "\udb82\udd1f",  # Icon for 1-20% strength
@@ -160,16 +143,6 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
-      btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
-      unpinned_vis_btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   language:
     type: "yasb.language.LanguageWidget"
     options:
@@ -190,11 +163,6 @@ widgets:
         offset_left: 0
         show_layout_icon: true
         layout_icon: "\uf11c"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 8
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -210,7 +178,6 @@ widgets:
           border_color: "System"
           alignment: "left"
           direction: "down"
-          distance: 6
         callbacks:
           on_left: "toggle_group"
           on_middle: "toggle_label"
@@ -245,11 +212,6 @@ widgets:
       histogram_num_columns: 8
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 0
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -260,11 +222,6 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      container_padding:
-        top: 0
-        left: 6
-        bottom: 0
-        right: 8
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -276,11 +233,6 @@ widgets:
         on_left: "toggle_notification"
         on_right: "do_nothing"
         on_middle: "toggle_label"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
   home:
     type: "yasb.home.HomeWidget"
     options:
@@ -295,11 +247,6 @@ widgets:
       blur: true
       border_color: "None"
       round_corners_type: "small"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -354,16 +301,6 @@ widgets:
         next_track: "\uf051"
         play: "\uf04b"
         pause: "\uf04c"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 4
-        offset: [ 1, 1 ]
       callbacks:
         on_left: "toggle_play_pause"
         on_middle: "toggle_label"
@@ -373,8 +310,6 @@ widgets:
     options:
       label: "{%H:%M %d.%m.%y}"
       label_alt: "{%H:%M %d.%m.%y}"
-      animation:
-        enabled: false
       callbacks:
         on_left: "toggle_calendar"
       calendar: 
@@ -384,17 +319,11 @@ widgets:
         border_color: "None"
         alignment: "center"
         direction: "down"
-        distance: 6
         show_holidays: true
         show_week_numbers: true
         show_years: true
         country_code: "RU"
         extended: false
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -406,12 +335,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: false
       hide_if_offline: true
-      animation: false
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -431,14 +354,9 @@ widgets:
         cloudyNight: "\U0001F315"
         rainyDay: "\U0001F327"
         rainyNight: "\U0001F327\U0001F311"
-        snowyIcyDay: "\U00002744"
-        snowyIcyNight: "\U0001F328"
+        snowyDay: "\U00002744"
+        snowyNight: "\U0001F328"
         blizzardDay: "\U0001F32C"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
       weather_card: 
         blur: true
         round_corners: true
@@ -446,7 +364,6 @@ widgets:
         border_color: "None"
         alignment: "right"
         direction: "down"
-        distance: 6
         icon_size: 64
   volume:
     type: "yasb.volume.VolumeWidget"
@@ -454,11 +371,7 @@ widgets:
       label: "<span>{icon}</span>"
       label_alt: "{volume}"
       tooltip: false
-      animation:
-        enabled: true
-        duration: 200
-        type: "fadeInOut"
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"
@@ -475,16 +388,10 @@ widgets:
         border_color: "System"
         alignment: "right"
         direction: "down"
-        distance: 6
         show_apps: true # Whether to show the list of applications with audio sessions
         show_app_labels: true # Whether to show application labels in the audio menu
         show_app_icons: true # Whether to show application icons in the audio menu
         show_apps_expanded: true # Whether application volumes are expanded by default when opening the menu
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -501,19 +408,9 @@ widgets:
         sleep: ["\u23fe", "Sleep"]
         signout: ["\udb80\udf43", "Sign out"]
         cancel: ["", "Cancel"]
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
       label: "{data}"
       app_list:
         - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
@@ -527,7 +424,6 @@ widgets:
       animation:
         enabled: true
         duration: 100
-        type: "fadeInOut"
       icon_size: 16
       preview:
         enabled: true

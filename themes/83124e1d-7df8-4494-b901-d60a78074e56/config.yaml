@@ -16,7 +16,6 @@ bars:
       align: "center"
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       round_corners: false
       border_color: None
@@ -61,7 +60,6 @@ widgets:
       max_length_ellipsis: ".."
       hide_if_offline: false
       show_only_stack: false
-      animation: true
       enable_scroll_switching : true
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
@@ -107,11 +105,6 @@ widgets:
         offset_top: 10
         offset_left: 0
         show_layout_icons: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
@@ -150,7 +143,7 @@ widgets:
     options:
       tooltip: false
       label: "<span>{icon}</span> {level}"
-      volume_icons:
+      icons:
         - "󰝟"  # Icon for muted
         - "󰕿"  # Icon for 0-10% volume
         - "󰖀"  # Icon for 11-30% volume
@@ -231,11 +224,6 @@ widgets:
       label_alt: "<span></span>"
       hide_empty: true
       tooltip: false
-      container_padding:
-        top: 0
-        left: 10
-        bottom: 0
-        right: 4
       callbacks:
         on_left: "toggle_notification"
         on_right: "toggle_label"

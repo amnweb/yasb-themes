@@ -14,7 +14,6 @@ bars:
       position: "top"
     blur_effect:
       enabled: true
-      acrylic: true
       dark_mode: true
       round_corners: true
       border_color: None
@@ -49,10 +48,6 @@ widgets:
     options:
       hide_if_offline: true
       label: "{icon} {layout_name}"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 400
       layouts: [
         'bsp',
         'columns',
@@ -106,7 +101,6 @@ widgets:
         max_length_ellipsis: "..."
         hide_if_offline: false
         show_only_stack: false
-        animation: true
         enable_scroll_switching : false
   komorebi_workspaces:
       type: "komorebi.workspaces.WorkspaceWidget"
@@ -118,7 +112,6 @@ widgets:
         label_zero_index: false
         hide_empty_workspaces: false
         hide_if_offline: true
-        animation: true
         app_icons: 
           enabled_populated: true
           enabled_active: true

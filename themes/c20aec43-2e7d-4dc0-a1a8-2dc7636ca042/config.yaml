@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       round_corners: false
       border_color: None
@@ -68,12 +66,6 @@ widgets:
       round_corners: true
       round_corners_type: "normal"
       border_color: ""
-      distance: 10
-      container_padding: 
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
       alignment: "left"
       direction: "down"
       menu_labels:
@@ -96,7 +88,6 @@ widgets:
         label_zero_index: false
         hide_empty_workspaces: false
         hide_if_offline: false
-        animation: true
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -155,7 +146,7 @@ widgets:
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
         - "\uf027"  # Icon for 11-30% volume
@@ -186,7 +177,6 @@ widgets:
           border_color: "System"
           alignment: "right"
           direction: "down"
-          distance: 6
         callbacks:
           on_left: "toggle_group"
           on_middle: "toggle_label"
@@ -207,10 +197,8 @@ widgets:
         orientation: "portrait"
         image_spacing: 10
         lazy_load: true
-        lazy_load_delay: 10
         lazy_load_fadein: 200
         image_corner_radius: 20
-        enable_cache: true
   power_menu:
       type: "yasb.power_menu.PowerMenuWidget"
       options:
@@ -242,11 +230,6 @@ widgets:
       bar_width: 4
       sleep_timer: 0
       hide_empty: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   github:
     type: "yasb.github.GithubWidget"
     options:
@@ -264,4 +247,3 @@ widgets:
         border_color: "System" # Set the border color for the menu (this option is not supported on Windows 10)
         alignment: "right"
         direction: "down"
-        distance: 6

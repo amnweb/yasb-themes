@@ -14,10 +14,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false 
-      acrylic: false 
       dark_mode: false
       round_corners: false
       border_color: None
@@ -101,7 +99,7 @@ widgets:
           ultrawide_vertical_stack: "W-STACK"
           right_main_vertical_stack: "RMV-STACK"
           monocle: "MONOCLE"
-          maximised: "MAX"
+          maximized: "MAX"
           floating: "FLOATING"
           paused: "PAUSED"
         callbacks:
@@ -137,7 +135,7 @@ widgets:
       options:
         label: "<span>{icon}</span> {level}"
         label_alt: "{volume}"
-        volume_icons:
+        icons:
           - "\ueee8"  # Icon for muted
           - "\uf026"  # Icon for 0-10% volume
           - "\uf027"  # Icon for 11-30% volume

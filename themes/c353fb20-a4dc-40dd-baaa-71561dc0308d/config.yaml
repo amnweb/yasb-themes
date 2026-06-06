@@ -13,10 +13,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: true
     blur_effect:
       enabled: true 
-      acrylic: true 
       dark_mode: false
       round_corners: false
       border_color: None
@@ -94,7 +92,7 @@ widgets:
       options:
         label: "<span>\uf4bc</span> {info[percent][total]}%"
         label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
-        update_interval: 500
+        update_interval: 2000
         histogram_icons:
           - "\u2581" # 0%
           - "\u2581" # 10%
@@ -146,7 +144,7 @@ widgets:
           horizontal_stack: "[H]="
           ultrawide_vertical_stack: "||="
           monocle: "[M]"
-          maximised: "[X]"
+          maximized: "[X]"
           floating: "><>"
           paused: "[P]"
         callbacks:
@@ -187,7 +185,7 @@ widgets:
       options:
         label: "<span>{icon}</span> {level}"
         label_alt: "{volume}"
-        volume_icons:
+        icons:
           - "\uea85"  # Icon for muted
           - "\ue992"  # Icon for 0-10% volume
           - "\ue993"  # Icon for 11-30% volume

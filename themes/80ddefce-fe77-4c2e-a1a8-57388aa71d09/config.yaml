@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true
-      acrylic: false
       dark_mode: false
       round_corners: false
       border_color: None
@@ -120,11 +118,6 @@ widgets:
       monitor_exclusive: true
       callbacks:
         on_left: 'toggle_label'
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -144,11 +137,6 @@ widgets:
         on_left: 'toggle_calendar'
         on_middle: 'toggle_label'
         on_right: "do_nothing"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -161,7 +149,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: true
-      animation: false
       toggle_workspace_layer:
         enabled: false
         tiling_label: "\udb81\ude40"
@@ -200,7 +187,7 @@ widgets:
         ultrawide_vertical_stack: "\uebee"
         right_main_vertical_stack: "\uebf1"
         monocle: "\uf06f"
-        maximised: "\uf06f"
+        maximized: "\uf06f"
         floating: "\uf2d2"
         paused: "\udb83\udf89"
         tiling: "\udb81\ude40"
@@ -208,17 +195,12 @@ widgets:
         on_left: "prev_layout"
         on_middle: "toggle_monocle"
         on_right: "next_layout"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span>"
       label_alt: "<span>{icon}</span> {level}"
-      volume_icons:
+      icons:
         - ""  # Icon for muted
         - ""  # Icon for 0-10% volume
         - ""  # Icon for 11-30% volume
@@ -282,11 +264,6 @@ widgets:
         restart: ["\ue777", "Restart"]
         shutdown: ["\ue7e8", "Shut down"]
         cancel: ["\ue711", "Cancel"]
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
@@ -310,15 +287,8 @@ widgets:
         orientation: "portrait"
         image_spacing: 25
         lazy_load: true
-        lazy_load_delay: 40
         lazy_load_fadein: 200
         image_corner_radius: 40
-        enable_cache: true
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
@@ -360,11 +330,6 @@ widgets:
           key_replace: "\u2191"
         - key: "down"
           key_replace: "\u2193"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   update_check:
     type: "yasb.update_check.UpdateCheckWidget"
     options:
@@ -420,11 +385,6 @@ widgets:
       offset_left: 0
       alignment: "center"
       direction: "down"
-      container_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -450,13 +410,3 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
-      btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
-      unpinned_vis_btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]

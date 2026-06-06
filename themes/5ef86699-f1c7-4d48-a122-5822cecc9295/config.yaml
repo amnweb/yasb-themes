@@ -15,7 +15,6 @@ bars:
       duration: 800
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
     window_flags:
@@ -72,7 +71,6 @@ widgets:
         blur: true
         round_corners: true
         border_color: None
-        distance: 4
         alignment: "left"
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
@@ -85,7 +83,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: false
       hide_if_offline: false
-      animation: true
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -111,11 +108,6 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
-      btn_shadow:
-        enabled: false
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   language:
     type: "yasb.language.LanguageWidget"
     options:
@@ -137,11 +129,6 @@ widgets:
         offset_left: 0
         show_layout_icon: true
         layout_icon: "\uf11c"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
@@ -149,7 +136,6 @@ widgets:
       animation:
         enabled: true
         duration: 200
-        type: "fadeInOut"
       title_label:
         enabled: false
         show: "focused"
@@ -170,11 +156,6 @@ widgets:
       max_length: 56
       max_length_ellipsis: "..."
       monitor_exclusive: true
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
       rewrite:
       - pattern: "^(.+?)\\.exe$"
         replacement: "\\1"

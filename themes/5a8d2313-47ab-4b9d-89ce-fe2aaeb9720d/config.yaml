@@ -13,10 +13,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       round_corners: false
       border_color: "None"
@@ -69,16 +67,6 @@ widgets:
         on_left: "toggle_cpu_menu"
         on_middle: "exec cmd /c Taskmgr"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -88,16 +76,6 @@ widgets:
         on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
@@ -111,16 +89,6 @@ widgets:
       callbacks:
         on_left: "toggle_menu"
         on_right: "do_nothing"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
@@ -162,16 +130,6 @@ widgets:
         direction: "down"
         offset_top: true
         show_layout_icons: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -180,16 +138,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -254,16 +202,6 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      container_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -304,16 +242,6 @@ widgets:
         direction: "down"
         icon_size: 40
         offset_top: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -329,21 +257,11 @@ widgets:
       callbacks:
         on_left: "toggle_calendar"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span>{level}"
-      volume_icons:
+      icons:
         - "\ue74f" # Icon for muted
         - "\ue992" # Icon for 0-10% volume
         - "\ue993" # Icon for 11-30% volume
@@ -360,16 +278,6 @@ widgets:
       callbacks:
         on_left: "toggle_volume_menu"
         on_right: "toggle_mute"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -381,13 +289,3 @@ widgets:
         on_left: "toggle_notification"
         on_middle: "clear_notifications"
         on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 10
-        bottom: 0
-        right: 10
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 5
-        offset: [0, 0]

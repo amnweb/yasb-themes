@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: true
       dark_mode: false
       round_corners: false
       border_color: None
@@ -44,11 +42,6 @@ widgets:
       hide_empty: true
       gradient: 0
       foreground: "#e2cca9"
-      container_padding:
-        top: 3
-        right: 2
-        bottom: 3
-        left: 3
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -83,16 +76,10 @@ widgets:
     type: "yasb.taskbar.TaskbarWidget"
     options:
       icon_size: 16
-      animation: true
       ignore_apps:
         processes: []
         titles: []
         classes: []
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -104,12 +91,6 @@ widgets:
       label_zero_index: true
       hide_empty_workspaces: false
       hide_if_offline: true
-      animation: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -141,7 +122,7 @@ widgets:
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8" # Icon for muted
         - "\uf026" # Icon for 0-10% volume
         - "\uf027" # Icon for 11-30% volume
@@ -188,5 +169,3 @@ widgets:
         on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      container_padding:
-        bottom: 1

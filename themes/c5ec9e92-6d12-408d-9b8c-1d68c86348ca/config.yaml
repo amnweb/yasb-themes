@@ -19,7 +19,6 @@ bars:
       align: "center"
     blur_effect:
       enabled: true
-      acrylic: true
       dark_mode: true
       round_corners: true
       border_color: "None"
@@ -77,11 +76,9 @@ widgets:
         image_per_page: 4
         image_spacing: 10
         lazy_load: true
-        lazy_load_delay: 10
         lazy_load_fadein: 200
         image_corner_radius: 20
         orientation: "portrait"
-        enable_cache: true
       callbacks:
         on_left: "toggle_gallery"
         on_right: "toggle_label"
@@ -98,20 +95,13 @@ widgets:
         on_right: "empty_bin"
         on_middle: "do_nothing"
       show_confirmation: true
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "GlazeWM Offline"
-      hide_empty_workspaces: true
       hide_if_offline: false
       monitor_exclusive: true
       enable_scroll_switching: true
-      animation: true
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -137,10 +127,6 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "toggle_calendar"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   pomodoro:
     type: "yasb.pomodoro.PomodoroWidget"
     options:
@@ -178,10 +164,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "reset_timer"
         on_right: "toggle_label"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   notes:
     type: "yasb.notes.NotesWidget"
     options:
@@ -209,10 +191,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200 
   todo:
     type: "yasb.todo.TodoWidget"
     options:
@@ -252,10 +230,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   ai_chat:
     type: "yasb.ai_chat.AiChatWidget"
     options:
@@ -293,10 +267,6 @@ widgets:
             - name: "" #you can find the name using 'ollama list'
               label: "You have to set it up in the config.yaml" 
               default: true
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -311,10 +281,6 @@ widgets:
         on_left: "toggle_notification"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -353,10 +319,6 @@ widgets:
         show_graph: true
         show_graph_grid: false
         graph_history_size: 60
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200 
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -384,10 +346,6 @@ widgets:
         show_graph: true
         show_graph_grid: false
         graph_history_size: 60
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -412,10 +370,6 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "exec cmd /c start \"\" \"C:/Users/{username}/Desktop/wiztree.lnk\"" 
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   gpu:
     type: "yasb.gpu.GpuWidget"
     options:
@@ -444,17 +398,12 @@ widgets:
         show_graph: true
         show_graph_grid: false
         graph_history_size: 60
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   brightness:
     type: "yasb.brightness.BrightnessWidget"
     options:
       label: "<span>{icon}</span>"
       label_alt: "Brightness {percent}%"
       tooltip: true
-      hide_unsupported: true
       brightness_toggle_level: [0, 50, 100]
       brightness_icons:
         - "\udb80\udcde"
@@ -474,16 +423,12 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "toggle_brightness_menu"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "Vol {volume}"
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"
@@ -509,10 +454,6 @@ widgets:
         on_left: "toggle_volume_menu"
         on_middle: "do_nothing"
         on_right: "toggle_mute"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   bluetooth:
     type: "yasb.bluetooth.BluetoothWidget"
     options:
@@ -529,10 +470,6 @@ widgets:
         on_left: "toggle_label"
         on_right: "exec cmd.exe /c start ms-settings:bluetooth"
         on_middle: "do_nothing"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
@@ -563,10 +500,6 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
   open_meteo:
     type: "yasb.open_meteo.OpenMeteoWidget"
     options:
@@ -580,10 +513,6 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "toggle_card"
-      animation:
-        enabled: true
-        type: "fadeInOut"
-        duration: 200
       weather_card:
         blur: true
         round_corners: true
@@ -618,11 +547,6 @@ widgets:
           rain_effect_intensity: 1.0
           snow_effect_intensity: 1.0
           scale_with_chance: true
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   systray:
     type: "yasb.systray.SystrayWidget"
     options:

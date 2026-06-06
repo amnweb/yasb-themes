@@ -12,13 +12,11 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     animation:
       enabled: true
       duration: 1000
     blur_effect:
       enabled: True
-      acrylic: True
       dark_mode: True
       round_corners: True
       round_corners_type: "normal"
@@ -70,17 +68,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: false
-      animation: true
-      container_padding: 
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
-      btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]
   komorebi_control:
     type: "komorebi.control.KomorebiControlWidget"
     options:
@@ -101,21 +88,11 @@ widgets:
         direction: 'down'
         offset_top: 6
         offset_left: -32
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   notes:
     type: "yasb.notes.NotesWidget"
     options:
       label: "<span>\udb82\udd0c</span> {count}"
       label_alt: "{count} notes"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
       menu:
         blur: true
         round_corners: true
@@ -134,11 +111,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]
   home:
     type: "yasb.home.HomeWidget"
     options:
@@ -156,11 +128,6 @@ widgets:
       border_color: "System"
       offset_top: 6
       offset_left: 0
-      container_padding: 
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
       alignment: "left"
       direction: "down"
       menu_labels:
@@ -172,11 +139,6 @@ widgets:
         system: "System Settings"
         about: "About This PC"
         task_manager: "Task Manager"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -186,16 +148,6 @@ widgets:
       tooltip: true
       callbacks:
         on_left: "toggle_notification"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -210,11 +162,6 @@ widgets:
         low: 25
         medium: 50
         high: 90
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -234,11 +181,6 @@ widgets:
       histogram_num_columns: 8
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]      
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
@@ -255,15 +197,8 @@ widgets:
         orientation: "portrait"
         image_spacing: 10
         lazy_load: true
-        lazy_load_delay: 10
         lazy_load_fadein: 200
         image_corner_radius: 20
-        enable_cache: true
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -286,11 +221,6 @@ widgets:
         callbacks:
           on_left: "toggle_group"
           on_right: "toggle_label"
-        label_shadow:
-          enabled: true
-          color: "black"
-          radius: 6
-          offset: [ 1, 1 ] 
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -309,7 +239,6 @@ widgets:
       type: "glazewm.workspaces.GlazewmWorkspacesWidget"
       options:
         offline_label: "GlazeWM Offline"
-        hide_empty_workspaces: true
         hide_if_offline: true
   media:
       type: "yasb.media.MediaWidget"
@@ -331,16 +260,6 @@ widgets:
           next_track: "\ue893"
           play: "\ue768"
           pause: "\ue769"
-        label_shadow:
-          enabled: true
-          color: "black"
-          radius: 6
-          offset: [ 1, 1 ]
-        container_shadow:
-          enabled: true
-          color: "black"
-          radius: 6
-          offset: [ 1, 1 ]
   clock:
       type: "yasb.clock.ClockWidget"
       options:
@@ -373,11 +292,6 @@ widgets:
           icon_size: 64
           offset_top: 6
           offset_left: 74
-        label_shadow:
-          enabled: true
-          color: "black"
-          radius: 6
-          offset: [ 1, 1 ]
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
@@ -394,17 +308,12 @@ widgets:
           "\udb82\udd25",  # 41-80% strength
           "\udb82\udd28"   # 81-100% strength
         ]
-        label_shadow:
-          enabled: true
-          color: "black"
-          radius: 6
-          offset: [ 1, 1 ]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
         - "\uf027"  # Icon for 11-30% volume
@@ -422,11 +331,6 @@ widgets:
       callbacks:
         on_left: "toggle_volume_menu"
         on_right: "toggle_mute"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]
   battery:
     type: "yasb.battery.BatteryWidget"
     options:
@@ -440,11 +344,6 @@ widgets:
           medium: 75 
           high: 95 
           full: 100
-        label_shadow:
-          enabled: true
-          color: "black"
-          radius: 6
-          offset: [ 1, 1 ]
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -460,8 +359,3 @@ widgets:
         signout: ["\udb80\udf43", "Sign out"]
         sleep: ["\u23fe", "Sleep"]
         cancel: ["", "Cancel"]
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [ 1, 1 ]

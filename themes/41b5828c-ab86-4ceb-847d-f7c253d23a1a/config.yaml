@@ -15,10 +15,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false 
-      acrylic: false 
       dark_mode: false
       round_corners: false
     window_flags:
@@ -150,7 +148,7 @@ widgets:
         ultrawide_vertical_stack: "W-STACK"
         right_main_vertical_stack: "RMV-STACK"
         monocle: "MONOCLE"
-        maximised: "MAX"
+        maximized: "MAX"
         floating: "FLOATING"
         paused: "PAUSED"
       callbacks:
@@ -231,7 +229,7 @@ widgets:
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
         - "\uf027"  # Icon for 11-30% volume
@@ -263,18 +261,9 @@ widgets:
     options:
       label: "{data}"
       app_list:
-        #- {icon: "\uf489", launch: "wt"}
-        #- {icon: "\uf413", launch: "explorer c:\\Users\\amn"}
-        #- {icon: "\udb82\ude1e", launch: "C:\\Users\\amn\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"}
-        #- {icon: "\udb80\ude39", launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe"}
-        #- {icon: "\uf1ff", launch: "C:\\Users\\amn\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe"}
-        #- {icon: "\ue217", launch: "C:\\Users\\amn\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe"}
-        #- {icon: "\uf0a2", launch: "notification_center"}
-        #- {icon: "\ueb51", launch: "quick_settings"}
-        #- {icon: "\uf46a", launch: "cmd.exe /c start ms-settings:windowsupdate"}
-        #- {icon: "\uf422", launch: "search"}
-        #- {icon: "\udb84\udf55", launch: "widget"}
-        # Currently available to use quick_settings, notification_center, search, widget, launcher (launcher will trigger ALT+A)
+        - {icon: "\uf489", launch: "wt"}
+        - {icon: "\uf0a2", launch: "notification_center"}
+        - {icon: "\ueb51", launch: "quick_settings"}
   github:
     type: "yasb.github.GithubWidget"
     options:

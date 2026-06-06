@@ -13,10 +13,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       round_corners: false
       border_color: None
@@ -92,11 +90,6 @@ widgets:
         offset_top: 0
         offset_left: 0
         show_layout_icons: true
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -155,16 +148,11 @@ widgets:
       histogram_num_columns: 8
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 0
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
-      volume_icons:
+      icons:
         - "\ue74f"  # Icon for muted
         - "\ue992"  # Icon for 0-10% volume
         - "\ue993"  # Icon for 11-30% volume
@@ -233,11 +221,6 @@ widgets:
       label_alt: "{count} notifications"
       hide_empty: true
       tooltip: false
-      container_padding:
-        top: 0
-        left: 10
-        bottom: 0
-        right: 12
       callbacks:
         on_left: "toggle_notification"
         on_right: "toggle_label"

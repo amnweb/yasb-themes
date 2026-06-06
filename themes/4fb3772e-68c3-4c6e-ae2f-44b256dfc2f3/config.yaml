@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true
-      acrylic: false
       dark_mode: true
       round_corners: true
       border_color: None
@@ -58,11 +56,6 @@ widgets:
         on_left: "open_bin"
         on_right: "toggle_label"
         on_middle: "empty_bin"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -87,11 +80,6 @@ widgets:
         - "\u2586"
         - "\u2587"
         - "\u2588"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
@@ -114,11 +102,6 @@ widgets:
           "\udb82\udd25",
           "\udb82\udd28",
         ]
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
       menu_config:
         blur: true
         round_corners: true
@@ -199,11 +182,6 @@ widgets:
       power_menu: true
       blur: true
       border_color: "None"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -224,7 +202,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: false
       hide_if_offline: true
-      animation: true
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -284,17 +261,12 @@ widgets:
           temperature_icon: "\udb81\udd99"
           rain_icon: "\udb81\udd96"
           snow_icon: "\udb81\udd98"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons: ["\ueee8", "\uf026", "\uf027", "\uf027", "\uf028"]
+      icons: ["\ueee8", "\uf026", "\uf027", "\uf027", "\uf028"]
       callbacks:
         on_right: "exec cmd.exe /c start ms-settings:sound"
   power_menu:
@@ -355,8 +327,5 @@ widgets:
         orientation: "portrait"
         image_spacing: 10
         lazy_load: true
-        lazy_load_delay: 10
         lazy_load_fadein: 200
         image_corner_radius: 20
-        enable_cache: true
-

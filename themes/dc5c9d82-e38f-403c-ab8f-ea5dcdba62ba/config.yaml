@@ -18,10 +18,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true
-      acrylic: false 
       dark_mode: false
       round_corners: false
       border_color: None
@@ -114,8 +112,6 @@ widgets:
           border_color: 'System'
           alignment: 'center'
           direction: 'down'
-          distance: 12
-
   cpu:
       type: "yasb.cpu.CpuWidget"
       options:
@@ -156,13 +152,6 @@ widgets:
           label_zero_index: false
           hide_empty_workspaces: false
           hide_if_offline: True
-          animation: true
-          container_padding:
-            top: 0
-            left: 0
-            bottom: 0
-            right: 0
-
   komorebi_active_layout:
       type: "komorebi.active_layout.ActiveLayoutWidget"
       options:
@@ -179,7 +168,7 @@ widgets:
           ultrawide_vertical_stack: "W-STACK"
           right_main_vertical_stack: "RMV-STACK"
           monocle: "MONOCLE"
-          maximised: "MAX"
+          maximized: "MAX"
           floating: "FLOATING"
           paused: "PAUSED"
         callbacks:
@@ -253,7 +242,7 @@ widgets:
       options:
         label: "<span>{icon}</span> {level}"
         label_alt: "{volume}"
-        volume_icons:
+        icons:
           - "\ueee8"  # Icon for muted
           - "\uf026"  # Icon for 0-10% volume
           - "\uf027"  # Icon for 11-30% volume
@@ -268,8 +257,6 @@ widgets:
           border_color: 'System'
           alignment: 'right'
           direction: 'down'
-          distance: 6
-
   power_menu:
       type: "yasb.power_menu.PowerMenuWidget"
       options:
@@ -317,9 +304,6 @@ widgets:
         max_notification: 20 # Max number of notification displaying in menu max: 50
         only_unread: false # Show only unread or all notifications; 
         max_field_size: 54 # Max characters in title before truncation.
-        menu_width: 400 
-        menu_height: 400 
-        menu_offset: 240 
         update_interval: 300 # Check for new notification in seconds
 
   wallapers:

@@ -10,13 +10,11 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     animation:
       enabled: true
       duration: 1000
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: false
       round_corners: false
       round_corners_type: "normal"
@@ -67,7 +65,6 @@ widgets:
       type: "glazewm.workspaces.GlazewmWorkspacesWidget"
       options:
         offline_label: "GlazeWM Offline"
-        hide_empty_workspaces: true
         hide_if_offline: false
 
   media:
@@ -137,11 +134,6 @@ widgets:
         callbacks:
           on_left: "toggle_label"
           on_right: "exec cmd /c Taskmgr"
-        animation:
-          enabled: true
-          type: "fadeInOut"
-          duration: 200
-
   volume:
       type: "yasb.volume.VolumeWidget"
       options:
@@ -193,20 +185,9 @@ widgets:
       ]
       callbacks:
           on_left: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-
   apps:
       type: "yasb.applications.ApplicationsWidget"
       options:
-        container_padding:
-          top: 0
-          left: 8
-          bottom: 0
-          right: 8
         label: "{data}"
         app_list:
           - { icon: "\uf422", launch: "search" }

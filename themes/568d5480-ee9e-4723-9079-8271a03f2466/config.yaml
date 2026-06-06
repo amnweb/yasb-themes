@@ -8,10 +8,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true
-      acrylic: false
       dark_mode: true
       round_corners: false
       border_color: None
@@ -132,7 +130,7 @@ widgets:
       label: "{icon} {level}"
       # label_alt: "{volume}"
       tooltip: false
-      volume_icons:
+      icons:
         - "\ueee8" # Icon for muted
         - "\uf026" # Icon for 0-10% volume
         - "\uf027" # Icon for 11-30% volume
@@ -200,16 +198,6 @@ widgets:
         fade_out_duration: 200
       callbacks:
         on_left: "toggle_launchpad"
-      app_title_shadow:
-        enabled: true
-        color: "#00000090"
-        offset: [1, 1]
-        radius: 2
-      app_icon_shadow:
-        enabled: true
-        color: "#00000090"
-        offset: [0, 2]
-        radius: 8
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -235,11 +223,6 @@ widgets:
         on_left: "do_nothing"
         on_middle: "toggle_label"
         on_right: "exec cmd /c Taskmgr"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:

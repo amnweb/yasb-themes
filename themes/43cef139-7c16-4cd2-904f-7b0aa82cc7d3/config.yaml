@@ -22,7 +22,6 @@ bars:
       duration: 0
     blur_effect:
       enabled: False
-      acrylic: False
       dark_mode: False
       round_corners: False
       border_color: None
@@ -99,9 +98,6 @@ widgets:
         thunderstormDay: "\ue30f"
         thunderstormNight: "\ue338"
         default: "\uebaa"
-      animation:
-        enabled: False
-        duration: 0
       callbacks:
         on_left: "toggle_card"
         on_middle: "do_nothing"
@@ -154,9 +150,6 @@ widgets:
     type: "yasb.notes.NotesWidget"
     options:
       label: "<span>\udb83\udebf</span>"
-      animation:
-        enabled: False
-        duration: 0
       menu:
         blur: False
         round_corners: False
@@ -185,9 +178,6 @@ widgets:
       callbacks:
         on_left: "toggle_notification"
         on_right: "toggle_label"
-      animation:
-        enabled: False
-        duration: 0
   sysinfo:
     type: "yasb.grouper.GrouperWidget"
     options:
@@ -209,9 +199,6 @@ widgets:
         label_alt: "<span>\udb80\udeca</span> {space[used][gb]}/{space[total][gb]}"
         volume_label: "C"
         update_interval: 60
-        animation:
-          enabled: False
-          duration: 0
         group_label:
           volume_labels: ["C", "D", "E", "F"]
           show_label_name: True
@@ -233,9 +220,6 @@ widgets:
       label: "<span>\uefc5</span> {virtual_mem_percent}%"
       label_alt: "<span>\uefc5</span> {virtual_mem_free}/{virtual_mem_total}"
       update_interval: 5000
-      animation:
-        enabled: False
-        duration: 0
       callbacks:
         on_left: "toggle_label"
         on_middle: "do_nothing"
@@ -250,9 +234,6 @@ widgets:
       label: "<span>\uf4bc</span> {info[percent][total]:.0f}%"
       label_alt: "<span>\uf4bc</span> {info[freq][current]} GHz"
       update_interval: 1000
-      animation:
-        enabled: False
-        duration: 0
       cpu_thresholds:
         low: 25
         medium: 50
@@ -269,9 +250,6 @@ widgets:
       image_path: "C:\\Users\\Lone\\Pictures\\Wallpapers\\Home Screen\\"
       change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
-      animation:
-        enabled: False
-        duration: 0
       tooltip: False
       gallery:
           enabled: true
@@ -324,7 +302,6 @@ widgets:
       hide_if_offline: True
       monitor_exclusive: False 
       enable_scroll_switching: False
-      animation: False
   glazewm_binding_mode:
     type: "glazewm.binding_mode.GlazewmBindingModeWidget"
     options:
@@ -357,9 +334,6 @@ widgets:
       controls_only: False
       controls_left: False
       controls_hide: True
-      animation:
-        enabled: False
-        duration: 0
       media_menu:
         blur: False
         round_corners: False
@@ -396,8 +370,6 @@ widgets:
           holiday_color: "#FF6E00"
           country_code: "IN"
           extended: False
-        animation:
-          enabled: False
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
@@ -423,10 +395,7 @@ widgets:
       label: "<span>{icon}</span> {level}"
       tooltip: False
       mute_text: ""
-      animation:
-        enabled: False
-        duration: 0
-      volume_icons:
+      icons:
         - "\ue74f"  # Icon for muted
         - "\ue994"  # Icon for 0-10% volume
         - "\ue994"  # Icon for 11-30% volume
@@ -451,9 +420,6 @@ widgets:
         update_interval: 5000
         hide_unsupported: True
         time_remaining_natural: False
-        animation:
-          enabled: False
-          duration: 0
         charging_options:
           icon_format: "{charging_icon}"
           blink_charging_icon: False
@@ -500,9 +466,6 @@ widgets:
       max_length: 75
       max_length_ellipsis: ""
       monitor_exclusive: False
-      animation:
-        enabled: False
-        duration: 0
       callbacks:
         on_left: "do_nothing"
       rewrite:

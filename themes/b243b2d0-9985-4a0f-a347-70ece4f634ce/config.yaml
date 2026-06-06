@@ -13,13 +13,11 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     animation:
       enabled: true
       duration: 400
     blur_effect:
       enabled: true
-      acrylic: false
       dark_mode: true
       round_corners: true
       round_corners_type: "normal"
@@ -124,11 +122,6 @@ widgets:
         offset_left: 0
         show_layout_icon: true
         layout_icon: "\uf11c"
-      container_padding:
-        top: 0
-        left: 2
-        bottom: 0
-        right: 2
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -190,11 +183,6 @@ widgets:
       power_menu: true
       blur: true
       border_color: "None"
-      container_padding:
-        top: 0
-        left: 6
-        bottom: 0
-        right: 4
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -222,13 +210,12 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: false
       hide_if_offline: true
-      animation: false
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{level}"
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"
@@ -246,11 +233,6 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-      container_padding:
-        top: 0
-        left: 2
-        bottom: 0
-        right: 2
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -267,11 +249,6 @@ widgets:
         hibernate: ["\uf28e", "Hibernate"]
         sleep: ["\u23fe", "Sleep"]
         cancel: ["\ueab8", "Close"]
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 6
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -283,11 +260,6 @@ widgets:
         on_left: "toggle_notification"
         on_right: "do_nothing"
         on_middle: "toggle_label"
-      container_padding:
-        top: 0
-        left: 4
-        bottom: 0
-        right: 4
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -356,8 +328,3 @@ widgets:
         "cpu",
         "weather",
       ]
-      container_padding:
-        top: 0
-        left: 2
-        bottom: 0
-        right: 6

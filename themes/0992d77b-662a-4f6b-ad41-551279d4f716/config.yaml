@@ -12,13 +12,11 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     animation:
       enabled: true
       duration: 800
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: false
       round_corners: true
       border_color: none
@@ -65,7 +63,6 @@ widgets:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "GlazeWM Offline"
-      hide_empty_workspaces: true
       hide_if_offline: false
   wallpaper:
     type: "yasb.wallpapers.WallpapersWidget"
@@ -83,10 +80,8 @@ widgets:
         orientation: "portrait"
         image_spacing: 15
         lazy_load: true
-        lazy_load_delay: 80
         lazy_load_fadein: 400
         image_corner_radius: 8
-        enable_cache: true
   cava:
     type: "yasb.cava.CavaWidget"
     options:
@@ -99,14 +94,8 @@ widgets:
       bars_number: 8
       bar_spacing: 2
       bar_width: 5
-      noise_reduction: 0.25
       sleep_timer: 2
       hide_empty: false
-      container_padding:
-        top: 0
-        left: 4
-        bottom: 0
-        right: 4
   home:
     type: "yasb.home.HomeWidget"
     options:
@@ -123,12 +112,6 @@ widgets:
       round_corners: true
       round_corners_type: "normal"
       border_color: ""
-      distance: 10
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -172,11 +155,6 @@ widgets:
        pause: "\ue769"
        prev_track: "\ue892"
        next_track: "\ue893"
-      label_shadow:
-       enabled: true
-       color: "black"
-       radius: 3
-       offset: [ 1, 1 ]
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -213,14 +191,13 @@ widgets:
         border_color: "#45475a"
         alignment: "right"
         direction: "down"
-        distance: 6
         icon_size: 48
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8" 
         - "\uf026"
         - "\uf027" 
@@ -233,7 +210,6 @@ widgets:
         border_color: '#45475a'
         alignment: 'right'
         direction: 'down'
-        distance: 6
       callbacks:
         on_left: "toggle_volume_menu"
         on_right: "exec cmd.exe /c start ms-settings:sound"
@@ -280,16 +256,8 @@ widgets:
         orientation: "portrait"
         image_spacing: 8
         lazy_load: true
-        lazy_load_delay: 80
         lazy_load_fadein: 400
         image_corner_radius: 20
-        enable_cache: true
-      icons:
-        recording: "\ueba7"
-        stopped: "\ueba5"
-        paused: "\ueba7"
-      hide_when_not_recording: true
-      blinking_icon: true
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -304,7 +272,6 @@ widgets:
           border_color: "System"
           alignment: "right"
           direction: "down"
-          distance: 6
         callbacks:
           on_left: "toggle_group"
   cpu:
@@ -326,11 +293,6 @@ widgets:
       histogram_num_columns: 8
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 5
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -341,11 +303,6 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 0
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
@@ -356,11 +313,6 @@ widgets:
           on_left: "exec cmd.exe /c start ms-settings:network"
           on_middle: "do_nothing"
           on_right: "toggle_label"
-        container_padding:
-          top: 0
-          left: 0
-          bottom: 0
-          right: 0
         wifi_icons: [
           "\udb82\udd2e",  # Icon for 0% strength
           "\udb82\udd1f",  # Icon for 1-20% strength

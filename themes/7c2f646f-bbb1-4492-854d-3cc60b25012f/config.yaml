@@ -9,13 +9,11 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     animation:
       enabled: true
       duration: 400
     blur_effect:
       enabled: true
-      acrylic: false
       dark_mode: false
       round_corners: false
       round_corners_type: "normal"
@@ -181,7 +179,7 @@ widgets:
       label: "<span>{icon}</span>"
       label_alt: "<span>{icon}</span>{level}"
       tooltip: true
-      volume_icons:
+      icons:
         - "\ue74f"
         - "\ue992"
         - "\ue993"

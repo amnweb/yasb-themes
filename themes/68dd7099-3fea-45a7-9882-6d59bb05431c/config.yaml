@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: true
     blur_effect:
       enabled: true 
-      acrylic: true 
       dark_mode: true
       round_corners: false
       border_color: None
@@ -72,7 +70,6 @@ widgets:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "GlazeWM Offline"
-      hide_empty_workspaces: true
       hide_if_offline: true
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
@@ -185,7 +182,7 @@ widgets:
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
         - "\uf027"  # Icon for 11-30% volume

@@ -8,10 +8,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false
-      acrylic: false
       dark_mode: true
       round_corners: true
       round_corners_type: "small"
@@ -72,7 +70,6 @@ widgets:
       round_corners: true
       round_corners_type: "small"
       border_color: "system"
-      distance: 5
       alignment: "left"
       direction: "down"
       menu_labels:
@@ -84,11 +81,6 @@ widgets:
         system: "System Settings"
         about: "About This PC"
         task_manager: "Task Manager"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -100,11 +92,6 @@ widgets:
       max_length: 40
       max_length_ellipsis: "..."
       monitor_exclusive: true
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -160,17 +147,11 @@ widgets:
         pause: "\uf04c"
         prev_track: "\uf048"
         next_track: "\uf051"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   cava:
     type: "yasb.cava.CavaWidget"
     options:
       bar_height: 12
       min_bar_height: 1
-      noise_reduction: 0.77
       gradient: 1
       reverse: 1
       waveform: 0
@@ -207,11 +188,6 @@ widgets:
         on_left: "toggle_calendar"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -246,11 +222,6 @@ widgets:
         direction: "down"
         offset_top: 6
         icon_size: 48
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   ai_chat:
     type: "yasb.ai_chat.AiChatWidget"
     options:
@@ -304,11 +275,6 @@ widgets:
       callbacks:
         on_left: "toggle_menu"
         on_right: "exec cmd.exe /c start ms-settings:network"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
@@ -322,11 +288,6 @@ widgets:
       ethernet_label: "\ueb01"
       ethernet_label_alt: "\ueb01 {ip_addr}"
       ethernet_icon: "\ueba9"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   github:
     type: "yasb.github.GithubWidget"
     options:
@@ -349,11 +310,6 @@ widgets:
         border_color: "System" # Set the border color for the menu (this option is not supported on Windows 10)
         alignment: "right"
         direction: "down"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -373,11 +329,6 @@ widgets:
       histogram_num_columns: 8
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -388,11 +339,6 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   gpu:
     type: "yasb.gpu.GpuWidget"
     options:
@@ -435,17 +381,12 @@ widgets:
         on_left: "toggle_group"
         on_middle: "toggle_label"
         on_right: "exec explorer" # Open disk C in file explorer
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
         - "\uf027"  # Icon for 11-30% volume
@@ -471,11 +412,6 @@ widgets:
         on_left: "toggle_volume_menu"
         on_middle: "exec cmd.exe /c start ms-settings:sound"
         on_right: "toggle_mute"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
     options:
@@ -497,11 +433,6 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
@@ -518,18 +449,8 @@ widgets:
         orientation: "portrait"
         image_spacing: 8
         lazy_load: true
-        lazy_load_delay: 80
         lazy_load_fadein: 400
         image_corner_radius: 20
-        enable_cache: true
-      run_after: # List of functions to run after wallpaper is updated
-        #- "wal -s -t -e -q -n -i {image}" # Example command to run after wallpaper is updated
-        #- "cmd.exe /c start /min pwsh ./yasb.ps1" # Example command to run after wallpaper is updated
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -541,11 +462,6 @@ widgets:
         on_left: "toggle_notification"
         on_right: "toggle_label"
         on_middle: "do_nothing" 
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   update:
     type: "yasb.update_check.UpdateCheckWidget"
     options:
@@ -574,11 +490,6 @@ widgets:
         restart: ["\uead2","Restart"]
         hibernate: ["\uf28e","Hibernate"]
         cancel: ["\udb81\udf3a","Cancel"]
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 1
-        offset: [ 1, 1 ]
   sysinfo_widgets:
     type: "yasb.grouper.GrouperWidget"
     options:

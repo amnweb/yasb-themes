@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true 
-      acrylic: false 
       dark_mode: true
       round_corners: false
       border_color: None
@@ -116,7 +114,7 @@ widgets:
     options:
       label: "{icon}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
         - "\uf027"  # Icon for 11-30% volume
@@ -153,11 +151,6 @@ widgets:
       label: "{data}"
       app_list:
         - {icon: "\ue690", launch: "quick_settings"}
-      container_padding: 
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   win_button:
     type: "yasb.custom.CustomWidget"
     options:
@@ -180,11 +173,6 @@ widgets:
       blur: true
       border_color: "System"
       round_corners_type: "normal"
-      container_padding:
-        top: 0
-        left: 6
-        bottom: 0
-        right: 12
   battery:
     type: "yasb.battery.BatteryWidget"
     options:

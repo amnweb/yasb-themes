@@ -12,13 +12,11 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     animation:
       enabled: true
       duration: 1000
     blur_effect:
       enabled: false 
-      acrylic: true 
       dark_mode: true
       round_corners: false
       border_color: None
@@ -68,11 +66,6 @@ widgets:
           on_left: "exec cmd.exe /c start ms-settings:network"
           on_middle: "do_nothing"
           on_right: "toggle_label"
-        container_padding:
-          top: 0
-          left: 8
-          bottom: 0
-          right: 8
         wifi_icons: [
           "\udb82\udd2e",  # Icon for 0% strength
           "\udb82\udd1f",  # Icon for 1-20% strength
@@ -101,11 +94,6 @@ widgets:
         on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 8
   whkd:
     type: "yasb.whkd.WhkdWidget"
     options:
@@ -121,11 +109,6 @@ widgets:
           key_replace: "\u2191"
         - key: "down"
           key_replace: "\u2193"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 8
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -141,7 +124,6 @@ widgets:
           border_color: "System"
           alignment: "left"
           direction: "down"
-          distance: 6
         callbacks:
           on_left: "toggle_group"
           on_middle: "toggle_label"
@@ -162,11 +144,6 @@ widgets:
       bar_width: 4
       sleep_timer: 2
       hide_empty: true
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -197,11 +174,6 @@ widgets:
       histogram_num_columns: 8
       callbacks:
         on_right: "exec cmd /c Taskmgr"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 0
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -212,11 +184,6 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-      container_padding:
-        top: 0
-        left: 6
-        bottom: 0
-        right: 8
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -228,11 +195,6 @@ widgets:
         on_left: "toggle_notification"
         on_right: "do_nothing"
         on_middle: "toggle_label"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
   home:
     type: "yasb.home.HomeWidget"
     options:
@@ -247,11 +209,6 @@ widgets:
       blur: true
       border_color: "None"
       round_corners_type: "small"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -272,11 +229,6 @@ widgets:
         next_track: "\uf051"
         play: "\uf04b"
         pause: "\uf04c"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -291,12 +243,6 @@ widgets:
         border_color: "None"
         alignment: "center"
         direction: "down"
-        distance: 6
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -308,12 +254,6 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: false
       hide_if_offline: true
-      animation: false
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -337,11 +277,6 @@ widgets:
         snowyNight: "\U0001F328"
         blizzardDay: "\U0001F32C"
         # default: "\udb81\udd99"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
       weather_card: 
         blur: true
         round_corners: true
@@ -349,7 +284,6 @@ widgets:
         border_color: "None"
         alignment: "right"
         direction: "down"
-        distance: 6
         icon_size: 64
   volume:
     type: "yasb.volume.VolumeWidget"
@@ -357,7 +291,7 @@ widgets:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
       tooltip: false
-      volume_icons:
+      icons:
         - "\ueee8"
         - "\uf026"
         - "\uf027"
@@ -373,12 +307,6 @@ widgets:
         border_color: "None"
         alignment: "right"
         direction: "down"
-        distance: 6
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -395,19 +323,9 @@ widgets:
         hibernate: ["\uf28e", "Hibernate"]
         sleep: ["\u23fe", "Sleep"]
         cancel: ["", "Cancel"]
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
-      container_padding:
-        top: 0
-        left: 4
-        bottom: 0
-        right: 0
       label: "{data}"
       app_list:
         # - { icon: "\uf422", launch: "search" }
@@ -426,8 +344,3 @@ widgets:
         processes: []
         titles: []
         classes: []
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0

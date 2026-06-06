@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: true
     blur_effect:
       enabled: false
-      acrylic: true
       dark_mode: true
       round_corners: true
       border_color: None
@@ -87,7 +85,6 @@ widgets:
       type: "glazewm.workspaces.GlazewmWorkspacesWidget"
       options:
         offline_label: "Offline"
-        hide_empty_workspaces: true
         hide_if_offline: true
     media:
       type: "yasb.media.MediaWidget"
@@ -130,7 +127,7 @@ widgets:
       options:
         label: "<span>{icon}</span> {level}"
         label_alt: "exec cmd.exe /c start ms-settings:sound"
-        volume_icons:
+        icons:
           - "\ueee8"  # Icon for muted
           - "\uf026"  # Icon for 0-10% volume
           - "\uf027"  # Icon for 11-30% volume
@@ -177,11 +174,6 @@ widgets:
         bar_width: 6
         sleep_timer: 0
         hide_empty: true
-        container_padding:
-          top: 0
-          left: 0
-          bottom: 0
-          right: 0
     systray:
       type: "yasb.systray.SystrayWidget"
       options:

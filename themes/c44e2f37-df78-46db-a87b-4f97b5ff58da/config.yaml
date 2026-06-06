@@ -12,7 +12,6 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: true
       dark_mode: true
@@ -140,7 +139,6 @@ widgets:
         enabled: false
         tiling_label: "\udb81\ude40 Tiling"
         floating_label: "\udb80\udd37 Floating"
-      animation: true
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -169,7 +167,7 @@ widgets:
       label: "<span>{icon}</span> {level}"
       label_alt: "{level}"
       tooltip: false
-      volume_icons:
+      icons:
         - "\ueee8" # Icon for muted
         - "\uf026" # Icon for 0-10% volume
         - "\uf027" # Icon for 11-30% volume

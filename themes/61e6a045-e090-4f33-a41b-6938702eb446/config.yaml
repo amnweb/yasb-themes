@@ -12,10 +12,8 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
     blur_effect:
       enabled: false # Blur effect will be applied to the bar
-      acrylic: false # Acrylic effect will be applied to the bar
       dark_mode: false # Dark mode will also add more shadow to the bar
       round_corners: false # Default radius from OS
       border_color: None # If is None border will be removed, System will use OS accent color, otherwise you can set your own HEX color (this option is related to round_corners=true) 
@@ -102,12 +100,6 @@ widgets:
         label_zero_index: false
         hide_empty_workspaces: false
         hide_if_offline: false
-        animation: true
-        container_padding:
-          top: 0
-          left: 8
-          bottom: 0
-          right: 8
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
@@ -124,14 +116,9 @@ widgets:
         ultrawide_vertical_stack: "W-STACK"
         right_main_vertical_stack: "RMV-STACK"
         monocle: "MONOCLE"
-        maximised: "MAX"
+        maximized: "MAX"
         floating: "FLOATING"
         paused: "PAUSED"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
       callbacks:
         on_left: 'next_layout'
         on_middle: 'toggle_monocle'
@@ -163,7 +150,7 @@ widgets:
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      volume_icons:
+      icons:
         - "\ueee8"  # Icon for muted
         - "\uf026"  # Icon for 0-10% volume
         - "\uf027"  # Icon for 11-30% volume
