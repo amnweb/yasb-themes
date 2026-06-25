@@ -28,6 +28,10 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Shibumi](themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6)
+
+<a title="Shibumi YASB Theme" href="themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/image.png" width="830px"></a>
+
 ## [Akira](themes/eaf412b9-1228-4746-9277-29cb436b6909)
 
 <a title="Akira YASB Theme" href="themes/eaf412b9-1228-4746-9277-29cb436b6909"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/image.png" width="830px"></a>
