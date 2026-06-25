@@ -1,4 +1,16 @@
 {
+    "92a8f104-ab80-45c0-95f1-82ebb2e12df6": {
+        "id": "92a8f104-ab80-45c0-95f1-82ebb2e12df6",
+        "name": "Shibumi",
+        "description": "Hyprland inspired minimalistic bar with several color schemes available in one CSS.",
+        "homepage": "https://github.com/MrDLingters/Shibumi_YASB/tree/main",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/image.png",
+        "author": "MrDLingters",
+        "publish_date": "2026-06-25T16:18:52.155692"
+    },
     "eaf412b9-1228-4746-9277-29cb436b6909": {
         "id": "eaf412b9-1228-4746-9277-29cb436b6909",
         "name": "Akira",
