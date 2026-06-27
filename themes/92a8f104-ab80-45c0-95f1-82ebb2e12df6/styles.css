@@ -84,7 +84,7 @@
     --mutedBG: #e3eadf;
     --border: #A1B99C;
     --redFlash: #6B8276;
-    --subtext: #909a9a; */
+    --subtext: #6B8276; */
 
     /* Everforest Dark Soft */
     /* --background: #48584E;
@@ -132,7 +132,7 @@
     --mutedBG: #a4a4a4;
     --border: #a4a4a4;
     --redFlash: #18181b;
-    --subtext: #727272; */
+    --subtext: #626262; */
 
     /* Monochrome Light RED*/
     /* --background: #e5e7eb;
@@ -1178,3 +1178,4 @@ Example: "Windows Media" becomes "windows-media" */
 	color: var(--text);
 	padding-top: 8px;
 }
+
