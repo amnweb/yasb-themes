@@ -21,7 +21,8 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/image.png",
         "author": "MrDLingters",
-        "publish_date": "2026-06-25T16:17:08.250504"
+        "publish_date": "2026-06-25T16:17:08.250504",
+        "disabled": true
     },
     "8458901e-4dfe-4833-826c-0d6591f216bd": {
         "id": "8458901e-4dfe-4833-826c-0d6591f216bd",
