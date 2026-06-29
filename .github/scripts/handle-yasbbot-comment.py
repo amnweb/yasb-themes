@@ -51,7 +51,11 @@ def main() -> None:
 
     disabled = action == "disable"
     theme_name = themes_data[theme_id].get("name", theme_id)
-    themes_data[theme_id]["disabled"] = disabled
+    
+    if disabled:
+        themes_data[theme_id]["disabled"] = True
+    else:
+        themes_data[theme_id].pop("disabled", None)
 
     with open(THEMES_DATA_FILE, "w", encoding="utf-8") as handle:
         json.dump(themes_data, handle, indent=4)

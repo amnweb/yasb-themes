@@ -1,0 +1,45 @@
+name: Rebuild README
+on:
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: '3.14'
+
+jobs:
+  generateReadme:
+    permissions: write-all
+    name: Generate README manually
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          
+      - name: Install python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest changes
+        run: |
+          git pull origin $(git rev-parse --abbrev-ref HEAD)
+
+      - name: Generate README
+        run: |
+          python .github/scripts/generate-readme.py
+        
+      - name: Commit and push changes
+        run: |
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to push"
+          else
+            git commit -m "Update README manually"
+            git push
+          fi

@@ -22,6 +22,18 @@ def sort_folders_by_publish_date(folders):
     return sorted_folders
 
 def main():
+    # Keep track of already disabled themes to preserve their status
+    disabled_themes = set()
+    if os.path.exists(THEMES_DATA_FILE):
+        try:
+            with open(THEMES_DATA_FILE, "r") as f:
+                old_data = json.load(f)
+                for tid, tdata in old_data.items():
+                    if tdata.get("disabled") is True:
+                        disabled_themes.add(tid)
+        except Exception:
+            pass
+
     # Initialize themes.json to empty dict
     with open(THEMES_DATA_FILE, 'w') as f:
         json.dump({}, f, indent=4)
@@ -37,6 +49,10 @@ def main():
             continue
         with open(theme_data_file, 'r') as f:
             theme_data = json.load(f)
+
+        # Re-apply disabled status if it was disabled
+        if theme in disabled_themes:
+            theme_data["disabled"] = True
             
         with open(THEMES_DATA_FILE, 'r') as f:
             themes_data = json.load(f)
