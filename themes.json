@@ -130,7 +130,8 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/cd2adf60-84a1-436d-a0a9-95ac4c288928/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/cd2adf60-84a1-436d-a0a9-95ac4c288928/image.png",
         "author": "kalashnikxvxiii",
-        "publish_date": "2026-01-13T18:30:27.004839"
+        "publish_date": "2026-01-13T18:30:27.004839",
+        "disabled": true
     },
     "aad708b6-7d06-4ac5-97c5-174b6b03f6fc": {
         "id": "aad708b6-7d06-4ac5-97c5-174b6b03f6fc",
