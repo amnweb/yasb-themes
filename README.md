@@ -32,6 +32,10 @@ To update a theme, please follow these steps:
 
 <a title="Shibumi YASB Theme" href="themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/image.png" width="830px"></a>
 
+## [Akira](themes/eaf412b9-1228-4746-9277-29cb436b6909)
+
+<a title="Akira YASB Theme" href="themes/eaf412b9-1228-4746-9277-29cb436b6909"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/image.png" width="830px"></a>
+
 ## [Dream In Mocha Mauve](themes/8458901e-4dfe-4833-826c-0d6591f216bd)
 
 <a title="Dream In Mocha Mauve YASB Theme" href="themes/8458901e-4dfe-4833-826c-0d6591f216bd"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8458901e-4dfe-4833-826c-0d6591f216bd/image.png" width="830px"></a>
@@ -276,10 +280,6 @@ To update a theme, please follow these steps:
 
 > [!NOTE]
 > These themes are currently disabled in the catalog because they may be incompatible with the latest YASB version, waiting for the author to update them, or otherwise not currently recommended for use.
-
-## [Akira](themes/eaf412b9-1228-4746-9277-29cb436b6909)
-
-<a title="Akira YASB Theme" href="themes/eaf412b9-1228-4746-9277-29cb436b6909"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/image.png" width="830px"></a>
 
 ## [Edgerunners](themes/cd2adf60-84a1-436d-a0a9-95ac4c288928)
 
