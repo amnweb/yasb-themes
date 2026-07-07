@@ -121,8 +121,8 @@ widgets:
         show_app_icons: true
         show_apps_expanded: false
         app_icons:
-          toggle_down: "\uE972"
-          toggle_up: "\uE971"
+          toggle_down: "\uf106"
+          toggle_up: "\uf107"
   notifications:
     type: yasb.notifications.NotificationsWidget
     options:
