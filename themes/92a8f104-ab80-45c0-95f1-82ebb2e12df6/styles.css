@@ -267,7 +267,7 @@
 /* Base Widget Styles */
 .widget {
     padding: 0px 10px;
-    margin: 2px 2;
+    margin: 1px 2px;
     background-color: var(--background);
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
@@ -733,6 +733,7 @@
 .komorebi-active-layout .widget-container {}
 .komorebi-active-layout .label {
     font-family: var(--specialFont);
+	padding-top: 1px;
 }
 
 /* Komorebi-layout-menu */
