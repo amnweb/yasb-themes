@@ -145,12 +145,13 @@
     --fontSize: 12px;
     --iconSize: 16px;
     --fontSizeLarge: 16px;
+    --fontWeight: 600;
 }
 
 /* Global Defaults */
 * {
     font-size: var(--fontSize);
-    font-weight: 400;
+    font-weight: var(--fontWeight);
     font-family: var(--system-font);
     color: var(--text);
 }
@@ -171,7 +172,7 @@
     padding: 5px 10px;
     font-size: var(--fontSize);
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     margin-top: 4px;
     border: 1px solid var(--border);
 }
@@ -183,7 +184,7 @@
     border-bottom: 1px solid var(--border);
     padding: 4px 0px;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     font-size: var(--fontSize);
     color: var(--text);
 }
@@ -225,7 +226,7 @@
     margin: 0;
     color: var(--text);
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
 }
 .context-menu .submenu::item:disabled {
     margin: 0;
@@ -264,14 +265,14 @@
 
 .widget .icon {
     font-size: var(--iconSize);
-    font-weight: 400;
+    font-weight: var(--fontWeight);
     color: var(--yasb-icon-fg);
     font-family: var(--icons-font-fallback);
 }
 
 .widget .label {
     color: var(--text);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     padding-bottom: 0px;
 }
 
@@ -295,7 +296,7 @@
     color: var(--text);
     padding: 8px 48px 8px 16px;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     margin-left: 14px;
 }
 .home-menu .menu-item:hover {
@@ -382,14 +383,14 @@
 .clock-popup .clock-label-timer {
     font-size: 13px;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
 }
 .clock-popup .clock-input-time {
     font-size: 48px;
     background-color: var(--background);
     border: none;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
 }
 .clock-popup .clock-input-time.colon {
     padding-bottom: 8px;
@@ -397,7 +398,7 @@
 .clock-popup .button {
     border-radius: 4px;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     font-size: 13px;
     min-height: 28px;
     min-width: 64px;
@@ -455,7 +456,7 @@
 .clock-popup .alarm-input-title {
     font-size: 14px;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     color: var(--text-muted);
     background-color: var(--background2);
     border: 1px solid transparent;
@@ -483,7 +484,7 @@
 .active-alarm-window .alarm-title {
     font-size: 24px;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     color: var(--text);
     max-width: 500px;
     min-width: 500px;
@@ -491,14 +492,14 @@
 .active-alarm-window .alarm-info {
     font-size: var(--iconSize);
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     color: var(--text);
     margin-bottom: 32px;
 }
 .active-alarm-window .button {
     border-radius: 4px;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     font-size: 13px;
     min-height: 36px;
     min-width: 100px;
@@ -523,7 +524,7 @@
 }
 .power-menu-compact .profile-info .profile-username {
     font-size: var(--iconSize);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     color: var(--text);
     font-family: var(--system-font);
     margin-top: 4px;
@@ -537,7 +538,7 @@
 .power-menu-compact .profile-info .profile-account-type {
     font-size: var(--fontSize);
     color: var(--text);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     margin-top: 8px;
     font-family: var(--system-font);
     background-color: var(--yasb-accent);
@@ -556,7 +557,7 @@
     font-size: var(--fontSize);
     background-color: var(--background2);
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     padding: 3px 12px 4px 12px;
     color: var(--text);
     margin-top: 0px;
@@ -589,7 +590,7 @@
 
 .power-menu-compact .button .icon {
     font-size: var(--iconSize);
-    font-weight: 400;
+    font-weight: var(--fontWeight);
     color: var(--text);
     padding-right: 10px;
     min-width: 20px;
@@ -748,7 +749,7 @@
     padding: 8px 16px;
     font-size: var(--fontSize);
     color: var(--text); 
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     margin: 1 1px;
 }
 .komorebi-layout-menu .menu-item-icon {
@@ -847,7 +848,7 @@
 .media-menu .artist,
 .media-menu .source {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     margin-left: 10px;
     font-family: var(--system-font);
     color: var(--text);
@@ -863,7 +864,7 @@
     border-radius: 3px;
     background-color: var(--accent);
     padding: 2px 4px;
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     font-family: var(--system-font);
     margin-top: 10px;
 }
@@ -948,7 +949,7 @@ Example: "Windows Media" becomes "windows-media" */
 .media-menu .btn {
     font-family: var(--icons-font);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: var(--fontWeight);
     margin: 10px 2px 0px 2px;
     min-width: 40px;
     max-width: 40px;
@@ -1066,12 +1067,12 @@ Example: "Windows Media" becomes "windows-media" */
     color: var(--text);
 }
 .language-menu .language-item .name {
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     font-family: var(--system-font);
     font-size: 14px;
 }
 .language-menu .language-item .layout {
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     font-family: var(--system-font);
     font-size: var(--fontSize);
 }
@@ -1120,7 +1121,7 @@ Example: "Windows Media" becomes "windows-media" */
 	color: var(--text);
 	font-size: var(--iconSize);
 	font-family: var(--system-font);
-	font-weight: 400;
+	font-weight: var(--fontWeight);
 	padding: 4px 0;
 }
 /* Search prefix styling (e.g., ">" for commands) */
@@ -1132,7 +1133,7 @@ Example: "Windows Media" becomes "windows-media" */
 	margin-top: 2px;
 	margin-right: 4px;
 	font-size: 13px;
-	font-weight: 600;
+	font-weight: var(--fontWeight);
 	font-family: var(--system-font);
 	max-height: 28px;
 }
@@ -1146,20 +1147,20 @@ Example: "Windows Media" becomes "windows-media" */
 .quick-launch-popup .results-list-view {
 	font-size: var(--fontSizeLarge);
 	font-family: var(--system-font);
-	font-weight: 600;
+	font-weight: var(--fontWeight);
 	color: var(--text);
 }
 .quick-launch-popup .results-list-view .description {
 	color: var(--subtext);
 	font-size: 11px;
 	font-family: var(--system-font);
-	font-weight: 600;
+	font-weight: var(--fontWeight);
 }
 .quick-launch-popup .results-list-view .separator {
     color: rgba(255, 255, 255, 0.6);
     font-size: 13px;
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     padding: 4px 0 4px 12px;
 }
 /* Result item hover and selected states */
@@ -1239,7 +1240,7 @@ Example: "Windows Media" becomes "windows-media" */
 .taskbar-preview .header .title {
     color: var(--text);
     font-family: var(--system-font);
-    font-weight: 600;
+    font-weight: var(--fontWeight);
     font-size: 13px;
 }
 .taskbar-preview .close-button {
