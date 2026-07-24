@@ -2,6 +2,7 @@
 # For more information, visit https://github.com/amnweb/yasb/wiki
 watch_stylesheet: true
 watch_config: true
+system_colors: true
 debug: false
 update_check: true
 bars:
@@ -306,7 +307,7 @@ widgets:
     # Example path to folder with images. Can be a single string or a list of strings.
     # image_path: "C:\\Users\\{Username}\\Images" 
       image_path: 
-        - "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Catppuccin"
+        - "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Monochrome"
       change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
       engine:
