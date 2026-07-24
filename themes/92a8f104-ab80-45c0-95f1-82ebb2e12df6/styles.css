@@ -1,3 +1,5 @@
+@import "yasb_colors.css";
+
 /* Root Variables */
 :root {
     /*colors*/
@@ -7,7 +9,7 @@
     --background2: #ccd0da;
     --accent: #7c7f93;
     --text: #4c4f69;
-    --accentText: #ccd0da;
+    --accentText: #eff1f5;
     --hover: #ccd0da;
     --mutedBG: #e6e9ef;
     --border: #ccd0da;
@@ -27,7 +29,7 @@
     --subtext: #a5adce; */
     
     /* Catppuccin Macchiato */
-    --background: #24273a;
+    /* --background: #24273a;
     --background2: #363a4f;
     --accent: #939ab7;
     --text: #cad3f5;
@@ -36,7 +38,7 @@
     --mutedBG: #1e2030;
     --border: #363a4f;
     --redFlash: #ed8796;
-    --subtext: #a5adcb;
+    --subtext: #a5adcb; */
 
     /* Catppuccin Mocha */
     /* --background: #1e1e2e;
@@ -67,7 +69,7 @@
     --background2: #314d6b;
     --accent: #657c9f;
     --text: #b7c2e9;
-    --accentText: #a9abc0;
+    --accentText: #b7c2e9;
     --hover: #314d6b;
     --mutedBG: #a9abc0;
     --border: #314d6b;
@@ -125,7 +127,7 @@
     /* Monochrome Light*/
     /* --background: #e5e7eb;
     --background2: #a4a4a4;
-    --accent: #b2b2b2;
+    --accent: #18181b;
     --text: #18181b;
     --accentText: #e5e7eb;
     --hover: #a4a4a4;
@@ -145,6 +147,30 @@
     --border: #a4a4a4;
     --redFlash: #18181b;
     --subtext: #b2b2b2; */
+
+    /* MonochromeAccentDark */
+    --background: #18181b;
+    --background2: #3f3f42;
+    --accent: var(--yasb-accent-light2);
+    --text: #e5e7eb;
+    --accentText: #18181b;
+    --hover: var(--yasb-accent);
+    --mutedBG: #3f3f42;
+    --border: #3f3f42;
+    --redFlash: #e5e7eb;
+    --subtext: #b2b2b2;
+
+    /* MonochromeAccentLight*/
+    /* --background: #e5e7eb;
+    --background2: #a4a4a4;
+    --accent: var(--yasb-accent-dark2);
+    --text: #18181b;
+    --accentText: #e5e7eb;
+    --hover: var(--yasb-accent-light1);
+    --mutedBG: #a4a4a4;
+    --border: #a4a4a4;
+    --redFlash: #18181b;
+    --subtext: #626262; */
 
     --icons-font: "Segoe Fluent Icons";
     --icons-font-fallback: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
@@ -302,7 +328,7 @@
 }
 .home-menu .menu-item {
     color: var(--text);
-    padding: 8px 48px 8px 16px;
+    padding: 10px 48px 10px 16px;
     font-family: var(--system-font);
     font-weight: var(--fontWeight);
     margin-left: 14px;
@@ -311,10 +337,10 @@
     background-color: var(--hover);
     color: var(--text);
     border-radius: var(--border-radius2);
-    margin-left: 15px;
-    margin-right: 1px;
-    margin-top: 1px;
-    margin-bottom: 1px;
+    margin-left: 16px;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 .home-menu .separator {
     max-height: 0px;
@@ -322,6 +348,23 @@
 }
 
 /* Clock */
+
+.clock-widget .widget-container {
+    background-color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: var(--border-radius2);
+    margin: 1px 1px;
+    padding: 2 4px;
+}
+
+.clock-widget .label {
+    color: var(--accentText);
+}
+
+.clock-widget {
+    padding: 2 2px;
+}
+
 .clock-widget .icon.alarm {
     color: var(--text);
     padding-left: 4px;
@@ -747,7 +790,7 @@
     font-size: var(--fontSize);
     color: var(--text); 
     font-weight: var(--fontWeight);
-    margin: 1 1 1 1px;
+    margin: 2px 2px;
 }
 .komorebi-layout-menu .menu-item-icon {
     color: var(--text);
@@ -762,6 +805,7 @@
 .komorebi-layout-menu .menu-item:hover {
     background-color: var(--hover);
     border-radius: var(--border-radius3);
+    margin: 3px 3px;
 } 
 
 .komorebi-layout-menu .separator {
