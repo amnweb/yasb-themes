@@ -1,8 +1,6 @@
 # Shibumi
-Hyprland inspired minimalistic bar with several color schemes available in one CSS.
-
-<img width="3839" height="2159" alt="Screenshot 2026-06-08 010253" src="https://github.com/user-attachments/assets/dfd408e5-2b98-4d3e-be0b-1e503507a2cb" />
-
+### Hyprland inspired minimalistic bar with several color schemes available in one CSS.
+<img width="3839" height="2159" alt="Screenshot 2026-07-24 160823" src="https://github.com/user-attachments/assets/9628fe44-b438-48ec-b252-3dc6aa441cfa" />
 
 # Color schemes available:
 - Catppuccin Mocha
