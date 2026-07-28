@@ -2,6 +2,20 @@
 
 /* Root Variables */
 :root {
+
+    --icons-font: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
+    --icons-font-fallback: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
+    --system-font: "Segoe UI Variable", "Segoe UI";
+    --specialFont: "Segoe UI Variable", "Segoe UI";
+    --border-radius: 8;
+    --border-radius2: 6;
+    --border-radius3: 4;
+    --border-radiusWallpapers: 10;
+    --fontSize: 12px;
+    --iconSize: 16px;
+    --fontSizeLarge: 16px;
+    --fontWeight: 600;
+
     /*colors*/
 
     /* Catppuccin Latte */
@@ -171,19 +185,6 @@
     --border: #a4a4a4;
     --redFlash: #18181b;
     --subtext: #4B565C; */
-
-    --icons-font: "Segoe Fluent Icons";
-    --icons-font-fallback: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
-    --system-font: "Segoe UI Variable", "Segoe UI";
-    --specialFont: "Segoe UI Variable", "Segoe UI";
-    --border-radius: 16;
-    --border-radius2: 14;
-    --border-radius3: 12;
-    --border-radiusWallpapers: 10;
-    --fontSize: 12px;
-    --iconSize: 16px;
-    --fontSizeLarge: 16px;
-    --fontWeight: 600;
 }
 
 /* Global Defaults */
