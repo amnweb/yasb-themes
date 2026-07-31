@@ -1,5 +1,19 @@
 /* Root Variables */
 :root {
+
+    --icons-font: "Segoe Fluent Icons";
+    --icons-font-fallback: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
+    --system-font: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
+    --specialFont: "Segoe UI Variable", "Segoe UI";
+    --border-radius: 0;
+    --border-radius2: 0;
+    --border-radius3: 0;
+    --border-radiusWallpapers: 0;
+    --fontSize: 12px;
+    --iconSize: 16px;
+    --fontSizeLarge: 16px;
+    --fontWeight: 600;
+
     /*colors*/
 
     /* Catppuccin Latte */
@@ -7,8 +21,8 @@
     --background2: #ccd0da;
     --accent: #7c7f93;
     --text: #4c4f69;
-    --accentText: #ccd0da;
-    --hover: #ccd0da;
+    --accentText: #eff1f5;
+    --hover: #bcc0cc;
     --mutedBG: #e6e9ef;
     --border: #ccd0da;
     --redFlash: #d20f39;
@@ -20,7 +34,7 @@
     --accent: #949cbb;
     --text: #c6d0f5;
     --accentText: #414559;
-    --hover: #414559;
+    --hover: #51576d;
     --mutedBG: #292c3c;
     --border: #414559;
     --redFlash: #e78284;
@@ -32,7 +46,7 @@
     --accent: #939ab7;
     --text: #cad3f5;
     --accentText: #363a4f;
-    --hover: #363a4f;
+    --hover: #494d64;
     --mutedBG: #1e2030;
     --border: #363a4f;
     --redFlash: #ed8796;
@@ -44,7 +58,7 @@
     --accent: #9399b2;
     --text: #cdd6f4;
     --accentText: #313244;
-    --hover: #313244;
+    --hover: #45475a;
     --mutedBG: #181825;
     --border: #313244;
     --redFlash: #f38ba8;
@@ -67,8 +81,8 @@
     --background2: #314d6b;
     --accent: #657c9f;
     --text: #b7c2e9;
-    --accentText: #a9abc0;
-    --hover: #314d6b;
+    --accentText: #b7c2e9;
+    --hover: #657c9f;
     --mutedBG: #a9abc0;
     --border: #314d6b;
     --redFlash: #657C9F;
@@ -80,11 +94,11 @@
     --accent: #6d9471;
     --text: #1d2837;
     --accentText: #e3eadf;
-    --hover: #A1B99C;
+    --hover: #6d9471;
     --mutedBG: #e3eadf;
     --border: #A1B99C;
     --redFlash: #6B8276;
-    --subtext: #6B8276; */
+    --subtext: #2B4E55; */
 
     /* Everforest Dark Soft */
     /* --background: #48584E;
@@ -96,7 +110,7 @@
     --mutedBG: #5D6B66;
     --border: #5D6B66;
     --redFlash: #5C3F4F;
-    --subtext: #9DA9A0; */
+    --subtext: #9AA79D; */
 
     /* Monochrome */
     /* --background: #18181b;
@@ -120,7 +134,7 @@
     --mutedBG: #a4a4a4;
     --border: #a4a4a4;
     --redFlash: #898989;
-    --subtext: #626262; */
+    --subtext: #4B565C; */
 
     /* Tokyo Night */
     /* --background: #1a1b26;
@@ -134,18 +148,17 @@
     --redFlash: #f7768e;
     --subtext: #9aa5ce; */
 
-    --icons-font: "Segoe Fluent Icons";
-    --icons-font-fallback: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
-    --system-font: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
-    --specialFont: "Segoe UI Variable", "Segoe UI";
-    --border-radius: 0;
-    --border-radius2: 0;
-    --border-radius3: 0;
-    --border-radiusWallpapers: 0;
-    --fontSize: 12px;
-    --iconSize: 16px;
-    --fontSizeLarge: 16px;
-    --fontWeight: 600;
+    /* Everforest Dark */
+    /* --background: #2E383C;
+    --background2: #414B50;
+    --accent: #D3C6AA;
+    --text: #D3C6AA;
+    --accentText: #2E383C;
+    --hover: #495156;
+    --mutedBG: #272E33;
+    --border: #272E33;
+    --redFlash: #493B40;
+    --subtext: #859289; */
 }
 
 /* Global Defaults */
@@ -640,7 +653,7 @@
     border-radius: var(--border-radius2);
 }
 .audio-menu .audio-container .device.selected {
-    background-color: var(--hover);
+    background-color: var(--background2);
     color: var(--text);
    
 }
@@ -1171,10 +1184,16 @@ Example: "Windows Media" becomes "windows-media" */
     margin-left: 4px;
     margin-right: 4px;
 }
-.quick-launch-popup .results-list-view::item:hover,
+.quick-launch-popup .results-list-view::item:hover {
+    background-color: var(--hover);
+}
 .quick-launch-popup .results-list-view::item:selected {
-	background-color: var(--hover);
+	background-color: var(--background2);
     border-radius: var(--border-radius);
+}
+
+.quick-launch-popup .results-list-view::item:selected:hover {
+    background-color: var(--hover);
 }
 /* Empty state when no results found */
 .quick-launch-popup .results-empty-text {
