@@ -7,9 +7,9 @@
     --icons-font-fallback: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
     --system-font: "Segoe UI Variable", "Segoe UI";
     --specialFont: "Segoe UI Variable", "Segoe UI";
-    --border-radius: 8;
-    --border-radius2: 6;
-    --border-radius3: 4;
+    --border-radius: 16;
+    --border-radius2: 14;
+    --border-radius3: 12;
     --border-radiusWallpapers: 10;
     --fontSize: 12px;
     --iconSize: 16px;
@@ -185,6 +185,30 @@
     --border: #a4a4a4;
     --redFlash: #18181b;
     --subtext: #4B565C; */
+
+    /* Everforest Dark */
+    /* --background: #2E383C;
+    --background2: #374145;
+    --accent: #D3C6AA;
+    --text: #D3C6AA;
+    --accentText: #2E383C;
+    --hover: #414B50;
+    --mutedBG: #272E33;
+    --border: #272E33;
+    --redFlash: #493B40;
+    --subtext: #859289; */
+
+    /* Nord */
+    /* --background: #2e3440;
+    --background2: #434c5e;
+    --accent: #ebcb8b;
+    --text: #d8dee9;
+    --accentText: #2e3440;
+    --hover: #4c566a;
+    --mutedBG: #3b4252;
+    --border: #434c5e;
+    --redFlash: #bf616a;
+    --subtext: #bdc2cd76; */
 }
 
 /* Global Defaults */
@@ -360,6 +384,7 @@
 
 .clock-widget .label {
     color: var(--accentText);
+    margin: 0 2px;
 }
 
 .clock-widget {
@@ -1231,4 +1256,3 @@ Example: "Windows Media" becomes "windows-media" */
 	color: var(--text);
 	padding-top: 8px;
 }
-
