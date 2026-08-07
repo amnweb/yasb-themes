@@ -43,7 +43,6 @@ bars:
         - "notes"
         - "todo"
         - "bin"
-        - "ai_chat"
         - "glazewm_workspaces"
       center:
         - "cpu"
@@ -230,43 +229,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-  ai_chat:
-    type: "yasb.ai_chat.AiChatWidget"
-    options:
-      label: "<span>\uDB81\uDE74</span>"
-      chat:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "center"
-        direction: "down"
-        offset_left: 0
-        offset_top: 6
-      icons:
-        attach: "\uf067"
-        send: "\uf1d8"
-        stop: "\uf04d"
-        clear: "\uf1f8"
-        assistant: "\udb81\ude74"
-        float_on: "\udb84\udcac"
-        float_off: "\udb84\udca9"
-        close: "\uf00d"
-        copy: "\uebcc"
-        copy_check: "\uf00c"
-      start_floating: false
-      callbacks:
-        on_left: "toggle_chat"
-        on_middle: "do_nothing"
-        on_right: "do_nothing"
-      providers:
-        - provider: "Ollama"
-          api_endpoint: "http://localhost:11434/v1" #default
-          credential: "ollama"
-          models:
-            - name: "" #you can find the name using 'ollama list'
-              label: "You have to set it up in the config.yaml" 
-              default: true
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:

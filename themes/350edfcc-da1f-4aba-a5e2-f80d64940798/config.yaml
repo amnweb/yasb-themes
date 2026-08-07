@@ -38,7 +38,6 @@ bars:
         [
           "clock",
           "weather",
-          "ai_chat"
         ]
       right:
         [
@@ -222,40 +221,6 @@ widgets:
         direction: "down"
         offset_top: 6
         icon_size: 48
-  ai_chat:
-    type: "yasb.ai_chat.AiChatWidget"
-    options:
-      label: "<span>\uf0e6</span>"
-      chat:
-        blur: true
-        round_corners: true
-        round_corners_type: "small"
-        border_color: "system"
-        alignment: "center"
-        direction: "down"
-        offset_left: 0
-        offset_top: 6
-      icons:
-        send: "\uf1d8"
-        stop: "\uf04d"
-        clear: "\uf1f8"
-        assistant: "\udb81\ude74"
-      notification_dot:
-        enabled: false
-        corner: "top_right"
-        color: "red"
-        margin: [ 0, 2 ]
-      callbacks:
-        on_left: "toggle_chat"
-      providers:
-        - provider: "OpenAI"
-          api_endpoint: "https://api.openai.com/v1"
-          credential: "PASTE YOUR KEY HERE" # Get your free key after logging in from https://platform.openai.com/api-keys
-          models:
-          - name: "gpt-4o-mini"
-            label: "Chat GPT4"
-            temperature: 0.3
-            top_p: 0.95
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
