@@ -17,6 +17,8 @@ This theme using bottom placement so it should be used with hidden Windows taskb
 - Monochrome
 - Monochrome Light
 - Tokyo Night
+- Everforest Dark Hard
+- Nord
 
 # How to change color scheme
 ### Open styles.css file in your C:\Users\USERNAME\\.config\yasb and leave uncommented **ONE** set of variables from "colors" section. Here's a [quick guide video](https://youtu.be/PFH5lKwJ9Dw?si=jJ6s-vyxm7ZkIhD5).
