@@ -41,7 +41,7 @@
     --subtext: #a5adce; */
     
     /* Catppuccin Macchiato */
-    --background: #24273a;
+    /* --background: #24273a;
     --background2: #363a4f;
     --accent: #939ab7;
     --text: #cad3f5;
@@ -50,7 +50,7 @@
     --mutedBG: #1e2030;
     --border: #363a4f;
     --redFlash: #ed8796;
-    --subtext: #a5adcb;
+    --subtext: #a5adcb; */
 
     /* Catppuccin Mocha */
     /* --background: #1e1e2e;
@@ -137,7 +137,7 @@
     --subtext: #4B565C; */
 
     /* Tokyo Night */
-    /* --background: #1a1b26;
+    --background: #1a1b26;
     --background2: #414868;
     --accent: #9aa5ce;
     --text: #c0caf5;
@@ -146,7 +146,7 @@
     --mutedBG: #414868;
     --border: #414868;
     --redFlash: #f7768e;
-    --subtext: #9aa5ce; */
+    --subtext: #9aa5ce;
 
     /* Everforest Dark */
     /* --background: #2E383C;
@@ -307,6 +307,7 @@
     font-size: var(--fontSize);
     font-weight: bold;
     color: var(--text);
+    padding-bottom: 0px;
     padding-right: 4px;
 }
 
@@ -561,13 +562,13 @@
 
 .power-menu-compact .profile-info .profile-account-type {
     font-size: var(--fontSize);
-    color: var(--text);
+    color: var(--accentText);
     font-weight: var(--fontWeight);
     margin-top: 8px;
     font-family: var(--system-font);
-    background-color: var(--yasb-accent);
+    background-color: var(--accent);
     padding: 2px 6px 3px 6px;
-    border-radius: 4px;
+    border-radius: var(--border-radius2);
 }
 
 .power-menu-compact .profile-info .profile-email {
