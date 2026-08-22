@@ -209,6 +209,18 @@
     --border: #434c5e;
     --redFlash: #bf616a;
     --subtext: #bdc2cd76; */
+
+    /* Kanagawa */
+    /* --background: #1F1F28;
+    --background2: #727169;
+    --accent: #C8C093;
+    --text: #DCD7BA;
+    --accentText: #1F1F28;
+    --hover: #76946A;
+    --mutedBG: #090618;
+    --border: #C0A36E;
+    --redFlash: #C34043;
+    --subtext: #C8C093; */
 }
 
 /* Global Defaults */
@@ -362,10 +374,10 @@
     background-color: var(--hover);
     color: var(--text);
     border-radius: var(--border-radius2);
-    margin-left: 16px;
-    margin-right: 2px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-left: 17px;
+    margin-right: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 .home-menu .separator {
     max-height: 0px;
@@ -613,13 +625,13 @@
 
 .power-menu-compact .profile-info .profile-account-type {
     font-size: var(--fontSize);
-    color: var(--text);
+    color: var(--accentText);
     font-weight: var(--fontWeight);
     margin-top: 8px;
     font-family: var(--system-font);
-    background-color: var(--yasb-accent);
+    background-color: var(--accent);
     padding: 2px 6px 3px 6px;
-    border-radius: 4px;
+    border-radius: var(--border-radius2);
 }
 
 .power-menu-compact .profile-info .profile-email {
@@ -830,7 +842,7 @@
 .komorebi-layout-menu .menu-item:hover {
     background-color: var(--hover);
     border-radius: var(--border-radius3);
-    margin: 3px 3px;
+    margin: 4px 4px;
 } 
 
 .komorebi-layout-menu .separator {
@@ -1256,3 +1268,4 @@ Example: "Windows Media" becomes "windows-media" */
 	color: var(--text);
 	padding-top: 8px;
 }
+
