@@ -1,0 +1,1103 @@
+:root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface0: #282936;
+    --base: #1e1e2e;
+    --mantle: rgba(24, 24, 37, 0.5);
+    --crust: rgba(17, 17, 27, 0.5);
+    --glass: rgba(30, 30, 46, 0.35);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-highlight: rgba(255, 255, 255, 0.06);
+}
+*{
+	font-size: 12px;
+	color: var(--subtext0);
+	font-weight: 700;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+}
+
+/* ===== FROSTED GLASS BAR ===== */
+.yasb-bar {
+	padding: 0 6px;
+	margin: 0;
+    background-color: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+.widget {
+	padding: 0 8px;
+	margin: 0;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+.widget:hover {
+    background-color: var(--glass-highlight);
+}
+.widget .label {
+	padding: 2px 2px 1px 2px;
+}
+.widget .label.alt {
+	padding: 1px 8px 1px 8px;
+}
+ .clock-widget .label {
+    padding-left:8px;
+}
+.komorebi-workspaces .widget-container {
+    margin-left: 0px;
+    background-color: transparent;
+}
+.komorebi-workspaces .widget-container {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none
+}
+.komorebi-workspaces .offline-status {
+    color: var(--subtext1);
+    font-size: 12px;
+    padding: 0 0px;
+    font-weight: 600;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin: 0 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0);
+}
+.komorebi-workspaces .ws-btn:hover {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.16);
+}
+.komorebi-workspaces .ws-btn.populated:hover {
+    color: rgba(0, 0, 0, 0);
+    background-color: var(--overlay1);
+}
+.komorebi-workspaces .ws-btn.populated {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.22);
+}
+.komorebi-workspaces .ws-btn.active {
+    color: rgba(0, 0, 0, 0);
+    background-color: var(--subtext0);
+    width: 28px;
+    height: 10px;
+}
+.komorebi-active-layout {
+    padding: 0 0px 0 0;
+}
+.komorebi-active-layout .label {
+    font-weight: 600;
+    padding: 2px 0 0 0;
+}
+
+/* POWER MENU WIDGET */
+.uptime {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: rgba(191, 202, 219, 0.726);
+	font-weight: 600;
+	font-family: "Segoe UI";
+}
+.power-menu-widget .label {
+	color: #eba0ac;
+	font-size: 16px;
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 160px;
+	height: 240px;
+	border-radius: 12px;
+	background-color: rgba(41, 42, 58, 0.4);
+	font-family: "Segoe UI";
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.power-menu-popup .button.hover {
+	background-color: rgba(55, 56, 75, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.6);
+	font-family: "Segoe UI";
+}
+.power-menu-popup .button .icon {
+	font-size: 64px;
+	padding-top: 54px;
+	color: rgba(255, 255, 255, 0.25);
+}
+.power-menu-popup .button.cancel .icon {
+	color: rgba(243, 139, 168, 0.55);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+}
+
+/* ICONS */
+.icon {
+	font-size: 16px;
+}
+.volume-widget .icon {
+	font-size: 15px;
+	color: var(--blue);
+	margin: 1px 3px 1px 0px;
+}
+.clock-widget .icon {
+	color: #cba6f7;
+    font-size: 14px;
+}
+
+.media-widget {
+	padding: 0;
+	margin: 0;
+    background-color: transparent;
+}
+.media-widget .label {
+	color: var(--lavender);
+    padding: 0px;
+	padding-right: 16px;
+}
+.media-widget .btn {
+	color: var(--overlay1);
+	padding: 0 0px;
+	padding-right: 0px;
+	margin: 4px 0;
+	font-family: Segoe Fluent Icons;
+}
+.media-widget .btn:hover {
+	color: var(--subtext0);
+}
+.media-widget .btn.play {
+	font-size: 16px;
+}
+.media-widget .btn.prev {
+    padding: 0 0px 0 0px;
+    font-size: 12px;
+}
+.media-widget .btn.next {
+    padding: 0 8px 0 0px;
+    font-size: 12px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+	color: var(--surface1);
+	font-size: 12px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.wallpapers-widget {
+    padding: 0 6px 0 6px;
+    background-color: transparent;
+}
+.wallpapers-gallery-window {
+    background-color: rgba(30, 30, 46, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 16px;
+    border-radius: 16px;
+}
+.dark.wallpapers-gallery-window {
+    background-color: rgba(30, 30, 46, 0.45);
+}
+.wallpapers-gallery-buttons {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: none;
+    font-size: 14px;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin: 0 8px 8px 8px;
+    width: 200px;
+}
+.wallpapers-gallery-buttons:hover {
+    background-color: rgba(255, 255, 255, 0.1)
+}
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 16px;
+}
+.wallpapers-gallery-image:hover {
+    border: 4px solid rgb(66, 68, 83);
+}
+.wallpapers-gallery-image.focused {
+    border: 4px solid #89b4fa;
+}
+
+.taskbar-widget {
+    background-color: transparent;
+}
+.taskbar-widget .app-container {
+    margin: 4px 2px;
+    border-radius: 6px;
+    padding: 0 4px;
+}
+.taskbar-widget .app-container.foreground {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.taskbar-widget .app-container.flashing {
+    background-color: rgba(255, 106, 106, 0.5);
+}
+.taskbar-widget .app-container.running {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+.taskbar-widget .app-container:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
+.taskbar-preview {
+    border-radius: 12px;
+    background-color: rgba(43, 44, 45, 0.6);
+}
+.taskbar-preview.flashing {
+    background-color: rgba(127, 67, 74, 0.7);
+}
+.taskbar-preview .header {
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+.taskbar-preview .header .title {
+    color: #d6d6d6;
+    font-family: "Segoe UI";
+    font-weight: 600;
+    font-size: 13px;
+}
+.taskbar-preview .close-button {
+    color: #999;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    min-width: 20px;
+    border-radius: 4px;
+    min-height: 20px;
+}
+.taskbar-preview .close-button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(226, 0, 0);
+}
+
+/* Clock Widget Styles */
+.clock-widget {
+    padding: 0 4px 0 0px;
+    background-color: transparent;
+}
+.clock-widget .icon {
+    color: #9ae99e;
+    font-size: 15px;
+    padding-right: 4px;
+}
+.clock-widget .icon.alarm {
+    color: #f38ba8;
+    margin-left: 4px;
+}
+.clock-widget .label {
+    color: #dff5f5;
+    font-size: 14px;
+    font-weight: 800;
+}
+.clock-widget .label.alarm {
+    color: #abeb44;
+    margin-left: 4px;
+}
+
+.clock-popup.alarm,
+.clock-popup.timer,
+.clock-popup.calendar {
+    min-width: 460px;
+    background-color: rgba(17, 17, 27, 0.4);
+    border-radius: 16px;
+}
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: rgba(162, 177, 196, 0.85);
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+.clock-popup.calendar .calendar-table::item:selected {
+    color: #282936;
+    font-weight: bold;
+    background-color: #5be684;
+    border-radius: 12px;
+}
+.clock-popup.calendar .day-label {
+    margin-top: 20px;
+}
+.clock-popup.calendar .day-label,
+.clock-popup.calendar .month-label,
+.clock-popup.calendar .year-label,
+.clock-popup.calendar .date-label {
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    color: #fcfcfc;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.clock-popup.calendar .month-label {
+    font-weight: normal;
+}
+.clock-popup.calendar .year-label {
+    font-weight: normal;
+}
+.clock-popup.calendar .date-label {
+    font-size: 88px;
+    font-weight: 1000;
+    color: rgb(203, 160, 243);
+    margin-top: -20px;
+}
+.clock-popup.calendar .extended-container {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    padding-left: 16px;
+}
+.clock-popup.calendar .extended-container .button.alarm.small,
+.clock-popup.calendar .extended-container .button.timer.small {
+    min-width: 32px;
+    min-height: 16px;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+.clock-popup.calendar .extended-container .upcoming-events-header {
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    margin: 4px 0 8px 0;
+    color: #d2d6e2;
+}
+.clock-popup.calendar .extended-container .upcoming-events-item {
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    padding: 3px 0;
+    color: #b2b6c0;
+}
+.clock-popup.calendar .extended-container .upcoming-events-item:hover {
+    color: #ced1d8;
+}
+
+.clock-popup.timer .clock-popup-container,
+.clock-popup.alarm .clock-popup-container {
+    padding: 16px;
+}
+.clock-popup.timer .clock-popup-footer,
+.clock-popup.alarm .clock-popup-footer {
+    padding: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.clock-popup .clock-label-timer {
+    font-size: 16px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #8d9196;
+}
+.clock-popup .clock-input-time {
+    font-size: 48px;
+    background-color: transparent;
+    border: none;
+    font-family: monospace, "Tahoma", "Segoe UI";
+    font-weight: 600;
+    color: #ced3d8;
+}
+.clock-popup .clock-input-time.colon {
+    padding-bottom: 8px;
+}
+
+.clock-popup .button {
+    border-radius: 8px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 19px;
+    min-height: 28px;
+    min-width: 64px;
+    margin: 4px 0;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.clock-popup .button.save,
+.clock-popup .button.start,
+.clock-popup .button.delete,
+.clock-popup .button.cancel {
+    min-width: 120px;
+}
+.clock-popup .button.save,
+.clock-popup .button.start {
+    background-color: rgba(0, 110, 255, 0.4);
+    margin-right: 8px;
+}
+.clock-popup .button.save:hover,
+.clock-popup .button.start:hover {
+    background-color: rgba(0, 110, 255, 0.6);
+}
+.clock-popup .button.delete {
+    background-color: rgba(255, 80, 80, 0.4);
+}
+.clock-popup .button.delete:hover {
+    background-color: rgba(255, 80, 80, 0.6);
+}
+.clock-popup .button.is-alarm-enabled {
+    background-color: rgba(0, 110, 255, 0.4);
+}
+.clock-popup .button.is-alarm-enabled:hover {
+    background-color: rgba(0, 110, 255, 0.6);
+}
+.clock-popup .button.is-alarm-disabled {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.clock-popup .button.day {
+    background-color: rgba(255, 255, 255, 0.08);
+    max-height: 20px;
+    min-height: 20px;
+}
+.clock-popup .button.day:checked {
+    background-color: rgba(0, 110, 255, 0.4);
+}
+.clock-popup .button.quick-option {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.clock-popup .button.quick-option:checked {
+    background-color: rgba(0, 110, 255, 0.4);
+}
+.clock-popup .button:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+}
+.clock-popup .button:disabled {
+    background-color: rgba(100, 100, 100, 0.15);
+    color: rgba(150, 150, 150, 0.7);
+}
+.clock-popup .alarm-input-title {
+    font-size: 14px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #d2d6e2;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-top: 8px;
+    outline: none;
+    min-width: 300px;
+}
+.clock-popup .alarm-input-title:focus {
+    border: 1px solid #0078D4;
+}
+
+.active-alarm-window {
+    background-color: rgba(255, 255, 255, 0.04);
+    max-width: 500px;
+    min-width: 500px;
+    padding: 32px;
+    border-radius: 16px;
+}
+.active-alarm-window .alarm-title-icon {
+    font-size: 64px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+.active-alarm-window .alarm-title {
+    font-size: 24px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #ffffff;
+    max-width: 500px;
+    min-width: 500px;
+}
+.active-alarm-window .alarm-info {
+    font-size: 16px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #b2b6c0;
+    margin-bottom: 32px;
+}
+.active-alarm-window .button {
+    border-radius: 6px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 36px;
+    min-width: 100px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.active-alarm-window .button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.battery-widget {
+    padding: 2px 12px 2px 10px;
+    margin: 3px 0;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+}
+.battery-widget:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.battery-widget .label {
+    font-size: 13px;
+    font-weight: 800;
+    color: #e0e0e0;
+    padding-left: 2px;
+}
+.battery-widget .icon {
+    font-size: 15px;
+    margin-right: 2px;
+}
+.battery-widget .icon.status-critical {
+    color: #ff4444;
+}
+.battery-widget .label.status-critical {
+    color: #ff6b6b;
+}
+.battery-widget .icon.status-low {
+    color: #ff9800;
+}
+.battery-widget .label.status-low {
+    color: #ffb74d;
+}
+.battery-widget .icon.status-medium {
+    color: #ffc107;
+}
+.battery-widget .icon.status-high {
+    color: #8bc34a;
+}
+.battery-widget .icon.status-full {
+    color: #4caf50;
+}
+.battery-widget .icon.status-charging {
+    color: #00e5c7;
+}
+.battery-widget .label.status-charging {
+    color: #4dd0e1;
+}
+
+.memory-widget {
+    padding: 0 8px;
+    background-color: transparent;
+}
+.memory-widget .widget-container .label {
+    font-size: 13px;
+    color: #cdd6f4;
+}
+.memory-widget .widget-container .icon {
+    font-size: 14px;
+    color: #89b4fa;
+    font-family: "JetBrainsMono NFP";
+}
+.memory-widget .widget-container .label.status-low {
+    color: #a6e3a1;
+}
+.memory-widget .widget-container .label.status-medium {
+    color: #f9e2af;
+}
+.memory-widget .widget-container .label.status-high {
+    color: #fab387;
+}
+.memory-widget .widget-container .label.status-critical {
+    color: #f38ba8;
+}
+.memory-widget .progress-container {
+    margin-right: 6px;
+}
+
+.memory-popup {
+    background-color: var(--glass);
+    min-width: 400px;
+    max-width: 400px;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+.memory-popup .header {
+    background: transparent;
+    padding: 12px 16px;
+}
+.memory-popup .header .text {
+    font-size: 16px;
+    font-family: "Segoe UI";
+    color: var(--text);
+}
+.memory-popup .header .pin-btn {
+    font-size: 14px;
+    background: transparent;
+    font-family: "Segoe Fluent Icons";
+    border: none;
+    padding: 6px;
+    color: var(--subtext1);
+}
+.memory-popup .header .pin-btn:hover {
+    color: var(--text);
+}
+.memory-popup .header .pin-btn.pinned {
+    color: var(--blue);
+}
+
+/* Graph area */
+.memory-popup .graph-container {
+    background: transparent;
+    min-height: 64px;
+}
+.memory-popup .memory-graph {
+    color: var(--blue);
+    /* <-- set the graph line/fill color */
+}
+.memory-popup .memory-graph-grid {
+    color: rgba(255, 255, 255, 0.05);
+    /* set the grid line color */
+}
+.memory-popup .graph-title {
+    font-size: 12px;
+    color: var(--subtext1);
+    font-family: 'Segoe UI';
+    padding: 0px 0px 4px 14px;
+}
+
+/* Stats grid */
+.memory-popup .stats {
+    background: transparent;
+    padding: 16px;
+}
+.memory-popup .stats .stat-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 8px;
+}
+.memory-popup .stats .stat-label {
+    font-size: 13px;
+    color: var(--subtext1);
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    padding: 6px 4px 2px 4px;
+}
+.memory-popup .stats .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    font-family: 'Segoe UI';
+    padding: 0 4px 12px 4px;
+}
+
+.systray {
+    background: transparent;
+    border: none;
+    margin: 0;
+}
+.systray .unpinned-container {
+    background: transparent;
+}
+.systray .pinned-container {
+    background: transparent;
+}
+.systray .button {
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.systray .button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+/* Icon being dragged, we already apply some transparency to it so you don't need to use it */
+.systray .button.dragging {}
+
+.systray .button.drag-over {
+     background: rgba(255, 255, 255, 0.4);
+}
+
+.systray .pinned-container.drop-target {
+    background: rgba(255, 255, 255, 0.1);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+    border: none;
+    outline: none;
+}
+
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+
+.systray .unpinned-visibility-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Popup styles (when show_in_popup is true) */
+
+/* The icon the drag is hovering over (drop target icon) */
+.systray-popup .button.drag-over {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+/* Icon being dragged, we already apply some transparency to it so you don't need to use it */
+.systray-popup .button.dragging {}
+
+.systray .pinned-container.pinned-container.drop-target {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.systray-popup {
+    background-color: rgba(48, 48, 48, 0.6);
+    padding: 4px;
+}
+.systray-popup .button {
+    padding: 10px;
+    margin: 0;
+    border: 0;
+    border-radius: 6px;
+}
+.systray-popup .button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.traffic-menu {
+    background-color: rgba(24, 25, 27, 0.85);
+    min-width: 280px;
+}
+.traffic-menu .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(24, 25, 27, 0.8);
+}
+.traffic-menu .header .title {
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Segoe UI';
+    color: #ffffff
+}
+.traffic-menu .header .reset-button {
+    font-size: 11px;
+    padding: 4px 8px;
+    margin-right: 8px;
+    font-family: 'Segoe UI';
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+}
+.traffic-menu .reset-button:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .reset-button:pressed {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Speed column styles */
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+    background-color: transparent;
+    padding: 4px 10px;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-top: 16px;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.traffic-menu .download-speed {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.traffic-menu .speed-separator {
+    max-width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 32px 0 16px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: 'Segoe UI';
+    color: #bcc2c5;
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    padding-top: 4px;
+}
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+    color: #747474;
+    font-size: 11px;
+    font-family: 'Segoe UI';
+    padding: 0 0 4px 0;
+}
+
+/* Section and data styles */
+.traffic-menu .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7c8192;
+    margin-bottom: 4px;
+    font-family: 'Segoe UI';
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+    margin: 8px 8px 0 8px;
+    padding: 0 10px 10px 10px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .data-text {
+    font-size: 13px;
+    color: #afb5cc;
+    padding: 2px 0;
+    font-family: 'Segoe UI';
+}
+.traffic-menu .data-value {
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    padding: 2px 0;
+}
+
+/* Interface and Internet info styles */
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+    font-size: 12px;
+    color: #6f7486;
+    padding: 8px 0;
+    font-family: 'Segoe UI';
+}
+.traffic-menu .internet-info {
+    background-color: rgba(68, 68, 68, 0.1);
+}
+.traffic-menu .internet-info.connected {
+    background-color: rgba(166, 227, 161, 0.096);
+    color: #a6e3a1;
+}
+.traffic-menu .internet-info.disconnected {
+    background-color: rgba(243, 139, 168, 0.1);
+    color: #f38ba8;
+}
+
+/* Quick Launch Widget */
+.quick-launch-widget .icon {
+	font-size: 14px;
+	padding: 0 4px;
+}
+.quick-launch-widget .icon:hover {
+	color: #fff;
+}
+
+/* Quick Launch Popup - main window */
+.quick-launch-popup .container {
+	background-color: rgba(29, 29, 29, 0.452);
+}
+/* Search bar container */
+.quick-launch-popup .search {
+	padding: 12px 16px;
+	background-color: transparent;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+/* Search loader line color */
+.quick-launch-popup .search .loader-line {
+	color: #449bff;
+}
+.quick-launch-popup .search .search-icon {
+	font-family: "Segoe Fluent Icons";
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.6);
+	padding-right: 8px;
+	min-width: 18px;
+}
+.quick-launch-popup .search .search-submit-icon {
+	font-family: "Segoe Fluent Icons";
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.6);
+	min-width: 18px;
+}
+.quick-launch-popup .search .search-input {
+	background: transparent;
+	border: none;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: "Segoe UI";
+	font-weight: 400;
+	padding: 4px 0;
+}
+/* Search prefix styling (e.g., ">" for commands) */
+.quick-launch-popup .search .prefix {
+	background: #2167d8;
+	border-radius: 6px;
+	color: #ffffff;
+	padding: -2px 8px 0px 8px;
+	margin-top: 2px;
+	margin-right: 4px;
+	font-size: 13px;
+	font-weight: 600;
+	font-family: "Segoe UI";
+	max-height: 28px;
+}
+
+/* Results list */
+.quick-launch-popup .results {
+	background: transparent;
+	padding: 8px;
+}
+/* Individual result item here you can set font szie for title */
+.quick-launch-popup .results-list-view {
+	font-size: 16px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	color: #ffffff;
+}
+.quick-launch-popup .results-list-view .description {
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 11px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+}
+.quick-launch-popup .results-list-view .separator {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    padding: 4px 0 4px 12px;
+}
+/* Result item hover and selected states */
+.quick-launch-popup .results-list-view::item {
+	padding: 12px;
+	border-radius: 8px;
+}
+.quick-launch-popup .results-list-view::item:hover,
+.quick-launch-popup .results-list-view::item:selected {
+	background-color: rgba(128, 130, 158, 0.1);
+}
+/* Empty state when no results found */
+.quick-launch-popup .results-empty-text {
+	font-size: 24px;
+	font-family: "Segoe UI";
+	color: rgb(255, 255, 255);
+	padding-top: 8px;
+}
+
+/* Preview Pane */
+.quick-launch-popup .preview {
+	background: rgba(0, 0, 0, 0);
+	border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+.quick-launch-popup .preview .preview-text {
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.85);
+	padding: 8px 12px;
+	font-family: "Segoe UI";
+	background-color: rgba(255, 255, 255, 0.03);
+	border: none;
+}
+.quick-launch-popup .preview .preview-image {
+	background-color: rgba(255, 255, 255, 0.03);
+	padding: 8px 12px;
+}
+.quick-launch-popup .preview .preview-meta {
+	padding: 6px 12px;
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+	font-family: "Segoe UI";
+}
+.quick-launch-popup .preview .preview-meta .preview-title {
+	font-size: 14px;
+	font-weight: 600;
+	color: rgb(255, 255, 255);
+	font-family: "Segoe UI";
+	margin-bottom: 10px;
+	margin-left: -2px;
+}
+
+.quick-launch-popup .preview .preview-meta .preview-subtitle {
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.8);
+	font-family: "Segoe UI";
+	padding-bottom: 1px;
+}
+
+/* Preview inline edit form (.preview.edit) */
+.quick-launch-popup .preview.edit .preview-title {
+	font-size: 13px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	color: #ffffff;
+	padding: 8px 12px 4px 12px;
+}
+.quick-launch-popup .preview.edit .preview-line-edit {
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 4px;
+	color: #ffffff;
+	font-size: 13px;
+	font-family: "Segoe UI";
+	padding: 6px 8px;
+	margin: 0 12px;
+}
+.quick-launch-popup .preview.edit .preview-line-edit:focus {
+	border-color: rgba(255, 255, 255, 0.3);
+}
+.quick-launch-popup .preview.edit .preview-text-edit {
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 4px;
+	color: #ffffff;
+	font-size: 13px;
+	font-family: "Segoe UI";
+	padding: 6px 8px;
+	margin: 0 12px;
+}
+.quick-launch-popup .preview.edit .preview-text-edit:focus {
+	border-color: rgba(255, 255, 255, 0.3);
+}
+.quick-launch-popup .preview.edit .preview-actions {
+	padding: 8px 12px;
+}
+.quick-launch-popup .preview.edit .preview-btn {
+	background: rgb(45, 46, 48);
+	border: none;
+	border-radius: 4px;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 12px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	padding: 4px 16px;
+}
+.quick-launch-popup .preview.edit .preview-btn:hover {
+	background: rgb(59, 60, 63);
+}
+.quick-launch-popup .preview.edit .preview-btn.save {
+	background: rgb(12, 81, 190);
+	color: #ffffff;
+}
+.quick-launch-popup .preview.edit .preview-btn.save:hover {
+	background: rgb(19, 90, 204);
+}
