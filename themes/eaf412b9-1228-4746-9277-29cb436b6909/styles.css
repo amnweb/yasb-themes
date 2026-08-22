@@ -307,7 +307,6 @@
     font-size: var(--fontSize);
     font-weight: bold;
     color: var(--text);
-    padding-bottom: 2px;
     padding-right: 4px;
 }
 
