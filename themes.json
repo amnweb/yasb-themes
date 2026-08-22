@@ -1,4 +1,16 @@
 {
+    "145eb8a1-9d1d-4b9a-b635-7c071a2d9f54": {
+        "id": "145eb8a1-9d1d-4b9a-b635-7c071a2d9f54",
+        "name": "Frosted Glass Revamp",
+        "description": "Acrylic frosted-glass YASB theme with rounded pill widgets and Catppuccin Mocha accents.",
+        "homepage": "https://github.com/Harishkumar-ghub/Frost",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/image.png",
+        "author": "Harishkumar-ghub",
+        "publish_date": "2026-08-22T10:23:29.423209"
+    },
     "1a129f7a-1731-402d-a1c9-4733ac73fd4d": {
         "id": "1a129f7a-1731-402d-a1c9-4733ac73fd4d",
         "name": "YASB Catppuccin Mocha",
