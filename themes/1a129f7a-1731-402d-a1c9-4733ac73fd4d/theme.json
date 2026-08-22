@@ -1,0 +1,12 @@
+{
+    "id": "1a129f7a-1731-402d-a1c9-4733ac73fd4d",
+    "name": "YASB Catppuccin Mocha",
+    "description": "A clean  minimal YASB theme inspired by the Catppuccin Mocha color palette, focusing on a calm dark aesthetic with subtle accents, simple layouts  a distraction-free desktop experience",
+    "homepage": "https://github.com/VAK42/MochaYASB",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d/image.png",
+    "author": "VAK42",
+    "publish_date": "2026-08-14T04:11:05.839889"
+}

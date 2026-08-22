@@ -1,0 +1,375 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+bars:
+  primary-bar:
+    enabled: true
+    screens:
+      - '*'
+    class_name: yasb-bar
+    alignment:
+      position: top
+      align: center
+    animation:
+      enabled: true
+      duration: 300
+    blur_effect:
+      enabled: false
+      round_corners: false
+      round_corners_type: normal
+      border_color: system
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: 100%
+      height: 34
+    padding:
+      top: 2
+      left: 2
+      bottom: 0
+      right: 2
+    widgets:
+      left:
+        - home
+        - glazewm_workspaces
+        - glazewm_binding_mode
+      center:
+        - clock
+      right:
+        - window_controls
+        - control_center
+        - wifi
+        - traffic
+        - memory
+        - gpu
+        - disk
+        - cpu
+        - battery
+        - volume
+        - power_menu
+widgets:
+  home:
+    type: yasb.home.HomeWidget
+    options:
+      label: "<span></span>"
+      menu_list:
+        - title: Home
+          path: '~'
+      system_menu: true
+      power_menu: false
+      blur: false
+      round_corners: false
+      round_corners_type: normal
+      border_color: system
+      alignment: left
+      offset_left: -12
+  clock:
+    type: yasb.clock.ClockWidget
+    options:
+      label: "<span></span> {%Y-%m-%d %H:%M:%S}"
+      label_alt: "<span></span> {%Y-%m-%d %H:%M:%S}"
+      update_interval: 1000
+      timezones: []
+      calendar:
+        blur: false
+        round_corners: false
+        alignment: center
+        direction: down
+        extended: false
+        show_years: true
+        show_holidays: false
+        show_week_numbers: true
+      callbacks:
+        on_left: toggle_calendar
+        on_middle: toggle_label
+        on_right: context_menu
+  volume:
+    type: yasb.volume.VolumeWidget
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span> {level}"
+      tooltip: true
+      icons:
+        muted: ""
+        '10': ""
+        '30': ""
+        '60': ""
+        '100': ""
+      callbacks:
+        on_left: toggle_volume_menu
+        on_right: toggle_mute
+      audio_menu:
+        blur: false
+        round_corners: false
+        round_corners_type: normal
+        border_color: system
+        alignment: right
+        direction: down
+        show_apps: true
+        show_app_labels: false
+        show_app_icons: true
+        show_apps_expanded: false
+        app_icons:
+          toggle_down: ""
+          toggle_up: ""
+  window_controls:
+    type: yasb.window_controls.WindowControlsWidget
+    options:
+      show_app_name: false
+      maximized_only: true
+      buttons:
+        - minimize
+        - maximize
+        - close
+      button_labels:
+        minimize: ""
+        maximize: ""
+        restore: ""
+        close: ""
+      monitor_exclusive: true
+      animation_duration: 120
+  glazewm_workspaces:
+    type: glazewm.workspaces.GlazewmWorkspacesWidget
+    options:
+      hide_if_offline: true
+      monitor_exclusive: false
+  glazewm_binding_mode:
+    type: glazewm.binding_mode.GlazewmBindingModeWidget
+    options:
+      hide_if_no_active: true
+      default_icon: ""
+      icons:
+        none: ""
+        resize: ""
+        pause: ""
+      binding_modes_to_cycle_through:
+        - none
+        - resize
+        - pause
+      callbacks:
+        on_left: next_binding_mode
+        on_middle: toggle_label
+        on_right: disable_binding_mode
+  control_center:
+    type: yasb.control_center.ControlCenterWidget
+    options:
+      label: "<span></span>"
+      sections:
+        system_controls:
+          show: false
+          settings_icon: ""
+          lock_icon: ""
+          power_icon: ""
+        quick_actions:
+          show: true
+          columns: 3
+          actions:
+            - id: "toggle_dnd"
+              label: "Do Not Disturb"
+              icon: ""
+            - id: "toggle_mute"
+              label: "Mute"
+              icon: ""
+            - id: "toggle_mic_mute"
+              label: "Mic Mute"
+              icon: ""
+            - id: "screenshot"
+              label: "Screenshot"
+              icon: ""
+            - id: "touch_keyboard"
+              label: "Keyboard"
+              icon: "⌨"
+            - id: "toggle_theme"
+              label: "Dark Mode"
+              icon: ""
+        sliders:
+          show: true
+          brightness:
+            show_slider: true
+            icon: ""
+            show_source_selector: true
+            source_selector_icon: ""
+          volume:
+            show_slider: true
+            icon: ""
+            show_source_selector: true
+            source_selector_icon: ""
+          microphone:
+            show_slider: true
+            icon: ""
+            show_source_selector: true
+            source_selector_icon: ""
+        power:
+          show: false
+          button_menu_icon: ""
+        media:
+          show: false
+          icons:
+            prev_track: "  "
+            next_track: "  "
+            play: "  "
+            pause: "  "
+  wifi:
+    type: yasb.wifi.WifiWidget
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "<span>{wifi_icon}</span> {wifi_name}"
+      update_interval: 1000
+      wifi_icons:
+        - ""
+        - ""
+        - ""
+        - ""
+        - ""
+      ethernet_label: "<span></span>"
+      ethernet_label_alt: "<span></span> {ip_addr}"
+      ethernet_icon: ""
+      get_exact_wifi_strength: true
+  traffic:
+    type: yasb.traffic.TrafficWidget
+    options:
+      label: "<span></span> {download_speed} <span></span> {upload_speed}"
+      label_alt: "<span></span> {download_speed} <span></span> {upload_speed}"
+      update_interval: 1000
+      interface: Auto
+      hide_if_offline: true
+      speed_unit: bits
+      hide_decimal: true
+      callbacks:
+        on_left: toggle_label
+        on_middle: do_nothing
+        on_right: toggle_menu
+      menu:
+        blur: false
+        round_corners: false
+        round_corners_type: normal
+        alignment: right
+        direction: down
+        show_interface_name: true
+        show_internet_info: true
+  memory:
+    type: yasb.memory.MemoryWidget
+    options:
+      label: "<span></span> {virtual_mem_free}"
+      label_alt: "<span></span> VR: {virtual_mem_percent}% Swap: {swap_mem_percent}%"
+      update_interval: 5000
+      hide_decimal: true
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        alignment: center
+  gpu:
+    type: yasb.gpu.GpuWidget
+    options:
+      label: "<span></span> {info[utilization]}%"
+      label_alt: "<span></span> {info[mem_used]} / {info[mem_total]}"
+      gpu_index: 0
+      update_interval: 2000
+      hide_decimal: true
+      callbacks:
+        on_left: toggle_label
+        on_middle: do_nothing
+        on_right: toggle_menu
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        alignment: center
+  disk:
+    type: yasb.disk.DiskWidget
+    options:
+      label: "<span></span> {space[used][percent]}"
+      label_alt: "<span></span> {volume_label}: {space[used][gb]} / {space[total][gb]}"
+      volume_label: C
+      decimal_display: 1
+      update_interval: 60
+      callbacks:
+        on_left: toggle_group
+        on_middle: toggle_label
+        on_right: "exec explorer C:\\"
+      disk_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+  cpu:
+    type: yasb.cpu.CpuWidget
+    options:
+      label: "<span></span> {info[percent][total]}%"
+      label_alt: "<span></span> {info[freq][current]} MHz"
+      update_interval: 2000
+      hide_decimal: true
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        alignment: center
+  battery:
+    type: yasb.battery.BatteryWidget
+    options:
+      label: "<span>{icon}</span> {percent}%"
+      label_alt: "<span>{icon}</span> {percent}% | {time_remaining}"
+      update_interval: 5000
+      time_remaining_natural: false
+      hide_unsupported: true
+      charging_options:
+        icon_format: "{charging_icon}"
+        blink_charging_icon: true
+        blink_interval: 500
+      status_thresholds:
+        critical: 10
+        low: 25
+        medium: 75
+        high: 95
+        full: 100
+      status_icons:
+        icon_charging: ""
+        icon_critical: ""
+        icon_low: ""
+        icon_medium: ""
+        icon_high: ""
+        icon_full: ""
+      callbacks:
+        on_left: toggle_label
+        on_middle: do_nothing
+        on_right: do_nothing
+  power_menu:
+    type: yasb.power_menu.PowerMenuWidget
+    options:
+      label: "<span></span>"
+      uptime: false
+      show_user: false
+      menu_style: popup
+      popup:
+        blur: false
+        round_corners: false
+        round_corners_type: normal
+        border_color: system
+        alignment: right
+        offset_left: 12
+      buttons:
+        sleep:
+          - ""
+          - Sleep
+        restart:
+          - ""
+          - Restart
+        shutdown:
+          - ""
+          - Shutdown
+        cancel:
+          - ''
+          - Cancel
