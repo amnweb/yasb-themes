@@ -28,6 +28,10 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Frosted Glass Revamp](themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54)
+
+<a title="Frosted Glass Revamp YASB Theme" href="themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/image.png" width="830px"></a>
+
 ## [YASB Catppuccin Mocha](themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d)
 
 <a title="YASB Catppuccin Mocha YASB Theme" href="themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d/image.png" width="830px"></a>
