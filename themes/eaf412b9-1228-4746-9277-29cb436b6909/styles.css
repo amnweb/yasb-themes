@@ -137,7 +137,7 @@
     --subtext: #4B565C; */
 
     /* Tokyo Night */
-    --background: #1a1b26;
+    /* --background: #1a1b26;
     --background2: #414868;
     --accent: #9aa5ce;
     --text: #c0caf5;
@@ -146,7 +146,7 @@
     --mutedBG: #414868;
     --border: #414868;
     --redFlash: #f7768e;
-    --subtext: #9aa5ce;
+    --subtext: #9aa5ce; */
 
     /* Everforest Dark */
     /* --background: #2E383C;
@@ -171,6 +171,18 @@
     --border: #434c5e;
     --redFlash: #bf616a;
     --subtext: #bdc2cd76; */
+
+    /* Kanagawa */
+    --background: #1F1F28;
+    --background2: #727169;
+    --accent: #C8C093;
+    --text: #DCD7BA;
+    --accentText: #1F1F28;
+    --hover: #76946A;
+    --mutedBG: #090618;
+    --border: #C0A36E;
+    --redFlash: #C34043;
+    --subtext: #C8C093;
 }
 
 /* Global Defaults */
@@ -587,7 +599,7 @@
     color: var(--text);
     margin-top: 0px;
     border-radius: var(--border-radius);
-    border: 1px solid var(--border);
+    border: 0px solid var(--border);
 }
 
 .power-menu-compact .manage-accounts:hover {
