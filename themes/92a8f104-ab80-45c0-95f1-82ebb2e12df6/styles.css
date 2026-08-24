@@ -650,7 +650,7 @@
     color: var(--text);
     margin-top: 0px;
     border-radius: 4px;
-    border: 1px solid var(--border);
+    border: 0px solid var(--border);
 }
 
 .power-menu-compact .manage-accounts:hover {
