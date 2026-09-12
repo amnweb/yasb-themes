@@ -87,7 +87,7 @@
     --hover: #657c9f;
     --mutedBG: #a9abc0;
     --border: #314d6b;
-    --redFlash: #657C9F;
+    --redFlash: #7b7193;
     --subtext: #a5adcb; */
 
    /* Sousou no Frieren */
@@ -111,7 +111,7 @@
     --hover: #7A8478;
     --mutedBG: #5D6B66;
     --border: #5D6B66;
-    --redFlash: #5C3F4F;
+    --redFlash: #E59875;
     --subtext: #9AA79D; */
 
     /* Monochrome */
@@ -141,7 +141,7 @@
     /* Monochrome Light*/
     /* --background: #e5e7eb;
     --background2: #a4a4a4;
-    --accent: #18181b;
+    --accent: #2f2f36;
     --text: #18181b;
     --accentText: #e5e7eb;
     --hover: #919090;
@@ -194,8 +194,8 @@
     --accentText: #2E383C;
     --hover: #414B50;
     --mutedBG: #272E33;
-    --border: #272E33;
-    --redFlash: #493B40;
+    --border: #374145;
+    --redFlash: #E59875;
     --subtext: #859289; */
 
     /* Nord */
@@ -276,7 +276,7 @@
     background-color: transparent;
     padding: 6px 12px;
     margin: 2px 6px;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius3);
     min-width: 100px;
 }
 .context-menu::item:selected,
@@ -1269,3 +1269,521 @@ Example: "Windows Media" becomes "windows-media" */
 	padding-top: 8px;
 }
 
+/* CPU widget */
+.cpu-widget .widget-container .icon {
+    color: var(--text);
+    padding-bottom: 1px;
+}
+
+.cpu-widget .widget-container .label {
+    padding-left: 4px;
+}
+.cpu-widget .widget-container .label.alt {
+    padding-left: 4px;
+}
+
+.cpu-widget {
+    /* border: none; */
+}
+
+.cpu-popup {
+    background-color: var(--background);
+    min-width: 400px;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+}
+
+.cpu-popup .header {
+    background: transparent;
+    padding: 12px 16px;
+    color: var(--text);
+}
+.cpu-popup .header .text {
+    font-size: 16px;
+    font-family: "Segoe UI";
+    color: var(--text);
+}
+.cpu-popup .header .pin-btn {
+    font-size: var(--fontSize);
+    background: transparent;
+    font-family: "Segoe Fluent Icons";
+    padding: 6px;
+    color: var(--text);
+}
+.cpu-popup .header .pin-btn:hover {
+    color: var(--hover);
+}
+.cpu-popup .header .pin-btn.pinned {
+    color: var(--accent);
+}
+/* Graph area */
+.cpu-popup .graph-container {
+    background:  transparent;
+    min-height: 64px;
+}
+.cpu-popup .cpu-graph {
+    color: var(--accent);   /* <-- set the graph line/fill color */
+}
+.cpu-popup .cpu-graph-grid {
+    color: var(--background2);  /* set the grid line color */
+}
+.cpu-popup .graph-title {
+    font-size: 12px;
+    color: var(--text);
+    font-family: 'Segoe UI';
+    padding: 0px 0px 4px 14px;
+}
+/* Stats grid */
+.cpu-popup .stats {
+    background: transparent;
+    padding: 16px;
+}
+.cpu-popup .stats .stat-item {
+    background-color: var(--background2);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: 8px 12px;
+    margin: 8px;
+}
+.cpu-popup .stats .stat-label {
+    font-size: 13px;
+    color: var(--text);
+    font-family: var(--system-font);
+    font-weight: 400;
+    padding: 6px 4px 2px 4px;
+}
+.cpu-popup .stats .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--subtext);
+    font-family: var(--system-font);
+    padding: 0 4px 12px 4px;
+}
+
+/* Memory widget */
+.memory-widget .widget-container .label {
+   padding-left: 4px; 
+}
+.memory-widget .widget-container .label.alt {
+    padding-left: 4px;
+}
+.memory-widget .widget-container .icon {
+    color: var(--text);
+    padding-bottom: 1px;
+}
+
+.memory-widget {
+    /* border: none; */
+}
+
+.memory-popup {
+    background-color: var(--background);
+    min-width: 400px;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+}
+
+.memory-popup .header {
+    background: transparent;
+    padding: 12px 16px;
+}
+.memory-popup .header .text {
+    font-size: 16px;
+    font-family: "Segoe UI";
+    color: var(--text);
+}
+.memory-popup .header .pin-btn {
+    font-size: 14px;
+    background: transparent;
+    font-family: "Segoe Fluent Icons";
+    border: none;
+    padding: 6px;
+    color: var(--text);
+}
+.memory-popup .header .pin-btn:hover {
+    color: var(--hover);
+}
+.memory-popup .header .pin-btn.pinned {
+    color: var(--accent)
+}
+/* Graph area */
+.memory-popup .graph-container {
+    background:  transparent;
+    min-height: 64px;
+}
+.memory-popup .memory-graph {
+    color: var(--accent);   /* <-- set the graph line/fill color */
+}
+.memory-popup .memory-graph-grid {
+    color: var(--background2);  /* set the grid line color */
+}
+.memory-popup .graph-title {
+    font-size: 12px;
+    color: var(--text);
+    font-family: 'Segoe UI';
+    padding: 0px 0px 4px 14px;
+}
+/* Stats grid */
+.memory-popup .stats {
+    background: transparent;
+    padding: 16px;
+}
+.memory-popup .stats .stat-item {
+    background-color: var(--background2);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: 8px 12px;
+    margin: 8px;
+}
+.memory-popup .stats .stat-label {
+    font-size: 13px;
+    color: var(--text);
+    font-family: var(--system-font);
+    font-weight: 400;
+    padding: 6px 4px 2px 4px;
+}
+.memory-popup .stats .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--subtext);
+    font-family: var(--system-font);
+    padding: 0 4px 12px 4px;
+}
+
+/* Grouper sysInfo*/
+.systeminfo-grouper .container { /* The name of the css class is the name given in the config */
+    background-color: transparent;
+}
+
+.systeminfo-grouper .grouper-button {
+    font-size: var(--iconSize);
+    color: var(--text);
+    border: none;
+    font-family: var(--icons-font);
+}
+
+.systeminfo-grouper .grouper-button:hover {
+    color: var(--accent);
+}
+
+/* Control_Center */
+/* POPUP WINDOW */
+
+.control-center-widget .icon {
+    color: var(--text);
+    font-family: var(--icons-font);
+    font-size: var(--iconSize);
+}
+
+.control-center-menu {
+    background: var(--background);
+    min-width: 360px;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+}
+
+/* SECTIONS */
+/* Left and right padding of 12 px + 4 px margin for quick action and power plan, 
+which is 16 pixels same as the other sections. */
+.control-center-menu .section {
+    background: transparent;
+    margin: 0;
+    padding: 16px 12px;
+    border: none;
+}
+/* We dont want a padding at the bottom of the first section. */
+.control-center-menu .section.system-controls {
+    padding: 12px 16px 0 16px;
+}
+.control-center-menu .section.sliders {
+    padding: 16px;
+}
+
+/* SHARED SEGOE FLUENT ICONS */
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.sliders .slider .icon,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon,
+.control-center-menu .section.media .button {
+    font-family: "Segoe Fluent Icons";
+    font-weight: 400;
+}
+
+/* SHARED HOVER & TRANSITION TRANSITIONS */
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name,
+.control-center-menu .section.media .button {
+    transition: background-color 0.08s, opacity 0.08s;
+    opacity: 1;
+}
+
+/* SHARED CLICKED / PRESSED STATES */
+.control-center-menu .section.system-controls .button:clicked,
+.control-center-menu .section.system-controls .button:pressed,
+.control-center-menu .section.quick-actions .button .icon:clicked,
+.control-center-menu .section.quick-actions .button .icon:pressed,
+.control-center-menu .section.sliders .slider .source-selector:clicked,
+.control-center-menu .section.sliders .slider .source-selector:pressed,
+.control-center-menu .section.power .plan-name:clicked,
+.control-center-menu .section.power .plan-name:pressed,
+.control-center-menu .section.power .mode-name:clicked,
+.control-center-menu .section.power .mode-name:pressed,
+.control-center-menu .section.media .button:clicked,
+.control-center-menu .section.media .button:pressed {
+    opacity: 0.5;
+}
+
+/* SHARED DISABLED STATES */
+.control-center-menu .section.quick-actions .button.disabled .title,
+.control-center-menu .section.quick-actions .button.disabled .icon,
+.control-center-menu .section.sliders .slider.disabled,
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+    opacity: 0.5;
+}
+
+/* SYSTEM CONTROLS */
+.control-center-menu .section.system-controls .button {
+    background-color: var(--accent);
+    border-radius: 16px;
+    min-height: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    font-size: 14px;
+    color: var(--accentText);
+    transition: background-color 0.08s, opacity 0.08s;
+}
+.control-center-menu .section.system-controls .button:hover {
+    background-color: var(--redFlash);
+}
+
+/* QUICK ACTIONS */
+.control-center-menu .section.quick-actions .button {
+    margin: 0 4px;
+    cursor: pointer;
+}
+.control-center-menu .section.quick-actions .button .icon {
+    font-size: 16px;
+    background-color: var(--background2);
+    min-height: 48px;
+    border-radius: var(--border-radius);
+    color: var(--text); 
+}
+.control-center-menu .section.quick-actions .button .icon:hover {
+    background-color: var(--hover);
+}
+.control-center-menu .section.quick-actions .button.active .icon {
+    background-color: var(--accent);
+    color: var(--accentText);
+}
+.control-center-menu .section.quick-actions .button.active .icon:hover {
+    background-color: var(--redFlash);
+    color: var(--accentText);
+}
+.control-center-menu .section.quick-actions .button.disabled .icon:hover {
+    background-color: var(--hover);
+}
+.control-center-menu .section.quick-actions .button.active .icon:pressed {
+    background-color: var(--hover);
+}
+.control-center-menu .section.quick-actions .button .title {
+    font-size: var(--fontSize);
+    margin: 4px 0 8px 0;
+    padding: 0;
+    font-weight: var(--fontWeight);
+    color: var(--text);
+}
+
+/* SLIDERS */
+.control-center-menu .section.sliders .slider {
+    background: transparent;
+    border: none;
+    min-height: 34px;
+    margin: 0 4px 0 4px;
+}
+.control-center-menu .section.sliders .slider .icon {
+    font-size: 16px;
+    color: var(--text);
+    min-width: 36px;
+}
+.control-center-menu .section.sliders .slider .value {
+    min-width: 36px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+}
+.control-center-menu .section.sliders .slider .source-selector {
+    font-size: 12px;
+    color: var(--text);
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background-color: var(--background);
+    margin-left: 4px;
+}
+.control-center-menu .section.sliders .slider .source-selector:hover {
+    background-color: var(--hover);
+}
+
+/* POWER PLAN & POWER MODE */
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name {
+    background: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    min-height: 36px;
+    margin: 0 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+.control-center-menu .section.power .plan-name:hover,
+.control-center-menu .section.power .mode-name:hover {
+    background: var(--redFlash);
+}
+.control-center-menu .section.power .mode-name.disabled,
+.control-center-menu .section.power .mode-name.disabled:hover {
+    opacity: 0.5;
+    background: var(--hover);
+}
+.control-center-menu .section.power .plan-name .title,
+.control-center-menu .section.power .mode-name .title {
+    font-size: var(--fontSize);
+    font-weight: 600;
+    color: var(--accentText);
+}
+.control-center-menu .section.power .plan-name .subtext,
+.control-center-menu .section.power .mode-name .subtext {
+    font-size: var(--fontSize);
+    font-weight: 600;
+    color: var(--accentText);
+}
+
+.control-center-menu .section.power .plan-name.disabled .title,
+.control-center-menu .section.power .mode-name.disabled .title {
+    font-size: var(--fontSize);
+    font-weight: 600;
+    color: var(--text);
+}
+.control-center-menu .section.power .plan-name.disabled .subtext,
+.control-center-menu .section.power .mode-name.disabled .subtext {
+    font-size: var(--fontSize);
+    font-weight: 600;
+    color: var(--text);
+}
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon {
+    color: var(--accentText);
+    font-size: var(--iconSize);
+}
+
+.control-center-menu .section.power .plan-name.disabled .icon,
+.control-center-menu .section.power .mode-name.disabled .icon {
+    color: var(--text);
+    font-size: var(--iconSize);
+}
+
+/* MEDIA CONTROLS */
+.control-center-menu .section.media {
+    background-color: transparent;
+    padding: 12px;
+}
+.control-center-menu .section.media .track-info {
+     padding-left: 8px;
+}
+.control-center-menu .section.media .title {
+    font-size: var(--fontSize);
+    font-weight: 600;
+    color: var(--text);
+}
+.control-center-menu .section.media .subtext {
+    font-size: var(--fontSize);
+    font-weight: 600;
+    color: var(--subtext);
+}
+.control-center-menu .section.media .button {
+    font-size: var(--iconSize);
+    background-color: var(--accent);
+    color: var(--accentText);
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 6px;
+    margin: 0 0 0 4px;
+}
+
+.control-center-menu .section.media .button.prev {
+    color: var(--accentText);
+    background-color: var(--accent);
+}
+.control-center-menu .section.media .button.next {
+    color: var(--accentText);
+    background-color: var(--accent);
+}
+
+.control-center-menu .section.media .button.prev.disabled {
+    color: var(--text);
+}
+.control-center-menu .section.media .button.next.disabled {
+    color: var(--text);
+}
+
+.control-center-menu .section.media .button:hover {
+    background-color: var(--redFlash);
+}
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+    background-color: var(--background2);
+}
+
+/* Context menu styles for dropdowns and menus inside the Control Center panel */
+.control-center-menu .context-menu {
+    background-color: var(--background);
+    padding: 4px 0px;
+    font-family: "Segoe UI Variable", "Segoe UI";
+    font-weight: var(--fontWeight);
+    font-size: var(--fontSize);
+    color: var(--text);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--accent);
+}
+.control-center-menu .context-menu::item {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: var(--border-radius3);
+    min-width: 100px;
+}
+.control-center-menu .context-menu::item:selected  {
+    background-color: var(--hover);
+    color: var(--text);
+}
+.control-center-menu .context-menu::separator {
+    height: 1px;
+    background-color: var(--border);
+    margin: 4px 0;
+}
+.control-center-menu .context-menu::indicator:unchecked {
+    width: 4px;
+    height: 12px;
+    margin-left: 0;
+    color: transparent;
+    background-color: transparent;
+}
+.control-center-menu .context-menu::indicator:checked {
+    width: 4px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: var(--border-radius3);
+    margin-left: 0;
+}
+
+.audio-visualizer-widget .audio-visualizer-canvas {
+    qproperty-fillbrush: var(--accent);
+}

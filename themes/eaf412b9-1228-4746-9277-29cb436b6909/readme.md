@@ -3,7 +3,16 @@ i3WM inspired minimalistic bar with several color schemes available in one CSS.
 
 This theme using bottom placement so it should be used with hidden Windows taskbar. I recommend to use [THide](https://github.com/amnweb/thide) for it.
 
-<img width="3839" height="2159" alt="Screenshot 2026-08-04 130913" src="https://github.com/user-attachments/assets/f65256c3-61b0-485d-b717-42d66ed500a6" />
+Requires YASB v2.0.7 or newer.
+
+Fonts required:
+- JetBrainsMono Nerd Font Propo
+- Segoe Fluent Icons
+
+Change image_path in the wallpapers widget to your own wallpaper folder.
+
+#### Preview
+<img width="3839" height="2159" alt="Screenshot 2026-09-13 004129" src="https://github.com/user-attachments/assets/d3947cda-518f-451c-b862-942008a4eb98" />
 
 # Color schemes available:
 - Catppuccin Mocha
@@ -19,6 +28,7 @@ This theme using bottom placement so it should be used with hidden Windows taskb
 - Tokyo Night
 - Everforest Dark Hard
 - Nord
+- Kanagawa Wave
 
 # How to change color scheme
 ### Open styles.css file in your C:\Users\USERNAME\\.config\yasb and leave uncommented **ONE** set of variables from "colors" section. Here's a [quick guide video](https://youtu.be/PFH5lKwJ9Dw?si=jJ6s-vyxm7ZkIhD5).

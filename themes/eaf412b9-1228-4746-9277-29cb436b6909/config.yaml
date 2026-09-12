@@ -40,7 +40,12 @@ bars:
       - lines
       - taskbar
       right:
+      - audio_visualizer
       - media
+      #- lines
+      #- cpu
+      #- lines
+      #- memory
       - lines
       - volume
       - lines
@@ -53,7 +58,7 @@ bars:
       - systray
       - wallpapers
       - notifications
-      - power_menu
+      - control_center
 widgets:
   home:
     type: yasb.home.HomeWidget
@@ -257,23 +262,6 @@ widgets:
         offset_top: 6
         offset_left: 0
         show_layout_icons: true
-  cava:
-    type: "yasb.cava.CavaWidget"
-    options:
-      bar_height: 12
-      waveform: 0
-      waves: 0
-      monstercat: 0
-      sensitivity: 100
-      edge_fade: 1
-      min_bar_height: 0
-      gradient: 0
-      foreground: "#cad3f5"
-      bars_number: 10
-      bar_spacing: 2
-      bar_width: 4
-      bar_type: "bars"
-      framerate: 60
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -307,35 +295,26 @@ widgets:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\udb83\ude09</span>"
+      change_automatically: false
     # Example path to folder with images. Can be a single string or a list of strings.
-    # image_path: "C:\\Users\\{Username}\\Images" 
-      image_path: 
-        - "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Catppuccin"
-      change_automatically: false # Automatically change wallpaper
-      update_interval: 60 # If change_automatically is true, update interval in seconds
+      image_path: "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Gruvbox Material" 
       engine:
         enabled: true
-        animation: "diamond" # circle/slide_top/diamond/split
+        animation: "split" # circle/slide_top/diamond/split
       gallery:
-        enabled: true
-        blur: false
-        image_width: 350
-        image_per_page: 6
-        gallery_columns: 0 # 0 = auto, matches image_per_page for a single row
-        horizontal_position: "center" # left/center/right placement on screen
-        vertical_position: "center" # top/center/bottom placement
-        position_offset: 0 # minimum gap (px) from screen edges - see below for advanced options
-        respect_work_area: true # clamp to OS work area (avoids Windows taskbar)
-        show_buttons: false
-        orientation: "landscape"
-        image_spacing: 8
-        lazy_load: true
-        lazy_load_fadein: 400
+        image_width: 520
         image_corner_radius: 0
+        type: "strip" # default/magnified/strip/slide - see "Gallery types" below
+        orientation: "landscape" # landscape/portrait
+        accent_color: "auto"
       callbacks:
         on_left: "toggle_gallery"
         on_middle: "do_nothing"
         on_right: "change_wallpaper"
+      keybindings:
+        - keys: "ctrl+alt+w"
+          action: "toggle_gallery"
+          screen: "primary" # active/cursor/primary
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -472,3 +451,190 @@ widgets:
         processes: []
         titles: []
         classes: []
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "<span>\uf437</span> {info[freq][current]} MHz"
+      update_interval: 2000
+      cpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "toggle_label"
+        on_right: "toggle_menu"
+      menu:
+        enabled: true
+        direction: "up"
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        round_corners: true
+        border_color: None
+        blur: false
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uf4bc</span> {virtual_mem_used}/{virtual_mem_total}"
+      label_alt: "<span>\uf4bc</span> VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "toggle_label"
+        on_right: "toggle_menu"
+      memory_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      menu:
+        enabled: true
+        direction: "up"
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        round_corners: true
+        border_color: None
+        blur: false
+  systeminfo-grouper:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "systeminfo-grouper"
+      widgets: [
+        "memory",
+        "cpu",
+      ]
+      collapse_options:
+        enabled: true
+        expanded_label: "\uf054"
+        collapsed_label: "\ueaf8"
+        label_position: "right"
+  control_center:
+    type: "yasb.control_center.ControlCenterWidget"
+    options:
+      label: "<span>\ueaf8</span>"
+      tooltip: true
+      sections_order:
+        - "system_controls"
+        - "quick_actions"
+        - "sliders"
+        - "power"
+        - "media"
+      popup:
+        alignment: "right"
+        direction: "up"
+        border_color: none
+        round_corners: false
+        blur: false
+        round_corners_type: normal
+        offset_top: 8
+        offset_left: 6
+      sections:
+        system_controls:
+          profile_image_size: 28
+          power_icon: "\uE7E8"
+          lock_icon: "\uE72E"
+          settings_icon: "\uE713"
+        quick_actions:
+          show: true
+          columns: 3
+          label_position: "default"
+          actions:
+            - id: "toggle_dnd"
+              label: "Do Not Disturb"
+              icon: "\uf285"
+            - id: "toggle_mute"
+              label: "Mute"
+              icon: "\ue74f"
+            - id: "toggle_mic_mute"
+              label: "Mic Mute"
+              icon: "\uF12E"
+            - id: "screenshot"
+              label: "Screenshot"
+              icon: "\ue91b"
+            - id: "touch_keyboard"
+              label: "Keyboard"
+              icon: "\uE765"
+            - id: "toggle_theme"
+              label: "Dark Mode"
+              icon: "\uE708"
+        sliders:
+          show: true
+          brightness:
+            show_slider: true
+            icon: "\uE706"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+          volume:
+            show_slider: true
+            icon: "\uE767"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+          microphone:
+            show_slider: true
+            icon: "\uE720"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+        media:
+          show: true
+          thumbnail_size: 36
+          thumbnail_radius: 4
+          icons:
+            prev_track: "\ue622"
+            next_track: "\ue623"
+            play: "\uf5b0"
+            pause: "\ue62e"
+        power:
+          show: true
+          power_plan_title: "Power Plan"
+          power_mode_title: "Power Mode"
+          button_menu_icon: "\ue76c"
+      callbacks:
+        on_left: "toggle_menu"
+  audio_visualizer:
+    type: "yasb.audio_visualizer.AudioVisualizerWidget"
+    options:
+      style: dots
+      height: 12
+      smoothness: 80
+      sensitivity: 70
+      auto_gain: true
+      framerate: 12
+      freq_min: 500
+      freq_max: 12000
+      hide_idle: true
+      hide_idle_after: 2000
+      channels: stereo
+      mono_option: average
+      reverse: false
+      mirror: false
+      bars:
+        count: 10
+        width: 2
+        gap: 4
+      waves:
+        width: 80
+      dots:
+        count: 16
+        size: 2
+        gap: 2
