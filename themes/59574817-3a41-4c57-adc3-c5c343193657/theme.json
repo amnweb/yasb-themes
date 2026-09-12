@@ -1,0 +1,12 @@
+{
+    "id": "59574817-3a41-4c57-adc3-c5c343193657",
+    "name": "Adaptive Islands",
+    "description": "A dark theme for YASB built on the adaptive bar style, so the widgets sit in three floating islands instead of one full-width strip.",
+    "homepage": "https://github.com/amnweb",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/image.png",
+    "author": "amnweb",
+    "publish_date": "2026-09-12T00:15:55.970233"
+}
