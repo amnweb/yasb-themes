@@ -28,6 +28,10 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Okinami](themes/b51c153d-397c-4be0-b7ed-4f619c6de87f)
+
+<a title="Okinami YASB Theme" href="themes/b51c153d-397c-4be0-b7ed-4f619c6de87f"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b51c153d-397c-4be0-b7ed-4f619c6de87f/image.png" width="830px"></a>
+
 ## [Adaptive Islands](themes/59574817-3a41-4c57-adc3-c5c343193657)
 
 <a title="Adaptive Islands YASB Theme" href="themes/59574817-3a41-4c57-adc3-c5c343193657"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/image.png" width="830px"></a>
