@@ -1,4 +1,16 @@
 {
+    "b51c153d-397c-4be0-b7ed-4f619c6de87f": {
+        "id": "b51c153d-397c-4be0-b7ed-4f619c6de87f",
+        "name": "Okinami",
+        "description": "Minimalistic bar with waves design and several color schemes available in one CSS.",
+        "homepage": "https://github.com/MrDLingters/Okinami_YASB",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b51c153d-397c-4be0-b7ed-4f619c6de87f/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b51c153d-397c-4be0-b7ed-4f619c6de87f/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b51c153d-397c-4be0-b7ed-4f619c6de87f/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b51c153d-397c-4be0-b7ed-4f619c6de87f/image.png",
+        "author": "MrDLingters",
+        "publish_date": "2026-09-12T18:21:29.170797"
+    },
     "59574817-3a41-4c57-adc3-c5c343193657": {
         "id": "59574817-3a41-4c57-adc3-c5c343193657",
         "name": "Adaptive Islands",
