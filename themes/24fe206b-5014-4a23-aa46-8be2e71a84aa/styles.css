@@ -1,0 +1,414 @@
+@import "yasb_colors.css"; :root {--icons-font: "Mononoki Nerd Font Propo"; --icons-font-fallback: "Mononoki Nerd Font Propo"; --system-font: "Mononoki Nerd Font Propo"; --specialFont: "Mononoki Nerd Font Propo"; --border-radius: 14; --border-radius2: 4; --border-radius3: 10; --border-radiusWallpapers: 10; --fontSize: 12px; --iconSize: 16px; --fontSizeLarge: 16px; --fontWeight: 600; --background: #1F1F28; --background2: #2A2A37; --accent: #C8C093; --text: #DCD7BA; --accentText: #1F1F28; --hover: #363646; --mutedBG: #090618; --border: #E6C384; --redFlash: #C34043; --subtext: #C8C093; --base: #1F1F28; --mantle: #16161D; --crust: #090618; --surface0: #2A2A37; --surface1: #363646; --surface2: #54546D; --overlay0: #727169; --overlay1: #938AA9; --overlay2: #9CABCA; --subtext0: #938AA9; --subtext1: #C8C093; --lavender: #9CABCA; --blue: #7E9CD8; --sapphire: #7FB4CA; --sky: #A3D4D5; --teal: #7AA89F; --green: #98BB6C; --yellow: #E6C384; --peach: #FFA066; --maroon: #E46876; --red: #C34043; --mauve: #957FB8; --pink: #D27E99; --flamingo: #E8C8C8; --rosewater: #DCD7BA; --text-muted: #C8C093; --yasb-icon-fg: #DCD7BA; --glass: rgba(31, 31, 40, 0.8)}
+* {font-size: var(--fontSize); font-weight: var(--fontWeight); font-family: var(--system-font); color: var(--text)}
+.yasb-bar {background-color: transparent; border: none; padding: 0 4px}
+.yasb-bar.adaptive {background-color: var(--glass); border: none; -qproperty-railheight: 0; -qproperty-islandradius: 12; -qproperty-grouppadding: 8; -qproperty-islands: true; -qproperty-edgeradius: 0; -qproperty-borderwidth: 1; -qproperty-bordercolor: var(--border)}
+.container-left, .container-center, .container-right {background-color: transparent; padding: 0 8px; margin: 0}
+.tooltip {background-color: var(--background); border-radius: var(--border-radius); color: var(--text); padding: 5px 10px; font-size: var(--fontSize); font-family: var(--system-font); font-weight: var(--fontWeight); margin-top: 4px; border: 1px solid var(--border)}
+.context-menu, .context-menu .menu-checkbox {background-color: var(--background); border-bottom: 1px solid var(--border); padding: 4px 0px; font-family: var(--system-font); font-weight: var(--fontWeight); font-size: var(--fontSize); color: var(--text)}
+.context-menu {border-radius: var(--border-radius); border: 1px solid var(--border)}
+.context-menu::right-arrow {width: 8px; height: 8px; padding-right: 24px}
+.context-menu::item, .context-menu .menu-checkbox {background-color: transparent; padding: 6px 12px; margin: 2px 6px; border-radius: var(--border-radius); min-width: 100px}
+.context-menu::item:selected, .context-menu .menu-checkbox:hover {background-color: var(--hover); color: var(--text); border-radius: var(--border-radius3)}
+.context-menu::separator {height: 1px; background-color: var(--background2); margin: 4px 8px}
+.context-menu::item:disabled {color: var(--overlay0); background-color: transparent}
+.context-menu .menu-checkbox .checkbox {border: none; padding: 8px 16px; font-size: var(--fontSize); margin: 0; color: var(--text); font-family: var(--system-font); font-weight: var(--fontWeight)}
+.context-menu .submenu::item:disabled {margin: 0; padding-left: 16px}
+.context-menu .menu-checkbox .checkbox:unchecked {color: var(--text)}
+.context-menu .menu-checkbox .checkbox::indicator {width: 12px; height: 12px; margin-left: 0px; margin-right: 8px}
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {background: var(--mutedBG); border-radius: 2px}
+.context-menu .menu-checkbox .checkbox::indicator:checked {background: var(--accent); border-radius: 2px}
+.context-menu .menu-checkbox .checkbox:focus {outline: none}
+.widget {padding-left: 6px; padding-right: 6px; margin: 0 2px; background-color: transparent; border-radius: 0; border: none}
+.widget .icon {font-size: var(--iconSize); font-weight: var(--fontWeight); color: var(--yasb-icon-fg); font-family: var(--icons-font-fallback)}
+.widget .label {color: var(--text); font-weight: var(--fontWeight); padding-bottom: 2px}
+.home-widget .icon {font-family: var(--system-font); font-size: 18px; font-weight: bold; color: var(--lavender); padding-bottom: 0.5px}
+.home-menu {background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius); margin-top: 3px}
+.home-menu .menu-item {color: var(--text); padding: 10px 48px 10px 16px; font-family: var(--system-font); font-weight: var(--fontWeight); margin-top: 3px}
+.home-menu .menu-item:hover {background-color: var(--hover); color: var(--text); border-radius: var(--border-radius3); margin-left: 4px; margin-right: 4px; margin-top: 7px; margin-bottom: 4px}
+.home-menu .separator {max-height: 0px; background-color: var(--background2)}
+.clock-widget .widget-container {background-color: transparent; border: none; border-radius: 0; margin: 1px 1px; padding: 2 4px}
+.clock-widget .label {color: var(--text); margin: 0 2px}
+.clock-widget {padding: 2 2px}
+.clock-widget .icon.alarm {color: var(--text); padding-left: 4px; padding-right: 4px}
+.clock-popup.alarm, .clock-popup.timer, .clock-popup.calendar {min-width: 460px; background-color: var(--background); border-radius: var(--border-radius); border: 1px solid var(--border)}
+.clock-popup.calendar .calendar-table, .clock-popup.calendar .calendar-table::item {background-color: var(--background); color: var(--text); font-family: var(--system-font); margin: 0; padding: 0; border: none; outline: none}
+.clock-popup.calendar .calendar-table::item:selected {color: var(--accentText); font-weight: bold; background-color: var(--accent); border-radius: 12px}
+.clock-popup.calendar .day-label {margin-top: 20px}
+.clock-popup.calendar .day-label, .clock-popup.calendar .month-label, .clock-popup.calendar .year-label, .clock-popup.calendar .date-label {font-family: var(--system-font); font-size: var(--iconSize); font-weight: 700; min-width: 180px; max-width: 180px}
+.clock-popup.calendar .month-label {font-weight: normal}
+.clock-popup.calendar .year-label {font-weight: normal}
+.clock-popup.calendar .date-label {font-size: 88px; font-weight: 900; margin-top: -20px}
+.clock-popup.timer .clock-popup-container, .clock-popup.alarm .clock-popup-container {padding: 16px; background-color: var(--background); border-radius: var(--border-radius)}
+.clock-popup.timer .clock-popup-footer, .clock-popup.alarm .clock-popup-footer {padding: 16px; background-color: var(--background2); border-radius: var(--border-radius)}
+.clock-popup .clock-label-timer {font-size: 13px; font-family: var(--system-font); font-weight: var(--fontWeight)}
+.clock-popup .clock-input-time {font-size: 48px; background-color: var(--background); border: none; font-family: var(--system-font); font-weight: var(--fontWeight)}
+.clock-popup .clock-input-time.colon {padding-bottom: 8px}
+.clock-popup .button {border-radius: 4px; font-family: var(--system-font); font-weight: var(--fontWeight); font-size: 13px; min-height: 28px; min-width: 64px; margin: 4px 0; background-color: var(--background2)}
+.clock-popup .button.save, .clock-popup .button.start, .clock-popup .button.delete, .clock-popup .button.cancel {min-width: 120px}
+.clock-popup .button.save, .clock-popup .button.start {background-color: var(--background2); color: var(--text); margin-right: 8px}
+.clock-popup .button.save:hover, .clock-popup .button.start:hover {background-color: var(--background2)}
+.clock-popup .button.is-alarm-enabled {background-color: var(--background)}
+.clock-popup .button.is-alarm-enabled:hover {background-color: var(--background)}
+.clock-popup .button.is-alarm-disabled {background-color: var(--background)}
+.clock-popup .button.day {background-color: var(--background2); max-height: 20px; min-height: 20px}
+.clock-popup .button.day:checked {background-color: var(--accent); color: var(--accentText)}
+.clock-popup .button.quick-option {background-color: var(--background2)}
+.clock-popup .button.quick-option:checked {background-color: var(--accent); color: var(--accentText)}
+.clock-popup .button:hover {background-color: var(--hover)}
+.clock-popup .button:disabled {background-color: var(--background2); color: var(--text)}
+.clock-popup .alarm-input-title {font-size: 14px; font-family: var(--system-font); font-weight: var(--fontWeight); color: var(--text-muted); background-color: var(--background2); border: 1px solid transparent; border-radius: 4px; padding: 4px 8px; margin-top: 8px; outline: none; min-width: 300px}
+.clock-popup .alarm-input-title:focus {border: 1px solid var(--accent)}
+.active-alarm-window {background-color: var(--background); max-width: 500px; min-width: 500px; padding: 32px; border-radius: var(--border-radius)}
+.active-alarm-window .alarm-title-icon {font-size: 88px; color: var(--text); margin-bottom: 16px}
+.active-alarm-window .alarm-title {font-size: 24px; font-family: var(--system-font); font-weight: var(--fontWeight); color: var(--text); max-width: 500px; min-width: 500px}
+.active-alarm-window .alarm-info {font-size: var(--iconSize); font-family: var(--system-font); font-weight: var(--fontWeight); color: var(--text); margin-bottom: 32px}
+.active-alarm-window .button {border-radius: 4px; font-family: var(--system-font); font-weight: var(--fontWeight); font-size: 13px; min-height: 36px; min-width: 100px; margin: 0 4px; background-color: var(--background2)}
+.active-alarm-window .button:hover {background-color: var(--hover)}
+.power-menu-compact {min-width: 260px; background-color: var(--background); border-radius: var(--border-radius); margin-right: 14px; border: 1px solid var(--border)}
+.power-menu-compact .profile-info {padding: 24px 14 24px 0}
+.power-menu-compact .profile-info .profile-username {font-size: var(--iconSize); font-weight: var(--fontWeight); color: var(--text); font-family: var(--system-font); margin-top: 4px}
+.power-menu-widget .icon {color: var(--text)}
+.power-menu-compact .profile-info .profile-account-type {font-size: var(--fontSize); color: var(--accentText); font-weight: var(--fontWeight); margin-top: 8px; font-family: var(--system-font); background-color: var(--accent); padding: 2px 6px 3px 6px; border-radius: var(--border-radius2)}
+.power-menu-compact .profile-info .profile-email {font-size: var(--fontSize); color: transparent; margin-top: -10px; font-family: var(--system-font)}
+.power-menu-compact .manage-accounts {font-size: var(--fontSize); background-color: var(--background2); font-family: var(--system-font); font-weight: var(--fontWeight); padding: 3px 12px 4px 12px; color: var(--text); margin-top: 0px; border-radius: 4px; border: 0px solid var(--border)}
+.power-menu-compact .manage-accounts:hover {background-color: var(--accent); color: var(--accentText)}
+.power-menu-compact .buttons {margin: 0 26px 12px 12px; border-radius: var(--border-radius); background-color: transparent; border: none}
+.power-menu-compact .button {padding: 8px 16px; margin: 2px; background-color: var(--background2); color: var(--background2); border-radius: var(--border-radius2)}
+.power-menu-compact .button.hover {background-color: var(--accent)}
+.power-menu-compact .button .icon {font-size: var(--iconSize); font-weight: var(--fontWeight); color: var(--text); padding-right: 10px; min-width: 20px}
+.power-menu-compact .button .label {font-size: 13px; font-weight: 500; font-family: var(--system-font); color: var(--text)}
+.power-menu-compact .icon.hover, .power-menu-compact .label.hover {color: var(--accentText)}
+.volume-widget .icon {color: var(--teal); font-family: var(--icons-font); padding-right: 5px}
+.audio-menu {background-color: var(--glass); border: 1px solid var(--border); min-width: 300px; border-radius: var(--border-radius)}
+.audio-menu .system-volume-container .volume-slider {border: none}
+.audio-menu .audio-container .device {background-color: transparent; border: none; padding: 6px 12px; margin: 2px 6px; font-size: var(--fontSize); border-radius: var(--border-radius2)}
+.audio-menu .audio-container .device.selected {background-color: var(--background2); color: var(--text)}
+.audio-menu .audio-container .device:hover {background-color: var(--hover); color: var(--text)}
+.audio-menu .audio-container .device.selected:hover {background-color: var(--hover); color: var(--text)}
+.audio-menu .toggle-apps {background-color: transparent; border: none; padding: 0; margin: 0; min-height: 24px; min-width: 24px; border-radius: 4px}
+.audio-menu .toggle-apps.expanded {background-color: transparent}
+.audio-menu .toggle-apps:hover {background-color: var(--hover)}
+.audio-menu .apps-container {padding: 8px; margin-top: 10px; border-radius: var(--border-radius2); background-color: var(--background2)}
+.audio-menu .apps-container .app-volume .app-icon-container {min-width: 40px; min-height: 40px; max-width: 40px; max-height: 40px; border-radius: var(--border-radius); margin-right: 8px}
+.audio-menu .apps-container .app-volume .app-icon-container:hover {background-color: var(--hover)}
+.active-window-widget .icon {padding-right: 4px; padding-bottom: 0; color: var(--overlay1)}
+.separator-widget .widget-container .label {color: var(--overlay0); margin-left: -1px; margin-right: -1px}
+.komorebi-workspaces {padding: 0px 4px; border: 0px solid var(--border)}
+.komorebi-workspaces .widget-container {}
+.komorebi-workspaces .ws-btn {border: none; color: var(--overlay1)}
+.komorebi-workspaces .ws-btn.populated {padding-left: 8; padding-right: 8; background-color: transparent; border-radius: var(--border-radius2); color: var(--subtext1)}
+.komorebi-workspaces .ws-btn.active {padding-left: 8; padding-right: 8; background-color: var(--background2); border-radius: var(--border-radius2); color: var(--accent); font-weight: 600; padding-top: 3px; padding-bottom: 3px}
+.komorebi-active-layout {}
+.komorebi-active-layout .widget-container {}
+.komorebi-active-layout .label {font-family: var(--specialFont); padding-top: 1px; color: var(--sapphire)}
+.komorebi-layout-menu {background-color: var(--glass); border-radius: var(--border-radius); border: 1px solid var(--border)}
+.komorebi-layout-menu .menu-item {padding: 8px 16px; font-size: var(--fontSize); color: var(--text); font-weight: var(--fontWeight); margin: 2px 2px}
+.komorebi-layout-menu .menu-item-icon {color: var(--text); font-size: var(--iconSize)}
+.komorebi-layout-menu .menu-item-text {font-family: var(--system-font); padding-left: 4px; font-size: var(--fontSize)}
+.komorebi-layout-menu .menu-item:hover {background-color: var(--hover); border-radius: var(--border-radius3); margin: 4px 4px}
+.komorebi-layout-menu .separator {max-height: 1px; background-color: var(--background2)}
+.wallpapers-widget {}
+.wallpapers-widget .icon {color: var(--mauve)}
+.wallpapers-widget .widget-container {}
+.wallpapers-gallery-window {background-color: var(--background); margin: 16px; border-radius: var(--border-radius); border: 1px solid var(--border)}
+.wallpapers-gallery-image {border: 2px solid var(--border); border-radius: var(--border-radiusWallpapers)}
+.wallpapers-gallery-image:hover {border: 1px solid var(--accent)}
+.systray {background: transparent; border: none}
+.systray .pinned-container.drop-target {background: var(--background)}
+.systray .unpinned-visibility-btn {border-radius: 4px; height: 20px; width: 16px; border: none; outline: none}
+.systray .label, .systray .icon {color: var(--mauve)}
+.systray-popup {background-color: var(--glass); padding: 4px; border-radius: var(--border-radius); border: 1px solid var(--border)}
+.systray-popup .button {padding: 10px; margin: 0; border: 0; border-radius: 6px}
+.systray-popup .button:hover {background-color: var(--hover); border-radius: var(--border-radius3)}
+.notification-widget .icon {color: var(--overlay2)}
+.notification-widget .icon.new-notification {color: var(--blue)}
+.notification-widget .label.new-notification {color: var(--blue); font-weight: 600}
+.media-widget .btn {font-family: "Segoe Fluent Icons"; font-size: 13px; font-weight: 400; color: var(--subtext); padding: 0 3px; margin: 0; background-color: transparent; border: none}
+.media-widget .btn:hover {color: var(--text)}
+.media-widget .btn.play {font-size: 14px; color: var(--accent)}
+.media-widget .btn.disabled, .media-widget .btn.disabled:hover {color: var(--overlay0); background-color: transparent}
+.media-widget .progress-bar {max-height: 2px; background-color: transparent; border: none}
+.media-widget .progress-bar::chunk {background-color: var(--accent); border-radius: 2px}
+.media-menu .thumbnail {border-radius: 8px}
+.media-menu .app-volume-container {background-color: var(--background2); padding: 8px 6px; border-radius: var(--border-radius2); margin-left: 10px}
+.media-menu .app-volume-container .volume-slider::groove {background: var(--surface1); width: 2px; border-radius: 3px}
+.media-menu .app-volume-container .volume-slider::sub-page {background: var(--accent); border-radius: 3px}
+.media-menu .app-volume-container .volume-slider::handle {background: var(--accent); border-radius: 6px; height: 12px; width: 12px}
+.media-menu .app-volume-container .mute-button, .media-menu .app-volume-container .unmute-button {font-family: "Segoe Fluent Icons"; font-size: 16px; color: var(--subtext); margin-top: 4px}
+.media-menu .app-volume-container .unmute-button {color: var(--overlay0)}
+.media-menu {min-width: 440px; max-width: 440px; background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius)}
+.media-menu .title, .media-menu .artist, .media-menu .source {font-size: 14px; font-weight: var(--fontWeight); margin-left: 10px; font-family: var(--system-font); color: var(--text)}
+.media-menu .artist {font-size: 13px; color: var(--subtext); margin-top: 0px}
+.media-menu .source {font-size: 11px; color: var(--accentText); border-radius: 3px; background-color: var(--accent); padding: 2px 4px; font-weight: var(--fontWeight); font-family: var(--system-font); margin-top: 10px}
+.media-menu .source.aimp {background-color: #6f42c1; color: #ffffff}
+.media-menu .source.apple-music {background-color: #fa2b56; color: #ffffff}
+.media-menu .source.brave {background-color: #fb542b; color: #ffffff}
+.media-menu .source.chrome {background-color: #4285f4; color: #ffffff}
+.media-menu .source.edge {background-color: #0078d4; color: #ffffff}
+.media-menu .source.firefox {background-color: #ff7139; color: #ffffff}
+.media-menu .source.foobar2000 {background-color: #444444; color: #ffffff}
+.media-menu .source.media-player {background-color: #0078d4; color: #ffffff}
+.media-menu .source.murglar {background-color: #8a8a8a; color: #ffffff}
+.media-menu .source.musicbee {background-color: #ffcc00; color: #000000}
+.media-menu .source.nsmusics {background-color: #e64a19; color: #ffffff}
+.media-menu .source.opera {background-color: #ff1b2d; color: #ffffff}
+.media-menu .source.qobuz {background-color: #003a6f; color: #ffffff}
+.media-menu .source.spotify {background-color: #1db954; color: #ffffff}
+.media-menu .source.tidal {background-color: #000000; color: #ffffff}
+.media-menu .source.winamp {background-color: #f1a11b; color: #000000}
+.media-menu .source.youtube {background-color: #ff0000; color: #ffffff}
+.media-menu .source.youtube-music {background-color: #c51f1f; color: #ffffff}
+.media-menu .source.zen {background-color: #2ecc71; color: #000000}
+.media-menu .btn {font-family: var(--icons-font); font-size: 14px; font-weight: var(--fontWeight); margin: 10px 2px 0px 2px; min-width: 40px; max-width: 40px; min-height: 40px; max-height: 40px; border-radius: 20px; color: var(--accent); background-color: var(--background2)}
+.media-menu .btn.prev {margin-left: 10px; color: var(--accent)}
+.media-menu .btn:hover {color: var(--mutedBG); background-color: var(--accent)}
+.media-menu .btn.play {background-color: var(--accent); font-size: 20px; color: var(--accentText)}
+.media-menu .btn.disabled:hover {color: var(--accent); background-color: var(--background)}
+.media-menu .btn.disabled {background-color: transparent}
+.media-menu .btn.play:hover {background-color: var(--text); color: var(--mutedBG)}
+.media-menu .playback-time {font-size: 13px; font-family: var(--system-font); color: var(--subtext); margin-top: 20px; min-width: 100px}
+.media-menu .progress-slider {height: 10px; margin: 5px 4px; border-radius: 3px}
+.media-menu .progress-slider::groove {background: transparent; height: 2px; border-radius: 3px; background: var(--background2)}
+.media-menu .progress-slider::groove:hover {background: transparent; height: 6px; border-radius: 3px; background: var(--background2)}
+.media-menu .progress-slider::sub-page {background: var(--accent); border-radius: 3px; height: 4px}
+.language-menu {background-color: var(--glass); min-width: 300px; border: 1px solid var(--border); border-radius: var(--border-radius)}
+.language-menu .header {color: transparent; padding-bottom: -12px}
+.language-menu .footer {color: transparent; padding-top: -12px}
+.language-menu .language-item {padding: 6px 12px; margin: 2px 4px; border-radius: var(--border-radius2)}
+.language-menu .language-item.active {background-color: var(--background2); border-radius: 4px; color: var(--text); border-radius: var(--border-radius2)}
+.language-menu .language-item:hover {background-color: var(--hover); color: var(--text); border-radius: var(--border-radius2)}
+.language-menu .language-item.active:hover {background-color: var(--hover); border-radius: 4px; border-radius: var(--border-radius2)}
+.language-menu .language-item .code {font-weight: 900; font-size: 14px; min-width: 40px; text-transform: uppercase}
+.language-menu .language-item .icon {font-size: var(--iconSize); margin-right: 8px; color: var(--text)}
+.language-menu .language-item .name {font-weight: var(--fontWeight); font-family: var(--system-font); font-size: 14px}
+.language-menu .language-item .layout {font-weight: var(--fontWeight); font-family: var(--system-font); font-size: var(--fontSize)}
+.quick-launch-widget .icon {font-size: var(--fontSize); padding: 0 4px; color: var(--text)}
+.quick-launch-popup .container {background-color: var(--background); border: 1px solid var(--border); border-radius: var(--border-radius)}
+.quick-launch-popup .search {padding: 12px 16px; background-color: transparent; border-bottom: 1px solid var(--background2)}
+.quick-launch-popup .search .loader-line {color: var(--blue)}
+.quick-launch-popup .search .search-icon {font-family: var(--icons-font); font-size: 18px; color: var(--text); padding-right: 8px; min-width: 18px}
+.quick-launch-popup .search .search-submit-icon {font-family: var(--icons-font); font-size: 18px; color: var(--text); min-width: 18px}
+.quick-launch-popup .search .search-input {background: transparent; border: none; color: var(--text); font-size: var(--iconSize); font-family: var(--system-font); font-weight: var(--fontWeight); padding: 4px 0}
+.quick-launch-popup .search .prefix {background: var(--accent); border-radius: 6px; color: var(--text); padding: -2px 8px 0px 8px; margin-top: 2px; margin-right: 4px; font-size: 13px; font-weight: var(--fontWeight); font-family: var(--system-font); max-height: 28px}
+.quick-launch-popup .results {background: transparent; padding: 8px}
+.quick-launch-popup .results-list-view {font-size: var(--fontSizeLarge); font-family: var(--system-font); font-weight: var(--fontWeight); color: var(--text)}
+.quick-launch-popup {background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius); min-width: 480px}
+.quick-launch-popup .results-list-view .description {color: var(--subtext); font-size: 11px; font-family: var(--system-font); font-weight: var(--fontWeight)}
+.quick-launch-popup .results-list-view .separator {color: var(--subtext); font-size: 13px; font-family: var(--system-font); font-weight: var(--fontWeight); padding: 4px 0 4px 12px}
+.quick-launch-popup .results-list-view::item {padding: 10px; margin-top: 4px; border-radius: var(--border-radius); margin-left: 4px; margin-right: 4px}
+.quick-launch-popup .results-list-view::item:hover {background-color: var(--hover)}
+.quick-launch-popup .results-list-view::item:selected {background-color: var(--background2); border-radius: var(--border-radius)}
+.quick-launch-popup .results-list-view::item:selected:hover {background-color: var(--hover)}
+.quick-launch-popup .results-empty-text {font-size: 24px; font-family: var(--system-font); color: var(--text); padding-top: 8px}
+.cpu-widget .widget-container .icon {color: var(--mauve); padding-bottom: 1px}
+.cpu-widget .widget-container .label {padding-left: 3px}
+.cpu-widget .widget-container .label.alt {padding-left: 1.5px}
+.cpu-widget {border: none}
+.cpu-widget .label.status-low {color: var(--green)}
+.cpu-widget .label.status-medium {color: var(--yellow)}
+.cpu-widget .label.status-high {color: var(--peach)}
+.cpu-widget .label.status-critical {color: var(--red)}
+.cpu-popup {background-color: var(--glass); min-width: 400px; border: 1px solid var(--border); border-radius: var(--border-radius)}
+.cpu-popup .header {background: transparent; padding: 12px 16px; color: var(--text)}
+.cpu-popup .header .text {font-size: 16px; font-family: "Segoe UI"; color: var(--text)}
+.cpu-popup .header .pin-btn {font-size: var(--fontSize); background: transparent; font-family: "Segoe Fluent Icons"; padding: 6px; color: var(--text)}
+.cpu-popup .header .pin-btn:hover {color: var(--hover)}
+.cpu-popup .header .pin-btn.pinned {color: var(--accent)}
+.cpu-popup .graph-container {background: transparent; min-height: 64px}
+.cpu-popup .cpu-graph {color: var(--mauve)}
+.cpu-popup .cpu-graph-grid {color: var(--background2)}
+.cpu-popup .graph-title {font-size: 12px; color: var(--text); font-family: 'Segoe UI'; padding: 0px 0px 4px 14px}
+.cpu-popup .stats {background: transparent; padding: 16px}
+.cpu-popup .stats .stat-item {background-color: var(--background2); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 8px 12px; margin: 8px}
+.cpu-popup .stats .stat-label {font-size: 13px; color: var(--text); font-family: var(--system-font); font-weight: 400; padding: 6px 4px 2px 4px}
+.cpu-popup .stats .stat-value {font-size: 20px; font-weight: 700; color: var(--subtext); font-family: var(--system-font); padding: 0 4px 12px 4px}
+.memory-widget .widget-container .label {padding-left: 3px; color: var(--text)}
+.memory-widget .widget-container .label.alt {padding-left: 1.5px}
+.memory-widget .widget-container .icon {color: var(--blue); padding-bottom: 1px}
+.memory-widget {border: none}
+.memory-widget .label.status-low {color: var(--green)}
+.memory-widget .label.status-medium {color: var(--yellow)}
+.memory-widget .label.status-high {color: var(--peach)}
+.memory-widget .label.status-critical {color: var(--red)}
+.memory-popup {background-color: var(--glass); min-width: 400px; border: 1px solid var(--border); border-radius: var(--border-radius)}
+.memory-popup .header {background: transparent; padding: 12px 16px}
+.memory-popup .header .text {font-size: 16px; font-family: "Segoe UI"; color: var(--text)}
+.memory-popup .header .pin-btn {font-size: 14px; background: transparent; font-family: "Segoe Fluent Icons"; border: none; padding: 6px; color: var(--text)}
+.memory-popup .header .pin-btn:hover {color: var(--hover)}
+.memory-popup .header .pin-btn.pinned {color: var(--accent)}
+.memory-popup .graph-container {background: transparent; min-height: 64px}
+.memory-popup .memory-graph {color: var(--blue)}
+.memory-popup .memory-graph-grid {color: var(--background2)}
+.memory-popup .graph-title {font-size: 12px; color: var(--text); font-family: 'Segoe UI'; padding: 0px 0px 4px 14px}
+.memory-popup .stats {background: transparent; padding: 16px}
+.memory-popup .stats .stat-item {background-color: var(--background2); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 8px 12px; margin: 8px}
+.memory-popup .stats .stat-label {font-size: 13px; color: var(--text); font-family: var(--system-font); font-weight: 400; padding: 6px 4px 2px 4px}
+.memory-popup .stats .stat-value {font-size: 20px; font-weight: 700; color: var(--subtext); font-family: var(--system-font); padding: 0 4px 12px 4px}
+.alpha-group .container {background-color: transparent}
+.alpha-group .grouper-button {font-size: 18px; font-weight: 700; font-family: var(--system-font); color: var(--mauve); border: none; padding: 0 6px}
+.alpha-group .grouper-button:hover {color: var(--text)}
+.control-center-widget .icon {color: var(--subtext1); font-family: var(--icons-font); font-size: 18px}
+.control-center-menu {background: var(--glass); min-width: 360px; border: 1px solid var(--border); border-radius: var(--border-radius)}
+.control-center-menu .section {background: transparent; margin: 0; padding: 16px 12px; border: none}
+.control-center-menu .section.system-controls {padding: 12px 16px 0 16px}
+.control-center-menu .section.sliders {padding: 16px}
+.control-center-menu .section.system-controls .button, .control-center-menu .section.quick-actions .button .icon, .control-center-menu .section.sliders .slider .icon, .control-center-menu .section.sliders .slider .source-selector, .control-center-menu .section.power .plan-name .icon, .control-center-menu .section.power .mode-name .icon, .control-center-menu .section.media .button {font-family: "Segoe Fluent Icons"; font-weight: 400}
+.control-center-menu .section.quick-actions .button .icon, .control-center-menu .section.system-controls .button, .control-center-menu .section.sliders .slider .source-selector, .control-center-menu .section.power .plan-name, .control-center-menu .section.power .mode-name, .control-center-menu .section.media .button {transition: background-color 0.08s, opacity 0.08s; opacity: 1}
+.control-center-menu .section.system-controls .button:clicked, .control-center-menu .section.system-controls .button:pressed, .control-center-menu .section.quick-actions .button .icon:clicked, .control-center-menu .section.quick-actions .button .icon:pressed, .control-center-menu .section.sliders .slider .source-selector:clicked, .control-center-menu .section.sliders .slider .source-selector:pressed, .control-center-menu .section.power .plan-name:clicked, .control-center-menu .section.power .plan-name:pressed, .control-center-menu .section.power .mode-name:clicked, .control-center-menu .section.power .mode-name:pressed, .control-center-menu .section.media .button:clicked, .control-center-menu .section.media .button:pressed {opacity: 0.5}
+.control-center-menu .section.quick-actions .button.disabled .title, .control-center-menu .section.quick-actions .button.disabled .icon, .control-center-menu .section.sliders .slider.disabled, .control-center-menu .section.media .button.disabled, .control-center-menu .section.media .button.disabled:hover {opacity: 0.5}
+.control-center-menu .section.system-controls .button {background-color: var(--accent); border-radius: 16px; min-height: 32px; max-height: 32px; min-width: 32px; max-width: 32px; font-size: 14px; color: var(--accentText); transition: background-color 0.08s, opacity 0.08s}
+.control-center-menu .section.system-controls .button:hover {background-color: var(--redFlash)}
+.control-center-menu .section.quick-actions .button {margin: 0 4px; cursor: pointer}
+.control-center-menu .section.quick-actions .button .icon {font-size: 16px; background-color: var(--background2); min-height: 48px; border-radius: var(--border-radius); color: var(--text)}
+.control-center-menu .section.quick-actions .button .icon:hover {background-color: var(--hover)}
+.control-center-menu .section.quick-actions .button.active .icon {background-color: var(--accent); color: var(--accentText)}
+.control-center-menu .section.quick-actions .button.active .icon:hover {background-color: var(--redFlash); color: var(--accentText)}
+.control-center-menu .section.quick-actions .button.disabled .icon:hover {background-color: var(--hover)}
+.control-center-menu .section.quick-actions .button.active .icon:pressed {background-color: var(--hover)}
+.control-center-menu .section.quick-actions .button .title {font-size: var(--fontSize); margin: 4px 0 8px 0; padding: 0; font-weight: var(--fontWeight); color: var(--text)}
+.control-center-menu .section.sliders .slider {background: transparent; border: none; min-height: 34px; margin: 0 4px 0 4px}
+.control-center-menu .section.sliders .slider .icon {font-size: 16px; color: var(--text); min-width: 36px}
+.control-center-menu .section.sliders .slider .value {min-width: 36px; font-size: 12px; font-weight: 600; color: var(--text)}
+.control-center-menu .section.sliders .slider .source-selector {font-size: 12px; color: var(--text); width: 24px; height: 24px; border-radius: 6px; background-color: var(--background); margin-left: 4px}
+.control-center-menu .section.sliders .slider .source-selector:hover {background-color: var(--hover)}
+.control-center-menu .section.power .plan-name, .control-center-menu .section.power .mode-name {background: var(--accent); border: 1px solid var(--border); border-radius: var(--border-radius); min-height: 36px; margin: 0 4px; padding: 6px 10px; cursor: pointer}
+.control-center-menu .section.power .plan-name:hover, .control-center-menu .section.power .mode-name:hover {background: var(--redFlash)}
+.control-center-menu .section.power .mode-name.disabled, .control-center-menu .section.power .mode-name.disabled:hover {opacity: 0.5; background: var(--hover)}
+.control-center-menu .section.power .plan-name .title, .control-center-menu .section.power .mode-name .title {font-size: var(--fontSize); font-weight: 600; color: var(--accentText)}
+.control-center-menu .section.power .plan-name .subtext, .control-center-menu .section.power .mode-name .subtext {font-size: var(--fontSize); font-weight: 600; color: var(--accentText)}
+.control-center-menu .section.power .plan-name.disabled .title, .control-center-menu .section.power .mode-name.disabled .title {font-size: var(--fontSize); font-weight: 600; color: var(--text)}
+.control-center-menu .section.power .plan-name.disabled .subtext, .control-center-menu .section.power .mode-name.disabled .subtext {font-size: var(--fontSize); font-weight: 600; color: var(--text)}
+.control-center-menu .section.power .plan-name .icon, .control-center-menu .section.power .mode-name .icon {color: var(--accentText); font-size: var(--iconSize)}
+.control-center-menu .section.power .plan-name.disabled .icon, .control-center-menu .section.power .mode-name.disabled .icon {color: var(--text); font-size: var(--iconSize)}
+.control-center-menu .section.media {background-color: transparent; padding: 12px}
+.control-center-menu .section.media .track-info {padding-left: 8px}
+.control-center-menu .section.media .title {font-size: var(--fontSize); font-weight: 600; color: var(--text)}
+.control-center-menu .section.media .subtext {font-size: var(--fontSize); font-weight: 600; color: var(--subtext)}
+.control-center-menu .section.media .button {font-size: var(--iconSize); background-color: var(--accent); color: var(--accentText); min-width: 32px; min-height: 32px; max-width: 32px; max-height: 32px; border-radius: 6px; margin: 0 0 0 4px}
+.control-center-menu .section.media .button.prev {color: var(--accentText); background-color: var(--accent)}
+.control-center-menu .section.media .button.next {color: var(--accentText); background-color: var(--accent)}
+.control-center-menu .section.media .button.prev.disabled {color: var(--text)}
+.control-center-menu .section.media .button.next.disabled {color: var(--text)}
+.control-center-menu .section.media .button:hover {background-color: var(--redFlash)}
+.control-center-menu .section.media .button.disabled, .control-center-menu .section.media .button.disabled:hover {background-color: var(--background2)}
+.control-center-menu .context-menu {background-color: var(--glass); padding: 4px 0px; font-family: "Segoe UI Variable", "Segoe UI"; font-weight: var(--fontWeight); font-size: var(--fontSize); color: var(--text); border-radius: var(--border-radius); border: 1px solid var(--accent)}
+.control-center-menu .context-menu::item {background-color: transparent; padding: 6px 12px; margin: 2px 6px; border-radius: var(--border-radius3); min-width: 100px}
+.control-center-menu .context-menu::item:selected {background-color: var(--hover); color: var(--text)}
+.control-center-menu .context-menu::separator {height: 1px; background-color: var(--border); margin: 4px 0}
+.control-center-menu .context-menu::indicator:unchecked {width: 4px; height: 12px; margin-left: 0; color: transparent; background-color: transparent}
+.control-center-menu .context-menu::indicator:checked {width: 4px; height: 12px; background-color: var(--accent); border-radius: var(--border-radius3); margin-left: 0}
+.cava-widget {padding: 0; margin: 0; padding-bottom: 1px}
+.cava-widget .widget-container {}
+.komorebi-control-widget .widget-container .icon {color: var(--subtext1)}
+.komorebi-control-menu {background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius); min-width: 220px}
+.komorebi-control-menu .button {color: var(--subtext); padding: 8px 12px; margin: 2px 6px; font-size: 15px; border-radius: var(--border-radius2); background-color: transparent}
+.komorebi-control-menu .button:hover {background-color: var(--hover); color: var(--text)}
+.komorebi-control-menu .button.active {color: var(--accent); background-color: var(--background2)}
+.komorebi-control-menu .button:disabled {color: var(--overlay0)}
+.komorebi-control-menu .footer {padding: 8px 12px; border-top: 1px solid var(--border)}
+.komorebi-control-menu .footer .text {font-size: 12px; font-family: var(--system-font); color: var(--subtext)}
+.komorebi-stack .window {background-color: transparent; border: none; margin: 0 2px; padding: 0 4px}
+.komorebi-stack .window .label {font-size: 12px; color: var(--subtext)}
+.komorebi-stack .window .icon {padding-right: 2px}
+.komorebi-stack .window.active {background-color: var(--background2); border-radius: var(--border-radius2)}
+.komorebi-stack .window.active .label {color: var(--text); font-weight: 600}
+.yasb-bar .cpu-widget .widget-container .label, .yasb-bar .gpu-widget .widget-container .label, .yasb-bar .memory-widget .widget-container .label, .yasb-bar .disk-widget .widget-container .label, .yasb-bar .traffic-widget .widget-container .label {font-family: var(--icons-font); font-size: 12px; font-weight: 600; padding: 0 3px}
+.traffic-widget {padding-left: 4px; padding-right: 4px}
+.traffic-widget .widget-container .label {padding-left: 2px; font-size: 11px; font-weight: 500; color: var(--subtext0)}
+.traffic-widget .widget-container .label span {font-family: var(--icons-font); font-size: 11px; color: var(--sky); padding: 0 2px}
+.traffic-widget .widget-container .label.offline {color: var(--subtext); font-size: 11px}
+.traffic-widget .widget-container .label.offline span {color: var(--redFlash)}
+.traffic-widget .widget-container .icon {font-size: 12px; color: var(--text); padding-bottom: 1px}
+.traffic-widget .widget-container .icon.offline {color: var(--redFlash)}
+.traffic-menu {background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius); min-width: 320px}
+.traffic-menu .header {background: transparent; padding: 12px 16px 8px 16px; border-bottom: 1px solid var(--border)}
+.traffic-menu .header .title {font-size: 16px; font-family: var(--system-font); font-weight: 700; color: var(--text)}
+.traffic-menu .header .reset-button {font-size: var(--fontSize); font-family: var(--system-font); font-weight: var(--fontWeight); padding: 4px 10px; border-radius: var(--border-radius2); background-color: var(--background2); color: var(--text); border: 1px solid var(--border)}
+.traffic-menu .header .reset-button:hover {background-color: var(--hover); color: var(--text)}
+.traffic-menu .header .reset-button:pressed {background-color: var(--accent); color: var(--accentText)}
+.traffic-menu .download-speed, .traffic-menu .upload-speed {background-color: transparent; padding: 12px 10px 4px 10px; margin: 0 12px; border-bottom: 1px solid var(--border)}
+.traffic-menu .speed-separator {max-width: 1px; background-color: var(--border); margin: 24px 0 12px 0}
+.traffic-menu .upload-speed-value, .traffic-menu .download-speed-value {font-size: 18px; font-weight: 800; font-family: var(--system-font); color: var(--text)}
+.traffic-menu .upload-speed-unit, .traffic-menu .download-speed-unit {font-size: 13px; font-family: var(--system-font); font-weight: 600; color: var(--subtext); padding-top: 4px; padding-left: 4px}
+.traffic-menu .upload-speed-placeholder, .traffic-menu .download-speed-placeholder {color: var(--subtext); font-size: 11px; font-family: var(--system-font); padding: 0 0 8px 0}
+.traffic-menu .section-title {font-size: 12px; font-weight: 600; color: var(--subtext); margin-bottom: 4px; font-family: var(--system-font)}
+.traffic-menu .session-section, .traffic-menu .today-section, .traffic-menu .alltime-section {margin: 8px 8px 0 8px; padding: 0 10px 10px 10px; background-color: transparent; border-bottom: 1px solid var(--border)}
+.traffic-menu .alltime-section {border-bottom: none; margin-bottom: 8px}
+.traffic-menu .data-text {font-size: 13px; color: var(--subtext); padding: 2px 0; font-family: var(--system-font)}
+.traffic-menu .data-value {font-weight: 600; font-size: 13px; color: var(--text); font-family: var(--system-font); padding: 2px 0}
+.traffic-menu .interface-info, .traffic-menu .internet-info {font-size: 12px; font-family: var(--system-font); color: var(--subtext); padding: 8px 0}
+.traffic-menu .internet-info.connected {background-color: var(--background2); color: var(--green)}
+.traffic-menu .internet-info.disconnected {background-color: var(--background2); color: var(--redFlash)}
+.traffic-menu .internet-info.checking {background-color: var(--background2); color: var(--subtext)}
+.omega-group .container {background-color: transparent}
+.omega-group .grouper-button {font-size: 18px; font-weight: 700; font-family: var(--system-font); color: var(--lavender); border: none; padding: 0 6px}
+.omega-group .grouper-button:hover {color: var(--text)}
+.wifi-widget .widget-container .icon {color: var(--sky)}
+.wifi-widget .widget-container .label {color: var(--text)}
+.wifi-menu {background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius); min-width: 360px}
+.wifi-menu .header {padding: 10px 12px; border-bottom: 1px solid var(--border)}
+.wifi-menu .header .title {font-size: 14px; font-weight: 600; color: var(--text)}
+.wifi-menu .wifi-item {padding: 6px 12px; margin: 2px 6px; border-radius: var(--border-radius2)}
+.wifi-menu .wifi-item:hover {background-color: var(--hover)}
+.wifi-menu .wifi-item[active=true] {background-color: var(--background2)}
+.wifi-menu .wifi-item .icon {font-family: "Segoe Fluent Icons"; font-size: 18px; color: var(--sky)}
+.wifi-menu .wifi-item .name {font-size: 13px; font-weight: 600; color: var(--text)}
+.wifi-menu .footer {font-size: 12px; font-family: var(--system-font); padding: 8px 12px; color: var(--subtext); border-top: 1px solid var(--border)}
+.battery-widget .widget-container .icon {color: var(--green); padding-right: 3px}
+.battery-widget .widget-container .label {color: var(--text)}
+.battery-widget .icon.status-critical, .battery-widget .label.status-critical {color: var(--red)}
+.battery-widget .icon.status-low, .battery-widget .label.status-low {color: var(--peach)}
+.battery-widget .icon.status-medium, .battery-widget .label.status-medium {color: var(--yellow)}
+.battery-widget .icon.status-high, .battery-widget .label.status-high, .battery-widget .icon.status-full, .battery-widget .label.status-full {color: var(--green)}
+.battery-widget .icon.status-charging, .battery-widget .label.status-charging {color: var(--sky)}
+.bluetooth-widget .widget-container .icon {font-family: "Segoe Fluent Icons"}
+.bluetooth-widget .icon.bt-off, .bluetooth-widget .label.bt-off {color: var(--overlay0)}
+.bluetooth-widget .icon.bt-on, .bluetooth-widget .label.bt-on {color: var(--sky)}
+.bluetooth-widget .icon.bt-connected, .bluetooth-widget .label.bt-connected {color: var(--green)}
+.bluetooth-menu {background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius); min-width: 360px}
+.bluetooth-menu .header {padding: 10px 12px; border-bottom: 1px solid var(--border)}
+.bluetooth-menu .header .title {font-size: 14px; font-weight: 600; color: var(--text)}
+.bluetooth-menu .section-title {font-size: 12px; font-weight: 600; color: var(--subtext); padding: 10px 12px 4px 12px}
+.bluetooth-menu .bluetooth-item {padding: 6px 12px; margin: 2px 6px; border-radius: var(--border-radius2)}
+.bluetooth-menu .bluetooth-item:hover {background-color: var(--hover)}
+.bluetooth-menu .bluetooth-item.active {background-color: var(--background2)}
+.bluetooth-menu .bluetooth-item .icon {font-family: "Segoe Fluent Icons"; font-size: 18px; color: var(--sky)}
+.bluetooth-menu .bluetooth-item .name {font-size: 13px; font-weight: 600; color: var(--text)}
+.bluetooth-menu .bluetooth-item .status {font-size: 12px; color: var(--subtext)}
+.bluetooth-menu .footer {font-size: 12px; font-family: var(--system-font); padding: 8px 12px; color: var(--subtext); border-top: 1px solid var(--border)}
+.gpu-widget .widget-container .icon {color: var(--pink); padding-bottom: 1px}
+.gpu-widget .widget-container .label {color: var(--text)}
+.gpu-widget .label.status-low {color: var(--green)}
+.gpu-widget .label.status-medium {color: var(--yellow)}
+.gpu-widget .label.status-high {color: var(--peach)}
+.gpu-widget .label.status-critical {color: var(--red)}
+.gpu-popup {background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius); min-width: 400px}
+.gpu-popup .header {background: transparent; padding: 12px 16px 8px 16px; border-bottom: 1px solid var(--border)}
+.gpu-popup .header .text {font-size: 16px; font-weight: 700; font-family: var(--system-font); color: var(--text)}
+.gpu-popup .header .pin-btn {font-size: 14px; background: transparent; font-family: "Segoe Fluent Icons"; border: none; padding: 6px; color: var(--subtext)}
+.gpu-popup .header .pin-btn:hover {color: var(--text)}
+.gpu-popup .header .pin-btn.pinned {color: var(--accent)}
+.gpu-popup .graph-container {background: transparent; min-height: 64px}
+.gpu-popup .gpu-graph {color: var(--pink)}
+.gpu-popup .gpu-graph-grid {color: var(--background2)}
+.gpu-popup .gpu-temp-graph {color: var(--peach)}
+.gpu-popup .graph-title {font-size: 12px; color: var(--subtext); font-family: var(--system-font); padding: 0 0 4px 14px; margin-top: 12px}
+.gpu-popup .graph-title.first {margin-top: 0}
+.gpu-popup .stats {background: transparent; padding: 8px 12px 12px 12px}
+.gpu-popup .stats .stat-item {background-color: var(--background2); border: 1px solid var(--border); border-radius: var(--border-radius2); padding: 8px 12px; margin: 4px}
+.gpu-popup .stats .stat-label {font-size: 12px; color: var(--subtext); font-family: var(--system-font); padding: 4px 4px 2px 4px}
+.gpu-popup .stats .stat-value {font-size: 20px; font-weight: 700; color: var(--text); font-family: var(--system-font); padding: 0 4px 8px 4px}
+.disk-widget .widget-container .icon {color: var(--sapphire); padding-bottom: 1px}
+.disk-widget .widget-container .label {color: var(--text)}
+.disk-widget .widget-container .label.status-low {color: var(--green)}
+.disk-widget .widget-container .label.status-medium {color: var(--yellow)}
+.disk-widget .widget-container .label.status-high {color: var(--peach)}
+.disk-widget .widget-container .label.status-critical {color: var(--red)}
+.disk-group {background-color: var(--background); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 6px}
+.disk-group {background-color: var(--glass); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 10px 12px}
+.disk-group-row {min-width: 220px; max-width: 260px; margin: 0; padding: 6px 8px; border-radius: var(--border-radius2); border: 1px solid transparent}
+.disk-group-row:hover {background-color: var(--hover); border: 1px solid var(--border)}
+.disk-group-label {font-size: 12px; color: var(--text); font-family: var(--system-font)}
+.disk-group-label-size {font-size: 11px; color: var(--subtext); font-family: var(--system-font)}
+.disk-group-label-bar {max-height: 8px; border: none; background-color: var(--background2); border-radius: 4px}
+.disk-group-label-bar::chunk {background-color: var(--sapphire); border-radius: 4px}
