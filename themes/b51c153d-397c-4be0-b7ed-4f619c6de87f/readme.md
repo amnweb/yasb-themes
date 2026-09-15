@@ -1,7 +1,7 @@
 # Okinami YASB
 
 ### Minimalistic bar with waves design and several color schemes available in one CSS.
-<img width="3835" height="101" alt="Screenshot 2026-09-12 213836" src="https://github.com/user-attachments/assets/84c3a99a-fd79-49af-809d-7e88785e0b91" />
+<img width="3840" height="101" alt="image" src="https://github.com/user-attachments/assets/cf6095de-36a7-4b99-a52e-e518bfe95a00" />
 
 Requires YASB v2.0.7 or newer.
 
@@ -11,7 +11,7 @@ Fonts required:
 
 Change image_path in the wallpapers widget to your own wallpaper folder.
 
-### Preview
+### Preview with Kanagawa wave theme
 <img width="3839" height="2159" alt="Screenshot 2026-09-13 012154" src="https://github.com/user-attachments/assets/7f52d703-9c94-4d9c-ad53-fe9e75cba971" />
 <img width="3839" height="2159" alt="Screenshot 2026-09-12 210613" src="https://github.com/user-attachments/assets/ce309e19-8779-431c-8ccf-b56dc5bdb9b6" />
 <img width="3839" height="2159" alt="Screenshot 2026-09-12 210628" src="https://github.com/user-attachments/assets/c44cc89f-5553-4ef9-852f-afe6e23f8716" />
