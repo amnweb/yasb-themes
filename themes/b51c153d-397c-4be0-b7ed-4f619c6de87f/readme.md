@@ -1,7 +1,6 @@
 # Okinami YASB
 
 ### Minimalistic bar with waves design and several color schemes available in one CSS.
-<img width="3840" height="101" alt="image" src="https://github.com/user-attachments/assets/cf6095de-36a7-4b99-a52e-e518bfe95a00" />
 
 Requires YASB v2.0.7 or newer.
 
