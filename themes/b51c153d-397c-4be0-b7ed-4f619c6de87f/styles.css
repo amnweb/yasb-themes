@@ -115,7 +115,7 @@
     --subtext: #9AA79D; */
 
     /* Monochrome */
-    --background: #18181b;
+    /* --background: #18181b;
     --background2: #3f3f42;
     --accent: #b2b2b2;
     --text: #e5e7eb;
@@ -124,7 +124,7 @@
     --mutedBG: #3f3f42;
     --border: #3f3f42;
     --redFlash: #e5e7eb;
-    --subtext: #b2b2b2;
+    --subtext: #b2b2b2; */
 
     /* Tokyo Night */
     /* --background: #1a1b26;
@@ -151,7 +151,7 @@
     --subtext: #4B565C; */
 
     /* MonochromeAccentDark */
-    /* --background: #18181b;
+    --background: #18181b;
     --background2: #3f3f42;
     --accent: var(--yasb-accent-light2);
     --text: #e5e7eb;
@@ -160,7 +160,7 @@
     --mutedBG: #3f3f42;
     --border: #3f3f42;
     --redFlash: #e5e7eb;
-    --subtext: #E5E7EB; */
+    --subtext: #E5E7EB;
 
     /* MonochromeAccentLight*/
     /* --background: #e5e7eb;
