@@ -127,13 +127,13 @@
     /* Monochrome Light*/
     /* --background: #e5e7eb;
     --background2: #a4a4a4;
-    --accent: #2f2f36;
+    --accent: #b2b2b2;
     --text: #18181b;
     --accentText: #e5e7eb;
-    --hover: #919090;
+    --hover: #898989;
     --mutedBG: #a4a4a4;
     --border: #a4a4a4;
-    --redFlash: #18181b;
+    --redFlash: #898989;
     --subtext: #4B565C; */
 
     /* Tokyo Night */
@@ -163,9 +163,9 @@
     /* Nord */
     /* --background: #2e3440;
     --background2: #434c5e;
-    --accent: #ebcb8b;
+    --accent: #4c566a;
     --text: #d8dee9;
-    --accentText: #2e3440;
+    --accentText: #d8dee9;
     --hover: #4c566a;
     --mutedBG: #3b4252;
     --border: #434c5e;
@@ -647,8 +647,9 @@
 
 .volume-widget .icon {
     color: var(--text);
-    font-family: var(--icons-font);
+    font-family: var(--icons-font-fallback);
     padding-right: 5px;
+    padding-top: 1px;
 }
 
 .audio-menu {
@@ -983,43 +984,35 @@ Example: "Windows Media" becomes "windows-media" */
     background-color: #2ecc71;
     color: #000000;
 }
+
 .media-menu .btn {
     font-family: var(--icons-font);
     font-size: 14px;
     font-weight: var(--fontWeight);
-    margin: 10px 2px 0px 2px;
-    min-width: 40px;
-    max-width: 40px;
-    min-height: 40px;
-    max-height: 40px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-bottom: 2px;
+    min-width: 28px;
+    max-width: 28px;
+    min-height: 28px;
+    max-height: 28px;
     border-radius: 0px;
-    color: var(--accent);
-    background-color: transparent;
+    color: var(--accentText);
+    background-color: var(--accent);
 }
 .media-menu .btn.prev {
     margin-left: 10px;
-    color: var(--accent);
 }
 .media-menu .btn:hover {
-    color: var(--text);
-    background-color: transparent;
+    color: var(--accentText);
+    background-color: var(--hover);
 }
 .media-menu .btn.play {
-    background-color: transparent;
     font-size: 20px;
-    color: var(--accent);
-}
-.media-menu .btn.disabled:hover {
-    color: var(--text);
-    background-color: transparent;
 }
 
 .media-menu .btn.disabled {
-    background-color: transparent;
-}
-
-.media-menu .btn.play:hover {
-    background-color: transparent;
+    background-color: var(--background2);
     color: var(--text);
 }
 
@@ -1331,7 +1324,7 @@ Example: "Windows Media" becomes "windows-media" */
 }
 .cpu-popup .header .text {
     font-size: 16px;
-    font-family: "Segoe UI";
+    font-family: var(--system-font);
     color: var(--text);
 }
 .cpu-popup .header .pin-btn {
@@ -1361,7 +1354,7 @@ Example: "Windows Media" becomes "windows-media" */
 .cpu-popup .graph-title {
     font-size: 12px;
     color: var(--text);
-    font-family: 'Segoe UI';
+    font-family: var(--system-font);
     padding: 0px 0px 4px 14px;
 }
 /* Stats grid */
@@ -1420,7 +1413,7 @@ Example: "Windows Media" becomes "windows-media" */
 }
 .memory-popup .header .text {
     font-size: 16px;
-    font-family: "Segoe UI";
+    font-family: var(--system-font);
     color: var(--text);
 }
 .memory-popup .header .pin-btn {
@@ -1451,7 +1444,7 @@ Example: "Windows Media" becomes "windows-media" */
 .memory-popup .graph-title {
     font-size: 12px;
     color: var(--text);
-    font-family: 'Segoe UI';
+    font-family: var(--system-font);
     padding: 0px 0px 4px 14px;
 }
 /* Stats grid */
