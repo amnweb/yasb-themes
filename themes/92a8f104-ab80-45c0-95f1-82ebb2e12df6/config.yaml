@@ -258,8 +258,8 @@ widgets:
     type: "yasb.systray.SystrayWidget"
     options:
       class_name: "systray"
-      label_collapsed: "▼"
-      label_expanded: "▶"
+      label_collapsed: "\uf107"
+      label_expanded: "\uf106"
       label_position: "left" # Can be "left" or "right"
       icon_size: 16 # Can be any integer between 8 and 64
       pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
@@ -289,7 +289,7 @@ widgets:
       label: "<span>\udb83\udc8d</span>"
       change_automatically: false
     # Example path to folder with images. Can be a single string or a list of strings.
-      image_path: "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Kanagawa" 
+      image_path: "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Monochrome" 
       engine:
         enabled: true
         animation: "slide_top" # circle/slide_top/diamond/split
