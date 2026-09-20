@@ -209,19 +209,6 @@
     --border: #C0A36E;
     --redFlash: #C34043;
     --subtext: #C8C093; */
-
-    /* Paper */
-    /* --background: #B0B5C0;
-    --background2: #777E90;
-    --accent: #5a5d6c;
-    --text: #121213;
-    --accentText: #DFDFE1;
-    --hover: #B0B4BF;
-    --mutedBG: #B1B5BF;
-    --border: #767E90;
-    --redFlash: #C34043;
-    --subtext: #2C2F34; */
-
 }
 
 /* Global Defaults */
@@ -712,8 +699,9 @@
 
 .volume-widget .icon {
     color: var(--text);
-    font-family: var(--icons-font);
+    font-family: var(--icons-font-fallback);
     padding-right: 5px;
+    padding-top: 1px;
 }
 .audio-menu {
     background-color: var(--background); 
@@ -721,6 +709,12 @@
     min-width: 300px;
     border-radius: var(--border-radius);
 }
+
+.volume-widget .label
+{
+    padding-top: 1px;
+}
+
 /* System volume */
 .audio-menu .system-volume-container .volume-slider {
     border: none;
@@ -1056,6 +1050,7 @@ Example: "Windows Media" becomes "windows-media" */
     background-color: #2ecc71;
     color: #000000;
 }
+
 .media-menu .btn {
     font-family: var(--icons-font);
     font-size: 14px;
@@ -1066,34 +1061,23 @@ Example: "Windows Media" becomes "windows-media" */
     min-height: 40px;
     max-height: 40px;
     border-radius: 20px;
-    color: var(--accent);
-    background-color: var(--background2);
+    color: var(--accentText);
+    background-color: var(--accent);
 }
 .media-menu .btn.prev {
     margin-left: 10px;
-    color: var(--accent);
 }
 .media-menu .btn:hover {
-    color: var(--mutedBG);
-    background-color: var(--accent);
+    color: var(--accentText);
+    background-color: var(--hover);
 }
 .media-menu .btn.play {
-    background-color: var(--accent);
     font-size: 20px;
-    color: var(--accentText);
-}
-.media-menu .btn.disabled:hover {
-    color: var(--accent);
-    background-color: var(--background);
 }
 
 .media-menu .btn.disabled {
-    background-color: transparent;
-}
-
-.media-menu .btn.play:hover {
-    background-color: var(--text);
-    color: var(--mutedBG);
+    background-color: var(--background2);
+    color: var(--text);
 }
 
 .media-menu .playback-time {
@@ -1145,24 +1129,24 @@ Example: "Windows Media" becomes "windows-media" */
 
 .language-menu .language-item {
     padding: 6px 12px;
-    margin: 2px 4px;
-    border-radius: var(--border-radius2);
+    margin: 2px 6px;
+    border-radius: var(--border-radius);
 }
 .language-menu .language-item.active {
     background-color: var(--background2);
     border-radius: 4px;
     color: var(--text);
-    border-radius: var(--border-radius2);
+    border-radius: var(--border-radius3);
 }
 .language-menu .language-item:hover {
     background-color: var(--hover);
     color: var(--text);
-    border-radius: var(--border-radius2);
+    border-radius: var(--border-radius3);
 }
 .language-menu .language-item.active:hover {
     background-color: var(--hover);
     border-radius: 4px;
-    border-radius: var(--border-radius2);
+    border-radius: var(--border-radius3);
 }
 .language-menu .language-item .code {
     font-weight: 900;

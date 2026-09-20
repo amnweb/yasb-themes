@@ -150,18 +150,6 @@
     --redFlash: #18181b;
     --subtext: #4B565C; */
 
-    /* Monochrome Light RED*/
-    /* --background: #e5e7eb;
-    --background2: #a4a4a4;
-    --accent: #D71921;
-    --text: #18181b;
-    --accentText: #e5e7eb;
-    --hover: #898989;
-    --mutedBG: #a4a4a4;
-    --border: #a4a4a4;
-    --redFlash: #18181b;
-    --subtext: #4B565C; */
-
     /* MonochromeAccentDark */
     --background: #18181b;
     --background2: #3f3f42;
@@ -879,6 +867,7 @@
     background: var(--background);
 }
 
+
 /* Icon being dragged, we already apply some transparency to it so you don't need to use it */
 
 .systray .pinned-container.drop-target {
@@ -890,7 +879,9 @@
     width: 16px;
     border: none;
     outline: none;
+    margin-left: -2px;
 }
+
 
 .systray-popup {
     background-color: var(--background);
@@ -906,7 +897,7 @@
 }
 .systray-popup .button:hover {
     background-color: var(--hover);
-    border-radius: var(--border-radius2);
+    border-radius: var(--border-radius3);
 }
 
 
@@ -1025,6 +1016,7 @@ Example: "Windows Media" becomes "windows-media" */
     background-color: #2ecc71;
     color: #000000;
 }
+
 .media-menu .btn {
     font-family: var(--icons-font);
     font-size: 14px;
@@ -1035,34 +1027,23 @@ Example: "Windows Media" becomes "windows-media" */
     min-height: 40px;
     max-height: 40px;
     border-radius: 20px;
-    color: var(--accent);
-    background-color: var(--background2);
+    color: var(--accentText);
+    background-color: var(--accent);
 }
 .media-menu .btn.prev {
     margin-left: 10px;
-    color: var(--accent);
 }
 .media-menu .btn:hover {
-    color: var(--mutedBG);
-    background-color: var(--accent);
+    color: var(--accentText);
+    background-color: var(--hover);
 }
 .media-menu .btn.play {
-    background-color: var(--accent);
     font-size: 20px;
-    color: var(--accentText);
-}
-.media-menu .btn.disabled:hover {
-    color: var(--accent);
-    background-color: var(--background);
 }
 
 .media-menu .btn.disabled {
-    background-color: transparent;
-}
-
-.media-menu .btn.play:hover {
-    background-color: var(--text);
-    color: var(--mutedBG);
+    background-color: var(--background2);
+    color: var(--text);
 }
 
 .media-menu .playback-time {
@@ -1114,24 +1095,24 @@ Example: "Windows Media" becomes "windows-media" */
 
 .language-menu .language-item {
     padding: 6px 12px;
-    margin: 2px 4px;
-    border-radius: var(--border-radius2);
+    margin: 2px 6px;
+    border-radius: var(--border-radius);
 }
 .language-menu .language-item.active {
     background-color: var(--background2);
     border-radius: 4px;
     color: var(--text);
-    border-radius: var(--border-radius2);
+    border-radius: var(--border-radius3);
 }
 .language-menu .language-item:hover {
     background-color: var(--hover);
     color: var(--text);
-    border-radius: var(--border-radius2);
+    border-radius: var(--border-radius3);
 }
 .language-menu .language-item.active:hover {
     background-color: var(--hover);
     border-radius: 4px;
-    border-radius: var(--border-radius2);
+    border-radius: var(--border-radius3);
 }
 .language-menu .language-item .code {
     font-weight: 900;

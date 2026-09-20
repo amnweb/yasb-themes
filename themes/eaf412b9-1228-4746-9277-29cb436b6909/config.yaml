@@ -297,7 +297,7 @@ widgets:
       label: "<span>\udb83\ude09</span>"
       change_automatically: false
     # Example path to folder with images. Can be a single string or a list of strings.
-      image_path: "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Gruvbox Material" 
+      image_path: "D:\\OneDrive\\Pictures\\Wallpapers\\Themes\\Monochrome" 
       engine:
         enabled: true
         animation: "split" # circle/slide_top/diamond/split
