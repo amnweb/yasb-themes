@@ -19,7 +19,7 @@ bars:
       duration: 300
     blur_effect:
       enabled: true
-      dark_mode: false
+      dark_mode: true
       round_corners: false
       border_color: None
     window_flags:

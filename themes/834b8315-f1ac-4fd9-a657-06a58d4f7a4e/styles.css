@@ -18,22 +18,8 @@
 
     /*colors*/
 
-    /* Translucent dark theme*/
-    --background: rgba(44, 44, 44, 0.4);
-    --background2: rgba(255, 255, 255, 0.0605);
-    --accent: var(--yasb-accent-dark1);
-    --text: rgba(255, 255, 255, 1);
-    --accentText: rgba(255, 255, 255, 1);
-    --hover: rgba(255, 255, 255, 0.0837);
-    --mutedBG: rgba(255, 255, 255, 0.0419);
-    --border: rgba(255, 255, 255, 0.0698);
-    --redFlash: rgba(255, 255, 255, 0.1581);
-    --subtext: rgba(255, 255, 255, 0.786);
-    --accentHover: var(--yasb-accent);
-    --audio: var(--yasb-accent-light2);
-
-    /* Translucent light theme*/
-    /* --background: rgba(255, 255, 255, 0.6);
+    /* Translucent theme*/
+    --background: rgba(255, 255, 255, 0.6);
     --background2: rgba(170, 170, 170, 0.5);
     --accent: var(--yasb-accent-light1);
     --text: rgba(24, 24, 27, 1);
@@ -44,7 +30,21 @@
     --redFlash: rgba(137, 137, 137, 0.9);
     --subtext: rgba(90, 90, 90, 1);
     --accentHover: var(--yasb-accent);
-    --audio: var(--yasb-accent-dark2); */
+    --audio: var(--yasb-accent-dark2);
+
+    /* Translucent dark theme*/
+    --backgroundDark: rgba(44, 44, 44, 0.4);
+    --background2Dark: rgba(255, 255, 255, 0.0605);
+    --accentDark: var(--yasb-accent-dark1);
+    --textDark: rgba(255, 255, 255, 1);
+    --accentTextDark: rgba(255, 255, 255, 1);
+    --hoverDark: rgba(255, 255, 255, 0.0837);
+    --mutedBGDark: rgba(255, 255, 255, 0.0419);
+    --borderDark: rgba(255, 255, 255, 0.0698);
+    --redFlashDark: rgba(255, 255, 255, 0.1581);
+    --subtextDark: rgba(255, 255, 255, 0.786);
+    --accentHoverDark: var(--yasb-accent);
+    --audioDark: var(--yasb-accent-light2);
 
 }
 
@@ -64,6 +64,12 @@
     border-top: 1px solid var(--border);
 }
 
+.dark.yasb-bar {
+    background-color: var(--backgroundDark);
+    padding: 0px 14px;
+    border-top: 1px solid var(--borderDark);
+}
+
 /* Tooltip */
 .tooltip {
     background-color: var(--background);
@@ -77,27 +83,53 @@
     border: 1px solid var(--border);
 }
 
+.dark.tooltip {
+    background-color: var(--backgroundDark);
+    border-radius: var(--border-radius);
+    color: var(--textDark);
+    padding: 5px 10px;
+    font-size: var(--fontSize);
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+    margin-top: 4px;
+    border: 1px solid var(--borderDark);
+}
+
 
 /* Context Menu */
 .context-menu,
 .context-menu .menu-checkbox {
-    background-color: var(--background2);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--background);
+    border: 1px solid var(--border);
     padding: 4px 0px;
     font-family: var(--system-font);
     font-weight: var(--fontWeight);
     font-size: var(--fontSize);
     color: var(--text);
 }
+
+.dark.context-menu,
+.dark.context-menu .menu-checkbox {
+    background-color: var(--backgroundDark);
+    color: var(--textDark);
+    border: 1px solid var(--borderDark);
+}
+
 .context-menu {
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
 }
+
+.dark.context-menu {
+    border: 1px solid var(--borderDark);
+}
+
 .context-menu::right-arrow {
     width: 8px;
     height: 8px;
     padding-right: 24px;
 }
+
 .context-menu::item,
 .context-menu .menu-checkbox {
     background-color: transparent;
@@ -111,15 +143,32 @@
     background-color: var(--hover);
     color: var(--text);
 }
+
+.dark.context-menu::item:selected,
+.dark.context-menu .menu-checkbox:hover {
+    background-color: var(--hoverDark);
+    color: var(--textDark);
+}
+
 .context-menu::separator {
     height: 1px;
     background-color: var(--background2);
     margin: 4px 8px;
 }
+
+.dark.context-menu::separator {
+    background-color: var(--background2Dark);
+}
+
 .context-menu::item:disabled {
     color: var(--subtext);
     background-color: transparent;
 }
+
+.dark.context-menu::item:disabled {
+    color: var(--subtextDark);
+}
+
 .context-menu .menu-checkbox .checkbox {
     border: none;
     padding: 8px 16px;
@@ -129,6 +178,11 @@
     font-family: var(--system-font);
     font-weight: var(--fontWeight);
 }
+
+.dark.context-menu .menu-checkbox .checkbox {
+    color: var(--textDark);
+}
+
 .context-menu .submenu::item:disabled {
     margin: 0;
     padding-left: 16px;
@@ -136,6 +190,11 @@
 .context-menu .menu-checkbox .checkbox:unchecked {
     color: var(--text);
 }
+
+.dark.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--textDark);
+}
+
 .context-menu .menu-checkbox .checkbox::indicator {
     width: 12px;
     height: 12px;
@@ -146,10 +205,20 @@
     background: var(--mutedBG);
     border-radius: 2px;
 }
+
+.dark.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: var(--mutedBGDark);
+}
+
 .context-menu .menu-checkbox .checkbox::indicator:checked {
     background: var(--accent);
     border-radius: 2px;
 }
+
+.dark.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background: var(--accentDark);
+}
+
 .context-menu .menu-checkbox .checkbox:focus {
     outline: none;
 }
@@ -164,11 +233,19 @@
     border: 0px solid var(--border);
 }
 
+.dark .widget {
+    border: 0px solid var(--borderDark);
+}
+
 .widget .icon {
     font-size: var(--iconSize);
     font-weight: var(--fontWeight);
-    color: var(--yasb-icon-fg);
+    color: var(--text);
     font-family: var(--icons-font-fallback);
+}
+
+.dark .widget .icon {
+    color: var(--textDark);
 }
 
 .widget .label {
@@ -177,13 +254,15 @@
     padding-bottom: 0px;
 }
 
+.dark .widget .label {
+    color: var(--textDark);
+}
 
 /* Home Menu */
 .home-widget .icon {
     font-family: var(--icons-font-fallback);
     font-size: var(--fontSize);
     font-weight: bold;
-    color: var(--text);
     padding-bottom: 0px;
     padding-right: 4px;
 }
@@ -193,31 +272,50 @@
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
 }
+
+.dark .home-menu {
+    background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
+}
+
 .home-menu .menu-item {
     color: var(--text);
     padding: 8px 48px 8px 16px;
     font-family: var(--system-font);
     font-weight: var(--fontWeight);
 }
+
+.dark .home-menu .menu-item {
+    color: var(--textDark);
+}
+
 .home-menu .menu-item:hover {
     background-color: var(--hover);
     color: var(--text);
-    /* border: 1px solid var(--border); */
     border-radius: var(--border-radius2);
     margin-left: 1px;
     margin-right: 1px;
     margin-top: 1px;
     margin-bottom: 1px;
 }
+
+.dark .home-menu .menu-item:hover {
+    background-color: var(--hoverDark);
+    color: var(--textDark);
+}
+
 .home-menu .separator {
     max-height: 0px;
     background-color: var(--background2);
 }
 
+.dark .home-menu .separator {
+    background-color: var(--background2Dark);
+}
+
 
 /* Clock */
 .clock-widget .icon.alarm {
-    color: var(--text);
     padding-left: 4px;
     padding-right: 4px;
 }
@@ -235,6 +333,14 @@
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
 }
+
+.dark .clock-popup.alarm,
+.dark .clock-popup.timer,
+.dark .clock-popup.calendar {
+    background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
+}
+
 .clock-popup.calendar .calendar-table,
 .clock-popup.calendar .calendar-table::item {
     color: var(--text);
@@ -245,12 +351,24 @@
     outline: none;
     background-color: transparent;
 }
+
+.dark .clock-popup.calendar .calendar-table,
+.dark .clock-popup.calendar .calendar-table::item {
+    color: var(--textDark);
+}
+
 .clock-popup.calendar .calendar-table::item:selected {
     color: var(--accentText);
     font-weight: bold;
     background-color: var(--accent);
     border-radius: var(--border-radius);
 }
+
+.dark .clock-popup.calendar .calendar-table::item:selected {
+    color: var(--accentTextDark);
+    background-color: var(--accentDark);
+}
+
 .clock-popup.calendar .day-label {
     margin-top: 20px;
 }
@@ -275,248 +393,28 @@
     font-weight: 900;
     margin-top: -20px;
 }
-.clock-popup.timer .clock-popup-container,
-.clock-popup.alarm .clock-popup-container {
-    padding: 16px;
-    background-color: var(--background);
-    border-radius: var(--border-radius);
+
+.dark .clock-popup.calendar .month-label {
+    color: var(--textDark);
 }
-.clock-popup.timer .clock-popup-footer,
-.clock-popup.alarm .clock-popup-footer {
-    padding: 16px;
-    background-color: var(--background2);
-    border-radius: var(--border-radius);
+.dark .clock-popup.calendar .year-label {
+    color: var(--textDark);
 }
-.clock-popup .clock-label-timer {
-    font-size: 13px;
-    font-family: var(--system-font);
-    font-weight: var(--fontWeight);
-}
-.clock-popup .clock-input-time {
-    font-size: 48px;
-    background-color: var(--background);
-    border: none;
-    font-family: var(--system-font);
-    font-weight: var(--fontWeight);
-}
-.clock-popup .clock-input-time.colon {
-    padding-bottom: 8px;
-}
-.clock-popup .button {
-    border-radius: 4px;
-    font-family: var(--system-font);
-    font-weight: var(--fontWeight);
-    font-size: 13px;
-    min-height: 28px;
-    min-width: 64px;
-    margin: 4px 0;
-    background-color: var(--background2);
-}
-.clock-popup .button.save,
-.clock-popup .button.start,
-.clock-popup .button.delete,
-.clock-popup .button.cancel {
-    min-width: 120px;
-}
-.clock-popup .button.save,
-.clock-popup .button.start {
-    background-color: var(--background2);
-    color: var(--text);
-    margin-right: 8px;
-}
-.clock-popup .button.save:hover,
-.clock-popup .button.start:hover {
-    background-color: var(--background2)
-}
-.clock-popup .button.is-alarm-enabled {
-    background-color: var(--background);
-}
-.clock-popup .button.is-alarm-enabled:hover {
-    background-color: var(--background);
-}
-.clock-popup .button.is-alarm-disabled {
-    background-color: var(--background);
-}
-.clock-popup .button.day {
-    background-color: var(--background2);
-    max-height: 20px;
-    min-height: 20px;
-}
-.clock-popup .button.day:checked {
-    background-color: var(--accent);
-    color: var(--accentText);
-}
-.clock-popup .button.quick-option {
-    background-color: var(--background2);
-}
-.clock-popup .button.quick-option:checked {
-    background-color: var(--accent);
-    color: var(--accentText);
-}
-.clock-popup .button:hover {
-    background-color: var(--hover);
-}
-.clock-popup .button:disabled {
-    background-color: var(--background2);
-    color: var(--text);
-}
-.clock-popup .alarm-input-title {
-    font-size: 14px;
-    font-family: var(--system-font);
-    font-weight: var(--fontWeight);
-    color: var(--text-muted);
-    background-color: var(--background2);
-    border: 1px solid transparent;
-    border-radius: 4px;
-    padding: 4px 8px;
-    margin-top: 8px;
-    outline: none;
-    min-width: 300px;
-}
-.clock-popup .alarm-input-title:focus {
-    border: 1px solid var(--accent);
-}
-.active-alarm-window {
-    background-color: var(--background);
-    max-width: 500px;
-    min-width: 500px;
-    padding: 32px;
-    border-radius: var(--border-radius);
-}
-.active-alarm-window .alarm-title-icon {
-    font-size: 88px;
-    color: var(--text);
-    margin-bottom: 16px;
-}
-.active-alarm-window .alarm-title {
-    font-size: 24px;
-    font-family: var(--system-font);
-    font-weight: var(--fontWeight);
-    color: var(--text);
-    max-width: 500px;
-    min-width: 500px;
-}
-.active-alarm-window .alarm-info {
-    font-size: var(--iconSize);
-    font-family: var(--system-font);
-    font-weight: var(--fontWeight);
-    color: var(--text);
-    margin-bottom: 32px;
-}
-.active-alarm-window .button {
-    border-radius: 4px;
-    font-family: var(--system-font);
-    font-weight: var(--fontWeight);
-    font-size: 13px;
-    min-height: 36px;
-    min-width: 100px;
-    margin: 0 4px;
-    background-color: var(--background2);
-}
-.active-alarm-window .button:hover {
-    background-color: var(--hover);
+.dark .clock-popup.calendar .date-label {
+    color: var(--textDark);
 }
 
-/* Power Menu */
-
-.power-menu-compact {
-    min-width: 260px;
-    background-color: var(--background);
-    border-radius: var(--border-radius);
-    margin-right: 14px;
-    border: 1px solid var(--border);
-}
-.power-menu-compact .profile-info {
-    padding: 24px 14 24px 0;
-}
-.power-menu-compact .profile-info .profile-username {
-    font-size: var(--iconSize);
-    font-weight: var(--fontWeight);
-    color: var(--text);
-    font-family: var(--system-font);
-    margin-top: 4px;
+.dark .clock-popup.calendar .day-label {
+    color: var(--textDark);
 }
 
-.power-menu-widget .icon {
-    color: var(--text);
-}
-
-
-.power-menu-compact .profile-info .profile-account-type {
-    font-size: var(--fontSize);
-    color: var(--accentText);
-    font-weight: var(--fontWeight);
-    margin-top: 8px;
-    font-family: var(--system-font);
-    background-color: var(--accent);
-    padding: 2px 6px 3px 6px;
-    border-radius: var(--border-radius2);
-}
-
-.power-menu-compact .profile-info .profile-email {
-    font-size: var(--fontSize);
-    color: transparent;
-    margin-top: -10px;
-    font-family: var(--system-font);
-}
-
-.power-menu-compact .manage-accounts {
-    font-size: var(--fontSize);
-    background-color: var(--background2);
-    font-family: var(--system-font);
-    font-weight: var(--fontWeight);
-    padding: 3px 12px 4px 12px;
-    color: var(--text);
-    margin-top: 0px;
-    border-radius: var(--border-radius);
-    border: 0px solid var(--border);
-}
-
-.power-menu-compact .manage-accounts:hover {
-    background-color: var(--accent);
-    color: var(--accentText);
-}
-
-.power-menu-compact .buttons {
-    margin: 0 26px 12px 12px;
-    border-radius: var(--border-radius);
-    background-color: transparent;
-    border: none;
-}
-.power-menu-compact .button {
-    padding: 8px 16px;
-    margin: 2px;
-    background-color: var(--background2);
-    /* border: 1px solid var(--border); */
-    color: var(--background2);
-    border-radius: var(--border-radius2);
-}
-.power-menu-compact .button.hover {
-    background-color: var(--accent);
-}
-
-.power-menu-compact .button .icon {
-    font-size: var(--iconSize);
-    font-weight: var(--fontWeight);
-    color: var(--text);
-    padding-right: 10px;
-    min-width: 20px;
-}
-.power-menu-compact .button .label {
-    font-size: 13px;
-    font-weight: 500;
-    font-family: var(--system-font);
-    color: var(--text);
-}
-.power-menu-compact .icon.hover,
-.power-menu-compact .label.hover {
-    color: var(--accentText);
+.dark .clock-popup.calendar .week-label {
+    color: var(--textDark);
 }
 
 /* Volume */
 
 .volume-widget .icon {
-    color: var(--text);
     font-family: var(--icons-font-fallback);
     padding-right: 5px;
     padding-top: 1px;
@@ -532,6 +430,12 @@
     min-width: 300px;
     border-radius: var(--border-radius);
 }
+
+.dark .audio-menu {
+    background-color: var(--backgroundDark); 
+    border: 1px solid var(--borderDark);
+}
+
 /* System volume */
 .audio-menu .system-volume-container .volume-slider {
     border: none;
@@ -539,6 +443,10 @@
 
 .volume-widget .progress-container {
     background-color: var(--accent);
+} 
+
+.dark .volume-widget .progress-container {
+    background-color: var(--accentDark);
 } 
 
 /* Device list styles */
@@ -553,17 +461,37 @@
 .audio-menu .audio-container .device.selected {
     background-color: var(--background2);
     color: var(--text);
-   
 }
+
+.dark .audio-menu .audio-container .device.selected {
+    background-color: var(--background2Dark);
+    color: var(--textDark);
+}
+
+.dark .audio-menu .audio-container .device {
+    color: var(--textDark);
+}
+
 .audio-menu .audio-container .device:hover {
     background-color: var(--hover);
     color: var(--text);
+}
+
+.dark .audio-menu .audio-container .device:hover {
+    background-color: var(--hoverDark);
+    color: var(--textDark);
 }
 
 .audio-menu .audio-container .device.selected:hover {
     background-color: var(--hover);
     color: var(--text);
 }
+
+.dark .audio-menu .audio-container .device.selected:hover {
+    background-color: var(--hoverDark);
+    color: var(--textDark);
+}
+
 
 /* Toggle button for application volumes (if is enabled) */
 .audio-menu .toggle-apps {
@@ -575,13 +503,22 @@
     min-width: 24px;
     border-radius: 4px;
 }
+
+.dark .audio-menu .toggle-apps {
+    color: var(--textDark);
+}
+
 .audio-menu .toggle-apps.expanded {
     background-color: transparent;
 }
 .audio-menu .toggle-apps:hover {
     background-color: var(--hover);
-    
 }
+
+.dark .audio-menu .toggle-apps:hover {
+    background-color: var(--hoverDark);
+}
+
 /* Container for application volumes (if is enabled) */
 .audio-menu .apps-container {
     padding: 8px;
@@ -596,15 +533,17 @@
     border-radius: var(--border-radius);
     margin-right: 8px;
 }
+
+.dark .audio-menu .apps-container .app-volume .app-label {
+    color: var(--textDark);
+}
+
 .audio-menu .apps-container .app-volume .app-icon-container:hover {
     background-color: var(--hover);
 }
 
-/* Active Windows Title */
-.active-window-widget .icon {
-    padding-right: 10px;
-    padding-bottom: 0;
-    color: var(--text);
+.dark .audio-menu .apps-container .app-volume .app-icon-container:hover {
+    background-color: var(--hoverDark);
 }
 
 /* Komorebi Workspaces */
@@ -618,6 +557,10 @@
 .komorebi-workspaces .ws-btn {
     padding: 4px 16px;
     border: none;
+}
+
+.dark .komorebi-workspaces .ws-btn {
+    color: var(--textDark);
 }
 
 /*Style for buttons which contain window and are not empty.*/
@@ -635,6 +578,11 @@
     color: var(--text);
 } 
 
+.dark .komorebi-workspaces .ws-btn.active {
+    border-bottom: 1px solid var(--textDark);
+    color: var(--textDark);
+} 
+
 
 /* Komorebi-active-layout */
 .komorebi-active-layout {}
@@ -650,21 +598,36 @@
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
 }
+
+.dark .komorebi-layout-menu {
+    background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
+}
+
 .komorebi-layout-menu .menu-item {
     padding: 8px 16px;
-    font-size: var(--fontSize);
-    color: var(--text); 
+    font-size: var(--fontSize); 
     font-weight: var(--fontWeight);
     margin: 1 1px;
 }
+
 .komorebi-layout-menu .menu-item-icon {
     color: var(--text);
     font-size: var(--iconSize);
 }
+
+.dark .komorebi-layout-menu .menu-item-icon {
+    color: var(--textDark);
+}
+
 .komorebi-layout-menu .menu-item-text {
     font-family: var(--system-font);
     padding-left:4px;
     font-size: var(--fontSize);
+} 
+
+.dark .komorebi-layout-menu .menu-item-text {
+    color: var(--textDark);
 } 
 
 .komorebi-layout-menu .menu-item:hover {
@@ -672,41 +635,28 @@
     border-radius: var(--border-radius);
 } 
 
+.dark .komorebi-layout-menu .menu-item:hover {
+    background-color: var(--hoverDark);
+} 
+
 .komorebi-layout-menu .separator {
-    max-height: 1px;
+    max-height: 0px;
     background-color: var(--border);
 }
 
-/* Wallpapers-Widget */
-.wallpapers-widget {
-}
-
-.wallpapers-widget .icon {
-    color: var(--text);
-}
-
-.wallpapers-widget .widget-container {
-}
-.wallpapers-gallery-window {
-    background-color: var(--background);
-    margin: 16px;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border);
-}
-.wallpapers-gallery-image {
-    border: 2px solid var(--border);
-    border-radius: var(--border-radiusWallpapers);
-}
-.wallpapers-gallery-image:hover {
-    border: 1px solid var(--accent);
-}
-
 /* Systray */
-
 /* Icon being dragged, we already apply some transparency to it so you don't need to use it */
+
+.dark .systray .unpinned-visibility-btn {
+    color: var(--textDark);
+}
 
 .systray .pinned-container.drop-target {
     background: var(--background);
+}
+
+.dark .systray .pinned-container.drop-target {
+    background: var(--backgroundDark);
 }
 
 .systray .unpinned-visibility-btn {
@@ -721,15 +671,26 @@
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
 }
+
+.dark .systray-popup {
+    background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
+}
+
 .systray-popup .button {
     padding: 12px;
     margin: 0;
     border: 0;
     border-radius: var(--border-radius);
 }
+
 .systray-popup .button:hover {
     background-color: var(--hover);
     border-radius: var(--border-radius2);
+}
+
+.dark .systray-popup .button:hover {
+    background-color: var(--hoverDark);
 }
 
 
@@ -750,6 +711,12 @@
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
 }
+
+.dark .media-menu {
+    background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
+}
+
 .media-menu .title,
 .media-menu .artist,
 .media-menu .source {
@@ -759,11 +726,23 @@
     font-family: var(--system-font);
     color: var(--text);
 }
+
+.dark .media-menu .title,
+.dark .media-menu .artist,
+.dark .media-menu .source {
+    color: var(--textDark);
+}
+
 .media-menu .artist {
     font-size: 13px;
     color: var(--subtext);
     margin-top: 0px;
 }
+
+.dark .media-menu .artist {
+    color: var(--subtextDark);
+}
+
 .media-menu .source {
     font-size: 11px;
     color: var(--accentText);
@@ -774,6 +753,12 @@
     font-family: var(--system-font);
     margin-top: 10px;
 }
+
+.dark .media-menu .source {
+    color: var(--accentTextDark);
+    background-color: var(--accentDark);
+}
+
 /* The source class name is the same as what you see in the media widget; just replace spaces with dashes and convert it to lowercase. 
 Example: "Windows Media" becomes "windows-media" */
 .media-menu .source.aimp {
@@ -868,6 +853,12 @@ Example: "Windows Media" becomes "windows-media" */
     color: var(--accentText);
     background-color: var(--accent);
 }
+
+.dark .media-menu .btn {
+    color: var(--accentTextDark);
+    background-color: var(--accentDark);
+}
+
 .media-menu .btn.prev {
     margin-left: 10px;
 }
@@ -875,6 +866,12 @@ Example: "Windows Media" becomes "windows-media" */
     color: var(--accentText);
     background-color: var(--accentHover);
 }
+
+.dark .media-menu .btn:hover {
+    color: var(--accentTextDark);
+    background-color: var(--accentHoverDark);
+}
+
 .media-menu .btn.play {
     font-size: 20px;
 }
@@ -884,6 +881,11 @@ Example: "Windows Media" becomes "windows-media" */
     color: var(--subtext);
 }
 
+.dark .media-menu .btn.disabled {
+    background-color: var(--mutedBGDark);
+    color: var(--subtextDark);
+}
+
 .media-menu .playback-time {
     font-size: 13px;
     font-family: var(--system-font);
@@ -891,29 +893,49 @@ Example: "Windows Media" becomes "windows-media" */
     margin-top: 20px;
     min-width: 100px;
 }
+
+.dark .media-menu .playback-time {
+    color: var(--subtextDark);
+}
+
 .media-menu .progress-slider {
     height: 10px;
     margin: 5px 4px;
     border-radius: 3px;
 }
+
 .media-menu .progress-slider::groove {
     background: transparent;
     height: 2px;
     border-radius: 3px;
     background: var(--background2);
-
 }
+
+.dark.media-menu .progress-slider::groove {
+    background: var(--background2Dark);
+}
+
 .media-menu .progress-slider::groove:hover {
     background: transparent;
     height: 6px;
     border-radius: 3px;
     background: var(--background2);
 }
+
+.dark .media-menu .progress-slider::groove:hover {
+    background: var(--background2Dark);
+}
+
 .media-menu .progress-slider::sub-page {
     background: var(--accent);
     border-radius: 3px;
     height: 4px;
 }
+
+.dark .media-menu .progress-slider::sub-page {
+    background: var(--accentDark);
+}
+
 
 /* Language-Widget */
 
@@ -922,6 +944,11 @@ Example: "Windows Media" becomes "windows-media" */
     min-width: 300px;
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
+}
+
+.dark .language-menu {
+    background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
 }
 
 .language-widget .label {
@@ -945,19 +972,34 @@ Example: "Windows Media" becomes "windows-media" */
 .language-menu .language-item.active {
     background-color: var(--background2);
     border-radius: 4px;
-    color: var(--text);
     border-radius: var(--border-radius3);
 }
+
+.dark .language-menu .language-item.active {
+    background-color: var(--background2Dark);
+    color: var(--textDark);
+}
+
 .language-menu .language-item:hover {
     background-color: var(--hover);
     color: var(--text);
     border-radius: var(--border-radius3);
 }
+
+.dark .language-menu .language-item:hover {
+    background-color: var(--hoverDark);
+}
+
 .language-menu .language-item.active:hover {
     background-color: var(--hover);
     border-radius: 4px;
     border-radius: var(--border-radius3);
 }
+
+.dark .language-menu .language-item.active:hover {
+    background-color: var(--hoverDark);
+}
+
 .language-menu .language-item .code {
     font-weight: 900;
     font-size: 14px;
@@ -969,6 +1011,11 @@ Example: "Windows Media" becomes "windows-media" */
     margin-right: 8px;
     color: var(--text);
 }
+
+.dark .language-menu .language-item .icon {
+    color: var(--textDark);
+}
+
 .language-menu .language-item .name {
     font-weight: var(--fontWeight);
     font-family: var(--system-font);
@@ -980,13 +1027,21 @@ Example: "Windows Media" becomes "windows-media" */
     font-size: var(--fontSize);
 }
 
+.dark .language-menu .language-item .layout {
+    color: var(--textDark);
+}
+
+.dark .language-menu .language-item .name {
+    color: var(--textDark);
+}
+
 /* Launcher */
 /* Quick Launch Widget */
 .quick-launch-widget .icon {
 	font-size: var(--fontSize);
 	padding: 0 4px;
-    color: var(--text);
 }
+
 
 /* Quick Launch Popup - main window */
 
@@ -995,12 +1050,23 @@ Example: "Windows Media" becomes "windows-media" */
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
 }
+
+.dark .quick-launch-popup .container {
+	background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
+}
+
 /* Search bar container */
 .quick-launch-popup .search {
 	padding: 12px 16px;
 	background-color: transparent;
 	border-bottom: 1px solid var(--background2);
 }
+
+.dark .quick-launch-popup .search {
+	border-bottom: 1px solid var(--background2Dark);
+}
+
 /* Search loader line color */
 .quick-launch-popup .search .loader-line {
 	color: #449bff;
@@ -1012,12 +1078,22 @@ Example: "Windows Media" becomes "windows-media" */
 	padding-right: 8px;
 	min-width: 18px;
 }
+
+.dark .quick-launch-popup .search .search-icon {
+	color: var(--textDark);
+}
+
 .quick-launch-popup .search .search-submit-icon {
 	font-family: var(--icons-font);
 	font-size: 18px;
 	color: var(--text);
 	min-width: 18px;
 }
+
+.dark .quick-launch-popup .search .search-submit-icon {
+	color: var(--textDark);
+}
+
 .quick-launch-popup .search .search-input {
 	background: transparent;
 	border: none;
@@ -1027,6 +1103,11 @@ Example: "Windows Media" becomes "windows-media" */
 	font-weight: var(--fontWeight);
 	padding: 4px 0;
 }
+
+.dark .quick-launch-popup .search .search-input {
+	color: var(--textDark);
+}
+
 /* Search prefix styling (e.g., ">" for commands) */
 .quick-launch-popup .search .prefix {
 	background: #2167d8;
@@ -1041,6 +1122,11 @@ Example: "Windows Media" becomes "windows-media" */
 	max-height: 28px;
 }
 
+.dark .quick-launch-popup .search .prefix {
+	color: var(--textDark);
+}
+
+
 /* Results list */
 .quick-launch-popup .results {
 	background: transparent;
@@ -1053,19 +1139,34 @@ Example: "Windows Media" becomes "windows-media" */
 	font-weight: var(--fontWeight);
 	color: var(--text);
 }
+
+.dark .quick-launch-popup .results-list-view {
+	color: var(--textDark);
+}
+
 .quick-launch-popup .results-list-view .description {
 	color: var(--subtext);
 	font-size: 11px;
 	font-family: var(--system-font);
 	font-weight: var(--fontWeight);
 }
+
+.dark .quick-launch-popup .results-list-view .description {
+	color: var(--subtextDark);
+}
+
 .quick-launch-popup .results-list-view .separator {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--border);
     font-size: 13px;
     font-family: var(--system-font);
     font-weight: var(--fontWeight);
     padding: 4px 0 4px 12px;
 }
+
+.dark .quick-launch-popup .results-list-view .separator {
+    color: var(--borderDark);
+}
+
 /* Result item hover and selected states */
 .quick-launch-popup .results-list-view::item {
 	padding: 10px;
@@ -1077,14 +1178,28 @@ Example: "Windows Media" becomes "windows-media" */
 .quick-launch-popup .results-list-view::item:hover {
     background-color: var(--hover);
 }
+
+.dark .quick-launch-popup .results-list-view::item:hover {
+    background-color: var(--hoverDark);
+}
+
 .quick-launch-popup .results-list-view::item:selected {
 	background-color: var(--background2);
     border-radius: var(--border-radius);
 }
 
+.dark .quick-launch-popup .results-list-view::item:selected {
+	background-color: var(--background2Dark);
+}
+
 .quick-launch-popup .results-list-view::item:selected:hover {
     background-color: var(--hover);
 }
+
+.dark .quick-launch-popup .results-list-view::item:selected:hover {
+    background-color: var(--hoverDark);
+}
+
 /* Empty state when no results found */
 .quick-launch-popup .results-empty-text {
 	font-size: 24px;
@@ -1093,9 +1208,13 @@ Example: "Windows Media" becomes "windows-media" */
 	padding-top: 8px;
 }
 
+.dark .quick-launch-popup .results-empty-text {
+	color: var(--textDark);
+}
+
+
 /* Separator_widget */
 .separator-widget .widget-container .label{
-    color: var(--text);
     margin-left: -1px;
     margin-right: -1px;
     font-family: var(--icons-font-fallback);
@@ -1110,31 +1229,65 @@ Example: "Windows Media" becomes "windows-media" */
     border: 1px solid var(--border);
 }
 
+.dark .taskbar-widget .app-container {
+    border: 1px solid var(--borderDark);
+}
+
 .taskbar-widget .app-container .app-title {
     padding-bottom: 2px;
-    padding-left: 8px;
+    padding-left: 4px;
+}
+
+.dark .taskbar-widget .app-container .app-title {
+    color: var(--textDark);
 }
 
 .taskbar-widget .app-container.foreground {
     background-color: var(--background);
 }
+
+.dark .taskbar-widget .app-container.foreground {
+    background-color: var(--backgroundDark);
+}
+
 .taskbar-widget .app-container.flashing {
     background-color: var(--redFlash);
+}
+
+.dark .taskbar-widget .app-container.flashing {
+    background-color: var(--redFlashDark);
 }
 
 .taskbar-widget .app-container.flashing .app-title:hover {
     color: var(--text);
 }
 
+.dark .taskbar-widget .app-container.flashing .app-title:hover {
+    color: var(--textDark);
+}
+
 .taskbar-widget .app-container.flashing .app-title {
     color: var(--text);
+}
+
+.dark .taskbar-widget .app-container.flashing .app-title {
+    color: var(--textDark);
 }
 
 .taskbar-widget .app-container.running {
     background-color: var(--background2);
 }
+
+.dark .taskbar-widget .app-container.running {
+    background-color: var(--background2Dark);
+}
+
 .taskbar-widget .app-container:hover {
     background-color: var(--hover);
+}
+
+.dark .taskbar-widget .app-container:hover {
+    background-color: var(--hoverDark);
 }
 
 
@@ -1144,8 +1297,18 @@ Example: "Windows Media" becomes "windows-media" */
     background-color: var(--background2); 
     border: 1px solid var(--border);
 }
+
+.dark .taskbar-preview {
+    background-color: var(--background2Dark); 
+    border: 1px solid var(--borderDark);
+}
+
 .taskbar-preview.flashing { 
     background-color: var(--background);
+}
+
+.dark .taskbar-preview.flashing { 
+    background-color: var(--backgroundDark);
 }
 
 .taskbar-preview .header {
@@ -1158,6 +1321,11 @@ Example: "Windows Media" becomes "windows-media" */
     font-weight: var(--fontWeight);
     font-size: 13px;
 }
+
+.dark .taskbar-preview .header .title {
+    color: var(--textDark);
+}
+
 .taskbar-preview .close-button {
     color: var(--text);
     font-size: 20px;
@@ -1167,9 +1335,19 @@ Example: "Windows Media" becomes "windows-media" */
     border-radius: var(--border-radius);
     min-height: 20px;
 }
+
+.dark .taskbar-preview .close-button {
+    color: var(--textDark);
+}
+
 .taskbar-preview .close-button:hover {
-    color: var(--background);
+    color: var(--text);
     background-color: var(--hover);
+}
+
+.dark .taskbar-preview .close-button:hover {
+    color: var(--textDark);
+    background-color: var(--hoverDark);
 }
 
 /* CPU widget */
@@ -1371,16 +1549,21 @@ Example: "Windows Media" becomes "windows-media" */
 
 /* Control_Center */
 .control-center-widget .icon {
-    color: var(--text);
     font-family: var(--icons-font-fallback);
     font-size: var(--iconSize);
 }
+
 
 .control-center-menu {
     background: var(--background);
     min-width: 360px;
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
+}
+
+.dark .control-center-menu {
+    background: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
 }
 
 /* SECTIONS */
@@ -1462,6 +1645,11 @@ which is 16 pixels same as the other sections. */
     border-radius: var(--border-radius);
 }
 
+.dark .control-center-menu .section.system-controls .button {
+    background-color: var(--background2Dark);
+    color: var(--textDark);
+}
+
 .control-center-menu .section.system-controls .button.profile-image {
     background-color: transparent;
 }
@@ -1470,7 +1658,16 @@ which is 16 pixels same as the other sections. */
     background-color: var(--hover);
 }
 
+.dark .control-center-menu .section.system-controls .button:hover {
+    background-color: var(--hoverDark);
+}
+
 /* QUICK ACTIONS */
+
+.dark .control-center-menu .section.quick-actions .button .icon {
+    color: var(--textDark);
+}
+
 .control-center-menu .section.quick-actions .button {
     margin: 0 4px;
     cursor: pointer;
@@ -1483,29 +1680,66 @@ which is 16 pixels same as the other sections. */
     color: var(--text); 
     border: 1px solid var(--border);
 }
+
+.dark .control-center-menu .section.quick-actions .button .icon {
+    background-color: var(--background2Dark);
+    border: 1px solid var(--borderDark);
+}
+
 .control-center-menu .section.quick-actions .button .icon:hover {
     background-color: var(--hover);
 }
+
+.dark .control-center-menu .section.quick-actions .button .icon:hover {
+    background-color: var(--hoverDark);
+}
+
 .control-center-menu .section.quick-actions .button.active .icon {
     background-color: var(--accent);
     color: var(--text);
 }
+
+.dark .control-center-menu .section.quick-actions .button.active .icon {
+    background-color: var(--accentDark);
+    color: var(--textDark);
+}
+
 .control-center-menu .section.quick-actions .button.active .icon:hover {
     background-color: var(--accentHover);
     color: var(--accentText);
 }
+
+.dark .control-center-menu .section.quick-actions .button.active .icon:hover {
+    background-color: var(--accentHoverDark);
+    color: var(--accentTextDark);
+}
+
 .control-center-menu .section.quick-actions .button.disabled .icon:hover {
     background-color: var(--hover);
 }
+
+.dark .control-center-menu .section.quick-actions .button.disabled .icon:hover {
+    background-color: var(--hoverDark);
+}
+
 .control-center-menu .section.quick-actions .button.active .icon:pressed {
     background-color: var(--hover);
 }
+
+.dark .control-center-menu .section.quick-actions .button.active .icon:pressed {
+    background-color: var(--hoverDark);
+}
+
 .control-center-menu .section.quick-actions .button .title {
     font-size: var(--fontSize);
     margin: 4px 0 8px 0;
     padding: 0;
     font-weight: var(--fontWeight);
     color: var(--text);
+}
+
+.dark .control-center-menu .section.quick-actions .button .title {
+    color: var(--textDark);
 }
 
 /* SLIDERS */
@@ -1520,12 +1754,22 @@ which is 16 pixels same as the other sections. */
     color: var(--text);
     min-width: 36px;
 }
+
+.dark .control-center-menu .section.sliders .slider .icon {
+    color: var(--textDark);
+}
+
 .control-center-menu .section.sliders .slider .value {
     min-width: 36px;
     font-size: 12px;
     font-weight: 600;
     color: var(--text);
 }
+
+.dark .control-center-menu .section.sliders .slider .value {
+    color: var(--textDark);
+}
+
 .control-center-menu .section.sliders .slider .source-selector {
     font-size: 12px;
     color: var(--text);
@@ -1535,8 +1779,18 @@ which is 16 pixels same as the other sections. */
     background-color: var(--background);
     margin-left: 4px;
 }
+
+.dark .control-center-menu .section.sliders .slider .source-selector {
+    color: var(--textDark);
+    background-color: var(--backgroundDark);
+}
+
 .control-center-menu .section.sliders .slider .source-selector:hover {
     background-color: var(--hover);
+}
+
+.dark .control-center-menu .section.sliders .slider .source-selector:hover {
+    background-color: var(--hoverDark);
 }
 
 /* POWER PLAN & POWER MODE */
@@ -1550,26 +1804,56 @@ which is 16 pixels same as the other sections. */
     padding: 6px 10px;
     cursor: pointer;
 }
+
+.dark .control-center-menu .section.power .plan-name,
+.dark .control-center-menu .section.power .mode-name {
+    background: var(--accentDark);
+    border: 1px solid var(--borderDark);
+}
+
 .control-center-menu .section.power .plan-name:hover,
 .control-center-menu .section.power .mode-name:hover {
     background: var(--accentHover);
 }
+
+.dark .control-center-menu .section.power .plan-name:hover,
+.dark .control-center-menu .section.power .mode-name:hover {
+    background: var(--accentHoverDark);
+}
+
 .control-center-menu .section.power .mode-name.disabled,
 .control-center-menu .section.power .mode-name.disabled:hover {
     opacity: 0.5;
     background: var(--hover);
 }
+
+.dark .control-center-menu .section.power .mode-name.disabled,
+.dark .control-center-menu .section.power .mode-name.disabled:hover {
+    background: var(--hoverDark);
+}
+
 .control-center-menu .section.power .plan-name .title,
 .control-center-menu .section.power .mode-name .title {
     font-size: var(--fontSize);
     font-weight: 600;
     color: var(--accentText);
 }
+
+.dark .control-center-menu .section.power .plan-name .title,
+.dark .control-center-menu .section.power .mode-name .title {
+    color: var(--accentTextDark);
+}
+
 .control-center-menu .section.power .plan-name .subtext,
 .control-center-menu .section.power .mode-name .subtext {
     font-size: var(--fontSize);
     font-weight: 600;
     color: var(--accentText);
+}
+
+.dark .control-center-menu .section.power .plan-name .subtext,
+.dark .control-center-menu .section.power .mode-name .subtext {
+    color: var(--accentTextDark);
 }
 
 .control-center-menu .section.power .plan-name.disabled .title,
@@ -1578,22 +1862,44 @@ which is 16 pixels same as the other sections. */
     font-weight: 600;
     color: var(--text);
 }
+
+.dark .control-center-menu .section.power .plan-name.disabled .title,
+.dark .control-center-menu .section.power .mode-name.disabled .title {
+    color: var(--textDark);
+}
+
 .control-center-menu .section.power .plan-name.disabled .subtext,
 .control-center-menu .section.power .mode-name.disabled .subtext {
     font-size: var(--fontSize);
     font-weight: 600;
     color: var(--text);
 }
+
+.dark .control-center-menu .section.power .plan-name.disabled .subtext,
+.dark .control-center-menu .section.power .mode-name.disabled .subtext {
+    color: var(--textDark);
+}
+
 .control-center-menu .section.power .plan-name .icon,
 .control-center-menu .section.power .mode-name .icon {
     color: var(--accentText);
     font-size: var(--iconSize);
 }
 
+.dark .control-center-menu .section.power .plan-name .icon,
+.dark .control-center-menu .section.power .mode-name .icon {
+    color: var(--accentTextDark);
+}
+
 .control-center-menu .section.power .plan-name.disabled .icon,
 .control-center-menu .section.power .mode-name.disabled .icon {
     color: var(--text);
     font-size: var(--iconSize);
+}
+
+.dark .control-center-menu .section.power .plan-name.disabled .icon,
+.dark .control-center-menu .section.power .mode-name.disabled .icon {
+    color: var(--textDark);
 }
 
 /* MEDIA CONTROLS */
@@ -1609,11 +1915,23 @@ which is 16 pixels same as the other sections. */
     font-weight: 600;
     color: var(--text);
 }
+
+.dark .control-center-menu .section.media .title {
+    font-size: var(--fontSize);
+    font-weight: 600;
+    color: var(--textDark);
+}
+
 .control-center-menu .section.media .subtext {
     font-size: var(--fontSize);
     font-weight: 600;
     color: var(--subtext);
 }
+
+.dark .control-center-menu .section.media .subtext {
+    color: var(--subtextDark);
+}
+
 .control-center-menu .section.media .button {
     font-size: var(--iconSize);
     background-color: var(--accent);
@@ -1627,25 +1945,57 @@ which is 16 pixels same as the other sections. */
     border-radius: var(--border-radius);
 }
 
+.dark .control-center-menu .section.media .button {
+    background-color: var(--accentDark);
+    color: var(--accentTextDark);
+}
+
 .control-center-menu .section.media .button.prev {
     color: var(--accentText);
-    background-color: var(--yasb-accent-dark1);
+    background-color: var(--accent);
 }
+
+.dark .control-center-menu .section.media .button.prev {
+    color: var(--accentTextDark);
+    background-color: var(--accentDark);
+}
+
 .control-center-menu .section.media .button.next {
     color: var(--accentText);
     background-color: var(--yasb-accent-dark1);
 }
 
+.dark .control-center-menu .section.media .button.next {
+    color: var(--accentTextDark);
+    background-color: var(--accentDark);
+}
+
 .control-center-menu .section.media .button.prev.disabled {
     color: var(--text);
 }
+
+.dark .control-center-menu .section.media .button.prev.disabled {
+    color: var(--textDark);
+    background-color: var(--background2Dark);
+}
+
 .control-center-menu .section.media .button.next.disabled {
     color: var(--text);
+}
+
+.dark .control-center-menu .section.media .button.next.disabled {
+    color: var(--textDark);
+    background-color: var(--background2Dark);
 }
 
 .control-center-menu .section.media .button:hover {
     background-color: var(--accentHover);
 }
+
+.dark .control-center-menu .section.media .button:hover {
+    background-color: var(--accentHoverDark);
+}
+
 .control-center-menu .section.media .button.disabled,
 .control-center-menu .section.media .button.disabled:hover {
     background-color: var(--background2);
@@ -1660,7 +2010,14 @@ which is 16 pixels same as the other sections. */
     color: var(--text);
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
+    background-color: transparent;
 }
+
+.dark .control-center-menu .context-menu {
+    color: var(--textDark);
+    border: 1px solid var(--borderDark);
+}
+
 .control-center-menu .context-menu::item {
     background-color: transparent;
     padding: 6px 12px;
@@ -1672,11 +2029,22 @@ which is 16 pixels same as the other sections. */
     background-color: var(--hover);
     color: var(--text);
 }
+
+.dark .control-center-menu .context-menu::item:selected  {
+    background-color: var(--hoverDark);
+    color: var(--textDark);
+}
+
 .control-center-menu .context-menu::separator {
     height: 1px;
     background-color: var(--border);
     margin: 4px 0;
 }
+
+.dark .control-center-menu .context-menu::separator {
+    background-color: var(--borderDark);
+}
+
 .control-center-menu .context-menu::indicator:unchecked {
     width: 4px;
     height: 12px;
@@ -1692,10 +2060,19 @@ which is 16 pixels same as the other sections. */
     margin-left: 0;
 }
 
+.dark .control-center-menu .context-menu::indicator:checked {
+    background-color: var(--accentDark);
+}
+
+
 .audio-visualizer-widget {
     padding-bottom: 1px;
 }
 
 .audio-visualizer-widget .audio-visualizer-canvas {
     qproperty-fillbrush: var(--audio);
+}
+
+.dark .audio-visualizer-widget .audio-visualizer-canvas {
+    qproperty-fillbrush: var(--audioDark);
 }
