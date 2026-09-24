@@ -66,7 +66,6 @@
 
 .dark.yasb-bar {
     background-color: var(--backgroundDark);
-    padding: 0px 14px;
     border-top: 1px solid var(--borderDark);
 }
 
@@ -1352,15 +1351,16 @@ Example: "Windows Media" becomes "windows-media" */
 
 /* CPU widget */
 .cpu-widget .widget-container .icon {
-    color: var(--text);
     padding-bottom: 1px;
 }
 
 .cpu-widget .widget-container .label {
     padding-left: 4px;
+    padding-bottom: 2px;
 }
 .cpu-widget .widget-container .label.alt {
     padding-left: 4px;
+    padding-bottom: 2px;
 }
 
 .cpu-widget {
@@ -1374,16 +1374,27 @@ Example: "Windows Media" becomes "windows-media" */
     border-radius: var(--border-radius);
 }
 
+.dark .cpu-popup {
+    background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
+}
+
 .cpu-popup .header {
     background: transparent;
     padding: 12px 16px;
     color: var(--text);
 }
+
 .cpu-popup .header .text {
     font-size: 16px;
     font-family: var(--system-font);
     color: var(--text);
 }
+
+.dark .cpu-popup .header .text {
+    color: var(--textDark);
+}
+
 .cpu-popup .header .pin-btn {
     font-size: var(--fontSize);
     background: transparent;
@@ -1391,12 +1402,27 @@ Example: "Windows Media" becomes "windows-media" */
     padding: 6px;
     color: var(--text);
 }
+
+.dark .cpu-popup .header .pin-btn {
+    color: var(--textDark);
+}
+
 .cpu-popup .header .pin-btn:hover {
     color: var(--hover);
 }
+
+.dark .cpu-popup .header .pin-btn:hover {
+    color: var(--hoverDark);
+}
+
 .cpu-popup .header .pin-btn.pinned {
     color: var(--accent);
 }
+
+.dark .cpu-popup .header .pin-btn.pinned {
+    color: var(--accentDark);
+}
+
 /* Graph area */
 .cpu-popup .graph-container {
     background:  transparent;
@@ -1405,15 +1431,30 @@ Example: "Windows Media" becomes "windows-media" */
 .cpu-popup .cpu-graph {
     color: var(--accent);   /* <-- set the graph line/fill color */
 }
+
+.dark .cpu-popup .cpu-graph {
+    color: var(--accentDark);   /* <-- set the graph line/fill color */
+}
+
 .cpu-popup .cpu-graph-grid {
     color: var(--background2);  /* set the grid line color */
 }
+
+.dark .cpu-popup .cpu-graph-grid {
+    color: var(--background2Dark);  /* set the grid line color */
+}
+
 .cpu-popup .graph-title {
     font-size: 12px;
     color: var(--text);
     font-family: var(--system-font);
     padding: 0px 0px 4px 14px;
 }
+
+.dark .cpu-popup .graph-title {
+    color: var(--textDark);
+}
+
 /* Stats grid */
 .cpu-popup .stats {
     background: transparent;
@@ -1426,6 +1467,12 @@ Example: "Windows Media" becomes "windows-media" */
     padding: 8px 12px;
     margin: 8px;
 }
+
+.dark .cpu-popup .stats .stat-item {
+    background-color: var(--background2Dark);
+    border: 1px solid var(--borderDark);
+}
+
 .cpu-popup .stats .stat-label {
     font-size: 13px;
     color: var(--text);
@@ -1433,6 +1480,11 @@ Example: "Windows Media" becomes "windows-media" */
     font-weight: 400;
     padding: 6px 4px 2px 4px;
 }
+
+.dark .cpu-popup .stats .stat-label {
+    color: var(--textDark);
+}
+
 .cpu-popup .stats .stat-value {
     font-size: 20px;
     font-weight: 700;
@@ -1441,15 +1493,20 @@ Example: "Windows Media" becomes "windows-media" */
     padding: 0 4px 12px 4px;
 }
 
+.dark .cpu-popup .stats .stat-value {
+    color: var(--subtextDark);
+}
+
 /* Memory widget */
 .memory-widget .widget-container .label {
    padding-left: 4px; 
+   padding-bottom: 2px;
 }
 .memory-widget .widget-container .label.alt {
     padding-left: 4px;
+    padding-bottom: 2px;
 }
 .memory-widget .widget-container .icon {
-    color: var(--text);
     padding-bottom: 1px;
 }
 
@@ -1464,6 +1521,11 @@ Example: "Windows Media" becomes "windows-media" */
     border-radius: var(--border-radius);
 }
 
+.dark .memory-popup {
+    background-color: var(--backgroundDark);
+    border: 1px solid var(--borderDark);
+}
+
 .memory-popup .header {
     background: transparent;
     padding: 12px 16px;
@@ -1473,6 +1535,11 @@ Example: "Windows Media" becomes "windows-media" */
     font-family: var(--system-font);
     color: var(--text);
 }
+
+.dark .memory-popup .header .text {
+    color: var(--textDark);
+}
+
 .memory-popup .header .pin-btn {
     font-size: 14px;
     background: transparent;
@@ -1481,12 +1548,27 @@ Example: "Windows Media" becomes "windows-media" */
     padding: 6px;
     color: var(--text);
 }
+
+.dark .memory-popup .header .pin-btn {
+    color: var(--textDark);
+}
+
 .memory-popup .header .pin-btn:hover {
     color: var(--hover);
 }
+
+.dark .memory-popup .header .pin-btn:hover {
+    color: var(--hoverDark);
+}
+
 .memory-popup .header .pin-btn.pinned {
     color: var(--accent)
 }
+
+.dark .memory-popup .header .pin-btn.pinned {
+    color: var(--accentDark)
+}
+
 /* Graph area */
 .memory-popup .graph-container {
     background:  transparent;
@@ -1495,15 +1577,30 @@ Example: "Windows Media" becomes "windows-media" */
 .memory-popup .memory-graph {
     color: var(--accent);   /* <-- set the graph line/fill color */
 }
+
+.dark .memory-popup .memory-graph {
+    color: var(--accentDark);   /* <-- set the graph line/fill color */
+}
+
 .memory-popup .memory-graph-grid {
     color: var(--background2);  /* set the grid line color */
 }
+
+.dark .memory-popup .memory-graph-grid {
+    color: var(--background2Dark);  /* set the grid line color */
+}
+
 .memory-popup .graph-title {
     font-size: 12px;
     color: var(--text);
     font-family: var(--system-font);
     padding: 0px 0px 4px 14px;
 }
+
+.dark .memory-popup .graph-title {
+    color: var(--textDark);
+}
+
 /* Stats grid */
 .memory-popup .stats {
     background: transparent;
@@ -1516,6 +1613,12 @@ Example: "Windows Media" becomes "windows-media" */
     padding: 8px 12px;
     margin: 8px;
 }
+
+.dark .memory-popup .stats .stat-item {
+    background-color: var(--background2Dark);
+    border: 1px solid var(--borderDark);
+}
+
 .memory-popup .stats .stat-label {
     font-size: 13px;
     color: var(--text);
@@ -1523,6 +1626,11 @@ Example: "Windows Media" becomes "windows-media" */
     font-weight: 400;
     padding: 6px 4px 2px 4px;
 }
+
+.dark .memory-popup .stats .stat-label {
+    color: var(--textDark);
+}
+
 .memory-popup .stats .stat-value {
     font-size: 20px;
     font-weight: 700;
@@ -1530,6 +1638,11 @@ Example: "Windows Media" becomes "windows-media" */
     font-family: var(--system-font);
     padding: 0 4px 12px 4px;
 }
+
+.dark .memory-popup .stats .stat-value {
+    color: var(--subtextDark);
+}
+
 
 /* Grouper sysInfo*/
 .systeminfo-grouper .container { /* The name of the css class is the name given in the config */
