@@ -1,8 +1,14 @@
-name: Sumbit a theme
+name: Submit a theme
 description: Submit a theme to be added to the theme library.
 title: "[create-theme]: "
 labels: ["new-theme"]
 body:
+  - type: markdown
+    attributes:
+      value: >-
+        **Size limit:** GitHub accepts at most 65,536 characters per submission, so the styles, config and readme
+        together must stay below that. If your theme is bigger, read
+        [how to submit a large theme](https://github.com/amnweb/yasb-themes/issues/382).
   - type: input
     id: name
     attributes:
@@ -25,14 +31,17 @@ body:
       label: Homepage
       description: The URL of the theme's homepage or repository.
       placeholder: https://github.com/...
-  - type: input
+  - type: upload
     id: image
     attributes:
       label: Image
-      description: "A URL to an image representing the theme. It can be a temporary image, it will be cloned to the theme library. Note: The image must be direct link to the PNG file. E.g. an (`https://i.imgur.com/cWzvOqq.png`) This image should contain a preview of the bar only. DO NOT USER ibb.co"
-      placeholder: https://example.com/image.png
+      description: >-
+        One PNG screenshot of your bar, taken with the screenshot tool built into YASB:
+        right-click an empty part of the bar and choose "Take Screenshot".
+        The image is saved in your `Pictures\YASB_Screenshots` folder.
     validations:
       required: true
+      accept: ".png"
   - type: textarea
     id: styles
     attributes:
@@ -54,7 +63,23 @@ body:
     attributes:
       render: markdown
       label: Readme
-      description: The Markdown README file for the theme. Please include a preview of the theme, as well as any relevant information about the theme, such as the fonts needed. Here is an example of a [README file](https://github.com/amnweb/yasb-themes/blob/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/readme.md). DO NOT USER ibb.co for images.
+      description: >-
+        The README for your theme, in Markdown. It must include a preview image, a list of the widgets the theme uses and the fonts it needs.
+        Here is an example of a [README file](https://github.com/amnweb/yasb-themes/blob/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/readme.md).
+        Use images hosted on GitHub, for example in your theme's own repository. (IMPORTANT: Do not use ibb.co).
+        
+      placeholder: |
+        # Theme name
+
+        ![Preview](https://raw.githubusercontent.com/your-name/your-theme/main/preview.png)
+
+        ## Widgets
+        - Clock
+        - Volume
+        - Media
+
+        ## Fonts
+        - JetBrainsMono Nerd Font
     validations:
       required: true
   - type: markdown

@@ -4,7 +4,7 @@ THEMES_DATA_FILE = "./themes.json"
 
 
 def load_themes_data():
-    with open(THEMES_DATA_FILE, "r") as f:
+    with open(THEMES_DATA_FILE) as f:
         return json.load(f)
 
 
@@ -31,7 +31,7 @@ def generate_readme(themes_data):
             ">\n"
             "> Please submit clean and well formatted themes. We have a bot that will automatically process your theme, and if it is not well formatted, it will be closed without being merged.\n"
             ">\n"
-            '> For screenshots you can use build-in function in YASB, right click on the panel and select "Take a Screenshot" to save it as an image.\n'
+            '> For the preview image use the screenshot tool built into YASB: right-click an empty part of the bar and select "Take Screenshot". The image is saved in your `Pictures\\YASB_Screenshots` folder.\n'
             ">\n"
         )
         readme.write("## Submitting a Theme\n\n")

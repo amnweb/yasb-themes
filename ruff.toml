@@ -1,0 +1,13 @@
+line-length = 120
+target-version = "py314"
+
+[lint]
+select = ["I", "F", "UP", "G004"]
+ignore = ["F405", "F403", "E741"]
+fixable = ["ALL"]
+
+[format]
+docstring-code-format = true
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false

@@ -1,0 +1,136 @@
+name: Theme compatibility check
+run-name: ${{ inputs.close_only && 'Close fixed compatibility issues' || 'Theme compatibility check' }}
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Only report what would change, without touching issues or themes
+        type: boolean
+        default: false
+      max_new_issues:
+        description: Stop instead of opening more new issues than this in one run
+        type: number
+        default: 25
+      close_only:
+        description: Only close issues of themes that pass now (used after a fix is merged)
+        type: boolean
+        default: false
+
+env:
+  PYTHON_VERSION: '3.14'
+  GRACE_DAYS: 7
+
+concurrency:
+  group: theme-compatibility
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Check all themes
+    runs-on: windows-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Find latest YASB release
+        id: yasb
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$(gh release view --repo amnweb/yasb --json tagName --jq .tagName)"
+          echo "tag=${tag:?No YASB release found}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout YASB repo
+        uses: actions/checkout@v6
+        with:
+          repository: amnweb/yasb
+          ref: ${{ steps.yasb.outputs.tag }}
+          path: yasb-repo
+          persist-credentials: false
+
+      - name: Install python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install YASB dependencies
+        run: |
+          pip install ./yasb-repo
+
+      - name: Check themes
+        shell: bash
+        env:
+          YASB_REF: ${{ steps.yasb.outputs.tag }}
+          BLOB_URL: https://github.com/${{ github.repository }}/blob/main
+        run: |
+          python .github/scripts/check-themes.py --yasb-ref "$YASB_REF" --blob-url "$BLOB_URL" \
+            --report report.json --markdown "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report
+        uses: actions/upload-artifact@v7
+        with:
+          name: theme-compatibility-report
+          path: report.json
+          retention-days: 30
+
+  issues:
+    name: Update compatibility issues
+    needs: check
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Install python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Download report
+        uses: actions/download-artifact@v8
+        with:
+          name: theme-compatibility-report
+
+      - name: Plan changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          MAX_NEW_ISSUES: ${{ inputs.max_new_issues || 25 }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+          CLOSE_ONLY: ${{ inputs.close_only && '--close-only' || '' }}
+        run: |
+          python .github/scripts/theme-compat.py plan --report report.json --plan plan.json \
+            --grace-days "$GRACE_DAYS" --max-new-issues "$MAX_NEW_ISSUES" --summary "$GITHUB_STEP_SUMMARY" $DRY_RUN $CLOSE_ONLY
+
+      - name: Commit theme status changes
+        if: hashFiles('commit-message.txt') != ''
+        run: |
+          python .github/scripts/generate-readme.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add themes.json README.md
+          git commit -F commit-message.txt
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Update issues
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python .github/scripts/theme-compat.py apply --plan plan.json

@@ -1,0 +1,76 @@
+name: Check theme PR
+on:
+  pull_request:
+    paths:
+      - 'themes/**'
+
+env:
+  PYTHON_VERSION: '3.14'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check changed themes
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+
+      - name: Find latest YASB release
+        id: yasb
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$(gh release view --repo amnweb/yasb --json tagName --jq .tagName)"
+          echo "tag=${tag:?No YASB release found}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout YASB repo
+        uses: actions/checkout@v6
+        with:
+          repository: amnweb/yasb
+          ref: ${{ steps.yasb.outputs.tag }}
+          path: yasb-repo
+          persist-credentials: false
+
+      - name: Install python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install YASB dependencies
+        run: |
+          pip install ./yasb-repo
+
+      - name: Check themes
+        shell: bash
+        env:
+          YASB_REF: ${{ steps.yasb.outputs.tag }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_AUTHOR: >-
+            ${{ github.event.pull_request.user.type == 'User'
+            && github.event.pull_request.user.login != github.repository_owner
+            && github.event.pull_request.user.login || '' }}
+          BLOB_URL: https://github.com/${{ github.repository }}/blob/${{ github.event.pull_request.head.sha }}
+        run: |
+          mkdir -p pr-check
+          echo "$PR_NUMBER" > pr-check/pr-number.txt
+          status=0
+          python .github/scripts/check-themes.py --changed-since HEAD^1 --yasb-ref "$YASB_REF" --blob-url "$BLOB_URL" \
+            --pr-author "$PR_AUTHOR" --markdown pr-check/comment.md --annotate --fail-on-problems || status=$?
+          cat pr-check/comment.md >> "$GITHUB_STEP_SUMMARY"
+          exit $status
+
+      - name: Upload check result
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: theme-pr-check
+          path: pr-check/
+          retention-days: 7

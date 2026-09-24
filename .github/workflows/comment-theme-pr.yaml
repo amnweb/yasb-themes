@@ -1,0 +1,62 @@
+name: Comment theme PR check
+on:
+  workflow_run:
+    workflows: ["Check theme PR"]
+    types: [completed]
+
+permissions:
+  actions: read
+  pull-requests: write
+
+jobs:
+  comment:
+    name: Comment check result
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion != 'cancelled'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download check result
+        id: download
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: theme-pr-check
+          path: pr-check
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Find pull request
+        id: pr
+        if: steps.download.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          number="$(head -n 1 pr-check/pr-number.txt)"
+          if ! [[ "$number" =~ ^[0-9]+$ ]]; then
+            echo "Invalid pull request number: $number"
+            exit 1
+          fi
+          # The artifact is written by pull request code, so only trust the number if it matches the checked commit.
+          if [ "$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number" --jq .head.sha)" != "$HEAD_SHA" ]; then
+            echo "Pull request #$number is no longer at $HEAD_SHA, a newer check will comment instead."
+            exit 0
+          fi
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+
+      - name: Find previous comment
+        id: find
+        if: steps.pr.outputs.number
+        uses: peter-evans/find-comment@v4
+        with:
+          issue-number: ${{ steps.pr.outputs.number }}
+          comment-author: github-actions[bot]
+          body-includes: <!-- theme-pr-check -->
+
+      - name: Comment check result
+        if: steps.pr.outputs.number
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          issue-number: ${{ steps.pr.outputs.number }}
+          comment-id: ${{ steps.find.outputs.comment-id }}
+          body-path: pr-check/comment.md
+          edit-mode: replace
