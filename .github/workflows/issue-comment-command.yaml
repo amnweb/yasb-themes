@@ -1,4 +1,4 @@
-name: Handle YasbBot issue comment
+name: Handle theme command
 
 on:
   issue_comment:
@@ -16,7 +16,7 @@ jobs:
     if: >-
       github.event.issue.pull_request == null &&
       github.event.comment.user.login == github.repository_owner &&
-      startsWith(github.event.comment.body, '/yasbbot')
+      startsWith(github.event.comment.body, '/theme ')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -29,12 +29,14 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Parse /yasbbot command
+      - name: Parse /theme command
         id: parse
         env:
           ISSUE_COMMENT_BODY: ${{ github.event.comment.body }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          COMPATIBILITY_ISSUE: ${{ contains(github.event.issue.labels.*.name, 'theme-compatibility') }}
         run: |
-          python .github/scripts/handle-yasbbot-comment.py
+          python .github/scripts/handle-theme-command.py
 
       - name: Rebuild README
         run: |
@@ -60,13 +62,12 @@ jobs:
         uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.issue.number }}
-          body: |
-            I've ${{ fromJSON(steps.parse.outputs.result_json).action }}d theme “${{ fromJSON(steps.parse.outputs.result_json).theme_name }}” (ID: ${{ fromJSON(steps.parse.outputs.result_json).theme_id }}).
-            The repository README have been refreshed to reflect the current status.
+          body: ${{ fromJSON(steps.parse.outputs.result_json).message }}
 
       - name: Close issue
-        if: success()
+        if: fromJSON(steps.parse.outputs.result_json).close_reason != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLOSE_REASON: ${{ fromJSON(steps.parse.outputs.result_json).close_reason }}
         run: |
-          gh issue close ${{ github.event.issue.number }} --reason completed
+          gh issue close ${{ github.event.issue.number }} --reason "$CLOSE_REASON"

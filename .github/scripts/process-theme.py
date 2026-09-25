@@ -1,25 +1,28 @@
-import os
-import json
-import re
-import uuid
-import sys
-import requests
-import urllib.parse
 import datetime
-import yaml
+import json
+import os
+import re
+import sys
+import urllib.parse
+import uuid
 
-sys.path.insert(0, os.path.abspath("./yasb-repo/src"))
-try:
-    from core.validation.deprecation import migrate_config
-    from core.validation.config import YasbConfig
-except ImportError as e:
-    print(f"ERROR: Could not import YASB core validation modules: {e}", file=sys.stderr)
-    exit(1)
+import requests
+from theme_check import CheckError, Yasb
 
 STYLES_FILE = "styles.css"
 README_FILE = "readme.md"
 IMAGE_FILE = "image.png"
 CONFIG_FILE = "config.yaml"
+IMAGE_URL_RE = re.compile(r'\]\((https://[^)\s]+)\)|src="(https://[^"]+)"|(https://\S+)')
+FORM_FIELDS = {
+    "Name": "name",
+    "Description": "description",
+    "Homepage": "homepage",
+    "Image": "image",
+    "Theme Styles": "styles",
+    "Theme Config": "config",
+    "Readme": "readme",
+}
 
 
 def create_theme_id():
@@ -55,9 +58,7 @@ def validate_name(name):
         exit(1)
     for char in name:
         if not char.isalnum() and char != " ":
-            print(
-                "Name must only contain letters, numbers, and spaces.", file=sys.stderr
-            )
+            print("Name must only contain letters, numbers, and spaces.", file=sys.stderr)
             exit(1)
 
 
@@ -108,46 +109,42 @@ def strip_markdown_block(content, lang):
     return content.strip()
 
 
+def extract_image_urls(value):
+    urls = []
+    for match in IMAGE_URL_RE.finditer(value or ""):
+        url = next(group for group in match.groups() if group)
+        if url not in urls:
+            urls.append(url)
+    return urls
+
+
 def parse_issue_body(body: str) -> dict:
+    headings = []
+    position = 0
+    for label, key in FORM_FIELDS.items():
+        match = re.compile(rf"^### {re.escape(label)}[ \t]*\r?$", re.MULTILINE).search(body, position)
+        if match:
+            headings.append((key, match.start(), match.end()))
+            position = match.end()
     data = {}
-    import re
-
-    parts = re.split(r"^###\s+", body, flags=re.MULTILINE)
-    for part in parts:
-        part = part.strip()
-        if not part:
-            continue
-        lines = part.split("\n", 1)
-        key = lines[0].strip()
-        value = lines[1].strip() if len(lines) > 1 else ""
-        if value == "_No response_":
-            value = ""
-
-        if key == "Name":
-            data["name"] = value
-        elif key == "Description":
-            data["description"] = value
-        elif key == "Homepage":
-            data["homepage"] = value
-        elif key == "Image":
-            data["image"] = value
-        elif key == "Theme Styles":
-            data["styles"] = value
-        elif key == "Theme Config":
-            data["config"] = value
-        elif key == "Readme":
-            data["readme"] = value
+    for index, (key, _, start) in enumerate(headings):
+        end = headings[index + 1][1] if index + 1 < len(headings) else len(body)
+        value = body[start:end].strip()
+        data[key] = "" if value == "_No response_" else value
     return data
 
 
 def main():
+    # Windows runners default to cp1252 for redirected output, which cannot encode many config values.
+    for stream in (sys.stdout, sys.stderr):
+        stream.reconfigure(encoding="utf-8")
     event_path = os.environ.get("GITHUB_EVENT_PATH")
     if not event_path or not os.path.exists(event_path):
         print("GITHUB_EVENT_PATH is missing or file does not exist.", file=sys.stderr)
         exit(1)
 
     try:
-        with open(event_path, "r", encoding="utf-8") as f:
+        with open(event_path, encoding="utf-8") as f:
             event_data = json.load(f)
     except Exception as e:
         print(f"Failed to parse GITHUB_EVENT_PATH: {e}", file=sys.stderr)
@@ -163,7 +160,7 @@ def main():
     name = issue_data.get("name", "")
     description = sanitize_description(issue_data.get("description", ""))
     homepage = issue_data.get("homepage", "")
-    image = issue_data.get("image", "")
+    image_urls = extract_image_urls(issue_data.get("image", ""))
     author = os.environ.get("THEME_AUTHOR", "Unknown")
 
     styles_content = strip_markdown_block(issue_data.get("styles", ""), "css")
@@ -172,69 +169,30 @@ def main():
 
     validate_name(name)
     validate_description(description)
+    if len(image_urls) != 1:
+        print(
+            f"Please upload exactly one PNG screenshot of your bar in the Image field (found {len(image_urls)}).",
+            file=sys.stderr,
+        )
+        exit(1)
+    image = image_urls[0]
     validate_url(image)
     validate_url(homepage, allow_empty=True)
 
     try:
-        print(
-            "Starting validation of config with YASB deprecation scanner...",
-            file=sys.stderr,
-        )
-        patched_config, issues = migrate_config(config_content)
-        if issues:
-            print(
-                f"ERROR: Found {len(issues)} deprecation issues. Please update your config:",
-                file=sys.stderr,
-            )
-            for issue in issues:
-                print(
-                    f" - {issue['action']} on {issue['path']}: {issue['message']}",
-                    file=sys.stderr,
-                )
-            exit(1)
-
-        print("Starting validation of config against YASB schema...", file=sys.stderr)
-        config_dict = yaml.safe_load(patched_config)
-        YasbConfig.model_validate(config_dict)
-
-        # Validate individual widgets
-        from importlib import import_module
-
-        widgets = config_dict.get("widgets", {})
-        for wname, wdata in widgets.items():
-            if not isinstance(wdata, dict):
-                continue
-            wtype = wdata.get("type", "")
-            if not wtype:
-                continue
-            try:
-                mod, cls_name = wtype.rsplit(".", 1)
-                schema = getattr(
-                    import_module(f"core.widgets.{mod}"), cls_name
-                ).validation_schema
-            except Exception as e:
-                print(
-                    f"Warning: Could not load schema for widget type '{wtype}': {e}",
-                    file=sys.stderr,
-                )
-                continue
-
-            opts = wdata.get("options")
-            if isinstance(opts, dict):
-                try:
-                    schema.model_validate(opts)
-                except Exception as e:
-                    print(
-                        f"ERROR: Widget '{wname}' validation failed: {e}",
-                        file=sys.stderr,
-                    )
-                    exit(1)
-
-        print("Config validation passed successfully.", file=sys.stderr)
-        config_content = patched_config
-    except Exception as e:
-        print(f"Config validation failed: {e}", file=sys.stderr)
+        problems, _, _ = Yasb("./yasb-repo/src").check_config(config_content)
+    except CheckError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
         exit(1)
+    if problems:
+        print(f"ERROR: Found {len(problems)} problem(s) in your config. Please update it:", file=sys.stderr)
+        for problem in problems:
+            location = ", ".join(
+                part for part in (problem.path, f"line {problem.line}" if problem.line else "") if part
+            )
+            print(f" - {location}: {problem.message}" if location else f" - {problem.message}", file=sys.stderr)
+        exit(1)
+    print("Config validation passed successfully.", file=sys.stderr)
 
     theme_id = create_theme_id()
     current_time = datetime.datetime.now().isoformat()

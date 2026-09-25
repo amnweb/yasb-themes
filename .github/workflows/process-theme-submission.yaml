@@ -25,10 +25,20 @@ jobs:
         run: |
           pip install requests pyyaml
 
+      - name: Find latest YASB release
+        id: yasb
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$(gh release view --repo amnweb/yasb --json tagName --jq .tagName)"
+          echo "tag=${tag:?No YASB release found}" >> "$GITHUB_OUTPUT"
+
       - name: Checkout YASB repo
         uses: actions/checkout@v6
         with:
           repository: amnweb/yasb
+          ref: ${{ steps.yasb.outputs.tag }}
           path: yasb-repo
 
       - name: Install YASB dependencies
@@ -72,6 +82,7 @@ jobs:
             ```
 
       - name: Create Pull Request
+        id: create-pr
         uses: peter-evans/create-pull-request@v8
         if: success()
         with:
@@ -103,7 +114,7 @@ jobs:
             Your theme has been successfully submitted. The maintainers will review it and get back to you soon.
 
             Here are some details about your submission:
-            * Your theme has been requested into [this PR](https://github.com/amnweb/yasb-themes/pull/${{ env.PULL_REQUEST_NUMBER }}).
+            * Your theme has been requested into [this PR](${{ steps.create-pr.outputs.pull-request-url }}).
             * It has been created into the [create-theme-${{ github.event.issue.number }} branch](https://github.com/amnweb/yasb-themes/tree/create-theme-${{ github.event.issue.number }}).
 
             > If you have any questions or need help, feel free to ask in the comments below or in the PR.

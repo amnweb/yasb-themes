@@ -2,16 +2,22 @@ name: Submit PR
 on:
   pull_request:
     types: [closed]
+    paths:
+      - 'themes/**'
   workflow_dispatch:
-  
+
 env:
   PYTHON_VERSION: '3.14'
 
+concurrency:
+  group: rebuild-themes
+  cancel-in-progress: false
+
 jobs:
   submitPR:
-    if: github.event.pull_request.merged == true && github.event.pull_request.user.login == 'github-actions[bot]'
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     permissions: write-all
-    name: Rebuild themes after theme submission
+    name: Rebuild themes after theme changes
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -29,17 +35,25 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Setup python modules
+        run: |
+          pip install pyyaml
+
       - name: Rebuild all themes
         run: |
           python .github/scripts/rebuild-themes.py
-        
+
       - name: Commit and push changes
         run: |
           git add themes.json
           git add themes/*
-          git commit -m "Rebuild themes.json after theme submission" --allow-empty
-          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
-          git push
+          if git diff --cached --quiet; then
+            echo "themes.json is already up to date."
+          else
+            git commit -m "Rebuild themes.json after theme changes"
+            git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+            git push
+          fi
 
   generateReadme:
     needs: submitPR
@@ -73,6 +87,43 @@ jobs:
       - name: Commit and push changes
         run: |
           git add README.md
-          git commit -m "Update README after themes are rebuilt" --allow-empty
-          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
-          git push
+          if git diff --cached --quiet; then
+            echo "README is already up to date."
+          else
+            git commit -m "Update README after themes are rebuilt"
+            git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+            git push
+          fi
+
+  closeFixedIssues:
+    needs: generateReadme
+    if: github.event_name == 'pull_request'
+    permissions:
+      actions: write
+      contents: read
+      issues: read
+      pull-requests: read
+    name: Look for fixed compatibility issues
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Install python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Start the compatibility check if a tracked theme changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          themes="$(python .github/scripts/theme-compat.py tracked-in-pr "$PR_NUMBER")"
+          if [ -n "$themes" ]; then
+            echo "This merge changed themes with an open compatibility issue: $themes"
+            gh workflow run theme-compatibility.yaml -f close_only=true
+          else
+            echo "No theme with an open compatibility issue was changed."
+          fi
