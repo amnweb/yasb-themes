@@ -1,6 +1,6 @@
 name: Submit PR
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
     paths:
       - 'themes/**'
@@ -97,7 +97,7 @@ jobs:
 
   closeFixedIssues:
     needs: generateReadme
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request_target'
     permissions:
       actions: write
       contents: read
