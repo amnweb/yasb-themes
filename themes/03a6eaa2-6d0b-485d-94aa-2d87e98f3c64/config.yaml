@@ -137,15 +137,8 @@ widgets:
       change_automatically: false
       update_interval: 60
       gallery:
-        enabled: true
-        blur: false
         image_width: 220
-        image_per_page: 8
-        show_buttons: true
         orientation: "portrait"
-        image_spacing: 8
-        lazy_load: true
-        lazy_load_fadein: 10
         image_corner_radius: 0
   media:
     type: "yasb.media.MediaWidget"
@@ -226,7 +219,6 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-        max_title_size: 150
         show_date_time: true
       icons:
         note: "\udb82\udd0c"
