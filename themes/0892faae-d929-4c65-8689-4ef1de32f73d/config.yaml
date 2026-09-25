@@ -214,16 +214,7 @@ widgets:
     options:
       label: "<span>\udb83\ude09</span>"
       image_path: "C:\\Users\\amn\\Pictures\\Wallpapers"
-      change_automatically: false
-      update_interval: 60
       gallery:
-        enabled: true
-        blur: true
-        image_width: 296
-        image_per_page: 6
-        show_buttons: false
+        image_width: 240
         orientation: "portrait"
-        image_spacing: 10
-        lazy_load: true
-        lazy_load_fadein: 200
         image_corner_radius: 20
