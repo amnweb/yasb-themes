@@ -349,10 +349,9 @@ def command_apply(args):
         time.sleep(1)
 
 
-def command_tracked_in_pr(args):
-    files = json.loads(gh("pr", "view", str(args.number), "--json", "files"))["files"]
+def command_tracked_changes():
     touched = {
-        parts[1] for parts in (file["path"].split("/") for file in files) if len(parts) > 2 and parts[0] == "themes"
+        parts[1] for parts in (line.strip().split("/") for line in sys.stdin) if len(parts) > 2 and parts[0] == "themes"
     }
     tracked, _ = load_issues()
     print(" ".join(sorted(touched & set(tracked))))
@@ -374,17 +373,16 @@ def main():
     plan.add_argument("--close-only", action="store_true", help="Only close issues of themes that pass now.")
     apply = commands.add_parser("apply", help="Open, update and close the planned issues.")
     apply.add_argument("--plan", required=True)
-    tracked = commands.add_parser(
-        "tracked-in-pr", help="Print the themes changed by a pull request that have an open issue."
+    commands.add_parser(
+        "tracked-changes", help="Print the changed themes (file paths on stdin) that have an open issue."
     )
-    tracked.add_argument("number", type=int)
     args = parser.parse_args()
     if args.command == "plan":
         command_plan(args)
     elif args.command == "apply":
         command_apply(args)
     else:
-        command_tracked_in_pr(args)
+        command_tracked_changes()
 
 
 if __name__ == "__main__":

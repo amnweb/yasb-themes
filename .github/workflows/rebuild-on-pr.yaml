@@ -1,7 +1,7 @@
 name: Submit PR
 on:
-  pull_request_target:
-    types: [closed]
+  push:
+    branches: [main]
     paths:
       - 'themes/**'
   workflow_dispatch:
@@ -15,7 +15,6 @@ concurrency:
 
 jobs:
   submitPR:
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     permissions: write-all
     name: Rebuild themes after theme changes
     runs-on: ubuntu-latest
@@ -97,17 +96,18 @@ jobs:
 
   closeFixedIssues:
     needs: generateReadme
-    if: github.event_name == 'pull_request_target'
+    if: github.event_name == 'push'
     permissions:
       actions: write
       contents: read
       issues: read
-      pull-requests: read
     name: Look for fixed compatibility issues
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Install python
         uses: actions/setup-python@v6
@@ -118,11 +118,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          BEFORE: ${{ github.event.before }}
         run: |
-          themes="$(python .github/scripts/theme-compat.py tracked-in-pr "$PR_NUMBER")"
+          themes="$(git diff --name-only "$BEFORE" "$GITHUB_SHA" | python .github/scripts/theme-compat.py tracked-changes)"
           if [ -n "$themes" ]; then
-            echo "This merge changed themes with an open compatibility issue: $themes"
+            echo "This push changed themes with an open compatibility issue: $themes"
             gh workflow run theme-compatibility.yaml -f close_only=true
           else
             echo "No theme with an open compatibility issue was changed."
