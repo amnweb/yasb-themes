@@ -14,7 +14,7 @@
             "Home",
             "Custom",
             "Komorebi Workspaces",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Taskbar",
             "Audio Visualizer",
             "Media",
@@ -42,7 +42,7 @@
         "widgets": [
             "Home",
             "Custom",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Komorebi Workspaces",
             "Quick Launch",
             "Active Window",
@@ -149,7 +149,7 @@
         "publish_date": "2026-06-25T16:18:52.155692",
         "widgets": [
             "Home",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Komorebi Workspaces",
             "Quick Launch",
             "Active Window",
@@ -179,7 +179,7 @@
             "Home",
             "Custom",
             "Komorebi Workspaces",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Taskbar",
             "Audio Visualizer",
             "Media",
@@ -350,7 +350,7 @@
         "author": "initiateit",
         "publish_date": "2026-01-28T03:36:04.345476",
         "widgets": [
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Komorebi Workspaces",
             "Notifications",
             "Komorebi Stack",
@@ -524,7 +524,7 @@
         "publish_date": "2025-11-04T08:34:09.875897",
         "widgets": [
             "Komorebi Workspaces",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Home",
             "Taskbar",
             "Active Window",
@@ -638,7 +638,7 @@
         "widgets": [
             "Komorebi Workspaces",
             "Komorebi Stack",
-            "Komorebi Komorebi Layout"
+            "Komorebi Layout"
         ]
     },
     "d49a15b7-3ea1-4fd4-9fd4-3e8279c888a2": {
@@ -763,7 +763,7 @@
         "publish_date": "2025-07-25T10:52:11.213933",
         "widgets": [
             "Systray",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Komorebi Workspaces",
             "CPU",
             "Memory",
@@ -787,7 +787,7 @@
         "author": "kbuckleys",
         "publish_date": "2025-07-22T21:18:32.261456",
         "widgets": [
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Komorebi Workspaces",
             "Systray",
             "CPU",
@@ -812,7 +812,7 @@
         "author": "kbuckleys",
         "publish_date": "2025-07-11T23:25:28.310439",
         "widgets": [
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Komorebi Workspaces",
             "Systray",
             "CPU",
@@ -881,7 +881,7 @@
         "author": "kbuckleys",
         "publish_date": "2025-07-08T01:16:22.358975",
         "widgets": [
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Komorebi Workspaces",
             "Traffic",
             "CPU",
@@ -930,7 +930,7 @@
         "author": "kbuckleys",
         "publish_date": "2025-07-04T12:34:13.902244",
         "widgets": [
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Komorebi Workspaces",
             "Active Window",
             "Systray",
@@ -1029,7 +1029,7 @@
             "Home",
             "Wallpapers",
             "Komorebi Workspaces",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "WHKD",
             "Active Window",
             "Clock",
@@ -1216,7 +1216,7 @@
         "widgets": [
             "Power Menu",
             "Komorebi Workspaces",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Active Window",
             "Clock",
             "Applications",
@@ -1614,7 +1614,7 @@
         "widgets": [
             "Custom",
             "Komorebi Workspaces",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Active Window",
             "Clock",
             "Applications",
@@ -1643,7 +1643,7 @@
             "Active Window",
             "Clock",
             "Komorebi Workspaces",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Media",
             "Taskbar",
             "Weather",
@@ -1690,7 +1690,7 @@
         "widgets": [
             "Power Menu",
             "Komorebi Workspaces",
-            "Komorebi Komorebi Layout",
+            "Komorebi Layout",
             "Active Window",
             "Clock",
             "Custom",
