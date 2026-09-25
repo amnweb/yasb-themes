@@ -9,7 +9,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/image.png",
         "author": "MrDLingters",
-        "publish_date": "2026-09-22T15:58:54.755664"
+        "publish_date": "2026-09-22T15:58:54.755664",
+        "widgets": [
+            "Home",
+            "Custom",
+            "Komorebi Workspaces",
+            "Komorebi Komorebi Layout",
+            "Taskbar",
+            "Audio Visualizer",
+            "Media",
+            "Volume",
+            "Clock",
+            "Language",
+            "Quick Launch",
+            "Systray",
+            "Notifications",
+            "Wallpapers",
+            "Control Center"
+        ]
     },
     "b51c153d-397c-4be0-b7ed-4f619c6de87f": {
         "id": "b51c153d-397c-4be0-b7ed-4f619c6de87f",
@@ -21,7 +38,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b51c153d-397c-4be0-b7ed-4f619c6de87f/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b51c153d-397c-4be0-b7ed-4f619c6de87f/image.png",
         "author": "MrDLingters",
-        "publish_date": "2026-09-12T18:21:29.170797"
+        "publish_date": "2026-09-12T18:21:29.170797",
+        "widgets": [
+            "Home",
+            "Custom",
+            "Komorebi Komorebi Layout",
+            "Komorebi Workspaces",
+            "Quick Launch",
+            "Active Window",
+            "Clock",
+            "Audio Visualizer",
+            "Media",
+            "Systray",
+            "Wallpapers",
+            "Volume",
+            "Notifications",
+            "Language",
+            "Control Center"
+        ]
     },
     "59574817-3a41-4c57-adc3-c5c343193657": {
         "id": "59574817-3a41-4c57-adc3-c5c343193657",
@@ -33,7 +67,21 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/image.png",
         "author": "amnweb",
-        "publish_date": "2026-09-12T00:15:55.970233"
+        "publish_date": "2026-09-12T00:15:55.970233",
+        "widgets": [
+            "Quick Launch",
+            "Windows Desktops",
+            "Taskbar",
+            "Audio Visualizer",
+            "Systray",
+            "Open Meteo",
+            "Wallpapers",
+            "GitHub",
+            "Notifications",
+            "Volume",
+            "Clock",
+            "Control Center"
+        ]
     },
     "145eb8a1-9d1d-4b9a-b635-7c071a2d9f54": {
         "id": "145eb8a1-9d1d-4b9a-b635-7c071a2d9f54",
@@ -45,7 +93,19 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/image.png",
         "author": "Harishkumar-ghub",
-        "publish_date": "2026-08-22T10:23:29.423209"
+        "publish_date": "2026-08-22T10:23:29.423209",
+        "widgets": [
+            "Wallpapers",
+            "Memory",
+            "Quick Launch",
+            "Taskbar",
+            "Komorebi Workspaces",
+            "Clock",
+            "Traffic",
+            "Battery",
+            "Power Menu",
+            "Systray"
+        ]
     },
     "1a129f7a-1731-402d-a1c9-4733ac73fd4d": {
         "id": "1a129f7a-1731-402d-a1c9-4733ac73fd4d",
@@ -57,7 +117,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1a129f7a-1731-402d-a1c9-4733ac73fd4d/image.png",
         "author": "VAK42",
-        "publish_date": "2026-08-14T04:11:05.839889"
+        "publish_date": "2026-08-14T04:11:05.839889",
+        "widgets": [
+            "Home",
+            "GlazeWM Workspaces",
+            "GlazeWM Binding Mode",
+            "Clock",
+            "Window Controls",
+            "Control Center",
+            "WiFi",
+            "Traffic",
+            "Memory",
+            "GPU",
+            "Disk",
+            "CPU",
+            "Battery",
+            "Volume",
+            "Power Menu"
+        ]
     },
     "92a8f104-ab80-45c0-95f1-82ebb2e12df6": {
         "id": "92a8f104-ab80-45c0-95f1-82ebb2e12df6",
@@ -69,7 +146,23 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/image.png",
         "author": "MrDLingters",
-        "publish_date": "2026-06-25T16:18:52.155692"
+        "publish_date": "2026-06-25T16:18:52.155692",
+        "widgets": [
+            "Home",
+            "Komorebi Komorebi Layout",
+            "Komorebi Workspaces",
+            "Quick Launch",
+            "Active Window",
+            "Clock",
+            "Media",
+            "Audio Visualizer",
+            "Systray",
+            "Wallpapers",
+            "Volume",
+            "Notifications",
+            "Language",
+            "Control Center"
+        ]
     },
     "eaf412b9-1228-4746-9277-29cb436b6909": {
         "id": "eaf412b9-1228-4746-9277-29cb436b6909",
@@ -81,7 +174,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/image.png",
         "author": "MrDLingters",
-        "publish_date": "2026-06-25T16:17:08.250504"
+        "publish_date": "2026-06-25T16:17:08.250504",
+        "widgets": [
+            "Home",
+            "Custom",
+            "Komorebi Workspaces",
+            "Komorebi Komorebi Layout",
+            "Taskbar",
+            "Audio Visualizer",
+            "Media",
+            "Volume",
+            "Clock",
+            "Language",
+            "Quick Launch",
+            "Systray",
+            "Wallpapers",
+            "Notifications",
+            "Control Center"
+        ]
     },
     "8458901e-4dfe-4833-826c-0d6591f216bd": {
         "id": "8458901e-4dfe-4833-826c-0d6591f216bd",
@@ -93,7 +203,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8458901e-4dfe-4833-826c-0d6591f216bd/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8458901e-4dfe-4833-826c-0d6591f216bd/image.png",
         "author": "dreamdev0",
-        "publish_date": "2026-05-28T10:14:19.773292"
+        "publish_date": "2026-05-28T10:14:19.773292",
+        "widgets": [
+            "Home",
+            "Clock",
+            "Volume",
+            "GlazeWM Workspaces",
+            "Active Window",
+            "Media",
+            "CPU",
+            "Memory",
+            "GPU",
+            "GlazeWM Tiling Direction",
+            "GlazeWM Binding Mode",
+            "Quick Launch",
+            "Wallpapers",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "c5ec9e92-6d12-408d-9b8c-1d68c86348ca": {
         "id": "c5ec9e92-6d12-408d-9b8c-1d68c86348ca",
@@ -105,7 +232,29 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/image.png",
         "author": "Somrat10369",
-        "publish_date": "2026-04-15T03:45:35.454630"
+        "publish_date": "2026-04-15T03:45:35.454630",
+        "widgets": [
+            "Power Menu",
+            "Notes",
+            "Todo",
+            "Recycle Bin",
+            "GlazeWM Workspaces",
+            "CPU",
+            "GPU",
+            "Pomodoro",
+            "Memory",
+            "Disk",
+            "Systray",
+            "Wallpapers",
+            "Brightness",
+            "Bluetooth",
+            "WiFi",
+            "Open Meteo",
+            "Volume",
+            "Custom",
+            "Clock",
+            "Notifications"
+        ]
     },
     "3f15bb94-9971-479c-85d7-85f5a213e24e": {
         "id": "3f15bb94-9971-479c-85d7-85f5a213e24e",
@@ -117,7 +266,25 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/image.png",
         "author": "marhund",
-        "publish_date": "2026-04-13T22:11:35.906711"
+        "publish_date": "2026-04-13T22:11:35.906711",
+        "widgets": [
+            "Home",
+            "Windows Desktops",
+            "Taskbar",
+            "Media",
+            "Disk",
+            "Memory",
+            "CPU",
+            "Traffic",
+            "Notifications",
+            "Applications",
+            "Recycle Bin",
+            "Volume",
+            "Systray",
+            "Language",
+            "Clock",
+            "Weather"
+        ]
     },
     "7c2f646f-bbb1-4492-854d-3cc60b25012f": {
         "id": "7c2f646f-bbb1-4492-854d-3cc60b25012f",
@@ -129,7 +296,19 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7c2f646f-bbb1-4492-854d-3cc60b25012f/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7c2f646f-bbb1-4492-854d-3cc60b25012f/image.png",
         "author": "amnweb",
-        "publish_date": "2026-03-22T13:20:51.337114"
+        "publish_date": "2026-03-22T13:20:51.337114",
+        "widgets": [
+            "Home",
+            "Quick Launch",
+            "Clock",
+            "Systray",
+            "CPU",
+            "Memory",
+            "Open Meteo",
+            "Volume",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "80198c48-f70a-44a1-8507-ce300ff8e360": {
         "id": "80198c48-f70a-44a1-8507-ce300ff8e360",
@@ -141,7 +320,23 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/image.png",
         "author": "Hoxiee",
-        "publish_date": "2026-02-08T22:10:16.006494"
+        "publish_date": "2026-02-08T22:10:16.006494",
+        "widgets": [
+            "Home",
+            "Windows Desktops",
+            "Taskbar",
+            "Media",
+            "Clock",
+            "CPU",
+            "GPU",
+            "Memory",
+            "Traffic",
+            "Volume",
+            "Microphone",
+            "Disk",
+            "Applications",
+            "Power Menu"
+        ]
     },
     "83124e1d-7df8-4494-b901-d60a78074e56": {
         "id": "83124e1d-7df8-4494-b901-d60a78074e56",
@@ -153,7 +348,18 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/image.png",
         "author": "initiateit",
-        "publish_date": "2026-01-28T03:36:04.345476"
+        "publish_date": "2026-01-28T03:36:04.345476",
+        "widgets": [
+            "Komorebi Komorebi Layout",
+            "Komorebi Workspaces",
+            "Notifications",
+            "Komorebi Stack",
+            "Media",
+            "Active Window",
+            "Applications",
+            "Volume",
+            "Clock"
+        ]
     },
     "43cef139-7c16-4cd2-904f-7b0aa82cc7d3": {
         "id": "43cef139-7c16-4cd2-904f-7b0aa82cc7d3",
@@ -165,7 +371,27 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/43cef139-7c16-4cd2-904f-7b0aa82cc7d3/image.png",
         "author": "Louis047",
-        "publish_date": "2026-01-25T17:01:50.846681"
+        "publish_date": "2026-01-25T17:01:50.846681",
+        "widgets": [
+            "Power Menu",
+            "Media",
+            "GlazeWM Binding Mode",
+            "GlazeWM Workspaces",
+            "Active Window",
+            "Systray",
+            "Custom",
+            "Battery",
+            "WiFi",
+            "Volume",
+            "Disk",
+            "Memory",
+            "CPU",
+            "Notifications",
+            "Open Meteo",
+            "Wallpapers",
+            "Notes",
+            "Clock"
+        ]
     },
     "20650dea-7e59-4e8a-b69b-c8664666805d": {
         "id": "20650dea-7e59-4e8a-b69b-c8664666805d",
@@ -177,7 +403,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/image.png",
         "author": "stylebending",
-        "publish_date": "2026-01-24T20:53:00.622587"
+        "publish_date": "2026-01-24T20:53:00.622587",
+        "widgets": [
+            "GlazeWM Workspaces",
+            "Active Window",
+            "Taskbar",
+            "Systray",
+            "Clock",
+            "Memory",
+            "CPU",
+            "GPU",
+            "Weather",
+            "Media",
+            "Volume",
+            "Microphone",
+            "Battery",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "cd2adf60-84a1-436d-a0a9-95ac4c288928": {
         "id": "cd2adf60-84a1-436d-a0a9-95ac4c288928",
@@ -190,6 +433,24 @@
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/cd2adf60-84a1-436d-a0a9-95ac4c288928/image.png",
         "author": "kalashnikxvxiii",
         "publish_date": "2026-01-13T18:30:27.004839",
+        "widgets": [
+            "Home",
+            "Komorebi Workspaces",
+            "Systray",
+            "Disk",
+            "Applications",
+            "Media",
+            "Volume",
+            "Clock",
+            "Weather",
+            "Active Window",
+            "Taskbar",
+            "CPU",
+            "Memory",
+            "WiFi",
+            "Traffic",
+            "Power Menu"
+        ],
         "disabled": true
     },
     "aad708b6-7d06-4ac5-97c5-174b6b03f6fc": {
@@ -202,7 +463,25 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/aad708b6-7d06-4ac5-97c5-174b6b03f6fc/image.png",
         "author": "ii5601",
-        "publish_date": "2026-01-05T14:19:50.678950"
+        "publish_date": "2026-01-05T14:19:50.678950",
+        "widgets": [
+            "Komorebi Control",
+            "Update Check",
+            "Komorebi Workspaces",
+            "Language",
+            "Media",
+            "Cava",
+            "Clock",
+            "Memory",
+            "CPU",
+            "Traffic",
+            "Disk",
+            "Volume",
+            "GitHub",
+            "Notes",
+            "Launchpad",
+            "Power Menu"
+        ]
     },
     "4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3": {
         "id": "4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3",
@@ -214,7 +493,23 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/4fb3772e-68c3-4c6e-ae2f-44b256dfc2f3/image.png",
         "author": "AMVZEN",
-        "publish_date": "2026-01-01T12:00:09.584874"
+        "publish_date": "2026-01-01T12:00:09.584874",
+        "widgets": [
+            "Home",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "Applications",
+            "Update Check",
+            "Wallpapers",
+            "Media",
+            "Weather",
+            "Memory",
+            "Recycle Bin",
+            "WiFi",
+            "Volume",
+            "Power Menu"
+        ]
     },
     "179863d1-4b68-4126-92b5-621a671b49de": {
         "id": "179863d1-4b68-4126-92b5-621a671b49de",
@@ -226,7 +521,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/179863d1-4b68-4126-92b5-621a671b49de/image.png",
         "author": "willowsplace",
-        "publish_date": "2025-11-04T08:34:09.875897"
+        "publish_date": "2025-11-04T08:34:09.875897",
+        "widgets": [
+            "Komorebi Workspaces",
+            "Komorebi Komorebi Layout",
+            "Home",
+            "Taskbar",
+            "Active Window",
+            "Weather",
+            "Clock",
+            "Media",
+            "Notifications",
+            "Systray",
+            "Memory",
+            "CPU",
+            "Disk",
+            "Volume",
+            "Microphone"
+        ]
     },
     "d513044f-9218-46e1-ab62-c15705b80341": {
         "id": "d513044f-9218-46e1-ab62-c15705b80341",
@@ -238,7 +550,25 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d513044f-9218-46e1-ab62-c15705b80341/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d513044f-9218-46e1-ab62-c15705b80341/image.png",
         "author": "shawanGIT",
-        "publish_date": "2025-10-27T14:20:14.887651"
+        "publish_date": "2025-10-27T14:20:14.887651",
+        "widgets": [
+            "Power Menu",
+            "Active Window",
+            "CPU",
+            "Memory",
+            "Traffic",
+            "Media",
+            "Taskbar",
+            "Clock",
+            "Custom",
+            "Brightness",
+            "Battery",
+            "Weather",
+            "Language",
+            "Notifications",
+            "WiFi",
+            "Bluetooth"
+        ]
     },
     "758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2": {
         "id": "758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2",
@@ -250,7 +580,20 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/image.png",
         "author": "Pikolosan",
-        "publish_date": "2025-10-21T14:57:43.857661"
+        "publish_date": "2025-10-21T14:57:43.857661",
+        "widgets": [
+            "Home",
+            "Taskbar",
+            "Clock",
+            "Applications",
+            "Media",
+            "WiFi",
+            "Microphone",
+            "Volume",
+            "Notifications",
+            "Battery",
+            "Power Menu"
+        ]
     },
     "568d5480-ee9e-4723-9079-8271a03f2466": {
         "id": "568d5480-ee9e-4723-9079-8271a03f2466",
@@ -262,7 +605,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/568d5480-ee9e-4723-9079-8271a03f2466/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/568d5480-ee9e-4723-9079-8271a03f2466/image.png",
         "author": "airfortech",
-        "publish_date": "2025-09-30T21:26:46.997570"
+        "publish_date": "2025-09-30T21:26:46.997570",
+        "widgets": [
+            "Home",
+            "Taskbar",
+            "Launchpad",
+            "Clock",
+            "Weather",
+            "Media",
+            "Systray",
+            "CPU",
+            "Memory",
+            "Disk",
+            "Traffic",
+            "Volume",
+            "Applications",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "a9196539-7f17-434a-b58d-80f33dd9374b": {
         "id": "a9196539-7f17-434a-b58d-80f33dd9374b",
@@ -274,7 +634,12 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a9196539-7f17-434a-b58d-80f33dd9374b/image.png",
         "author": "SSeanin",
-        "publish_date": "2025-09-29T07:13:52.966510"
+        "publish_date": "2025-09-29T07:13:52.966510",
+        "widgets": [
+            "Komorebi Workspaces",
+            "Komorebi Stack",
+            "Komorebi Komorebi Layout"
+        ]
     },
     "d49a15b7-3ea1-4fd4-9fd4-3e8279c888a2": {
         "id": "d49a15b7-3ea1-4fd4-9fd4-3e8279c888a2",
@@ -286,7 +651,19 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d49a15b7-3ea1-4fd4-9fd4-3e8279c888a2/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/d49a15b7-3ea1-4fd4-9fd4-3e8279c888a2/image.png",
         "author": "Rohithgg",
-        "publish_date": "2025-09-24T13:50:51.090929"
+        "publish_date": "2025-09-24T13:50:51.090929",
+        "widgets": [
+            "Home",
+            "Active Window",
+            "Pomodoro",
+            "Media",
+            "Traffic",
+            "Volume",
+            "WiFi",
+            "Clock",
+            "Battery",
+            "Notifications"
+        ]
     },
     "e7e83db9-dad5-45b5-a65d-f6a189e7634f": {
         "id": "e7e83db9-dad5-45b5-a65d-f6a189e7634f",
@@ -298,7 +675,21 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f/image.png",
         "author": "MateussDev-backrooms",
-        "publish_date": "2025-08-17T18:28:52.058479"
+        "publish_date": "2025-08-17T18:28:52.058479",
+        "widgets": [
+            "Volume",
+            "Media",
+            "Bluetooth",
+            "CPU",
+            "Memory",
+            "Active Window",
+            "Weather",
+            "Traffic",
+            "Language",
+            "Notifications",
+            "Clock",
+            "Power Menu"
+        ]
     },
     "350edfcc-da1f-4aba-a5e2-f80d64940798": {
         "id": "350edfcc-da1f-4aba-a5e2-f80d64940798",
@@ -310,7 +701,27 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/350edfcc-da1f-4aba-a5e2-f80d64940798/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/350edfcc-da1f-4aba-a5e2-f80d64940798/image.png",
         "author": "SWoRD-Jr",
-        "publish_date": "2025-08-13T11:36:21.389977"
+        "publish_date": "2025-08-13T11:36:21.389977",
+        "widgets": [
+            "Home",
+            "Active Window",
+            "Media",
+            "Cava",
+            "Clock",
+            "Weather",
+            "Traffic",
+            "CPU",
+            "Memory",
+            "GPU",
+            "Disk",
+            "Volume",
+            "Microphone",
+            "Wallpapers",
+            "GitHub",
+            "Notifications",
+            "Update Check",
+            "Power Menu"
+        ]
     },
     "b243b2d0-9985-4a0f-a347-70ece4f634ce": {
         "id": "b243b2d0-9985-4a0f-a347-70ece4f634ce",
@@ -322,7 +733,22 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b243b2d0-9985-4a0f-a347-70ece4f634ce/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/b243b2d0-9985-4a0f-a347-70ece4f634ce/image.png",
         "author": "amnweb",
-        "publish_date": "2025-07-30T01:08:49.448578"
+        "publish_date": "2025-07-30T01:08:49.448578",
+        "widgets": [
+            "Home",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "Systray",
+            "Memory",
+            "CPU",
+            "Weather",
+            "Language",
+            "Media",
+            "Volume",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "e675b585-4fad-4056-89ba-e318faeadab5": {
         "id": "e675b585-4fad-4056-89ba-e318faeadab5",
@@ -334,7 +760,20 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e675b585-4fad-4056-89ba-e318faeadab5/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e675b585-4fad-4056-89ba-e318faeadab5/image.png",
         "author": "kbuckleys",
-        "publish_date": "2025-07-25T10:52:11.213933"
+        "publish_date": "2025-07-25T10:52:11.213933",
+        "widgets": [
+            "Systray",
+            "Komorebi Komorebi Layout",
+            "Komorebi Workspaces",
+            "CPU",
+            "Memory",
+            "Traffic",
+            "Weather",
+            "Clock",
+            "Volume",
+            "Media",
+            "Notifications"
+        ]
     },
     "5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d": {
         "id": "5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d",
@@ -346,7 +785,20 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5a8d2313-47ab-4b9d-89ce-fe2aaeb9720d/image.png",
         "author": "kbuckleys",
-        "publish_date": "2025-07-22T21:18:32.261456"
+        "publish_date": "2025-07-22T21:18:32.261456",
+        "widgets": [
+            "Komorebi Komorebi Layout",
+            "Komorebi Workspaces",
+            "Systray",
+            "CPU",
+            "Memory",
+            "Traffic",
+            "Weather",
+            "Clock",
+            "Volume",
+            "Media",
+            "Notifications"
+        ]
     },
     "0c710881-e0ae-4deb-9257-2a096e9c7408": {
         "id": "0c710881-e0ae-4deb-9257-2a096e9c7408",
@@ -358,7 +810,20 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0c710881-e0ae-4deb-9257-2a096e9c7408/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0c710881-e0ae-4deb-9257-2a096e9c7408/image.png",
         "author": "kbuckleys",
-        "publish_date": "2025-07-11T23:25:28.310439"
+        "publish_date": "2025-07-11T23:25:28.310439",
+        "widgets": [
+            "Komorebi Komorebi Layout",
+            "Komorebi Workspaces",
+            "Systray",
+            "CPU",
+            "Memory",
+            "Traffic",
+            "Weather",
+            "Clock",
+            "Volume",
+            "Media",
+            "Notifications"
+        ]
     },
     "5ef86699-f1c7-4d48-a122-5822cecc9295": {
         "id": "5ef86699-f1c7-4d48-a122-5822cecc9295",
@@ -370,7 +835,16 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5ef86699-f1c7-4d48-a122-5822cecc9295/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5ef86699-f1c7-4d48-a122-5822cecc9295/image.png",
         "author": "Regling",
-        "publish_date": "2025-07-09T15:21:06.047941"
+        "publish_date": "2025-07-09T15:21:06.047941",
+        "widgets": [
+            "Komorebi Workspaces",
+            "Taskbar",
+            "Active Window",
+            "Systray",
+            "Language",
+            "Clock",
+            "Notifications"
+        ]
     },
     "9998412b-98ec-4e5f-8352-a1f4dbe4aa9d": {
         "id": "9998412b-98ec-4e5f-8352-a1f4dbe4aa9d",
@@ -382,7 +856,18 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/9998412b-98ec-4e5f-8352-a1f4dbe4aa9d/image.png",
         "author": "Noamiko613",
-        "publish_date": "2025-07-09T14:30:48.394222"
+        "publish_date": "2025-07-09T14:30:48.394222",
+        "widgets": [
+            "Power Menu",
+            "Media",
+            "Applications",
+            "Weather",
+            "WiFi",
+            "Bluetooth",
+            "Battery",
+            "Clock",
+            "Volume"
+        ]
     },
     "70d6d094-4e30-46cd-a385-c43476cbb52e": {
         "id": "70d6d094-4e30-46cd-a385-c43476cbb52e",
@@ -394,7 +879,19 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/70d6d094-4e30-46cd-a385-c43476cbb52e/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/70d6d094-4e30-46cd-a385-c43476cbb52e/image.png",
         "author": "kbuckleys",
-        "publish_date": "2025-07-08T01:16:22.358975"
+        "publish_date": "2025-07-08T01:16:22.358975",
+        "widgets": [
+            "Komorebi Komorebi Layout",
+            "Komorebi Workspaces",
+            "Traffic",
+            "CPU",
+            "Active Window",
+            "Media",
+            "Systray",
+            "Clock",
+            "Volume",
+            "Notifications"
+        ]
     },
     "764a14e0-2d6a-4826-994a-9289857886ba": {
         "id": "764a14e0-2d6a-4826-994a-9289857886ba",
@@ -406,7 +903,20 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/764a14e0-2d6a-4826-994a-9289857886ba/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/764a14e0-2d6a-4826-994a-9289857886ba/image.png",
         "author": "aleksander431",
-        "publish_date": "2025-07-07T17:54:12.291543"
+        "publish_date": "2025-07-07T17:54:12.291543",
+        "widgets": [
+            "Power Menu",
+            "Applications",
+            "Systray",
+            "Media",
+            "Taskbar",
+            "Clock",
+            "WiFi",
+            "Bluetooth",
+            "Volume",
+            "Brightness",
+            "Language"
+        ]
     },
     "186930eb-4621-4aba-bce5-42959863e988": {
         "id": "186930eb-4621-4aba-bce5-42959863e988",
@@ -418,7 +928,19 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/186930eb-4621-4aba-bce5-42959863e988/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/186930eb-4621-4aba-bce5-42959863e988/image.png",
         "author": "kbuckleys",
-        "publish_date": "2025-07-04T12:34:13.902244"
+        "publish_date": "2025-07-04T12:34:13.902244",
+        "widgets": [
+            "Komorebi Komorebi Layout",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Systray",
+            "Traffic",
+            "CPU",
+            "Volume",
+            "Clock",
+            "Media",
+            "Notifications"
+        ]
     },
     "0d077c3f-e206-4425-8077-c64819cea1d1": {
         "id": "0d077c3f-e206-4425-8077-c64819cea1d1",
@@ -430,7 +952,18 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0d077c3f-e206-4425-8077-c64819cea1d1/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0d077c3f-e206-4425-8077-c64819cea1d1/image.png",
         "author": "kbuckleys",
-        "publish_date": "2025-07-03T10:46:41.942961"
+        "publish_date": "2025-07-03T10:46:41.942961",
+        "widgets": [
+            "GlazeWM Workspaces",
+            "Active Window",
+            "Systray",
+            "Traffic",
+            "CPU",
+            "Volume",
+            "Clock",
+            "Media",
+            "Notifications"
+        ]
     },
     "4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8": {
         "id": "4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8",
@@ -442,7 +975,17 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/4e1bbe9f-f86f-47a2-bb75-19fc8c57dbb8/image.png",
         "author": "Regling",
-        "publish_date": "2025-06-28T16:44:31.057298"
+        "publish_date": "2025-06-28T16:44:31.057298",
+        "widgets": [
+            "Language",
+            "Active Window",
+            "Clock",
+            "Komorebi Workspaces",
+            "Media",
+            "Cava",
+            "Volume",
+            "Systray"
+        ]
     },
     "03a6eaa2-6d0b-485d-94aa-2d87e98f3c64": {
         "id": "03a6eaa2-6d0b-485d-94aa-2d87e98f3c64",
@@ -454,7 +997,22 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/03a6eaa2-6d0b-485d-94aa-2d87e98f3c64/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/03a6eaa2-6d0b-485d-94aa-2d87e98f3c64/image.png",
         "author": "sumCottage",
-        "publish_date": "2025-05-27T14:17:48.256769"
+        "publish_date": "2025-05-27T14:17:48.256769",
+        "widgets": [
+            "GlazeWM Workspaces",
+            "Media",
+            "Cava",
+            "Taskbar",
+            "Active Window",
+            "Notes",
+            "Wallpapers",
+            "Weather",
+            "Clock",
+            "Volume",
+            "Bluetooth",
+            "WiFi",
+            "Power Menu"
+        ]
     },
     "80ddefce-fe77-4c2e-a1a8-57388aa71d09": {
         "id": "80ddefce-fe77-4c2e-a1a8-57388aa71d09",
@@ -466,7 +1024,28 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/image.png",
         "author": "szzran",
-        "publish_date": "2025-05-22T20:30:38.039199"
+        "publish_date": "2025-05-22T20:30:38.039199",
+        "widgets": [
+            "Home",
+            "Wallpapers",
+            "Komorebi Workspaces",
+            "Komorebi Komorebi Layout",
+            "WHKD",
+            "Active Window",
+            "Clock",
+            "Systray",
+            "Media",
+            "Language",
+            "OBS",
+            "Volume",
+            "Microphone",
+            "WiFi",
+            "Battery",
+            "Applications",
+            "Update Check",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "26445e2e-61f6-4ada-bc5e-ffdf53cc0d11": {
         "id": "26445e2e-61f6-4ada-bc5e-ffdf53cc0d11",
@@ -478,7 +1057,17 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/26445e2e-61f6-4ada-bc5e-ffdf53cc0d11/image.png",
         "author": "Regling",
-        "publish_date": "2025-05-09T05:04:01.095978"
+        "publish_date": "2025-05-09T05:04:01.095978",
+        "widgets": [
+            "Taskbar",
+            "Weather",
+            "Media",
+            "Komorebi Workspaces",
+            "Systray",
+            "Volume",
+            "Language",
+            "Clock"
+        ]
     },
     "68dd7099-3fea-45a7-9882-6d59bb05431c": {
         "id": "68dd7099-3fea-45a7-9882-6d59bb05431c",
@@ -490,7 +1079,20 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/68dd7099-3fea-45a7-9882-6d59bb05431c/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/68dd7099-3fea-45a7-9882-6d59bb05431c/image.png",
         "author": "szbmrk",
-        "publish_date": "2025-05-02T17:42:41.704643"
+        "publish_date": "2025-05-02T17:42:41.704643",
+        "widgets": [
+            "Home",
+            "GlazeWM Workspaces",
+            "Active Window",
+            "Clock",
+            "Memory",
+            "Disk",
+            "Weather",
+            "WiFi",
+            "Volume",
+            "Battery",
+            "Power Menu"
+        ]
     },
     "38332072-b910-46e4-8315-f0094369ae52": {
         "id": "38332072-b910-46e4-8315-f0094369ae52",
@@ -502,7 +1104,26 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/38332072-b910-46e4-8315-f0094369ae52/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/38332072-b910-46e4-8315-f0094369ae52/image.png",
         "author": "Louis047",
-        "publish_date": "2025-04-26T17:19:37.646005"
+        "publish_date": "2025-04-26T17:19:37.646005",
+        "widgets": [
+            "Home",
+            "Komorebi Control",
+            "Komorebi Workspaces",
+            "Notes",
+            "Media",
+            "Clock",
+            "Systray",
+            "Disk",
+            "Memory",
+            "CPU",
+            "Battery",
+            "WiFi",
+            "Volume",
+            "Weather",
+            "Wallpapers",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "0992d77b-662a-4f6b-ad41-551279d4f716": {
         "id": "0992d77b-662a-4f6b-ad41-551279d4f716",
@@ -514,7 +1135,26 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0992d77b-662a-4f6b-ad41-551279d4f716/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0992d77b-662a-4f6b-ad41-551279d4f716/image.png",
         "author": "AlmiWasFound",
-        "publish_date": "2025-04-18T11:02:58.554122"
+        "publish_date": "2025-04-18T11:02:58.554122",
+        "widgets": [
+            "Home",
+            "Wallpapers",
+            "Update Check",
+            "CPU",
+            "Memory",
+            "Traffic",
+            "Media",
+            "GlazeWM Workspaces",
+            "Active Window",
+            "Notes",
+            "Weather",
+            "Clock",
+            "Cava",
+            "Volume",
+            "WiFi",
+            "Disk",
+            "Power Menu"
+        ]
     },
     "e67ae633-fcc8-4ce4-8f51-0c08425826d4": {
         "id": "e67ae633-fcc8-4ce4-8f51-0c08425826d4",
@@ -526,7 +1166,18 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e67ae633-fcc8-4ce4-8f51-0c08425826d4/image.png",
         "author": "kkanden",
-        "publish_date": "2025-04-13T20:13:13.807277"
+        "publish_date": "2025-04-13T20:13:13.807277",
+        "widgets": [
+            "Weather",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "Language",
+            "Cava",
+            "Media",
+            "Volume",
+            "Power Menu"
+        ]
     },
     "c44e2f37-df78-46db-a87b-4f97b5ff58da": {
         "id": "c44e2f37-df78-46db-a87b-4f97b5ff58da",
@@ -538,7 +1189,18 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c44e2f37-df78-46db-a87b-4f97b5ff58da/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c44e2f37-df78-46db-a87b-4f97b5ff58da/image.png",
         "author": "amnweb",
-        "publish_date": "2025-04-11T02:06:25.174964"
+        "publish_date": "2025-04-11T02:06:25.174964",
+        "widgets": [
+            "Home",
+            "Komorebi Control",
+            "Komorebi Workspaces",
+            "Clock",
+            "Media",
+            "Weather",
+            "Volume",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "80995015-74bd-4f7c-a0ef-9e446ffe2ea3": {
         "id": "80995015-74bd-4f7c-a0ef-9e446ffe2ea3",
@@ -550,7 +1212,22 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80995015-74bd-4f7c-a0ef-9e446ffe2ea3/image.png",
         "author": "ashwinjadhav818",
-        "publish_date": "2025-04-04T12:11:50.046771"
+        "publish_date": "2025-04-04T12:11:50.046771",
+        "widgets": [
+            "Power Menu",
+            "Komorebi Workspaces",
+            "Komorebi Komorebi Layout",
+            "Active Window",
+            "Clock",
+            "Applications",
+            "Systray",
+            "Brightness",
+            "Wallpapers",
+            "Weather",
+            "WiFi",
+            "Battery",
+            "Volume"
+        ]
     },
     "28ee1c0b-dd1e-4ff8-913a-631d727f0f3d": {
         "id": "28ee1c0b-dd1e-4ff8-913a-631d727f0f3d",
@@ -562,7 +1239,20 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/28ee1c0b-dd1e-4ff8-913a-631d727f0f3d/image.png",
         "author": "CosmicCatOS",
-        "publish_date": "2025-03-27T21:39:21"
+        "publish_date": "2025-03-27T21:39:21",
+        "widgets": [
+            "Home",
+            "Wallpapers",
+            "Media",
+            "Notifications",
+            "GlazeWM Workspaces",
+            "Active Window",
+            "Weather",
+            "Volume",
+            "Clock",
+            "Battery",
+            "Power Menu"
+        ]
     },
     "83e8a5f3-45d4-4ba1-8b2c-b97871cde018": {
         "id": "83e8a5f3-45d4-4ba1-8b2c-b97871cde018",
@@ -574,7 +1264,19 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83e8a5f3-45d4-4ba1-8b2c-b97871cde018/image.png",
         "author": "TwinkleByte",
-        "publish_date": "2025-03-26T19:10:17"
+        "publish_date": "2025-03-26T19:10:17",
+        "widgets": [
+            "GlazeWM Workspaces",
+            "Active Window",
+            "Clock",
+            "Media",
+            "Systray",
+            "Disk",
+            "Wallpapers",
+            "WiFi",
+            "Volume",
+            "Notifications"
+        ]
     },
     "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042": {
         "id": "c20aec43-2e7d-4dc0-a1a8-2dc7636ca042",
@@ -586,7 +1288,21 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/image.png",
         "author": "elrondforwin",
-        "publish_date": "2025-03-25T23:20:29"
+        "publish_date": "2025-03-25T23:20:29",
+        "widgets": [
+            "Home",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "Cava",
+            "Media",
+            "Volume",
+            "Weather",
+            "GitHub",
+            "Disk",
+            "Wallpapers",
+            "Power Menu"
+        ]
     },
     "c3bac03c-85a3-4f2f-94de-46899d1bb6dc": {
         "id": "c3bac03c-85a3-4f2f-94de-46899d1bb6dc",
@@ -598,7 +1314,24 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c3bac03c-85a3-4f2f-94de-46899d1bb6dc/image.png",
         "author": "sete22stey",
-        "publish_date": "2025-03-23T22:31:17"
+        "publish_date": "2025-03-23T22:31:17",
+        "widgets": [
+            "Komorebi Workspaces",
+            "Disk",
+            "Applications",
+            "WHKD",
+            "Media",
+            "Cava",
+            "Clock",
+            "Active Window",
+            "Taskbar",
+            "CPU",
+            "Memory",
+            "Weather",
+            "Volume",
+            "Language",
+            "WiFi"
+        ]
     },
     "bb877af1-8b7c-4a8f-a421-724d03ce7bb3": {
         "id": "bb877af1-8b7c-4a8f-a421-724d03ce7bb3",
@@ -610,7 +1343,21 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/bb877af1-8b7c-4a8f-a421-724d03ce7bb3/image.png",
         "author": "manuelernestog",
-        "publish_date": "2025-03-23T17:20:40"
+        "publish_date": "2025-03-23T17:20:40",
+        "widgets": [
+            "Home",
+            "Active Window",
+            "Clock",
+            "Weather",
+            "Systray",
+            "Media",
+            "Volume",
+            "WiFi",
+            "Battery",
+            "Applications",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "f60c809d-1378-4042-9f11-46d0e9c37cf5": {
         "id": "f60c809d-1378-4042-9f11-46d0e9c37cf5",
@@ -622,7 +1369,22 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f60c809d-1378-4042-9f11-46d0e9c37cf5/image.png",
         "author": "amnweb",
-        "publish_date": "2025-03-21T22:02:54"
+        "publish_date": "2025-03-21T22:02:54",
+        "widgets": [
+            "Home",
+            "Komorebi Workspaces",
+            "Clock",
+            "Applications",
+            "Disk",
+            "CPU",
+            "Memory",
+            "Traffic",
+            "WiFi",
+            "Weather",
+            "Volume",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "8d6f092c-8a42-4c59-8bcf-9ff1e46208e8": {
         "id": "8d6f092c-8a42-4c59-8bcf-9ff1e46208e8",
@@ -634,7 +1396,21 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8d6f092c-8a42-4c59-8bcf-9ff1e46208e8/image.png",
         "author": "amnweb",
-        "publish_date": "2025-03-06T23:37:40"
+        "publish_date": "2025-03-06T23:37:40",
+        "widgets": [
+            "Home",
+            "Komorebi Workspaces",
+            "Applications",
+            "Clock",
+            "Taskbar",
+            "Media",
+            "CPU",
+            "Memory",
+            "Weather",
+            "Volume",
+            "Notifications",
+            "Power Menu"
+        ]
     },
     "ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9": {
         "id": "ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9",
@@ -646,91 +1422,21 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/ddd48e20-26fd-4b8f-bc5d-5860cb3ecee9/image.png",
         "author": "elrondforwin",
-        "publish_date": "2025-02-24T14:07:58"
-    },
-    "7d3895d4-454b-40db-a2f9-44a238d5793b": {
-        "id": "7d3895d4-454b-40db-a2f9-44a238d5793b",
-        "name": "Windows 11 Theme",
-        "description": "Windows 11 Theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "1d70e9b2-ae9f-4697-b430-c1a8b94777a9": {
-        "id": "1d70e9b2-ae9f-4697-b430-c1a8b94777a9",
-        "name": "Yasb 002 Dynamic",
-        "description": "Yasb 002 Dynamic is a theme which follows your OS style.",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "41b5828c-ab86-4ceb-847d-f7c253d23a1a": {
-        "id": "41b5828c-ab86-4ceb-847d-f7c253d23a1a",
-        "name": "Nord Dynamic",
-        "description": "A Nord based theme, with light and dark variants.",
-        "homepage": "https://github.com/S-N00B-1/Nord-Dynamic-Yasb-Theme",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png",
-        "author": "S-N00B-1",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "1f279c28-38a1-4067-90ed-614b87dd7290": {
-        "id": "1f279c28-38a1-4067-90ed-614b87dd7290",
-        "name": "Minimal Glaze",
-        "description": "Practical, no bells or whistles",
-        "homepage": "",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png",
-        "author": "hax2",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba": {
-        "id": "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba",
-        "name": "Everforest",
-        "description": "An everforest theme, comfortable for the eyes. Both light and dark mode colours are available.",
-        "homepage": "",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png",
-        "author": "IONODO",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "61e6a045-e090-4f33-a41b-6938702eb446": {
-        "id": "61e6a045-e090-4f33-a41b-6938702eb446",
-        "name": "Yasb 001",
-        "description": "Simple yasb theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
-    },
-    "eb3be3fa-3424-4dcb-8c83-1a143526c91e": {
-        "id": "eb3be3fa-3424-4dcb-8c83-1a143526c91e",
-        "name": "Mauveyos Mocha",
-        "description": "Catppuccin Mocha inspired theme",
-        "homepage": "",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/image.png",
-        "author": "mauveyo1",
-        "publish_date": "2025-02-20T13:52:07"
+        "publish_date": "2025-02-24T14:07:58",
+        "widgets": [
+            "Home",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "Cava",
+            "Media",
+            "Volume",
+            "Weather",
+            "GitHub",
+            "Disk",
+            "Wallpapers",
+            "Power Menu"
+        ]
     },
     "0892faae-d929-4c65-8689-4ef1de32f73d": {
         "id": "0892faae-d929-4c65-8689-4ef1de32f73d",
@@ -742,31 +1448,93 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/0892faae-d929-4c65-8689-4ef1de32f73d/image.png",
         "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "Applications",
+            "Update Check",
+            "Custom",
+            "Wallpapers",
+            "GitHub",
+            "Taskbar",
+            "Weather",
+            "WHKD",
+            "Volume",
+            "Power Menu"
+        ]
     },
-    "5e5118ca-4e79-4be0-be09-144b519bfd35": {
-        "id": "5e5118ca-4e79-4be0-be09-144b519bfd35",
-        "name": "Yasb 003",
-        "description": "Yasb 003 is the theme posted on the Komorebi repository README page.",
+    "1d70e9b2-ae9f-4697-b430-c1a8b94777a9": {
+        "id": "1d70e9b2-ae9f-4697-b430-c1a8b94777a9",
+        "name": "Yasb 002 Dynamic",
+        "description": "Yasb 002 Dynamic is a theme which follows your OS style.",
         "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/image.png",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1d70e9b2-ae9f-4697-b430-c1a8b94777a9/image.png",
         "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Applications",
+            "Active Window",
+            "Komorebi Workspaces",
+            "Weather",
+            "WHKD",
+            "Taskbar",
+            "Volume",
+            "Power Menu",
+            "Clock"
+        ]
     },
-    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
-        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
-        "name": "Default",
-        "description": "Default YASB theme",
-        "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
-        "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
+    "1f279c28-38a1-4067-90ed-614b87dd7290": {
+        "id": "1f279c28-38a1-4067-90ed-614b87dd7290",
+        "name": "Minimal Glaze",
+        "description": "Practical, no bells or whistles",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/1f279c28-38a1-4067-90ed-614b87dd7290/image.png",
+        "author": "hax2",
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Home",
+            "GlazeWM Workspaces",
+            "Clock",
+            "Applications",
+            "Media",
+            "Traffic",
+            "Battery",
+            "Volume",
+            "Brightness",
+            "Weather",
+            "Power Menu"
+        ]
+    },
+    "41b5828c-ab86-4ceb-847d-f7c253d23a1a": {
+        "id": "41b5828c-ab86-4ceb-847d-f7c253d23a1a",
+        "name": "Nord Dynamic",
+        "description": "A Nord based theme, with light and dark variants.",
+        "homepage": "https://github.com/S-N00B-1/Nord-Dynamic-Yasb-Theme",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/41b5828c-ab86-4ceb-847d-f7c253d23a1a/image.png",
+        "author": "S-N00B-1",
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "CPU",
+            "Memory",
+            "Volume",
+            "Power Menu"
+        ]
     },
     "56d372d9-3806-499f-9caf-03782b11413b": {
         "id": "56d372d9-3806-499f-9caf-03782b11413b",
@@ -778,19 +1546,111 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/image.png",
         "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Media",
+            "Komorebi Workspaces",
+            "Weather",
+            "Volume",
+            "Clock",
+            "Power Menu"
+        ]
     },
-    "edb987a6-0df1-43c6-b274-0393bf469bf1": {
-        "id": "edb987a6-0df1-43c6-b274-0393bf469bf1",
-        "name": "Spectrum Symphony",
-        "description": "A vibrant theme with a harmonious blend of colors for a visually stunning experience.",
+    "5e5118ca-4e79-4be0-be09-144b519bfd35": {
+        "id": "5e5118ca-4e79-4be0-be09-144b519bfd35",
+        "name": "Yasb 003",
+        "description": "Yasb 003 is the theme posted on the Komorebi repository README page.",
         "homepage": "https://github.com/amnweb/yasb",
-        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/styles.css",
-        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/config.yaml",
-        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/readme.md",
-        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/image.png",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5e5118ca-4e79-4be0-be09-144b519bfd35/image.png",
         "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Applications",
+            "Komorebi Workspaces",
+            "Traffic",
+            "Weather",
+            "Clock",
+            "Power Menu"
+        ]
+    },
+    "61e6a045-e090-4f33-a41b-6938702eb446": {
+        "id": "61e6a045-e090-4f33-a41b-6938702eb446",
+        "name": "Yasb 001",
+        "description": "Simple yasb theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/61e6a045-e090-4f33-a41b-6938702eb446/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Active Window",
+            "Komorebi Workspaces",
+            "Media",
+            "Memory",
+            "Weather",
+            "Volume",
+            "Power Menu",
+            "Clock"
+        ]
+    },
+    "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491": {
+        "id": "6ec10fc8-8af9-4e4b-a763-1bb0a1e35491",
+        "name": "Default",
+        "description": "Default YASB theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/README.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/6ec10fc8-8af9-4e4b-a763-1bb0a1e35491/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Komorebi Workspaces",
+            "Komorebi Komorebi Layout",
+            "Active Window",
+            "Clock",
+            "Applications",
+            "Media",
+            "WiFi",
+            "CPU",
+            "Weather",
+            "Memory",
+            "Volume",
+            "Power Menu"
+        ]
+    },
+    "7d3895d4-454b-40db-a2f9-44a238d5793b": {
+        "id": "7d3895d4-454b-40db-a2f9-44a238d5793b",
+        "name": "Windows 11 Theme",
+        "description": "Windows 11 Theme",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7d3895d4-454b-40db-a2f9-44a238d5793b/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Active Window",
+            "Clock",
+            "Komorebi Workspaces",
+            "Komorebi Komorebi Layout",
+            "Media",
+            "Taskbar",
+            "Weather",
+            "Volume",
+            "Applications",
+            "Power Menu"
+        ]
     },
     "a93f1976-0c89-4593-b333-eaa374164c73": {
         "id": "a93f1976-0c89-4593-b333-eaa374164c73",
@@ -802,7 +1662,19 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/README.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/a93f1976-0c89-4593-b333-eaa374164c73/image.png",
         "author": "amnweb",
-        "publish_date": "2025-02-20T13:52:07"
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Media",
+            "CPU",
+            "Memory",
+            "Weather",
+            "Volume",
+            "Clock",
+            "Power Menu"
+        ]
     },
     "c353fb20-a4dc-40dd-baaa-71561dc0308d": {
         "id": "c353fb20-a4dc-40dd-baaa-71561dc0308d",
@@ -814,6 +1686,91 @@
         "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/readme.md",
         "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c353fb20-a4dc-40dd-baaa-71561dc0308d/image.png",
         "author": "ashwinjadhav818",
-        "publish_date": "2025-02-20T13:52:07"
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Power Menu",
+            "Komorebi Workspaces",
+            "Komorebi Komorebi Layout",
+            "Active Window",
+            "Clock",
+            "Custom",
+            "Media",
+            "Weather",
+            "Volume",
+            "WiFi",
+            "Battery"
+        ]
+    },
+    "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba": {
+        "id": "dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba",
+        "name": "Everforest",
+        "description": "An everforest theme, comfortable for the eyes. Both light and dark mode colours are available.",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/dc5c9d82-e38f-403c-ab8f-ea5dcdba62ba/image.png",
+        "author": "IONODO",
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Applications",
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "Media",
+            "Weather",
+            "CPU",
+            "Memory",
+            "Volume",
+            "Power Menu"
+        ]
+    },
+    "eb3be3fa-3424-4dcb-8c83-1a143526c91e": {
+        "id": "eb3be3fa-3424-4dcb-8c83-1a143526c91e",
+        "name": "Mauveyos Mocha",
+        "description": "Catppuccin Mocha inspired theme",
+        "homepage": "",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eb3be3fa-3424-4dcb-8c83-1a143526c91e/image.png",
+        "author": "mauveyo1",
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Komorebi Workspaces",
+            "Active Window",
+            "Clock",
+            "Media",
+            "Update Check",
+            "Wallpapers",
+            "Weather",
+            "Volume",
+            "Power Menu"
+        ]
+    },
+    "edb987a6-0df1-43c6-b274-0393bf469bf1": {
+        "id": "edb987a6-0df1-43c6-b274-0393bf469bf1",
+        "name": "Spectrum Symphony",
+        "description": "A vibrant theme with a harmonious blend of colors for a visually stunning experience.",
+        "homepage": "https://github.com/amnweb/yasb",
+        "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/styles.css",
+        "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/config.yaml",
+        "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/readme.md",
+        "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/edb987a6-0df1-43c6-b274-0393bf469bf1/image.png",
+        "author": "amnweb",
+        "publish_date": "2025-02-20T13:52:07",
+        "widgets": [
+            "Custom",
+            "Komorebi Workspaces",
+            "Traffic",
+            "Active Window",
+            "Taskbar",
+            "Language",
+            "Weather",
+            "Volume",
+            "Clock",
+            "Power Menu"
+        ]
     }
 }
