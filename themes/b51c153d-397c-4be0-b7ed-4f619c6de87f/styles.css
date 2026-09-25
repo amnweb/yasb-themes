@@ -153,7 +153,7 @@
     /* MonochromeAccentDark */
     --background: #18181b;
     --background2: #3f3f42;
-    --accent: var(--yasb-accent-light2);
+    --accent: var(--yasb-accent);
     --text: #e5e7eb;
     --accentText: #18181b;
     --hover: var(--yasb-accent);
@@ -331,7 +331,6 @@
     padding-left: 6px;
     padding-right: 6px;
     margin: 1px 2px;
-    background-color: var(--background);
     border-radius: var(--border-radius);
     border: 0px solid var(--border);
 }
@@ -900,7 +899,7 @@
 
 /* Systray */
 .systray {
-    background: var(--background);
+    
 }
 
 /* Icon being dragged, we already apply some transparency to it so you don't need to use it */
@@ -1129,7 +1128,7 @@ Example: "Windows Media" becomes "windows-media" */
 
 .language-menu .language-item {
     padding: 6px 12px;
-    margin: 2px 6px;
+    margin: 2px 4px;
     border-radius: var(--border-radius);
 }
 .language-menu .language-item.active {
@@ -1145,7 +1144,6 @@ Example: "Windows Media" becomes "windows-media" */
 }
 .language-menu .language-item.active:hover {
     background-color: var(--hover);
-    border-radius: 4px;
     border-radius: var(--border-radius3);
 }
 .language-menu .language-item .code {

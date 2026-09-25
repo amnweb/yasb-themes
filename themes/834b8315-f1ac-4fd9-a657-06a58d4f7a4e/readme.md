@@ -1,9 +1,27 @@
 # Kirakira_YASB
-### Minimalistic bar with glass design with dynamic theme support.
+### Minimalistic bar with glass design and dynamic theme support.
 #### This theme using bottom placement so it should be used with hidden Windows taskbar. I recommend to use [THide](https://github.com/amnweb/thide) for it. Top bar version are [here](https://github.com/MrDLingters/Kirakira_YASB/tree/main/Kirakira/Top%20bar).
 Requires YASB v2.0.7 or newer.
 
-Fonts required:
+## Widgets
+- home
+- komorebi_workspaces
+- komorebi_active_layout
+- taskbar
+- audio_visualizer
+- media
+- cpu (optional, disabled by default)
+- memory (optional, disabled by default)
+- volume
+- clock
+- language
+- quick_launch
+- systray
+- notifications
+- wallpapers
+- control_center
+
+## Fonts required:
 - JetBrainsMono Nerd Font Propo
 - Segoe Fluent Icons
 
