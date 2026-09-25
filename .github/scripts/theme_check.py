@@ -20,12 +20,12 @@ GROUPER_TYPE = "yasb.grouper.GrouperWidget"
 NOT_A_MAPPING = "A widget must be a mapping with a `type` and `options`."
 KIND_LABELS = {"deprecated": "⚠️ Deprecated", "invalid": "❌ Error", "structure": "❌ Error"}
 WIDGET_NAME_OVERRIDES = {
-    "active_layout": "Layout",
     "cpu": "CPU",
     "dnd": "Do Not Disturb",
     "github": "GitHub",
     "glazewm": "GlazeWM",
     "gpu": "GPU",
+    "komorebi.active_layout": "Komorebi Layout",
     "libre_monitor": "Libre HW Monitor",
     "obs": "OBS",
     "open_meteo": "Open Meteo",
@@ -141,6 +141,8 @@ def _widget_references(config: dict, widgets: dict) -> list[tuple[tuple, str]]:
 
 def widget_display_name(widget_type: str) -> str:
     source, module = widget_type.split(".")[:2]
+    if name := WIDGET_NAME_OVERRIDES.get(f"{source}.{module}"):
+        return name
     words = [WIDGET_NAME_OVERRIDES.get(part, part.replace("_", " ").title()) for part in (source, module)]
     return words[1] if source == "yasb" else " ".join(words)
 
