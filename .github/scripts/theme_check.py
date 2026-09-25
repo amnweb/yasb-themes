@@ -20,7 +20,7 @@ GROUPER_TYPE = "yasb.grouper.GrouperWidget"
 NOT_A_MAPPING = "A widget must be a mapping with a `type` and `options`."
 KIND_LABELS = {"deprecated": "⚠️ Deprecated", "invalid": "❌ Error", "structure": "❌ Error"}
 WIDGET_NAME_OVERRIDES = {
-    "active_layout": "Komorebi Layout",
+    "active_layout": "Layout",
     "cpu": "CPU",
     "dnd": "Do Not Disturb",
     "github": "GitHub",
