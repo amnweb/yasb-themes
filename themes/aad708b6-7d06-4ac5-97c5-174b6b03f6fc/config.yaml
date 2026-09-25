@@ -210,7 +210,6 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-        max_title_size: 150
         show_date_time: true
       icons:
         note: "\udb82\udd0c"
