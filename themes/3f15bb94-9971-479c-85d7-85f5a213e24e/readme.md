@@ -1,10 +1,8 @@
-# YASB - dwmblocks
-
-![Preview](https://raw.githubusercontent.com/marhund/win_dotfiles_rice/assets/assets/yasb-preview.png)
+# dwmblocks
 
 Simple, clean but powerful bar inspired by suckless, dwmblocks.
 
-## Features
+### Features
 
 - Very clean design with the siganture line separators.
 - System oriented home button.
@@ -13,7 +11,7 @@ Simple, clean but powerful bar inspired by suckless, dwmblocks.
 - Keybindings for power users.
 - From [marhund's setup](https://github.com/marhund/win_dotfiles_rice), designed to be used with Flow Launcher.
 
-## Instalation
+### Instalation
 
 > [!NOTE]
 > Only requirement is `JetBrainsMono NFP`. You will also have to set up your own API key for the weather to work properly.
@@ -21,11 +19,7 @@ Simple, clean but powerful bar inspired by suckless, dwmblocks.
 > [!IMPORTANT]
 > Does not work well with bright wallpapers! You'll have to manually tweak the line separator colors a bit.
 
-![Preview](https://raw.githubusercontent.com/marhund/win_dotfiles_rice/assets/assets/firewatch-preview.png)
-
-![Preview](https://raw.githubusercontent.com/marhund/win_dotfiles_rice/assets/assets/lowlight-preview2.png)
-
-## Keybindings
+### Keybindings
 
 With the style overhaul, I also added keybindings to widgets that support it. Makes for a smoother keyboard using experience. If you wish, changing them in the `config.yaml` file is very easy, as they all live in their respective widgets - `options` - `keybindings` - `keys`.
 
@@ -71,3 +65,30 @@ With the style overhaul, I also added keybindings to widgets that support it. Ma
     <td><kbd>Alt</kbd> + <kbd>B</kbd></td>
   </tr>
 </table>
+
+## Screenshots
+
+![dwmblocks preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-1.jpg)
+
+![dwmblocks preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-2.jpg)
+
+![dwmblocks preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-3.jpg)
+
+## Widgets
+
+- Home
+- Windows Desktops
+- Taskbar
+- Media
+- Disk
+- Memory
+- CPU
+- Traffic
+- Notifications
+- Applications
+- Recycle Bin
+- Volume
+- Systray
+- Language
+- Clock
+- Weather

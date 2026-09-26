@@ -1,3 +1,21 @@
-# My Yasb Reborn Theme 
-Demo :
-<img width="1919" height="56" alt="image" src="https://github.com/user-attachments/assets/e4616519-23a6-4e8b-8d82-750b3976a27b" />
+# Basic Revamped
+
+Modified Basic Theme with korembi support (not in used in demo img)
+
+## Screenshots
+
+![Basic Revamped preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/758a9fe8-b92c-4b0d-9db7-e1b2c8c41ab2/assets/preview-1.jpg)
+
+## Widgets
+
+- Home
+- Taskbar
+- Clock
+- Applications
+- Media
+- WiFi
+- Microphone
+- Volume
+- Notifications
+- Battery
+- Power Menu

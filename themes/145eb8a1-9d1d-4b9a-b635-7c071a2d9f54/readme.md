@@ -2,9 +2,8 @@
 
 Acrylic frosted-glass YASB theme with rounded pill widgets and Catppuccin Mocha accents. The bar picks up whatever's behind it, so it blends with any wallpaper.
 
-![Preview](https://raw.githubusercontent.com/Harishkumar-ghub/Frost/main/Yasb-Clean.png)
+### Features
 
-## Features
 - Clock with calendar & alarm popup
 - Memory graph popup
 - Wallpaper gallery switcher
@@ -12,5 +11,23 @@ Acrylic frosted-glass YASB theme with rounded pill widgets and Catppuccin Mocha 
 - Taskbar, traffic monitor, battery status
 - Soft blur, rounded corners throughout
 
-## Font needed
-JetBrainsMono Nerd Font (NFP)
+## Screenshots
+
+![Frosted Glass Revamp preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/assets/preview-1.jpg)
+
+## Widgets
+
+- Wallpapers
+- Memory
+- Quick Launch
+- Taskbar
+- Komorebi Workspaces
+- Clock
+- Traffic
+- Battery
+- Power Menu
+- Systray
+
+## Requirements
+
+- JetBrainsMono Nerd Font (NFP)

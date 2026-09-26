@@ -1,18 +1,13 @@
 # Shibumi
+
 Hyprland inspired minimalistic bar with several color schemes available in one CSS. 
 
 Requires YASB v2.0.7 or newer.
 
-Fonts required:
-- JetBrainsMono Nerd Font Propo
-- Segoe Fluent Icons
-
 Change image_path in the wallpapers widget to your own wallpaper folder.
 
-#### Preview
-<img width="3839" height="2159" alt="Screenshot 2026-09-12 234715" src="https://github.com/user-attachments/assets/7487cd46-2c10-4d2f-9089-586b69e16c16" />
+### Color schemes available:
 
-# Color schemes available:
 - Catppuccin Mocha
 - Catppuccin Macchiato
 - Catppuccin Frappé
@@ -29,6 +24,34 @@ Change image_path in the wallpapers widget to your own wallpaper folder.
 - Nord
 - Kanagawa Wave
 
-# How to change color scheme
-### Open styles.css file in your C:\Users\USERNAME\\.config\yasb and leave uncommented **ONE** set of variables from "colors" section. Here's a [quick guide video](https://youtu.be/PFH5lKwJ9Dw?si=jJ6s-vyxm7ZkIhD5).
-<img width="1887" height="2050" alt="Screenshot 2026-06-25 223821" src="https://github.com/user-attachments/assets/0cd65d69-8b3d-48ca-abfb-89102854f6de" />
+### How to change color scheme
+
+Open styles.css file in your C:\Users\USERNAME\\.config\yasb and leave uncommented **ONE** set of variables from "colors" section. Here's a [quick guide video](https://youtu.be/PFH5lKwJ9Dw?si=jJ6s-vyxm7ZkIhD5).
+
+## Screenshots
+
+![Shibumi preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/assets/preview-1.jpg)
+
+![Shibumi preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/assets/preview-2.jpg)
+
+## Widgets
+
+- Home
+- Komorebi Layout
+- Komorebi Workspaces
+- Quick Launch
+- Active Window
+- Clock
+- Media
+- Audio Visualizer
+- Systray
+- Wallpapers
+- Volume
+- Notifications
+- Language
+- Control Center
+
+## Requirements
+
+- JetBrainsMono Nerd Font Propo
+- Segoe Fluent Icons

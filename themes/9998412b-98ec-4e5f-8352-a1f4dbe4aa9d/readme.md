@@ -1,3 +1,17 @@
+# Sleek Windows
+
 I tried to make a MacOS like bar in Windows
 
 Hope you like it! :)
+
+## Widgets
+
+- Power Menu
+- Media
+- Applications
+- Weather
+- WiFi
+- Bluetooth
+- Battery
+- Clock
+- Volume
