@@ -102,7 +102,6 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 220
-        max_title_size: 150
         show_date_time: true
       icons:
         note: "\udb82\udd0c"
@@ -189,15 +188,8 @@ widgets:
       change_automatically: false
       update_interval: 60
       gallery:
-        enabled: true
-        blur: true
         image_width: 296
-        image_per_page: 6
-        show_buttons: false
         orientation: "portrait"
-        image_spacing: 10
-        lazy_load: true
-        lazy_load_fadein: 200
         image_corner_radius: 20
   disk:
     type: "yasb.disk.DiskWidget"

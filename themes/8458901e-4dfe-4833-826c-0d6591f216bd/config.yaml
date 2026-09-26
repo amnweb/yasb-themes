@@ -315,15 +315,8 @@ widgets:
       image_path: "C:\\Wallpapers" 
       tooltip: false
       gallery:
-        enabled: true
-        blur: true
         image_width: 480
-        image_per_page: 3
         orientation: "landscape"
-        show_buttons: true
-        image_spacing: 24
-        lazy_load: true
-        lazy_load_fadein: 1000
         image_corner_radius: 4
       callbacks:
         on_left: "toggle_gallery"

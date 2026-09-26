@@ -205,15 +205,8 @@ widgets:
       change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
       gallery:
-          enabled: true
-          blur: true
           image_width: 200
-          image_per_page: 7
-          show_buttons: false
           orientation: "portrait"
-          image_spacing: 8
-          lazy_load: true
-          lazy_load_fadein: 400
           image_corner_radius: 20
   wifi:
     type: "yasb.wifi.WifiWidget"

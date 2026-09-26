@@ -69,13 +69,7 @@ widgets:
       image_path: "Path to wallpapers" # Set your path
       update_interval: 60
       gallery:
-        enabled: true
-        blur: true
         image_width: 420
-        image_per_page: 4
-        image_spacing: 10
-        lazy_load: true
-        lazy_load_fadein: 200
         image_corner_radius: 20
         orientation: "portrait"
       callbacks:
@@ -177,7 +171,6 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-        max_title_size: 150
         show_date_time: true
       icons:
         note: "\udb82\udd0c"

@@ -161,20 +161,8 @@ widgets:
         enabled: true
         animation: "circle" # circle/slide_top/diamond/split
       gallery:
-        enabled: true
-        blur: true
         image_width: 220
-        image_per_page: 6
-        gallery_columns: 0 # 0 = auto, matches image_per_page for a single row
-        horizontal_position: "center" # left/center/right
-        vertical_position: "center" # top/center/bottom
-        position_offset: 0 # minimum gap (px) from screen edges
-        respect_work_area: true # clamp to OS work area (avoids taskbar)
-        show_buttons: false
         orientation: "portrait"
-        image_spacing: 8
-        lazy_load: true
-        lazy_load_fadein: 400
         image_corner_radius: 12
       # Note: do not use run_after if you don't know what it does
       run_after: # list of functions to run after wallpaper is updated
