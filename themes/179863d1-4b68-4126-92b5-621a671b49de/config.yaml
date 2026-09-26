@@ -211,11 +211,6 @@ widgets:
       holiday_color: "#FF6464"
     callbacks:
       on_left: "toggle_label"
-    label_shadow:
-      enabled: false
-      color: "black"
-      radius: 3
-      offset: [ 1, 1 ]
   media:
     type: "yasb.media.MediaWidget"
     options:

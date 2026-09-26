@@ -214,12 +214,6 @@ widgets:
         pause: "\ue769"
         prev_track: "\ue892"
         next_track: "\ue893"
-    label_shadow:
-       enabled: true
-       color: "black"
-       radius: 5
-       offset: [0, 0]
-
   systray:
     type: "yasb.systray.SystrayWidget"
     options:

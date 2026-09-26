@@ -311,11 +311,6 @@ widgets:
       icon_medium: "\uf242"
       icon_high: "\uf241"
       icon_full: "\uf240"
-    label_shadow:
-      enabled: true
-      color: "black"
-      radius: 3
-      offset: [ 1, 1 ]
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
@@ -385,11 +380,6 @@ widgets:
       on_left: "toggle_mic_menu"
       on_middle: "toggle_label"
       on_right: "toggle_mute"
-    label_shadow:
-      enabled: true
-      color: "black"
-      radius: 3
-      offset: [ 1, 1 ]
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
