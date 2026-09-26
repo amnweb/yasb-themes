@@ -3,12 +3,6 @@ description: Submit a theme to be added to the theme library.
 title: "[create-theme]: "
 labels: ["new-theme"]
 body:
-  - type: markdown
-    attributes:
-      value: >-
-        **Size limit:** GitHub accepts at most 65,536 characters per submission, so the styles, config and readme
-        together must stay below that. If your theme is bigger, read
-        [how to submit a large theme](https://github.com/amnweb/yasb-themes/issues/382).
   - type: input
     id: name
     attributes:
@@ -21,20 +15,14 @@ body:
     id: description
     attributes:
       label: Description
-      description: A brief description of the theme. With a maximum of 100 characters.
+      description: A brief description of the theme. With a maximum of 200 characters.
       placeholder: Theme Description
     validations:
       required: true
-  - type: input
-    id: homepage
-    attributes:
-      label: Homepage
-      description: The URL of the theme's homepage or repository.
-      placeholder: https://github.com/...
   - type: upload
     id: image
     attributes:
-      label: Image
+      label: Theme screenshot
       description: >-
         One PNG screenshot of your bar, taken with the screenshot tool built into YASB:
         right-click an empty part of the bar and choose "Take Screenshot".
@@ -42,46 +30,57 @@ body:
     validations:
       required: true
       accept: ".png"
-  - type: textarea
-    id: styles
+  - type: upload
+    id: files
     attributes:
-      label: Theme Styles
-      render: css
-      description: The CSS styles for the theme.
+      label: Theme files
+      description: >-
+        A ZIP file with your `config.yaml` and `styles.css`.
+        Select both files, right-click and compress them to a ZIP file.
     validations:
       required: true
-  - type: textarea
-    id: config
+      accept: ".zip"
+  - type: markdown
     attributes:
-      label: Theme Config
-      render: yaml
-      description: The config file for the theme. Please format your yaml file correctly, remove blank lines. Here is an example of a [config file](https://github.com/amnweb/yasb-themes/blob/main/themes/56d372d9-3806-499f-9caf-03782b11413b/config.yaml)
-    validations:
-      required: true
+      value: |
+        <br>
+
+        ### README
+
+        The README of your theme is created from the fields below. The list of widgets is added automatically from your config.
   - type: textarea
-    id: readme
+    id: about
     attributes:
       render: markdown
-      label: Readme
-      description: >-
-        The README for your theme, in Markdown. It must include a preview image, a list of the widgets the theme uses and the fonts it needs.
-        Here is an example of a [README file](https://github.com/amnweb/yasb-themes/blob/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/readme.md).
-        Use images hosted on GitHub, for example in your theme's own repository. (IMPORTANT: Do not use ibb.co).
-        
+      label: About
+      description: Write anything you want about your theme. Plain text is fine, and Markdown is supported. Add screenshots in the Preview images field below.
       placeholder: |
-        # Theme name
+        A dark theme with rounded widgets and soft colors, inspired by the Catppuccin Mocha palette.
 
-        ![Preview](https://raw.githubusercontent.com/your-name/your-theme/main/preview.png)
-
-        ## Widgets
-        - Clock
-        - Volume
-        - Media
-
-        ## Fonts
-        - JetBrainsMono Nerd Font
+        The bar sits at the top of the screen and works on one or more monitors.
+        It looks best with a dark wallpaper, like the one in the screenshots.
     validations:
       required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      render: markdown
+      label: Requirements
+      description: >-
+        Everything your theme needs besides YASB, one per line: fonts, tools or apps. You can add a link to each one.
+        Leave it empty if the theme needs nothing else.
+      placeholder: |
+        Segoe Fluent Icons
+        [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads)
+        [Komorebi](https://github.com/LGUG2Z/komorebi)
+  - type: upload
+    id: images
+    attributes:
+      label: Preview images
+      description: Images that show your theme in use. Large, full screen images work best. At least 1 and at most 5.
+    validations:
+      required: true
+      accept: ".png,.jpg,.jpeg"
   - type: markdown
     attributes:
       value: "Please review the information before submitting your theme."

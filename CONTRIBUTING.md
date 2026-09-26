@@ -8,8 +8,8 @@ Quick rejection reasons (maintainers will reject or request fixes for):
 - Poor contrast or layout issues.
 - Not following the required file naming / structure conventions.
 - Excessive commented-out code or very large commented blocks in files.
-- Missing or broken preview image, or a preview that was not taken with the YASB screenshot tool.
-- Missing or very poor README file (the README must include a preview of the theme, the widgets the theme uses and the fonts it needs).
+- Missing or broken theme screenshot, or one that was not taken with the YASB screenshot tool.
+- Missing or very poor `About` text or preview images.
 - Not following the required formatting for `config.yaml` (e.g. missing fields, incorrect indentation, etc.).
 - Bad UI choices (e.g. using a very small font size, using a very large font size, using a very small or very large bar height, etc.).
 - Quality of the theme is not up to the standards of the gallery.
@@ -18,22 +18,19 @@ Quick rejection reasons (maintainers will reject or request fixes for):
 - Submitting a theme that is not compatible with the latest version of YASB or has known bugs that have not been fixed.
 - Submitting a theme that does not follow the required file structure or naming conventions.
 
-Preview image:
+Theme screenshot:
 - Take the screenshot with the tool built into YASB: right-click an empty part of the bar and choose "Take Screenshot". If the menu does not open, check that `context_menu` is not set to `false` for the bar in your `config.yaml`.
 - The screenshot is saved as a PNG in your `Pictures\YASB_Screenshots` folder.
-- Upload that PNG in the `Image` field of the form (drag and drop it, or click to choose it). Only one image is accepted.
+- Upload that PNG in the `Theme screenshot` field of the form (drag and drop it, or click to choose it). Only one image is accepted.
 
 README:
-- A preview image of the theme.
-- A list of the widgets the theme uses, for example clock, volume, media or komorebi workspaces.
-- The fonts the theme needs.
+- The README is created for you from the `About`, `Requirements` and `Preview images` fields. The list of widgets the theme uses is added automatically from your config.
+- Upload 1 to 5 PNG or JPG images in `Preview images`. They are stored with your theme, converted to JPG and scaled down to at most 3840 px on the longest side.
 
 Checklist before opening the issue:
-- Paste your final `styles.css` into the `Theme Styles` field (no big commented blocks).
-- Paste `config.yaml` into the `Theme Config` field and keep it well formatted.
-- Upload your YASB screenshot (one PNG) in the `Image` field.
-- Add a `Readme` with a preview, the widgets the theme uses and the fonts it needs.
-- Keep the styles, config and readme together under 65,536 characters, GitHub's limit for an issue. If your theme is bigger, read [how to submit a large theme](https://github.com/amnweb/yasb-themes/issues/382).
+- Put your final `config.yaml` and `styles.css` in one ZIP file and upload it in the `Theme files` field. Keep the config well formatted and leave out big commented blocks.
+- Upload your YASB screenshot (one PNG) in the `Theme screenshot` field.
+- Write a few words about your theme in `About`, list what it needs besides YASB (fonts, tools or apps) in `Requirements` and upload 1 to 5 images in `Preview images`.
 
 If a submission is rejected the maintainers will leave a clear comment explaining what to fix; PRs may be closed after 14 days without response.
 
