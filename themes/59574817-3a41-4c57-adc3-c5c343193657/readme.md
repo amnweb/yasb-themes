@@ -1,26 +1,36 @@
-## Adaptive Islands Theme
+# Adaptive Islands
 
 A dark theme for YASB built on the `adaptive` bar style, so the widgets sit in three floating islands instead of one full-width strip.
 
 Requires YASB v2.0.7 or newer.
 
-Fonts required:
-- JetBrainsMono Nerd Font Propo
-- Segoe Fluent Icons
-
 Change `image_path` in the `wallpapers` widget to your own wallpaper folder.
 
-## Widgets
-
-- Left: Quick Launch, Windows Workspaces
-- Center: Taskbar
-- Right: Audio Visualizer, Systray, Open Meteo, Wallpapers, GitHub, Notifications, Volume, Clock, Control Center
-
-## Keybindings
+### Keybindings
 
 - `Alt+Space` - Quick Launch
 - `Alt+E` - Wallpaper gallery
 
-## Demo
+## Screenshots
 
-![Adaptive Islands Theme Demo](https://raw.githubusercontent.com/amnweb/my-yasb-themes/refs/heads/main/adaptive/assets/dark.png)
+![Adaptive Islands preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/assets/preview-1.jpg)
+
+## Widgets
+
+- Quick Launch
+- Windows Desktops
+- Taskbar
+- Audio Visualizer
+- Systray
+- Open Meteo
+- Wallpapers
+- GitHub
+- Notifications
+- Volume
+- Clock
+- Control Center
+
+## Requirements
+
+- JetBrainsMono Nerd Font Propo
+- Segoe Fluent Icons

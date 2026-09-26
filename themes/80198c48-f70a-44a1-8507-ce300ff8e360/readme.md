@@ -1,12 +1,10 @@
-# Fluent Onyx Theme
-
-![Theme Overview](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview.png)
+# Win11 Fluent Onyx
 
 A premium Windows 11 theme for YASB that brings the authentic Fluent Design System experience to your taskbar. Featuring carefully crafted dark aesthetics with acrylic blur effects and the signature Windows 11 color palette.
 
 Designed specifically for use with native Windows 11 components, Windhawk modifications are not required for maximum convenience.
 
-## Features
+### Features
 
 - **Authentic Fluent Design**: Built with official Windows 11 design tokens and guidelines
 - **Acrylic Effects**: Beautiful blur and transparency with proper layering
@@ -14,27 +12,45 @@ Designed specifically for use with native Windows 11 components, Windhawk modifi
 - **Virtual Desktops**: Windows workspaces integration with rename and management
 - **Consistent Styling**: All widgets follow the same design language
 
-## Installation
+## Screenshots
 
-1. **Fonts**: Install `"Segoe UI Variable Display"`, `"JetBrainsMono Nerd Font"` and `"Segoe Fluent Icons"` if you don't have them.
+![Win11 Fluent Onyx preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-1.jpg)
 
-## Gallery
+![Win11 Fluent Onyx preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-2.jpg)
 
-![Preview 1](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview-01.jpg)
+![Win11 Fluent Onyx preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-3.jpg)
 
-![Preview 2](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview-02.jpg)
+![Win11 Fluent Onyx preview 4](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-4.jpg)
 
-![Preview 3](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview-03.jpg)
+![Win11 Fluent Onyx preview 5](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-5.jpg)
 
-![Preview 4](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview-04.jpg)
+![Win11 Fluent Onyx preview 6](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-6.jpg)
 
-![Preview 5](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview-05.jpg)
+![Win11 Fluent Onyx preview 7](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-7.jpg)
 
-![Preview 6](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview-06.jpg)
+![Win11 Fluent Onyx preview 8](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-8.jpg)
 
-![Preview 7](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview-07.jpg)
+![Win11 Fluent Onyx preview 9](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-9.jpg)
 
-![Preview 8](https://github.com/Hoxiee/YASB-Fluent-Onyx-Theme/raw/master/gallery/preview-08.jpg)
+## Widgets
 
-## Author
-[![GitHub](https://img.shields.io/badge/GitHub-Hoxiee-181717?logo=github&style=flat-square)](https://github.com/Hoxiee)
+- Home
+- Windows Desktops
+- Taskbar
+- Media
+- Clock
+- CPU
+- GPU
+- Memory
+- Traffic
+- Volume
+- Microphone
+- Disk
+- Applications
+- Power Menu
+
+## Requirements
+
+- Segoe UI Variable Display
+- JetBrainsMono Nerd Font
+- Segoe Fluent Icons

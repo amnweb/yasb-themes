@@ -333,31 +333,20 @@ widgets:
     options:
       label: "<span>\udb82\udd0c</span> {count}"
       label_alt: "{count} notes"
-    container_padding:
-      top: 0
-      left: 0
-      bottom: 0
-      right: 0
-    menu:
-      blur: true
-      round_corners: true
-      round_corners_type: "normal"
-      border_color: "System"
-      alignment: "right"
-      direction: "down"
-      offset_top: 6
-      offset_left: 0
-      max_title_size: 150
-      show_date_time: true
-    icons:
-      note: "\udb82\udd0c"
-      delete: "\ue20d"
-    callbacks:
-      on_left: "toggle_menu"
-      on_middle: "do_nothing"
-      on_right: "toggle_label"
-    label_shadow:
-      enabled: true
-      color: "black"
-      radius: 3
-      offset: [ 1, 4 ]
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_date_time: true
+      icons:
+        note: "\udb82\udd0c"
+        delete: "\ue20d"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"

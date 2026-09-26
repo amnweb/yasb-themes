@@ -1,5 +1,17 @@
-# Minimalist theme for Komorebi setup
+# Aurora dock
 
-<div>
-    <img src="https://i.postimg.cc/pLnPWmvB/3rqd3xf-1.png"/>
-</div>
+Minimalist theme for Komorebi setup
+
+## Screenshots
+
+![Aurora dock preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5ef86699-f1c7-4d48-a122-5822cecc9295/assets/preview-1.jpg)
+
+## Widgets
+
+- Komorebi Workspaces
+- Taskbar
+- Active Window
+- Systray
+- Language
+- Clock
+- Notifications

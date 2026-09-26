@@ -1,30 +1,44 @@
-# 🌙 Glazing Mocha — YASB Status Bar Theme
+# Glazing Mocha
 
 > *A dark, minimal, glass-and-grain status bar experience powered by Catppuccin Mocha.*
 
-## ✨ Preview
+## Screenshots
 
-### Yasb Bar
-![Yasb Bar](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_bar_yasb-bar_20260406_004705.png)
+![Glazing Mocha preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/assets/preview-1.jpg)
 
-### AI Chat
-![AI Chat](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_ai-chat.png)
+![Glazing Mocha preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/assets/preview-2.jpg)
 
-### Memory Popup
-![Memory Popup](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_memory.png)
+![Glazing Mocha preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/assets/preview-3.jpg)
 
-### Notes
-![Notes](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_notes.png)
+![Glazing Mocha preview 4](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/assets/preview-4.jpg)
 
-### Todo
-![Todo](https://github.com/Somrat10369/Yasb-Config/raw/main/assets/yasb_widget_showcase_todo.png)
+![Glazing Mocha preview 5](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c5ec9e92-6d12-408d-9b8c-1d68c86348ca/assets/preview-5.jpg)
 
-## 🛠️ Requirements
+## Widgets
 
-[YASB](https://github.com/amnweb/yasb) — Yet Another Status Bar
+- Power Menu
+- Notes
+- Todo
+- Recycle Bin
+- GlazeWM Workspaces
+- CPU
+- GPU
+- Pomodoro
+- Memory
+- Disk
+- Systray
+- Wallpapers
+- Brightness
+- Bluetooth
+- WiFi
+- Open Meteo
+- Volume
+- Custom
+- Clock
+- Notifications
 
-[GlazeWM](https://github.com/glzr-io/glazewm) — Tiling window manager
+## Requirements
 
-[Ollama](https://ollama.com/) — Local AI (for AI Chat widget)
-
-[JetBrainsMono Nerd Font Propo](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs
+- [GlazeWM](https://github.com/glzr-io/glazewm) — Tiling window manager
+- [Ollama](https://ollama.com/) — Local AI (for AI Chat widget)
+- [JetBrainsMono Nerd Font Propo](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs

@@ -68,11 +68,6 @@ widgets:
         on_left: "toggle_label"
         on_middle: "do_nothing"
         on_right: "do_nothing"
-    label_shadow:
-      enabled: true
-      color: "black"
-      radius: 3
-      offset: [ 1, 1 ]
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:

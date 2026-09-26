@@ -2,14 +2,7 @@
 
 A clean & minimal YASB theme inspired by the Catppuccin Mocha color palette, focusing on a calm dark aesthetic with subtle accents, simple layouts & a distraction-free desktop experience.
 
-## Requirements
-
-- Windows 10 or Windows 11
-- Latest version of [YASB](https://github.com/amnweb/yasb)
-- [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads) or another compatible Nerd Font
-- [GlazeWM](https://github.com/glzr-io/glazewm) if you want to use the GlazeWM workspace & binding mode widgets
-
-## Installation
+### Installation
 
 1. Install YASB & make sure it is working correctly.
 2. Install JetBrainsMono Nerd Font.
@@ -17,13 +10,13 @@ A clean & minimal YASB theme inspired by the Catppuccin Mocha color palette, foc
 4. Restart or reload YASB.
 5. If you use GlazeWM, make sure it is running for the workspace widgets to work correctly.
 
-## Theme Structure
+### Theme Structure
 
 MochaYASB/
 ├── config.yaml
 ├── styles.css
 
-## Features
+### Features
 
 - Catppuccin Mocha color palette
 - Minimal dark bar design
@@ -41,7 +34,7 @@ MochaYASB/
 - Interactive system information popups
 - JetBrains Mono Nerd Font styling
 
-## Configuration
+### Configuration
 
 The theme uses a 34px top bar with widgets divided into three sections:
 
@@ -51,7 +44,7 @@ The theme uses a 34px top bar with widgets divided into three sections:
 
 You can freely modify `config.yaml` to add, remove or rearrange widgets.
 
-## Customization
+### Customization
 
 The main colors are defined at the beginning of `styles.css` using CSS variables. You can change these values to customize the theme while keeping the overall design consistent.
 
@@ -62,7 +55,7 @@ The main colors are defined at the beginning of `styles.css` using CSS variables
 
 The theme uses a zero-radius design for the bar widgets while popups use rounded corners for a subtle contrast.
 
-## Notes
+### Notes
 
 Some widgets depend on your system configuration. In particular, the GlazeWM widgets require GlazeWM to be installed & running.
 
@@ -70,10 +63,34 @@ The disk widget is currently configured for the C: drive. If your Windows instal
 
 The theme uses Font Awesome/Nerd Font glyphs for many of its icons. If icons appear incorrectly, check that JetBrainsMono Nerd Font is installed & selected correctly.
 
-## Credits
+### Credits
 
 - Theme: Catppuccin Mocha Minimalism
 - Built for: YASB
 - Color palette: Catppuccin Mocha
 - Font: JetBrainsMono Nerd Font
 - Window manager integration: GlazeWM
+
+## Widgets
+
+- Home
+- GlazeWM Workspaces
+- GlazeWM Binding Mode
+- Clock
+- Window Controls
+- Control Center
+- WiFi
+- Traffic
+- Memory
+- GPU
+- Disk
+- CPU
+- Battery
+- Volume
+- Power Menu
+
+## Requirements
+
+- Windows 10 or Windows 11
+- [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads) or another compatible Nerd Font
+- [GlazeWM](https://github.com/glzr-io/glazewm) if you want to use the GlazeWM workspace & binding mode widgets
