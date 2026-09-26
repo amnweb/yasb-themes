@@ -279,15 +279,8 @@ widgets:
       change_automatically: false
       update_interval: 600 # in seconds
       gallery:
-        enabled: true
-        blur: true
         image_width: 280
-        image_per_page: 6
-        show_buttons: false # up and down arrow keys to switch new or previous pages
         orientation: "portrait"
-        image_spacing: 25
-        lazy_load: true
-        lazy_load_fadein: 200
         image_corner_radius: 40
   wifi:
     type: "yasb.wifi.WifiWidget"

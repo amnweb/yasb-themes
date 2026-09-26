@@ -158,7 +158,6 @@ widgets:
         direction: "down"
         offset_top: 4
         offset_left: 44
-        max_title_size: 150
         show_date_time: True
       icons:
         note: "\udb82\udd0c"
@@ -252,20 +251,8 @@ widgets:
       update_interval: 60 # If change_automatically is true, update interval in seconds
       tooltip: False
       gallery:
-          enabled: true
-          blur: false
           image_width: 250
-          image_per_page: 7
-          gallery_columns: 0 # 0 = auto, matches image_per_page for a single row
-          horizontal_position: "center" # left/center/right placement on screen
-          vertical_position: "center" # top/center/bottom placement
-          position_offset: 0 # minimum gap (px) from screen edges - see below for advanced options
-          respect_work_area: true # clamp to OS work area (avoids Windows taskbar)
-          show_buttons: false
           orientation: "portrait"
-          image_spacing: 12
-          lazy_load: false
-          lazy_load_fadein: 0
           image_corner_radius: 0
 
   system-tray:

@@ -79,15 +79,8 @@ widgets:
       change_automatically: false # Automatically change wallpaper
       update_interval: 60
       gallery:
-        enabled: true
-        blur: true
         image_width: 250
-        image_per_page: 4
-        show_buttons: true
         orientation: "portrait"
-        image_spacing: 15
-        lazy_load: true
-        lazy_load_fadein: 400
         image_corner_radius: 8
   cava:
     type: "yasb.cava.CavaWidget"
@@ -244,21 +237,3 @@ widgets:
         medium: 75
         high: 85
         full: 100
-  wallpapers:
-    type: "yasb.wallpapers.WallpapersWidget"
-    options:
-      label: "<span>\uf03e</span>"
-      image_path: "C:\\Users\\tundr\\Downloads\\Wallpapers\\Catppuccin" # Example path to folder with images
-      change_automatically: false # Automatically change wallpaper
-      update_interval: 60 # If change_automatically is true, update interval in seconds
-      gallery:
-        enabled: true
-        blur: false
-        image_width: 200
-        image_per_page: 8
-        show_buttons: true
-        orientation: "portrait"
-        image_spacing: 8
-        lazy_load: true
-        lazy_load_fadein: 400
-        image_corner_radius: 20

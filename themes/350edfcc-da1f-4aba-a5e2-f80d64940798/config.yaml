@@ -406,15 +406,8 @@ widgets:
       change_automatically: false # Automatically change wallpaper
       update_interval: 1800 # If change_automatically is true, update interval in seconds
       gallery:
-        enabled: true
-        blur: true
         image_width: 220
-        image_per_page: 6
-        show_buttons: true
         orientation: "portrait"
-        image_spacing: 8
-        lazy_load: true
-        lazy_load_fadein: 400
         image_corner_radius: 20
   notifications:
     type: "yasb.notifications.NotificationsWidget"
