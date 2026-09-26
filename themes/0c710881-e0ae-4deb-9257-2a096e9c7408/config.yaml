@@ -214,11 +214,6 @@ widgets:
         pause: "\ue769"
         prev_track: "\ue892"
         next_track: "\ue893"
-    container_padding:
-      top: 0
-      left: 0
-      bottom: 0
-      right: 0
     label_shadow:
        enabled: true
        color: "black"

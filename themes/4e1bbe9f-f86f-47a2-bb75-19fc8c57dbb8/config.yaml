@@ -32,14 +32,12 @@ bars:
     widgets:
       left:
         [
-#         "home",
           "language",
           "active_window",
           "clock",
         ]
       center:
         [
-#       "glazewm_workspaces",
         "komorebi_workspaces"]
       right:
         [
@@ -47,8 +45,6 @@ bars:
           "cava",
           "volume",
           "systray",
-#         "weather",
-#         "power_menu"
         ]
 widgets:
     language:
@@ -65,22 +61,17 @@ widgets:
       options:
         label_offline: ""
         label_workspace_btn: "\udb81\udc3d"
-      label_workspace_active_btn: "\udb81\udc3e"
-      label_workspace_populated_btn: "\udb81\udc3e"
-      label_default_name: ""
-      label_zero_index: true
-      hide_empty_workspaces: true
-      hide_if_offline: true
-      animation: true
-    toggle_workspace_layer:
-      enabled: false
-      tiling_label: "Tiling"
-      floating_label: "Floating"
-    container_padding: 
-      top: 0
-      left: 8
-      bottom: 0
-      right: 8
+        label_workspace_active_btn: "\udb81\udc3e"
+        label_workspace_populated_btn: "\udb81\udc3e"
+        label_default_name: ""
+        label_zero_index: true
+        hide_empty_workspaces: true
+        hide_if_offline: true
+        animation: true
+        toggle_workspace_layer:
+          enabled: false
+          tiling_label: "Tiling"
+          floating_label: "Floating"
     glazewm_workspaces:
       type: "glazewm.workspaces.GlazewmWorkspacesWidget"
       options:
@@ -106,11 +97,6 @@ widgets:
           next_track: "\uf051"
           play: "\uf04b"
           pause: "\uf04c"
-      container_padding:
-        top: 0
-        left: 12
-        bottom: 0
-        right: 12
     active_window:
       type: "yasb.active_window.ActiveWindowWidget"
       options:

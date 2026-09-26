@@ -277,13 +277,11 @@ widgets:
       show_unpinned: false
       show_unpinned_button: true
       show_battery: false
-      show_in_popup: 1
+      show_in_popup: true
       show_volume: false
-      show_network: true
       use_hook: true
       icons_per_row: 3
       show_network: false
-      use_hook: false # Whether to use the new systray hook instead of the legacy systray monitor
       hide_icons: [] # Optional, list of process names to hide (e.g. ["discord"])
       popup:
         blur: true
@@ -420,14 +418,6 @@ widgets:
         - keys: "alt+space"
           action: "toggle_quick_launch"
           screen: "primary"
-  lines:
-    type: "yasb.custom.CustomWidget"
-    options:
-      label: "\u007c"
-      label_alt: "\u007c"
-      class_name: "separator-widget"
-      callbacks:
-        on_left: "do_nothing"
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
