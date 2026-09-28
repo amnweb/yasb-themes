@@ -12,10 +12,6 @@ To customize colors & font simply edit the first section of the CSS file and it 
 
 Hope you enjoy!
 
-## Screenshots
-
-![Simple Elegance preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/350edfcc-da1f-4aba-a5e2-f80d64940798/assets/preview-1.jpg)
-
 ## Widgets
 
 - Home
@@ -36,3 +32,7 @@ Hope you enjoy!
 - Notifications
 - Update Check
 - Power Menu
+
+## Screenshots
+
+![Simple Elegance preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/350edfcc-da1f-4aba-a5e2-f80d64940798/assets/preview-1.jpg)

@@ -4,10 +4,6 @@ Simple theme that supports komorebi. If you are going to use this theme, please 
 
 Also you can always customize the theme as you want.
 
-## Screenshots
-
-![Simple Floating Widgets preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/assets/preview-1.jpg)
-
 ## Widgets
 
 - Home
@@ -22,3 +18,7 @@ Also you can always customize the theme as you want.
 - Disk
 - Wallpapers
 - Power Menu
+
+## Screenshots
+
+![Simple Floating Widgets preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/c20aec43-2e7d-4dc0-a1a8-2dc7636ca042/assets/preview-1.jpg)

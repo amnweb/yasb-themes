@@ -12,26 +12,6 @@ Designed specifically for use with native Windows 11 components, Windhawk modifi
 - **Virtual Desktops**: Windows workspaces integration with rename and management
 - **Consistent Styling**: All widgets follow the same design language
 
-## Screenshots
-
-![Win11 Fluent Onyx preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-1.jpg)
-
-![Win11 Fluent Onyx preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-2.jpg)
-
-![Win11 Fluent Onyx preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-3.jpg)
-
-![Win11 Fluent Onyx preview 4](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-4.jpg)
-
-![Win11 Fluent Onyx preview 5](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-5.jpg)
-
-![Win11 Fluent Onyx preview 6](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-6.jpg)
-
-![Win11 Fluent Onyx preview 7](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-7.jpg)
-
-![Win11 Fluent Onyx preview 8](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-8.jpg)
-
-![Win11 Fluent Onyx preview 9](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-9.jpg)
-
 ## Widgets
 
 - Home
@@ -54,3 +34,23 @@ Designed specifically for use with native Windows 11 components, Windhawk modifi
 - Segoe UI Variable Display
 - JetBrainsMono Nerd Font
 - Segoe Fluent Icons
+
+## Screenshots
+
+![Win11 Fluent Onyx preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-1.jpg)
+
+![Win11 Fluent Onyx preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-2.jpg)
+
+![Win11 Fluent Onyx preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-3.jpg)
+
+![Win11 Fluent Onyx preview 4](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-4.jpg)
+
+![Win11 Fluent Onyx preview 5](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-5.jpg)
+
+![Win11 Fluent Onyx preview 6](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-6.jpg)
+
+![Win11 Fluent Onyx preview 7](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-7.jpg)
+
+![Win11 Fluent Onyx preview 8](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-8.jpg)
+
+![Win11 Fluent Onyx preview 9](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80198c48-f70a-44a1-8507-ce300ff8e360/assets/preview-9.jpg)

@@ -16,10 +16,6 @@ A YASB theme based on the **Catppuccin Mocha** palette with **Mauve** accent (`#
 
 *Komorebi widgets are not included; this theme is designed for GlazeWM only.*
 
-## Screenshots
-
-![Dream In Mocha Mauve preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8458901e-4dfe-4833-826c-0d6591f216bd/assets/preview-1.jpg)
-
 ## Widgets
 
 - Home
@@ -42,3 +38,7 @@ A YASB theme based on the **Catppuccin Mocha** palette with **Mauve** accent (`#
 
 - **GlazeWM**
 - **JetBrains Mono Nerd Font**
+
+## Screenshots
+
+![Dream In Mocha Mauve preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/8458901e-4dfe-4833-826c-0d6591f216bd/assets/preview-1.jpg)

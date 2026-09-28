@@ -28,12 +28,6 @@ Change image_path in the wallpapers widget to your own wallpaper folder.
 
 Open styles.css file in your C:\Users\USERNAME\\.config\yasb and leave uncommented **ONE** set of variables from "colors" section. Here's a [quick guide video](https://youtu.be/PFH5lKwJ9Dw?si=jJ6s-vyxm7ZkIhD5).
 
-## Screenshots
-
-![Shibumi preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/assets/preview-1.jpg)
-
-![Shibumi preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/assets/preview-2.jpg)
-
 ## Widgets
 
 - Home
@@ -55,3 +49,9 @@ Open styles.css file in your C:\Users\USERNAME\\.config\yasb and leave uncomment
 
 - JetBrainsMono Nerd Font Propo
 - Segoe Fluent Icons
+
+## Screenshots
+
+![Shibumi preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/assets/preview-1.jpg)
+
+![Shibumi preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/92a8f104-ab80-45c0-95f1-82ebb2e12df6/assets/preview-2.jpg)

@@ -2,10 +2,6 @@
 
 Minimalist theme for Komorebi setup
 
-## Screenshots
-
-![Aurora dock preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5ef86699-f1c7-4d48-a122-5822cecc9295/assets/preview-1.jpg)
-
 ## Widgets
 
 - Komorebi Workspaces
@@ -15,3 +11,7 @@ Minimalist theme for Komorebi setup
 - Language
 - Clock
 - Notifications
+
+## Screenshots
+
+![Aurora dock preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/5ef86699-f1c7-4d48-a122-5822cecc9295/assets/preview-1.jpg)

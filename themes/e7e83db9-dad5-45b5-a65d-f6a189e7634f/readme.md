@@ -12,10 +12,6 @@ There you can also adjust the color of the interface and the darker color used f
 
 Adding new widgets should automatically work, however menus and pop-ups won't have backgrounds.
 
-## Screenshots
-
-![Windows9X NEO preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f/assets/preview-1.jpg)
-
 ## Widgets
 
 - Volume
@@ -30,3 +26,7 @@ Adding new widgets should automatically work, however menus and pop-ups won't ha
 - Notifications
 - Clock
 - Power Menu
+
+## Screenshots
+
+![Windows9X NEO preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/e7e83db9-dad5-45b5-a65d-f6a189e7634f/assets/preview-1.jpg)

@@ -4,12 +4,6 @@ This theme supports dark and light modes and is designed to be like the default 
 
 Note: Requires YASB version 1.9.1 or later to work properly. `alt` + `space` triggers the Quick Launch.
 
-## Screenshots
-
-![WinUI11 preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7c2f646f-bbb1-4492-854d-3cc60b25012f/assets/preview-1.jpg)
-
-![WinUI11 preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7c2f646f-bbb1-4492-854d-3cc60b25012f/assets/preview-2.jpg)
-
 ## Widgets
 
 - Home
@@ -22,3 +16,9 @@ Note: Requires YASB version 1.9.1 or later to work properly. `alt` + `space` tri
 - Volume
 - Notifications
 - Power Menu
+
+## Screenshots
+
+![WinUI11 preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7c2f646f-bbb1-4492-854d-3cc60b25012f/assets/preview-1.jpg)
+
+![WinUI11 preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/7c2f646f-bbb1-4492-854d-3cc60b25012f/assets/preview-2.jpg)

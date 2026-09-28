@@ -8,16 +8,6 @@ Requires YASB v2.0.7 or newer.
 
 Change image_path in the wallpapers widget to your own wallpaper folder.
 
-## Screenshots
-
-![Kirakira preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/assets/preview-1.jpg)
-
-![Kirakira preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/assets/preview-2.jpg)
-
-![Kirakira preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/assets/preview-3.jpg)
-
-![Kirakira preview 4](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/assets/preview-4.jpg)
-
 ## Widgets
 
 - Home
@@ -40,3 +30,13 @@ Change image_path in the wallpapers widget to your own wallpaper folder.
 
 - JetBrainsMono Nerd Font Propo
 - Segoe Fluent Icons
+
+## Screenshots
+
+![Kirakira preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/assets/preview-1.jpg)
+
+![Kirakira preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/assets/preview-2.jpg)
+
+![Kirakira preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/assets/preview-3.jpg)
+
+![Kirakira preview 4](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/assets/preview-4.jpg)

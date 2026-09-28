@@ -11,10 +11,6 @@ Change `image_path` in the `wallpapers` widget to your own wallpaper folder.
 - `Alt+Space` - Quick Launch
 - `Alt+E` - Wallpaper gallery
 
-## Screenshots
-
-![Adaptive Islands preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/assets/preview-1.jpg)
-
 ## Widgets
 
 - Quick Launch
@@ -34,3 +30,7 @@ Change `image_path` in the `wallpapers` widget to your own wallpaper folder.
 
 - JetBrainsMono Nerd Font Propo
 - Segoe Fluent Icons
+
+## Screenshots
+
+![Adaptive Islands preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/assets/preview-1.jpg)

@@ -2,10 +2,6 @@
 
 The Catppuccino Mocha Theme is a soothing pastel theme created for YASB.
 
-## Screenshots
-
-![Catppuccin Mocha preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/assets/preview-1.jpg)
-
 ## Widgets
 
 - Custom
@@ -15,3 +11,7 @@ The Catppuccino Mocha Theme is a soothing pastel theme created for YASB.
 - Volume
 - Clock
 - Power Menu
+
+## Screenshots
+
+![Catppuccin Mocha preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/56d372d9-3806-499f-9caf-03782b11413b/assets/preview-1.jpg)

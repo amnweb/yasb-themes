@@ -4,10 +4,6 @@ A rounded, boxy and light theme for Yasb. Just a minimal theme with focus on sep
 
 This theme uses a combination of Segoe UI, Segoe UI Fluent Icons and Material Symbols Rounded (which can be found in the fonts directory).
 
-## Screenshots
-
-![Init Light preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/assets/preview-1.jpg)
-
 ## Widgets
 
 - Komorebi Layout
@@ -19,3 +15,7 @@ This theme uses a combination of Segoe UI, Segoe UI Fluent Icons and Material Sy
 - Applications
 - Volume
 - Clock
+
+## Screenshots
+
+![Init Light preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/83124e1d-7df8-4494-b901-d60a78074e56/assets/preview-1.jpg)

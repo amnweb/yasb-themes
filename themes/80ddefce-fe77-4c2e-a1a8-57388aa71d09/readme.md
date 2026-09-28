@@ -15,16 +15,6 @@ Here's a CSS snippet example:
 
 [More...](https://imgur.com/a/WCgDUYD)
 
-## Screenshots
-
-![WinVista preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/assets/preview-1.jpg)
-
-![WinVista preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/assets/preview-2.jpg)
-
-![WinVista preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/assets/preview-3.jpg)
-
-![WinVista preview 4](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/assets/preview-4.jpg)
-
 ## Widgets
 
 - Home
@@ -46,3 +36,13 @@ Here's a CSS snippet example:
 - Update Check
 - Notifications
 - Power Menu
+
+## Screenshots
+
+![WinVista preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/assets/preview-1.jpg)
+
+![WinVista preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/assets/preview-2.jpg)
+
+![WinVista preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/assets/preview-3.jpg)
+
+![WinVista preview 4](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/80ddefce-fe77-4c2e-a1a8-57388aa71d09/assets/preview-4.jpg)

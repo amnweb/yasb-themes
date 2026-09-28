@@ -11,10 +11,6 @@ Acrylic frosted-glass YASB theme with rounded pill widgets and Catppuccin Mocha 
 - Taskbar, traffic monitor, battery status
 - Soft blur, rounded corners throughout
 
-## Screenshots
-
-![Frosted Glass Revamp preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/assets/preview-1.jpg)
-
 ## Widgets
 
 - Wallpapers
@@ -31,3 +27,7 @@ Acrylic frosted-glass YASB theme with rounded pill widgets and Catppuccin Mocha 
 ## Requirements
 
 - JetBrainsMono Nerd Font (NFP)
+
+## Screenshots
+
+![Frosted Glass Revamp preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/145eb8a1-9d1d-4b9a-b635-7c071a2d9f54/assets/preview-1.jpg)

@@ -66,14 +66,6 @@ With the style overhaul, I also added keybindings to widgets that support it. Ma
   </tr>
 </table>
 
-## Screenshots
-
-![dwmblocks preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-1.jpg)
-
-![dwmblocks preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-2.jpg)
-
-![dwmblocks preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-3.jpg)
-
 ## Widgets
 
 - Home
@@ -92,3 +84,11 @@ With the style overhaul, I also added keybindings to widgets that support it. Ma
 - Language
 - Clock
 - Weather
+
+## Screenshots
+
+![dwmblocks preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-1.jpg)
+
+![dwmblocks preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-2.jpg)
+
+![dwmblocks preview 3](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/3f15bb94-9971-479c-85d7-85f5a213e24e/assets/preview-3.jpg)

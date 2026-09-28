@@ -29,12 +29,6 @@ Change image_path in the wallpapers widget to your own wallpaper folder.
 
 Open styles.css file in your C:\Users\USERNAME\\.config\yasb and leave uncommented **ONE** set of variables from "colors" section. Here's a [quick guide video](https://youtu.be/PFH5lKwJ9Dw?si=jJ6s-vyxm7ZkIhD5).
 
-## Screenshots
-
-![Akira preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/assets/preview-1.jpg)
-
-![Akira preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/assets/preview-2.jpg)
-
 ## Widgets
 
 - Home
@@ -57,3 +51,9 @@ Open styles.css file in your C:\Users\USERNAME\\.config\yasb and leave uncomment
 
 - JetBrainsMono Nerd Font Propo
 - Segoe Fluent Icons
+
+## Screenshots
+
+![Akira preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/assets/preview-1.jpg)
+
+![Akira preview 2](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/eaf412b9-1228-4746-9277-29cb436b6909/assets/preview-2.jpg)

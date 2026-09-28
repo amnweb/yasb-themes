@@ -238,12 +238,14 @@ def save_preview_image(number, url, path):
 
 
 def build_readme(name, about, image_urls, widgets, requirements):
-    parts = [f"# {name}", about, "## Screenshots"]
-    parts += [f"![{name} preview {number}]({url})" for number, url in enumerate(image_urls, 1)]
+    parts = [f"# {name}", about]
     if widgets:
         parts.append("## Widgets\n\n" + "\n".join(f"- {widget}" for widget in widgets))
     if requirements:
         parts.append("## Requirements\n\n" + "\n".join(f"- {requirement}" for requirement in requirements))
+    if image_urls:
+        parts.append("## Screenshots")
+        parts += [f"![{name} preview {number}]({url})" for number, url in enumerate(image_urls, 1)]
     return "\n\n".join(parts) + "\n"
 
 

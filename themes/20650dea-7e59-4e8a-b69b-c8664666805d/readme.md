@@ -52,10 +52,6 @@ The theme is transparent by default to blend seamlessly with your wallpaper. To 
 
 To ensure a seamless experience, I highly recommend enabling **autostart** for both YASB and your chosen Window Manager (GlazeWM/Komorebi). This ensures your workflow environment is ready the moment you log in.
 
-## Screenshots
-
-![Deep Work Control preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/assets/preview-1.jpg)
-
 ## Widgets
 
 - GlazeWM Workspaces
@@ -73,3 +69,7 @@ To ensure a seamless experience, I highly recommend enabling **autostart** for b
 - Battery
 - Notifications
 - Power Menu
+
+## Screenshots
+
+![Deep Work Control preview 1](https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/20650dea-7e59-4e8a-b69b-c8664666805d/assets/preview-1.jpg)
