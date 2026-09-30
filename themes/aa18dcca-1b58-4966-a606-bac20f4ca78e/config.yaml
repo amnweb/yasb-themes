@@ -1,0 +1,439 @@
+watch_stylesheet: True
+watch_config: False
+debug: False
+update_check: False
+show_systray: True
+
+bars:
+  primary-bar:
+    enabled: True
+    style: "adaptive"
+    screens: ['*']
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "center"
+    animation:
+      enabled: False
+    blur_effect:
+      enabled: True
+      dark_mode: False
+      round_corners: False
+    window_flags:
+      always_on_top: True
+      windows_app_bar: True
+      hide_on_fullscreen: True
+      hide_on_maximized: False
+      auto_hide: False
+    layouts:
+      left:
+        alignment: "left"
+        stretch: True
+      center:
+        alignment: "center"
+        stretch: True
+      right:
+        alignment: "right"
+        stretch: True
+    dimensions:
+      width: "100%"
+      height: 25
+    widgets:
+      left: ["power_menu", "quick_launch", "taskbar", "active_window"]
+      center: ["clock", "lines", "open_meteo", "audio_visualizer", "media"]
+      right: ["systray", "battery", "wifi", "volume", "lines", "notifications", "control_center"]
+
+widgets:
+  power_menu:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "\ue62a"
+      system_menu: True
+      power_menu: True
+      blur: True
+      round_corners: True
+      round_corners_type: "normal"
+      border_color: "system"
+      alignment: "left"
+      offset_left: -12
+
+  quick_launch:
+    type: "yasb.quick_launch.QuickLaunchWidget"
+    options:
+      label: "<span>\uf002</span>"
+      search_placeholder: "Search applications..."
+      max_results: 30
+      show_icons: True
+      icon_size: 32
+      popup:
+        width: 650
+        height: 400
+        blur: False
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "system"
+        dark_mode: True
+      callbacks:
+        on_left: "toggle_quick_launch"
+      keybindings:
+        - keys: "alt+space"
+          action: "toggle_quick_launch"
+          screen: "primary"
+
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      icon_size: 16
+      tooltip: True
+      show_only_visible: True
+      strict_filtering: True
+      monitor_exclusive: False
+      hide_empty: True
+      grouping:
+        enabled: True
+        show_count: False
+      animation:
+        enabled: True
+        duration: 200
+      preview:
+        enabled: True
+        width: 180
+        delay: 400
+        padding: 8
+        margin: 8
+        blur: True
+        peek: True
+      title_label:
+        enabled: False
+
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[app_name]}"
+      label_no_window: ""
+      label_alt: "{win[process]}"
+      label_icon: True
+      label_icon_size: 12
+      max_length: 75
+      max_length_ellipsis: ""
+      monitor_exclusive: False
+      callbacks:
+        on_left: "do_nothing"
+      rewrite:
+        - pattern: "^(.+?)\\.exe$"
+          replacement: "\\1"
+          case: title
+        - pattern: "\\bui\\b"
+          replacement: "UI"
+        - pattern: "^(.*) — Zen Browser"
+          replacement: "Zen Browser"
+        - pattern: "^WinSpy .*"
+          replacement: "WinSpy"
+        - pattern: "^ShareX - .*"
+          replacement: "ShareX"
+        - pattern: "^ShareX .*"
+          replacement: ""
+        - pattern: "^Bulk Crap Uninstaller .*"
+          replacement: "Bulk Crap Uninstaller"
+
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      locale: "vi_VN"
+      label: "{%A - %d/%m | %H:%M}"
+      label_alt: "{%A - %d / %B / %Y | %H:%M}"
+      tooltip: False
+      calendar:
+        blur: True
+        round_corners: True
+        alignment: "center"
+        direction: "down"
+        offset_top: 4
+        offset_left: -2
+        show_holidays: True
+        holiday_color: "#FF6E00"
+        country_code: "VN"
+        extended: True
+
+  lines:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "|"
+      label_alt: "|"
+      class_name: "separator-widget"
+      callbacks:
+        on_left: "do_nothing"
+
+  open_meteo:
+    type: "yasb.open_meteo.OpenMeteoWidget"
+    options:
+      label: "<span>{icon}</span> {condition_text} {temp}"
+      label_alt: "{location}: Min {min_temp} Max {max_temp} Hum {humidity}"
+      update_interval: 600
+      hide_decimal: True
+      units: "metric"
+      tooltip: False
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\ue312"
+        cloudyNight: "\ue311"
+        rainyDay: "\ue308"
+        rainyNight: "\ue333"
+        snowyDay: "\ue30a"
+        snowyNight: "\ue335"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
+        default: "\uebaa"
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      weather_card:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        alignment: "center"
+        direction: "down"
+        offset_top: 4
+        offset_left: 0
+        icon_size: 48
+        show_hourly_forecast: True
+        time_format: "24h"
+        hourly_point_spacing: 76
+        hourly_icon_size: 24
+        icon_smoothing: True
+        temp_line_width: 2
+        current_line_color: "#8EAEE8"
+        current_line_width: 1
+        current_line_style: "dot"
+        hourly_gradient:
+          enabled: False
+        hourly_forecast_buttons:
+          enabled: True
+          default_view: "temperature"
+          temperature_icon: "\U000F0599"
+          rain_icon: "\U000F0596"
+          snow_icon: "\U000F0598"
+        weather_animation:
+          enabled: True
+          snow_overrides_rain: True
+          temp_line_animation_style: both
+          rain_effect_intensity: 1.0
+          snow_effect_intensity: 1.0
+          scale_with_chance: True
+
+  audio_visualizer:
+    type: "yasb.audio_visualizer.AudioVisualizerWidget"
+    options:
+      style: bars
+      height: 16
+      mirror: True
+      edge_fade: 0
+      smoothness: 80
+      sensitivity: 50
+      auto_gain: True
+      framerate: 24
+      freq_min: 500
+      freq_max: 12000
+      hide_idle: True
+      hide_idle_after: 3000
+      channels: stereo
+      mono_option: average
+      reverse: False
+      bars:
+        count: 10
+        width: 1
+        gap: 4
+
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title}{s}{artist}"
+      hide_empty: True
+      show_thumbnail: True
+      controls_only: False
+      controls_left: False
+      controls_hide: True
+      max_field_size:
+        label: 55
+        label_alt: 30
+      callbacks:
+        on_left: "toggle_media_menu"
+      media_menu:
+        blur: True
+        round_corners: True
+        alignment: "center"
+        direction: "down"
+        offset_top: 4
+        offset_left: -18
+        thumbnail_corner_radius: 10
+        thumbnail_size: 140
+        max_title_size: 80
+        max_artist_size: 20
+        show_source: True
+      media_menu_icons:
+        play: "\U000F0F1B"
+        pause: "\U000F03E4"
+        prev_track: "\U000F0F28"
+        next_track: "\U000F0F27"
+
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\uf107"
+      label_expanded: "\uf106"
+      label_position: "right"
+      icon_size: 15
+      pin_click_modifier: "alt"
+      show_unpinned: False
+      show_unpinned_button: True
+      show_in_popup: True
+      show_battery: False
+      show_volume: False
+      show_network: False
+      use_hook: True
+      icons_per_row: 3
+      popup:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "<span>{icon}</span>{percent}%"
+      label_alt: "<span>{icon}</span>{percent}%"
+      update_interval: 10000
+      hide_unsupported: True
+      time_remaining_natural: False
+      charging_options:
+        icon_format: "{charging_icon}"
+        blink_charging_icon: False
+      status_thresholds:
+        critical: 10
+        low: 25
+        medium: 50
+        high: 75
+        full: 100
+      status_icons:
+        icon_charging: "\U000F140C"
+        icon_critical: "\ueba1"
+        icon_low: "\ueba3"
+        icon_medium: "\ueba6"
+        icon_high: "\ueba9"
+        icon_full: "\uebaa"
+
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "{wifi_name} {wifi_strength}%"
+      update_interval: 5000
+      ethernet_label: "<span>\U000F0200</span>"
+      ethernet_label_alt: "<span>{ethernet_name}</span>"
+      wifi_icons: ["\U000F092E", "\uf1eb", "\uf1eb", "\uf1eb", "\uf1eb"]
+      callbacks:
+        on_left: "exec cmd.exe /c start ms-settings:network"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      tooltip: False
+      mute_text: ""
+      icons: ["\ue74f", "\ue994", "\ue994", "\ue994", "\ue994"]
+      audio_menu:
+        blur: True
+        round_corners: True
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 80
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\U000F0178</span> {count}"
+      hide_empty: False
+      tooltip: False
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "toggle_label"
+
+  control_center:
+    type: "yasb.control_center.ControlCenterWidget"
+    options:
+      label: "<span>\uf013</span>"
+      tooltip: True
+      sections_order: ["system_controls", "quick_actions", "sliders", "power", "media"]
+      popup:
+        blur: True
+        alignment: "right"
+        direction: "down"
+        border_color: "system"
+        round_corners: True
+        round_corners_type: "normal"
+        offset_top: 8
+      sections:
+        system_controls:
+          profile_image_size: 28
+          power_icon: "\uE7E8"
+          lock_icon: "\uE72E"
+          settings_icon: "\uE713"
+        quick_actions:
+          show: True
+          columns: 3
+          label_position: "default"
+          actions:
+            - {id: "toggle_dnd", label: "Do Not Disturb", icon: "\uf285"}
+            - {id: "toggle_mute", label: "Mute", icon: "\ue74f"}
+            - {id: "toggle_mic_mute", label: "Mic Mute", icon: "\uF12E"}
+            - {id: "screenshot", label: "Screenshot", icon: "\ue91b"}
+            - {id: "touch_keyboard", label: "Keyboard", icon: "\uE765"}
+            - {id: "toggle_theme", label: "Dark Mode", icon: "\uE708"}
+        sliders:
+          show: True
+          brightness:
+            show_slider: True
+            icon: "\uE706"
+            show_source_selector: True
+            source_selector_icon: "\uE972"
+          volume:
+            show_slider: True
+            icon: "\uE767"
+            show_source_selector: True
+            source_selector_icon: "\uE972"
+          microphone:
+            show_slider: True
+            icon: "\uE720"
+            show_source_selector: True
+            source_selector_icon: "\uE972"
+        media:
+          show: True
+          thumbnail_size: 36
+          thumbnail_radius: 4
+          icons:
+            prev_track: "\ue622"
+            next_track: "\ue623"
+            play: "\uf5b0"
+            pause: "\ue62e"
+        power:
+          show: True
+          power_plan_title: "Power Plan"
+          power_mode_title: "Power Mode"
+          button_menu_icon: "\ue76c"
+      callbacks:
+        on_left: "toggle_menu"
