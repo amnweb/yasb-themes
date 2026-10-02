@@ -1,0 +1,21 @@
+{
+  "featured": "834b8315-f1ac-4fd9-a657-06a58d4f7a4e",
+  "cards": [
+    {
+      "label": "New",
+      "title": "YASB Cloud",
+      "text": "Back up your config and restore it on any PC.",
+      "color": "#000000",
+      "image": "https://cdn.yasb.dev/images/promo/promo-banner.jpg",
+      "link_text": "Learn more",
+      "url": "https://cloud.yasb.dev"
+    },
+    {
+      "label": "Theme",
+      "title": "Adaptive Islands",
+      "text": "Floating islands that adapt to your wallpaper.",
+      "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/59574817-3a41-4c57-adc3-c5c343193657/assets/preview-1.jpg",
+      "theme": "59574817-3a41-4c57-adc3-c5c343193657"
+    }
+  ]
+}
