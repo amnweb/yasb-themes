@@ -28,6 +28,10 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Glazing Mocha Pywal Edition](themes/985855a7-10d7-4d7b-88ff-7c3e4cf509dd)
+
+<a title="Glazing Mocha Pywal Edition YASB Theme" href="themes/985855a7-10d7-4d7b-88ff-7c3e4cf509dd"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/985855a7-10d7-4d7b-88ff-7c3e4cf509dd/image.png" width="830px"></a>
+
 ## [Kirakira](themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e)
 
 <a title="Kirakira YASB Theme" href="themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/834b8315-f1ac-4fd9-a657-06a58d4f7a4e/image.png" width="830px"></a>
