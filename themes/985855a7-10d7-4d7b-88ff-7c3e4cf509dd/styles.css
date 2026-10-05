@@ -1,0 +1,1153 @@
+:root {
+  --backgroundcol: #0f1224;
+  --foregroundcol: #c3c3c8;
+  --cursorcol: #c3c3c8;
+  --colors0: #0f1224;
+  --colors1: #5E6175;
+  --colors2: #64677B;
+  --colors3: #717489;
+  --colors4: #7E7E94;
+  --colors5: #8A7B8F;
+  --colors6: #9F8DA2;
+  --colors7: #c3c3c8;
+  --colors8: #5e6074;
+  --colors9: #5E6175;
+  --colors10: #64677B;
+  --colors11: #717489;
+  --colors12: #7E7E94;
+  --colors13: #8A7B8F;
+  --colors14: #9F8DA2;
+  --colors15: #c3c3c8;
+}
+
+* {
+  border: var(--backgroundcol);
+  color: var(--cursorcol);
+  border-radius: 10px;
+  font-family: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo", monospace;
+  font-size: 15px;
+  margin: 0;
+  padding: 2px
+}
+
+.yasb-bar {
+  background-color: var(--backgroundcol);
+  border: 3px solid var(--colors6);
+  padding-top: 2px
+}
+
+.widget {
+  color: var(--colors6);
+  padding: 0 5px
+}
+
+.widget .widget-container {
+  border-radius: 8px;
+  padding: 2px 4px
+}
+
+.widget .label,
+.widget .icon {
+  color: var(--colors6);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 3px
+}
+
+.container-left,
+.container-center,
+.container-right {
+  margin: 0;
+  padding: 0
+}
+
+.notes-menu,
+.todo-menu,
+.ai-chat-popup,
+.github-menu,
+.traffic-menu,
+.cpu-popup,
+.memory-popup,
+.gpu-popup,
+.pomodoro-menu,
+.audio-menu,
+.wifi-menu,
+.brightness-menu,
+.open-meteo-card {
+  background-color: var(--backgroundcol);
+  border: 2px solid var(--colors6);
+  border-radius: 10px
+}
+
+QScrollBar:vertical {
+  background-color: #0003;
+  border-radius: 4px;
+  width: 8px
+}
+
+QScrollBar:horizontal {
+  background-color: #0003;
+  border-radius: 4px;
+  height: 8px
+}
+
+QScrollBar::handle {
+  background-color: var(--colors1);
+  border-radius: 4px
+}
+
+QScrollBar::handle:hover {
+  background-color: var(--colors4)
+}
+
+QScrollBar::add-line,
+QScrollBar::sub-line {
+  height: 0;
+  width: 0
+}
+
+QScrollBar::add-page,
+QScrollBar::sub-page {
+  background: none
+}
+
+.tooltip {
+  background-color: var(--colors0);
+  border: 1px solid var(--colors1);
+  border-radius: 4px;
+  border-style: solid;
+  color: var(--colors7);
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+  padding: 5px 10px
+}
+
+.notification-dot {
+  background-color: var(--colors2);
+  border-radius: 50%;
+  max-height: 6px;
+  max-width: 6px;
+  min-height: 6px;
+  min-width: 6px
+}
+
+.context-menu {
+  background-color: var(--colors0);
+  border: none;
+  border-radius: 8px;
+  color: var(--colors6);
+  font-size: 12px;
+  padding: 5px 0
+}
+
+.context-menu::item {
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 3px 6px;
+  min-width: 90px;
+  padding: 7px 12px
+}
+
+.context-menu::item:selected {
+  background-color: var(--colors1);
+  color: var(--colors6)
+}
+
+.context-menu::item:checked {
+  background-color: var(--colors1);
+  color: var(--colors6)
+}
+
+.context-menu::item:pressed {
+  background-color: var(--colors2)
+}
+
+.context-menu::item:disabled {
+  color: var(--colors8)
+}
+
+.context-menu::separator {
+  background-color: var(--colors1);
+  height: 1px;
+  margin: 3px 7px
+}
+
+.glazewm-workspaces {
+  margin: 0;
+  padding: 0 6px
+}
+
+.glazewm-workspaces .ws-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--colors4);
+  font-size: 13px;
+  margin: 0 3px;
+  padding: 4px 8px
+}
+
+.glazewm-workspaces .ws-btn.populated {
+  color: var(--colors7)
+}
+
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
+  background-color: var(--colors1);
+  color: var(--colors6);
+  font-weight: 600
+}
+
+.glazewm-workspaces .ws-btn:hover,
+.glazewm-workspaces .ws-btn.populated:hover {
+  background-color: var(--colors1);
+  color: var(--colors6)
+}
+
+.glazewm-workspaces .offline-status {
+  color: var(--colors2);
+  font-size: 11px;
+  font-weight: 600
+}
+
+.clock-widget {
+  padding: 0 8px
+}
+
+.clock-widget .icon {
+  color: var(--colors6);
+  font-size: 12px;
+  padding-right: 5px
+}
+
+.clock-widget .label {
+  color: var(--colors6);
+  font-weight: 500
+}
+
+.clock-popup.calendar {
+  background-color: var(--backgroundcol);
+  min-width: 420px
+}
+
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+  background-color: transparent;
+  border: none;
+  color: var(--colors7);
+  outline: none
+}
+
+.clock-popup.calendar .calendar-table::item:selected {
+  background-color: var(--colors1);
+  border-radius: 12px;
+  color: var(--cursorcol);
+  font-weight: 700
+}
+
+.clock-popup.calendar .day-label,
+.clock-popup.calendar .month-label,
+.clock-popup.calendar .year-label,
+.clock-popup.calendar .date-label {
+  color: var(--colors6);
+  font-size: 16px;
+  font-weight: 700
+}
+
+.clock-popup.calendar .date-label {
+  font-size: 72px;
+  font-weight: 900
+}
+
+.notes-widget {
+  padding: 0 7px
+}
+
+.notes-widget .label {
+  color: var(--colors7);
+  font-size: 13px;
+  font-weight: 500
+}
+
+.notes-widget .icon {
+  color: var(--colors7);
+  font-size: 14px
+}
+
+.notes-menu {
+  max-width: 400px;
+  min-width: 400px
+}
+
+.notes-menu.floating {
+  max-height: 580px;
+  max-width: 580px;
+  min-height: 580px;
+  min-width: 580px
+}
+
+.notes-menu .notes-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--colors1);
+  padding: 10px 14px
+}
+
+.notes-menu .notes-header .header-title {
+  color: var(--colors6);
+  font-size: 14px;
+  font-weight: 700
+}
+
+.notes-menu .notes-header .float-button,
+.notes-menu .notes-header .close-button {
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  color: var(--colors5);
+  font-size: 15px;
+  padding: 4px 6px
+}
+
+.notes-menu .notes-header .float-button:hover,
+.notes-menu .notes-header .close-button:hover {
+  background-color: var(--colors1);
+  color: var(--colors6)
+}
+
+.notes-menu .note-item {
+  background-color: transparent;
+  border-bottom: 1px solid var(--colors1);
+  border-radius: 6px;
+  margin: 4px 8px;
+  padding: 8px 10px
+}
+
+.notes-menu .note-item:hover {
+  background-color: var(--colors1)
+}
+
+.notes-menu .note-item .title {
+  color: var(--colors6);
+  font-size: 13px;
+  font-weight: 500
+}
+
+.notes-menu .note-item .date {
+  color: var(--colors8);
+  font-size: 11px;
+  margin-top: 2px
+}
+
+.notes-menu .delete-button {
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--colors2);
+  font-size: 13px;
+  padding: 4px 7px
+}
+
+.notes-menu .copy-button {
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--colors5);
+  font-size: 13px;
+  padding: 4px 7px
+}
+
+.notes-menu .delete-button:hover,
+.notes-menu .copy-button:hover {
+  background-color: var(--colors1)
+}
+
+.notes-menu .note-input {
+  background-color: var(--colors0);
+  border: 1px solid var(--colors1);
+  border-radius: 6px;
+  color: var(--colors6);
+  font-size: 13px;
+  padding: 6px 10px
+}
+
+.notes-menu .note-input:focus {
+  border-color: var(--colors6)
+}
+
+.notes-menu .add-button,
+.notes-menu .cancel-button {
+  background-color: var(--colors1);
+  border: none;
+  border-radius: 6px;
+  color: var(--colors6);
+  font-weight: 500;
+  padding: 7px 14px
+}
+
+.notes-menu .add-button:hover,
+.notes-menu .cancel-button:hover {
+  background-color: var(--colors5)
+}
+
+.notes-menu .scroll-area {
+  background: transparent;
+  border: none
+}
+
+.notes-menu .empty-list {
+  color: var(--colors8);
+  font-size: 18px
+}
+
+.todo-widget {
+  padding: 0 7px
+}
+
+.todo-widget .icon {
+  color: var(--colors6);
+  font-size: 14px
+}
+
+.todo-widget .label {
+  font-size: 13px;
+  font-weight: 500
+}
+
+.todo-menu {
+  max-height: 480px;
+  max-width: 400px;
+  min-height: 480px;
+  min-width: 400px
+}
+
+.todo-menu .header .add-task-button,
+.todo-menu .header .tab-buttons {
+  border: none;
+  border-radius: 8px;
+  color: var(--colors6);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px
+}
+
+.todo-menu .header .tab-buttons.in-progress:checked {
+  background-color: var(--colors1);
+  color: var(--colors6)
+}
+
+.todo-menu .header .tab-buttons.completed:checked {
+  background-color: var(--colors1);
+  color: var(--colors2)
+}
+
+.todo-menu .header .tab-buttons.sort {
+  background-color: var(--colors1);
+  border-radius: 6px;
+  margin: 0 6px 0 0;
+  max-height: 22px;
+  max-width: 22px;
+  min-height: 22px;
+  min-width: 22px;
+  padding: 0
+}
+
+.todo-menu .task-item {
+  background-color: var(--colors0);
+  border: 1px solid var(--colors1);
+  border-radius: 8px;
+  margin: 0 10px 8px;
+  padding: 8px 0
+}
+
+.todo-menu .task-item.expanded {
+  background-color: var(--colors0);
+  border-color: var(--colors6)
+}
+
+.todo-menu .task-item:hover {
+  background-color: var(--colors1)
+}
+
+.todo-menu .task-item .title {
+  color: var(--colors6);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 10px 6px
+}
+
+.todo-menu .task-item .description {
+  color: var(--colors7);
+  font-size: 11px;
+  padding: 0 10px 6px
+}
+
+.todo-menu .task-item.completed .title,
+.todo-menu .task-item.completed .description {
+  color: var(--colors8);
+  text-decoration: line-through
+}
+
+.todo-menu .task-checkbox {
+  background: transparent;
+  border: none;
+  color: var(--colors6);
+  font-size: 16px;
+  margin-left: 10px
+}
+
+.todo-menu .task-checkbox:checked {
+  color: var(--colors6)
+}
+
+.todo-menu .task-info-row .date-colors6,
+.todo-menu .task-info-row .category-colors6 {
+  color: var(--colors4);
+  font-size: 11px;
+  font-weight: 500
+}
+
+.todo-menu .task-info-row .category-colors6.important,
+.todo-menu .task-info-row .category-icon.important {
+  color: var(--colors2)
+}
+
+.todo-menu .task-info-row .category-colors6.urgent,
+.todo-menu .task-info-row .category-icon.urgent {
+  color: var(--colors2)
+}
+
+.todo-menu .task-info-row .category-colors6.soon,
+.todo-menu .task-info-row .category-icon.soon {
+  color: var(--colors3)
+}
+
+.todo-menu .task-info-row .category-colors6.today,
+.todo-menu .task-info-row .category-icon.today {
+  color: var(--colors6)
+}
+
+.todo-menu .task-info-row .delete-task-button {
+  background-color: var(--colors1);
+  border-radius: 6px;
+  color: var(--colors6);
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 8px;
+  max-height: 20px;
+  min-height: 20px;
+  padding: 3px 10px
+}
+
+.todo-menu .task-info-row .delete-task-button:hover {
+  background-color: var(--colors2);
+  color: var(--cursorcol)
+}
+
+.todo-menu .no-tasks {
+  color: var(--colors8);
+  font-size: 16px
+}
+
+.todo-menu .no-tasks-icon {
+  color: var(--colors8);
+  font-size: 64px
+}
+
+.notification-widget {
+  padding: 0 5px
+}
+
+.notification-widget .icon {
+  color: var(--colors6);
+  font-size: 14px
+}
+
+.notification-widget .icon.new-notification {
+  color: var(--colors2)
+}
+
+.notification-widget .label.new-notification {
+  color: var(--colors2);
+  font-weight: 600
+}
+
+.cpu-widget {
+  padding: 0 5px
+}
+
+.memory-widget {
+  padding: 0 5px
+}
+
+.disk-widget {
+  padding: 0 5px
+}
+
+.gpu-widget {
+  padding: 0 5px
+}
+
+.cpu-widget .icon {
+  color: var(--colors6);
+  font-size: 13px
+}
+
+.memory-widget .icon {
+  color: var(--colors6);
+  font-size: 13px
+}
+
+.disk-widget .icon {
+  color: var(--colors6);
+  font-size: 13px
+}
+
+.gpu-widget .icon {
+  color: var(--colors6);
+  font-size: 13px
+}
+
+.cpu-widget .label,
+.memory-widget .label,
+.disk-widget .label,
+.gpu-widget .label {
+  color: var(--colors6);
+  font-weight: 500
+}
+
+.cpu-widget .label.status-low,
+.memory-widget .label.status-low,
+.gpu-widget .label.status-low {
+  color: var(--colors4)
+}
+
+.cpu-widget .label.status-medium,
+.memory-widget .label.status-medium,
+.gpu-widget .label.status-medium {
+  color: var(--colors3)
+}
+
+.cpu-widget .label.status-high,
+.memory-widget .label.status-high,
+.gpu-widget .label.status-high {
+  color: var(--colors6)
+}
+
+.cpu-widget .label.status-critical,
+.memory-widget .label.status-critical,
+.gpu-widget .label.status-critical {
+  color: var(--colors2)
+}
+
+.disk-widget .label.status-low {
+  color: var(--colors4)
+}
+
+.disk-widget .label.status-medium {
+  color: var(--colors3)
+}
+
+.disk-widget .label.status-high {
+  color: var(--colors6)
+}
+
+.disk-widget .label.status-critical {
+  color: var(--colors2)
+}
+
+.cpu-popup,
+.memory-popup,
+.gpu-popup {
+  min-width: 360px
+}
+
+.cpu-popup .header .colors6,
+.memory-popup .header .colors6,
+.gpu-popup .header .colors6 {
+  color: var(--colors6);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px
+}
+
+.cpu-popup .stats,
+.memory-popup .stats,
+.gpu-popup .stats {
+  padding: 10px
+}
+
+.cpu-popup .stats .stat-label,
+.memory-popup .stats .stat-label,
+.gpu-popup .stats .stat-label {
+  color: var(--colors4);
+  font-size: 12px;
+  font-weight: 500
+}
+
+.cpu-popup .stats .stat-value,
+.memory-popup .stats .stat-value,
+.gpu-popup .stats .stat-value {
+  color: var(--colors6);
+  font-size: 20px;
+  font-weight: 700
+}
+
+.cpu-popup .cpu-graph {
+  color: var(--colors6)
+}
+
+.memory-popup .memory-graph {
+  color: var(--colors6)
+}
+
+.gpu-popup .gpu-graph {
+  color: var(--colors6)
+}
+
+.cpu-popup .cpu-graph-grid,
+.memory-popup .memory-graph-grid,
+.gpu-popup .gpu-graph-grid {
+  color: var(--colors1)
+}
+
+.brightness-widget {
+  padding: 0 5px
+}
+
+.brightness-widget .icon {
+  color: var(--colors6);
+  font-size: 14px;
+  padding: 0 5px
+}
+
+.brightness-menu {
+  min-width: 240px
+}
+
+.brightness-slider {
+  border: none
+}
+
+.volume-widget {
+  padding: 0 5px
+}
+
+.volume-widget .icon {
+  color: var(--colors6);
+  font-size: 14px;
+  margin-right: 3px;
+  padding: 0 3px
+}
+
+.volume-widget .label {
+  font-weight: 500
+}
+
+.volume-widget .label.muted,
+.volume-widget .icon.muted {
+  color: var(--colors8)
+}
+
+.audio-menu {
+  min-width: 300px
+}
+
+.audio-menu .system-volume-container .volume-slider {
+  border: none
+}
+
+.audio-menu .audio-container .device {
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 6px 10px
+}
+
+.audio-menu .audio-container .device.selected {
+  background-color: var(--colors1)
+}
+
+.audio-menu .audio-container .device:hover {
+  background-color: var(--colors1)
+}
+
+.bluetooth-widget {
+  padding: 0 5px
+}
+
+.bluetooth-widget .icon {
+  color: var(--colors6);
+  font-size: 15px
+}
+
+.wifi-widget {
+  padding: 0 5px
+}
+
+.wifi-widget .icon {
+  color: var(--colors6);
+  font-size: 15px
+}
+
+.wifi-menu {
+  min-width: 360px
+}
+
+.wifi-menu .header {
+  border-bottom: 1px solid var(--colors1);
+  color: var(--colors6);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 12px
+}
+
+.wifi-menu .wifi-item {
+  border-radius: 6px;
+  margin: 4px 6px;
+  min-height: 36px;
+  padding: 6px 10px
+}
+
+.wifi-menu .wifi-item:hover {
+  background-color: var(--colors1)
+}
+
+.wifi-menu .wifi-item[active=true] {
+  background-color: var(--colors1)
+}
+
+.wifi-menu .wifi-item .icon {
+  color: var(--colors6);
+  font-family: "Segoe Fluent Icons";
+  font-size: 22px;
+  margin-right: 8px
+}
+
+.wifi-menu .wifi-item .name {
+  font-size: 13px;
+  font-weight: 500
+}
+
+.wifi-menu .wifi-item .connect {
+  background-color: var(--colors1);
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 16px
+}
+
+.wifi-menu .wifi-item .connect:hover {
+  background-color: var(--colors5)
+}
+
+.wifi-menu .footer {
+  border-top: 1px solid var(--colors1);
+  color: var(--colors4);
+  font-size: 11px;
+  padding: 8px 12px
+}
+
+.open-meteo-widget {
+  padding: 0 7px
+}
+
+.open-meteo-widget .icon {
+  color: var(--colors7);
+  font-size: 16px
+}
+
+.open-meteo-widget .label {
+  color: var(--colors6);
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 4px
+}
+
+.open-meteo-card {
+  border-radius: 12px;
+  min-width: 500px
+}
+
+.open-meteo-card-today .label {
+  color: var(--colors7);
+  font-size: 12px
+}
+
+.open-meteo-card-today .label.location {
+  color: var(--colors6);
+  font-size: 26px;
+  font-weight: 700
+}
+
+.open-meteo-card-day {
+  background-color: transparent;
+  border: 1px solid var(--colors1);
+  border-radius: 8px;
+  padding: 8px
+}
+
+.open-meteo-card-day.active {
+  background-color: var(--colors1);
+  border-color: var(--colors6)
+}
+
+.open-meteo-card-day:hover {
+  background-color: var(--colors1)
+}
+
+.open-meteo-card-day .day-name {
+  color: var(--colors4);
+  font-size: 11px;
+  font-weight: 600
+}
+
+.open-meteo-card-day .day-temp-max {
+  color: var(--colors6);
+  font-size: 15px;
+  font-weight: 700
+}
+
+.open-meteo-card-day .day-temp-min {
+  color: var(--colors7);
+  font-size: 12px
+}
+
+.open-meteo-card .hourly-container {
+  background: transparent;
+  border: none;
+  min-height: 120px
+}
+
+.open-meteo-card .hourly-data {
+  font-size: 11px;
+  font-weight: 700
+}
+
+.open-meteo-card .hourly-data.temperature {
+  background-color: var(--colors6)
+}
+
+.open-meteo-card .hourly-data.rain {
+  background-color: var(--colors4)
+}
+
+.open-meteo-card .hourly-data.snow {
+  background-color: var(--colors3)
+}
+
+.open-meteo-card .hourly-data-button {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--colors8);
+  font-size: 14px;
+  max-height: 24px;
+  max-width: 24px;
+  min-height: 24px;
+  min-width: 24px
+}
+
+.open-meteo-card .hourly-data-button.active {
+  background-color: var(--colors1);
+  border: 1px solid var(--colors1);
+  color: var(--colors6)
+}
+
+.open-meteo-card .search-input {
+  background-color: var(--colors0);
+  border: 1px solid var(--colors1);
+  border-radius: 8px;
+  color: var(--colors6);
+  font-size: 13px;
+  padding: 8px 12px
+}
+
+.open-meteo-card .search-input:focus {
+  background-color: var(--colors0);
+  border-color: var(--colors6)
+}
+
+.open-meteo-card .search-results {
+  background: transparent;
+  color: var(--colors6);
+  font-size: 13px
+}
+
+.open-meteo-card .search-results::item {
+  border-radius: 6px;
+  margin: 2px 6px;
+  padding: 6px 10px
+}
+
+.open-meteo-card .search-results::item:hover {
+  background-color: var(--colors1)
+}
+
+.systray {
+  background: transparent;
+  border: none
+}
+
+.systray .button {
+  border-radius: 4px;
+  padding: 2px
+}
+
+.systray .button:hover {
+  background: var(--colors1)
+}
+
+.systray .unpinned-visibility-btn {
+  border: none;
+  border-radius: 4px;
+  height: 20px;
+  width: 16px
+}
+
+.systray .unpinned-visibility-btn:hover {
+  background: var(--colors1)
+}
+
+.systray .label {
+  color: var(--colors8)
+}
+
+.systray .icon {
+  color: var(--colors8)
+}
+
+.recycle-bin-widget {
+  border-radius: 8px;
+  margin: 4px 2px;
+  padding: 0
+}
+
+.recycle-bin-widget:hover {
+  background-color: var(--colors1)
+}
+
+.recycle-bin-widget .icon {
+  font-size: 16px;
+  margin-right: 6px
+}
+
+.recycle-bin-widget .label {
+  color: var(--colors6);
+  font-weight: 500
+}
+
+.recycle-bin-widget .icon.bin-empty {
+  color: var(--colors4)
+}
+
+.recycle-bin-widget .label.bin-empty {
+  color: var(--colors7)
+}
+
+.recycle-bin-widget .icon.bin-filled {
+  color: var(--colors2)
+}
+
+.recycle-bin-widget .label.bin-filled {
+  color: var(--colors6);
+  font-weight: 700
+}
+
+.wallpapers-widget .icon {
+  color: var(--colors6);
+  font-size: 16px;
+  padding: 0 8px
+}
+
+.power-menu-widget .label {
+  color: var(--colors2);
+  font-size: 14px
+}
+
+.power-menu-overlay {
+  background-color: #0000004d
+}
+
+.power-menu-overlay .uptime {
+  color: var(--colors5);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px
+}
+
+.power-menu-popup {
+  background-color: var(--backgroundcol);
+  border: 1px solid var(--colors1);
+  border-radius: 12px;
+  padding: 28px
+}
+
+.power-menu-popup .profile-info {
+  border-bottom: 1px solid var(--colors1);
+  margin-bottom: 14px;
+  padding: 0 0 16px
+}
+
+.power-menu-popup .profile-info .profile-username {
+  color: var(--colors6);
+  font-size: 20px;
+  font-weight: 600
+}
+
+.power-menu-popup .profile-info .profile-account-type {
+  color: var(--colors4);
+  font-size: 12px
+}
+
+.power-menu-popup .button {
+  background-color: var(--colors0);
+  border: 1px solid var(--colors1);
+  border-radius: 10px;
+  margin: 6px;
+  max-width: 130px;
+  min-height: 90px;
+  min-width: 130px;
+  padding: 0
+}
+
+.power-menu-popup .button.hover {
+  background-color: var(--colors1);
+  border-color: var(--colors6)
+}
+
+.power-menu-popup .button .label {
+  color: var(--colors7);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px
+}
+
+.power-menu-popup .button .icon {
+  color: var(--colors8);
+  font-family: "JetBrainsMono NFP";
+  font-size: 28px;
+  padding-top: 6px
+}
+
+.power-menu-popup .button.hover .label,
+.power-menu-popup .button.hover .icon {
+  color: var(--colors6)
+}
+
+.power-menu-popup .button.cancel .icon {
+  color: var(--colors2)
+}
+
+.power-menu-popup .button.cancel .label {
+  color: var(--colors2)
+}
+
+.power-menu-popup .button.shutdown .icon {
+  color: var(--colors6)
+}
+
+.power-menu-popup .button.shutdown .label {
+  color: var(--colors6)
+}

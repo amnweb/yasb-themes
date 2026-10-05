@@ -1,0 +1,567 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/amnweb/yasb/main/schema.json
+# Use find and replace to replace {username} with your username
+
+debug: false
+show_systray: true
+update_check: true
+watch_config: true
+watch_stylesheet: true
+
+glazewm:
+  reload_command: glazewm.exe command wm-exit && glazewm.exe start
+  start_command: glazewm.exe start
+  stop_command: glazewm.exe command wm-exit
+
+bars:
+  yasb-bar:
+    alignment:
+      align: center
+      position: top
+    animation:
+      duration: 250
+      enabled: true
+    blur_effect:
+      border_color: none
+      dark_mode: false
+      enabled: true
+      round_corners: true
+    class_name: yasb-bar
+    dimensions:
+      height: 40
+      width: 100%
+    layouts:
+      center:
+        alignment: center
+        stretch: true
+      left:
+        alignment: left
+        stretch: true
+      right:
+        alignment: right
+        stretch: true
+    padding:
+      bottom: 0
+      left: 6
+      right: 6
+      top: 4
+    screens:
+      - primary
+    style: bar
+    widgets:
+      center:
+        - cava
+        - cpu
+        - disk
+        - clock
+        - memory
+        - gpu
+        - cava
+      left:
+        - power_menu
+        - notes
+        - todo
+        - bin
+        - glazewm_workspaces
+      right:
+        - systray
+        - wallpapers
+        - brightness
+        - wifi
+        - open_meteo
+        - volume
+        - prank
+        - notifications
+    window_flags:
+      always_on_top: true
+      hide_on_fullscreen: true
+      windows_app_bar: true
+
+widgets:
+  bin:
+    options:
+      callbacks:
+        on_left: >-
+          exec "C:/Users/{username}/Desktop/file_explorer.lnk"
+          shell:RecycleBinFolder
+        on_middle: do_nothing
+        on_right: empty_bin
+      icons:
+        bin_empty: 󰩺
+        bin_filled: 󰩹
+      label: <span>{icon}</span>{items_count}
+      label_alt: Items {items_count}, Total size ({items_size})
+      show_confirmation: true
+    type: yasb.recycle_bin.RecycleBinWidget
+
+  brightness:
+    options:
+      brightness_icons:
+        - 󰃞
+        - 󰃝
+        - 󰃟
+        - 󰃠
+      brightness_menu:
+        alignment: right
+        blur: true
+        border_color: System
+        brightness_icon: 
+        contrast_icon: 
+        direction: down
+        offset_left: 0
+        offset_top: 6
+        round_corners: true
+        round_corners_type: normal
+      brightness_toggle_level:
+        - 0
+        - 50
+        - 100
+      callbacks:
+        on_left: toggle_label
+        on_middle: do_nothing
+        on_right: toggle_brightness_menu
+      label: <span>{icon}</span>
+      label_alt: "{percent}%"
+      tooltip: true
+    type: yasb.brightness.BrightnessWidget
+
+  cava:
+    options:
+      bar_height: 12
+      bar_spacing: 2
+      bar_type: bars
+      bar_width: 4
+      bars_number: 8
+      foreground: "#103690"
+      framerate: 60
+      gradient: 1
+      gradient_color_1: "#CC6B49"
+      gradient_color_2: "#D4AF37"
+      gradient_color_3: "#ffffff"
+      hide_empty: true
+      min_bar_height: 0
+    type: yasb.cava.CavaWidget
+
+  clock:
+    options:
+      calendar:
+        alignment: middle
+        blur: true
+        border_color: system
+        direction: down
+        extended: true
+        offset_left: 0
+        offset_top: 9
+        round_corners: true
+        round_corners_type: normal
+        show_week_numbers: false
+        show_years: false
+      callbacks:
+        on_left: toggle_label
+        on_middle: toggle_timer
+        on_right: toggle_calendar
+      label: <span></span> {%H:%M}
+      label_alt: <span></span> {%A, %d %B}
+      locale: ""
+      timezones: []
+      tooltip: true
+      update_interval: 1000
+    type: yasb.clock.ClockWidget
+
+  cpu:
+    options:
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: exec cmd /c Taskmgr
+      cpu_thresholds:
+        high: 90
+        low: 5
+        medium: 50
+      histogram_icons:
+        - ▁
+        - ▁
+        - ▂
+        - ▃
+        - ▄
+        - ▅
+        - ▆
+        - ▇
+        - █
+      histogram_num_columns: 8
+      label: <span></span> {info[percent][total]}%
+      label_alt: <span></span> {info[freq][current]} MHz
+      menu:
+        alignment: right
+        blur: true
+        border_color: System
+        direction: down
+        enabled: true
+        graph_history_size: 60
+        offset_left: 0
+        offset_top: 6
+        round_corners: true
+        round_corners_type: normal
+        show_graph: true
+        show_graph_grid: false
+      update_interval: 2000
+    type: yasb.cpu.CpuWidget
+
+  disk:
+    options:
+      callbacks:
+        on_left: toggle_label
+        on_middle: do_nothing
+        on_right: exec cmd /c start "" "C:/Users/{username}/Desktop/wiztree.lnk"
+      disk_thresholds:
+        high: 90
+        low: 60
+        medium: 80
+      group_label:
+        alignment: right
+        blur: true
+        border_color: System
+        direction: down
+        round_corners: true
+        round_corners_type: normal
+        show_label_name: true
+        volume_labels:
+          - C
+      label: <span></span> {space[used][percent]}
+      label_alt: <span></span> {space[used][gb]} / {space[total][gb]}
+      update_interval: 60
+      volume_label: C
+    type: yasb.disk.DiskWidget
+
+  glazewm_workspaces:
+    options:
+      enable_scroll_switching: true
+      hide_if_offline: false
+      monitor_exclusive: true
+      offline_label: GlazeWM Offline
+    type: glazewm.workspaces.GlazewmWorkspacesWidget
+
+  gpu:
+    options:
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+      gpu_index: 0
+      gpu_thresholds:
+        high: 90
+        low: 25
+        medium: 50
+      label: <span>󰔃</span> {info[utilization]}%
+      label_alt: <span>󰔃</span> {info[temp]}°C | {info[mem_used]}
+      menu:
+        alignment: right
+        blur: true
+        border_color: System
+        direction: down
+        enabled: true
+        graph_history_size: 60
+        offset_left: 0
+        offset_top: 6
+        round_corners: true
+        round_corners_type: normal
+        show_graph: true
+        show_graph_grid: false
+      update_interval: 2000
+    type: yasb.gpu.GpuWidget
+
+  memory:
+    options:
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+      label: <span></span> {virtual_mem_percent}%
+      label_alt: <span></span> {virtual_mem_used}/{virtual_mem_total}
+      memory_thresholds:
+        high: 90
+        low: 25
+        medium: 50
+      menu:
+        alignment: right
+        blur: true
+        border_color: System
+        direction: down
+        enabled: true
+        graph_history_size: 60
+        offset_left: 0
+        offset_top: 6
+        round_corners: true
+        round_corners_type: normal
+        show_graph: true
+        show_graph_grid: false
+      update_interval: 5000
+    type: yasb.memory.MemoryWidget
+
+  notes:
+    options:
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+      icons:
+        close: 
+        copy: 
+        delete: 
+        float_off: 󱂩
+        float_on: 󱂬
+        note: 󰤌
+      label: <span>󰤌</span> {count}
+      label_alt: "{count} notes"
+      menu:
+        alignment: left
+        blur: true
+        border_color: System
+        direction: down
+        offset_left: 0
+        offset_top: 6
+        round_corners: true
+        round_corners_type: normal
+        show_date_time: true
+    type: yasb.notes.NotesWidget
+
+  notifications:
+    options:
+      callbacks:
+        on_left: toggle_notification
+        on_middle: do_nothing
+        on_right: toggle_label
+      hide_empty: true
+      icons:
+        default: 󰂚
+        new: 󰂞
+      label: <span>󰂞</span> {count}
+      label_alt: "{count} notifications"
+      tooltip: true
+    type: yasb.notifications.NotificationsWidget
+
+  open_meteo:
+    options:
+      callbacks:
+        on_left: toggle_label
+        on_middle: do_nothing
+        on_right: toggle_card
+      hide_decimal: true
+      label: <span>{icon}</span> {feelslike}
+      label_alt: "{location}: {min_temp}↓ {max_temp}↑"
+      tooltip: true
+      units: metric
+      update_interval: 600
+      weather_card:
+        alignment: right
+        blur: true
+        border_color: none
+        current_line_color: "#8EAEE8"
+        current_line_style: dot
+        current_line_width: 1
+        direction: down
+        hourly_forecast_buttons:
+          default_view: temperature
+          enabled: true
+          rain_icon: 󰖖
+          snow_icon: 󰖘
+          temperature_icon: 󰖙
+        hourly_gradient:
+          bottom_color: "#2A3E68"
+          enabled: false
+          top_color: "#8EAEE8"
+        hourly_icon_size: 24
+        hourly_point_spacing: 76
+        icon_size: 48
+        icon_smoothing: true
+        round_corners: true
+        round_corners_type: normal
+        show_hourly_forecast: true
+        temp_line_width: 2
+        time_format: 12h
+        weather_animation:
+          enabled: false
+          rain_effect_intensity: 1
+          scale_with_chance: true
+          snow_effect_intensity: 1
+          snow_overrides_rain: true
+          temp_line_animation_style: both
+    type: yasb.open_meteo.OpenMeteoWidget
+
+  power_menu:
+    options:
+      animation_duration: 120
+      blur: true
+      blur_background: true
+      button_row: 3
+      buttons:
+        sleep:
+          - ⏾
+          - Sleep
+        lock:
+          - 
+          - Lock
+        restart:
+          - 
+          - Restart
+        shutdown:
+          - 
+          - Shut Down
+        signout:
+          - 󰍃
+          - Sign out
+        cancel:
+          - 󰜺
+          - Cancel
+      label: <span></span>
+      profile_image_size: 200
+      show_user: true
+      uptime: true
+    type: yasb.power_menu.PowerMenuWidget
+
+  prank:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "ethernet"
+      label: "<span color='#fab387'>󰤭</span>"
+      label_alt: "Network Diagnostic Required"
+      callbacks:
+        on_left: 'exec powershell.exe -Command "Start-Process https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/tree/main/Yasb; Start-Process https://rroll.to/iHgSMg"'
+
+  systray:
+    options:
+      class_name: systray
+      icon_size: 16
+      label_collapsed: 󰟃
+      label_expanded: 󰞘
+      label_position: left
+      pin_click_modifier: alt
+      show_battery: true
+      show_network: true
+      show_unpinned: true
+      show_unpinned_button: true
+      show_volume: false
+      tooltip: true
+    type: yasb.systray.SystrayWidget
+
+  todo:
+    options:
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+      categories:
+        default:
+          label: General
+        important:
+          label: Important
+        soon:
+          label: Complete soon
+        today:
+          label: End of day
+        urgent:
+          label: Urgent
+      icons:
+        add:  New Task
+        category: 
+        checked: 󰄴
+        date: 
+        delete: Delete
+        edit: Edit
+        no_tasks: 
+        sort: 
+        unchecked: 󰄰
+      label: <span></span> {count}
+      label_alt: <span></span> {completed}/{count} done
+      menu:
+        alignment: left
+        blur: true
+        border_color: system
+        direction: down
+        offset_left: 0
+        offset_top: 6
+        round_corners: true
+        round_corners_type: normal
+    type: yasb.todo.TodoWidget
+
+  volume:
+    options:
+      audio_menu:
+        alignment: right
+        blur: true
+        border_color: system
+        direction: down
+        offset_left: 0
+        offset_top: 6
+        round_corners: true
+        round_corners_type: normal
+        show_app_icons: true
+        show_app_labels: false
+        show_apps: true
+        show_apps_expanded: false
+      callbacks:
+        on_left: toggle_volume_menu
+        on_middle: do_nothing
+        on_right: toggle_mute
+      label: <span>{icon}</span> {level}
+      label_alt: Vol {volume}
+      scroll_step: 2
+      slider_beep: false
+      tooltip: true
+    type: yasb.volume.VolumeWidget
+
+  wallpapers:
+    options:
+      callbacks:
+        on_left: change_wallpaper
+        on_right: toggle_gallery
+      change_automatically: true
+      engine:
+        animation: slide_top
+        enabled: true
+      gallery:
+        image_corner_radius: 10
+        image_width: 369
+        orientation: portrait
+        type: magnified
+      image_path: "{image_path}"
+      keybindings:
+        - action: change_wallpaper
+          keys: ctrl+alt+w
+          screen: cursor
+      label: <span>󰸉</span>
+      run_after:
+        - wal -s -t -e -q -n -i {image}
+        - cmd.exe /c start /min pwsh C:\Users\{username}\.config\yasb\yasb.ps1
+      update_interval: 300
+    type: yasb.wallpapers.WallpapersWidget
+
+  wifi:
+    options:
+      callbacks:
+        on_left: toggle_label
+        on_middle: exec cmd.exe /c start ms-settings:network
+        on_right: toggle_menu
+      ethernet_icon: 
+      ethernet_label: <span>{wifi_icon}</span>
+      ethernet_label_alt: <span>{wifi_icon}</span> {ip_addr}
+      get_exact_wifi_strength: false
+      hide_if_ethernet: true
+      label: <span>{wifi_icon}</span>
+      label_alt: "{wifi_name} {wifi_strength}%"
+      menu_config:
+        alignment: right
+        blur: true
+        border_color: System
+        direction: down
+        offset_left: 0
+        offset_top: 6
+        round_corners: true
+        round_corners_type: normal
+      update_interval: 5000
+      wifi_icons:
+        - 󰤮
+        - 󰤟
+        - 󰤢
+        - 󰤥
+        - 󰤨
+    type: yasb.wifi.WifiWidget
