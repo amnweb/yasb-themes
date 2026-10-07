@@ -1,6 +1,6 @@
 # Glazing Mocha
 
-> *A dark, minimal, glass-and-grain status bar experience powered by Catppuccin Mocha.*
+> *A dark & minimal, static status bar inspired by Catppuccin Mocha color palette that works with Glaze WM.*
 
 ## Widgets
 
@@ -9,26 +9,25 @@
 - Todo
 - Recycle Bin
 - GlazeWM Workspaces
+- Cava
 - CPU
-- GPU
-- Pomodoro
-- Memory
 - Disk
+- Clock
+- Memory
+- GPU
+- Cava
 - Systray
 - Wallpapers
 - Brightness
-- Bluetooth
 - WiFi
 - Open Meteo
 - Volume
 - Custom
-- Clock
 - Notifications
 
 ## Requirements
 
 - [GlazeWM](https://github.com/glzr-io/glazewm) — Tiling window manager
-- [Ollama](https://ollama.com/) — Local AI (for AI Chat widget)
 - [JetBrainsMono Nerd Font Propo](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs
 
 ## Screenshots
