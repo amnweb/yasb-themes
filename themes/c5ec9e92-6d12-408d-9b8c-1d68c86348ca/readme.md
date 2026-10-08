@@ -1,6 +1,19 @@
 # Glazing Mocha
 
-> *A dark & minimal, static status bar inspired by Catppuccin Mocha color palette that works with Glaze WM.*
+A dark & minimal, static status bar inspired by Catppuccin Mocha color palette that works with Glaze WM.
+
+## Setup
+
+1. Go to your yasb config directory, usually located at: `$HOME/.config/yasb`
+2. Open `config.yaml` and replace `{username}` with your Windows username and `{image_path}` with the path to your wallpaper.
+
+## Optional
+
+Check out my [GlazeWM config](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Glazewm/config.yaml) for the recommended layout settings. Here are some [wallpapers](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/tree/main/Wallpaper) that goes well with the bar.
+
+If you face any issues with the theme, please open an issue [here](https://github.com/amnweb/yasb-themes/issues).
+
+>💡Fun fact: There is [another version](https://github.com/amnweb/yasb-themes/tree/main/themes/985855a7-10d7-4d7b-88ff-7c3e4cf509dd) of the theme that works with Pywal to dynamically change the theme based on your wallpaper.
 
 ## Widgets
 
@@ -15,7 +28,6 @@
 - Clock
 - Memory
 - GPU
-- Cava
 - Systray
 - Wallpapers
 - Brightness
@@ -27,8 +39,10 @@
 
 ## Requirements
 
-- [GlazeWM](https://github.com/glzr-io/glazewm) — Tiling window manager
-- [JetBrainsMono Nerd Font Propo](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs
+- [GlazeWM](https://github.com/glzr-io/glazewm) - Tiling window manager
+- [JetBrainsMono Nerd Font Propo](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs & Icons
+- [Cava](https://github.com/karlstav/cava)
+ `winget install -e --id karlstav.cava`
 
 ## Screenshots
 

@@ -10,7 +10,7 @@ This is the reactive version of the "Glazing Mocha" theme. If you prefer the [st
 
 ## Optional
 
-Check out my [GlazeWM config](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Glazewm/config.yaml) for the recommended layout settings.
+Check out my [GlazeWM config](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Glazewm/config.yaml) for the recommended layout settings.Here are some [wallpapers](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/tree/main/Wallpaper) that goes well with the bar.
 
 If you face any issues with the theme, please open an issue [here](https://github.com/amnweb/yasb-themes/issues).
 
@@ -39,12 +39,14 @@ If you face any issues with the theme, please open an issue [here](https://githu
 ## Requirements
 
 - [GlazeWM](https://github.com/glzr-io/glazewm/releases) — Tiling window manager
-- [JetBrainsMono Nerd Font Propo](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs & Icons
+- [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs & Icons
+- [Powershell script](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Yasb/yasb.ps1)
 - [ImageMagick](https://imagemagick.org/)
  `winget install ImageMagick.ImageMagick`
 - [Pywal](https://github.com/eylles/pywal16)
  `pip install pywal16`
-- [Powershell script](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Yasb/yasb.ps1)
+- [Cava](https://github.com/karlstav/cava)
+ `winget install -e --id karlstav.cava`
 
 ## Screenshots
 
