@@ -531,7 +531,7 @@ widgets:
       label: <span>󰸉</span>
       run_after:
         - 'wal -s -t -e -q -n -i {image}'
-        - 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$HOME/.config/yasb/yasb.ps1"'
+        - 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/{username}/.config/yasb/yasb.ps1"'
       update_interval: 300
     type: yasb.wallpapers.WallpapersWidget
 
