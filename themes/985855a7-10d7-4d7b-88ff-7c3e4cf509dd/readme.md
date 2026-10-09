@@ -5,7 +5,7 @@ This is the reactive version of the "Glazing Mocha" theme. If you prefer the [st
 ## Setup
 
 1. Go to your yasb config directory, usually located at: `$HOME/.config/yasb`
-2. Open `config.yaml` and replace `{username}` with your Windows username and `{image_path}` with the path to your wallpaper.
+2. Open `config.yaml` and replace `{username}` with your Windows username and `{wallpaper_path}` with the path to your wallpaper.
 3. Put the [yasb.ps1](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Yasb/yasb.ps1) script in the same location as your config file.
 
 ## Optional
