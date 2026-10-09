@@ -4,6 +4,7 @@ A dark & minimal, static status bar inspired by Catppuccin Mocha color palette t
 
 ## Setup
 
+0. Install requirements!
 1. Go to your yasb config directory, usually located at: `$HOME/.config/yasb`
 2. Open `config.yaml` and replace `{username}` with your Windows username and `{wallpaper_path}` with the path to your wallpaper.
 
