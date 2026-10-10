@@ -4,13 +4,12 @@ This is the reactive version of the "Glazing Mocha" theme. If you prefer the [st
 
 ## Setup
 
-1. Go to your yasb config directory, usually located at: `$HOME/.config/yasb`
-2. Open `config.yaml` and replace `{username}` with your Windows username and `{image_path}` with the path to your wallpaper.
-3. Put the [yasb.ps1](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Yasb/yasb.ps1) script in the same location as your config file.
+0. Install requirements!
+1. Go to your yasb config directory, usually located at: `$HOME/.config/yasb`. Open `config.yaml` and replace and `{wallpaper_path}` with the path to your wallpaper. **Use 'Single quotes or yasb would crash'.**
 
 ## Optional
 
-Check out my [GlazeWM config](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Glazewm/config.yaml) for the recommended layout settings.
+Check out my [GlazeWM config](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Glazewm/config.yaml) for the recommended layout settings.Here are some [wallpapers](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/tree/main/Wallpaper) that goes well with the bar.
 
 If you face any issues with the theme, please open an issue [here](https://github.com/amnweb/yasb-themes/issues).
 
@@ -39,12 +38,13 @@ If you face any issues with the theme, please open an issue [here](https://githu
 ## Requirements
 
 - [GlazeWM](https://github.com/glzr-io/glazewm/releases) — Tiling window manager
-- [JetBrainsMono Nerd Font Propo](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs & Icons
+- [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) - For Nerd Glyphs & Icons
 - [ImageMagick](https://imagemagick.org/)
  `winget install ImageMagick.ImageMagick`
 - [Pywal](https://github.com/eylles/pywal16)
  `pip install pywal16`
-- [Powershell script](https://github.com/Somrat10369/Windows-11-Productive-Rice-Configs/blob/main/Yasb/yasb.ps1)
+- [Cava](https://github.com/karlstav/cava)
+ `winget install -e --id karlstav.cava`
 
 ## Screenshots
 

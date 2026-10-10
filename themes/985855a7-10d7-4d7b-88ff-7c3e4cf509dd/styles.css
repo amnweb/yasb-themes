@@ -1,28 +1,8 @@
-:root {
-  --backgroundcol: #0f1224;
-  --foregroundcol: #c3c3c8;
-  --cursorcol: #c3c3c8;
-  --colors0: #0f1224;
-  --colors1: #5E6175;
-  --colors2: #64677B;
-  --colors3: #717489;
-  --colors4: #7E7E94;
-  --colors5: #8A7B8F;
-  --colors6: #9F8DA2;
-  --colors7: #c3c3c8;
-  --colors8: #5e6074;
-  --colors9: #5E6175;
-  --colors10: #64677B;
-  --colors11: #717489;
-  --colors12: #7E7E94;
-  --colors13: #8A7B8F;
-  --colors14: #9F8DA2;
-  --colors15: #c3c3c8;
-}
+@import "../../.cache/wal/colors.css";
 
 * {
-  border: var(--backgroundcol);
-  color: var(--cursorcol);
+  border: var(--background);
+  color: var(--cursor);
   border-radius: 10px;
   font-family: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo", monospace;
   font-size: 15px;
@@ -31,13 +11,13 @@
 }
 
 .yasb-bar {
-  background-color: var(--backgroundcol);
-  border: 3px solid var(--colors6);
+  background-color: var(--background);
+  border: 3px solid var(--color6);
   padding-top: 2px
 }
 
 .widget {
-  color: var(--colors6);
+  color: var(--color6);
   padding: 0 5px
 }
 
@@ -48,7 +28,7 @@
 
 .widget .label,
 .widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 14px;
   font-weight: 500;
   padding: 0 3px
@@ -74,8 +54,8 @@
 .wifi-menu,
 .brightness-menu,
 .open-meteo-card {
-  background-color: var(--backgroundcol);
-  border: 2px solid var(--colors6);
+  background-color: var(--background);
+  border: 2px solid var(--color6);
   border-radius: 10px
 }
 
@@ -92,12 +72,12 @@ QScrollBar:horizontal {
 }
 
 QScrollBar::handle {
-  background-color: var(--colors1);
+  background-color: var(--color1);
   border-radius: 4px
 }
 
 QScrollBar::handle:hover {
-  background-color: var(--colors4)
+  background-color: var(--color4)
 }
 
 QScrollBar::add-line,
@@ -112,11 +92,11 @@ QScrollBar::sub-page {
 }
 
 .tooltip {
-  background-color: var(--colors0);
-  border: 1px solid var(--colors1);
+  background-color: var(--color0);
+  border: 1px solid var(--color1);
   border-radius: 4px;
   border-style: solid;
-  color: var(--colors7);
+  color: var(--color7);
   font-size: 12px;
   font-weight: 600;
   margin-top: 4px;
@@ -124,7 +104,7 @@ QScrollBar::sub-page {
 }
 
 .notification-dot {
-  background-color: var(--colors2);
+  background-color: var(--color2);
   border-radius: 50%;
   max-height: 6px;
   max-width: 6px;
@@ -133,10 +113,10 @@ QScrollBar::sub-page {
 }
 
 .context-menu {
-  background-color: var(--colors0);
+  background-color: var(--color0);
   border: none;
   border-radius: 8px;
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 12px;
   padding: 5px 0
 }
@@ -150,25 +130,25 @@ QScrollBar::sub-page {
 }
 
 .context-menu::item:selected {
-  background-color: var(--colors1);
-  color: var(--colors6)
+  background-color: var(--color1);
+  color: var(--color6)
 }
 
 .context-menu::item:checked {
-  background-color: var(--colors1);
-  color: var(--colors6)
+  background-color: var(--color1);
+  color: var(--color6)
 }
 
 .context-menu::item:pressed {
-  background-color: var(--colors2)
+  background-color: var(--color2)
 }
 
 .context-menu::item:disabled {
-  color: var(--colors8)
+  color: var(--color8)
 }
 
 .context-menu::separator {
-  background-color: var(--colors1);
+  background-color: var(--color1);
   height: 1px;
   margin: 3px 7px
 }
@@ -182,31 +162,31 @@ QScrollBar::sub-page {
   background-color: transparent;
   border: none;
   border-radius: 6px;
-  color: var(--colors4);
+  color: var(--color4);
   font-size: 13px;
   margin: 0 3px;
   padding: 4px 8px
 }
 
 .glazewm-workspaces .ws-btn.populated {
-  color: var(--colors7)
+  color: var(--color7)
 }
 
 .glazewm-workspaces .ws-btn.active_populated,
 .glazewm-workspaces .ws-btn.active_empty {
-  background-color: var(--colors1);
-  color: var(--colors6);
+  background-color: var(--color1);
+  color: var(--color6);
   font-weight: 600
 }
 
 .glazewm-workspaces .ws-btn:hover,
 .glazewm-workspaces .ws-btn.populated:hover {
-  background-color: var(--colors1);
-  color: var(--colors6)
+  background-color: var(--color1);
+  color: var(--color6)
 }
 
 .glazewm-workspaces .offline-status {
-  color: var(--colors2);
+  color: var(--color2);
   font-size: 11px;
   font-weight: 600
 }
@@ -216,18 +196,18 @@ QScrollBar::sub-page {
 }
 
 .clock-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 12px;
   padding-right: 5px
 }
 
 .clock-widget .label {
-  color: var(--colors6);
+  color: var(--color6);
   font-weight: 500
 }
 
 .clock-popup.calendar {
-  background-color: var(--backgroundcol);
+  background-color: var(--background);
   min-width: 420px
 }
 
@@ -235,14 +215,14 @@ QScrollBar::sub-page {
 .clock-popup.calendar .calendar-table::item {
   background-color: transparent;
   border: none;
-  color: var(--colors7);
+  color: var(--color7);
   outline: none
 }
 
 .clock-popup.calendar .calendar-table::item:selected {
-  background-color: var(--colors1);
+  background-color: var(--color1);
   border-radius: 12px;
-  color: var(--cursorcol);
+  color: var(--cursor);
   font-weight: 700
 }
 
@@ -250,7 +230,7 @@ QScrollBar::sub-page {
 .clock-popup.calendar .month-label,
 .clock-popup.calendar .year-label,
 .clock-popup.calendar .date-label {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 16px;
   font-weight: 700
 }
@@ -265,13 +245,13 @@ QScrollBar::sub-page {
 }
 
 .notes-widget .label {
-  color: var(--colors7);
+  color: var(--color7);
   font-size: 13px;
   font-weight: 500
 }
 
 .notes-widget .icon {
-  color: var(--colors7);
+  color: var(--color7);
   font-size: 14px
 }
 
@@ -289,12 +269,12 @@ QScrollBar::sub-page {
 
 .notes-menu .notes-header {
   background-color: transparent;
-  border-bottom: 1px solid var(--colors1);
+  border-bottom: 1px solid var(--color1);
   padding: 10px 14px
 }
 
 .notes-menu .notes-header .header-title {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 14px;
   font-weight: 700
 }
@@ -304,37 +284,37 @@ QScrollBar::sub-page {
   background: transparent;
   border: none;
   border-radius: 5px;
-  color: var(--colors5);
+  color: var(--color5);
   font-size: 15px;
   padding: 4px 6px
 }
 
 .notes-menu .notes-header .float-button:hover,
 .notes-menu .notes-header .close-button:hover {
-  background-color: var(--colors1);
-  color: var(--colors6)
+  background-color: var(--color1);
+  color: var(--color6)
 }
 
 .notes-menu .note-item {
   background-color: transparent;
-  border-bottom: 1px solid var(--colors1);
+  border-bottom: 1px solid var(--color1);
   border-radius: 6px;
   margin: 4px 8px;
   padding: 8px 10px
 }
 
 .notes-menu .note-item:hover {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .notes-menu .note-item .title {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px;
   font-weight: 500
 }
 
 .notes-menu .note-item .date {
-  color: var(--colors8);
+  color: var(--color8);
   font-size: 11px;
   margin-top: 2px
 }
@@ -343,7 +323,7 @@ QScrollBar::sub-page {
   background: transparent;
   border: none;
   border-radius: 4px;
-  color: var(--colors2);
+  color: var(--color2);
   font-size: 13px;
   padding: 4px 7px
 }
@@ -352,42 +332,42 @@ QScrollBar::sub-page {
   background: transparent;
   border: none;
   border-radius: 4px;
-  color: var(--colors5);
+  color: var(--color5);
   font-size: 13px;
   padding: 4px 7px
 }
 
 .notes-menu .delete-button:hover,
 .notes-menu .copy-button:hover {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .notes-menu .note-input {
-  background-color: var(--colors0);
-  border: 1px solid var(--colors1);
+  background-color: var(--color0);
+  border: 1px solid var(--color1);
   border-radius: 6px;
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px;
   padding: 6px 10px
 }
 
 .notes-menu .note-input:focus {
-  border-color: var(--colors6)
+  border-color: var(--color6)
 }
 
 .notes-menu .add-button,
 .notes-menu .cancel-button {
-  background-color: var(--colors1);
+  background-color: var(--color1);
   border: none;
   border-radius: 6px;
-  color: var(--colors6);
+  color: var(--color6);
   font-weight: 500;
   padding: 7px 14px
 }
 
 .notes-menu .add-button:hover,
 .notes-menu .cancel-button:hover {
-  background-color: var(--colors5)
+  background-color: var(--color5)
 }
 
 .notes-menu .scroll-area {
@@ -396,7 +376,7 @@ QScrollBar::sub-page {
 }
 
 .notes-menu .empty-list {
-  color: var(--colors8);
+  color: var(--color8);
   font-size: 18px
 }
 
@@ -405,7 +385,7 @@ QScrollBar::sub-page {
 }
 
 .todo-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 14px
 }
 
@@ -425,24 +405,24 @@ QScrollBar::sub-page {
 .todo-menu .header .tab-buttons {
   border: none;
   border-radius: 8px;
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 12px;
   font-weight: 600;
   padding: 5px 10px
 }
 
 .todo-menu .header .tab-buttons.in-progress:checked {
-  background-color: var(--colors1);
-  color: var(--colors6)
+  background-color: var(--color1);
+  color: var(--color6)
 }
 
 .todo-menu .header .tab-buttons.completed:checked {
-  background-color: var(--colors1);
-  color: var(--colors2)
+  background-color: var(--color1);
+  color: var(--color2)
 }
 
 .todo-menu .header .tab-buttons.sort {
-  background-color: var(--colors1);
+  background-color: var(--color1);
   border-radius: 6px;
   margin: 0 6px 0 0;
   max-height: 22px;
@@ -453,84 +433,84 @@ QScrollBar::sub-page {
 }
 
 .todo-menu .task-item {
-  background-color: var(--colors0);
-  border: 1px solid var(--colors1);
+  background-color: var(--color0);
+  border: 1px solid var(--color1);
   border-radius: 8px;
   margin: 0 10px 8px;
   padding: 8px 0
 }
 
 .todo-menu .task-item.expanded {
-  background-color: var(--colors0);
-  border-color: var(--colors6)
+  background-color: var(--color0);
+  border-color: var(--color6)
 }
 
 .todo-menu .task-item:hover {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .todo-menu .task-item .title {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 12px;
   font-weight: 600;
   padding: 0 10px 6px
 }
 
 .todo-menu .task-item .description {
-  color: var(--colors7);
+  color: var(--color7);
   font-size: 11px;
   padding: 0 10px 6px
 }
 
 .todo-menu .task-item.completed .title,
 .todo-menu .task-item.completed .description {
-  color: var(--colors8);
+  color: var(--color8);
   text-decoration: line-through
 }
 
 .todo-menu .task-checkbox {
   background: transparent;
   border: none;
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 16px;
   margin-left: 10px
 }
 
 .todo-menu .task-checkbox:checked {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
-.todo-menu .task-info-row .date-colors6,
-.todo-menu .task-info-row .category-colors6 {
-  color: var(--colors4);
+.todo-menu .task-info-row .date-color6,
+.todo-menu .task-info-row .category-color6 {
+  color: var(--color4);
   font-size: 11px;
   font-weight: 500
 }
 
-.todo-menu .task-info-row .category-colors6.important,
+.todo-menu .task-info-row .category-color6.important,
 .todo-menu .task-info-row .category-icon.important {
-  color: var(--colors2)
+  color: var(--color2)
 }
 
-.todo-menu .task-info-row .category-colors6.urgent,
+.todo-menu .task-info-row .category-color6.urgent,
 .todo-menu .task-info-row .category-icon.urgent {
-  color: var(--colors2)
+  color: var(--color2)
 }
 
-.todo-menu .task-info-row .category-colors6.soon,
+.todo-menu .task-info-row .category-color6.soon,
 .todo-menu .task-info-row .category-icon.soon {
-  color: var(--colors3)
+  color: var(--color3)
 }
 
-.todo-menu .task-info-row .category-colors6.today,
+.todo-menu .task-info-row .category-color6.today,
 .todo-menu .task-info-row .category-icon.today {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
 .todo-menu .task-info-row .delete-task-button {
-  background-color: var(--colors1);
+  background-color: var(--color1);
   border-radius: 6px;
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 11px;
   font-weight: 600;
   margin-right: 8px;
@@ -540,17 +520,17 @@ QScrollBar::sub-page {
 }
 
 .todo-menu .task-info-row .delete-task-button:hover {
-  background-color: var(--colors2);
-  color: var(--cursorcol)
+  background-color: var(--color2);
+  color: var(--cursor)
 }
 
 .todo-menu .no-tasks {
-  color: var(--colors8);
+  color: var(--color8);
   font-size: 16px
 }
 
 .todo-menu .no-tasks-icon {
-  color: var(--colors8);
+  color: var(--color8);
   font-size: 64px
 }
 
@@ -559,16 +539,16 @@ QScrollBar::sub-page {
 }
 
 .notification-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 14px
 }
 
 .notification-widget .icon.new-notification {
-  color: var(--colors2)
+  color: var(--color2)
 }
 
 .notification-widget .label.new-notification {
-  color: var(--colors2);
+  color: var(--color2);
   font-weight: 600
 }
 
@@ -589,22 +569,22 @@ QScrollBar::sub-page {
 }
 
 .cpu-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px
 }
 
 .memory-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px
 }
 
 .disk-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px
 }
 
 .gpu-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px
 }
 
@@ -612,48 +592,48 @@ QScrollBar::sub-page {
 .memory-widget .label,
 .disk-widget .label,
 .gpu-widget .label {
-  color: var(--colors6);
+  color: var(--color6);
   font-weight: 500
 }
 
 .cpu-widget .label.status-low,
 .memory-widget .label.status-low,
 .gpu-widget .label.status-low {
-  color: var(--colors4)
+  color: var(--color4)
 }
 
 .cpu-widget .label.status-medium,
 .memory-widget .label.status-medium,
 .gpu-widget .label.status-medium {
-  color: var(--colors3)
+  color: var(--color3)
 }
 
 .cpu-widget .label.status-high,
 .memory-widget .label.status-high,
 .gpu-widget .label.status-high {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
 .cpu-widget .label.status-critical,
 .memory-widget .label.status-critical,
 .gpu-widget .label.status-critical {
-  color: var(--colors2)
+  color: var(--color2)
 }
 
 .disk-widget .label.status-low {
-  color: var(--colors4)
+  color: var(--color4)
 }
 
 .disk-widget .label.status-medium {
-  color: var(--colors3)
+  color: var(--color3)
 }
 
 .disk-widget .label.status-high {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
 .disk-widget .label.status-critical {
-  color: var(--colors2)
+  color: var(--color2)
 }
 
 .cpu-popup,
@@ -662,10 +642,10 @@ QScrollBar::sub-page {
   min-width: 360px
 }
 
-.cpu-popup .header .colors6,
-.memory-popup .header .colors6,
-.gpu-popup .header .colors6 {
-  color: var(--colors6);
+.cpu-popup .header .color6,
+.memory-popup .header .color6,
+.gpu-popup .header .color6 {
+  color: var(--color6);
   font-size: 15px;
   font-weight: 600;
   padding: 10px
@@ -680,7 +660,7 @@ QScrollBar::sub-page {
 .cpu-popup .stats .stat-label,
 .memory-popup .stats .stat-label,
 .gpu-popup .stats .stat-label {
-  color: var(--colors4);
+  color: var(--color4);
   font-size: 12px;
   font-weight: 500
 }
@@ -688,27 +668,27 @@ QScrollBar::sub-page {
 .cpu-popup .stats .stat-value,
 .memory-popup .stats .stat-value,
 .gpu-popup .stats .stat-value {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 20px;
   font-weight: 700
 }
 
 .cpu-popup .cpu-graph {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
 .memory-popup .memory-graph {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
 .gpu-popup .gpu-graph {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
 .cpu-popup .cpu-graph-grid,
 .memory-popup .memory-graph-grid,
 .gpu-popup .gpu-graph-grid {
-  color: var(--colors1)
+  color: var(--color1)
 }
 
 .brightness-widget {
@@ -716,7 +696,7 @@ QScrollBar::sub-page {
 }
 
 .brightness-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 14px;
   padding: 0 5px
 }
@@ -734,7 +714,7 @@ QScrollBar::sub-page {
 }
 
 .volume-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 14px;
   margin-right: 3px;
   padding: 0 3px
@@ -746,7 +726,7 @@ QScrollBar::sub-page {
 
 .volume-widget .label.muted,
 .volume-widget .icon.muted {
-  color: var(--colors8)
+  color: var(--color8)
 }
 
 .audio-menu {
@@ -766,11 +746,11 @@ QScrollBar::sub-page {
 }
 
 .audio-menu .audio-container .device.selected {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .audio-menu .audio-container .device:hover {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .bluetooth-widget {
@@ -778,7 +758,7 @@ QScrollBar::sub-page {
 }
 
 .bluetooth-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 15px
 }
 
@@ -787,7 +767,7 @@ QScrollBar::sub-page {
 }
 
 .wifi-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 15px
 }
 
@@ -796,8 +776,8 @@ QScrollBar::sub-page {
 }
 
 .wifi-menu .header {
-  border-bottom: 1px solid var(--colors1);
-  color: var(--colors6);
+  border-bottom: 1px solid var(--color1);
+  color: var(--color6);
   font-size: 13px;
   font-weight: 600;
   padding: 10px 12px
@@ -811,15 +791,15 @@ QScrollBar::sub-page {
 }
 
 .wifi-menu .wifi-item:hover {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .wifi-menu .wifi-item[active=true] {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .wifi-menu .wifi-item .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-family: "Segoe Fluent Icons";
   font-size: 22px;
   margin-right: 8px
@@ -831,7 +811,7 @@ QScrollBar::sub-page {
 }
 
 .wifi-menu .wifi-item .connect {
-  background-color: var(--colors1);
+  background-color: var(--color1);
   border: none;
   border-radius: 5px;
   font-size: 12px;
@@ -840,12 +820,12 @@ QScrollBar::sub-page {
 }
 
 .wifi-menu .wifi-item .connect:hover {
-  background-color: var(--colors5)
+  background-color: var(--color5)
 }
 
 .wifi-menu .footer {
-  border-top: 1px solid var(--colors1);
-  color: var(--colors4);
+  border-top: 1px solid var(--color1);
+  color: var(--color4);
   font-size: 11px;
   padding: 8px 12px
 }
@@ -855,12 +835,12 @@ QScrollBar::sub-page {
 }
 
 .open-meteo-widget .icon {
-  color: var(--colors7);
+  color: var(--color7);
   font-size: 16px
 }
 
 .open-meteo-widget .label {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px;
   font-weight: 500;
   padding-left: 4px
@@ -872,46 +852,46 @@ QScrollBar::sub-page {
 }
 
 .open-meteo-card-today .label {
-  color: var(--colors7);
+  color: var(--color7);
   font-size: 12px
 }
 
 .open-meteo-card-today .label.location {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 26px;
   font-weight: 700
 }
 
 .open-meteo-card-day {
   background-color: transparent;
-  border: 1px solid var(--colors1);
+  border: 1px solid var(--color1);
   border-radius: 8px;
   padding: 8px
 }
 
 .open-meteo-card-day.active {
-  background-color: var(--colors1);
-  border-color: var(--colors6)
+  background-color: var(--color1);
+  border-color: var(--color6)
 }
 
 .open-meteo-card-day:hover {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .open-meteo-card-day .day-name {
-  color: var(--colors4);
+  color: var(--color4);
   font-size: 11px;
   font-weight: 600
 }
 
 .open-meteo-card-day .day-temp-max {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 15px;
   font-weight: 700
 }
 
 .open-meteo-card-day .day-temp-min {
-  color: var(--colors7);
+  color: var(--color7);
   font-size: 12px
 }
 
@@ -927,21 +907,21 @@ QScrollBar::sub-page {
 }
 
 .open-meteo-card .hourly-data.temperature {
-  background-color: var(--colors6)
+  background-color: var(--color6)
 }
 
 .open-meteo-card .hourly-data.rain {
-  background-color: var(--colors4)
+  background-color: var(--color4)
 }
 
 .open-meteo-card .hourly-data.snow {
-  background-color: var(--colors3)
+  background-color: var(--color3)
 }
 
 .open-meteo-card .hourly-data-button {
   border: 1px solid transparent;
   border-radius: 4px;
-  color: var(--colors8);
+  color: var(--color8);
   font-size: 14px;
   max-height: 24px;
   max-width: 24px;
@@ -950,28 +930,28 @@ QScrollBar::sub-page {
 }
 
 .open-meteo-card .hourly-data-button.active {
-  background-color: var(--colors1);
-  border: 1px solid var(--colors1);
-  color: var(--colors6)
+  background-color: var(--color1);
+  border: 1px solid var(--color1);
+  color: var(--color6)
 }
 
 .open-meteo-card .search-input {
-  background-color: var(--colors0);
-  border: 1px solid var(--colors1);
+  background-color: var(--color0);
+  border: 1px solid var(--color1);
   border-radius: 8px;
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px;
   padding: 8px 12px
 }
 
 .open-meteo-card .search-input:focus {
-  background-color: var(--colors0);
-  border-color: var(--colors6)
+  background-color: var(--color0);
+  border-color: var(--color6)
 }
 
 .open-meteo-card .search-results {
   background: transparent;
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 13px
 }
 
@@ -982,7 +962,7 @@ QScrollBar::sub-page {
 }
 
 .open-meteo-card .search-results::item:hover {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .systray {
@@ -996,7 +976,7 @@ QScrollBar::sub-page {
 }
 
 .systray .button:hover {
-  background: var(--colors1)
+  background: var(--color1)
 }
 
 .systray .unpinned-visibility-btn {
@@ -1007,15 +987,15 @@ QScrollBar::sub-page {
 }
 
 .systray .unpinned-visibility-btn:hover {
-  background: var(--colors1)
+  background: var(--color1)
 }
 
 .systray .label {
-  color: var(--colors8)
+  color: var(--color8)
 }
 
 .systray .icon {
-  color: var(--colors8)
+  color: var(--color8)
 }
 
 .recycle-bin-widget {
@@ -1025,7 +1005,7 @@ QScrollBar::sub-page {
 }
 
 .recycle-bin-widget:hover {
-  background-color: var(--colors1)
+  background-color: var(--color1)
 }
 
 .recycle-bin-widget .icon {
@@ -1034,35 +1014,35 @@ QScrollBar::sub-page {
 }
 
 .recycle-bin-widget .label {
-  color: var(--colors6);
+  color: var(--color6);
   font-weight: 500
 }
 
 .recycle-bin-widget .icon.bin-empty {
-  color: var(--colors4)
+  color: var(--color4)
 }
 
 .recycle-bin-widget .label.bin-empty {
-  color: var(--colors7)
+  color: var(--color7)
 }
 
 .recycle-bin-widget .icon.bin-filled {
-  color: var(--colors2)
+  color: var(--color2)
 }
 
 .recycle-bin-widget .label.bin-filled {
-  color: var(--colors6);
+  color: var(--color6);
   font-weight: 700
 }
 
 .wallpapers-widget .icon {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 16px;
   padding: 0 8px
 }
 
 .power-menu-widget .label {
-  color: var(--colors2);
+  color: var(--color2);
   font-size: 14px
 }
 
@@ -1071,39 +1051,39 @@ QScrollBar::sub-page {
 }
 
 .power-menu-overlay .uptime {
-  color: var(--colors5);
+  color: var(--color5);
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 12px
 }
 
 .power-menu-popup {
-  background-color: var(--backgroundcol);
-  border: 1px solid var(--colors1);
+  background-color: var(--background);
+  border: 1px solid var(--color1);
   border-radius: 12px;
   padding: 28px
 }
 
 .power-menu-popup .profile-info {
-  border-bottom: 1px solid var(--colors1);
+  border-bottom: 1px solid var(--color1);
   margin-bottom: 14px;
   padding: 0 0 16px
 }
 
 .power-menu-popup .profile-info .profile-username {
-  color: var(--colors6);
+  color: var(--color6);
   font-size: 20px;
   font-weight: 600
 }
 
 .power-menu-popup .profile-info .profile-account-type {
-  color: var(--colors4);
+  color: var(--color4);
   font-size: 12px
 }
 
 .power-menu-popup .button {
-  background-color: var(--colors0);
-  border: 1px solid var(--colors1);
+  background-color: var(--color0);
+  border: 1px solid var(--color1);
   border-radius: 10px;
   margin: 6px;
   max-width: 130px;
@@ -1113,19 +1093,19 @@ QScrollBar::sub-page {
 }
 
 .power-menu-popup .button.hover {
-  background-color: var(--colors1);
-  border-color: var(--colors6)
+  background-color: var(--color1);
+  border-color: var(--color6)
 }
 
 .power-menu-popup .button .label {
-  color: var(--colors7);
+  color: var(--color7);
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 6px
 }
 
 .power-menu-popup .button .icon {
-  color: var(--colors8);
+  color: var(--color8);
   font-family: "JetBrainsMono NFP";
   font-size: 28px;
   padding-top: 6px
@@ -1133,21 +1113,21 @@ QScrollBar::sub-page {
 
 .power-menu-popup .button.hover .label,
 .power-menu-popup .button.hover .icon {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
 .power-menu-popup .button.cancel .icon {
-  color: var(--colors2)
+  color: var(--color2)
 }
 
 .power-menu-popup .button.cancel .label {
-  color: var(--colors2)
+  color: var(--color2)
 }
 
 .power-menu-popup .button.shutdown .icon {
-  color: var(--colors6)
+  color: var(--color6)
 }
 
 .power-menu-popup .button.shutdown .label {
-  color: var(--colors6)
+  color: var(--color6)
 }
