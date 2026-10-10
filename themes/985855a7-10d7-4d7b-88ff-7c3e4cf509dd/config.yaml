@@ -80,9 +80,7 @@ widgets:
   bin:
     options:
       callbacks:
-        on_left: >-
-          exec 'C:/Users/{username}/Desktop/file_explorer.lnk'
-          shell:RecycleBinFolder
+        on_left: open_bin
         on_middle: do_nothing
         on_right: empty_bin
       icons:
