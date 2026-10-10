@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/amnweb/yasb/main/schema.json
-# Use find and replace to replace `{username}` with your Windows username and `{wallpaper_path}` with the path to your wallpaper.
+# Use find and replace to replace `{wallpaper_path}` with the path to your wallpaper.
 
 debug: false
 show_systray: true
