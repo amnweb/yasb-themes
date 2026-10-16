@@ -1,0 +1,412 @@
+watch_stylesheet: true
+watch_config: true
+
+bars:
+  status-bar:
+    enabled: true
+    screens: ['*']
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "center"
+    blur_effect:
+      enabled: false
+      dark_mode: true
+      round_corners: false
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 36
+    padding:
+      top: 0
+      left: 4
+      bottom: 0
+      right: 4
+    widgets:
+      left:
+        [
+          "home",
+          "my_text",
+          "apps"
+        ]
+      center: []
+      right:
+        [
+          "cpu",
+          "memory",
+          "pomodoro",
+          "todo",
+          "bluetooth",
+          "wifi",
+          "battery",
+          "volume",
+          "notifications",
+          "control_center",
+          "clock"
+        ]
+
+widgets:
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\uee9c</span>"
+      system_menu: true
+      power_menu: true
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "System"
+      offset_top: 6
+      offset_left: 0
+      alignment: "left"
+      direction: "down"
+      menu_labels:
+        shutdown: "Shutdown"
+        restart: "Restart"
+        hibernate: "Hibernate"
+        logout: "Logout"
+        lock: "Lock"
+        sleep: "Sleep"
+        system: "System Settings"
+        about: "About This PC"
+
+  my_text:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "my-text"
+      label: "Sonoma"
+      label_alt: "Sonoma"
+
+  apps:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      label: "{data}"
+      app_list:
+        - {icon: "File", launch: "explorer", name: "File Manager"}
+        - {icon: "Edit", launch: "cmd /c start ms-settings:", name: "Windows Settings"}
+        - {icon: "Search", launch: "search", name: "Windows Search"}
+        - {icon: "Terminal", launch: "cmd /c start cmd.exe", name: "Command Prompt"}
+        - {icon: "View", launch: "taskmgr.exe", name: "Task Manager"}
+        - {icon: "Window", launch: "widget", name: "Screen Snip"}
+        - {icon: "Help", launch: "cmd /c start ms-contactsupport:", name: "Windows Help"}
+
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<small>CPU</small><br> {info[percent][total]}%"
+      label_alt: "<small>CPU</small><br> {info[freq][current]}MHz"
+      update_interval: 2000
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<small>RAM</small><br> {virtual_mem_percent}%"
+      label_alt: "<small>RAM</small><br> {virtual_mem_free}B"
+      update_interval: 10000
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+
+  pomodoro:
+    type: "yasb.pomodoro.PomodoroWidget"
+    options:
+      label: "<span>{icon}</span> {remaining}"
+      label_alt: "<span>{icon}</span> {session}/{total_sessions} - {status}"
+      work_duration: 25
+      break_duration: 5
+      long_break_duration: 15
+      long_break_interval: 4
+      auto_start_breaks: true
+      auto_start_work: true
+      sound_notification: true
+      show_notification: true
+      hide_on_break: false
+      session_target: 8
+      icons:
+        work: "\udb86\uded1"
+        break: "\udb86\udee3"
+        paused: "\udb86\udedf"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        circle_background_color: "#09ffffff"
+        circle_work_progress_color: "#88c0d0"
+        circle_break_progress_color: "#a3be8c"
+        circle_thickness: 8
+        circle_size: 160
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "reset_timer"
+        on_right: "toggle_label"
+
+  todo:
+    type: "yasb.todo.TodoWidget"
+    options:
+      label: "\ue69c {count}/{completed}"
+      label_alt: "\ue69c Tasks: {count}"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      icons:
+        add: "\uf501 New Task"
+        edit: "Edit"
+        delete: "Delete"
+        date: "\ue641"
+        category: "\uf412"
+        checked: "\udb80\udd34"
+        unchecked: "\udb80\udd30"
+        sort: "\ueab4"
+        no_tasks: "\uf4a0"
+      categories:
+        default:
+          label: "General"
+        soon:
+          label: "Complete soon"
+        today:
+          label: "End of day"
+        urgent:
+          label: "Urgent"
+        important:
+          label: "Important"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span>"
+      update_interval: 2000
+      ethernet_icon: "\ue673"
+      ethernet_label_alt: "{ip_addr}"
+      wifi_icons: [
+          "\udb82\udd2e",
+          "\uf1eb",
+          "\uf1eb",
+          "\uf1eb",
+          "\uf1eb"
+      ]
+      menu_config:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "exec cmd.exe /c start ms-settings:network"
+
+  bluetooth:
+    type: "yasb.bluetooth.BluetoothWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span>"
+      class_name: ""
+      label_no_device: "No devices connected"
+      label_device_separator: ", "
+      tooltip: true
+      icons:
+        bluetooth_on: "\udb80\udcaf"
+        bluetooth_off: "\udb80\udcb2"
+        bluetooth_connected: "\udb80\udcb1"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      menu_config:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        labels:
+          title: "Bluetooth"
+          your_devices: "Your devices"
+          new_devices: "New devices"
+          not_connected: "Not connected"
+          connected: "Connected"
+          more_settings: "More Bluetooth settings"
+          connect: "Connect"
+          disconnect: "Disconnect"
+          connecting: "Connecting"
+          disconnecting: "Disconnecting"
+          pair: "Pair"
+          manage: "Manage"
+          power_on: "On"
+          power_off: "Off"
+        device_icons:
+          headphones: "\ue7f6"
+          headset: "\ue95b"
+          speaker: "\ue7f5"
+          phone: "\ue8ea"
+          tablet: "\ue70a"
+          laptop: "\ue7f8"
+          computer: "\ue950"
+          keyboard: "\ue765"
+          mouse: "\ue962"
+          controller: "\ue7fc"
+          watch: "\ue918"
+          camera: "\ue722"
+          generic: "\ue702"
+          scan: "\ue72c"
+          battery:
+            empty: "\ueba0"
+            low: "\ueba2"
+            medium: "\ueba5"
+            high: "\ueba8"
+            full: "\uebaa"
+
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: " {percent}%| {time_remaining} {icon}"
+      charging_options:
+        icon_format: "{icon}"
+
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "{level}"
+      icons:
+        "muted": "\ueee8"
+        "10": "\uf026"
+        "30": "\uf027"
+        "60": "\uf027"
+        "100": "\uf028"
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+
+  control_center:
+    type: "yasb.control_center.ControlCenterWidget"
+    options:
+      label: "<span>\ue690</span>"
+      tooltip: true
+      sections_order:
+        - "system_controls"
+        - "quick_actions"
+        - "sliders"
+        - "power"
+        - "media"
+      popup:
+        alignment: "right"
+        direction: "up"
+        border_color: none
+        round_corners: true
+        blur: true
+        round_corners_type: normal
+        offset_top: 24
+        offset_left: 6
+      sections:
+        system_controls:
+          profile_image_size: 28
+          power_icon: "\uE7E8"
+          lock_icon: "\uE72E"
+          settings_icon: "\uE713"
+        quick_actions:
+          show: true
+          columns: 3
+          label_position: "default"
+          actions:
+            - id: "toggle_dnd"
+              label: "Do Not Disturb"
+              icon: "\uf285"
+            - id: "toggle_mute"
+              label: "Mute"
+              icon: "\ue74f"
+            - id: "toggle_mic_mute"
+              label: "Mic Mute"
+              icon: "\uF12E"
+            - id: "screenshot"
+              label: "Screenshot"
+              icon: "\ue91b"
+            - id: "touch_keyboard"
+              label: "Keyboard"
+              icon: "\uE765"
+            - id: "toggle_theme"
+              label: "Dark Mode"
+              icon: "\uE708"
+        sliders:
+          show: true
+          brightness:
+            show_slider: true
+            icon: "\uE706"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+          volume:
+            show_slider: true
+            icon: "\uE767"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+          microphone:
+            show_slider: true
+            icon: "\uE720"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+        media:
+          show: true
+          thumbnail_size: 36
+          thumbnail_radius: 4
+          icons:
+            prev_track: "\ue622"
+            next_track: "\ue623"
+            play: "\uf5b0"
+            pause: "\ue62e"
+        power:
+          show: true
+          power_plan_title: "Power Plan"
+          power_mode_title: "Power Mode"
+          button_menu_icon: "\ue76c"
+      callbacks:
+        on_left: "toggle_menu"
+
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\udb83\udd5b</span>"
+      label_alt: "{count} notifications"
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_middle: "toggle_label"
+
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a %d %b %I:%M %p}"
+      label_alt: "{%A %d %B %Y, %H:%M}"
+      timezones: []
