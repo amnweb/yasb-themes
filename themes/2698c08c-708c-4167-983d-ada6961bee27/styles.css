@@ -1,0 +1,1185 @@
+/* ==========================================================================
+   1. GLOBAL & BAR STYLES
+   ========================================================================== */
+* {
+    font-size: 13px;
+    color: #f5f5f5;
+    font-weight: 600;
+    font-family: "Segoe UI Variable", "JetBrainsMono NFP", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.yasb-bar {
+    padding: 0 6px;
+    margin: 0;
+    background-color: rgba(18, 18, 24, 0);
+}
+
+.widget {
+    padding: 0 8px;
+    margin: 0;
+    border-radius: 6px;
+    background-color: transparent;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.widget:hover {
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+.widget .label {
+    padding: 2px 4px;
+}
+
+/* Custom Text Widget */
+.my-text .label {
+    font-weight: 800;
+    color: #ffffff;
+    padding: 0;
+}
+
+/* ==========================================================================
+   2. LEFT WIDGETS
+   ========================================================================== */
+/* Home Widget */
+.home-widget {
+    padding: 2px 6px;
+}
+
+/* Home Popup Menu Styling */
+.home-menu,
+.home-menu QMenu,
+.home-menu QWidget {
+    background-color: rgba(255, 255, 255, 0) !important;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px;
+    min-width: 200px;
+    color: #ffffff !important;
+}
+
+.home-menu .item,
+.home-menu .menu-item,
+.home-menu .menu-label,
+.home-menu .action-label,
+.home-menu .system-menu .item,
+.home-menu .power-menu .item,
+.home-menu QMenu::item {
+    padding: 6px 12px;
+    margin: 2px 0;
+    border-radius: 6px;
+    color: #ffffff !important;
+    font-size: 13px;
+    background-color: transparent !important;
+}
+
+.home-menu .item:hover,
+.home-menu .menu-item:hover,
+.home-menu .system-menu .item:hover,
+.home-menu .power-menu .item:hover,
+.home-menu QMenu::item:selected {
+    color: #89b4fa !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    cursor: pointer;
+}
+
+.home-menu .separator,
+.home-menu QMenu::separator {
+    height: 1px;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 6px 4px;
+}
+
+/* Apps Widget */
+.apps-widget .widget-container .label {
+    font-size: 13px;
+    padding: 2px 8px;
+    margin: 0 2px;
+    border-radius: 4px;
+}
+
+.apps-widget .widget-container .label:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   3. RIGHT WIDGETS & ICONS
+   ========================================================================== */
+/* Resource Indicators */
+.cpu-widget .label span,
+.memory-widget .label span {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-right: 2px;
+}
+
+/* Status Icons */
+.wifi-widget .label span,
+.battery-widget .label span,
+.volume-widget .label span,
+.notification-widget .label span {
+    font-size: 14px;
+    margin-left: 4px;
+    color: #ffffff;
+}
+
+.battery-widget .icon,
+.dnd-widget .label,
+.notification-widget .icon {
+    font-size: 18px;
+    margin: 0 2px;
+}
+
+.volume-widget .icon {
+    font-size: 16px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.bluetooth-widget .icon {
+    font-size: 18px;
+    padding-top: 1px;
+    margin-left: 8px;
+    margin-right: 2px;
+}
+
+.control-center-widget .icon {
+    font-size: 16px;
+    color: #ffffff;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* ==========================================================================
+   4. POMODORO & TODO WIDGETS
+   ========================================================================== */
+.pomodoro-widget,
+.todo-widget {
+    border-radius: 50px;
+    padding: 0 8px;
+    margin: 5px 2px 5px 5px;
+}
+
+.pomodoro-widget,
+.pomodoro-widget:hover {
+    background-color: #7163fe;
+}
+
+.todo-widget,
+.todo-widget:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.pomodoro-widget .label,
+.todo-widget .label {
+    font-size: 12px;
+}
+
+.todo-widget .label,
+.todo-widget .icon {
+    font-size: 12px;
+    margin-right: 0px;
+}
+
+/* Pomodoro Menu */
+.pomodoro-menu {
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+.pomodoro-menu .header {
+    font-size: 16px;
+    font-weight: 600;
+    max-height: 0px;
+    color: #ffffff;
+}
+
+.pomodoro-menu .status {
+    font-size: 18px;
+    font-weight: 600;
+    color: #cdd6f4;
+}
+
+.pomodoro-menu .session {
+    font-size: 12px;
+    color: #a6adc8;
+}
+
+.pomodoro-menu .button {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+.pomodoro-menu .button.start,
+.pomodoro-menu .button.reset {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.pomodoro-menu .button:hover {
+    background-color: rgba(255, 255, 255, 0.158);
+}
+
+.pomodoro-menu .button.pause {
+    background-color: #7163fe;
+    color: #ffffff;
+}
+
+.pomodoro-menu .button:pressed {
+    background-color: #5a5b6e;
+}
+
+/* Todo Menu */
+.todo-menu {
+    background-color: rgba(255, 255, 255, 0);
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+.todo-menu .header {
+    margin: 16px 10px;
+}
+
+.todo-menu .header .add-task-button,
+.todo-menu .header .tab-buttons {
+    border: none;
+    border-radius: 13px;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px;
+    font-family: 'Segoe UI', 'JetBrainsMono NFP';
+}
+
+.todo-menu .header .tab-buttons {
+    margin: 0;
+    font-size: 12px;
+}
+
+.todo-menu .header .add-task-button:hover {
+    background-color: #0f91e7;
+}
+
+.todo-menu .header .tab-buttons.in-progress,
+.todo-menu .header .tab-buttons.completed {
+    background-color: transparent;
+}
+
+.todo-menu .header .tab-buttons.in-progress:checked {
+    color: #7fffd4;
+}
+
+.todo-menu .header .tab-buttons.completed:checked {
+    color: #ff583b;
+}
+
+.todo-menu .header .tab-buttons.sort {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 10px;
+    min-height: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    padding: 0;
+    margin: 0 8px 0 0;
+    font-family: 'JetBrainsMono NFP';
+}
+
+.todo-menu .header .tab-buttons.sort:pressed {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.todo-menu .no-tasks {
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-top: 16px;
+}
+
+.todo-menu .no-tasks-icon {
+    font-size: 80px;
+    color: #ffffff;
+    font-family: "JetBrainsMono NFP";
+    margin-top: 64px;
+    font-weight: 400;
+}
+
+/* Task Item */
+.todo-menu .task-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 0px 12px 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+}
+
+.todo-menu .task-item.expanded {
+    background-color: rgba(211, 214, 219, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.todo-menu .task-item.drop-highlight,
+.todo-menu .task-item.drop-highlight:hover,
+.todo-menu .task-item.drop-highlight:focus {
+    background-color: rgba(0, 120, 212, 0.26);
+    border: 1px solid #007acc;
+}
+
+.todo-menu .task-item .title {
+    color: #ebebeb;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Segoe UI';
+    padding: 0 8px 8px 8px;
+    margin-top: 6px;
+}
+
+.todo-menu .task-item.completed .title,
+.todo-menu .task-item.completed .description {
+    text-decoration: line-through;
+    color: #ffffff;
+}
+
+.todo-menu .task-item .description {
+    color: #bdc3c7;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0 8px 8px 8px;
+    font-family: 'Segoe UI';
+}
+
+.todo-menu .task-checkbox {
+    background-color: transparent;
+    border: none;
+    margin-left: 12px;
+    margin-top: 5px;
+    font-size: 18px;
+    color: #ebebeb;
+    font-family: 'JetBrainsMono NFP';
+}
+
+.todo-menu .task-checkbox:checked {
+    color: #7f8c8d;
+}
+
+/* Task Info Row */
+.todo-menu .task-info-row {
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+
+.todo-menu .task-info-row .date-text,
+.todo-menu .task-info-row .category-text {
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    color: #d6d6d6;
+    font-size: 13px;
+    padding-left: 0px;
+    margin-right: 12px;
+}
+
+.todo-menu .task-info-row .date-icon,
+.todo-menu .task-info-row .category-icon {
+    font-weight: 400;
+    color: #d6d6d6;
+    font-size: 14px;
+    font-family: 'JetBrainsMono NFP';
+    margin-top: 1px;
+}
+
+.todo-menu .task-info-row .category-text.important,
+.todo-menu .task-info-row .category-icon.important {
+    color: #ff2600;
+}
+
+.todo-menu .task-info-row .category-text.urgent,
+.todo-menu .task-info-row .category-icon.urgent {
+    color: #ff583b;
+}
+
+.todo-menu .task-info-row .category-text.soon,
+.todo-menu .task-info-row .category-icon.soon {
+    color: #7fffd4;
+}
+
+.todo-menu .task-info-row .category-text.today,
+.todo-menu .task-info-row .category-icon.today {
+    color: #f9e2af;
+}
+
+.todo-menu .task-info-row .delete-task-button {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0 8px;
+    border-radius: 10px;
+    min-height: 20px;
+    max-height: 20px;
+    margin-right: 8px;
+}
+
+/* App Dialog */
+.todo-menu .app-dialog {
+    font-family: 'Segoe UI';
+    background-color: #202020;
+}
+
+.todo-menu .app-dialog .buttons-container {
+    background-color: #171717;
+    margin-top: 16px;
+    border-top: 1px solid #000;
+    max-height: 80px;
+    min-height: 80px;
+    padding: 0 20px;
+}
+
+.todo-menu .app-dialog .title-field,
+.todo-menu .app-dialog .desc-field {
+    background-color: #181818;
+    border: 1px solid #303030;
+    border-radius: 4px;
+    padding: 0 6px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 10px 0px 5px 0;
+    min-height: 30px;
+}
+
+.todo-menu .app-dialog .desc-field {
+    max-height: 60px;
+}
+
+.todo-menu .app-dialog .title-field:focus,
+.todo-menu .app-dialog .desc-field:focus {
+    border-bottom-color: #4cc2ff;
+}
+
+.todo-menu .app-dialog .button {
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFFFFF;
+    min-width: 80px;
+    padding: 0 6px;
+    margin: 10px 0 5px 6px;
+    min-height: 28px;
+    outline: none;
+}
+
+.todo-menu .app-dialog .buttons-container .button {
+    margin: 10px 0 5px 0px;
+    font-size: 13px;
+}
+
+.todo-menu .app-dialog .button:focus,
+.todo-menu .app-dialog .button:hover {
+    background-color: #4A4A4A;
+}
+
+.todo-menu .app-dialog .button:pressed {
+    background-color: #3A3A3A;
+}
+
+.todo-menu .app-dialog .button.add {
+    background-color: #0078D4;
+}
+
+.todo-menu .app-dialog .button.add:focus,
+.todo-menu .app-dialog .button.add:hover {
+    background-color: #0066B2;
+}
+
+.todo-menu .app-dialog .button.add:pressed {
+    background-color: #00509E;
+}
+
+.todo-menu .app-dialog .warning-message {
+    background-color: #2b0b0e;
+    border: 1px solid #5a303c;
+    border-radius: 4px;
+    color: #cc9b9f;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin: 4px 0px;
+}
+
+.todo-menu .app-dialog .category-button {
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Segoe UI';
+    font-size: 11px;
+    font-weight: 700;
+    color: #afafaf;
+    padding: 0 6px;
+    margin-top: 8px;
+    min-height: 24px;
+    outline: none;
+}
+
+.todo-menu .app-dialog .category-button:checked {
+    background-color: #535353;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   5. BLUETOOTH & VOLUME WIDGETS
+   ========================================================================== */
+.bluetooth-widget .icon.bt-off,
+.bluetooth-widget .label.bt-off,
+.bluetooth-widget .icon.bt-on,
+.bluetooth-widget .label.bt-on,
+.bluetooth-widget .icon.bt-connected,
+.bluetooth-widget .label.bt-connected {
+    color: #ffffff;
+}
+
+.bluetooth-menu {
+    background: transparent;
+    min-width: 360px;
+    min-height: 300px;
+}
+
+.bluetooth-menu .header {
+    padding: 12px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bluetooth-menu .header .title {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.bluetooth-menu .header .power-button {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 14px;
+    margin-left: 8px;
+}
+
+.bluetooth-menu .header .power-button:checked {
+    background-color: #4cc2ff;
+    color: #000;
+}
+
+.bluetooth-menu .progress-bar {
+    min-height: 2px;
+    max-height: 2px;
+    color: #4cc2ff;
+}
+
+.bluetooth-menu .bluetooth-list,
+.bluetooth-menu .section {
+    background-color: transparent;
+}
+
+.bluetooth-menu .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 12px 4px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.bluetooth-menu .error-message {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 0;
+    background-color: #92242d;
+    color: #e7bfc2;
+}
+
+.bluetooth-menu .bluetooth-item {
+    min-height: 44px;
+    padding: 6px 12px;
+    margin: 2px 4px;
+    border-radius: 6px;
+}
+
+.bluetooth-menu .bluetooth-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.bluetooth-menu .bluetooth-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.bluetooth-menu .bluetooth-item .icon {
+    font-family: 'Segoe Fluent Icons';
+    font-size: 18px;
+    margin-right: 12px;
+    min-width: 28px;
+    font-weight: 400;
+}
+
+.bluetooth-menu .bluetooth-item .name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bluetooth-menu .bluetooth-item .status {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+.bluetooth-menu .bluetooth-item .battery {
+    font-size: 13px;
+    font-weight: 600;
+    padding-right: 6px;
+}
+
+.bluetooth-menu .bluetooth-item .battery-icon {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Segoe Fluent Icons';
+}
+
+.bluetooth-menu .bluetooth-item .controls-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.bluetooth-menu .bluetooth-item .connect {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bluetooth-menu .bluetooth-item .connect:hover {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+
+.bluetooth-menu .footer {
+    padding: 8px 12px;
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bluetooth-menu .footer .settings-button {
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.bluetooth-menu .footer .scan-icon {
+    font-family: 'Segoe Fluent Icons';
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    min-width: 28px;
+    min-height: 28px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.bluetooth-menu .footer .scan-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Volume Audio Menu */
+.audio-menu .system-volume-container .volume-slider {
+    border: none;
+}
+
+.audio-menu .audio-container .device {
+    background-color: transparent;
+    border: none;
+    padding: 6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.audio-menu .audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+
+.audio-menu .audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.audio-menu .toggle-apps {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-height: 24px;
+    min-width: 24px;
+    border-radius: 4px;
+}
+
+.audio-menu .toggle-apps.expanded {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.audio-menu .toggle-apps:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.audio-menu .apps-container {
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.062);
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   6. POPUPS & OVERLAYS (CLOCK, WIFI, CONTROL CENTER)
+   ========================================================================== */
+/* Clock / Calendar Popup */
+.clock-widget-calendar,
+.clock-calendar-popup,
+.calendar-menu,
+.clock-calendar-popup QCalendarWidget,
+.clock-calendar-popup QCalendarWidget QAbstractItemView,
+.clock-calendar-popup QCalendarWidget QTableView {
+    background-color: transparent !important;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px;
+    color: #ffffff;
+}
+
+.clock-calendar-popup QCalendarWidget QWidget {
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+.clock-widget-calendar *,
+.clock-calendar-popup *,
+.calendar-menu * {
+    background-color: transparent;
+    color: #ffffff !important;
+}
+
+.clock-widget-calendar .day:hover,
+.clock-calendar-popup .day:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+
+/* Wi-Fi Menu */
+.wifi-menu {
+    min-width: 320px;
+    min-height: 250px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: transparent;
+    padding: 8px;
+}
+
+.wifi-widget .icon {
+    font-size: 14px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.wifi-menu .header,
+.wifi-menu .footer {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu,
+.wifi-menu QListWidget,
+.wifi-menu QListWidget::item,
+.wifi-item,
+.wifi-list {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    margin: 0;
+    background-color: transparent !important;
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.wifi-menu .wifi-item .name,
+.wifi-menu .wifi-item .status,
+.wifi-menu .wifi-item .strength {
+    color: #ffffff !important;
+    font-size: 13px;
+}
+
+.wifi-menu .wifi-item .icon {
+    display: none;
+    margin-left: 0;
+    padding-left: 0;
+    color: #ffffff;
+    font-size: 1px;
+}
+
+.wifi-menu .wifi-item .connect {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.wifi-menu .wifi-item .connect:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.wifi-menu .footer .settings-button,
+.wifi-menu .footer .refresh-icon {
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.wifi-menu .footer .settings-button:hover,
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: rgba(134, 134, 134, 0.3);
+}
+
+/* Control Center */
+.control-center-menu {
+    background: rgba(255, 255, 255, 0);
+    min-width: 360px;
+}
+
+.control-center-menu .section {
+    background: rgba(255, 255, 255, 0);
+    margin: 0;
+    padding: 16px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-center-menu .section.system-controls {
+    padding: 12px 16px 0 16px;
+}
+
+.control-center-menu .section.sliders {
+    padding: 16px;
+}
+
+.control-center-menu .section.media,
+.control-center-menu .section.power,
+.control-center-menu .section.system-controls {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.sliders .slider .icon,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon,
+.control-center-menu .section.media .button {
+    font-family: "Segoe Fluent Icons";
+    font-weight: 400;
+}
+
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name,
+.control-center-menu .section.media .button {
+    transition: background-color 0.08s, opacity 0.08s;
+    opacity: 1;
+}
+
+.control-center-menu .section.system-controls .button:clicked,
+.control-center-menu .section.system-controls .button:pressed,
+.control-center-menu .section.quick-actions .button .icon:clicked,
+.control-center-menu .section.quick-actions .button .icon:pressed,
+.control-center-menu .section.sliders .slider .source-selector:clicked,
+.control-center-menu .section.sliders .slider .source-selector:pressed,
+.control-center-menu .section.power .plan-name:clicked,
+.control-center-menu .section.power .plan-name:pressed,
+.control-center-menu .section.power .mode-name:clicked,
+.control-center-menu .section.power .mode-name:pressed,
+.control-center-menu .section.media .button:clicked,
+.control-center-menu .section.media .button:pressed {
+    opacity: 0.5;
+}
+
+.control-center-menu .section.quick-actions .button.disabled .title,
+.control-center-menu .section.quick-actions .button.disabled .icon,
+.control-center-menu .section.sliders .slider.disabled,
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+    opacity: 0.5;
+}
+
+.control-center-menu .section.system-controls .button {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    min-height: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.08s, opacity 0.08s;
+}
+
+.control-center-menu .section.system-controls .button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.control-center-menu .section.quick-actions .button {
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+.control-center-menu .section.quick-actions .button .icon {
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    min-height: 48px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+}
+
+.control-center-menu .section.quick-actions .button .icon:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-center-menu .section.quick-actions .button.active .icon {
+    background-color: #47AFF5;
+    border: 1px solid #47AFF5;
+    color: #000;
+}
+
+.control-center-menu .section.quick-actions .button.active .icon:hover {
+    background-color: #42a0df;
+    border: 1px solid #42a0df;
+    color: #000;
+}
+
+.control-center-menu .section.quick-actions .button.disabled .icon:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-center-menu .section.quick-actions .button.active .icon:pressed {
+    background-color: #3795d3;
+    border: 1px solid #3795d3;
+}
+
+.control-center-menu .section.quick-actions .button .title {
+    font-size: 12px;
+    margin: 4px 0 8px 0;
+    padding: 0;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.control-center-menu .section.sliders .slider {
+    background: transparent;
+    border: none;
+    min-height: 34px;
+    margin: 0 4px;
+}
+
+.control-center-menu .section.sliders .slider .icon {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    min-width: 36px;
+}
+
+.control-center-menu .section.sliders .slider .value {
+    min-width: 36px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.control-center-menu .section.sliders .slider .source-selector {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: 4px;
+}
+
+.control-center-menu .section.sliders .slider .source-selector:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    min-height: 36px;
+    margin: 0 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.control-center-menu .section.power .plan-name:hover,
+.control-center-menu .section.power .mode-name:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.control-center-menu .section.power .mode-name.disabled,
+.control-center-menu .section.power .mode-name.disabled:hover {
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.control-center-menu .section.power .plan-name .title,
+.control-center-menu .section.power .mode-name .title {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.control-center-menu .section.power .plan-name .subtext,
+.control-center-menu .section.power .mode-name .subtext {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+.control-center-menu .section.media {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-center-menu .section.media .track-info {
+    padding-left: 8px;
+}
+
+.control-center-menu .section.media .title {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.control-center-menu .section.media .subtext {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.control-center-menu .section.media .button {
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0);
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 6px;
+    margin: 0 0 0 4px;
+}
+
+.control-center-menu .section.media .button:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.control-center-menu .context-menu {
+    background-color: rgba(48, 48, 48, 0.86);
+    padding: 4px 0px;
+    font-family: "Segoe UI Variable", "Segoe UI";
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.control-center-menu .context-menu::item {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: 4px;
+    min-width: 100px;
+}
+
+.control-center-menu .context-menu::item:selected {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+
+.control-center-menu .context-menu::separator {
+    height: 1px;
+    background-color: rgb(68, 68, 68);
+    margin: 4px 0;
+}
+
+.control-center-menu .context-menu::indicator:unchecked {
+    width: 4px;
+    height: 12px;
+    margin-left: 0;
+    color: transparent;
+    background-color: transparent;
+}
+
+.control-center-menu .context-menu::indicator:checked {
+    width: 4px;
+    height: 12px;
+    background-color: #47AFF5;
+    border-radius: 2px;
+    margin-left: 0;
+}
