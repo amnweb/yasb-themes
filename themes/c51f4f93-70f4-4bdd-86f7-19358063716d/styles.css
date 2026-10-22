@@ -1,0 +1,1656 @@
+/* Rangalipi - an ink-and-amber theme for YASB.
+   One palette, one glass surface, one accent colour. */
+
+/* Root variables */
+:root {
+
+    /* Fonts: a Nerd Font carries the icons, text falls back to Segoe UI. */
+    --icons-font: "FiraCode Nerd Font Mono", "FiraCode Nerd Font";
+    --icons-font-fallback: "FiraCode Nerd Font Mono", "FiraCode Nerd Font";
+    --system-font: "FiraCode Nerd Font Mono", "Segoe UI";
+    --specialFont: "FiraCode Nerd Font Mono", "Segoe UI";
+
+    /* Shape */
+    --border-radius: 12px;
+    --border-radius2: 8px;
+    --border-radius3: 14px;
+
+    /* Type */
+    --fontSize: 13px;
+    --fontSizeLarge: 16px;
+    --fontWeight: 600;
+    --iconSize: 20px;
+    --iconSizeSm: 12px;
+
+    /* Bar rhythm: one line box per widget, one gap between them. */
+    --barLineHeight: 22px;
+    --widgetPadX: 7px;
+    --widgetGap: 3px;
+
+    /* Pomodoro session states - the chip colour carries the state. */
+    --pomodoroWork: #D95D5D;
+    --pomodoroBreak: #4FA3A0;
+
+    /* Palette - Rangalipi */
+    --background: #14141B;
+    --background2: #1D1D28;
+    --accent: #D99A2B;
+    --text: #E7E0D2;
+    --accentText: #14141B;
+    --hover: #262633;
+    --mutedBG: #0F0F16;
+    --border: #D99A2B;
+    --redFlash: #D95D5D;
+    --subtext: #B8B2A7;
+    --base: #14141B;
+    --mantle: #0F0F16;
+    --crust: #0A0A10;
+    --surface0: #1D1D28;
+    --surface1: #262633;
+    --surface2: #34344A;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #B8B2A7;
+    --lavender: #9A8FD0;
+    --blue: #6A8FD4;
+    --sapphire: #5E8FD0;
+    --sky: #6FC3C9;
+    --teal: #4FA3A0;
+    --green: #7FB069;
+    --yellow: #D99A2B;
+    --peach: #E07A4F;
+    --maroon: #C24A5E;
+    --red: #D95D5D;
+    --mauve: #A37AC0;
+    --pink: #C97E9E;
+    --flamingo: #D8A7A0;
+    --rosewater: #E9D5C8;
+    --text-muted: #B8B2A7;
+    --yasb-icon-fg: #E7E0D2;
+
+    /* Surfaces: the bar is glass, the popups are the same acrylic. */
+    --glass: rgba(20, 20, 27, 0.7);
+    --acrylic: rgba(20, 20, 27, 0.5);
+    --acrylic-hover: rgba(20, 20, 27, 0.65);
+    --hairline: rgba(231, 224, 210, 0.16);
+    --text-faint: rgba(231, 224, 210, 0.45);
+    --chip: rgba(217, 154, 43, 0.18);
+    --glow: #23232F;
+    --shade: #0D0D13;
+    --accent-soft: rgba(217, 154, 43, 0.55);
+    --frame: #D99A2B;
+    --holiday: #D95D5D;
+}
+
+/* Global defaults - one family, one weight, everywhere. */
+* {
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeight);
+    font-family: var(--system-font);
+    line-height: 1.3;
+    color: var(--text);
+}
+
+/* Bar - a glass rail cut into islands */
+.yasb-bar {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.yasb-bar.adaptive {
+    background-color: var(--glass);
+    border: none;
+    -qproperty-railheight: 0;
+    -qproperty-islandradius: 12;
+    -qproperty-grouppadding: 6px;
+    -qproperty-islands: true;
+    -qproperty-edgeradius: 0;
+    -qproperty-borderwidth: 1;
+    -qproperty-bordercolor: var(--frame);
+}
+
+.container-left,
+.container-center,
+.container-right {
+    background-color: transparent;
+    padding: 0 4px;
+    margin: 0;
+}
+
+/* Tooltip */
+.tooltip {
+    background-color: var(--acrylic);
+    border-radius: var(--border-radius);
+    color: var(--text);
+    padding: 5px 10px;
+    font-size: var(--fontSize);
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+    margin-top: 4px;
+    border: 3px double var(--border);
+}
+
+/* Context menu */
+.context-menu,
+.context-menu .menu-checkbox {
+    background-color: var(--acrylic);
+    border-bottom: 1px solid var(--hairline);
+    padding: 4px 0px;
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+    font-size: var(--fontSize);
+    color: var(--text);
+}
+
+.context-menu {
+    border-radius: var(--border-radius);
+    border: 3px double var(--border);
+}
+
+.context-menu::right-arrow {
+    width: 8px;
+    height: 8px;
+    padding-right: 24px;
+}
+
+.context-menu::item,
+.context-menu .menu-checkbox {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: var(--border-radius);
+    min-width: 100px;
+}
+
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: var(--acrylic-hover);
+    color: var(--text);
+    border-radius: var(--border-radius3);
+}
+
+.context-menu::separator {
+    height: 1px;
+    background-color: var(--background2);
+    margin: 4px 8px;
+}
+
+.context-menu::item:disabled {
+    color: var(--overlay1);
+    background-color: transparent;
+}
+
+.context-menu .menu-checkbox .checkbox {
+    border: none;
+    padding: 8px 16px;
+    font-size: var(--fontSize);
+    margin: 0;
+    color: var(--text);
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+}
+
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--text);
+}
+
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 12px;
+    height: 12px;
+    margin-left: 0px;
+    margin-right: 8px;
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: var(--mutedBG);
+    border-radius: var(--border-radius2);
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background: var(--accent);
+    border-radius: var(--border-radius2);
+}
+
+/* Base widget - the bar is a strip, the chips carry the colour. */
+.widget {
+    padding-left: var(--widgetPadX);
+    padding-right: var(--widgetPadX);
+    margin: 0 var(--widgetGap);
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+}
+
+.widget .icon {
+    font-size: var(--iconSize);
+    font-weight: var(--fontWeight);
+    color: var(--yasb-icon-fg);
+    font-family: var(--icons-font-fallback);
+    line-height: var(--barLineHeight);
+}
+
+.widget .label {
+    color: var(--text);
+    font-weight: var(--fontWeight);
+    font-size: var(--fontSize);
+    line-height: var(--barLineHeight);
+}
+
+/* Separator chip */
+.separator-widget .widget-container .label {
+    color: var(--overlay0);
+    font-weight: var(--fontWeight);
+}
+
+/* Home widget and its menu */
+.home-widget .icon {
+    font-family: var(--system-font);
+    font-size: 20px;
+    font-weight: var(--fontWeight);
+    color: var(--accent);
+    padding-bottom: 0.5px;
+}
+
+.home-menu {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    margin-top: 3px;
+}
+
+.home-menu .menu-item {
+    color: var(--text);
+    padding: 10px 48px 10px 16px;
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+    margin-top: 3px;
+}
+
+.home-menu .menu-item:hover {
+    background-color: var(--acrylic-hover);
+    color: var(--text);
+    border-radius: var(--border-radius3);
+}
+
+.home-menu .separator {
+    max-height: 0px;
+    background-color: var(--background2);
+}
+
+/* Clock */
+.clock-widget .widget-container {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.clock-widget .label {
+    color: var(--text);
+    margin: 0;
+}
+
+.clock-widget {
+    padding: 0 7px;
+    margin: 0 3px;
+}
+
+.clock-widget .icon.alarm {
+    color: var(--text);
+    padding-left: 0;
+    padding-right: 3px;
+}
+
+.clock-popup.alarm,
+.clock-popup.timer,
+.clock-popup.calendar {
+    min-width: 460px;
+    background-color: var(--acrylic);
+    border-radius: var(--border-radius);
+    border: 3px double var(--border);
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+    line-height: 1.3;
+}
+
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+    background-color: transparent;
+    color: var(--text);
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeight);
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.clock-popup.calendar .calendar-table::item:selected {
+    color: var(--accentText);
+    font-weight: var(--fontWeight);
+    background-color: var(--accent);
+    border-radius: var(--border-radius3);
+}
+
+.clock-popup.calendar .calendar-table::item:hover {
+    color: var(--text);
+    background-color: var(--acrylic-hover);
+    border-radius: var(--border-radius3);
+}
+
+/* Calendar header: small weekday, hero numeral, quiet month below. */
+.clock-popup.calendar .day-label {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--subtext);
+    padding: 18px 0 2px 0;
+}
+
+.clock-popup.calendar .date-label {
+    font-size: 96px;
+    line-height: 100px;
+    font-weight: var(--fontWeight);
+    color: var(--accent);
+    padding: 0;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.clock-popup.calendar .month-label {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text);
+    padding: 6px 0 0 0;
+}
+
+.clock-popup.calendar .year-label {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: var(--subtext);
+    padding: 0;
+}
+
+.clock-popup.calendar .holiday-label {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: var(--holiday);
+    padding: 6px 0 4px 0;
+}
+
+/* Extended calendar - the upcoming holidays list */
+.clock-popup.calendar .extended-container {
+    background: transparent;
+    border-top: 1px solid var(--hairline);
+    padding: 4px 0px 8px 0px;
+}
+
+.clock-popup.calendar .upcoming-events-header {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--subtext);
+    padding: 8px 16px 4px 16px;
+}
+
+.clock-popup.calendar .upcoming-events-item {
+    font-size: var(--fontSize);
+    color: var(--text);
+    padding: 4px 16px;
+}
+
+.clock-popup.calendar .upcoming-events-item:hover {
+    background-color: var(--acrylic-hover);
+}
+
+/* Alarm popup */
+.clock-popup.alarm .clock-popup-container {
+    padding: 12px 16px;
+}
+
+.clock-popup.alarm .clock-popup-footer {
+    padding: 0px 16px 12px 16px;
+}
+
+.clock-popup .clock-label-timer {
+    font-size: var(--fontSizeLarge);
+    color: var(--text);
+    padding: 8px 0px;
+}
+
+.clock-popup .clock-input-time {
+    font-size: var(--fontSizeLarge);
+    color: var(--text);
+    background-color: var(--mutedBG);
+    border: 1px solid var(--hairline);
+    border-radius: var(--border-radius2);
+    padding: 4px 8px;
+}
+
+.clock-popup .clock-input-time.colon {
+    border: none;
+    background: transparent;
+    padding: 4px 2px;
+}
+
+.clock-popup .button {
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeight);
+    color: var(--text);
+    background-color: var(--chip);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius2);
+    padding: 6px 14px;
+    margin: 4px;
+}
+
+.clock-popup .button:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.clock-popup .button:pressed {
+    background-color: var(--accent);
+    color: var(--accentText);
+}
+
+.clock-popup .button.cancel {
+    background-color: transparent;
+    border-color: var(--hairline);
+}
+
+.clock-popup .button.start {
+    background-color: var(--accent);
+    color: var(--accentText);
+    border-color: var(--accent);
+}
+
+.clock-popup .button.start:hover {
+    background-color: var(--accent-soft);
+}
+
+.clock-popup .button.is-alarm-enabled {
+    background-color: var(--accent);
+    color: var(--accentText);
+}
+
+.clock-popup .button.is-alarm-disabled {
+    background-color: var(--chip);
+    color: var(--subtext);
+}
+
+.clock-popup .button.day,
+.clock-popup .button.quick-option {
+    background-color: transparent;
+    border-color: var(--hairline);
+}
+
+.clock-popup .button.day:checked,
+.clock-popup .button.quick-option:checked {
+    background-color: var(--accent);
+    color: var(--accentText);
+    border-color: var(--accent);
+}
+
+.clock-popup .button:disabled {
+    color: var(--overlay1);
+    background-color: transparent;
+}
+
+.clock-popup .alarm-input-title {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+    padding: 6px 0px 2px 0px;
+}
+
+/* Active alarm window */
+.active-alarm-window {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    padding: 16px;
+}
+
+.active-alarm-window .alarm-title-icon {
+    font-size: var(--iconSize);
+    color: var(--accent);
+}
+
+.active-alarm-window .alarm-title {
+    font-size: var(--fontSizeLarge);
+    color: var(--text);
+}
+
+.active-alarm-window .alarm-info {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+}
+
+.active-alarm-window .button {
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    color: var(--text);
+    background-color: var(--chip);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius2);
+    padding: 6px 14px;
+    margin: 8px 4px 0px 4px;
+}
+
+.active-alarm-window .button:hover {
+    background-color: var(--acrylic-hover);
+}
+
+/* Komorebi workspaces */
+.komorebi-workspaces .widget-container {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.komorebi-workspaces .ws-btn {
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeight);
+    color: var(--subtext);
+    background-color: transparent;
+    border: none;
+    border-radius: var(--border-radius2);
+    padding: 2px 7px;
+    margin: 0 2px;
+}
+
+.komorebi-workspaces .ws-btn.populated {
+    color: var(--text);
+}
+
+.komorebi-workspaces .ws-btn.active {
+    color: var(--accentText);
+    background-color: var(--accent);
+}
+
+/* Komorebi active layout */
+.komorebi-active-layout .widget-container {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.komorebi-active-layout .label {
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeight);
+    color: var(--text);
+}
+
+/* Komorebi layout menu */
+.komorebi-layout-menu {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    min-width: 180px;
+}
+
+.komorebi-layout-menu .menu-item {
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: var(--border-radius2);
+}
+
+.komorebi-layout-menu .menu-item-icon {
+    font-size: 16px;
+    color: var(--accent);
+}
+
+.komorebi-layout-menu .menu-item-text {
+    font-size: var(--fontSize);
+    color: var(--text);
+}
+
+.komorebi-layout-menu .menu-item:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.komorebi-layout-menu .separator {
+    max-height: 0px;
+    background-color: var(--background2);
+}
+
+/* Komorebi stack - the running windows */
+.komorebi-stack .window {
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    color: var(--subtext);
+    border-radius: var(--border-radius2);
+    padding: 1px 6px;
+    margin: 0 2px;
+}
+
+.komorebi-stack .window .label {
+    color: var(--subtext);
+}
+
+.komorebi-stack .window .icon {
+    font-size: var(--iconSizeSm);
+    color: var(--overlay1);
+}
+
+.komorebi-stack .window.active {
+    background-color: var(--chip);
+}
+
+.komorebi-stack .window.active .label {
+    color: var(--text);
+}
+
+/* Collapsible groups */
+.alpha-group .container,
+.omega-group .container {
+    background-color: transparent;
+    border: none;
+}
+
+.alpha-group .grouper-button,
+.omega-group .grouper-button {
+    font-family: var(--system-font);
+    font-size: var(--iconSizeSm);
+    color: var(--overlay2);
+    background-color: transparent;
+    border: none;
+    border-radius: var(--border-radius2);
+    padding: 0 4px;
+}
+
+.alpha-group .grouper-button:hover,
+.omega-group .grouper-button:hover {
+    color: var(--accent);
+}
+
+/* CPU, memory and GPU - same shape, different accent */
+.cpu-widget .widget-container .icon,
+.memory-widget .widget-container .icon,
+.gpu-widget .widget-container .icon {
+    color: var(--mauve);
+}
+
+.cpu-widget .widget-container .label,
+.memory-widget .widget-container .label,
+.gpu-widget .widget-container .label {
+    color: var(--text);
+}
+
+.cpu-widget .label.status-low {
+    color: var(--green);
+}
+
+.cpu-widget .label.status-medium {
+    color: var(--yellow);
+}
+
+.cpu-widget .label.status-high {
+    color: var(--peach);
+}
+
+.cpu-widget .label.status-critical {
+    color: var(--red);
+}
+
+.memory-widget .label.status-low {
+    color: var(--green);
+}
+
+.memory-widget .label.status-medium {
+    color: var(--yellow);
+}
+
+.memory-widget .label.status-high {
+    color: var(--peach);
+}
+
+.memory-widget .label.status-critical {
+    color: var(--red);
+}
+
+.cpu-popup,
+.memory-popup,
+.gpu-popup {
+    background-color: var(--acrylic);
+    min-width: 400px;
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+}
+
+.cpu-popup .header,
+.memory-popup .header,
+.gpu-popup .header {
+    background: transparent;
+    padding: 12px 16px;
+    color: var(--text);
+}
+
+.cpu-popup .header .text,
+.memory-popup .header .text,
+.gpu-popup .header .text {
+    font-size: var(--fontSizeLarge);
+    font-family: var(--system-font);
+    color: var(--text);
+}
+
+.cpu-popup .header .pin-btn,
+.memory-popup .header .pin-btn,
+.gpu-popup .header .pin-btn {
+    font-size: var(--fontSize);
+    background: transparent;
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    padding: 6px;
+    color: var(--text);
+}
+
+.cpu-popup .header .pin-btn:hover,
+.memory-popup .header .pin-btn:hover,
+.gpu-popup .header .pin-btn:hover {
+    color: var(--accent);
+}
+
+.cpu-popup .header .pin-btn.pinned,
+.memory-popup .header .pin-btn.pinned,
+.gpu-popup .header .pin-btn.pinned {
+    color: var(--accent);
+}
+
+.cpu-popup .graph-container,
+.memory-popup .graph-container,
+.gpu-popup .graph-container {
+    background: transparent;
+    min-height: 64px;
+}
+
+.cpu-popup .cpu-graph {
+    color: var(--mauve);
+}
+
+.memory-popup .memory-graph {
+    color: var(--teal);
+}
+
+.gpu-popup .gpu-graph {
+    color: var(--pink);
+}
+
+.cpu-popup .cpu-graph-grid,
+.memory-popup .memory-graph-grid,
+.gpu-popup .gpu-graph-grid {
+    color: var(--background2);
+}
+
+.cpu-popup .graph-title,
+.memory-popup .graph-title,
+.gpu-popup .graph-title {
+    font-size: 12px;
+    color: var(--text);
+    font-family: var(--system-font);
+    padding: 0px 0px 4px 14px;
+}
+
+.cpu-popup .stats,
+.memory-popup .stats,
+.gpu-popup .stats {
+    background: transparent;
+    padding: 16px;
+}
+
+.cpu-popup .stats .stat-item,
+.memory-popup .stats .stat-item,
+.gpu-popup .stats .stat-item {
+    background-color: var(--chip);
+    border: 1px solid var(--hairline);
+    border-radius: var(--border-radius);
+    padding: 8px 12px;
+    margin: 8px;
+}
+
+.cpu-popup .stats .stat-label,
+.memory-popup .stats .stat-label,
+.gpu-popup .stats .stat-label {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+    padding: 6px 4px 2px 4px;
+}
+
+.cpu-popup .stats .stat-value,
+.memory-popup .stats .stat-value,
+.gpu-popup .stats .stat-value {
+    font-size: 20px;
+    font-weight: var(--fontWeight);
+    color: var(--text);
+    font-family: var(--system-font);
+    padding: 0 4px 12px 4px;
+}
+
+/* Disk */
+.disk-widget .widget-container .icon {
+    color: var(--sapphire);
+}
+
+.disk-widget .widget-container .label {
+    color: var(--text);
+}
+
+.disk-widget .label.status-low {
+    color: var(--green);
+}
+
+.disk-widget .label.status-medium {
+    color: var(--yellow);
+}
+
+.disk-widget .label.status-high {
+    color: var(--peach);
+}
+
+.disk-widget .label.status-critical {
+    color: var(--red);
+}
+
+/* Traffic */
+.traffic-widget .widget-container .label {
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+}
+
+.traffic-widget .widget-container .icon {
+    color: var(--sky);
+}
+
+.traffic-widget .widget-container .label.offline {
+    color: var(--overlay1);
+}
+
+.traffic-menu {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    min-width: 320px;
+}
+
+.traffic-menu .header {
+    background: transparent;
+    padding: 12px 16px 8px 16px;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.traffic-menu .header .title {
+    font-size: var(--fontSizeLarge);
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+    color: var(--text);
+}
+
+.traffic-menu .header .reset-button {
+    font-size: var(--fontSize);
+    font-family: var(--system-font);
+    font-weight: var(--fontWeight);
+    padding: 4px 10px;
+    border-radius: var(--border-radius2);
+    background-color: var(--chip);
+    color: var(--text);
+    border: 1px solid var(--hairline);
+}
+
+.traffic-menu .header .reset-button:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.traffic-menu .header .reset-button:pressed {
+    background-color: var(--accent);
+    color: var(--accentText);
+}
+
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+    background-color: transparent;
+    padding: 12px 10px 4px 10px;
+    margin: 0 12px;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.traffic-menu .speed-separator {
+    max-width: 1px;
+    background-color: var(--hairline);
+    margin: 24px 0 12px 0;
+}
+
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+    font-size: 18px;
+    font-weight: var(--fontWeight);
+    font-family: var(--system-font);
+    color: var(--text);
+}
+
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+    font-size: var(--fontSize);
+    font-family: var(--system-font);
+    color: var(--subtext);
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+.traffic-menu .section-title {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--subtext);
+    padding: 8px 16px 4px 16px;
+}
+
+.traffic-menu .data-text {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+}
+
+.traffic-menu .data-value {
+    font-size: var(--fontSizeLarge);
+    font-weight: var(--fontWeight);
+    color: var(--text);
+    padding: 2px 0px 6px 0px;
+}
+
+.traffic-menu .internet-info {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+    padding: 8px 16px;
+    border-top: 1px solid var(--hairline);
+}
+
+.traffic-menu .internet-info.connected {
+    color: var(--green);
+}
+
+.traffic-menu .internet-info.disconnected {
+    color: var(--red);
+}
+
+/* WiFi */
+.wifi-widget .widget-container .icon {
+    color: var(--sky);
+}
+
+.wifi-widget .widget-container .label {
+    color: var(--text);
+}
+
+.wifi-menu {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    min-width: 420px;
+    min-height: 340px;
+}
+
+.wifi-menu .header {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.wifi-menu .header .title {
+    font-size: 14px;
+    font-weight: var(--fontWeight);
+    color: var(--text);
+}
+
+.wifi-menu .wifi-item {
+    padding: 10px 12px;
+    margin: 2px 6px;
+    border-radius: var(--border-radius2);
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.wifi-menu .wifi-item[active=true] {
+    background-color: var(--chip);
+}
+
+.wifi-menu .wifi-item .icon {
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 18px;
+    color: var(--sky);
+}
+
+.wifi-menu .wifi-item .name {
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeight);
+    color: var(--text);
+}
+
+.wifi-menu .footer {
+    font-size: var(--fontSize);
+    font-family: var(--system-font);
+    padding: 8px 12px;
+    color: var(--subtext);
+    border-top: 1px solid var(--hairline);
+}
+
+/* Battery */
+.battery-widget .widget-container .icon {
+    color: var(--green);
+}
+
+.battery-widget .widget-container .label {
+    color: var(--text);
+}
+
+.battery-widget .label.status-critical {
+    color: var(--red);
+}
+
+.battery-widget .label.status-low {
+    color: var(--peach);
+}
+
+.battery-widget .label.status-medium {
+    color: var(--yellow);
+}
+
+.battery-widget .label.status-full {
+    color: var(--green);
+}
+
+.battery-widget .label.status-charging {
+    color: var(--sky);
+}
+
+/* Bluetooth */
+.bluetooth-widget .widget-container .icon {
+    color: var(--blue);
+}
+
+.bluetooth-widget .label.bt-off {
+    color: var(--overlay1);
+}
+
+.bluetooth-widget .label.bt-on {
+    color: var(--sky);
+}
+
+.bluetooth-widget .label.bt-connected {
+    color: var(--green);
+}
+
+.bluetooth-menu {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    min-width: 320px;
+}
+
+.bluetooth-menu .header {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.bluetooth-menu .header .title {
+    font-size: 14px;
+    font-weight: var(--fontWeight);
+    color: var(--text);
+}
+
+.bluetooth-menu .section-title {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--subtext);
+    padding: 8px 12px 4px 12px;
+}
+
+.bluetooth-menu .bluetooth-item {
+    padding: 8px 12px;
+    margin: 2px 6px;
+    border-radius: var(--border-radius2);
+}
+
+.bluetooth-menu .bluetooth-item:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.bluetooth-menu .bluetooth-item.active {
+    background-color: var(--chip);
+}
+
+.bluetooth-menu .bluetooth-item .icon {
+    font-size: 18px;
+    color: var(--sky);
+}
+
+.bluetooth-menu .bluetooth-item .name {
+    font-size: var(--fontSize);
+    color: var(--text);
+}
+
+.bluetooth-menu .bluetooth-item .status {
+    font-size: 11px;
+    color: var(--subtext);
+}
+
+.bluetooth-menu .footer {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+    padding: 8px 12px;
+    border-top: 1px solid var(--hairline);
+}
+
+/* Volume and the audio menu */
+.volume-widget .icon {
+    color: var(--teal);
+}
+
+.audio-menu {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    min-width: 320px;
+}
+
+.audio-menu .system-volume-container .volume-slider {
+    background: transparent;
+}
+
+.audio-menu .audio-container .device {
+    padding: 6px 10px;
+    margin: 2px 6px;
+    border-radius: var(--border-radius2);
+}
+
+.audio-menu .audio-container .device.selected {
+    background-color: var(--chip);
+}
+
+.audio-menu .audio-container .device:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.audio-menu .toggle-apps {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+    background-color: transparent;
+    border: none;
+    padding: 6px 12px;
+}
+
+.audio-menu .toggle-apps.expanded {
+    color: var(--accent);
+}
+
+.audio-menu .toggle-apps:hover {
+    color: var(--text);
+}
+
+.audio-menu .apps-container {
+    background: transparent;
+    border-top: 1px solid var(--hairline);
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container {
+    padding: 4px;
+    border-radius: var(--border-radius2);
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+    background-color: var(--acrylic-hover);
+}
+
+/* Media widget */
+.media-widget .btn {
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    border-radius: var(--border-radius3);
+    font-size: 13px;
+    font-weight: var(--fontWeight);
+    color: var(--subtext);
+    padding: 0 3px;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.media-widget .btn:hover {
+    color: var(--text);
+}
+
+.media-widget .btn.play {
+    font-size: 14px;
+    color: var(--accent);
+}
+
+.media-widget .progress-bar {
+    background-color: var(--hairline);
+    border-radius: 2px;
+}
+
+.media-widget .progress-bar::chunk {
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* Media popup */
+.media-menu {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    min-width: 320px;
+}
+
+.media-menu .thumbnail {
+    border-radius: var(--border-radius2);
+    border: 1px solid var(--hairline);
+}
+
+.media-menu .source {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+    padding: 2px 8px;
+}
+
+.media-menu .artist {
+    font-size: var(--fontSize);
+    color: var(--text);
+    padding: 2px 8px;
+}
+
+.media-menu .btn {
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 14px;
+    color: var(--subtext);
+    background-color: transparent;
+    border: none;
+    border-radius: var(--border-radius2);
+    padding: 4px 8px;
+}
+
+.media-menu .btn:hover {
+    color: var(--text);
+    background-color: var(--acrylic-hover);
+}
+
+.media-menu .btn.play {
+    color: var(--accent);
+}
+
+.media-menu .btn.disabled {
+    color: var(--overlay0);
+}
+
+.media-menu .playback-time {
+    font-size: 11px;
+    color: var(--subtext);
+    font-variant-numeric: tabular-nums;
+}
+
+.media-menu .progress-slider {
+    background: transparent;
+    height: 6px;
+}
+
+.media-menu .progress-slider::groove {
+    background-color: var(--hairline);
+    border-radius: 3px;
+    height: 6px;
+}
+
+.media-menu .progress-slider::groove:hover {
+    background-color: var(--overlay0);
+}
+
+.media-menu .progress-slider::sub-page {
+    background-color: var(--accent);
+    border-radius: 3px;
+    height: 6px;
+}
+
+.media-menu .app-volume-container {
+    border-top: 1px solid var(--hairline);
+    padding-top: 6px;
+}
+
+.media-menu .app-volume-container .volume-slider::groove {
+    background-color: var(--hairline);
+    border-radius: 3px;
+    height: 6px;
+}
+
+.media-menu .app-volume-container .volume-slider::sub-page {
+    background-color: var(--teal);
+    border-radius: 3px;
+    height: 6px;
+}
+
+.media-menu .app-volume-container .volume-slider::handle {
+    background-color: var(--text);
+    border-radius: 6px;
+    width: 12px;
+    height: 12px;
+}
+
+.media-menu .app-volume-container .unmute-button {
+    color: var(--subtext);
+    background: transparent;
+    border: none;
+}
+
+/* Cava */
+.cava-widget .widget-container {
+    background-color: transparent;
+    border: none;
+}
+
+/* Pomodoro */
+.pomodoro-widget .label {
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    line-height: var(--barLineHeight);
+    font-weight: var(--fontWeight);
+    letter-spacing: 1px;
+    font-variant-numeric: tabular-nums;
+    color: var(--subtext);
+}
+
+.pomodoro-widget .icon {
+    font-size: var(--iconSizeSm);
+    color: var(--accent);
+    padding-right: 3px;
+}
+
+.pomodoro-widget .label.work {
+    color: var(--pomodoroWork);
+}
+
+.pomodoro-widget .label.break,
+.pomodoro-widget .label.paused {
+    color: var(--pomodoroBreak);
+}
+
+.pomodoro-widget .icon.work {
+    color: var(--pomodoroWork);
+}
+
+.pomodoro-widget .icon.break,
+.pomodoro-widget .icon.paused {
+    color: var(--pomodoroBreak);
+}
+
+/* Pomodoro popup */
+.pomodoro-menu {
+    background-color: var(--acrylic);
+    min-width: 220px;
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+}
+
+.pomodoro-menu .title,
+.pomodoro-menu .timer,
+.pomodoro-menu .session {
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeight);
+    color: var(--text);
+    padding: 4px 8px;
+}
+
+.pomodoro-menu .session {
+    color: var(--subtext);
+}
+
+.pomodoro-menu .button-container {
+    background: transparent;
+    border: none;
+}
+
+.pomodoro-menu .pomodoro-button {
+    background-color: var(--chip);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius3);
+    font-family: var(--system-font);
+    font-size: var(--fontSize);
+    padding: 6px 14px;
+    margin: 4px;
+}
+
+.pomodoro-menu .pomodoro-button:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.pomodoro-menu .pomodoro-button:pressed {
+    background-color: var(--accent-soft);
+}
+
+/* Systray */
+.systray {
+    background: transparent;
+    border: none;
+}
+
+.systray .pinned-container.drop-target {
+    background: var(--background2);
+}
+
+.systray .unpinned-visibility-btn {
+    border-radius: var(--border-radius2);
+    height: 20px;
+    width: 16px;
+    border: none;
+}
+
+.systray .label,
+.systray .icon {
+    color: var(--mauve);
+    font-family: var(--icons-font-fallback);
+}
+
+.systray-popup {
+    background-color: var(--acrylic);
+    padding: 4px;
+    border-radius: var(--border-radius);
+    border: 3px double var(--border);
+}
+
+.systray-popup .button {
+    padding: 10px;
+    margin: 0;
+    border: none;
+    border-radius: var(--border-radius2);
+}
+
+.systray-popup .button:hover {
+    background-color: var(--acrylic-hover);
+}
+
+/* Notifications */
+.notification-widget .icon {
+    color: var(--overlay2);
+}
+
+.notification-widget .icon.new-notification {
+    color: var(--blue);
+}
+
+.notification-widget .label.new-notification {
+    color: var(--blue);
+    font-weight: var(--fontWeight);
+}
+
+/* Wallpapers */
+.wallpapers-widget .icon {
+    color: var(--mauve);
+}
+
+.wallpapers-widget .widget-container {
+    background-color: transparent;
+    border: none;
+}
+
+/* Control centre */
+.control-center-widget .icon {
+    color: var(--accent);
+}
+
+.control-center-menu {
+    background-color: var(--acrylic);
+    border: 3px double var(--border);
+    border-radius: var(--border-radius);
+    min-width: 380px;
+}
+
+.control-center-menu .section {
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+}
+
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.quick-actions .button,
+.control-center-menu .section.media .button {
+    background-color: var(--chip);
+    border: 1px solid var(--hairline);
+    border-radius: var(--border-radius2);
+    padding: 8px;
+    margin: 4px;
+}
+
+.control-center-menu .section.system-controls .button:hover,
+.control-center-menu .section.quick-actions .button:hover,
+.control-center-menu .section.media .button:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.control-center-menu .section.quick-actions .button .icon {
+    font-size: 18px;
+    color: var(--text);
+}
+
+.control-center-menu .section.quick-actions .button.active .icon {
+    color: var(--accent);
+}
+
+.control-center-menu .section.quick-actions .button .title {
+    font-size: 11px;
+    color: var(--subtext);
+}
+
+.control-center-menu .section.sliders .slider {
+    padding: 6px 4px;
+}
+
+.control-center-menu .section.sliders .slider .icon {
+    font-size: 16px;
+    color: var(--text);
+}
+
+.control-center-menu .section.sliders .slider .value {
+    font-size: var(--fontSize);
+    color: var(--subtext);
+}
+
+.control-center-menu .section.sliders .slider .source-selector {
+    color: var(--overlay2);
+    border-radius: var(--border-radius2);
+    padding: 2px 6px;
+}
+
+.control-center-menu .section.sliders .slider .source-selector:hover {
+    background-color: var(--acrylic-hover);
+    color: var(--text);
+}
+
+.control-center-menu .section.power .mode-name {
+    background-color: transparent;
+    border: 1px solid var(--hairline);
+    border-radius: var(--border-radius2);
+    padding: 8px 10px;
+    margin: 4px;
+}
+
+.control-center-menu .section.power .mode-name:hover {
+    background-color: var(--acrylic-hover);
+}
+
+.control-center-menu .section.power .mode-name .title {
+    font-size: var(--fontSize);
+    color: var(--text);
+}
+
+.control-center-menu .section.power .mode-name .subtext {
+    font-size: 11px;
+    color: var(--subtext);
+}
+
+.control-center-menu .section.power .mode-name .icon {
+    font-size: 16px;
+    color: var(--accent);
+}
+
+.control-center-menu .section.media .track-info {
+    padding: 4px 8px;
+}
+
+.control-center-menu .section.media .title {
+    font-size: var(--fontSize);
+    color: var(--text);
+}
+
+.control-center-menu .section.media .subtext {
+    font-size: 11px;
+    color: var(--subtext);
+}
+
+.control-center-menu .context-menu {
+    background-color: var(--acrylic);
+    border: 1px solid var(--hairline);
+    border-radius: var(--border-radius2);
+    padding: 4px;
+}
+
+.control-center-menu .context-menu::item {
+    padding: 6px 12px;
+    margin: 2px 4px;
+    border-radius: var(--border-radius2);
+    color: var(--text);
+}
+
+.control-center-menu .context-menu::item:selected {
+    background-color: var(--accent);
+    color: var(--accentText);
+}
+
+.control-center-menu .context-menu::separator {
+    height: 1px;
+    background-color: var(--hairline);
+    margin: 4px 8px;
+}
+
+.control-center-menu .context-menu::indicator:unchecked {
+    background: var(--mutedBG);
+    border-radius: var(--border-radius2);
+}
+
+.control-center-menu .context-menu::indicator:checked {
+    background: var(--accent);
+    border-radius: var(--border-radius2);
+}
