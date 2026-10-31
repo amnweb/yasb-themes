@@ -1,0 +1,430 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/amnweb/yasb/main/schema.json
+#
+# macOS-style menu bar for YASB.
+# Structure follows Apple HIG (The menu bar): Apple menu | app name | app menus | status items.
+# Icons: Nerd Font fallback path (the installed SF Symbols 6 font exposes no addressable
+# per-symbol codepoints); the Apple logo uses SF Pro's U+F8FF.
+watch_stylesheet: true
+watch_config: true
+debug: false
+
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "left"
+    style: "bar"
+    animation:
+      enabled: true
+      duration: 200
+      type: "fade"
+    blur_effect:
+      enabled: false
+      dark_mode: false
+      round_corners: false
+      border_color: "None"
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 26
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left:
+        - "apple_menu"
+        - "app_name"
+        - "menu_file"
+        - "menu_view"
+        - "menu_go"
+        - "menu_help"
+      center:
+        - "notch"
+      right:
+        - "systray"
+        - "bluetooth"
+        - "wifi"
+        - "volume"
+        - "battery"
+        - "control_center"
+    layouts:
+      left:
+        alignment: "left"
+        stretch: true
+      center:
+        alignment: "center"
+        stretch: true
+      right:
+        alignment: "right"
+        stretch: true
+
+widgets:
+  # ---------------------------------------------------------------- Apple menu
+  apple_menu:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span class='apple-icon'>\uf8ff</span>"
+      menu_list:
+        - { title: "About This Mac", uri: "ms-settings:about" }
+        - { separator: true }
+        - { title: "System Settings…", uri: "ms-settings:" }
+        - { title: "App Store…", uri: "ms-windows-store:" }
+        - { separator: true }
+        - { title: "Recent Items", command: "explorer.exe shell:recent" }
+        - { separator: true }
+        - { title: "Force Quit…", command: "taskmgr.exe" }
+        - { separator: true }
+        - { title: "Sleep", command: "rundll32.exe powrprof.dll,SetSuspendState 0,1,0" }
+        - { title: "Restart…", command: "shutdown /r /t 0" }
+        - { title: "Shut Down…", command: "shutdown /s /t 0" }
+        - { separator: true }
+        - { title: "Lock Screen", command: "rundll32.exe user32.dll,LockWorkStation" }
+        - { title: "Log Out…", command: "shutdown /l" }
+      system_menu: false
+      power_menu: false
+      blur: false
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "None"
+      alignment: "left"
+      direction: "down"
+      offset_top: 4
+      offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+
+  # ------------------------------------------------------- App name (bold via CSS)
+  app_name:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_no_window: "Finder"
+      max_length: 40
+      max_length_ellipsis: "…"
+      label_icon: false
+      monitor_exclusive: true
+      rewrite:
+        - { pattern: "\\.exe$", replacement: "" }
+        - { pattern: "^Code$", replacement: "Visual Studio Code" }
+      ignore_window:
+        classes: []
+        processes: []
+        titles: []
+      callbacks:
+        on_left: "do_nothing"
+
+  # ------------------------------------------------------------- Notch
+  notch:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "notch"
+      widgets: ["clock", "pomodoro"]
+      hide_empty: false
+
+  pomodoro:
+    type: "yasb.pomodoro.PomodoroWidget"
+    options:
+      label: "<span class='icon'>{icon}</span> {remaining}"
+      label_alt: "{session}/{total_sessions} · {remaining}"
+      work_duration: 25
+      break_duration: 5
+      long_break_duration: 15
+      long_break_interval: 4
+      auto_start_breaks: true
+      auto_start_work: true
+      sound_notification: true
+      show_notification: true
+      icons:
+        work: "\U000F051B"
+        break: "\U000F06CA"
+        paused: "\U000F03E4"
+      menu:
+        blur: false
+        round_corners: false
+        border_color: "None"
+        alignment: "center"
+        direction: "down"
+        offset_top: 4
+        circle_size: 150
+        circle_thickness: 7
+        circle_work_progress_color: "#0a84ff"
+        circle_break_progress_color: "#30d158"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "reset_timer"
+        on_right: "toggle_timer"
+
+  # ------------------------------------------------------------- App menus
+  menu_file:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "File"
+      menu_list:
+        - { title: "New Explorer Window", command: "explorer.exe" }
+        - { title: "New PowerShell Window", command: "powershell.exe" }
+        - { separator: true }
+        - { title: "Open Recent", command: "explorer.exe shell:recent" }
+        - { separator: true }
+        - { title: "Open Downloads", path: "C:/Users/MTsTQA/Downloads" }
+      system_menu: false
+      power_menu: false
+      blur: false
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "None"
+      alignment: "left"
+      direction: "down"
+      offset_top: 4
+      offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+
+  menu_view:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "View"
+      menu_list:
+        - { title: "Display Settings…", uri: "ms-settings:display" }
+        - { title: "Dark Mode", uri: "ms-settings:colors" }
+        - { title: "Wallpaper…", uri: "ms-settings:personalization-background" }
+        - { title: "Night Light", uri: "ms-settings:nightlight" }
+        - { separator: true }
+        - { title: "Focus Assist", uri: "ms-settings:quiethours" }
+      system_menu: false
+      power_menu: false
+      blur: false
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "None"
+      alignment: "left"
+      direction: "down"
+      offset_top: 4
+      offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+
+  menu_go:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "Go"
+      menu_list:
+        - { title: "Home", path: "C:/Users/MTsTQA" }
+        - { title: "Desktop", path: "C:/Users/MTsTQA/Desktop" }
+        - { title: "Downloads", path: "C:/Users/MTsTQA/Downloads" }
+        - { title: "Documents", path: "C:/Users/MTsTQA/Documents" }
+        - { title: "Pictures", path: "C:/Users/MTsTQA/Pictures" }
+        - { separator: true }
+        - { title: "This PC", command: "explorer.exe shell:MyComputerFolder" }
+      system_menu: false
+      power_menu: false
+      blur: false
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "None"
+      alignment: "left"
+      direction: "down"
+      offset_top: 4
+      offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+
+  menu_help:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "Help"
+      menu_list:
+        - { title: "YASB Documentation", uri: "https://github.com/amnweb/yasb/wiki" }
+        - { title: "YASB Themes", uri: "https://yasb.dev" }
+        - { separator: true }
+        - { title: "About Windows…", command: "winver.exe" }
+      system_menu: false
+      power_menu: false
+      blur: false
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "None"
+      alignment: "left"
+      direction: "down"
+      offset_top: 4
+      offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+
+  # ------------------------------------------------------- Menu bar extras
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      icon_size: 14
+      show_unpinned: true
+      show_unpinned_button: false
+      show_in_popup: false
+      tooltip: true
+      popup:
+        blur: false
+        round_corners: false
+        border_color: "None"
+
+  bluetooth:
+    type: "yasb.bluetooth.BluetoothWidget"
+    options:
+      label: "<span class='icon'>\U000F00AF</span>"
+      label_alt: "<span class='icon'>\U000F00AF</span>"
+      tooltip: true
+      menu_config:
+        blur: false
+        round_corners: false
+        border_color: "None"
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "toggle_label"
+
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span class='icon'>{wifi_icon}</span>"
+      label_alt: "<span class='icon'>{wifi_icon}</span> {wifi_name}"
+      ethernet_label: "<span class='icon'>{wifi_icon}</span>"
+      ethernet_label_alt: "<span class='icon'>{wifi_icon}</span> {ip_addr}"
+      update_interval: 5000
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "toggle_label"
+      menu_config:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "None"
+        alignment: "right"
+        direction: "down"
+        offset_top: 4
+
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span class='icon'>{icon}</span>"
+      label_alt: "<span class='icon'>{icon}</span> {level}%"
+      tooltip: true
+      icons:
+        muted: "\U000F0581"
+        "10": "\U000F057F"
+        "30": "\U000F0580"
+        "60": "\U000F057E"
+        "100": "\U000F057E"
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute"
+      audio_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "None"
+        alignment: "right"
+        direction: "down"
+        offset_top: 4
+        show_apps: true
+        show_app_labels: true
+        show_app_icons: true
+
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "<span class='icon'>{icon}</span> {percent}%"
+      label_alt: "<span class='icon'>{icon}</span> {time_remaining}"
+      update_interval: 5000
+      hide_unsupported: true
+      charging_options:
+        icon_format: "{charging_icon}"
+        blink_charging_icon: false
+      status_icons:
+        icon_charging: "\uf0e7"
+        icon_critical: "\uf244"
+        icon_low: "\uf243"
+        icon_medium: "\uf242"
+        icon_high: "\uf241"
+        icon_full: "\uf240"
+      callbacks:
+        on_left: "toggle_label"
+
+  control_center:
+    type: "yasb.control_center.ControlCenterWidget"
+    options:
+      label: "<span class='icon'>\U000F062E</span>"
+      class_name: "macos-cc"
+      tooltip: false
+      sections_order: ["quick_actions", "sliders", "media"]
+      sections:
+        system_controls:
+          show: false
+        quick_actions:
+          show: true
+          columns: 2
+          label_position: "default"
+          actions:
+            - { id: "wifi_settings", label: "Wi-Fi", icon: "\U000F05A9", command: "ms-settings:network-wifi" }
+            - { id: "bluetooth_settings", label: "Bluetooth", icon: "\U000F00AF", command: "ms-settings:bluetooth" }
+            - { id: "toggle_dnd", label: "Focus", icon: "\uf186" }
+            - { id: "toggle_theme", label: "Dark Mode", icon: "\uf185" }
+            - { id: "toggle_mute", label: "Mute", icon: "\U000F0581" }
+            - { id: "toggle_mic_mute", label: "Mic", icon: "\uf130" }
+        sliders:
+          show: true
+          brightness:
+            show_slider: true
+            icon: "\uf185"
+          volume:
+            show_slider: true
+            icon: "\U000F057E"
+            show_source_selector: true
+          microphone:
+            show_slider: true
+            icon: "\uf130"
+        media:
+          show: true
+          thumbnail_size: 48
+          thumbnail_radius: 8
+        power:
+          show: false
+      popup:
+        # Native Win32 backdrop off: the whole glass surface is drawn by CSS.
+        blur: false
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "None"
+        alignment: "right"
+        direction: "down"
+        offset_top: 4
+      callbacks:
+        on_left: "toggle_menu"
+
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a %d %b  %H:%M}"
+      label_alt: "{%A, %d %B %Y}"
+      locale: "en_US"
+      update_interval: 1000
+      tooltip: false
+      calendar:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "None"
+        alignment: "right"
+        direction: "down"
+        offset_top: 4
+        country_code: "ID"
+        show_holidays: true
+        holiday_color: "#FF453A"
+        extended: true
+        show_years: true
+      callbacks:
+        on_left: "toggle_calendar"
+        on_right: "toggle_label"

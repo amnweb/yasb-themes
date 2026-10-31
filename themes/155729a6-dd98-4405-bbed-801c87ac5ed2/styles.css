@@ -1,0 +1,1336 @@
+/* ============================================================
+   macOS Sequoia - dark translucent menu bar
+   Bar: full-width, 24px, 13px system type.
+   Menus/popups: glass surfaces with 10-20px radii and a toggleable shadow.
+   ============================================================ */
+
+:root {
+  --bar-bg: rgba(26, 26, 28, 0.72);
+  --bar-border: rgba(255, 255, 255, 0.10);
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.55);
+  --hover-bg: rgba(255, 255, 255, 0.14);
+  --pressed-bg: rgba(255, 255, 255, 0.08);
+  --popup-bg: rgba(38, 38, 40, 0.86);
+  --popup-border: rgba(255, 255, 255, 0.12);
+  --separator: rgba(255, 255, 255, 0.10);
+  --accent: #0a84ff;
+  --accent-red: #ff453a;
+  --font-ui: "SF Pro Text", "SF Pro Display", "Segoe UI Variable Text", "Segoe UI", sans-serif;
+  /* Nerd Font carries the status glyphs; SF Symbols answers for anything it lacks. */
+  --font-symbol: "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font Propo", "SF Symbols 6", sans-serif;
+  --font-apple: "SF Pro Text", "SF Symbols 6", sans-serif;
+}
+
+/* ------------------------------------------------------------ Bar */
+.yasb-bar {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-primary);
+  /* Vertical shade, darkest at the top edge. */
+  background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 rgba(0, 0, 0, 0.32), stop: 0.15 rgba(0, 0, 0, 0.26), stop: 0.32 rgba(0, 0, 0, 0.18), stop: 0.50 rgba(0, 0, 0, 0.11), stop: 0.68 rgba(0, 0, 0, 0.06), stop: 0.85 rgba(0, 0, 0, 0.02), stop: 1 rgba(0, 0, 0, 0));
+  border: none;
+}
+
+.container-left {
+  background-color: transparent;
+  padding: 0 4px 0 8px;
+}
+
+.container-center {
+  background-color: transparent;
+  padding: 0;
+}
+
+.container-right {
+  background-color: transparent;
+  padding: 0 8px 0 4px;
+}
+
+.widget {
+  padding: 0 1px;
+  background-color: transparent;
+}
+
+.widget-container {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 0 8px;
+  min-height: 18px;
+  cursor: pointer;
+  transition: background-color 120ms ease-in-out;
+}
+
+/* macOS menu bar items do not light up on hover; only the notch and menus do.
+   Restore the pill with background-color: var(--hover-bg) if you want it back. */
+.widget-container:hover {
+  background-color: transparent;
+}
+
+.widget-container:pressed {
+  background-color: var(--pressed-bg);
+}
+
+.label {
+  color: var(--text-primary);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/* ------------------------------------------------------------ Apple menu */
+.apple-icon {
+  font-family: var(--font-apple);
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.home-widget .widget-container {
+  padding: 0 9px;
+}
+
+.home-widget .label {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* The logo sits tighter to the leading edge, like the Apple menu. */
+.home-widget:first-child .widget-container {
+  padding: 0 11px 0 13px;
+}
+
+/* ------------------------------------------------------------ Active app name */
+.active-window-widget .widget-container {
+  padding: 0 12px 0 4px;
+}
+
+/* HIG: the active app's name is shown in bold. */
+.active-window-widget .label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
+
+.active-window-widget .widget-container {
+  cursor: default;
+}
+
+.active-window-widget .widget-container:hover {
+  background-color: transparent;
+}
+
+/* ------------------------------------------------------------ Status items */
+.icon {
+  font-family: var(--font-symbol);
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.bluetooth-widget .widget-container,
+.wifi-widget .widget-container,
+.volume-widget .widget-container,
+.battery-widget .widget-container {
+  padding: 0 6px;
+}
+
+.bluetooth-widget .label,
+.wifi-widget .label,
+.volume-widget .label,
+.control-center-widget .label {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.battery-widget .label {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Battery turns red when macOS would: on low charge. */
+.battery-widget .icon.status-critical,
+.battery-widget .icon.status-low {
+  color: var(--accent-red);
+}
+
+.control-center-widget .widget-container {
+  padding: 0 7px;
+}
+
+.systray {
+  padding: 0 4px;
+}
+
+.systray .image {
+  padding: 0 3px;
+}
+
+/* ------------------------------------------------------------ Notch */
+/* Center island: clock + pomodoro, shaped like the MacBook notch. */
+.notch {
+  background-color: #000000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  min-height: 26px;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all 170ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.notch:hover {
+  background-color: #2b2b30;
+  padding: 0 20px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.notch:pressed {
+  background-color: #141417;
+}
+
+.notch .container {
+  background-color: transparent;
+}
+
+/* Clock inside the notch: no surface of its own. */
+.clock-widget {
+  background: transparent;
+  min-height: 0;
+  padding: 0;
+}
+
+.clock-widget .widget-container {
+  padding: 0;
+}
+
+.clock-widget .label {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+}
+
+/* Pomodoro inside the notch: own segment, separated by a hairline. */
+.pomodoro-widget {
+  background: transparent;
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+  margin-left: 10px;
+  padding-left: 4px;
+}
+
+.notch:hover .pomodoro-widget {
+  border-left-color: rgba(255, 255, 255, 0.24);
+}
+
+.pomodoro-widget .widget-container {
+  padding: 0 0 0 6px;
+}
+
+.pomodoro-widget .label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.pomodoro-widget .label.break,
+.pomodoro-widget .icon.break {
+  color: #30d158;
+}
+
+.pomodoro-widget .label.paused,
+.pomodoro-widget .icon.paused {
+  color: #ffd60a;
+}
+
+.pomodoro-widget .icon {
+  font-family: var(--font-symbol);
+  font-size: 12px;
+}
+
+/* ============================================================
+   Popups (menus, calendar, Control Center, volume, tooltips)
+   ============================================================ */
+
+/* Liquid glass: translucent tint over the blurred backdrop, a bright specular
+   rim on the top edge, and a deep ambient shadow. Keep blur enabled in config
+   for the panels, otherwise the tint has nothing to refract. */
+.home-menu,
+.audio-menu,
+.control-center-menu,
+.clock-popup,
+.context-menu,
+.wifi-menu,
+.bluetooth-menu,
+.systray-popup,
+.media-menu,
+.media-lite-menu,
+.brightness-menu,
+.microphone-menu,
+.notification-menu,
+.notes-menu,
+.traffic-menu,
+.power-plan-menu,
+.language-menu,
+.todo-menu,
+.server-menu,
+.github-menu,
+.copilot-menu,
+.claude-usage-menu,
+.codex-usage-menu,
+.pomodoro-menu,
+.libre-menu,
+.vscode-menu,
+.komorebi-control-menu,
+.komorebi-layout-menu,
+.power-menu-popup,
+.power-menu-compact {
+  background: qlineargradient(
+    x1: 0, y1: 0, x2: 0.35, y2: 1,
+    stop: 0 rgba(255, 255, 255, 0.32),
+    stop: 0.07 rgba(255, 255, 255, 0.18),
+    stop: 0.34 rgba(120, 140, 158, 0.26),
+    stop: 0.72 rgba(48, 56, 66, 0.44),
+    stop: 1 rgba(22, 26, 32, 0.54)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  border-top-color: rgba(255, 255, 255, 0.55);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+}
+
+/* Control Center: no panel slab behind the tiles. The tiles, slider cards and
+   Now Playing card are the glass surfaces; the popup itself stays empty. */
+.control-center-menu {
+  background: transparent;
+  border: none;
+  /* Its surfaces float as separate cards, so the popup itself casts nothing. */
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------ Menu */
+.home-menu {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.home-menu .menu-item {
+  padding: 4px 14px;
+  margin: 0;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* macOS fills the hovered row with the accent colour, not a grey. */
+.home-menu .menu-item:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.home-menu .separator {
+  background-color: var(--separator);
+  height: 1px;
+  margin: 4px 8px;
+}
+
+/* ------------------------------------------------------------ Calendar */
+.clock-popup.calendar {
+  border-radius: 12px;
+  padding: 10px;
+  font-family: var(--font-ui);
+  color: var(--text-primary);
+}
+
+.calendar .header {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.calendar .today {
+  background-color: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.calendar .holiday {
+  color: var(--accent-red);
+  font-weight: 500;
+}
+
+.calendar QAbstractItemView {
+  background-color: transparent;
+  color: var(--text-primary);
+  selection-background-color: var(--accent);
+  selection-color: #ffffff;
+  outline: none;
+}
+
+.calendar QWidget#qt_calendar_navigationbar {
+  background-color: transparent;
+}
+
+/* ------------------------------------------------------------ Volume panel */
+.audio-menu {
+  border-radius: 16px;
+  min-width: 264px;
+  padding: 6px;
+}
+
+/* Device picker */
+.audio-menu .audio-container {
+  background-color: transparent;
+}
+
+.audio-menu .device {
+  background-color: transparent;
+  border: none;
+  border-radius: 7px;
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  padding: 5px 10px;
+  margin: 1px 0;
+  cursor: pointer;
+}
+
+.audio-menu .device:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.audio-menu .device.selected {
+  background-color: var(--accent);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* System volume card */
+.audio-menu .system-volume-container {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin-top: 6px;
+  padding: 9px 10px;
+}
+
+.audio-menu .toggle-apps {
+  background-color: rgba(255, 255, 255, 0.10);
+  border: none;
+  border-radius: 9px;
+  color: var(--text-primary);
+  font-family: var(--font-symbol);
+  font-size: 10px;
+  min-width: 22px;
+  max-width: 22px;
+  min-height: 20px;
+  max-height: 20px;
+  margin-left: 6px;
+  padding: 0;
+}
+
+.audio-menu .toggle-apps:hover,
+.audio-menu .toggle-apps.expanded {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Per-app mixer */
+.audio-menu .apps-container {
+  margin-top: 6px;
+}
+
+.audio-menu .app-volume {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 3px 6px;
+}
+
+.audio-menu .app-volume:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.audio-menu .app-label {
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 0 0 1px 26px;
+}
+
+.audio-menu .app-icon-container {
+  min-width: 22px;
+  max-width: 22px;
+  margin-right: 4px;
+}
+
+.audio-menu .app-icon {
+  background: transparent;
+}
+
+/* Sliders: system volume + app volumes */
+.audio-menu QSlider::groove:horizontal {
+  border: none;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+}
+
+.audio-menu QSlider::sub-page:horizontal {
+  background: #ffffff;
+  border-radius: 3px;
+}
+
+.audio-menu QSlider::sub-page:horizontal:disabled {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.audio-menu QSlider::handle:horizontal {
+  background: #ffffff;
+  border: none;
+  width: 15px;
+  height: 15px;
+  margin: -5px 0;
+  border-radius: 8px;
+}
+
+.audio-menu QSlider::handle:horizontal:disabled {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* ------------------------------------------------------------ Control Center */
+.control-center-menu {
+  border-radius: 20px;
+  padding: 10px;
+  min-width: 304px;
+}
+
+/* Sections carry their own padding; the popup layout itself has no spacing. */
+.control-center-menu .section {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.control-center-menu .section.quick-actions {
+  padding: 0 0 4px 0;
+}
+
+/* --- Tiles: icon above label, macOS Control Center proportions --- */
+.control-center-menu .button {
+  background: qlineargradient(
+    x1: 0, y1: 0, x2: 0.2, y2: 1,
+    stop: 0 rgba(255, 255, 255, 0.28),
+    stop: 1 rgba(255, 255, 255, 0.12)
+  );
+  border: none;
+  border-radius: 13px;
+  margin: 3px;
+  padding: 8px 6px 7px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.42);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  min-width: 128px;
+  min-height: 54px;
+  cursor: pointer;
+}
+
+.control-center-menu .button:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.control-center-menu .button:pressed {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.control-center-menu .button.active,
+.control-center-menu .button:checked {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.control-center-menu .button.active:hover,
+.control-center-menu .button:checked:hover {
+  background-color: #2f97ff;
+}
+
+.control-center-menu .button.disabled {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+.control-center-menu .button .icon {
+  font-family: var(--font-symbol);
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.control-center-menu .button .title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+.control-center-menu QLabel {
+  color: var(--text-primary);
+  font-size: 12px;
+}
+
+/* --- Sliders: rounded cards, iOS-style track --- */
+.control-center-menu .slider {
+  background: qlineargradient(
+    x1: 0, y1: 0, x2: 0.2, y2: 1,
+    stop: 0 rgba(255, 255, 255, 0.22),
+    stop: 1 rgba(255, 255, 255, 0.09)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top-color: rgba(255, 255, 255, 0.34);
+  border-radius: 13px;
+  margin: 3px;
+  padding: 9px 12px;
+  min-height: 34px;
+}
+
+.control-center-menu .slider .icon {
+  font-family: var(--font-symbol);
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.control-center-menu .slider .value {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.62);
+  min-width: 34px;
+}
+
+.control-center-menu .slider .source-selector {
+  background-color: rgba(255, 255, 255, 0.10);
+  border: none;
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+.control-center-menu QSlider::groove:horizontal {
+  border: none;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+}
+
+.control-center-menu QSlider::sub-page:horizontal {
+  background: #ffffff;
+  border-radius: 3px;
+}
+
+.control-center-menu QSlider::handle:horizontal {
+  background: #ffffff;
+  border: none;
+  width: 16px;
+  height: 16px;
+  margin: -6px 0;
+  border-radius: 8px;
+}
+
+.control-center-menu QSlider::handle:horizontal:hover {
+  background: #f2f2f2;
+}
+
+/* --- Now Playing card --- */
+.control-center-menu .media-section,
+.control-center-menu .section.media {
+  background: qlineargradient(
+    x1: 0, y1: 0, x2: 0.2, y2: 1,
+    stop: 0 rgba(255, 255, 255, 0.20),
+    stop: 1 rgba(255, 255, 255, 0.08)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top-color: rgba(255, 255, 255, 0.32);
+  border-radius: 14px;
+  margin: 3px;
+  padding: 9px;
+}
+
+.control-center-menu .section.media .thumbnail {
+  border-radius: 8px;
+}
+
+.control-center-menu .section.media .title {
+  font-size: 12px;
+  font-weight: 600;
+  padding-left: 8px;
+}
+
+.control-center-menu .section.media .subtext {
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding-left: 8px;
+}
+
+.control-center-menu .section.media .button {
+  background-color: transparent;
+  border-radius: 13px;
+  margin: 0 1px;
+  padding: 0;
+  min-width: 26px;
+  min-height: 26px;
+  font-size: 12px;
+}
+
+.control-center-menu .section.media .button.play {
+  background-color: rgba(255, 255, 255, 0.14);
+  font-size: 13px;
+}
+
+.control-center-menu .section.media .button:hover {
+  background-color: rgba(255, 255, 255, 0.20);
+}
+
+/* ------------------------------------------------------------ Calendar */
+.clock-popup.calendar {
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.clock-popup .day-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.clock-popup .month-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.clock-popup .date-label {
+  font-size: 46px;
+  font-weight: 300;
+  color: #ffffff;
+  margin: 2px 0;
+}
+
+.clock-popup .year-label,
+.clock-popup .week-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.clock-popup .holiday-label {
+  font-size: 10.5px;
+  color: var(--accent-red);
+  max-width: 104px;
+}
+
+/* QCalendarWidget itself: flat, no native bevels, accent selection. */
+.clock-popup QCalendarWidget,
+.calendar QTableView,
+.calendar-table {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 11px;
+  gridline-color: transparent;
+  selection-background-color: var(--accent);
+  selection-color: #ffffff;
+}
+
+.calendar QTableView::item {
+  border-radius: 7px;
+  padding: 2px;
+}
+
+.calendar QHeaderView::section {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 0;
+}
+
+.calendar QWidget#qt_calendar_navigationbar {
+  background: transparent;
+}
+
+/* Extended column: Set Alarm / Set Timer / upcoming holidays. */
+.clock-popup .extended-container {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  margin-left: 8px;
+  padding: 8px;
+}
+
+.clock-popup .button.alarm,
+.clock-popup .button.timer {
+  background: rgba(255, 255, 255, 0.10);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 10px;
+  margin-bottom: 4px;
+}
+
+.clock-popup .button.alarm:hover,
+.clock-popup .button.timer:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.clock-popup .upcoming-events-header {
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 6px 4px 2px 4px;
+}
+
+.clock-popup .upcoming-events-item {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  padding: 1px 4px;
+}
+
+/* Alarm / timer dialogs share the clock-popup class. */
+.clock-popup .clock-input-time {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 4px 6px;
+}
+
+.clock-popup .button.day,
+.clock-popup .button.quick-option {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+.clock-popup .button.day:hover,
+.clock-popup .button.quick-option:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.clock-popup .alarm-input-title {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 4px 8px;
+}
+
+.clock-popup .button.save {
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 5px 16px;
+}
+
+.clock-popup .button.cancel {
+  background: rgba(255, 255, 255, 0.10);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 5px 16px;
+}
+
+.clock-popup .button.delete {
+  background: rgba(255, 69, 58, 0.18);
+  border: none;
+  border-radius: 8px;
+  color: var(--accent-red);
+  padding: 5px 16px;
+}
+
+/* Alarm / timer editors: roomier dialog with the controls grouped. */
+.clock-popup.alarm,
+.clock-popup.timer {
+  border-radius: 16px;
+  padding: 14px;
+  min-width: 320px;
+  min-height: 292px;
+}
+
+.clock-popup .clock-popup-container {
+  background: transparent;
+  border: none;
+}
+
+.clock-popup .clock-label-timer {
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 0 6px 3px 6px;
+}
+
+.clock-popup .clock-input-time.colon {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  min-width: 14px;
+  padding: 0;
+}
+
+.clock-popup .button.day {
+  min-width: 34px;
+  padding: 5px 6px;
+  font-size: 10.5px;
+}
+
+.clock-popup .button.day:checked,
+.clock-popup .button.quick-option:checked {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.clock-popup .button.is-alarm-enabled {
+  background: rgba(48, 209, 88, 0.18);
+  color: #30d158;
+}
+
+.clock-popup .button.is-alarm-disabled {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+}
+
+.clock-popup .button.quick-option {
+  font-size: 10.5px;
+  padding: 4px 7px;
+}
+
+.clock-popup .button.save:disabled {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+}
+
+.clock-popup .clock-popup-footer {
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.clock-popup .clock-popup-footer .button {
+  margin-left: 6px;
+}
+
+/* ------------------------------------------------------------ Pomodoro */
+.pomodoro-menu {
+  border-radius: 18px;
+  padding: 12px;
+}
+
+.pomodoro-menu .header {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pomodoro-menu .session {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.pomodoro-menu .button {
+  background: rgba(255, 255, 255, 0.10);
+  border: none;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+}
+
+.pomodoro-menu .button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.pomodoro-menu .button.start,
+.pomodoro-menu .button.pause {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.pomodoro-menu .button.skip {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ------------------------------------------------------------ Context menu */
+.context-menu {
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.context-menu::item {
+  padding: 5px 14px;
+  margin: 1px 3px;
+  border-radius: 5px;
+}
+
+.context-menu::item:selected {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.context-menu::separator {
+  height: 1px;
+  background-color: var(--separator);
+  margin: 4px 8px;
+}
+
+/* ------------------------------------------------------------ Tooltip */
+.tooltip {
+  background-color: rgba(48, 48, 50, 0.94);
+  border: 1px solid var(--popup-border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  padding: 4px 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* ------------------------------------------------------------ Native hover off */
+/* Qt draws its own focus/hover highlight under these controls; the designed
+   hover above is the only feedback that should show. */
+QPushButton:focus,
+QToolButton:focus,
+QSlider:focus,
+QMenu:focus {
+  outline: none;
+}
+
+/* ------------------------------------------------------------ Hover = bold */
+/* Bar items answer hover by bolding their text, not by painting a pill. */
+.yasb-bar .label:hover,
+.yasb-bar .widget-container:hover .label {
+  font-weight: 700;
+}
+
+/* The active app name is not clickable, so it keeps its weight. */
+.active-window-widget .label:hover {
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------ Systray: no native chrome */
+/* Tray icons sit directly on the bar. Windows/Qt must not paint a button plate
+   behind them, and the popup has no backing slab of its own. */
+.systray .container,
+.systray .widget-container,
+.systray .unpinned-container,
+.systray .pinned-container,
+.systray .button,
+.systray .button:hover,
+.systray .button:pressed {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.systray-popup,
+.systray-popup .button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------ Wi-Fi panel */
+.wifi-menu {
+  border-radius: 14px;
+  padding: 8px;
+  min-width: 304px;
+  min-height: 336px;
+}
+
+.wifi-menu .header {
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px 6px 6px;
+}
+
+.wifi-menu .error-message {
+  color: var(--accent-red);
+  font-size: 11px;
+  padding: 4px 6px;
+}
+
+.wifi-menu .wifi-list {
+  background: transparent;
+  border: none;
+  min-height: 214px;
+}
+
+.wifi-menu .wifi-item {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 9px;
+  margin: 1px 0;
+}
+
+.wifi-menu .wifi-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.wifi-menu .wifi-item[active="true"] {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.wifi-menu .details-container,
+.wifi-menu .right-container,
+.wifi-menu .controls-container {
+  background: transparent;
+  border: none;
+}
+
+.wifi-menu .icon {
+  font-family: var(--font-symbol);
+  font-size: 13px;
+  color: var(--text-primary);
+  min-width: 20px;
+}
+
+.wifi-menu .name {
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.wifi-menu .status,
+.wifi-menu .strength {
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.wifi-menu .password {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 7px;
+  color: var(--text-primary);
+  font-size: 11px;
+  min-height: 18px;
+  padding: 4px 8px;
+}
+
+.wifi-menu .connect {
+  background: var(--accent);
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+}
+
+.wifi-menu .footer {
+  background: transparent;
+  border: none;
+  padding-top: 4px;
+}
+
+.wifi-menu .settings-button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 11px;
+  padding: 4px 6px;
+}
+
+.wifi-menu .settings-button:hover {
+  color: var(--text-primary);
+}
+
+.wifi-menu .refresh-icon {
+  background: rgba(255, 255, 255, 0.10);
+  border: none;
+  border-radius: 7px;
+  color: var(--text-primary);
+  font-family: var(--font-symbol);
+  font-size: 12px;
+  min-height: 20px;
+  max-height: 20px;
+  min-width: 24px;
+  max-width: 24px;
+  padding: 0;
+}
+
+.wifi-menu .refresh-icon:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ------------------------------------------------------------ Bluetooth panel */
+.bluetooth-menu {
+  border-radius: 14px;
+  padding: 8px;
+  min-width: 304px;
+  min-height: 336px;
+}
+
+.bluetooth-menu .header {
+  background: transparent;
+  padding: 2px 6px 6px 6px;
+}
+
+.bluetooth-menu .title {
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.bluetooth-menu .power-button {
+  background: rgba(255, 255, 255, 0.10);
+  border: none;
+  border-radius: 7px;
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 600;
+  min-height: 20px;
+  padding: 2px 10px;
+}
+
+.bluetooth-menu .power-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.bluetooth-menu .power-button:checked {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.bluetooth-menu .error-message {
+  color: var(--accent-red);
+  font-size: 11px;
+  padding: 4px 6px;
+}
+
+.bluetooth-menu .bluetooth-list {
+  background: transparent;
+  border: none;
+  min-height: 214px;
+}
+
+.bluetooth-menu .section {
+  background: transparent;
+  border: none;
+}
+
+.bluetooth-menu .section-title {
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 6px 8px 3px 8px;
+}
+
+.bluetooth-menu .bluetooth-item {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 9px;
+  margin: 1px 0;
+}
+
+.bluetooth-menu .bluetooth-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bluetooth-menu .bluetooth-item.active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.bluetooth-menu .details-container,
+.bluetooth-menu .controls-container {
+  background: transparent;
+  border: none;
+}
+
+.bluetooth-menu .icon {
+  font-family: var(--font-symbol);
+  font-size: 13px;
+  color: var(--text-primary);
+  min-width: 22px;
+}
+
+.bluetooth-menu .name {
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.bluetooth-menu .status,
+.bluetooth-menu .battery {
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.bluetooth-menu .battery-icon {
+  color: var(--text-secondary);
+  font-family: var(--font-symbol);
+  font-size: 12px;
+}
+
+.bluetooth-menu .battery-icon.low,
+.bluetooth-menu .battery-icon.empty {
+  color: var(--accent-red);
+}
+
+.bluetooth-menu .connect {
+  background: var(--accent);
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+}
+
+.bluetooth-menu .footer {
+  background: transparent;
+  border: none;
+  padding-top: 4px;
+}
+
+.bluetooth-menu .settings-button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 11px;
+  padding: 4px 6px;
+}
+
+.bluetooth-menu .settings-button:hover {
+  color: var(--text-primary);
+}
+
+.bluetooth-menu .scan-icon {
+  background: rgba(255, 255, 255, 0.10);
+  border: none;
+  border-radius: 7px;
+  color: var(--text-primary);
+  font-family: var(--font-symbol);
+  font-size: 12px;
+  min-height: 20px;
+  max-height: 20px;
+  min-width: 24px;
+  max-width: 24px;
+  padding: 0;
+}
+
+.bluetooth-menu .scan-icon:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
