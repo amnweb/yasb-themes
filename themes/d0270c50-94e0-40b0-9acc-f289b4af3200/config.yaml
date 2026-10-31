@@ -1,0 +1,969 @@
+# ============================================================================
+# Author -: HKDEVS
+# Project -: Window-Rice
+# Title -: YASB Status Bar Configuration
+# ============================================================================
+# yaml-language-server: $schema=https://raw.githubusercontent.com/amnweb/yasb/main/schema.json
+# For more information, visit https://github.com/amnweb/yasb/wiki
+# Keep live reload enabled for configuration edits and palette switching.
+watch_stylesheet: true
+watch_config: true
+system_colors: true
+debug: true
+update_check: true
+bars:
+  primary-bar:
+    enabled: true
+    style: "adaptive"
+    screens:
+      - "**"
+    class_name: yasb-bar
+    alignment:
+      position: top
+      align: center
+    animation:
+      enabled: true
+      duration: 250
+    # POLICY: keep blur_effect disabled. Enabling it blurs wallpaper into the
+    # island gaps (unreserved spaces) and washes out text on light wallpapers.
+    # Readability comes from the opaque --glass rail in styles.css instead.
+    blur_effect:
+      enabled: false
+      round_corners: true
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: 100%
+      height: 32
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left:
+        - home
+        - lines
+        - komorebi_active_layout
+        - lines
+        - komorebi_workspaces
+        - lines
+        - komorebi_stack
+        - lines
+        - komorebi_offline
+      center:
+        - clock
+        - lines
+        - cava
+        - media
+      right:
+        - pomodoro
+        - lines
+        - systray
+        - lines
+        - alpha
+        - lines
+        - omega
+        - lines
+        - control_center
+        - lines
+widgets:
+  home:
+    type: yasb.home.HomeWidget
+    options:
+      label: "<span>λ</span>"
+      menu_list:
+        - title: User Home
+          path: "~"
+        - title: Download
+          path: ~\Downloads
+        - title: Documents
+          path: ~\Documents
+        - title: Pictures
+          path: ~\Pictures
+        - title: OneDrive Pictures
+          path: '~\OneDrive\Pictures'
+        - { separator: true }
+        - {
+            title: "Winget Update All",
+            command: "winget.exe",
+            args:
+              [
+                "upgrade",
+                "--all",
+                "--include-unknown",
+                "--silent",
+                "--accept-package-agreements",
+                "--accept-source-agreements",
+              ],
+            show_window: true,
+          }
+        - {
+            title: "Scoop Update All",
+            command: "cmd.exe",
+            args: ["/c", "scoop", "update", "*"],
+            show_window: true,
+          }
+        - {
+            title: "Scoop Cleanup Cache",
+            command: "cmd.exe",
+            args: ["/c", "sudo", "scoop", "cleanup", "-g", "-k", "-a"],
+            show_window: true,
+          }
+        - {
+            title: "RAMMap",
+            path: "C:\\\\Users\\\\haris\\.config\\RAMMap\\RAMMap.exe",
+          }
+        - { separator: true }
+        - { title: "Terminal", command: "wt.exe", show_window: true }
+        - {
+            title: "Visual Studio Code",
+            command: "C:\\\\Users\\\\haris\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+            show_window: true,
+          }
+        - {
+            title: "Emacs",
+            command: "C:\\PROGRA~1\\Emacs\\emacs-31.1\\bin\\runemacs.exe",
+            show_window: true,
+          }
+        - { title: "Z Drive", path: "Z:\\" }
+      system_menu: true
+      blur: true # ACRYLIC: native OS blur behind the lambda menu popup (bar blur_effect stays off)
+      power_menu: false
+      round_corners: true
+      round_corners_type: normal
+      border_color: None
+      alignment: left
+      offset_left: -5
+  omega:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "omega-group"
+      # Ricing order (waybar/polybar convention, right-side cluster):
+      # audio (volume) -> power (battery) -> appearance (wallpapers, palette)
+      # -> alerts (notifications last). (wifi exists as a widget def but is
+      # not in this group - see the ORPHANED note on its definition.)
+      widgets: [
+          "bluetooth",
+          "volume",
+          "battery",
+          "wallpapers",
+          "notifications",
+          # power_menu lives here on purpose: the collapsed bar shows no power
+          # icon, but as a grouper child the widget stays "active", so its
+          # Win+Esc hotkey still registers (unplaced widgets are skipped by
+          # BarManager._collect_keybindings). It is fullscreen-style: Win+Esc
+          # opens the big centred overlay menu from anywhere.
+          "power_menu",
+        ]
+      collapse_options:
+        enabled: true
+        expanded_label: "\uf1de"
+        collapsed_label: "\uf1de"
+        label_position: "right"
+  clock:
+    type: yasb.clock.ClockWidget
+    options:
+      # The alarm span renders inside .label and QSS cannot target a bare
+      # <span>, so the separator lives in the label itself. U+2002 is an
+      # en-space: reads as a gap at any font size, and it disappears with
+      # the alarm when none is set. Must stay double-quoted - single
+      # quotes are literal in YAML and would print "\u2002" verbatim.
+      label: "{%a, %d %b %H:%M}<span>\u2002{alarm}</span>"
+      label_alt: "{%a, %d %b %H:%M}"
+      timezones: []
+      calendar:
+        round_corners: true
+        alignment: center
+        direction: down
+        extended: true
+        show_years: true
+        # Indian festivals via native holidays engine: national + pan-Indian
+        # set (Diwali, Holi, Dussehra, Eid, Christmas, Baisakhi...). Add a
+        # 2-letter subdivision (KA/MH/TN/KL/PB/AS...) for state holidays.
+        country_code: "IN"
+        show_holidays: true
+        holiday_color: "#D95D5D"
+        show_week_numbers: true
+      callbacks:
+        on_left: toggle_calendar
+        on_middle: toggle_timer
+        on_right: toggle_alarm
+      keybindings:
+        - keys: "ctrl+alt+c"
+          action: "toggle_calendar"
+  pomodoro:
+    type: "yasb.pomodoro.PomodoroWidget"
+    options:
+      class_name: "pomodoro-widget"
+      # Native widget, 55/5. Left click opens the circular-timer popup; the
+      # popup and the bar chip are styled from `.pomodoro-menu` in styles.css,
+      # so both follow the active theme. The two circle colours below are the
+      # one part the widget paints itself: yasb-theme rewrites them from the
+      # active theme block on every switch, like the cava widget's.
+      # The ring is the whole widget: no hourglass, no clock. The session
+      # state reads off the colour instead.
+      label: ""
+      label_alt: ""
+      work_duration: 55
+      break_duration: 5
+      long_break_duration: 15
+      long_break_interval: 4
+      auto_start_breaks: true
+      auto_start_work: true
+      sound_notification: false
+      show_notification: true
+      progress_bar:
+        enabled: true
+        progress_type: "circular"
+        size: 22
+        thickness: 3
+        position: "left"
+        animation: true
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        circle_size: 170
+        circle_thickness: 8
+        circle_work_progress_color: "#B082C4"
+        circle_break_progress_color: "#5CA89B"
+      callbacks:
+        # `toggle_menu` is YASB's convention for widgets whose popup key is
+        # `menu` (wifi/language/disk all use it). Middle keeps the old
+        # left-click behaviour: start / pause / resume.
+        on_left: "toggle_menu"
+        on_middle: "toggle_timer"
+        on_right: "toggle_label"
+  volume:
+    type: yasb.volume.VolumeWidget
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{level}"
+      tooltip: true
+      icons:
+        "muted": "\uf6a9" # Icon for muted
+        "10": "\uf026" # Icon for 0-10% volume
+        "30": "\uf027" # Icon for 11-30% volume
+        "60": "\uf028" # Icon for 31-60% volume
+        "100": "\uf028" # Icon for 61-100% volume
+      callbacks:
+        on_left: toggle_volume_menu
+        on_right: toggle_mute
+      audio_menu:
+        round_corners: true
+        round_corners_type: normal
+        border_color: None
+        alignment: right
+        direction: down
+        show_apps: true
+        show_app_labels: true
+        show_app_icons: true
+        show_apps_expanded: false
+        app_icons:
+          toggle_down: "\uf107"
+          toggle_up: "\uf106"
+  notifications:
+    type: yasb.notifications.NotificationsWidget
+    options:
+      label: "<span>\U000F009E</span>"
+      label_alt: "{count} notifications"
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: toggle_notification
+        on_right: do_nothing
+        on_middle: do_nothing
+  power_menu:
+    type: yasb.power_menu.PowerMenuWidget
+    options:
+      label: "<span>\U000F0009</span>"
+      uptime: true
+      show_user: true
+      # Fullscreen style = big dialog dead-center on a dimmed, blurred
+      # full-screen overlay (.power-menu-overlay covers the screen). This
+      # mode carries the native keyboard transport: Left/Right moves the
+      # selection, Up/Down jump between rows, Enter/Space executes, Esc
+      # closes. Win+Esc opens it from anywhere - YASB registers the hotkey
+      # via the global RegisterHotKey API, so the widget does not have to be
+      # referenced by any bar (it stays out of the bar entirely).
+      menu_style: fullscreen
+      button_row: 3
+      profile_image_size: 96
+      keybindings:
+        - keys: "win+esc"
+          action: "toggle_power_menu"
+      buttons:
+        lock:
+          - "\U000F0341"
+          - Lock
+        signout:
+          - "\U000F0343"
+          - Sign out
+        sleep:
+          - "\U000F0904"
+          - Sleep
+        hibernate:
+          - "\U000F0901"
+          - Hibernate
+        restart:
+          - "\U000F0453"
+          - Restart
+        shutdown:
+          - "\U000F0906"
+          - Shut Down
+        cancel:
+          - ""
+          - Cancel
+  # ORPHANED (intentional): superseded by komorebi_stack. Kept def-only so
+  # it can be re-placed on the bar without rewriting the options.
+  active_window:
+    type: yasb.active_window.ActiveWindowWidget
+    options:
+      label: ""
+      label_alt: ""
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 16
+      max_length: 40
+      max_length_ellipsis: "..."
+      monitor_exclusive: false
+  lines:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "\u007c"
+      label_alt: "\u007c"
+      class_name: "separator-widget"
+      callbacks:
+        on_left: "do_nothing"
+  # OFFLINE-ONLY komorebi control (native CustomWidget hide_empty):
+  # probes komorebic state every 3s; empty output while online => YASB natively
+  # hides the widget; non-empty while offline => it appears with the control
+  # glyph. Complements the cluster widgets (hide_if_offline) so the bar always
+  # shows exactly one komorebi affordance. Left-click starts komorebi.
+  komorebi_offline:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "<span>\U000F01D9</span>"
+      label_alt: "komorebi offline"
+      class_name: "komorebi-control-widget"
+      tooltip: true
+      tooltip_label: "komorebi offline - click to start"
+      exec_options:
+        run_cmd: "komorebic state >nul 2>&1 || echo 1"
+        run_interval: 10000
+        run_once: false
+        return_format: "string"
+        hide_empty: true
+        use_shell: true
+      callbacks:
+        on_left: "exec silent-run komorebic start"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+  komorebi_stack:
+    type: "komorebi.stack.StackWidget"
+    options:
+      label_offline: ""
+      label_window: ""
+      label_window_active: ""
+      label_no_window: ""
+      show_icons: "always"
+      icon_size: 14
+      max_length: 0
+      max_length_active: 0
+      hide_if_offline: true
+      show_only_stack: false
+      rewrite:
+        - pattern: "^(.+?)\\.exe$"
+          replacement: "\\1"
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Komorebi Offline"
+      label_workspace_btn: "{index}"
+      label_workspace_active_btn: "{index}"
+      label_workspace_populated_btn: "{index}"
+      label_float_override: ""
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: true
+      hide_if_offline: true
+      toggle_workspace_layer:
+        enabled: false
+        tiling_label: "Tiling"
+        floating_label: "Floating"
+      app_icons:
+        enabled_populated: false
+        enabled_active: false
+        size: 12
+        max_icons: 0
+        hide_label: false
+        hide_duplicates: false
+        hide_floating: false
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{layout_name}"
+      layouts:
+        [
+          "bsp",
+          "columns",
+          "rows",
+          "grid",
+          "vertical_stack",
+          "horizontal_stack",
+          "ultrawide_vertical_stack",
+          "right_main_vertical_stack",
+        ]
+      layout_icons:
+        bsp: "\uebeb"
+        columns: "\uebf7"
+        rows: "\uec01"
+        grid: "\U000F0758"
+        scrolling: "\uebf7"
+        vertical_stack: "\uebee"
+        horizontal_stack: "\uebf0"
+        ultrawide_vertical_stack: "\uebee"
+        right_main_vertical_stack: "\uebf1"
+        monocle: "\uf06f"
+        maximized: "\uf06f"
+        floating: "\uf2d2"
+        paused: "\U000F0F89"
+        tiling: "\U000F0640"
+      callbacks:
+        on_left: "toggle_layout_menu"
+        on_middle: "next_layout"
+        on_right: "prev_layout"
+      layout_menu:
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icons: true
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\uf107"
+      label_expanded: "\uf105"
+      label_position: "left" # Can be "left" or "right"
+      icon_size: 20 # Can be any integer between 8 and 64
+      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_in_popup: true
+      show_volume: false
+      icons_per_row: 3
+      # NOTE: show_network/use_hook each appeared twice (first value won nothing;
+      # YAML keeps the last). Deduped to the effective values: no network icon
+      # (wifi lives in omega), legacy systray monitor.
+      show_network: false
+      use_hook: false # Whether to use the new systray hook instead of the legacy systray monitor
+      hide_icons: [] # Optional, list of process names to hide (e.g. ["discord"])
+      popup:
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\U000F0C8D</span>"
+      change_automatically: false
+      # Example path to folder with images. Can be a single string or a list of strings.
+      image_path:
+        - "Z:/HK/8K Wallpaper/8K only/01 Arch Linux"
+        - "Z:/HK/8K Wallpaper/8K only/02 ArcoLinux"
+        - "Z:/HK/8K Wallpaper/8K only/03 BlackArch"
+        - "Z:/HK/8K Wallpaper/8K only/04 CachyOS"
+        - "Z:/HK/8K Wallpaper/8K only/05 Debian"
+        - "Z:/HK/8K Wallpaper/8K only/06 EndeavourOS"
+        - "Z:/HK/8K Wallpaper/8K only/07 Fedora"
+        - "Z:/HK/8K Wallpaper/8K only/08 Garuda Linux"
+        - "Z:/HK/8K Wallpaper/8K only/09 Manjaro"
+        - "Z:/HK/8K Wallpaper/8K only/10 NixOS"
+        - "Z:/HK/8K Wallpaper/8K only/11 openSUSE"
+        - "Z:/HK/8K Wallpaper/8K only/12 Parrot OS"
+        - "Z:/HK/8K Wallpaper/8K only/13 Pop!_OS"
+        - "Z:/HK/8K Wallpaper/8K only/14 Red Hat Linux"
+        - "Z:/HK/8K Wallpaper/8K only/15 Kali Linux"
+      update_interval: 600
+      engine:
+        enabled: true
+        animation: "diamond" # circle/slide_top/diamond/split
+      gallery:
+        image_width: 480
+        image_corner_radius: 8
+        type: "strip" # leaning diamond-tilted tiles, selected stays bright
+        orientation: "landscape" # landscape/portrait
+        accent_color: "#D99A2B"
+      callbacks:
+        on_left: "toggle_gallery"
+        on_middle: "do_nothing"
+        on_right: "change_wallpaper"
+      keybindings:
+        - keys: "ctrl+alt+w"
+          action: "toggle_gallery"
+          screen: "primary" # active/cursor/primary
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title}{s}{artist}"
+      label_alt: "{artist}"
+      separator: " - "
+      hide_empty: true
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "toggle_play_pause"
+        on_right: "open_media_source"
+      max_field_size:
+        label: 28
+        label_alt: 20
+      show_thumbnail: true
+      controls_only: false
+      controls_left: true
+      controls_hide: false
+      thumbnail_alpha: 80
+      thumbnail_padding: 8
+      # 16 can never work here: the bar is 32px, and PIL's rounded_rectangle
+      # throws "y1 must be greater than or equal to y0" whenever the mask box
+      # is at most 2*radius tall — so every render logged an ERROR in yasb.log
+      # (3,335 hits) and silently fell back to square corners. 8 keeps the
+      # rounding (box 64px vs mask 32px) and is the upstream menu default.
+      thumbnail_corner_radius: 8
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      media_menu:
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: -95
+        thumbnail_corner_radius: 8
+        thumbnail_size: 120
+        max_title_size: 60
+        max_artist_size: 50
+        max_source_size: 16
+        show_source: true
+        show_volume_slider: true
+      media_menu_icons:
+        play: "\uf04b"
+        pause: "\uf04c"
+        prev_track: "\U000F04AE"
+        next_track: "\U000F04AD"
+        mute: "\ue994"
+        unmute: "\ue74f"
+      scrolling_label:
+        enabled: true
+        update_interval_ms: 300
+        style: "bounce" # can be "left", "right", "bounce", "bounce-ease"
+        separator: " | "
+        label_padding: 0
+        always_scroll: false
+        # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+      progress_bar:
+        enabled: true # Whether to enable the progress bar on the widget.
+        alignment: "bottom" # The alignment of the progress bar inside the widget container. Can be "top", "bottom", or "center".
+  # ORPHANED (intentional): defined but not placed on the bar.
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "{lang[language_code]}"
+      label_alt: "{lang[full_name]}"
+      update_interval: 1
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      language_menu:
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icon: true
+        layout_icon: "\U000F034C"
+  # ORPHANED (intentional): defined but not placed on the bar.
+  quick_launch:
+    type: "yasb.quick_launch.QuickLaunchWidget"
+    options:
+      label: "<span>\uf002</span>"
+      search_placeholder: "Search applications..."
+      max_results: 30
+      show_icons: true
+      icon_size: 32
+      popup:
+        width: 650
+        height: 400
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        dark_mode: true
+      callbacks:
+        on_left: "toggle_quick_launch"
+      keybindings:
+        - keys: "alt+space"
+          action: "toggle_quick_launch"
+          screen: "primary"
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf2db</span> {info[percent][total]}%"
+      label_alt: "<span>\uf2db</span> {info[freq][current]} MHz"
+      update_interval: 1000
+      hide_decimal: true
+      cpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_label"
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uefc5</span> {virtual_mem_percent}%"
+      label_alt: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total} SWAP {swap_mem_percent}%"
+      update_interval: 5000
+      hide_decimal: true
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_label"
+      memory_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "↓{download_speed} ↑{upload_speed}"
+      label_alt: "↓{download_speed} ↑{upload_speed} | {session_downloaded}/{session_uploaded}"
+      update_interval: 1000
+      interface: "Auto"
+      hide_if_offline: false
+      speed_unit: "bytes"
+      hide_decimal: true
+      speed_threshold:
+        min_upload: 0
+        min_download: 0
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_label"
+      menu:
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_interface_name: true
+        show_internet_info: true
+  # ORPHANED (intentional): connectivity lives in the systray/omega design;
+  # kept for quick re-placement.
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "<span>{wifi_icon}</span> {wifi_name}"
+      update_interval: 5000
+      ethernet_label: "<span>{wifi_icon}</span>"
+      ethernet_label_alt: "<span>{wifi_icon}</span> {ip_addr}"
+      ethernet_icon: "\ueba9"
+      get_exact_wifi_strength: false
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_label"
+      menu_config:
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+  battery:
+    type: "yasb.battery.BatteryWidget"
+    options:
+      label: "<span>{icon}</span> {percent}%"
+      label_alt: "<span>{icon}</span> {percent}% | {time_remaining}"
+      update_interval: 5000
+      hide_unsupported: true
+      time_remaining_natural: true
+      charging_options:
+        icon_format: "{charging_icon}"
+        blink_charging_icon: true
+        blink_interval: 500
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+  bluetooth:
+    type: "yasb.bluetooth.BluetoothWidget"
+    options:
+      label: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span> {device_name}"
+      tooltip: true
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      menu_config:
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+  gpu:
+    type: "yasb.gpu.GpuWidget"
+    options:
+      label: "<span>\U000F0FB2</span> {info[utilization]}%"
+      label_alt: "<span>\U000F0FB2</span> {info[temp]}°C | {info[mem_used]} / {info[mem_total]}"
+      update_interval: 2000
+      hide_decimal: true
+      gpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581"
+        - "\u2581"
+        - "\u2582"
+        - "\u2583"
+        - "\u2584"
+        - "\u2585"
+        - "\u2586"
+        - "\u2587"
+        - "\u2588"
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_label"
+      menu:
+        enabled: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+      label: "<span>\uf473</span> {space[used][percent]}"
+      label_alt: "<span>\uf473</span> {space[used][gb]} / {space[total][gb]}"
+      volume_label: "C"
+      decimal_display: 0
+      update_interval: 60
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "toggle_label"
+        on_right: "toggle_label"
+      disk_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+  alpha:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "alpha-group"
+      widgets: ["cpu", "gpu", "memory", "disk", "traffic"]
+      collapse_options:
+        enabled: true
+        expanded_label: "\uf080"
+        collapsed_label: "\uf080"
+        label_position: "right"
+  control_center:
+    type: "yasb.control_center.ControlCenterWidget"
+    options:
+      label: "<span>\uf013</span>"
+      tooltip: true
+      sections_order:
+        - "system_controls"
+        - "quick_actions"
+        - "sliders"
+        - "power"
+        - "media"
+      popup:
+        alignment: "right"
+        direction: "down"
+        border_color: none
+        round_corners: false
+        round_corners_type: normal
+        offset_top: 9
+        offset_left: 5
+      sections:
+        system_controls:
+          profile_image_size: 28
+          power_icon: "\uE7E8"
+          lock_icon: "\uE72E"
+          settings_icon: "\uE713"
+        quick_actions:
+          show: true
+          columns: 3
+          label_position: "default"
+          actions:
+            - id: "toggle_dnd"
+              label: "Do Not Disturb"
+              icon: "\uf285"
+            - id: "toggle_mute"
+              label: "Mute"
+              icon: "\ue74f"
+            - id: "toggle_mic_mute"
+              label: "Mic Mute"
+              icon: "\uF12E"
+            - id: "screenshot"
+              label: "Screenshot"
+              icon: "\ue91b"
+            - id: "touch_keyboard"
+              label: "Keyboard"
+              icon: "\uE765"
+            - id: "toggle_theme"
+              label: "Dark Mode"
+              icon: "\uE708"
+        sliders:
+          show: true
+          brightness:
+            show_slider: true
+            icon: "\uE706"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+          volume:
+            show_slider: true
+            icon: "\uE767"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+          microphone:
+            show_slider: true
+            icon: "\uE720"
+            show_source_selector: true
+            source_selector_icon: "\uE972"
+        media:
+          show: true
+          thumbnail_size: 36
+          thumbnail_radius: 4
+          icons:
+            prev_track: "\ue622"
+            next_track: "\ue623"
+            play: "\uf5b0"
+            pause: "\ue62e"
+        power:
+          show: true
+          power_plan_title: "Power Plan"
+          power_mode_title: "Power Mode"
+          button_menu_icon: "\ue76c"
+      callbacks:
+        on_left: "toggle_menu"
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      source: "auto"
+      bar_height: 22
+      min_bar_height: 2
+      bars_number: 20
+      bar_width: 2
+      bar_spacing: 2
+      bar_type: "bars_mirrored"
+      orientation: "bottom"
+      sensitivity: 100
+      lower_cutoff_freq: 50
+      higher_cutoff_freq: 12000
+      framerate: 240
+      noise_reduction: 77
+      channels: stereo
+      mono_option: average
+      reverse: 0
+      monstercat: 0
+      waves: 0
+      waveform: 0
+      sleep_timer: 5
+      hide_empty: true
+      foreground: "#5CA89B"
+      gradient: 1
+      gradient_color_1: "#7E9CC9"
+      gradient_color_2: "#B082C4"
+      gradient_color_3: "#E4935E"
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "reload_cava"

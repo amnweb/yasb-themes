@@ -1,0 +1,3989 @@
+/* ============================================================================
+ * Author -: HKDEVS
+ * Project -: Window-Rice
+ * Title -: YASB Status Bar Stylesheet
+ * ============================================================================ */
+@import "yasb_colors.css";
+
+/* Root Variables */
+:root {
+  /* ==== MANUAL FONT SWITCH (pick one, keep all four lines on the same family) ====
+     1. JetBrainsMono Nerd Font (default Nerd icons + text):
+        --icons-font: "JetBrainsMono Nerd Font"; --icons-font-fallback: "JetBrainsMono Nerd Font"; --system-font: "JetBrainsMono Nerd Font"; --specialFont: "JetBrainsMono Nerd Font";
+     2. FiraCode Nerd Font (Retina weight auto-used by Qt for bold-ish text):
+        --icons-font: "FiraCode Nerd Font"; --icons-font-fallback: "FiraCode Nerd Font"; --system-font: "FiraCode Nerd Font"; --specialFont: "FiraCode Nerd Font";
+     3. Mononoki Nerd Font:
+        --icons-font: "Mononoki Nerd Font"; --icons-font-fallback: "Mononoki Nerd Font"; --system-font: "Mononoki Nerd Font"; --specialFont: "Mononoki Nerd Font";
+     4. Segoe UI (system text) + Segoe Fluent Icons (icons):
+        --icons-font: "Segoe Fluent Icons"; --icons-font-fallback: "Segoe MDL2 Assets"; --system-font: "Segoe UI"; --specialFont: "Segoe UI";
+     Bar auto-reloads on save (watch_stylesheet: true). No restart needed. */
+
+  --icons-font: "FiraCode Nerd Font Mono";
+  --icons-font-fallback: "FiraCode Nerd Font Mono";
+  --system-font: "FiraCode Nerd Font Mono";
+  --specialFont: "FiraCode Nerd Font Mono";
+  --border-radius: 12px;
+  --border-radius2: 8px;
+  --border-radius3: 14px;
+  --fontSize: 13px;
+  --iconSize: 20px;
+  --iconSizeSm: 12px;
+
+  /* Pomodoro ring: the session state is the only thing the chip shows, so
+       the colour has to carry it. */
+  --pomodoroWork: #e5484d;
+  --pomodoroBreak: #30a46c;
+  --fontSizeLarge: 16px;
+  --fontWeight: 600;
+
+  /* BAR RHYTHM: one line box for every widget's icon and label, and one
+       horizontal gap between widgets.
+
+       Measured off the live bar before this existed: content tops ran from
+       8px to 14px while the baseline was uniform, and the gaps between
+       neighbouring widgets ran from 19px to 76px. Equal line-height is what
+       makes an icon and its label share a vertical centre without anybody
+       nudging one of them with padding; the gap token is what makes the
+       spacing even without each widget picking its own margin. */
+  --barLineHeight: 22px;
+  --widgetPadX: 7px;
+  --widgetGap: 3px;
+
+  /* ACRYLIC POLICY: menus and popups paint --acrylic (theme base @ 50%);
+       hover states paint --acrylic-hover (same base @ 65%). Literal rgba
+       because QSS var() cannot convert hex; every Rangalipi block below
+       overrides both per palette so theme switching stays automatic.
+       Exceptions: Rangalipi Wine paints both at 1% (near-invisible glass)
+       and adds --holiday (festival red - the only red on glass).
+       THEME-BLOCK CONTRACT (tools/theme/yasb-theme): each block is one
+       comment chunk - opener on its --acrylic line, closer on its --runner
+       line - while the active block is fully bare with " - active" in its
+       header line. Never add inline comments to variable lines or standalone
+       single-line comments inside a block; record exceptions here instead. */
+  --acrylic: rgba(26, 19, 16, 0.5);
+  --acrylic-hover: rgba(26, 19, 16, 0.65);
+
+  /*colors*/
+
+  /* Rangalipi */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #14141B;
+    --background2: #1D1D28;
+    --accent: #FFB81C;
+    --text: #E7E0D2;
+    --accentText: #14141B;
+    --hover: #262633;
+    --mutedBG: #0F0F16;
+    --border: #FFB81C;
+    --redFlash: #D84E4E;
+    --subtext: #B8B2A7;
+    --base: #14141B;
+    --mantle: #0F0F16;
+    --crust: #0A0A10;
+    --surface0: #1D1D28;
+    --surface1: #262633;
+    --surface2: #34344A;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #B8B2A7;
+    --lavender: #9A8FD0;
+    --blue: #6A8FD4;
+    --sapphire: #5E8FD0;
+    --sky: #6FC3C9;
+    --teal: #4FA3A0;
+    --green: #7FB069;
+    --yellow: #FFB81C;
+    --peach: #E07A4F;
+    --maroon: #C24A5E;
+    --red: #D95D5D;
+    --mauve: #A37AC0;
+    --pink: #C97E9E;
+    --flamingo: #D8A7A0;
+    --rosewater: #E9D5C8;
+    --text-muted: #B8B2A7;
+    --yasb-icon-fg: #E7E0D2;
+    --glass: rgba(20, 20, 27, 0.70);
+    --glassmenu: rgba(20, 20, 27, 0.50);
+    --glassfrost: rgba(20, 20, 27, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(231, 224, 210, 0.16);
+    --text-faint: rgba(231, 224, 210, 0.45);
+    --chip: rgba(255, 184, 28, 0.20);
+    --glow: #23232F;
+    --shade: #0D0D13;
+    --accent-soft: rgba(255, 184, 28, 0.50);
+    --frame: #FFB81C;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-gold.png");
+    --runner: none; */
+
+  /* Rangalipi Ember */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #1A1310;
+    --background2: #241A14;
+    --accent: #FF4D00;
+    --text: #F0E4D4;
+    --accentText: #1A1310;
+    --hover: #2E2119;
+    --mutedBG: #100C0A;
+    --border: #FF4D00;
+    --redFlash: #D84E4E;
+    --subtext: #C9A37E;
+    --base: #1A1310;
+    --mantle: #100C0A;
+    --crust: #0B0806;
+    --surface0: #241A14;
+    --surface1: #2E2119;
+    --surface2: #40301F;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #C9A37E;
+    --lavender: #D89A5E;
+    --blue: #5E9BB5;
+    --sapphire: #4E8F96;
+    --sky: #7FD4BC;
+    --teal: #57A88E;
+    --green: #8FB45C;
+    --yellow: #D9A441;
+    --peach: #E08A4E;
+    --maroon: #B44A52;
+    --red: #D0483B;
+    --mauve: #B083B8;
+    --pink: #DA8FA0;
+    --flamingo: #DFAF8E;
+    --rosewater: #F2DCC2;
+    --text-muted: #C9A37E;
+    --yasb-icon-fg: #F0E4D4;
+    --glass: rgba(26, 19, 16, 0.70);
+    --glassmenu: rgba(26, 19, 16, 0.50);
+    --glassfrost: rgba(26, 19, 16, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(240, 228, 212, 0.16);
+    --text-faint: rgba(240, 228, 212, 0.45);
+    --chip: rgba(255, 77, 0, 0.20);
+    --glow: #2B211A;
+    --shade: #110B07;
+    --accent-soft: rgba(255, 77, 0, 0.50);
+    --frame: #FF4D00;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-peach.png");
+    --runner: none; */
+
+  /* Rangalipi Ember Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #A9431E;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #A9431E;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #7E580E;
+    --blue: #25598E;
+    --sapphire: #1E5478;
+    --sky: #176E56;
+    --teal: #14645A;
+    --green: #3F6E24;
+    --yellow: #A9431E;
+    --peach: #9C521F;
+    --maroon: #6E2840;
+    --red: #B3273C;
+    --mauve: #7A3E92;
+    --pink: #9A3E62;
+    --flamingo: #9E562A;
+    --rosewater: #8A563E;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(169, 67, 30, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(169, 67, 30, 0.45);
+    --frame: #A9431E;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-peach.png");
+    --runner: none; */
+
+  /* Rangalipi Mossfern */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #111A11;
+    --background2: #182418;
+    --accent: #408C50;
+    --text: #E3E9D3;
+    --accentText: #FFFFFF;
+    --hover: #22301F;
+    --mutedBG: #0B100B;
+    --border: #408C50;
+    --redFlash: #D84E4E;
+    --subtext: #AEBB90;
+    --base: #111A11;
+    --mantle: #0B100B;
+    --crust: #070B07;
+    --surface0: #182418;
+    --surface1: #22301F;
+    --surface2: #31432A;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #AEBB90;
+    --lavender: #A4CE7E;
+    --blue: #6FA3C9;
+    --sapphire: #5AA3A8;
+    --sky: #8FD8B4;
+    --teal: #55A67E;
+    --green: #408C50;
+    --yellow: #D2B84E;
+    --peach: #D8A05E;
+    --maroon: #BC5A4C;
+    --red: #C95F45;
+    --mauve: #A89BC0;
+    --pink: #CE94A8;
+    --flamingo: #D2B08E;
+    --rosewater: #ECE2BC;
+    --text-muted: #AEBB90;
+    --yasb-icon-fg: #E3E9D3;
+    --glass: rgba(17, 26, 17, 0.70);
+    --glassmenu: rgba(17, 26, 17, 0.50);
+    --glassfrost: rgba(17, 26, 17, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(227, 233, 211, 0.16);
+    --text-faint: rgba(227, 233, 211, 0.45);
+    --chip: rgba(64, 140, 80, 0.20);
+    --glow: #1E2C1D;
+    --shade: #0A0E09;
+    --accent-soft: rgba(64, 140, 80, 0.50);
+    --frame: #408C50;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-ink.png");
+    --runner: none; */
+
+  /* Rangalipi Mossfern Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #00693E;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #00693E;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #7A5E1C;
+    --blue: #156858;
+    --sapphire: #125C50;
+    --sky: #176E4E;
+    --teal: #125E48;
+    --green: #00693E;
+    --yellow: #4A6A1E;
+    --peach: #8A5A1E;
+    --maroon: #5E4432;
+    --red: #B3273C;
+    --mauve: #5E5E30;
+    --pink: #6E6428;
+    --flamingo: #7A6428;
+    --rosewater: #7A5E32;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(0, 105, 62, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(0, 105, 62, 0.45);
+    --frame: #00693E;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-ink.png");
+    --runner: none; */
+
+  /* Rangalipi Wine - active */
+  --acrylic: rgba(20, 20, 25, 0.01);
+  --acrylic-hover: rgba(255, 255, 255, 0.05);
+  --tile: rgba(255, 255, 255, 0.05);
+  --background: #1d1015;
+  --background2: #29151d;
+  --accent: #a6192e;
+  --text: #f1dfe3;
+  --accentText: #ffffff;
+  --hover: #352028;
+  --mutedBG: #120a0e;
+  --border: #a6192e;
+  --redFlash: #d84e4e;
+  --subtext: #cca0aa;
+  --base: #1d1015;
+  --mantle: #120a0e;
+  --crust: #0c0609;
+  --surface0: #29151d;
+  --surface1: #352028;
+  --surface2: #4a2e38;
+  --overlay0: #6b675f;
+  --overlay1: #8a857b;
+  --overlay2: #a39d90;
+  --subtext0: #8a857b;
+  --subtext1: #cca0aa;
+  --lavender: #be8fd8;
+  --blue: #7e9cc9;
+  --sapphire: #62a3b5;
+  --sky: #8ac9d2;
+  --teal: #5ca89b;
+  --green: #92b060;
+  --yellow: #d8a854;
+  --peach: #e4935e;
+  --maroon: #a6192e;
+  --red: #d84e4e;
+  --mauve: #b082c4;
+  --pink: #e893ae;
+  --flamingo: #dfa08e;
+  --rosewater: #f2d4d6;
+  --text-muted: #cca0aa;
+  --yasb-icon-fg: #f1dfe3;
+  --glass: rgba(29, 16, 21, 0.01);
+  --glassmenu: rgba(29, 16, 21, 0.5);
+  --glassfrost: rgba(29, 16, 21, 0.4);
+  --glassmist: rgba(255, 255, 255, 0.08);
+  --hairline: rgba(241, 223, 227, 0.16);
+  --text-faint: rgba(241, 223, 227, 0.45);
+  --chip: rgba(166, 25, 46, 0.22);
+  --glow: #34212b;
+  --shade: #12090d;
+  --accent-soft: rgba(166, 25, 46, 0.5);
+  --frame: #a6192e;
+  --holiday: #d95d5d;
+  --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-rose.png");
+  --runner: none;
+
+  /* Rangalipi Wine Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #861F41;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #861F41;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #8E4470;
+    --blue: #25598E;
+    --sapphire: #1E5478;
+    --sky: #1A6C86;
+    --teal: #15655A;
+    --green: #3F6E28;
+    --yellow: #861F41;
+    --peach: #9C521F;
+    --maroon: #7C2A44;
+    --red: #B3273C;
+    --mauve: #7A3E92;
+    --pink: #A84064;
+    --flamingo: #A64628;
+    --rosewater: #8A4A3E;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(134, 31, 65, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(134, 31, 65, 0.45);
+    --frame: #861F41;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-rose.png");
+    --runner: none; */
+
+  /* Rangalipi Dune */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #1B1610;
+    --background2: #261F17;
+    --accent: #DE7C00;
+    --text: #EDE4D8;
+    --accentText: #1B1610;
+    --hover: #30271E;
+    --mutedBG: #120E0A;
+    --border: #DE7C00;
+    --redFlash: #D84E4E;
+    --subtext: #C4B29E;
+    --base: #1B1610;
+    --mantle: #120E0A;
+    --crust: #0B0906;
+    --surface0: #261F17;
+    --surface1: #30271E;
+    --surface2: #44382B;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #C4B29E;
+    --lavender: #C48A5E;
+    --blue: #6A9CB5;
+    --sapphire: #5A8E9E;
+    --sky: #8AD2BC;
+    --teal: #52A892;
+    --green: #8EB864;
+    --yellow: #DE7C00;
+    --peach: #E2A04E;
+    --maroon: #B84A54;
+    --red: #D2483E;
+    --mauve: #A883B8;
+    --pink: #D48EA2;
+    --flamingo: #DAA88A;
+    --rosewater: #EEDCC8;
+    --text-muted: #C4B29E;
+    --yasb-icon-fg: #EDE4D8;
+    --glass: rgba(27, 22, 16, 0.70);
+    --glassmenu: rgba(27, 22, 16, 0.50);
+    --glassfrost: rgba(27, 22, 16, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(237, 228, 216, 0.16);
+    --text-faint: rgba(237, 228, 216, 0.45);
+    --chip: rgba(222, 124, 0, 0.20);
+    --glow: #2C2319;
+    --shade: #110D09;
+    --accent-soft: rgba(222, 124, 0, 0.50);
+    --frame: #DE7C00;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-gold.png");
+    --runner: none; */
+
+  /* Rangalipi Dune Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #B87313;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #B87313;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #7A5812;
+    --blue: #22588E;
+    --sapphire: #1B5278;
+    --sky: #176C68;
+    --teal: #146258;
+    --green: #3E6C24;
+    --yellow: #B87313;
+    --peach: #98501E;
+    --maroon: #68283E;
+    --red: #B3273C;
+    --mauve: #763C90;
+    --pink: #963C60;
+    --flamingo: #9A5228;
+    --rosewater: #86523C;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(184, 115, 19, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(184, 115, 19, 0.45);
+    --frame: #B87313;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-gold.png");
+    --runner: none; */
+
+  /* Rangalipi Matcha */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #151A0F;
+    --background2: #1E2516;
+    --accent: #78BE20;
+    --text: #E6EBD8;
+    --accentText: #151A0F;
+    --hover: #262E1D;
+    --mutedBG: #0E110A;
+    --border: #78BE20;
+    --redFlash: #D84E4E;
+    --subtext: #B8C4A0;
+    --base: #151A0F;
+    --mantle: #0E110A;
+    --crust: #090B06;
+    --surface0: #1E2516;
+    --surface1: #262E1D;
+    --surface2: #37422A;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #B8C4A0;
+    --lavender: #B0D47A;
+    --blue: #6A9CB5;
+    --sapphire: #569E98;
+    --sky: #92D2B0;
+    --teal: #54A87C;
+    --green: #78BE20;
+    --yellow: #D4BE46;
+    --peach: #D8A25E;
+    --maroon: #B8544A;
+    --red: #C85842;
+    --mauve: #A894B8;
+    --pink: #CE8EA0;
+    --flamingo: #D0AE8A;
+    --rosewater: #EAE0BE;
+    --text-muted: #B8C4A0;
+    --yasb-icon-fg: #E6EBD8;
+    --glass: rgba(21, 26, 15, 0.70);
+    --glassmenu: rgba(21, 26, 15, 0.50);
+    --glassfrost: rgba(21, 26, 15, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(230, 235, 216, 0.16);
+    --text-faint: rgba(230, 235, 216, 0.45);
+    --chip: rgba(120, 190, 32, 0.20);
+    --glow: #232A17;
+    --shade: #0D1009;
+    --accent-soft: rgba(120, 190, 32, 0.50);
+    --frame: #78BE20;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-ink.png");
+    --runner: none; */
+
+  /* Rangalipi Matcha Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #569614;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #569614;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #745E18;
+    --blue: #1E587E;
+    --sapphire: #18526E;
+    --sky: #166C54;
+    --teal: #12604C;
+    --green: #569614;
+    --yellow: #569614;
+    --peach: #8E541E;
+    --maroon: #62402E;
+    --red: #B3273C;
+    --mauve: #6A4E82;
+    --pink: #7E4C64;
+    --flamingo: #8E562A;
+    --rosewater: #7A5834;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(86, 150, 20, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(86, 150, 20, 0.45);
+    --frame: #569614;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-ink.png");
+    --runner: none; */
+
+  /* Rangalipi Espresso */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #171210;
+    --background2: #221A16;
+    --accent: #A36B2C;
+    --text: #ECE2DA;
+    --accentText: #171210;
+    --hover: #2C221D;
+    --mutedBG: #0F0B09;
+    --border: #A36B2C;
+    --redFlash: #D84E4E;
+    --subtext: #C2ADA0;
+    --base: #171210;
+    --mantle: #0F0B09;
+    --crust: #0A0706;
+    --surface0: #221A16;
+    --surface1: #2C221D;
+    --surface2: #3E3029;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #C2ADA0;
+    --lavender: #C49A6E;
+    --blue: #6A9CB5;
+    --sapphire: #568EA0;
+    --sky: #8CC9BC;
+    --teal: #54A694;
+    --green: #8EB468;
+    --yellow: #D4A248;
+    --peach: #E2A05E;
+    --maroon: #B44C54;
+    --red: #CE4C40;
+    --mauve: #AC88B8;
+    --pink: #D494A6;
+    --flamingo: #DCAE94;
+    --rosewater: #ECDCCE;
+    --text-muted: #C2ADA0;
+    --yasb-icon-fg: #ECE2DA;
+    --glass: rgba(23, 18, 16, 0.70);
+    --glassmenu: rgba(23, 18, 16, 0.50);
+    --glassfrost: rgba(23, 18, 16, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(236, 226, 218, 0.16);
+    --text-faint: rgba(236, 226, 218, 0.45);
+    --chip: rgba(163, 107, 44, 0.20);
+    --glow: #281F1A;
+    --shade: #0E0A08;
+    --accent-soft: rgba(163, 107, 44, 0.50);
+    --frame: #A36B2C;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-peach.png");
+    --runner: none; */
+
+  /* Rangalipi Espresso Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #7A4B1A;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #7A4B1A;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #745218;
+    --blue: #1E568E;
+    --sapphire: #185078;
+    --sky: #146864;
+    --teal: #125E54;
+    --green: #3C6A24;
+    --yellow: #7A4B1A;
+    --peach: #8E4E1C;
+    --maroon: #62263C;
+    --red: #B3273C;
+    --mauve: #703A8A;
+    --pink: #903A5E;
+    --flamingo: #924E26;
+    --rosewater: #804E38;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(122, 75, 26, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(122, 75, 26, 0.45);
+    --frame: #7A4B1A;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-peach.png");
+    --runner: none; */
+
+  /* Rangalipi Noir */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #161114;
+    --background2: #20181D;
+    --accent: #C8102E;
+    --text: #EBE0E4;
+    --accentText: #FFFFFF;
+    --hover: #2B2127;
+    --mutedBG: #0E0B0D;
+    --border: #C8102E;
+    --redFlash: #D84E4E;
+    --subtext: #C0A8B2;
+    --base: #161114;
+    --mantle: #0E0B0D;
+    --crust: #090708;
+    --surface0: #20181D;
+    --surface1: #2B2127;
+    --surface2: #3E2E38;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #C0A8B2;
+    --lavender: #B88EC4;
+    --blue: #7496C4;
+    --sapphire: #5C8EA8;
+    --sky: #8CC4CE;
+    --teal: #54A498;
+    --green: #8CB464;
+    --yellow: #D49E48;
+    --peach: #E2905E;
+    --maroon: #C8102E;
+    --red: #E03844;
+    --mauve: #AC7CB8;
+    --pink: #E28AA6;
+    --flamingo: #DC9E96;
+    --rosewater: #EED6D8;
+    --text-muted: #C0A8B2;
+    --yasb-icon-fg: #EBE0E4;
+    --glass: rgba(22, 17, 20, 0.70);
+    --glassmenu: rgba(22, 17, 20, 0.50);
+    --glassfrost: rgba(22, 17, 20, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(235, 224, 228, 0.16);
+    --text-faint: rgba(235, 224, 228, 0.45);
+    --chip: rgba(200, 16, 46, 0.22);
+    --glow: #261D22;
+    --shade: #0D0A0C;
+    --accent-soft: rgba(200, 16, 46, 0.50);
+    --frame: #C8102E;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-rose.png");
+    --runner: none; */
+
+  /* Rangalipi Noir Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #A6192E;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #A6192E;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #883E6C;
+    --blue: #1E548E;
+    --sapphire: #184E78;
+    --sky: #16647E;
+    --teal: #125E56;
+    --green: #3A6826;
+    --yellow: #A6192E;
+    --peach: #94481E;
+    --maroon: #76243E;
+    --red: #B3273C;
+    --mauve: #74368C;
+    --pink: #A0385C;
+    --flamingo: #9A4026;
+    --rosewater: #844438;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(166, 25, 46, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(166, 25, 46, 0.45);
+    --frame: #A6192E;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-rose.png");
+    --runner: none; */
+
+  /* Rangalipi Aubergine */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #17111B;
+    --background2: #211926;
+    --accent: #9B5FC0;
+    --text: #EDE0F2;
+    --accentText: #FFFFFF;
+    --hover: #2C2133;
+    --mutedBG: #0F0B12;
+    --border: #9B5FC0;
+    --redFlash: #D84E4E;
+    --subtext: #C2A8CE;
+    --base: #17111B;
+    --mantle: #0F0B12;
+    --crust: #0A070C;
+    --surface0: #211926;
+    --surface1: #2C2133;
+    --surface2: #3E2E48;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #C2A8CE;
+    --lavender: #9B5FC0;
+    --blue: #7096CA;
+    --sapphire: #5C8EA8;
+    --sky: #92C4D8;
+    --teal: #5AA49C;
+    --green: #84B468;
+    --yellow: #D2A44E;
+    --peach: #E2A070;
+    --maroon: #BC4E68;
+    --red: #D44E58;
+    --mauve: #9B5FC0;
+    --pink: #E28CB4;
+    --flamingo: #DCA6A0;
+    --rosewater: #EEDAE0;
+    --text-muted: #C2A8CE;
+    --yasb-icon-fg: #EDE0F2;
+    --glass: rgba(23, 17, 27, 0.70);
+    --glassmenu: rgba(23, 17, 27, 0.50);
+    --glassfrost: rgba(23, 17, 27, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(237, 224, 242, 0.16);
+    --text-faint: rgba(237, 224, 242, 0.45);
+    --chip: rgba(155, 95, 192, 0.20);
+    --glow: #291F30;
+    --shade: #0E0A10;
+    --accent-soft: rgba(155, 95, 192, 0.50);
+    --frame: #9B5FC0;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-ink.png");
+    --runner: none; */
+
+  /* Rangalipi Aubergine Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #5C2D91;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #5C2D91;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #5C2D91;
+    --blue: #20548E;
+    --sapphire: #1A4E78;
+    --sky: #16667E;
+    --teal: #145E56;
+    --green: #386826;
+    --yellow: #5C2D91;
+    --peach: #904C20;
+    --maroon: #6E2442;
+    --red: #B3273C;
+    --mauve: #5C2D91;
+    --pink: #8E3466;
+    --flamingo: #924430;
+    --rosewater: #7E4642;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(92, 45, 145, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(92, 45, 145, 0.45);
+    --frame: #5C2D91;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-ink.png");
+    --runner: none; */
+
+  /* Rangalipi Clay */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #1A130E;
+    --background2: #261B14;
+    --accent: #B65338;
+    --text: #EDE0D8;
+    --accentText: #FFFFFF;
+    --hover: #32231A;
+    --mutedBG: #110C09;
+    --border: #B65338;
+    --redFlash: #D84E4E;
+    --subtext: #C4A698;
+    --base: #1A130E;
+    --mantle: #110C09;
+    --crust: #0B0806;
+    --surface0: #261B14;
+    --surface1: #32231A;
+    --surface2: #463226;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #C4A698;
+    --lavender: #C88E64;
+    --blue: #6494B5;
+    --sapphire: #528694;
+    --sky: #88C9B8;
+    --teal: #4E9E8C;
+    --green: #86AC60;
+    --yellow: #D09844;
+    --peach: #B65338;
+    --maroon: #B0484A;
+    --red: #CE4636;
+    --mauve: #A880B4;
+    --pink: #D08A98;
+    --flamingo: #D6A488;
+    --rosewater: #EAD4C6;
+    --text-muted: #C4A698;
+    --yasb-icon-fg: #EDE0D8;
+    --glass: rgba(26, 19, 14, 0.70);
+    --glassmenu: rgba(26, 19, 14, 0.50);
+    --glassfrost: rgba(26, 19, 14, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(237, 224, 216, 0.16);
+    --text-faint: rgba(237, 224, 216, 0.45);
+    --chip: rgba(182, 83, 56, 0.20);
+    --glow: #2E2018;
+    --shade: #100B08;
+    --accent-soft: rgba(182, 83, 56, 0.50);
+    --frame: #B65338;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-peach.png");
+    --runner: none; */
+
+  /* Rangalipi Clay Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #963821;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #963821;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #7A4E1A;
+    --blue: #1E5088;
+    --sapphire: #184A74;
+    --sky: #166468;
+    --teal: #125A50;
+    --green: #386424;
+    --yellow: #963821;
+    --peach: #8E461A;
+    --maroon: #682236;
+    --red: #B3273C;
+    --mauve: #6C3682;
+    --pink: #8C3456;
+    --flamingo: #924624;
+    --rosewater: #7E4836;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(150, 56, 33, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(150, 56, 33, 0.45);
+    --frame: #963821;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-peach.png");
+    --runner: none; */
+
+  /* Rangalipi Olive */
+  /* --acrylic: rgba(20, 20, 25, 0.01);
+    --acrylic-hover: rgba(255, 255, 255, 0.05);
+    --tile: rgba(255, 255, 255, 0.05);
+    --background: #14150D;
+    --background2: #1D1E13;
+    --accent: #8E8934;
+    --text: #E6E8D6;
+    --accentText: #14150D;
+    --hover: #252718;
+    --mutedBG: #0D0E09;
+    --border: #8E8934;
+    --redFlash: #D84E4E;
+    --subtext: #B8BC9E;
+    --base: #14150D;
+    --mantle: #0D0E09;
+    --crust: #080905;
+    --surface0: #1D1E13;
+    --surface1: #252718;
+    --surface2: #353823;
+    --overlay0: #6B675F;
+    --overlay1: #8A857B;
+    --overlay2: #A39D90;
+    --subtext0: #8A857B;
+    --subtext1: #B8BC9E;
+    --lavender: #B4B874;
+    --blue: #689AB5;
+    --sapphire: #54949C;
+    --sky: #8CCCB0;
+    --teal: #50A282;
+    --green: #8E8934;
+    --yellow: #8E8934;
+    --peach: #D4A05E;
+    --maroon: #B45248;
+    --red: #C4563E;
+    --mauve: #A492B4;
+    --pink: #C88E9E;
+    --flamingo: #CCA88A;
+    --rosewater: #E6DEC2;
+    --text-muted: #B8BC9E;
+    --yasb-icon-fg: #E6E8D6;
+    --glass: rgba(20, 21, 13, 0.70);
+    --glassmenu: rgba(20, 21, 13, 0.50);
+    --glassfrost: rgba(20, 21, 13, 0.40);
+    --glassmist: rgba(255, 255, 255, 0.08);
+    --hairline: rgba(230, 232, 214, 0.16);
+    --text-faint: rgba(230, 232, 214, 0.45);
+    --chip: rgba(142, 137, 52, 0.20);
+    --glow: #222415;
+    --shade: #0C0D08;
+    --accent-soft: rgba(142, 137, 52, 0.50);
+    --frame: #8E8934;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-ink.png");
+    --runner: none; */
+
+  /* Rangalipi Olive Light */
+  /* --acrylic: rgba(255, 255, 255, 0.50);
+    --acrylic-hover: rgba(255, 255, 255, 0.65);
+    --tile: rgba(255, 255, 255, 0.45);
+    --background: #FFFFFF;
+    --background2: #F7F8FA;
+    --accent: #4D5320;
+    --text: #101820;
+    --accentText: #FFFFFF;
+    --hover: #F2F3F5;
+    --mutedBG: #F7F8FA;
+    --border: #4D5320;
+    --redFlash: #B3273C;
+    --subtext: #53565A;
+    --base: #FFFFFF;
+    --mantle: #F7F8FA;
+    --crust: #F2F3F5;
+    --surface0: #F7F8FA;
+    --surface1: #EDEEF1;
+    --surface2: #E2E4E8;
+    --overlay0: #67625A;
+    --overlay1: #524E47;
+    --overlay2: #4A463E;
+    --subtext0: #67625A;
+    --subtext1: #53565A;
+    --lavender: #6A5E1C;
+    --blue: #1C567E;
+    --sapphire: #164E6E;
+    --sky: #146856;
+    --teal: #125C4E;
+    --green: #4D5320;
+    --yellow: #4D5320;
+    --peach: #88501C;
+    --maroon: #5C3E2C;
+    --red: #B3273C;
+    --mauve: #5E4A78;
+    --pink: #76465C;
+    --flamingo: #845028;
+    --rosewater: #745232;
+    --text-muted: #53565A;
+    --yasb-icon-fg: #101820;
+    --glass: rgba(255, 255, 255, 0.50);
+    --glassmenu: rgba(255, 255, 255, 0.50);
+    --glassfrost: rgba(255, 255, 255, 0.50);
+    --glassmist: rgba(255, 255, 255, 0.15);
+    --hairline: rgba(16, 24, 32, 0.16);
+    --text-faint: rgba(16, 24, 32, 0.48);
+    --chip: rgba(77, 83, 32, 0.22);
+    --glow: #F7F8FA;
+    --shade: #EDEEF1;
+    --accent-soft: rgba(77, 83, 32, 0.45);
+    --frame: #4D5320;
+    --motif: url("https://raw.githubusercontent.com/harish2222/Rangalipi/main/assets/mandala/mandala-ink.png");
+    --runner: none; */
+}
+
+/* Global Defaults */
+/* TYPOGRAPHY POLICY: ONE family (--system-font) and ONE weight
+   (--fontWeight) everywhere - bar, menus and popups alike - with
+   line-height pinned so vertical rhythm does not shift when the manual
+   font switch changes --system-font. Hierarchy comes from size and
+   colour only. The lone exception is icon-only selectors, which use
+   "Segoe Fluent Icons" deliberately to get the glyph set. */
+* {
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  line-height: 1.3;
+  color: var(--text);
+}
+
+/* Bar - islands, Rangalipi glass.
+   The adaptive island shape is filled by the --glassmist tier, so every theme
+   block chooses its own bar backing: themes that declare 1% (Rangalipi Wine,
+   both modes) keep floating over the wallpaper, every other theme frosts with
+   the value its block declares. */
+.yasb-bar {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.yasb-bar.adaptive {
+  background-color: var(--glassfrost);
+  border: none;
+  -qproperty-railheight: 0;
+  -qproperty-islandradius: 12;
+  -qproperty-grouppadding: 6px;
+  -qproperty-islands: true;
+  -qproperty-edgeradius: 0;
+  -qproperty-borderwidth: 2;
+  -qproperty-bordercolor: var(--frame);
+}
+.container-left,
+.container-center,
+.container-right {
+  background-color: transparent;
+  padding: 0 4px;
+  margin: 0;
+}
+
+/* Tooltip */
+.tooltip {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border-radius: var(--border-radius);
+  color: var(--text);
+  padding: 5px 10px;
+  font-size: var(--fontSize);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  margin-top: 4px;
+  border: 3px double var(--border);
+}
+
+/* Context Menu */
+.context-menu,
+.context-menu .menu-checkbox {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border-bottom: 1px solid var(--hairline);
+  padding: 4px 0px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  font-size: var(--fontSize);
+  color: var(--text);
+}
+.context-menu {
+  border-radius: var(--border-radius);
+  border: 3px double var(--border);
+}
+.context-menu::right-arrow {
+  width: 8px;
+  height: 8px;
+  padding-right: 24px;
+}
+.context-menu::item,
+.context-menu .menu-checkbox {
+  background-color: transparent;
+  padding: 6px 12px;
+  margin: 2px 6px;
+  border-radius: var(--border-radius);
+  min-width: 100px;
+}
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+  border-radius: var(--border-radius3);
+}
+.context-menu::separator {
+  height: 1px;
+  background-color: var(--background2);
+  margin: 4px 8px;
+}
+.context-menu::item:disabled {
+  color: var(--overlay1);
+  background-color: transparent;
+}
+.context-menu .menu-checkbox .checkbox {
+  border: none;
+  padding: 8px 16px;
+  font-size: var(--fontSize);
+  margin: 0;
+  color: var(--text);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+}
+.context-menu .submenu::item:disabled {
+  margin: 0;
+  padding-left: 16px;
+}
+.context-menu .menu-checkbox .checkbox:unchecked {
+  color: var(--text);
+}
+.context-menu .menu-checkbox .checkbox::indicator {
+  width: 12px;
+  height: 12px;
+  margin-left: 0px;
+  margin-right: 8px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+  background: var(--mutedBG);
+  border-radius: var(--border-radius2);
+}
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+  background: var(--accent);
+  border-radius: var(--border-radius2);
+}
+.context-menu .menu-checkbox .checkbox:focus {
+}
+
+/* Base Widget Styles - plain strip */
+/* BAR SPACING POLICY: .widget owns the horizontal rhythm (7px pad + 3px
+   margin). Chips that need a different look override padding for vertical
+   only - restating horizontal padding here is what previously made the
+   clock sit visibly tighter than the pomodoro chip beside it. */
+.widget {
+  padding-left: var(--widgetPadX);
+  padding-right: var(--widgetPadX);
+  margin: 0 var(--widgetGap);
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+}
+
+.widget .icon {
+  font-size: var(--iconSize);
+  font-weight: var(--fontWeight);
+  color: var(--yasb-icon-fg);
+  font-family: var(--icons-font-fallback);
+  line-height: var(--barLineHeight);
+}
+
+.widget .label {
+  color: var(--text);
+  font-weight: var(--fontWeight);
+  font-size: var(--fontSize);
+  line-height: var(--barLineHeight);
+}
+
+/* UNIFORM TYPE POLICY: ONE family (--system-font) + ONE weight (--fontWeight)
+   across bar, menus and popups. Hierarchy comes from colour and size only. */
+.home-menu,
+.home-menu *,
+.context-menu,
+.context-menu *,
+[class*="-popup"],
+[class*="-popup"] *,
+[class*="-menu"] .menu-item,
+[class*="-menu"] .menu-label,
+.calendar-table,
+.calendar-table::item,
+.day-label,
+.month-label,
+.year-label,
+.date-label {
+  font-weight: var(--fontWeight);
+}
+
+/* Home Menu */
+.home-widget .icon {
+  font-family: var(--system-font);
+  font-size: 20px;
+  font-weight: var(--fontWeight);
+  color: var(--accent);
+  padding-bottom: 0.5px;
+}
+
+.home-menu {
+  /* ACRYLIC 50% POLICY: frosted panel - native blur enabled for this menu
+       (home widget blur: true) plus the 50% themed tint for text contrast. */
+  background-color: var(--acrylic);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  margin-top: 3px;
+}
+.home-menu .menu-item {
+  color: var(--text);
+  padding: 10px 48px 10px 16px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  margin-top: 3px;
+}
+.home-menu .menu-item:hover {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+  border-radius: var(--border-radius3);
+}
+.home-menu .separator {
+  max-height: 0px;
+  background-color: var(--background2);
+}
+
+/* Clock */
+.clock-widget .widget-container {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+/* No margin here: the label already separates from the alarm with an
+   en-space, and adding horizontal margin on top cramped the time. */
+.clock-widget .label {
+  color: var(--text);
+  margin: 0;
+}
+/* Inherits .widget padding so the clock sits on the same rhythm as every
+   other chip; the old 2px override made it visibly tighter. */
+.clock-widget {
+  padding: 0 7px;
+  margin: 0 3px;
+}
+.clock-widget .icon.alarm {
+  color: var(--text);
+  /* Small gap only: the label's en-space supplies the main separation. */
+  padding-left: 0;
+  padding-right: 3px;
+}
+.clock-popup.alarm,
+.clock-popup.timer,
+.clock-popup.calendar {
+  min-width: 460px;
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border-radius: var(--border-radius);
+  border: 3px double var(--border);
+  /* UNIFORM: one type system for the whole popup (incl. week label etc.) -
+       font props propagate to every child in QSS, same as the bar.
+       line-height is set explicitly so vertical rhythm is identical
+       whatever --system-font is set to; QSS otherwise derives leading
+       from the font, which made the header spacing font-dependent. */
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  line-height: 1.3;
+}
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+  background-color: transparent;
+  color: var(--text);
+  font-family: var(--system-font);
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  line-height: 1.35;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.clock-popup.calendar .calendar-table::item:selected {
+  color: var(--accentText);
+  font-weight: var(--fontWeight);
+  background-color: var(--accent);
+  border-radius: var(--border-radius3);
+}
+.clock-popup.calendar .calendar-table::item:hover {
+  color: var(--text);
+  background-color: var(--acrylic-hover);
+  border-radius: var(--border-radius3);
+}
+/* ═══ APPLE-STYLE DATE PANEL ═══
+   weekday in small caps · day numeral hero · month/year tight under it.
+   SPACING: every gap here is positive padding. The panel previously faked
+   tight leading with margin-top: -26px on the numeral and -30px on the
+   month, which only lined up for one font size — switching --system-font
+   pushed the month into the numeral's descender. Padding + an explicit
+   line-height keeps the stack correct at any font, and the gap scales
+   with the panel instead of being pinned to magic numbers. */
+.clock-popup.calendar .day-label {
+  /* small caps weekday like macOS date header */
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--subtext);
+  padding: 18px 0 2px 0;
+}
+.clock-popup.calendar .date-label {
+  /* the hero numeral: oversized, accent, explicit line box so the
+       month below sits clear of the digits' descenders */
+  font-size: 96px;
+  line-height: 100px;
+  font-weight: var(--fontWeight);
+  color: var(--accent);
+  padding: 0;
+  min-width: 180px;
+  max-width: 180px;
+}
+.clock-popup.calendar .month-label {
+  /* month + year read as one tight line, quiet under the numeral */
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text);
+  padding: 6px 0 0 0;
+}
+.clock-popup.calendar .year-label {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  color: var(--subtext);
+  padding: 0;
+}
+/* festival/today emphasis inside the popup header area */
+.clock-popup.calendar .holiday-label {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: var(--holiday);
+  padding: 6px 0 4px 0;
+}
+
+/* ═══ POMODORO BAR CHIP — 55/5 focus timer ═══
+   States printed by the tool: "55:00" idle, "MM:SS" working,
+   "p MM:SS" paused, "b MM:SS" on break. */
+.pomodoro-widget {
+  padding: 0 7px;
+  margin: 0 3px;
+}
+.pomodoro-widget .label {
+  font-family: var(--system-font);
+  font-size: var(--fontSize);
+  line-height: var(--barLineHeight);
+  font-weight: var(--fontWeight);
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+  color: var(--subtext);
+}
+.pomodoro-widget .icon {
+  font-size: var(--iconSizeSm);
+  color: var(--accent);
+  padding-right: 3px;
+}
+/* The ring is the whole widget now, so it is centred on its own and takes its
+   colour from the session rather than from the theme accent.
+
+   STATE SELECTORS. Upstream (src/core/widgets/yasb/pomodoro.py) puts
+   `work` / `break` / `paused` on the LABEL, not on the .pomodoro-widget
+   container, and only from inside the loop over the label's parts:
+
+       class_name = "paused" if paused else "break" if is_break else "work"
+       active_widgets[i].setProperty("class", f"label {class_name}")
+
+   So `.pomodoro-widget.break` never matches anything -- that was the old
+   guess and it is why both states painted the same colour. The container's
+   own class is fixed at construction: "pomodoro-widget <class_name>".
+
+   The ring itself is NOT styleable from here. ProgressBar is a QFrame that
+   paints its arc in _paint_circular() with a QPen built from `color` /
+   `background_color` out of config.yaml, and the only class it ever gets is
+   "progress-container" on its wrapper. QSS cannot repaint a QPainter arc, so
+   `background-color` on .progress-bar was doing nothing even where it matched.
+   The ring's work/break colours are the popup circle's
+   circle_work_progress_color / circle_break_progress_color, which
+   yasb-theme already rewrites from the theme on every switch.
+
+   What CSS *can* do is tint the label and the icon, which is what carries the
+   state on the bar chip. That needs a non-empty `label:` in config.yaml --
+   with `label: ""` the parts list is empty, the loop body never runs, and no
+   state class is ever applied to anything. */
+.pomodoro-widget {
+  padding: 0 var(--widgetPadX);
+}
+.pomodoro-widget .label.work {
+  color: var(--pomodoroWork);
+}
+.pomodoro-widget .label.break,
+.pomodoro-widget .label.paused {
+  color: var(--pomodoroBreak);
+}
+.pomodoro-widget .icon.work {
+  color: var(--pomodoroWork);
+}
+.pomodoro-widget .icon.break,
+.pomodoro-widget .icon.paused {
+  color: var(--pomodoroBreak);
+}
+.pomodoro-widget:hover .label {
+  color: var(--text);
+}
+
+/* ═══ EXTENDED CALENDAR (upcoming holidays list) ═══ */
+.clock-popup.calendar .extended-container {
+  padding: 8px 4px 4px 4px;
+}
+.clock-popup.calendar .upcoming-events-header {
+  font-size: 11px;
+  font-weight: var(--fontWeight);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--overlay1);
+  padding: 4px 2px 6px 2px;
+}
+.clock-popup.calendar .upcoming-events-item {
+  font-size: var(--fontSize);
+  color: var(--text);
+  padding: 5px 8px;
+  margin: 1px 0;
+  border-radius: var(--border-radius2);
+}
+.clock-popup.calendar .upcoming-events-item:hover {
+  background-color: var(--acrylic-hover);
+}
+
+.clock-popup.timer .clock-popup-container,
+.clock-popup.alarm .clock-popup-container {
+  padding: 16px;
+  background-color: transparent;
+  border-radius: var(--border-radius);
+}
+.clock-popup.timer .clock-popup-footer,
+.clock-popup.alarm .clock-popup-footer {
+  padding: 16px;
+  background-color: var(--background2);
+  border-radius: var(--border-radius);
+}
+.clock-popup .clock-label-timer {
+  font-size: 13px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+}
+.clock-popup .clock-input-time {
+  font-size: 48px;
+  background-color: var(--background);
+  border: none;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+}
+.clock-popup .clock-input-time.colon {
+  padding-bottom: 8px;
+}
+.clock-popup .button {
+  border-radius: var(--border-radius2);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  font-size: 13px;
+  min-height: 32px;
+  min-width: 64px;
+  margin: 4px 0;
+  background-color: var(--tile);
+  color: var(--text);
+}
+.clock-popup .button.save,
+.clock-popup .button.start,
+.clock-popup .button.delete,
+.clock-popup .button.cancel {
+  min-width: 120px;
+}
+.clock-popup .button.save,
+.clock-popup .button.start {
+  background-color: var(--tile);
+  color: var(--text);
+  margin-right: 8px;
+}
+.clock-popup .button.save:hover,
+.clock-popup .button.start:hover {
+  background-color: var(--acrylic-hover);
+}
+.clock-popup .button.is-alarm-enabled {
+  background-color: var(--tile);
+  color: var(--text);
+}
+.clock-popup .button.is-alarm-enabled:hover {
+  background-color: var(--acrylic-hover);
+}
+.clock-popup .button.is-alarm-disabled {
+  background-color: var(--tile);
+  color: var(--subtext);
+}
+.clock-popup .button.day {
+  background-color: var(--tile);
+  max-height: 26px;
+  min-height: 26px;
+  min-width: 28px;
+}
+.clock-popup .button.day:checked {
+  background-color: var(--accent);
+  color: var(--accentText);
+}
+.clock-popup .button.quick-option {
+  background-color: var(--tile);
+  min-height: 28px;
+}
+.clock-popup .button.quick-option:checked {
+  background-color: var(--accent);
+  color: var(--accentText);
+}
+.clock-popup .button:hover {
+  background-color: var(--acrylic-hover);
+}
+.clock-popup .button:disabled {
+  background-color: var(--tile);
+  opacity: 0.5;
+  color: var(--text);
+}
+.clock-popup .alarm-input-title {
+  font-size: 14px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  color: var(--text-muted);
+  background-color: var(--background2);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius2);
+  padding: 4px 8px;
+  margin-top: 8px;
+  min-width: 300px;
+}
+.clock-popup .alarm-input-title:focus {
+  border: 1px solid var(--accent);
+}
+.active-alarm-window {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  max-width: 500px;
+  min-width: 500px;
+  padding: 32px;
+  border-radius: var(--border-radius);
+}
+.active-alarm-window .alarm-title-icon {
+  font-size: 88px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.active-alarm-window .alarm-title {
+  font-size: 24px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+  max-width: 500px;
+  min-width: 500px;
+}
+.active-alarm-window .alarm-info {
+  font-size: var(--iconSize);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+  margin-bottom: 32px;
+}
+.active-alarm-window .button {
+  border-radius: var(--border-radius2);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  font-size: 13px;
+  min-height: 36px;
+  min-width: 100px;
+  margin: 0 4px;
+  background-color: rgba(29, 16, 21, 0.01);
+}
+.active-alarm-window .button:hover {
+  background-color: var(--acrylic-hover);
+}
+
+/* Power Menu */
+
+.power-menu-compact {
+  min-width: 260px;
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border-radius: var(--border-radius);
+  margin-right: 14px;
+  border: 3px double var(--border);
+}
+.power-menu-compact .profile-info {
+  padding: 24px 14px 24px 0px;
+}
+.power-menu-compact .profile-info .profile-username {
+  font-size: var(--iconSize);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+  font-family: var(--system-font);
+  margin-top: 4px;
+}
+
+.power-menu-widget .icon {
+  color: var(--text);
+}
+
+.power-menu-compact .profile-info .profile-account-type {
+  font-size: var(--fontSize);
+  color: var(--accentText);
+  font-weight: var(--fontWeight);
+  margin-top: 8px;
+  font-family: var(--system-font);
+  background-color: var(--accent);
+  padding: 2px 6px 3px 6px;
+  border-radius: var(--border-radius2);
+}
+
+.power-menu-compact .profile-info .profile-email {
+  font-size: var(--fontSize);
+  color: transparent;
+  margin-top: -10px;
+  font-family: var(--system-font);
+}
+
+.power-menu-compact .manage-accounts {
+  font-size: var(--fontSize);
+  background-color: var(--background2);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  padding: 3px 12px 4px 12px;
+  color: var(--text);
+  margin-top: 0px;
+  border-radius: var(--border-radius2);
+  border: none;
+}
+
+.power-menu-compact .manage-accounts:hover {
+  background-color: var(--accent);
+  color: var(--accentText);
+}
+
+.power-menu-compact .buttons {
+  margin: 0 26px 12px 12px;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  border: none;
+}
+.power-menu-compact .button {
+  padding: 8px 16px;
+  margin: 2px;
+  background-color: rgba(29, 16, 21, 0.01);
+  /* border: 3px double var(--border); */
+  color: var(--background2);
+  border-radius: var(--border-radius2);
+}
+.power-menu-compact .button:hover {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+}
+.power-menu-compact .button.hover {
+  background-color: var(--accent);
+}
+
+.power-menu-compact .button .icon {
+  font-size: var(--iconSize);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+  padding-right: 10px;
+  min-width: 20px;
+}
+.power-menu-compact .button .label {
+  font-size: 13px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  color: var(--text);
+}
+.power-menu-compact .icon.hover,
+.power-menu-compact .label.hover {
+  color: var(--accentText);
+}
+
+/* ── Power menu, fullscreen mode: big dialog centered on a dimmed overlay ── */
+
+.power-menu-overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.power-menu-overlay .uptime {
+  font-size: 18px;
+  margin-bottom: 24px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  color: var(--subtext0, var(--text));
+}
+.power-menu-popup {
+  min-width: 620px;
+  background-color: var(--crust, rgba(17, 17, 27, 0.92));
+  padding: 32px;
+  border-radius: 16px;
+}
+.power-menu-popup .profile-info {
+  padding: 0 0 18px 0;
+  border-bottom: 1px solid rgba(205, 214, 244, 0.12);
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+.power-menu-popup .profile-info .profile-username {
+  font-size: 26px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  color: var(--text);
+  margin-top: 12px;
+}
+.power-menu-popup .profile-info .profile-account-type {
+  font-size: 13px;
+  font-family: var(--system-font);
+  color: var(--text);
+  opacity: 0.7;
+  margin-top: 6px;
+}
+.power-menu-popup .button {
+  padding: 0;
+  min-width: 178px;
+  max-width: 178px;
+  min-height: 114px;
+  border-radius: 14px;
+  background-color: rgba(205, 214, 244, 0.06);
+  border: 8px solid rgba(205, 214, 244, 0);
+}
+.power-menu-popup .button.hover {
+  background-color: var(--accent);
+  border: 8px solid var(--accent);
+}
+.power-menu-popup .button .icon {
+  font-size: 38px;
+  color: var(--text);
+  opacity: 0.6;
+}
+.power-menu-popup .button .label {
+  font-size: 14px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  color: var(--text);
+  opacity: 0.85;
+}
+.power-menu-popup .button.hover .icon,
+.power-menu-popup .button.hover .label {
+  color: var(--accentText);
+  opacity: 1;
+}
+
+/* Volume */
+
+.volume-widget .icon {
+  color: var(--teal);
+  font-family: var(--icons-font);
+  padding-right: 5px;
+}
+.audio-menu {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border: 3px double var(--border);
+  min-width: 300px;
+  border-radius: var(--border-radius);
+}
+/* System volume */
+.audio-menu .system-volume-container .volume-slider {
+  border: none;
+}
+/* Device list styles */
+.audio-menu .audio-container .device {
+  background-color: transparent;
+  border: none;
+  padding: 6px 12px;
+  margin: 2px 6px;
+  font-size: var(--fontSize);
+  border-radius: var(--border-radius2);
+}
+.audio-menu .audio-container .device.selected {
+  background-color: rgba(29, 16, 21, 0.01);
+  color: var(--text);
+}
+.audio-menu .audio-container .device:hover {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+}
+
+.audio-menu .audio-container .device.selected:hover {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+}
+
+/* Toggle button for application volumes (if is enabled) */
+.audio-menu .toggle-apps {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-height: 24px;
+  min-width: 24px;
+  border-radius: var(--border-radius2);
+}
+.audio-menu .toggle-apps.expanded {
+  background-color: transparent;
+}
+.audio-menu .toggle-apps:hover {
+  background-color: var(--acrylic-hover);
+}
+/* Container for application volumes (if is enabled) */
+.audio-menu .apps-container {
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: var(--border-radius2);
+  background-color: rgba(29, 16, 21, 0.01);
+}
+.audio-menu .apps-container .app-volume .app-icon-container {
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: var(--border-radius);
+  margin-right: 8px;
+}
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+  background-color: var(--acrylic-hover);
+}
+
+/* Active Windows Title */
+.active-window-widget .icon {
+  padding: 0 4px;
+  color: var(--overlay1);
+}
+.active-window-widget .label {
+  display: none;
+  max-width: 0px;
+  font-size: 0px;
+  color: transparent;
+}
+
+/* Separator_widget */
+.separator-widget .widget-container .label {
+  color: var(--accent);
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+/* Komorebi Workspaces */
+/*Style for widget.*/
+.komorebi-workspaces {
+  padding: 0px 4px;
+  border: none;
+}
+
+/*Style for widget container.*/
+.komorebi-workspaces .widget-container {
+}
+
+/*Style for buttons.*/
+.komorebi-workspaces .ws-btn {
+  border: none;
+  color: var(--overlay1);
+}
+
+/*Style for buttons which contain window and are not empty.*/
+.komorebi-workspaces .ws-btn.populated {
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: transparent;
+  border-radius: var(--border-radius2);
+  color: var(--subtext1);
+}
+
+/*Style for the active workspace button.*/
+.komorebi-workspaces .ws-btn.active {
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--text);
+  font-weight: var(--fontWeight);
+  padding-top: 3px;
+  padding-bottom: 2px;
+}
+
+/* Float override completely eliminated */
+.komorebi-workspaces .float-override {
+  max-width: 0px;
+  max-height: 0px;
+  width: 0px;
+  height: 0px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  font-size: 1px;
+  color: transparent;
+}
+
+/* Komorebi-active-layout */
+.komorebi-active-layout {
+}
+.komorebi-active-layout .widget-container {
+}
+.komorebi-active-layout .label {
+  font-family: var(--specialFont);
+  padding-top: 0;
+  color: var(--sapphire);
+}
+
+/* Komorebi-layout-menu */
+.komorebi-layout-menu {
+  /* ACRYLIC 10% (widget-scoped only) - CSS alpha, no blur anywhere. */
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border-radius: var(--border-radius);
+  border: 3px double var(--border);
+}
+.komorebi-layout-menu .menu-item {
+  padding: 8px 16px;
+  font-size: var(--fontSize);
+  color: var(--text);
+  font-weight: var(--fontWeight);
+  margin: 2px 2px;
+}
+.komorebi-layout-menu .menu-item-icon {
+  color: var(--text);
+  font-size: var(--iconSize);
+}
+.komorebi-layout-menu .menu-item-text {
+  font-family: var(--system-font);
+  padding-left: 4px;
+  font-size: var(--fontSize);
+}
+
+.komorebi-layout-menu .menu-item:hover {
+  background-color: var(--acrylic-hover);
+  border-radius: var(--border-radius3);
+}
+
+.komorebi-layout-menu .separator {
+  max-height: 1px;
+  background-color: var(--background2);
+}
+
+/* Pomodoro-Widget popup: the native circular-timer menu. The ring itself is
+   painted by the widget from the two circle_* colours in config.yaml, which
+   yasb-theme rewrites from the active theme block on every switch; everything
+   around it is themed here. */
+.pomodoro-menu {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  min-width: 220px;
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  /* motif watermark under the glass, matching the media popup.
+       The 0.4 alpha is baked into motif-*.svg; Qt paints background-image
+       at full strength, so it cannot be dialled down here. */
+  background-image: var(--motif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.pomodoro-menu .title,
+.pomodoro-menu .timer,
+.pomodoro-menu .session {
+  font-family: var(--system-font);
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+  padding: 4px 8px;
+}
+.pomodoro-menu .session {
+  color: var(--subtext);
+}
+.pomodoro-menu .buttons,
+.pomodoro-menu .button-container {
+  background: transparent;
+  border: none;
+}
+.pomodoro-menu .pomodoro-button {
+  background-color: var(--chip);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius3);
+  font-family: var(--system-font);
+  font-size: var(--fontSize);
+  padding: 6px 14px;
+  margin: 4px;
+}
+.pomodoro-menu .pomodoro-button:hover {
+  background-color: var(--acrylic-hover);
+}
+.pomodoro-menu .pomodoro-button:pressed {
+  background-color: var(--accent-soft);
+}
+
+/* Wallpapers-Widget */
+.wallpapers-widget {
+}
+
+.wallpapers-widget .icon {
+  color: var(--mauve);
+}
+
+.wallpapers-widget .widget-container {
+}
+/* NOTE: the gallery itself is not CSS-styled (native strip row);
+   selection border comes from gallery.accent_color in config.yaml. */
+
+/* Systray - Rangalipi semantic */
+.systray {
+  background: transparent;
+  border: none;
+}
+
+/* Icon being dragged, we already apply some transparency to it so you don't need to use it */
+
+.systray .pinned-container.drop-target {
+  background: var(--background);
+}
+.systray .unpinned-visibility-btn {
+  border-radius: var(--border-radius2);
+  height: 20px;
+  width: 16px;
+  border: none;
+}
+.systray .label,
+.systray .icon {
+  color: var(--mauve);
+  font-family: var(--icons-font-fallback);
+}
+
+.systray-popup {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  padding: 4px;
+  border-radius: var(--border-radius);
+  border: 3px double var(--border);
+}
+.systray-popup .button {
+  padding: 10px;
+  margin: 0;
+  border: none;
+  border-radius: var(--border-radius2);
+}
+.systray-popup .button:hover {
+  background-color: var(--acrylic-hover);
+  border-radius: var(--border-radius2);
+}
+
+/* notification-widget - Rangalipi semantic */
+.notification-widget .icon {
+  color: var(--overlay2);
+}
+.notification-widget .icon.new-notification {
+  color: var(--blue);
+}
+.notification-widget .label.new-notification {
+  color: var(--blue);
+  font-weight: var(--fontWeight);
+}
+
+/* Media-Widget-Popup */
+
+/* Media full features: bar controls, progress line, app volume */
+.media-widget .btn {
+  font-family: "Segoe Fluent Icons";
+  border-radius: var(--border-radius3);
+  font-size: 13px;
+  font-weight: var(--fontWeight);
+  color: var(--subtext);
+  padding: 0 3px;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+.media-widget .btn:hover {
+  color: var(--text);
+}
+.media-widget .btn.play {
+  font-size: 14px;
+  color: var(--accent);
+}
+.media-widget .btn.disabled,
+.media-widget .btn.disabled:hover {
+  color: var(--overlay1);
+  background-color: transparent;
+}
+.media-widget .progress-bar {
+  max-height: 2px;
+  background-color: transparent;
+  border: none;
+}
+.media-widget .progress-bar::chunk {
+  background-color: var(--accent);
+  border-radius: var(--border-radius2);
+}
+.media-menu .thumbnail {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--hairline);
+}
+.media-menu .app-volume-container {
+  background-color: rgba(29, 16, 21, 0.01);
+  padding: 8px 6px;
+  border-radius: var(--border-radius2);
+  margin-left: 10px;
+}
+.media-menu .app-volume-container .volume-slider::groove {
+  background: var(--surface1);
+  width: 2px;
+  border-radius: var(--border-radius2);
+}
+.media-menu .app-volume-container .volume-slider::sub-page {
+  background: var(--accent);
+  border-radius: var(--border-radius2);
+}
+.media-menu .app-volume-container .volume-slider::handle {
+  background: var(--accent);
+  border-radius: var(--border-radius2);
+  height: 12px;
+  width: 12px;
+}
+.media-menu .app-volume-container .mute-button,
+.media-menu .app-volume-container .unmute-button {
+  font-family: "Segoe Fluent Icons";
+  font-size: 16px;
+  color: var(--subtext);
+  margin-top: 4px;
+}
+.media-menu .app-volume-container .unmute-button {
+  color: var(--overlay1);
+}
+.media-menu {
+  min-width: 440px;
+  max-width: 440px;
+  /* media popup: themed glass + motif watermark (0.3 baked radial alpha) */
+  background-color: var(--glassmenu);
+  background-image: var(--motif);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+}
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+  font-size: 14px;
+  font-weight: var(--fontWeight);
+  margin-left: 10px;
+  font-family: var(--system-font);
+  color: var(--text);
+}
+.media-menu .artist {
+  font-size: 13px;
+  color: var(--subtext);
+  margin-top: 0px;
+}
+.media-menu .source {
+  font-size: 11px;
+  color: var(--accentText);
+  border-radius: var(--border-radius2);
+  background-color: var(--accent);
+  padding: 2px 4px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  margin-top: 10px;
+}
+/* The source class name is the same as what you see in the media widget; just replace spaces with dashes and convert it to lowercase. 
+Example: "Windows Media" becomes "windows-media" */
+.media-menu .source.aimp {
+  background-color: #6f42c1;
+  color: #ffffff;
+}
+.media-menu .source.apple-music {
+  background-color: #fa2b56;
+  color: #ffffff;
+}
+.media-menu .source.brave {
+  background-color: #fb542b;
+  color: #ffffff;
+}
+.media-menu .source.chrome {
+  background-color: #4285f4;
+  color: #ffffff;
+}
+.media-menu .source.edge {
+  background-color: #0078d4;
+  color: #ffffff;
+}
+.media-menu .source.firefox {
+  background-color: #ff7139;
+  color: #ffffff;
+}
+.media-menu .source.foobar2000 {
+  background-color: #444444;
+  color: #ffffff;
+}
+.media-menu .source.media-player {
+  background-color: #0078d4;
+  color: #ffffff;
+}
+.media-menu .source.murglar {
+  background-color: #8a8a8a;
+  color: #ffffff;
+}
+.media-menu .source.musicbee {
+  background-color: #ffcc00;
+  color: #000000;
+}
+.media-menu .source.nsmusics {
+  background-color: #e64a19;
+  color: #ffffff;
+}
+.media-menu .source.opera {
+  background-color: #ff1b2d;
+  color: #ffffff;
+}
+.media-menu .source.qobuz {
+  background-color: #003a6f;
+  color: #ffffff;
+}
+.media-menu .source.spotify {
+  background-color: #1db954;
+  color: #ffffff;
+}
+.media-menu .source.tidal {
+  background-color: #000000;
+  color: #ffffff;
+}
+.media-menu .source.winamp {
+  background-color: #f1a11b;
+  color: #000000;
+}
+.media-menu .source.youtube {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+.media-menu .source.youtube-music {
+  background-color: #c51f1f;
+  color: #ffffff;
+}
+.media-menu .source.zen {
+  background-color: var(--chip);
+  color: var(--text);
+}
+.media-menu .btn {
+  font-family: var(--icons-font);
+  font-size: 14px;
+  font-weight: var(--fontWeight);
+  margin: 10px 2px 0px 2px;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  color: var(--accent);
+  background-color: rgba(29, 16, 21, 0.01);
+  border: 1px solid var(--hairline);
+}
+.media-menu .btn.prev {
+  margin-left: 10px;
+  color: var(--accent);
+}
+.media-menu .btn:hover {
+  color: var(--mutedBG);
+  background-color: var(--accent);
+}
+.media-menu .btn.play {
+  background-color: var(--accent);
+  font-size: 20px;
+  color: var(--accentText);
+}
+.media-menu .btn.disabled:hover {
+  color: var(--accent);
+  background-color: rgba(29, 16, 21, 0.01);
+}
+
+.media-menu .btn.disabled {
+  background-color: transparent;
+}
+
+.media-menu .btn.play:hover {
+  background-color: var(--text);
+  color: var(--mutedBG);
+}
+
+.media-menu .playback-time {
+  font-size: 13px;
+  font-family: var(--system-font);
+  color: var(--subtext);
+  margin-top: 20px;
+  min-width: 100px;
+}
+.media-menu .progress-slider {
+  height: 10px;
+  margin: 5px 4px;
+  border-radius: var(--border-radius2);
+}
+.media-menu .progress-slider::groove {
+  background: transparent;
+  height: 2px;
+  border-radius: var(--border-radius2);
+  background: var(--background2);
+}
+.media-menu .progress-slider::groove:hover {
+  background: transparent;
+  height: 6px;
+  border-radius: var(--border-radius2);
+  background: var(--background2);
+}
+.media-menu .progress-slider::sub-page {
+  background: var(--accent);
+  border-radius: var(--border-radius2);
+  height: 4px;
+}
+
+/* Language-Widget */
+.language-menu {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  min-width: 300px;
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+}
+.language-menu .header {
+  color: transparent;
+  padding-bottom: -12px;
+}
+.language-menu .footer {
+  border-top: 1px solid var(--hairline);
+  color: transparent;
+  padding-top: -12px;
+}
+
+.language-menu .language-item {
+  padding: 6px 12px;
+  margin: 2px 4px;
+  border-radius: var(--border-radius2);
+}
+.language-menu .language-item.active {
+  background-color: rgba(29, 16, 21, 0.01);
+  border-radius: var(--border-radius2);
+  color: var(--text);
+  border-radius: var(--border-radius2);
+}
+.language-menu .language-item:hover {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+  border-radius: var(--border-radius2);
+}
+.language-menu .language-item.active:hover {
+  background-color: var(--acrylic-hover);
+  border-radius: var(--border-radius2);
+  border-radius: var(--border-radius2);
+}
+.language-menu .language-item .code {
+  font-weight: var(--fontWeight);
+  font-size: 14px;
+  min-width: 40px;
+  text-transform: uppercase;
+}
+.language-menu .language-item .icon {
+  font-size: var(--iconSize);
+  margin-right: 8px;
+  color: var(--text);
+}
+.language-menu .language-item .name {
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  font-size: 14px;
+}
+.language-menu .language-item .layout {
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  font-size: var(--fontSize);
+}
+
+/* Launcher */
+/* Quick Launch Widget */
+.quick-launch-widget .icon {
+  font-size: var(--fontSize);
+  padding: 0 4px;
+  color: var(--text);
+}
+
+/* Quick Launch Popup - main window */
+
+.quick-launch-popup .container {
+  background-color: transparent;
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+}
+/* Search bar container */
+.quick-launch-popup .search {
+  padding: 12px 16px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--background2);
+}
+/* Search loader line color */
+.quick-launch-popup .search .loader-line {
+  color: var(--blue);
+}
+.quick-launch-popup .search .search-icon {
+  font-family: var(--icons-font);
+  font-size: 18px;
+  color: var(--text);
+  padding-right: 8px;
+  min-width: 18px;
+}
+.quick-launch-popup .search .search-submit-icon {
+  font-family: var(--icons-font);
+  font-size: 18px;
+  color: var(--text);
+  min-width: 18px;
+}
+.quick-launch-popup .search .search-input {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: var(--iconSize);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  padding: 4px 0;
+}
+/* Search prefix styling (e.g., ">" for commands) */
+.quick-launch-popup .search .prefix {
+  background: var(--accent);
+  border-radius: var(--border-radius2);
+  color: var(--text);
+  padding: -2px 8px 0px 8px;
+  margin-top: 2px;
+  margin-right: 4px;
+  font-size: 13px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  max-height: 28px;
+}
+
+/* Results list */
+.quick-launch-popup .results {
+  background: transparent;
+  padding: 8px;
+}
+/* Individual result item here you can set font szie for title */
+.quick-launch-popup .results-list-view {
+  font-size: var(--fontSizeLarge);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.quick-launch-popup {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  min-width: 480px;
+}
+.quick-launch-popup .results-list-view .description {
+  color: var(--subtext);
+  font-size: 11px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+}
+.quick-launch-popup .results-list-view .separator {
+  color: var(--subtext);
+  font-size: 13px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  padding: 4px 0 4px 12px;
+}
+/* Result item hover and selected states */
+.quick-launch-popup .results-list-view::item {
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: var(--border-radius);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.quick-launch-popup .results-list-view::item:hover {
+  background-color: var(--acrylic-hover);
+}
+.quick-launch-popup .results-list-view::item:selected {
+  background-color: var(--background2);
+  border-radius: var(--border-radius);
+}
+
+.quick-launch-popup .results-list-view::item:selected:hover {
+  background-color: var(--acrylic-hover);
+}
+
+/* Empty state when no results found */
+.quick-launch-popup .results-empty-text {
+  font-size: 24px;
+  font-family: var(--system-font);
+  color: var(--text);
+  padding-top: 8px;
+}
+
+/* CPU widget */
+.cpu-widget .widget-container .icon {
+  color: var(--mauve);
+  padding-bottom: 0;
+}
+
+.cpu-widget .widget-container .label {
+  padding-left: var(--widgetPadX);
+}
+.cpu-widget .widget-container .label.alt {
+  padding-left: var(--widgetPadX);
+}
+
+.cpu-widget {
+  border: none;
+}
+/* Rangalipi CPU status colors */
+.cpu-widget .label.status-low {
+  color: var(--green);
+}
+.cpu-widget .label.status-medium {
+  color: var(--yellow);
+}
+.cpu-widget .label.status-high {
+  color: var(--peach);
+}
+.cpu-widget .label.status-critical {
+  color: var(--red);
+}
+
+.cpu-popup {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  min-width: 400px;
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+}
+
+.cpu-popup .header {
+  background: transparent;
+  padding: 12px 16px;
+  color: var(--text);
+}
+.cpu-popup .header .text {
+  font-size: 16px;
+  font-family: var(--system-font);
+  color: var(--text);
+}
+.cpu-popup .header .pin-btn {
+  font-size: var(--fontSize);
+  background: transparent;
+  font-family: "Segoe Fluent Icons";
+  padding: 6px;
+  color: var(--text);
+}
+.cpu-popup .header .pin-btn:hover {
+  color: var(--hover);
+}
+.cpu-popup .header .pin-btn.pinned {
+  color: var(--accent);
+}
+/* Graph area */
+.cpu-popup .graph-container {
+  background: transparent;
+  min-height: 64px;
+}
+.cpu-popup .cpu-graph {
+  color: var(--mauve); /* <-- set the graph line/fill color */
+}
+.cpu-popup .cpu-graph-grid {
+  color: var(--background2); /* set the grid line color */
+}
+.cpu-popup .graph-title {
+  font-size: 12px;
+  color: var(--text);
+  font-family: var(--system-font);
+  padding: 0px 0px 4px 14px;
+}
+/* Stats grid */
+.cpu-popup .stats {
+  background: transparent;
+  padding: 16px;
+}
+.cpu-popup .stats .stat-item {
+  background-color: rgba(29, 16, 21, 0.01);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  padding: 8px 12px;
+  margin: 8px;
+}
+.cpu-popup .stats .stat-label {
+  font-size: 13px;
+  color: var(--text);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  padding: 6px 4px 2px 4px;
+}
+.cpu-popup .stats .stat-value {
+  font-size: 20px;
+  font-weight: var(--fontWeight);
+  color: var(--subtext);
+  font-family: var(--system-font);
+  padding: 0 4px 12px 4px;
+}
+
+/* Memory widget */
+.memory-widget .widget-container .label {
+  padding-left: var(--widgetPadX);
+  color: var(--text);
+}
+.memory-widget .widget-container .label.alt {
+  padding-left: var(--widgetPadX);
+}
+.memory-widget .widget-container .icon {
+  color: var(--blue);
+  padding-bottom: 0;
+}
+
+.memory-widget {
+  border: none;
+}
+/* Rangalipi memory status colors */
+.memory-widget .label.status-low {
+  color: var(--green);
+}
+.memory-widget .label.status-medium {
+  color: var(--yellow);
+}
+.memory-widget .label.status-high {
+  color: var(--peach);
+}
+.memory-widget .label.status-critical {
+  color: var(--red);
+}
+
+.memory-popup {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  min-width: 400px;
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+}
+
+.memory-popup .header {
+  background: transparent;
+  padding: 12px 16px;
+}
+.memory-popup .header .text {
+  font-size: 16px;
+  font-family: var(--system-font);
+  color: var(--text);
+}
+.memory-popup .header .pin-btn {
+  font-size: 14px;
+  background: transparent;
+  font-family: "Segoe Fluent Icons";
+  border: none;
+  padding: 6px;
+  color: var(--text);
+}
+.memory-popup .header .pin-btn:hover {
+  color: var(--hover);
+}
+.memory-popup .header .pin-btn.pinned {
+  color: var(--accent);
+}
+/* Graph area */
+.memory-popup .graph-container {
+  background: transparent;
+  min-height: 64px;
+}
+.memory-popup .memory-graph {
+  color: var(--blue); /* <-- set the graph line/fill color */
+}
+.memory-popup .memory-graph-grid {
+  color: var(--background2); /* set the grid line color */
+}
+.memory-popup .graph-title {
+  font-size: 12px;
+  color: var(--text);
+  font-family: var(--system-font);
+  padding: 0px 0px 4px 14px;
+}
+/* Stats grid */
+.memory-popup .stats {
+  background: transparent;
+  padding: 16px;
+}
+.memory-popup .stats .stat-item {
+  background-color: rgba(29, 16, 21, 0.01);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  padding: 8px 12px;
+  margin: 8px;
+}
+.memory-popup .stats .stat-label {
+  font-size: 13px;
+  color: var(--text);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  padding: 6px 4px 2px 4px;
+}
+.memory-popup .stats .stat-value {
+  font-size: 20px;
+  font-weight: var(--fontWeight);
+  color: var(--subtext);
+  font-family: var(--system-font);
+  padding: 0 4px 12px 4px;
+}
+
+/* Alpha stats group - collapsible, Rangalipi */
+.alpha-group .container {
+  /* The name of the css class is the name given in the config */
+  background-color: transparent;
+  border-bottom: 3px dotted var(--hairline);
+}
+
+.alpha-group .grouper-button {
+  font-size: 20px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  color: var(--green);
+  border: none;
+  padding: 0 6px;
+}
+
+.alpha-group .grouper-button:hover {
+  color: var(--text);
+}
+
+/* Control_Center */
+/* POPUP WINDOW */
+
+.control-center-widget .icon {
+  color: var(--mauve);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  font-size: 20px;
+}
+
+.control-center-menu {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  min-width: 360px;
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  /* The motif fills the whole popup rather than sitting in one corner: it
+       is scaled with `cover` and centred, so it reads as a backdrop behind
+       every section instead of a corner decoration. The SVG carries its own
+       0.4 opacity, so it stays a watermark under the text. */
+  background-image: var(--motif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* SECTIONS */
+/* Left and right padding of 12 px + 4 px margin for quick action and power plan, 
+which is 16 pixels same as the other sections. */
+.control-center-menu .section {
+  background: transparent;
+  margin: 0;
+  padding: 16px 12px;
+  border: none;
+}
+/* We dont want a padding at the bottom of the first section. */
+.control-center-menu .section.system-controls {
+  padding: 12px 16px 0 16px;
+}
+.control-center-menu .section.sliders {
+  padding: 16px;
+}
+
+/* SHARED SEGOE FLUENT ICONS */
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.sliders .slider .icon,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon,
+.control-center-menu .section.media .button {
+  border-radius: var(--border-radius3);
+  font-family: "Segoe Fluent Icons";
+  font-weight: var(--fontWeight);
+  border-radius: var(--border-radius3);
+}
+
+/* SHARED HOVER & TRANSITION TRANSITIONS */
+.control-center-menu .section.quick-actions .button .icon,
+.control-center-menu .section.system-controls .button,
+.control-center-menu .section.sliders .slider .source-selector,
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name,
+.control-center-menu .section.media .button {
+  transition:
+    background-color 0.08s,
+    opacity 0.08s;
+  opacity: 1;
+}
+
+/* SHARED CLICKED / PRESSED STATES */
+.control-center-menu .section.system-controls .button:pressed,
+.control-center-menu .section.quick-actions .button .icon:pressed,
+.control-center-menu .section.sliders .slider .source-selector:pressed,
+.control-center-menu .section.power .plan-name:pressed,
+.control-center-menu .section.power .mode-name:pressed,
+.control-center-menu .section.media .button:pressed {
+  opacity: 0.5;
+}
+
+/* SHARED DISABLED STATES */
+.control-center-menu .section.quick-actions .button.disabled .title,
+.control-center-menu .section.quick-actions .button.disabled .icon,
+.control-center-menu .section.sliders .slider.disabled,
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+  opacity: 0.5;
+}
+
+/* SYSTEM CONTROLS */
+.control-center-menu .section.system-controls .button {
+  background-color: rgba(29, 16, 21, 0.01);
+  border-radius: 50%;
+  min-height: 32px;
+  max-height: 32px;
+  min-width: 32px;
+  max-width: 32px;
+  font-size: 14px;
+  color: var(--text);
+  transition:
+    background-color 0.08s,
+    opacity 0.08s;
+}
+.control-center-menu .section.system-controls .button:hover {
+  background-color: var(--acrylic-hover);
+}
+
+/* QUICK ACTIONS */
+.control-center-menu .section.quick-actions .button {
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: var(--border-radius3);
+}
+.control-center-menu .section.quick-actions .button .icon {
+  font-size: 16px;
+  background-color: var(--tile);
+  min-height: 48px;
+  border-radius: var(--border-radius);
+  color: var(--text);
+}
+.control-center-menu .section.quick-actions .button .icon:hover {
+  background-color: var(--acrylic-hover);
+}
+.control-center-menu .section.quick-actions .button.active .icon {
+  background-color: var(--accent);
+  color: var(--accentText);
+}
+.control-center-menu .section.quick-actions .button.active .icon:hover {
+  background-color: var(--redFlash);
+  color: var(--accentText);
+}
+.control-center-menu .section.quick-actions .button.disabled .icon:hover {
+  background-color: var(--acrylic-hover);
+}
+.control-center-menu .section.quick-actions .button.active .icon:pressed {
+  background-color: var(--acrylic-hover);
+}
+.control-center-menu .section.quick-actions .button .title {
+  font-size: var(--fontSize);
+  margin: 4px 0 8px 0;
+  padding: 0;
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+
+/* SLIDERS */
+.control-center-menu .section.sliders .slider {
+  background: transparent;
+  border: none;
+  min-height: 34px;
+  margin: 0 4px 0 4px;
+}
+.control-center-menu .section.sliders .slider .icon {
+  font-size: 16px;
+  color: var(--text);
+  min-width: 36px;
+}
+.control-center-menu .section.sliders .slider .value {
+  min-width: 36px;
+  font-size: 12px;
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.control-center-menu .section.sliders .slider .source-selector {
+  font-size: 12px;
+  color: var(--text);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--border-radius2);
+  background-color: var(--tile);
+  margin-left: 4px;
+}
+.control-center-menu .section.sliders .slider .source-selector:hover {
+  background-color: var(--acrylic-hover);
+}
+
+/* GLOBAL SLIDERS — Apple-style accent fill and handle, uniform across all themes */
+QSlider::groove:horizontal {
+  height: 4px;
+  background: var(--surface1);
+  border-radius: 2px;
+}
+QSlider::sub-page:horizontal {
+  background: var(--accent);
+  border-radius: 2px;
+}
+QSlider::add-page:horizontal {
+  background: var(--surface1);
+  border-radius: 2px;
+}
+QSlider::handle:horizontal {
+  background: var(--background);
+  border: 2px solid var(--accent);
+  width: 14px;
+  height: 14px;
+  margin: -5px 0;
+  border-radius: 7px;
+}
+QSlider::handle:horizontal:hover {
+  background: var(--accent);
+}
+
+/* POWER PLAN & POWER MODE */
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name {
+  background: var(--accent);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  min-height: 36px;
+  margin: 0 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.control-center-menu .section.power .plan-name:hover,
+.control-center-menu .section.power .mode-name:hover {
+  background: var(--redFlash);
+}
+.control-center-menu .section.power .mode-name.disabled,
+.control-center-menu .section.power .mode-name.disabled:hover {
+  opacity: 0.5;
+  background: var(--hover);
+}
+.control-center-menu .section.power .plan-name .title,
+.control-center-menu .section.power .mode-name .title {
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  color: var(--accentText);
+}
+.control-center-menu .section.power .plan-name .subtext,
+.control-center-menu .section.power .mode-name .subtext {
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  color: var(--accentText);
+}
+
+.control-center-menu .section.power .plan-name.disabled .title,
+.control-center-menu .section.power .mode-name.disabled .title {
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.control-center-menu .section.power .plan-name.disabled .subtext,
+.control-center-menu .section.power .mode-name.disabled .subtext {
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon {
+  color: var(--accentText);
+  font-size: var(--iconSize);
+}
+
+.control-center-menu .section.power .plan-name.disabled .icon,
+.control-center-menu .section.power .mode-name.disabled .icon {
+  color: var(--text);
+  font-size: var(--iconSize);
+}
+
+/* MEDIA CONTROLS */
+.control-center-menu .section.media {
+  background-color: transparent;
+  padding: 12px;
+}
+.control-center-menu .section.media .track-info {
+  padding-left: 8px;
+}
+.control-center-menu .section.media .title {
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.control-center-menu .section.media .subtext {
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  color: var(--subtext);
+}
+.control-center-menu .section.media .button {
+  font-size: var(--iconSize);
+  background-color: var(--accent);
+  color: var(--accentText);
+  min-width: 32px;
+  min-height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: var(--border-radius2);
+  margin: 0 0 0 4px;
+}
+
+.control-center-menu .section.media .button.prev {
+  color: var(--accentText);
+  background-color: var(--accent);
+}
+.control-center-menu .section.media .button.next {
+  color: var(--accentText);
+  background-color: var(--accent);
+}
+
+.control-center-menu .section.media .button.prev.disabled {
+  color: var(--text);
+}
+.control-center-menu .section.media .button.next.disabled {
+  color: var(--text);
+}
+
+.control-center-menu .section.media .button:hover {
+  background-color: var(--redFlash);
+}
+.control-center-menu .section.media .button.disabled,
+.control-center-menu .section.media .button.disabled:hover {
+  background-color: var(--background2);
+}
+
+/* Context menu styles for dropdowns and menus inside the Control Center panel */
+.control-center-menu .context-menu {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  padding: 4px 0px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  font-size: var(--fontSize);
+  color: var(--text);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--accent);
+}
+.control-center-menu .context-menu::item {
+  background-color: transparent;
+  padding: 6px 12px;
+  margin: 2px 6px;
+  border-radius: var(--border-radius3);
+  min-width: 100px;
+}
+.control-center-menu .context-menu::item:selected {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+}
+.control-center-menu .context-menu::separator {
+  height: 1px;
+  background-color: var(--hairline);
+  margin: 4px 0;
+}
+.control-center-menu .context-menu::indicator:unchecked {
+  width: 4px;
+  height: 12px;
+  margin-left: 0;
+  color: transparent;
+  background-color: transparent;
+}
+.control-center-menu .context-menu::indicator:checked {
+  width: 4px;
+  height: 12px;
+  background-color: var(--accent);
+  border-radius: var(--border-radius3);
+  margin-left: 0;
+}
+
+.cava-widget {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 0;
+}
+.cava-widget .widget-container {
+}
+
+/* Komorebi control + stack - glass menu, quiet buttons, active pill */
+.komorebi-control-widget .widget-container .icon {
+  color: var(--subtext1);
+}
+.komorebi-control-menu {
+  /* ACRYLIC 10% (widget-scoped only) - CSS alpha, no blur anywhere. */
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  min-width: 220px;
+}
+.komorebi-control-menu .button {
+  color: var(--subtext);
+  padding: 8px 12px;
+  margin: 2px 6px;
+  font-size: 15px;
+  border-radius: var(--border-radius2);
+  background-color: transparent;
+}
+.komorebi-control-menu .button:hover {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+}
+.komorebi-control-menu .button.active {
+  color: var(--accent);
+  background-color: var(--background2);
+}
+.komorebi-control-menu .button:disabled {
+  color: var(--overlay1);
+}
+.komorebi-control-menu .footer {
+  padding: 8px 12px;
+  border-top: 1px solid var(--hairline);
+}
+.komorebi-control-menu .footer .text {
+  font-size: 12px;
+  font-family: var(--system-font);
+  color: var(--subtext);
+}
+.komorebi-stack .window {
+  background-color: transparent;
+  border: none;
+  margin: 0 2px;
+  padding: 0 4px 2px 4px;
+}
+.komorebi-stack .window .label {
+  display: none;
+  max-width: 0px;
+  font-size: 0px;
+  color: transparent;
+}
+.komorebi-stack .window .icon {
+  padding: 0;
+  margin: 0;
+}
+.komorebi-stack .window.active {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid var(--accent);
+  border-radius: 0;
+  padding-bottom: 2px;
+}
+.komorebi-stack .window.active .label {
+  display: none;
+  max-width: 0px;
+  font-size: 0px;
+  color: transparent;
+}
+/* Alpha metrics - one tabular Nerd voice: icons + digits share JetBrainsMono
+   so live numbers never jitter the bar width. Higher specificity wins. */
+.yasb-bar .cpu-widget .widget-container .label,
+.yasb-bar .gpu-widget .widget-container .label,
+.yasb-bar .memory-widget .widget-container .label,
+.yasb-bar .disk-widget .widget-container .label,
+.yasb-bar .traffic-widget .widget-container .label {
+  font-family: var(--icons-font);
+  font-size: 12px;
+  font-weight: var(--fontWeight);
+  padding: 0 3px;
+}
+/* Traffic widget - compact */
+.traffic-widget {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.traffic-widget .widget-container .label {
+  padding-left: 2px;
+  font-size: 11px;
+  font-weight: var(--fontWeight);
+  color: var(--subtext0);
+}
+.traffic-widget .widget-container .label span {
+  font-family: var(--icons-font);
+  font-size: 11px;
+  color: var(--sky);
+  padding: 0 2px;
+}
+.traffic-widget .widget-container .label.offline {
+  color: var(--subtext);
+  font-size: 11px;
+}
+.traffic-widget .widget-container .label.offline span {
+  color: var(--redFlash);
+}
+.traffic-widget .widget-container .icon {
+  font-size: 12px;
+  color: var(--text);
+  padding-bottom: 0;
+}
+.traffic-widget .widget-container .icon.offline {
+  color: var(--redFlash);
+}
+
+/* Traffic popup menu - matches cpu/memory popup + Rangalipi theme */
+.traffic-menu {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  min-width: 320px;
+}
+.traffic-menu .header {
+  background: transparent;
+  padding: 12px 16px 8px 16px;
+  border-bottom: 1px solid var(--hairline);
+}
+.traffic-menu .header .title {
+  font-size: 16px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.traffic-menu .header .reset-button {
+  font-size: var(--fontSize);
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  padding: 4px 10px;
+  border-radius: var(--border-radius2);
+  background-color: rgba(29, 16, 21, 0.01);
+  color: var(--text);
+  border: 1px solid var(--hairline);
+}
+.traffic-menu .header .reset-button:hover {
+  background-color: var(--acrylic-hover);
+  color: var(--text);
+}
+.traffic-menu .header .reset-button:pressed {
+  background-color: var(--accent);
+  color: var(--accentText);
+}
+/* Big live speeds at top */
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+  background-color: transparent;
+  padding: 12px 10px 4px 10px;
+  margin: 0 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+.traffic-menu .speed-separator {
+  max-width: 1px;
+  background-color: var(--hairline);
+  margin: 24px 0 12px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+  font-size: 18px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  color: var(--text);
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+  font-size: 13px;
+  font-family: var(--system-font);
+  font-weight: var(--fontWeight);
+  color: var(--subtext);
+  padding-top: 4px;
+  padding-left: 4px;
+}
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+  color: var(--subtext);
+  font-size: 11px;
+  font-family: var(--system-font);
+  padding: 0 0 8px 0;
+}
+/* Session / Today / All-time sections */
+.traffic-menu .section-title {
+  font-size: 12px;
+  font-weight: var(--fontWeight);
+  color: var(--subtext);
+  margin-bottom: 4px;
+  font-family: var(--system-font);
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+  margin: 8px 8px 0 8px;
+  padding: 0 10px 10px 10px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--hairline);
+}
+.traffic-menu .alltime-section {
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+.traffic-menu .data-text {
+  font-size: 13px;
+  color: var(--subtext);
+  padding: 2px 0;
+  font-family: var(--system-font);
+}
+.traffic-menu .data-value {
+  font-weight: var(--fontWeight);
+  font-size: 13px;
+  color: var(--text);
+  font-family: var(--system-font);
+  padding: 2px 0;
+}
+/* Footer interface + internet status */
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+  font-size: 12px;
+  font-family: var(--system-font);
+  color: var(--subtext);
+  padding: 8px 0;
+}
+.traffic-menu .internet-info.connected {
+  background-color: rgba(29, 16, 21, 0.01);
+  color: var(--green);
+}
+.traffic-menu .internet-info.disconnected {
+  background-color: rgba(29, 16, 21, 0.01);
+  color: var(--redFlash);
+}
+.traffic-menu .internet-info.checking {
+  background-color: rgba(29, 16, 21, 0.01);
+  color: var(--subtext);
+}
+
+/* Omega quick-settings group - collapsible, Rangalipi */
+.omega-group .container {
+  background-color: transparent;
+  border-bottom: 3px dotted var(--hairline);
+}
+.omega-group .grouper-button {
+  font-size: 20px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  color: var(--sky);
+  border: none;
+  padding: 0 6px;
+}
+.omega-group .grouper-button:hover {
+  color: var(--text);
+}
+
+/* WiFi - sky icon, ethernet handled by same widget */
+.wifi-widget .widget-container .icon {
+  color: var(--sky);
+}
+.wifi-widget .widget-container .label {
+  color: var(--text);
+}
+.wifi-menu {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  min-width: 420px;
+  min-height: 340px;
+}
+.wifi-menu .header {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+.wifi-menu .header .title {
+  font-size: 14px;
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.wifi-menu .wifi-item {
+  padding: 10px 12px;
+  margin: 2px 6px;
+  border-radius: var(--border-radius2);
+}
+.wifi-menu .wifi-item:hover {
+  background-color: var(--acrylic-hover);
+}
+.wifi-menu .wifi-item[active="true"] {
+  background-color: rgba(29, 16, 21, 0.01);
+}
+.wifi-menu .wifi-item .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 18px;
+  color: var(--sky);
+}
+.wifi-menu .wifi-item .name {
+  font-size: 13px;
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.wifi-menu .footer {
+  font-size: 13px;
+  font-family: var(--system-font);
+  padding: 8px 12px;
+  color: var(--subtext);
+  border-top: 1px solid var(--hairline);
+}
+
+/* Battery - status colors */
+.battery-widget .widget-container .icon {
+  color: var(--green);
+  padding-right: 3px;
+}
+.battery-widget .widget-container .label {
+  color: var(--text);
+}
+.battery-widget .icon.status-critical,
+.battery-widget .label.status-critical {
+  color: var(--red);
+}
+.battery-widget .icon.status-low,
+.battery-widget .label.status-low {
+  color: var(--peach);
+}
+.battery-widget .icon.status-medium,
+.battery-widget .label.status-medium {
+  color: var(--yellow);
+}
+.battery-widget .icon.status-high,
+.battery-widget .label.status-high,
+.battery-widget .icon.status-full,
+.battery-widget .label.status-full {
+  color: var(--green);
+}
+.battery-widget .icon.status-charging,
+.battery-widget .label.status-charging {
+  color: var(--sky);
+}
+
+/* Bluetooth - state colors */
+.bluetooth-widget .widget-container .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 16px;
+}
+.bluetooth-widget .icon.bt-off,
+.bluetooth-widget .label.bt-off {
+  color: var(--overlay1);
+}
+.bluetooth-widget .icon.bt-on,
+.bluetooth-widget .label.bt-on {
+  color: var(--sky);
+}
+.bluetooth-widget .icon.bt-connected,
+.bluetooth-widget .label.bt-connected {
+  color: var(--green);
+}
+.bluetooth-menu {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  min-width: 420px;
+  min-height: 340px;
+}
+.bluetooth-menu .header {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+.bluetooth-menu .header .title {
+  font-size: 14px;
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.bluetooth-menu .section-title {
+  font-size: 12px;
+  font-weight: var(--fontWeight);
+  color: var(--subtext);
+  padding: 10px 12px 4px 12px;
+}
+.bluetooth-menu .bluetooth-item {
+  padding: 10px 12px;
+  margin: 2px 6px;
+  border-radius: var(--border-radius2);
+}
+.bluetooth-menu .bluetooth-item:hover {
+  background-color: var(--acrylic-hover);
+}
+.bluetooth-menu .bluetooth-item.active {
+  background-color: rgba(29, 16, 21, 0.01);
+}
+.bluetooth-menu .bluetooth-item .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 18px;
+  color: var(--sky);
+}
+.bluetooth-menu .bluetooth-item .name {
+  font-size: 13px;
+  font-weight: var(--fontWeight);
+  color: var(--text);
+}
+.bluetooth-menu .bluetooth-item .status {
+  font-size: 12px;
+  color: var(--subtext);
+}
+.bluetooth-menu .footer {
+  font-size: 13px;
+  font-family: var(--system-font);
+  padding: 8px 12px;
+  color: var(--subtext);
+  border-top: 1px solid var(--hairline);
+}
+
+/* GPU - pink icon, Mocha status colors */
+.gpu-widget .widget-container .icon {
+  color: var(--pink);
+  padding-bottom: 0;
+}
+.gpu-widget .widget-container .label {
+  color: var(--text);
+}
+.gpu-widget .label.status-low {
+  color: var(--green);
+}
+.gpu-widget .label.status-medium {
+  color: var(--yellow);
+}
+.gpu-widget .label.status-high {
+  color: var(--peach);
+}
+.gpu-widget .label.status-critical {
+  color: var(--red);
+}
+.gpu-popup {
+  /* ACRYLIC 50% - per-theme --acrylic. */
+  background-color: var(--acrylic);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  min-width: 400px;
+}
+.gpu-popup .header {
+  background: transparent;
+  padding: 12px 16px 8px 16px;
+  border-bottom: 1px solid var(--hairline);
+}
+.gpu-popup .header .text {
+  font-size: 16px;
+  font-weight: var(--fontWeight);
+  font-family: var(--system-font);
+  color: var(--text);
+}
+.gpu-popup .header .pin-btn {
+  font-size: 14px;
+  background: transparent;
+  font-family: "Segoe Fluent Icons";
+  border: none;
+  padding: 6px;
+  color: var(--subtext);
+}
+.gpu-popup .header .pin-btn:hover {
+  color: var(--text);
+}
+.gpu-popup .header .pin-btn.pinned {
+  color: var(--accent);
+}
+.gpu-popup .graph-container {
+  background: transparent;
+  min-height: 64px;
+}
+.gpu-popup .gpu-graph {
+  color: var(--pink);
+}
+.gpu-popup .gpu-graph-grid {
+  color: var(--background2);
+}
+.gpu-popup .gpu-temp-graph {
+  color: var(--peach);
+}
+.gpu-popup .graph-title {
+  font-size: 12px;
+  color: var(--subtext);
+  font-family: var(--system-font);
+  padding: 0 0 4px 14px;
+  margin-top: 12px;
+}
+.gpu-popup .graph-title.first {
+  margin-top: 0;
+}
+.gpu-popup .stats {
+  background: transparent;
+  padding: 8px 12px 12px 12px;
+}
+.gpu-popup .stats .stat-item {
+  background-color: rgba(29, 16, 21, 0.01);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius2);
+  padding: 8px 12px;
+  margin: 4px;
+}
+.gpu-popup .stats .stat-label {
+  font-size: 12px;
+  color: var(--subtext);
+  font-family: var(--system-font);
+  padding: 4px 4px 2px 4px;
+}
+.gpu-popup .stats .stat-value {
+  font-size: 20px;
+  font-weight: var(--fontWeight);
+  color: var(--text);
+  font-family: var(--system-font);
+  padding: 0 4px 8px 4px;
+}
+
+/* Disk - sapphire icon, Mocha status colors + group popup */
+.disk-widget .widget-container .icon {
+  color: var(--sapphire);
+  padding-bottom: 0;
+}
+.disk-widget .widget-container .label {
+  color: var(--text);
+}
+.disk-widget .widget-container .label.status-low {
+  color: var(--green);
+}
+.disk-widget .widget-container .label.status-medium {
+  color: var(--yellow);
+}
+.disk-widget .widget-container .label.status-high {
+  color: var(--peach);
+}
+.disk-widget .widget-container .label.status-critical {
+  color: var(--red);
+}
+.disk-group {
+  background-color: var(--glass);
+  border: 3px double var(--border);
+  border-radius: var(--border-radius);
+  padding: 10px 12px;
+}
+
+.disk-group-row {
+  min-width: 220px;
+  max-width: 260px;
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: var(--border-radius2);
+  border: 1px solid transparent;
+}
+.disk-group-row:hover {
+  background-color: var(--acrylic-hover);
+  border: 3px double var(--border);
+}
+.disk-group-label {
+  font-size: 12px;
+  color: var(--text);
+  font-family: var(--system-font);
+}
+.disk-group-label-size {
+  font-size: 11px;
+  color: var(--subtext);
+  font-family: var(--system-font);
+}
+.disk-group-label-bar {
+  max-height: 8px;
+  border: none;
+  background-color: rgba(29, 16, 21, 0.01);
+  border-radius: var(--border-radius2);
+}
+.disk-group-label-bar::chunk {
+  background-color: var(--sapphire);
+  border-radius: var(--border-radius2);
+}
+
+/* ==== Per-component padding (bar level, wins by order) ====
+   Tight scale: separators 0, icon-only 3, text/stats 5, groupers 6.
+   (Measured: base .widget stacked 6px padding + 2px margin per side
+   under container 8 + island grouppadding 8 = ~30px dead air per gap.) */
+.yasb-bar .separator-widget {
+  margin: 0;
+  padding: 0;
+}
+.yasb-bar .separator-widget .widget-container {
+  padding: 0;
+  margin: 0;
+}
+.yasb-bar .separator-widget .widget-container .label {
+  margin: 0;
+  padding: 0 2px;
+  font-size: 16px;
+  color: var(--accent-soft);
+}
+.yasb-bar .systray-widget .widget-container,
+.yasb-bar .control-center-widget .widget-container,
+.yasb-bar .wallpapers-widget .widget-container,
+.yasb-bar .home-widget .widget-container,
+.yasb-bar .notifications-widget .widget-container {
+  padding: 0 3px;
+}
+.yasb-bar .komorebi-workspaces .widget-container,
+.yasb-bar .komorebi-active-layout .widget-container,
+.yasb-bar .komorebi-control-widget .widget-container,
+.yasb-bar .clock-widget .widget-container,
+.yasb-bar .cava-widget .widget-container,
+.yasb-bar .cpu-widget .widget-container,
+.yasb-bar .gpu-widget .widget-container,
+.yasb-bar .memory-widget .widget-container,
+.yasb-bar .disk-widget .widget-container,
+.yasb-bar .traffic-widget .widget-container,
+.yasb-bar .wifi-widget .widget-container,
+.yasb-bar .bluetooth-widget .widget-container,
+.yasb-bar .volume-widget .widget-container,
+.yasb-bar .battery-widget .widget-container,
+.yasb-bar .media-widget .widget-container {
+  padding: 0 5px;
+}
+
+/* Grouper lateral spacing: streamlined padding across alpha (stats) and omega (controls) */
+.yasb-bar .alpha-group .grouper-button,
+.yasb-bar .omega-group .grouper-button {
+  padding: 0 3px;
+}
+
+.alpha-group .container,
+.omega-group .container {
+  padding: 0;
+  margin: 0;
+}
+
+.omega-group .container .widget-container,
+.alpha-group .container .widget-container,
+.yasb-bar .alpha-group .container .widget-container,
+.yasb-bar .omega-group .container .widget-container {
+  padding: 0 2px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.alpha-group .container .widget-container .label,
+.omega-group .container .widget-container .label,
+.alpha-group .container .widget-container .label.alt,
+.omega-group .container .widget-container .label.alt {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.alpha-group .container .widget-container .icon,
+.omega-group .container .widget-container .icon {
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 1px;
+  margin: 0;
+}
+
+/* Sys-stat icons: fixed 25px across cpu/gpu/memory/disk/traffic */
+.cpu-widget .widget-container .icon,
+.gpu-widget .widget-container .icon,
+.memory-widget .widget-container .icon,
+.disk-widget .widget-container .icon,
+.traffic-widget .widget-container .icon {
+  font-size: 25px;
+}
+
+/* Grouper active state: colored while expanded, plain when collapsed */
+.alpha-group .grouper-button:checked,
+.omega-group .grouper-button:checked {
+  color: var(--accent);
+}
+
+.yasb-bar .systray-widget {
+  margin: 0;
+}
+.yasb-bar .systray-widget .widget-container {
+  padding: 0 1px;
+}
+
+/* Frames stay Madhubani double */
