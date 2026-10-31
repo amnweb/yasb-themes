@@ -1,0 +1,11 @@
+{
+    "id": "155729a6-dd98-4405-bbed-801c87ac5ed2",
+    "name": "Sequoia Menu Bar",
+    "description": "A macOS Sequoia-inspired YASB bar with a transparent menu bar, notch clock and Pomodoro, liquid-glass panels and a full Control Center.",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/155729a6-dd98-4405-bbed-801c87ac5ed2/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/155729a6-dd98-4405-bbed-801c87ac5ed2/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/155729a6-dd98-4405-bbed-801c87ac5ed2/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/155729a6-dd98-4405-bbed-801c87ac5ed2/image.png",
+    "author": "rifqiabd",
+    "publish_date": "2026-10-31T02:18:50.527094"
+}
