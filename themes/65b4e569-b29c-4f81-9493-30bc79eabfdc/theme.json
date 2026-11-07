@@ -1,0 +1,11 @@
+{
+    "id": "65b4e569-b29c-4f81-9493-30bc79eabfdc",
+    "name": "Windowsarchy Lite",
+    "description": "Dark, minimal Omarchy-inspired bar for Komorebi workspaces, layout, taskbar, media, volume, CPURAM, notes, Wi-Fi and power menu. Plain config and CSS, no extra scripts.",
+    "style": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/65b4e569-b29c-4f81-9493-30bc79eabfdc/styles.css",
+    "config": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/65b4e569-b29c-4f81-9493-30bc79eabfdc/config.yaml",
+    "readme": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/65b4e569-b29c-4f81-9493-30bc79eabfdc/readme.md",
+    "image": "https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/65b4e569-b29c-4f81-9493-30bc79eabfdc/image.png",
+    "author": "Limestudio90",
+    "publish_date": "2026-11-07T11:24:46.140418"
+}
