@@ -1,0 +1,1798 @@
+/*
+ * Catelier Lite — a Catppuccin Mocha theme for YASB, from the YASB theme gallery.
+ * The full version, with all four flavors, accent and translucency options and
+ * GlazeWM support, is at https://github.com/simsrw73/catelier
+ *
+ * Visual hierarchy (three tiers):
+ *   1. primary   — time, focused workspace, active window      → --fg
+ *   2. secondary — media, controls, status icons               → --fg-secondary
+ *   3. tertiary  — metrics                                     → --fg-faint / --fg-subtle
+ *
+ * Colors come from roles (--fg-*, --bar-rgb, --pill-bg, --popup*) that each flavor
+ * file maps to its palette, so Latte can trade shades for contrast.
+ * Accent colors are used only for state: accent = focus, peach = something pending,
+ * red = critical threshold.
+ *
+ * Every numeric label uses the monospace Nerd Font and a min-width so nothing shifts.
+ */
+
+/* ── Settings ──────────────────────────────────────────────────────────────
+ * Lite has the Mocha palette built in, below. The full version adds Latte, Frappé
+ * and Macchiato: https://github.com/simsrw73/catelier
+ */
+/* Catppuccin Mocha, from github.com/catppuccin/palette (MIT) */
+
+:root {
+  --rosewater: #f5e0dc;
+  --rosewater-rgb: 245, 224, 220;
+  --flamingo: #f2cdcd;
+  --flamingo-rgb: 242, 205, 205;
+  --pink: #f5c2e7;
+  --pink-rgb: 245, 194, 231;
+  --mauve: #cba6f7;
+  --mauve-rgb: 203, 166, 247;
+  --red: #f38ba8;
+  --red-rgb: 243, 139, 168;
+  --maroon: #eba0ac;
+  --maroon-rgb: 235, 160, 172;
+  --peach: #fab387;
+  --peach-rgb: 250, 179, 135;
+  --yellow: #f9e2af;
+  --yellow-rgb: 249, 226, 175;
+  --green: #a6e3a1;
+  --green-rgb: 166, 227, 161;
+  --teal: #94e2d5;
+  --teal-rgb: 148, 226, 213;
+  --sky: #89dceb;
+  --sky-rgb: 137, 220, 235;
+  --sapphire: #74c7ec;
+  --sapphire-rgb: 116, 199, 236;
+  --blue: #89b4fa;
+  --blue-rgb: 137, 180, 250;
+  --lavender: #b4befe;
+  --lavender-rgb: 180, 190, 254;
+  --text: #cdd6f4;
+  --text-rgb: 205, 214, 244;
+  --subtext1: #bac2de;
+  --subtext1-rgb: 186, 194, 222;
+  --subtext0: #a6adc8;
+  --subtext0-rgb: 166, 173, 200;
+  --overlay2: #9399b2;
+  --overlay2-rgb: 147, 153, 178;
+  --overlay1: #7f849c;
+  --overlay1-rgb: 127, 132, 156;
+  --overlay0: #6c7086;
+  --overlay0-rgb: 108, 112, 134;
+  --surface2: #585b70;
+  --surface2-rgb: 88, 91, 112;
+  --surface1: #45475a;
+  --surface1-rgb: 69, 71, 90;
+  --surface0: #313244;
+  --surface0-rgb: 49, 50, 68;
+  --base: #1e1e2e;
+  --base-rgb: 30, 30, 46;
+  --mantle: #181825;
+  --mantle-rgb: 24, 24, 37;
+  --crust: #11111b;
+  --crust-rgb: 17, 17, 27;
+
+  /* Roles: styles.css uses these, not the palette names, so each flavor can
+     map them for contrast. The dark flavors use them as the palette intends. */
+  /* Surfaces */
+  --bar-rgb: var(--crust-rgb);
+  /* Pills: surface0 at 45% over crust, as one solid color so the pill can be made
+     see-through on its own when the bar is translucent */
+  --pill-rgb: 31, 32, 45;
+  --pill-bg: rgba(var(--pill-rgb), var(--pill-glass));
+  --popup: var(--mantle);
+  --popup-rgb: var(--mantle-rgb);
+  /* Text, strongest to faintest */
+  --fg: var(--text);
+  --fg-soft: var(--subtext1);
+  --fg-secondary: var(--subtext0);
+  --fg-muted: var(--overlay2);
+  --fg-subtle: var(--overlay1);
+  --fg-faint: var(--overlay0);
+  /* Accent used unless styles.css picks one, and text on accent fills */
+  --flavor-accent: var(--mauve);
+  --flavor-accent-rgb: var(--mauve-rgb);
+  --on-accent: var(--crust);
+}
+
+:root {
+  /* Accent: the flavor's default (mauve), or any Catppuccin
+     accent name, for example var(--blue) and var(--blue-rgb). Change both lines. */
+  --accent: var(--flavor-accent);
+  --accent-rgb: var(--flavor-accent-rgb);
+
+  /* Translucency: how much of the flavor color the bar and its pills keep over the
+     blurred desktop. Change both numbers:
+       Off 1 / 1, Subtle 0.6 / 0.8, Medium 0.4 / 0.7, Strong 0.2 / 0.6.
+     Pills keep more color than the bar so the text on them stays readable.
+     Needs Windows "Transparency effects" and blur_effect on the bar in config.yaml. */
+  --bar-glass: 1;
+  --pill-glass: 1;
+
+  /* Fonts: each list falls back to a font that ships with Windows 11 or YASB.
+     Inter is optional; without it, text uses Segoe UI Variable. */
+  --font-text: "Inter", "Segoe UI Variable Text", "Segoe UI";
+  --font-mono:
+    "JetBrainsMono Nerd Font Mono", "JetBrainsMono NFM", "Cascadia Mono",
+    "Consolas";
+  --font-icon: "JetBrainsMono Nerd Font Propo", "JetBrainsMono NFP";
+
+  /* Shape */
+  --radius-outer: 8px; /* bar + popups (matches Windows 11 "normal" rounded corners) */
+  --radius-pill: 6px;
+  --radius-item: 4px;
+}
+
+/* ───────────────────────────── Base ───────────────────────────── */
+
+* {
+  font-family: var(--font-text), var(--font-icon);
+  font-size: 13px;
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.yasb-bar {
+  background-color: rgba(var(--bar-rgb), var(--bar-glass));
+  border-radius: var(--radius-outer);
+  padding: 0 4px;
+}
+
+.container-left,
+.container-center,
+.container-right {
+  margin: 0;
+  padding: 0;
+}
+
+.widget {
+  padding: 0;
+  margin: 0;
+}
+
+.widget .widget-container {
+  padding: 0 6px;
+  margin: 0;
+  background-color: transparent;
+  border-radius: var(--radius-item);
+}
+
+.widget .label {
+  padding: 0;
+}
+
+.icon {
+  font-family: var(--font-icon);
+  font-size: 15px;
+  padding: 0 6px 0 0;
+}
+
+/* ───────────────────────────── Pills (grouper) ───────────────────────────── */
+
+.wm-pill .container,
+.time-pill .container,
+.metrics-pill .container,
+.media-pill .container,
+.controls-pill .container,
+.status-pill .container {
+  background-color: var(--pill-bg);
+  border-radius: var(--radius-pill);
+  padding: 0 6px;
+  margin: 5px 4px;
+}
+
+/* Standalone single-icon items (launchpad, power) get the same pill shape */
+.launchpad-widget .widget-container,
+.power-menu-widget .widget-container {
+  background-color: var(--pill-bg);
+  border-radius: var(--radius-pill);
+  padding: 0 10px;
+  margin: 5px 4px;
+}
+
+.launchpad-widget .widget-container:hover,
+.power-menu-widget .widget-container:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+
+.launchpad-widget .icon,
+.launchpad-widget .label,
+.power-menu-widget .icon,
+.power-menu-widget .label {
+  font-family: var(--font-icon);
+  font-size: 15px;
+  color: var(--fg-secondary);
+  padding: 0 2px;
+}
+/* Power stands out: Catppuccin red, the strongest red in the palette */
+.power-menu-widget .icon,
+.power-menu-widget .label {
+  color: var(--red);
+}
+
+/* Qt only honours :hover on the element being styled, so hover feedback is a
+   background on the hovered container rather than a color on its children. */
+.power-menu-widget .widget-container:hover {
+  background-color: rgba(var(--red-rgb), 0.22);
+}
+
+/* ───────────────────────────── Window manager ───────────────────────────── */
+
+/* Icon-only labels get 2px side padding: Propo glyphs can overhang their advance
+   width and QLabel clips anything outside its rect. */
+.komorebi-control-widget .icon,
+.komorebi-control-widget .label,
+.komorebi-active-layout .label {
+  font-family: var(--font-icon);
+  font-size: 15px;
+  color: var(--fg-secondary);
+  padding: 0 2px;
+}
+
+.komorebi-control-widget .widget-container:hover,
+.komorebi-active-layout .widget-container:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+
+/* Stack: only visible when the focused container is a stack */
+.komorebi-stack .widget-container {
+  border-left: 1px solid rgba(var(--overlay0-rgb), 0.35);
+  border-right: 1px solid rgba(var(--overlay0-rgb), 0.35);
+  padding: 0 6px;
+  margin: 3px 6px;
+}
+/* Active window is an underline, not a fill, so it can't be confused with the
+   active workspace. Every window reserves the 2px so the bar doesn't shift. */
+.komorebi-stack .window {
+  padding: 0 6px;
+  margin: 0 1px;
+  border-radius: var(--radius-item);
+  border-bottom: 1px solid transparent;
+}
+.komorebi-stack .window .label {
+  font-size: 12px;
+  color: var(--fg-subtle);
+}
+.komorebi-stack .window:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+.komorebi-stack .window.active {
+  background-color: var(--crust);
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+}
+.komorebi-stack .window.active .label {
+  color: var(--fg);
+}
+
+/* Workspaces */
+.komorebi-workspaces .widget-container {
+  padding: 0 2px;
+}
+.komorebi-workspaces .ws-btn {
+  font-family: var(--font-text);
+  font-size: 12px;
+  min-width: 24px;
+  padding: 0 8px;
+  min-height: 26px;
+  max-height: 26px;
+  margin: 0 1px;
+  border: none;
+  border-radius: var(--radius-item);
+  background-color: transparent;
+}
+.komorebi-workspaces .ws-btn .label,
+.komorebi-workspaces .ws-btn.empty .label {
+  color: var(--fg-faint);
+  font-family: var(--font-text);
+  font-size: 12px;
+}
+.komorebi-workspaces .ws-btn.populated .label {
+  color: var(--fg-secondary);
+}
+.komorebi-workspaces .ws-btn.active {
+  background-color: rgba(var(--accent-rgb), 0.18);
+}
+.komorebi-workspaces .ws-btn.active .label {
+  color: var(--accent);
+  font-weight: 700;
+}
+.komorebi-workspaces .ws-btn:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+.komorebi-workspaces .offline-status {
+  color: var(--fg-faint);
+}
+
+/* GlazeWM: not in config.yaml by default; https://github.com/simsrw73/catelier/blob/main/docs/glazewm.md shows how to swap it in.
+   Same look as the komorebi widgets. "active" is the workspace shown on this
+   monitor; "focused" is the one with keyboard focus, so it gets the accent.
+   The focused_* rules must come after the active_* ones. Workspace buttons set
+   their text directly, or in a .label child when app_icons is on, so both are styled. */
+.glazewm-workspaces .widget-container {
+  padding: 0 2px;
+}
+.glazewm-workspaces .ws-btn {
+  font-family: var(--font-text);
+  font-size: 12px;
+  color: var(--fg-faint);
+  min-width: 24px;
+  padding: 0 8px;
+  min-height: 26px;
+  max-height: 26px;
+  margin: 0 1px;
+  border: none;
+  border-radius: var(--radius-item);
+  background-color: transparent;
+}
+.glazewm-workspaces .ws-btn .label {
+  font-family: var(--font-text);
+  font-size: 12px;
+  color: var(--fg-faint);
+}
+.glazewm-workspaces .ws-btn.populated,
+.glazewm-workspaces .ws-btn.populated .label {
+  color: var(--fg-secondary);
+}
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
+  background-color: rgba(var(--surface1-rgb), 0.45);
+}
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_populated .label,
+.glazewm-workspaces .ws-btn.active_empty,
+.glazewm-workspaces .ws-btn.active_empty .label {
+  color: var(--fg);
+}
+.glazewm-workspaces .ws-btn.focused_populated,
+.glazewm-workspaces .ws-btn.focused_empty {
+  background-color: rgba(var(--accent-rgb), 0.18);
+}
+.glazewm-workspaces .ws-btn.focused_populated,
+.glazewm-workspaces .ws-btn.focused_populated .label,
+.glazewm-workspaces .ws-btn.focused_empty,
+.glazewm-workspaces .ws-btn.focused_empty .label {
+  color: var(--accent);
+  font-weight: 700;
+}
+.glazewm-workspaces .ws-btn .icon {
+  padding: 0 0 0 4px;
+}
+.glazewm-workspaces .ws-btn:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+.glazewm-workspaces .offline-status {
+  color: var(--fg-faint);
+}
+
+/* Tiling direction: an icon button, like the komorebi layout icon */
+.glazewm-tiling-direction .btn {
+  font-family: var(--font-icon);
+  font-size: 15px;
+  color: var(--fg-secondary);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-item);
+  padding: 0 6px;
+  min-height: 26px;
+  max-height: 26px;
+}
+.glazewm-tiling-direction .btn:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+
+/* Binding mode: only shown while a mode such as resize is on, so it uses peach,
+   the theme's "something is waiting on you" color */
+.glazewm-binding-mode .widget-container {
+  padding: 0 6px;
+}
+.glazewm-binding-mode .icon {
+  font-family: var(--font-icon);
+  font-size: 14px;
+  color: var(--peach);
+  padding: 0 5px 0 0;
+}
+.glazewm-binding-mode .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--peach);
+}
+.glazewm-binding-mode .label-offline {
+  color: var(--fg-faint);
+}
+.glazewm-binding-mode .widget-container:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+
+/* Active window title — plain text, no pill */
+.active-window-widget .widget-container {
+  padding: 0 10px;
+}
+.active-window-widget .label {
+  color: var(--fg);
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 2px;
+}
+.active-window-widget .label-icon {
+  padding: 0 8px 0 0;
+}
+
+/* ───────────────────────────── Time ───────────────────────────── */
+
+.time-pill .container {
+  padding: 0 10px;
+}
+.clock-widget .widget-container {
+  padding: 0 4px;
+}
+.clock-widget.time .label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fg);
+}
+.clock-widget.date .label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-subtle);
+}
+.clock-widget .widget-container:hover {
+  background-color: rgba(var(--surface1-rgb), 0.5);
+}
+
+/* ───────────────────────────── Metrics (tertiary, fixed width) ───────────────────────────── */
+
+.metrics-pill .widget-container {
+  padding: 0 6px;
+}
+.metrics-pill .icon {
+  font-size: 13px;
+  color: var(--fg-faint);
+  padding: 0 5px 0 0;
+}
+.metrics-pill .label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-subtle);
+}
+/* min-widths sized for the widest value ("100%", "999 MB/s") so nothing moves */
+.memory-widget .label,
+.cpu-widget .label,
+.gpu-widget .label,
+.disk-widget .label,
+.ssd-health-widget .label {
+  min-width: 32px;
+}
+.traffic-widget .label {
+  min-width: 66px;
+}
+
+.metrics-pill .widget-container:hover {
+  background-color: rgba(var(--surface1-rgb), 0.45);
+}
+
+/* Only a critical reading gets color */
+.memory-widget .widget-container .label.status-critical,
+.memory-widget .widget-container .icon.status-critical,
+.cpu-widget .widget-container .label.status-critical,
+.cpu-widget .widget-container .icon.status-critical,
+.gpu-widget .widget-container .label.status-critical,
+.gpu-widget .widget-container .icon.status-critical,
+.disk-widget .widget-container .label.status-critical,
+.disk-widget .widget-container .icon.status-critical {
+  color: var(--red);
+}
+
+/* ───────────────────────────── Media ───────────────────────────── */
+
+.media-lite-widget {
+  padding: 0;
+  margin: 0;
+}
+.media-lite-widget .widget-container {
+  padding: 0 6px;
+}
+.media-lite-widget .text {
+  padding: 0 0 0 6px;
+}
+.media-lite-widget .title,
+.media-lite-widget .label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fg-secondary);
+}
+.media-lite-widget .artist {
+  font-size: 11px;
+  color: var(--fg-subtle);
+}
+
+.audio-visualizer-widget .widget-container {
+  padding: 0 6px;
+}
+.audio-visualizer-widget .audio-visualizer-canvas {
+  -qproperty-fillbrush: linear-gradient(
+    to top,
+    var(--accent),
+    var(--yellow) 50%,
+    var(--red)
+  );
+}
+
+/* ───────────────────────────── Controls ───────────────────────────── */
+
+.controls-pill .widget-container {
+  padding: 0 6px;
+}
+.controls-pill .icon,
+.controls-pill .label {
+  font-family: var(--font-icon);
+  font-size: 15px;
+  color: var(--fg-secondary);
+  padding: 0 2px;
+}
+.controls-pill .widget-container:hover,
+.status-pill .widget-container:hover {
+  background-color: rgba(var(--surface1-rgb), 0.5);
+}
+
+/* Systray sits first, separated from the controls by a hairline */
+.systray {
+  background: transparent;
+  border: none;
+  border-right: 1px solid rgba(var(--overlay0-rgb), 0.35);
+  padding: 0 6px 0 0;
+  margin: 3px 6px 3px 0;
+}
+.systray .unpinned-container,
+.systray .pinned-container {
+  background: transparent;
+}
+.systray .button {
+  border-radius: var(--radius-item);
+  min-height: 24px;
+  max-height: 24px;
+  padding: 0 5px;
+  margin: 0 1px;
+}
+.systray .button:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+/* Individual tray icons highlight; the tray group itself shouldn't */
+.controls-pill .systray .widget-container:hover,
+.systray .widget-container:hover {
+  background-color: transparent;
+}
+.systray .unpinned-visibility-btn {
+  font-family: var(--font-icon);
+  font-size: 11px;
+  color: var(--fg-faint);
+  border-radius: var(--radius-item);
+  padding: 0 4px;
+}
+
+/* ───────────────────────────── Status (only present when something is pending) ───────────────────────────── */
+
+.status-pill .widget-container {
+  padding: 0 6px;
+}
+.status-pill .icon {
+  font-family: var(--font-icon);
+  font-size: 14px;
+  color: var(--fg-secondary);
+  padding: 0 5px 0 0;
+}
+.status-pill .label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--peach);
+}
+.github-widget .label,
+.github-widget .icon {
+  font-family: var(--font-icon);
+  font-size: 15px;
+  color: var(--fg-secondary);
+  padding: 0 2px;
+}
+
+/* ───────────────────────────── Popups, menus, tooltips (one shared look) ─────────────────────────────
+ *
+ * Spacing rhythm used everywhere:
+ *   16px  outer inset (content never touches a popup edge)
+ *   12px  gap between groups / sections
+ *    8px  gap between items in a list
+ *   10px 12px  padding inside a clickable item
+ * Popups with header/footer bands pad the bands themselves so the band backgrounds
+ * still reach the edges; plain popups pad the popup root.
+ * Internal popup icons from yasb default to Segoe Fluent Icons, so those are set explicitly.
+ */
+
+.tooltip {
+  background-color: rgba(var(--popup-rgb), 0.94);
+  border: 1px solid var(--surface0);
+  border-radius: var(--radius-outer);
+  color: var(--fg-soft);
+  padding: 8px 12px;
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cpu-popup,
+.memory-popup,
+.gpu-popup,
+.traffic-menu,
+.disk-group,
+.libre-menu,
+.clock-popup,
+.komorebi-control-menu,
+.komorebi-layout-menu,
+.media-lite-menu,
+.control-center-menu,
+.bluetooth-menu,
+.wifi-menu,
+.audio-menu,
+.github-menu,
+.systray-popup,
+.power-menu-compact {
+  background-color: rgba(var(--popup-rgb), 0.9);
+  border-radius: var(--radius-outer);
+  color: var(--fg);
+}
+
+/* Shared header / footer bands */
+.bluetooth-menu .header,
+.wifi-menu .header,
+.github-menu .header,
+.traffic-menu .header,
+.libre-menu .header,
+.cpu-popup .header,
+.memory-popup .header,
+.gpu-popup .header {
+  background-color: rgba(var(--crust-rgb), 0.35);
+  border: none;
+  border-bottom: 1px solid rgba(var(--surface0-rgb), 0.9);
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.bluetooth-menu .footer,
+.wifi-menu .footer,
+.github-menu .footer {
+  background-color: rgba(var(--crust-rgb), 0.35);
+  border: none;
+  border-top: 1px solid rgba(var(--surface0-rgb), 0.9);
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--fg-subtle);
+}
+
+/* Shared small buttons inside popups (never Qt's default grey bevel) */
+.bluetooth-menu .footer .settings-button,
+.wifi-menu .footer .settings-button,
+.traffic-menu .header .reset-button,
+.power-menu-compact .manage-accounts {
+  background-color: rgba(var(--surface0-rgb), 0.7);
+  border: 1px solid rgba(var(--surface1-rgb), 0.6);
+  border-radius: var(--radius-item);
+  color: var(--fg-soft);
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+.bluetooth-menu .footer .settings-button:hover,
+.wifi-menu .footer .settings-button:hover,
+.traffic-menu .header .reset-button:hover,
+.power-menu-compact .manage-accounts:hover {
+  background-color: rgba(var(--surface1-rgb), 0.8);
+  color: var(--fg);
+}
+.bluetooth-menu .footer .scan-icon,
+.wifi-menu .footer .refresh-icon,
+.cpu-popup .header .pin-btn,
+.memory-popup .header .pin-btn,
+.gpu-popup .header .pin-btn {
+  font-family: "Segoe Fluent Icons";
+  font-size: 13px;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-item);
+  color: var(--fg-muted);
+  min-width: 30px;
+  min-height: 30px;
+  padding: 0;
+}
+.bluetooth-menu .footer .scan-icon:hover,
+.wifi-menu .footer .refresh-icon:hover,
+.cpu-popup .header .pin-btn:hover,
+.memory-popup .header .pin-btn:hover,
+.gpu-popup .header .pin-btn:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+  color: var(--fg);
+}
+.cpu-popup .header .pin-btn.pinned,
+.memory-popup .header .pin-btn.pinned,
+.gpu-popup .header .pin-btn.pinned {
+  color: var(--accent);
+}
+
+/* Right-click / dropdown menus */
+.context-menu {
+  background-color: rgba(var(--popup-rgb), 0.96);
+  border: 1px solid var(--surface0);
+  border-radius: var(--radius-outer);
+  padding: 6px;
+  font-family: var(--font-text);
+}
+.context-menu::item {
+  color: var(--fg);
+  padding: 8px 14px;
+  margin: 1px 0;
+  border-radius: var(--radius-item);
+  background-color: transparent;
+  min-width: 120px;
+}
+.context-menu::item:selected {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+.context-menu::separator {
+  height: 1px;
+  background-color: var(--surface0);
+  margin: 4px 8px;
+}
+.context-menu::item:disabled {
+  color: var(--fg-faint);
+}
+.context-menu::indicator:checked {
+  width: 4px;
+  height: 12px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+/* ── CPU / memory / GPU stat popups ── */
+.cpu-popup,
+.memory-popup,
+.gpu-popup {
+  min-width: 400px;
+}
+.cpu-popup .header .text,
+.memory-popup .header .text,
+.gpu-popup .header .text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+}
+/* "Utilization" is a bare label inserted above the graph frame, so it carries its own inset */
+.cpu-popup .graph-container,
+.memory-popup .graph-container,
+.gpu-popup .graph-container {
+  background: transparent;
+  min-height: 72px;
+  padding: 0 16px 4px 16px;
+}
+.cpu-popup .graph-title,
+.memory-popup .graph-title,
+.gpu-popup .graph-title {
+  font-size: 11px;
+  color: var(--fg-subtle);
+  padding: 16px 16px 8px 16px;
+}
+.cpu-popup .cpu-graph,
+.memory-popup .memory-graph,
+.gpu-popup .gpu-graph {
+  color: var(--accent);
+}
+.cpu-popup .cpu-graph-grid,
+.memory-popup .memory-graph-grid,
+.gpu-popup .gpu-graph-grid {
+  color: rgba(var(--text-rgb), 0.05);
+}
+.cpu-popup .stats,
+.memory-popup .stats,
+.gpu-popup .stats {
+  background: transparent;
+  padding: 8px 12px 16px 12px;
+}
+.cpu-popup .stats .stat-item,
+.memory-popup .stats .stat-item,
+.gpu-popup .stats .stat-item {
+  background-color: rgba(var(--surface0-rgb), 0.45);
+  border: 1px solid rgba(var(--surface0-rgb), 0.8);
+  border-radius: var(--radius-pill);
+  padding: 10px 12px;
+  margin: 4px;
+}
+.cpu-popup .stats .stat-label,
+.memory-popup .stats .stat-label,
+.gpu-popup .stats .stat-label {
+  font-size: 11px;
+  color: var(--fg-subtle);
+  padding: 0 0 4px 0;
+}
+.cpu-popup .stats .stat-value,
+.memory-popup .stats .stat-value,
+.gpu-popup .stats .stat-value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  padding: 0;
+}
+
+/* ── Traffic ── */
+.traffic-menu {
+  min-width: 320px;
+}
+/* The traffic header is a plain QWidget (no padding/background), so the title and
+   reset button carry the spacing themselves. */
+.traffic-menu .header .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+  padding: 14px 16px;
+}
+.traffic-menu .header .reset-button {
+  margin: 10px 12px 10px 0;
+}
+.traffic-menu .interface-info {
+  font-size: 12px;
+  color: var(--fg);
+  padding: 4px 16px 0 16px;
+}
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+  background-color: transparent;
+  padding: 4px 12px;
+  margin: 16px 16px 8px 16px;
+}
+.traffic-menu .speed-separator {
+  max-width: 1px;
+  background-color: rgba(var(--surface1-rgb), 0.6);
+  margin: 24px 0 12px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fg);
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+  font-size: 12px;
+  color: var(--fg-secondary);
+  padding: 4px 0 0 4px;
+}
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+  font-size: 11px;
+  color: var(--fg-subtle);
+  padding: 0 0 4px 0;
+}
+.traffic-menu .section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-subtle);
+  margin-bottom: 6px;
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+  background-color: rgba(var(--surface0-rgb), 0.35);
+  border: none;
+  border-radius: var(--radius-pill);
+  margin: 0 16px 10px 16px;
+  padding: 10px 12px;
+}
+.traffic-menu .alltime-section {
+  margin-bottom: 16px;
+}
+.traffic-menu .data-text {
+  color: var(--fg-subtle);
+  font-size: 12px;
+  padding: 3px 0;
+}
+.traffic-menu .data-value {
+  font-family: var(--font-mono);
+  color: var(--fg);
+  font-size: 12px;
+  padding: 3px 0;
+}
+.traffic-menu .internet-info {
+  font-size: 11px;
+  color: var(--fg-subtle);
+  padding: 2px 16px 16px 16px;
+}
+
+/* ── Disk group ── */
+.disk-group {
+  padding: 12px;
+}
+.disk-group-row {
+  min-width: 260px;
+  max-width: 260px;
+  padding: 10px 12px;
+  margin: 2px 0;
+  border: none;
+  border-radius: var(--radius-pill);
+}
+.disk-group-row:hover {
+  background-color: rgba(var(--surface1-rgb), 0.5);
+}
+.disk-group-label {
+  font-size: 12px;
+  color: var(--fg);
+}
+.disk-group-label-size {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-subtle);
+}
+.disk-group-label-bar {
+  max-height: 4px;
+  border: none;
+  border-radius: 2px;
+  background-color: rgba(var(--surface1-rgb), 0.6);
+  margin-top: 6px;
+}
+.disk-group-label-bar::chunk {
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+/* ── Calendar ── */
+.clock-popup.calendar {
+  min-width: 440px;
+  padding: 16px 20px 20px 20px;
+}
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
+  background-color: transparent;
+  color: var(--fg-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border: none;
+  outline: none;
+  margin: 0;
+}
+.clock-popup.calendar .calendar-table::item:selected {
+  color: var(--on-accent);
+  background-color: var(--accent);
+  border-radius: 12px;
+  font-weight: 700;
+}
+.clock-popup.calendar .day-label,
+.clock-popup.calendar .month-label,
+.clock-popup.calendar .year-label {
+  font-family: var(--font-text);
+  font-size: 14px;
+  color: var(--fg-secondary);
+}
+.clock-popup.calendar .day-label {
+  margin-top: 12px;
+}
+.clock-popup.calendar .date-label {
+  font-family: var(--font-text);
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--fg);
+  margin-top: -12px;
+}
+.clock-popup.calendar .week-label {
+  font-size: 11px;
+  color: var(--fg-faint);
+}
+.clock-popup.calendar .extended-container {
+  border-left: 1px solid rgba(var(--surface1-rgb), 0.6);
+  background-color: transparent;
+  padding-left: 16px;
+  margin-left: 8px;
+}
+
+/* ── Komorebi menus ── */
+.komorebi-control-menu {
+  padding: 16px;
+  min-width: 240px;
+}
+.komorebi-control-menu .button {
+  background-color: rgba(var(--surface0-rgb), 0.6);
+  color: var(--fg-secondary);
+  font-family: var(--font-icon);
+  font-size: 18px;
+  padding: 12px 18px;
+  margin: 0 4px;
+  border: none;
+  border-radius: var(--radius-pill);
+}
+.komorebi-control-menu .button:hover {
+  background-color: rgba(var(--surface1-rgb), 0.8);
+  color: var(--fg);
+}
+.komorebi-control-menu .button.active {
+  background-color: rgba(var(--accent-rgb), 0.2);
+  color: var(--accent);
+}
+.komorebi-control-menu .button:disabled,
+.komorebi-control-menu .button.active:disabled {
+  color: var(--fg-faint);
+  background-color: rgba(var(--surface0-rgb), 0.3);
+}
+.komorebi-control-menu .footer {
+  padding-top: 14px;
+}
+.komorebi-control-menu .footer .text {
+  font-size: 11px;
+  color: var(--fg-subtle);
+}
+
+.komorebi-layout-menu {
+  padding: 8px;
+  min-width: 220px;
+}
+.komorebi-layout-menu .menu-item {
+  padding: 9px 12px;
+  margin: 1px 0;
+  border-radius: var(--radius-item);
+}
+.komorebi-layout-menu .menu-item:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+.komorebi-layout-menu .menu-item-icon {
+  font-family: var(--font-icon);
+  font-size: 15px;
+  color: var(--fg-secondary);
+  padding: 0 12px 0 2px;
+}
+.komorebi-layout-menu .menu-item-text {
+  font-size: 12px;
+  color: var(--fg);
+}
+.komorebi-layout-menu .separator {
+  max-height: 1px;
+  background-color: var(--surface0);
+  margin: 6px 8px;
+}
+
+/* ── Media popup ── */
+.media-lite-menu {
+  min-width: 300px;
+  max-width: 300px;
+}
+.media-lite-menu .header {
+  padding: 20px 20px 0 20px;
+}
+.media-lite-menu .controls {
+  padding: 20px 20px 24px 20px;
+}
+.media-lite-menu .title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.media-lite-menu .artist {
+  font-size: 12px;
+  color: var(--fg-secondary);
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+.media-lite-menu .btn {
+  font-family: "Segoe Fluent Icons";
+  font-size: 14px;
+  color: var(--fg-soft);
+  margin: 4px;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+}
+.media-lite-menu .btn:hover {
+  background-color: rgba(var(--text-rgb), 0.1);
+  color: var(--fg);
+}
+.media-lite-menu .btn.play {
+  background-color: var(--fg);
+  color: var(--crust);
+  font-size: 18px;
+}
+.media-lite-menu .btn.shuffle.active,
+.media-lite-menu .btn.repeat.active {
+  color: var(--accent);
+}
+.media-lite-menu .btn.disabled,
+.media-lite-menu .btn.disabled:hover {
+  color: var(--fg-faint);
+  background-color: transparent;
+}
+.media-lite-menu .playback-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-subtle);
+}
+.media-lite-menu .progress-slider {
+  height: 10px;
+  margin: 4px 0;
+}
+.media-lite-menu .progress-slider::groove {
+  background: rgba(var(--text-rgb), 0.12);
+  height: 3px;
+  border-radius: 2px;
+}
+.media-lite-menu .progress-slider::sub-page {
+  background: var(--accent);
+  border-radius: 2px;
+}
+.media-lite-menu .source {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.media-lite-menu .volume-button {
+  font-family: "Segoe Fluent Icons";
+  font-size: 16px;
+  color: var(--fg-soft);
+  background-color: transparent;
+  border: none;
+  min-width: 28px;
+  min-height: 28px;
+}
+.media-lite-menu .volume-slider-popup {
+  background-color: var(--popup);
+  border: 1px solid var(--surface0);
+  border-radius: var(--radius-outer);
+  padding: 14px 10px;
+}
+
+/* ── Bluetooth & Wi-Fi ── */
+.bluetooth-menu {
+  min-width: 360px;
+  min-height: 420px;
+}
+.wifi-menu {
+  min-width: 360px;
+  min-height: 240px;
+}
+.bluetooth-menu .header .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.bluetooth-menu .header .power-button {
+  background-color: rgba(var(--surface1-rgb), 0.7);
+  border: none;
+  border-radius: var(--radius-item);
+  color: var(--fg-soft);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 16px;
+  margin-left: 12px;
+}
+.bluetooth-menu .header .power-button:checked {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+.bluetooth-menu .progress-bar,
+.wifi-menu .progress-bar {
+  min-height: 2px;
+  max-height: 2px;
+  color: var(--accent);
+}
+.bluetooth-menu .bluetooth-list,
+.wifi-menu .wifi-list {
+  background-color: transparent;
+  padding: 8px 10px;
+  margin: 0;
+}
+.bluetooth-menu .section {
+  background-color: transparent;
+}
+.bluetooth-menu .section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-subtle);
+  padding: 10px 8px 6px 8px;
+}
+.bluetooth-menu .bluetooth-item,
+.wifi-menu .wifi-item {
+  min-height: 44px;
+  padding: 8px 12px;
+  margin: 3px 0;
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+}
+.bluetooth-menu .bluetooth-item:hover,
+.wifi-menu .wifi-item:hover {
+  background-color: rgba(var(--surface1-rgb), 0.45);
+}
+.bluetooth-menu .bluetooth-item.active,
+.wifi-menu .wifi-item[active="true"] {
+  background-color: rgba(var(--surface0-rgb), 0.8);
+}
+.bluetooth-menu .bluetooth-item .icon,
+.wifi-menu .wifi-item .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--fg-secondary);
+  min-width: 28px;
+  margin-right: 12px;
+}
+.bluetooth-menu .bluetooth-item .name,
+.wifi-menu .wifi-item .name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.bluetooth-menu .bluetooth-item .status,
+.wifi-menu .wifi-item .status,
+.wifi-menu .wifi-item .strength {
+  font-size: 11px;
+  color: var(--fg-subtle);
+  padding-top: 2px;
+}
+.bluetooth-menu .bluetooth-item .battery {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-secondary);
+  padding-right: 6px;
+}
+.bluetooth-menu .bluetooth-item .battery-icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--fg-secondary);
+}
+.bluetooth-menu .bluetooth-item .battery-icon.low,
+.bluetooth-menu .bluetooth-item .battery-icon.empty {
+  color: var(--red);
+}
+.bluetooth-menu .bluetooth-item .controls-container,
+.wifi-menu .wifi-item .controls-container {
+  padding: 10px 0 4px 0;
+}
+.bluetooth-menu .bluetooth-item .connect,
+.wifi-menu .wifi-item .connect {
+  background-color: rgba(var(--surface1-rgb), 0.7);
+  border: none;
+  border-radius: var(--radius-item);
+  color: var(--fg);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+}
+.bluetooth-menu .bluetooth-item .connect:hover,
+.wifi-menu .wifi-item .connect:hover {
+  background-color: rgba(var(--accent-rgb), 0.3);
+}
+.wifi-menu .wifi-item .password {
+  background-color: rgba(var(--crust-rgb), 0.6);
+  border: 1px solid var(--surface1);
+  border-radius: var(--radius-item);
+  color: var(--fg);
+  padding: 6px 8px;
+}
+.bluetooth-menu .error-message,
+.wifi-menu .error-message {
+  font-size: 12px;
+  color: var(--red);
+  background-color: rgba(var(--red-rgb), 0.12);
+  padding: 12px 16px;
+}
+
+/* ── Volume ── */
+.audio-menu {
+  min-width: 340px;
+  padding: 8px;
+}
+.audio-menu .audio-container {
+  background: transparent;
+  padding: 0 0 8px 0;
+}
+.audio-menu .audio-container .device {
+  background-color: transparent;
+  border: none;
+  color: var(--fg-soft);
+  text-align: left;
+  font-size: 12px;
+  padding: 9px 12px;
+  margin: 2px 0;
+  border-radius: var(--radius-pill);
+}
+.audio-menu .audio-container .device:hover {
+  background-color: rgba(var(--surface1-rgb), 0.45);
+  color: var(--fg);
+}
+.audio-menu .audio-container .device.selected {
+  background-color: rgba(var(--accent-rgb), 0.16);
+  color: var(--fg);
+}
+.audio-menu .system-volume-container {
+  background: transparent;
+  border-top: 1px solid rgba(var(--surface0-rgb), 0.9);
+  padding: 12px 4px 4px 4px;
+}
+.audio-menu .system-volume-container .volume-slider {
+  border: none;
+}
+.audio-menu .toggle-apps {
+  background-color: transparent;
+  border: none;
+  color: var(--fg-secondary);
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: var(--radius-item);
+  margin-left: 8px;
+}
+.audio-menu .toggle-apps:hover,
+.audio-menu .toggle-apps.expanded {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+  color: var(--fg);
+}
+.audio-menu .apps-container {
+  background-color: rgba(var(--surface0-rgb), 0.35);
+  border-radius: var(--radius-pill);
+  padding: 10px;
+  margin-top: 12px;
+}
+.audio-menu .apps-container .app-volume {
+  padding: 4px 0;
+}
+.audio-menu .apps-container .app-volume .app-icon-container {
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  border-radius: var(--radius-pill);
+  margin-right: 10px;
+}
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+
+/* ── Control center ── */
+.control-center-menu {
+  min-width: 380px;
+}
+.control-center-menu .section {
+  background: transparent;
+  margin: 0;
+  border: none;
+}
+.control-center-menu .section.system-controls {
+  padding: 16px 20px 4px 20px;
+}
+.control-center-menu .section.quick-actions {
+  padding: 12px 16px 4px 16px;
+}
+.control-center-menu .section.sliders {
+  padding: 12px 20px;
+}
+.control-center-menu .section.power {
+  padding: 8px 16px 20px 16px;
+}
+.control-center-menu .section.system-controls .button {
+  font-family: "Segoe Fluent Icons";
+  font-size: 14px;
+  background-color: rgba(var(--surface0-rgb), 0.7);
+  color: var(--fg-soft);
+  border: none;
+  border-radius: 16px;
+  min-width: 32px;
+  max-width: 32px;
+  min-height: 32px;
+  max-height: 32px;
+}
+.control-center-menu .section.system-controls .button:hover {
+  background-color: rgba(var(--surface1-rgb), 0.9);
+  color: var(--fg);
+}
+.control-center-menu .section.quick-actions .button {
+  margin: 0 4px 8px 4px;
+  background: transparent;
+  border: none;
+}
+.control-center-menu .section.quick-actions .button .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 16px;
+  background-color: rgba(var(--surface0-rgb), 0.6);
+  border: 1px solid rgba(var(--surface1-rgb), 0.4);
+  border-radius: var(--radius-pill);
+  color: var(--fg-soft);
+  min-height: 48px;
+}
+.control-center-menu .section.quick-actions .button .icon:hover {
+  background-color: rgba(var(--surface1-rgb), 0.7);
+}
+.control-center-menu .section.quick-actions .button.active .icon {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--on-accent);
+}
+.control-center-menu .section.quick-actions .button .title {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fg-secondary);
+  margin: 6px 0 0 0;
+  padding: 0;
+}
+.control-center-menu .section.sliders .slider {
+  background: transparent;
+  border: none;
+  min-height: 38px;
+  margin: 2px 0;
+}
+.control-center-menu .section.sliders .slider .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 16px;
+  color: var(--fg-soft);
+  min-width: 36px;
+}
+.control-center-menu .section.sliders .slider .value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-secondary);
+  min-width: 40px;
+}
+.control-center-menu .section.sliders .slider .source-selector {
+  font-family: "Segoe Fluent Icons";
+  font-size: 12px;
+  color: var(--fg-subtle);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-item);
+  width: 26px;
+  height: 26px;
+  margin-left: 6px;
+}
+.control-center-menu .section.sliders .slider .source-selector:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+.control-center-menu .section.power .plan-name,
+.control-center-menu .section.power .mode-name {
+  background-color: rgba(var(--surface0-rgb), 0.6);
+  border: 1px solid rgba(var(--surface1-rgb), 0.4);
+  border-radius: var(--radius-pill);
+  padding: 10px 12px;
+  margin: 0 4px;
+}
+.control-center-menu .section.power .plan-name:hover,
+.control-center-menu .section.power .mode-name:hover {
+  background-color: rgba(var(--surface1-rgb), 0.7);
+}
+.control-center-menu .section.power .plan-name .title,
+.control-center-menu .section.power .mode-name .title {
+  font-size: 11px;
+  color: var(--fg-subtle);
+}
+.control-center-menu .section.power .plan-name .subtext,
+.control-center-menu .section.power .mode-name .subtext {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.control-center-menu .section.power .plan-name .icon,
+.control-center-menu .section.power .mode-name .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 12px;
+  color: var(--fg-subtle);
+}
+
+/* ── GitHub ── */
+.github-menu {
+  min-width: 440px;
+  min-height: 480px;
+  max-height: 480px;
+}
+.github-menu .contents {
+  background-color: transparent;
+  padding: 6px 8px;
+}
+.github-menu .contents .item {
+  min-height: 44px;
+  padding: 10px 12px;
+  margin: 2px 0;
+  border: none;
+  border-radius: var(--radius-pill);
+}
+.github-menu .contents .item:hover {
+  background-color: rgba(var(--surface1-rgb), 0.45);
+}
+.github-menu .contents .item .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-secondary);
+}
+.github-menu .contents .item .description {
+  font-size: 11px;
+  color: var(--fg-subtle);
+  padding-top: 2px;
+}
+.github-menu .contents .item.new .title {
+  color: var(--fg);
+}
+.github-menu .contents .item .icon {
+  font-family: var(--font-icon);
+  font-size: 16px;
+  color: var(--fg-subtle);
+  padding: 0 12px 0 0;
+}
+.github-menu .contents .item.new .icon {
+  color: var(--accent);
+}
+.github-menu .footer .label {
+  font-size: 12px;
+  color: var(--fg-subtle);
+}
+
+/* ── Systray overflow popup ── */
+.systray-popup {
+  padding: 12px;
+}
+.systray-popup .button {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 10px;
+  margin: 2px;
+}
+.systray-popup .button:hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+.systray-popup .button.drag-over {
+  background-color: rgba(var(--accent-rgb), 0.25);
+}
+
+/* ── Power menu (compact popup) ── */
+.power-menu-compact {
+  min-width: 280px;
+}
+.power-menu-compact .profile-info {
+  padding: 20px 20px 16px 20px;
+}
+.power-menu-compact .profile-info .profile-username {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  margin-top: 8px;
+}
+.power-menu-compact .profile-info .profile-account-type {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--on-accent);
+  background-color: var(--accent);
+  border-radius: var(--radius-item);
+  padding: 2px 8px;
+  margin-top: 8px;
+}
+.power-menu-compact .profile-info .profile-email {
+  font-size: 12px;
+  color: var(--fg-subtle);
+  margin-top: 6px;
+}
+.power-menu-compact .manage-accounts {
+  margin-top: 14px;
+}
+.power-menu-compact .buttons {
+  background-color: rgba(var(--surface0-rgb), 0.45);
+  border-radius: var(--radius-pill);
+  margin: 0 16px 16px 16px;
+  padding: 4px;
+}
+.power-menu-compact .button {
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-item);
+  padding: 10px 14px;
+  margin: 1px 0;
+}
+.power-menu-compact .button.hover {
+  background-color: rgba(var(--surface1-rgb), 0.6);
+}
+.power-menu-compact .button.shutdown.hover,
+.power-menu-compact .button.restart.hover {
+  background-color: rgba(var(--red-rgb), 0.18);
+}
+.power-menu-compact .button .icon {
+  font-family: var(--font-icon);
+  font-size: 15px;
+  color: var(--fg-subtle);
+  min-width: 22px;
+  padding: 0 12px 0 0;
+}
+.power-menu-compact .button .label {
+  font-family: var(--font-text);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-soft);
+}
+.power-menu-compact .icon.hover,
+.power-menu-compact .label.hover {
+  color: var(--fg);
+}
+
+/* ───────────────────────────── Launchpad (app grid popup) ─────────────────────────────
+ *
+ * yasb zeroes every margin/spacing in the launchpad and sizes grid columns from the first
+ * cell's width, so cells need fixed min/max sizes or the gaps and column count drift.
+ * Cell footprint = 128 content + 2×8 padding + 2×2 border + 2×12 margin = 172px wide,
+ * so the 1120px window (config.yaml) fits 6 columns with the leftover centered.
+ */
+
+.launchpad .launchpad-container {
+  background-color: rgba(var(--popup-rgb), 0.92);
+  border-radius: var(--radius-outer);
+}
+
+.launchpad .search-container {
+  background-color: rgba(var(--crust-rgb), 0.35);
+  border: none;
+  border-bottom: 1px solid rgba(var(--surface0-rgb), 0.9);
+  min-height: 88px;
+  max-height: 88px;
+  padding: 0 24px;
+  margin: 0 0 16px 0;
+}
+.launchpad .search-input {
+  max-width: 420px;
+  min-height: 24px;
+  max-height: 24px;
+  padding: 8px 16px;
+  font-family: var(--font-text);
+  font-size: 14px;
+  color: var(--fg);
+  background-color: rgba(var(--crust-rgb), 0.6);
+  border: 1px solid var(--surface1);
+  border-radius: var(--radius-outer);
+}
+.launchpad .search-input:focus {
+  border: 1px solid var(--accent);
+  background-color: rgba(var(--crust-rgb), 0.8);
+}
+
+.launchpad .launchpad-scroll-area {
+  background-color: transparent;
+  border: none;
+}
+
+.launchpad .app-icon,
+.launchpad .group-icon {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 16px 8px 8px 8px;
+  margin: 12px;
+  min-width: 128px;
+  max-width: 128px;
+  min-height: 108px;
+  max-height: 108px;
+}
+.launchpad .app-icon:hover,
+.launchpad .group-icon:hover {
+  background-color: rgba(var(--text-rgb), 0.07);
+  border: 2px solid rgba(var(--surface1-rgb), 0.9);
+}
+.launchpad .app-icon:focus,
+.launchpad .group-icon:focus {
+  background-color: rgba(var(--accent-rgb), 0.08);
+  border: 2px solid var(--accent);
+}
+.launchpad .app-icon .icon {
+  padding: 0;
+  margin: 0;
+}
+.launchpad .app-icon .title,
+.launchpad .group-icon .title {
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fg-soft);
+  margin-top: 12px;
+  padding: 0 2px;
+}
+.launchpad .app-icon.url .title {
+  color: var(--blue);
+}
+.launchpad .group-icon .group-icon-container {
+  background-color: rgba(var(--surface0-rgb), 0.6);
+  border: 1px solid var(--surface1);
+  border-radius: 10px;
+}
+.launchpad .group-back-button {
+  background-color: transparent;
+  border: none;
+  color: var(--fg-soft);
+  font-size: 16px;
+  padding: 0 24px;
+}
+.launchpad .group-back-button:hover {
+  color: var(--fg);
+}
+
+.launchpad .drop-overlay {
+  background-color: rgba(var(--crust-rgb), 0.85);
+  border: 3px dashed var(--accent);
+  border-radius: var(--radius-outer);
+}
+.launchpad .drop-overlay .text {
+  color: var(--fg);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+/* Add / edit app dialog */
+.launchpad .app-dialog {
+  background-color: var(--popup);
+}
+.launchpad .app-dialog .message {
+  color: var(--fg);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px 0 0 0;
+}
+.launchpad .app-dialog .title-field,
+.launchpad .app-dialog .path-field,
+.launchpad .app-dialog .icon-field,
+.launchpad .app-dialog .group-field {
+  background-color: var(--crust);
+  border: 1px solid var(--surface0);
+  border-radius: var(--radius-item);
+  padding: 0 8px;
+  margin: 8px 0 4px 0;
+  min-height: 30px;
+  font-size: 12px;
+  color: var(--fg);
+}
+.launchpad .app-dialog .title-field:focus,
+.launchpad .app-dialog .path-field:focus,
+.launchpad .app-dialog .icon-field:focus,
+.launchpad .app-dialog .group-field:focus {
+  border: 1px solid var(--accent);
+}
+.launchpad .app-dialog .buttons-container {
+  background-color: rgba(var(--crust-rgb), 0.5);
+  border-top: 1px solid var(--surface0);
+  margin-top: 16px;
+  min-height: 64px;
+  max-height: 64px;
+  padding: 0 20px;
+}
+.launchpad .app-dialog .button {
+  background-color: var(--surface0);
+  border: none;
+  border-radius: var(--radius-item);
+  min-width: 80px;
+  min-height: 28px;
+  padding: 0 10px;
+  margin: 8px 0 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg);
+}
+.launchpad .app-dialog .button:hover,
+.launchpad .app-dialog .button:focus {
+  background-color: var(--surface1);
+}
+.launchpad .app-dialog .button.add,
+.launchpad .app-dialog .button.save {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+.launchpad .app-dialog .button.delete {
+  background-color: var(--red);
+  color: var(--on-accent);
+}
+.launchpad .app-dialog .warning-message {
+  background-color: rgba(var(--red-rgb), 0.12);
+  border: 1px solid rgba(var(--red-rgb), 0.4);
+  border-radius: var(--radius-item);
+  color: var(--red);
+  padding: 8px 12px;
+  margin: 4px 0;
+}
