@@ -28,6 +28,10 @@ To update a theme, please follow these steps:
 > This applied to any other actions you want to take with the themes in this repository, such as deleting a theme.
 
 ## Latest Themes
+## [Catelier Lite](themes/f0ae7c59-f311-4127-9de8-f1328b681267)
+
+<a title="Catelier Lite YASB Theme" href="themes/f0ae7c59-f311-4127-9de8-f1328b681267"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/f0ae7c59-f311-4127-9de8-f1328b681267/image.png" width="830px"></a>
+
 ## [Glazing Mocha Pywal Edition](themes/985855a7-10d7-4d7b-88ff-7c3e4cf509dd)
 
 <a title="Glazing Mocha Pywal Edition YASB Theme" href="themes/985855a7-10d7-4d7b-88ff-7c3e4cf509dd"><img src="https://raw.githubusercontent.com/amnweb/yasb-themes/main/themes/985855a7-10d7-4d7b-88ff-7c3e4cf509dd/image.png" width="830px"></a>
