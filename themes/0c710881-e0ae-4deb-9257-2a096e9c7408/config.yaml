@@ -1,3 +1,4 @@
+
 watch_stylesheet: true
 watch_config: true
 debug: false
@@ -45,7 +46,6 @@ bars:
         - "weather"
         - "clock"
         - "volume"
-        - "media"
         - "notifications"
 
 widgets:
@@ -56,20 +56,21 @@ widgets:
       label_alt: "{info[histograms][cpu_percent]}"
       update_interval: 1000
       histogram_icons:
-        - '\u2581' # 0%
-        - '\u2581' # 10%
-        - '\u2582' # 20%
-        - '\u2583' # 30%
-        - '\u2584' # 40%
-        - '\u2585' # 50%
-        - '\u2586' # 60%
-        - '\u2587' # 70%
-        - '\u2588' # 80%+
+        - '\u2581'
+        - '\u2581'
+        - '\u2582'
+        - '\u2583'
+        - '\u2584'
+        - '\u2585'
+        - '\u2586'
+        - '\u2587'
+        - '\u2588'
       histogram_num_columns: 8
       callbacks:
         on_left: "toggle_cpu_menu"
         on_middle: "exec cmd /c Taskmgr"
         on_right: "toggle_label"
+
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -79,6 +80,7 @@ widgets:
         on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
+
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
@@ -92,6 +94,7 @@ widgets:
       callbacks:
         on_left: "toggle_menu"
         on_right: "do_nothing"
+
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
@@ -133,6 +136,7 @@ widgets:
         direction: "down"
         offset_top: true
         show_layout_icons: true
+
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -141,6 +145,7 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: true
+
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -171,49 +176,7 @@ widgets:
       callbacks:
         on_left: "do_nothing"
         on_right: "toggle_label"
-  media:
-    type: "yasb.media.MediaWidget"
-    options:
-      label: "{title}"
-      label_alt: "{artist}"
-      callbacks:
-        on_left: "toggle_media_menu"
-        on_middle: "toggle_play_pause"
-        on_right: "toggle_label"
-      max_field_size:
-        label: 60
-        label_alt: 60
-      hide_empty: true
-      show_thumbnail: false
-      scrolling_label:
-        enabled: false
-        update_interval_ms: 33
-        ease_slope: 20
-        ease_pos: 0.8
-        ease_min: 0.5
-      icons:
-        prev_track: "\ue892"
-        next_track: "\ue893"
-        play: "\ue768"
-        pause: "\ue769"
-      media_menu:
-        blur: true
-        round_corners: false
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "center"
-        direction: "down"
-        offset_top: true
-        thumbnail_corner_radius: 6
-        thumbnail_size: 100
-        max_title_size: 40
-        max_artist_size: 20
-        show_source: true
-    icons:
-        play: "\ue768"
-        pause: "\ue769"
-        prev_track: "\ue892"
-        next_track: "\ue893"
+
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -225,12 +188,13 @@ widgets:
       show_battery: false
       show_volume: false
       show_network: false
+
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "Low: {min_temp} | High: {max_temp} | Humidity: {humidity}"
-      api_key: "f5bc02da05ce44f0b29231930251207" # Get your free API key from https://www.weatherapi.com/
+      api_key: "f5bc02da05ce44f0b29231930251207"
       show_alerts: true
       update_interval: 600
       hide_decimal: true
@@ -265,6 +229,7 @@ widgets:
         direction: "down"
         icon_size: 40
         offset_top: true
+
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -280,16 +245,17 @@ widgets:
       callbacks:
         on_left: "toggle_calendar"
         on_right: "toggle_label"
+
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span>{level}"
       icons:
-        - "\ue74f" # Icon for muted
-        - "\ue992" # Icon for 0-10% volume
-        - "\ue993" # Icon for 11-30% volume
-        - "\ue994" # Icon for 31-60% volume
-        - "\ue995" # Icon for 61-100% volume
+        - "\ue74f"
+        - "\ue992"
+        - "\ue993"
+        - "\ue994"
+        - "\ue995"
       audio_menu:
         blur: true
         round_corners: false
@@ -301,6 +267,7 @@ widgets:
       callbacks:
         on_left: "toggle_volume_menu"
         on_right: "toggle_mute"
+
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
